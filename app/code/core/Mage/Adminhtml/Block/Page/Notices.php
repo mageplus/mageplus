@@ -33,7 +33,8 @@
  */
 class Mage_Adminhtml_Block_Page_Notices extends Mage_Adminhtml_Block_Template
 {
-
+    const DEFAULT_COLOR = "#D75F07";
+    
     /**
      * Check if noscript notice should be displayed
      *
@@ -51,7 +52,26 @@ class Mage_Adminhtml_Block_Page_Notices extends Mage_Adminhtml_Block_Template
      */
     public function displayDemoNotice()
     {
-        return Mage::getStoreConfig('design/head/demonotice');
+        if (!is_null(Mage::getConfig()->getNode('global/environment/show_banner_in_backend')))
+        {
+            return (int) Mage::getConfig()->getNode('global/environment/show_banner_in_backend');
+        } else {
+            return Mage::getStoreConfig('design/head/demonotice');
+        }
     }
-
+    
+    /**
+     * Get color which environment notice banner should display
+     *
+     * @return string
+     */
+    public function getNoticeColor()
+    {
+        if (!is_null(Mage::getConfig()->getNode('global/environment/banner_color')))
+        {
+            return Mage::getConfig()->getNode('global/environment/banner_color');
+        } else {
+            return self::DEFAULT_COLOR;
+        }
+    }
 }

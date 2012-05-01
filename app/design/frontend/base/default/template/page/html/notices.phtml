@@ -43,7 +43,7 @@
 <?php endif; ?>
 <?php if ($this->displayDemoNotice()): ?>
     <div class="global-site-notice demo-notice">
-        <div class="notice-inner"><p><?php echo $this->__('This is a demo store. Any orders placed through this store will not be honored or fulfilled.') ?></p></div>
+        <div class="notice-inner"><p style="background: <?php echo $this->getNoticeColor(); ?>;"><b><?php echo strtoupper(Mage::getConfig()->getNode('global/environment/name')); ?></b> <?php if (is_null(Mage::getConfig()->getNode('global/environment/name'))): ?> <?php echo $this->__('This is a demo store. Any orders placed through this store will not be honored or fulfilled.') ?><?php endif; ?></p></div>
     </div>
 <?php endif; ?>
 <?php if (Mage::helper('core/cookie')->isUserNotAllowSaveCookie()): ?>

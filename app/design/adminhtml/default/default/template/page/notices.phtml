@@ -40,5 +40,5 @@
     </noscript>
 <?php endif; ?>
 <?php if ($this->displayDemoNotice()): ?>
-    <p class="demo-notice"><?php echo $this->__('This is a demo store. Any orders placed through this store will not be honored or fulfilled.') ?></p>
+    <p class="demo-notice" style="background: <?php echo $this->getNoticeColor(); ?>;"><b><?php echo strtoupper(Mage::getConfig()->getNode('global/environment/name')); ?></b> <?php if (is_null(Mage::getConfig()->getNode('global/environment/name'))): ?><?php echo $this->__('This is a demo store. Any orders placed through this store will not be honored or fulfilled.') ?><?php endif; ?></p>
 <?php endif; ?>

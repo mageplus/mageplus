@@ -27,6 +27,12 @@
 -->
 <config>
     <global>
+			<environment>
+				<name>production</name>
+				<banner_color>#FF0000</banner_color>
+				<show_banner_in_frontend>0</show_banner_in_frontend>
+				<show_banner_in_backend>1</show_banner_in_backend>
+			</environment>
         <install>
             <date>{{date}}</date>
         </install>

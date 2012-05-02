@@ -202,6 +202,53 @@ $numColumns = sizeof($this->getColumns());
     </table>
     </div>
 </div>
+<?php if($this->getPagerVisibility() || $this->getExportTypes() || $this->getFilterVisibility()): ?>
+    <table cellspacing="0" class="actions">
+        <tr>
+        <?php if($this->getPagerVisibility()): ?>
+            <td class="pager">
+            <?php echo $this->__('Page') ?>
+
+            <?php $_curPage  = $this->getCollection()->getCurPage() ?>
+            <?php $_lastPage = $this->getCollection()->getLastPageNumber() ?>
+            <?php if($_curPage>1): ?>
+                <a href="#" title="<?php echo $this->__('Previous page') ?>" onclick="<?php echo $this->getJsObjectName() ?>.setPage('<?php echo ($_curPage-1) ?>');return false;"><img src="<?php echo $this->getSkinUrl('images/pager_arrow_left.gif') ?>" alt="Go to Previous page" class="arrow"/></a>
+            <?php else: ?>
+                <img src="<?php echo $this->getSkinUrl('images/pager_arrow_left_off.gif') ?>" alt="Go to Previous page" class="arrow"/>
+            <?php endif; ?>
+
+            <input type="text" name="<?php echo $this->getVarNamePage() ?>" value="<?php echo $_curPage ?>" class="input-text page" onkeypress="<?php echo $this->getJsObjectName() ?>.inputPage(event, '<?php echo $_lastPage ?>')"/>
+
+            <?php if($_curPage < $_lastPage): ?>
+                <a href="#" title="<?php echo $this->__('Next page') ?>" onclick="<?php echo $this->getJsObjectName() ?>.setPage('<?php echo ($_curPage+1) ?>');return false;"><img src="<?php echo $this->getSkinUrl('images/pager_arrow_right.gif') ?>" alt="Go to Next page" class="arrow"/></a>
+            <?php else: ?>
+                <img src="<?php echo $this->getSkinUrl('images/pager_arrow_right_off.gif') ?>" alt="Go to Previous page" class="arrow"/>
+            <?php endif; ?>
+
+            <?php echo $this->__('of %s pages', $this->getCollection()->getLastPageNumber()) ?>
+            <span class="separator">|</span>
+            <?php echo $this->__('View') ?>
+            <select name="<?php echo $this->getVarNameLimit() ?>" onchange="<?php echo $this->getJsObjectName() ?>.loadByElement(this)">
+                <option value="20"<?php if($this->getCollection()->getPageSize()==20): ?> selected="selected"<?php endif; ?>>20</option>
+                <option value="30"<?php if($this->getCollection()->getPageSize()==30): ?> selected="selected"<?php endif; ?>>30</option>
+                <option value="50"<?php if($this->getCollection()->getPageSize()==50): ?> selected="selected"<?php endif; ?>>50</option>
+                <option value="100"<?php if($this->getCollection()->getPageSize()==100): ?> selected="selected"<?php endif; ?>>100</option>
+                <option value="200"<?php if($this->getCollection()->getPageSize()==200): ?> selected="selected"<?php endif; ?>>200</option>
+            </select>
+            <?php echo $this->__('per page') ?><span class="separator">|</span>
+            <?php echo $this->__('Total %d records found', $this->getCollection()->getSize()) ?>
+            <span id="<?php echo $this->getHtmlId() ?>-total-count" class="no-display"><?php echo $this->getCollection()->getSize() ?></span>
+            <?php if($this->getRssLists()): ?>
+                <?php foreach ($this->getRssLists() as $_rss): ?>
+                <span class="separator">|</span><a href="<?php echo $_rss->getUrl() ?>" class="link-feed"><?php echo $_rss->getLabel() ?></a>
+                <?php endforeach ?>
+            <?php endif; ?>
+        </td>
+    <?php endif ?>
+        </tr>
+    </table>
+<?php endif; ?>
+
 <?php if($this->canDisplayContainer()): ?>
 </div>
 <script type="text/javascript">

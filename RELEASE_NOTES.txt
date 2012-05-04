@@ -5,6 +5,7 @@ Added environment indicator banner for frontend and backend - Lee Bolding [leesb
 
 === Improvements ===
 Added pagination controls to the bottom of all grids in backend - Lee Bolding [leesbian]
+Added PHP 5.3 garbage collector - Lee Bolding [leesbian]
 
 ==== 1.7.0.0 ====
 

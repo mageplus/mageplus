@@ -66,6 +66,7 @@ class Mage_Adminhtml_Block_Dashboard_Sales extends Mage_Adminhtml_Block_Dashboar
         $sales = $collection->getFirstItem();
 
         $this->addTotal($this->__('Lifetime Sales'), $sales->getLifetime());
+	$this->addTotal($this->__('Profit'), $sales->getLifetimeProfit());
         $this->addTotal($this->__('Average Orders'), $sales->getAverage());
     }
 }

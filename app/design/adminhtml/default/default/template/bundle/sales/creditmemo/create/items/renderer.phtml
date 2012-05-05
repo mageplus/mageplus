@@ -67,7 +67,7 @@
         <td><h5 class="title"><?php echo $this->htmlEscape($_item->getName()) ?></h5>
             <div>
                 <strong><?php echo $this->helper('sales')->__('SKU') ?>:</strong>
-                <?php echo implode('<br />', Mage::helper('catalog')->splitSku($this->htmlEscape($_item->getSku()))); ?>
+                <a href="<?php echo Mage::helper('adminhtml')->getUrl('*/catalog_product/edit', array('id'=>$_item->getProductId())); ?>" target="_blank"><?php echo implode('<br />', Mage::helper('catalog')->splitSku($this->htmlEscape($this->getSku()))); ?></a>
             </div>
         </td>
         <?php else: ?>

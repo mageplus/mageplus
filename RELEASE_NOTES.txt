@@ -8,6 +8,9 @@ Added pagination controls to the bottom of all grids in backend - Lee Bolding [l
 Added PHP 5.3 garbage collector - Lee Bolding [leesbian]
 Made SKUs in adminhtml clickable, to open product edit screen in new window - Lee Bolding [leesbian]
 
+=== Changes ===
+Added profit indication to dashboard in adminhtml - Lee Bolding [leesbian]
+
 ==== 1.7.0.0 ====
 
 === Major Highlights ===

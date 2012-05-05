@@ -53,7 +53,7 @@ var bundleTemplateRow ='<td>' +
                 '    <input type="hidden" name="<?php echo $this->getFieldName() ?>[{{parentIndex}}][{{index}}][delete]" value="" class="delete">' +
                 '    {{name}}<br />' +
                 '   <div  class="nobr">' +
-                '        <strong><?php echo $this->helper('sales')->__('SKU') ?>:</strong> {{sku}}' +
+                '        <strong><?php echo $this->helper('sales')->__('SKU') ?>:</strong> <a href="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/catalog_product/edit", array("id" => "{{product_id}}")); ?>" target="_blank">{{sku}}</a>' +
                 '    </div>' +
                 '</td>' +
                 <?php if ($this->getCanReadPrice() !== false) : ?>

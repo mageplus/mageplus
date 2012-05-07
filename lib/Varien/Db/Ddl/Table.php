@@ -131,6 +131,22 @@ class Varien_Db_Ddl_Table
      * @var array
      */
     protected $_columns         = array();
+    
+    /**
+     * Triggers descriptions for a table
+     *
+     * Is an associative array keyed by the uppercase trigger name
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * TRIGGER_NAME         => string; index name
+     * TRIGGER_EVENT        => string; the event that triggers
+     * TRIGGER_TIMING       => string; the time at which trigger occurs
+     * TRIGGER_STATEMENT    => string; the statement the trigger will run
+     *
+     * @var array
+     */
+    protected $_triggers         = array();
 
     /**
      * Index descriptions for a table
@@ -546,6 +562,40 @@ class Varien_Db_Ddl_Table
     }
 
     /**
+     * Add new trigger to table name
+     *
+     * @param string $tableName
+     * @param string $triggerName
+     * @param string $statement the SQL statement
+     * @param string $timing the timing type
+     * @param string $event     the event type
+     * @param string $schemaName
+     * @return Varien_Db_Ddl_table
+     * @throws Zend_Db_Exception|Exception
+     */
+    public function addTrigger($tableName, $triggerName, $statement,
+        $timing = Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE,
+        $event = Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE, $schemaName = null)
+    {
+        if (empty($triggerName)) {
+            throw new Zend_Db_Exception('Trigger name is not defined');
+        }
+
+        if (empty($statement)) {
+            throw new Zend_Db_Exception('Trigger update statement is not defined');
+        }
+
+        $this->_triggers[strtoupper($triggerName)] = array(
+            'TRIGGER_NAME'            => $triggerName,
+            'TRIGGER_EVENT'           => $event,
+            'TRIGGER_TIMING'          => $timing,
+            'TRIGGER_STATEMENT'       => $statement 
+        );
+
+        return $this;
+    }
+    
+    /**
      * Retrieve array of table columns
      *
      * @param bool $normalized
@@ -585,6 +635,17 @@ class Varien_Db_Ddl_Table
         return $this->_indexes;
     }
 
+    /**
+     * Retrieve array of table triggers
+     *
+     * @see $this->_triggers
+     * @return array
+     */
+    public function getTriggers()
+    {
+        return $this->_triggers;
+    }
+    
     /**
      * Retrieve array of table foreign keys
      *

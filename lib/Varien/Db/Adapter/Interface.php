@@ -38,6 +38,12 @@ interface Varien_Db_Adapter_Interface
     const INDEX_TYPE_UNIQUE     = 'unique';
     const INDEX_TYPE_INDEX      = 'index';
     const INDEX_TYPE_FULLTEXT   = 'fulltext';
+    
+    const TRIGGER_TIME_BEFORE   = 'BEFORE';
+    const TRIGGER_TIME_AFTER    = 'AFTER';
+    const EVENT_TYPE_DELETE     = 'DELETE';
+    const EVENT_TYPE_UPDATE     = 'UPDATE';
+    const EVENT_TYPE_INSERT     = 'INSERT';
 
     const FK_ACTION_CASCADE     = 'CASCADE';
     const FK_ACTION_SET_NULL    = 'SET NULL';
@@ -176,6 +182,50 @@ interface Varien_Db_Adapter_Interface
      * @return Varien_Db_Ddl_Table
      */
     public function createTableByDdl($tableName, $newTableName);
+    
+    /**
+     * Add new trigger to table name
+     *
+     * @param string $tableName
+     * @param string $triggerName
+     * @param string $statement the statement to run
+     * @param string $timing the timing type
+     * @param string $event     the event type
+     * @param string $schemaName
+     * @return Zend_Db_Statement_Interface
+     */
+    public function addTrigger($tableName, $triggerName, $statement, $timing = self::TRIGGER_TIME_BEFORE, $event = self::EVENT_TYPE_UPDATE, $schemaName = null);
+
+    /**
+     * Drop the trigger from table
+     *
+     * @param string $triggerName
+     * @param string $schemaName
+     * @return bool|Zend_Db_Statement_Interface
+     */
+    public function dropTrigger($triggerName, $schemaName = null);
+
+    /**
+     * Returns the table trigger information
+     *
+     * The return value is an associative array keyed by the UPPERCASE trigger name
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME        => string; name of database or schema
+     * TABLE_NAME         => string; name of the table
+     * TRIGGER_NAME       => string; name of the trigger
+     * TRIGGER_EVENT      => $string; event that triggers
+     * TRIGGER_TIMING     => $string; the time that event triggers
+     * TRIGGER_STATEMENT  => $string; the statement that trigger runs 
+     *
+     * @param string $tableName
+     * @param string $schemaName
+     * @return array
+     */
+    public function getTriggerList($tableName, $schemaName = null);
 
     /**
      * Modify the column definition by data from describe table

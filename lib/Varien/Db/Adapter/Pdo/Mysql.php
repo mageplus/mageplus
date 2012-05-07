@@ -41,6 +41,7 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
     const DDL_CREATE            = 2;
     const DDL_INDEX             = 3;
     const DDL_FOREIGN_KEY       = 4;
+    const DDL_TRIGGER           = 5;
     const DDL_CACHE_PREFIX      = 'DB_PDO_MYSQL_DDL';
     const DDL_CACHE_TAG         = 'DB_PDO_MYSQL_DDL';
 
@@ -1707,6 +1708,11 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
                 $keyData['REF_COLUMN_NAME'], $onDelete, $onUpdate
             );
         }
+        
+        $triggers = $this->getTriggerList($tableName);
+        foreach ($triggers as $trigger) {
+          $table->addTrigger($tableName, $trigger['TRIGGER_NAME'], $trigger['TRIGGER_STATEMENT'], $trigger['TRIGGER_TIMING'], $trigger['TRIGGER_EVENT']);
+        }
 
         // Set additional options
         $tableData = $this->showTableStatus($tableName);
@@ -2411,6 +2417,108 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
         $this->resetDdlCache($oldTableName, $schemaName);
 
         return true;
+    }
+
+    /**
+     * Add new trigger to table name
+     *
+     * @param string $tableName
+     * @param string $triggerName
+     * @param string $statement the SQL statement
+     * @param string $timing the timing type
+     * @param string $event     the event type
+     * @param string $schemaName
+     * @return Zend_Db_Statement_Interface
+     * @throws Zend_Db_Exception|Exception
+     */
+    public function addTrigger($tableName, $triggerName, $statement,
+        $timing = Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE,
+        $event = Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE, $schemaName = null)
+    {
+        if (!$this->isTableExists($tableName, $schemaName)) {
+            throw new Zend_Db_Exception(sprintf('Table "%s" does not exist', $tableName));
+        }
+
+        $table = $this->quoteIdentifier($this->_getTableName($tableName, $schemaName));
+        
+        $query = 'CREATE TRIGGER ' . $triggerName . ' ' . $timing . ' ' .
+                  $event . ' ON ' . $table . ' ' . $statement;
+                  
+        $this->query($query);
+
+        return $this;
+    }
+
+    /**
+     * Drop the index from table
+     *
+     * @param string $triggerName
+     * @param string $schemaName
+     * @return bool|Zend_Db_Statement_Interface
+     */
+    public function dropTrigger($triggerName, $schemaName = null)
+    {
+        $query = 'DROP TRIGGER IF EXISTS ' . $triggerName;
+        $this->query($query);
+
+        return true;
+    }
+    
+    /**
+     * Returns the table trigger information
+     *
+     * The return value is an associative array keyed by the UPPERCASE trigger name
+     * as returned by the RDBMS.
+     *
+     * The value of each array element is an associative array
+     * with the following keys:
+     *
+     * SCHEMA_NAME        => string; name of database or schema
+     * TABLE_NAME         => string; name of the table
+     * TRIGGER_NAME       => string; name of the trigger
+     * TRIGGER_EVENT      => $string; event that triggers
+     * TRIGGER_TIMING     => $string; the time that event triggers
+     * TRIGGER_STATEMENT  => $string; the statement that trigger runs 
+     *
+     * @param string $tableName
+     * @param string $schemaName
+     * @return array
+     */
+    public function getTriggerList($tableName, $schemaName = null)
+    {
+        $cacheKey = $this->_getTableName($tableName, $schemaName);
+        $ddl = $this->loadDdlCache($cacheKey, self::DDL_TRIGGER);
+        if ($ddl === false) {
+            $ddl = array();
+
+            $sql = sprintf('SHOW TRIGGERS FROM %s',
+                $this->quoteIdentifier($this->_getTableName($tableName, $schemaName)));
+            foreach ($this->fetchAll($sql) as $row)
+            {
+                $triggerName      = 'Trigger';
+                $triggerEvent     = 'Event';
+                $triggerTable     = 'Table';
+                $triggerStatement = 'Statement';
+                $triggerTiming    = 'Timing';
+
+                $upperKeyName = strtoupper($row[$triggerName]);
+                if (!isset($ddl[$upperKeyName]))
+                {
+                    $ddl[$upperKeyName] = array(
+                        'SCHEMA_NAME'        => $schemaName,
+                        'TABLE_NAME'         => $tableName,
+                        'TRIGGER_NAME'       => $row[$triggerName],
+                        'TRIGGER_EVENT'      => $row[$triggerEvent],
+                        'TRIGGER_TIMING'     => $row[$triggerTiming],
+                        'TRIGGER_STATEMENT'  => $row[$triggerStatement],
+                    );
+                }
+            }
+            
+            $this->saveDdlCache($cacheKey, self::DDL_TRIGGER, $ddl);
+        }
+
+        return $ddl;
     }
 
     /**

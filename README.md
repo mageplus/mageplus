@@ -9,14 +9,18 @@ Mage+ was created for several reasons :
 
 2. to provide a visible roadmap (with estimated release dates), which prefers bug fixes, stability and security over more features
 
-3. to provide a simple and stable method to ensure that Magento CE users always have the most current, stable and bug free implementation - eliminating painful upgrade processes
+3. to provide bug fixes in a timely fashion, releasing patches as soon as possible - rather than waiting for a complete new release
+
+4. to provide a simple and stable method to ensure that Magento CE users always have the most current, stable and bug free implementation - eliminating painful upgrade processes
 
 Mage+ has been created in order to help the Magento Open Source project to reach it's full potential by harnessing the input of anybody wishing to contribute.
 With this increased project velocity, Magento CE will become a more stable product, whilst at the same time creating a much greater engagment with the Magento community
 
+Put simply, Mage+ aims to always be the most stable, secure and up to date version of Magento available.
+
 Anybody may contribute to this repository. There are no agreements to sign, no forms to complete.
 
-If you've identified an issue with Magento 1.7.0, please raise an issue. If you also have a fix for it, please make a pull request and contribute
+If you've identified an issue with Magento 1.7.0 (or Mage+ itself), please raise an issue here (https://github.com/mageplus/mageplus/issues). If you also have a fix for it, please make a pull request and contribute
 
 Not sure how to make a pull request? read the guide here: http://help.github.com/send-pull-requests/
 
@@ -35,7 +39,7 @@ For those wishing to contribute, what we ask of you, is that you concentrate you
 
 You can view the project raodmap here : https://github.com/mageplus/mageplus/wiki/roadmap
 
-If you're eager to show current or future employers or clients your Magento skillz, there's no better way than by solving real problems that are currently affecting tens of thousands of users. **ALL** changes/fixes/modifications made will be detailed in this mirror's RELEASE_NOTES.txt, along with credit to the contributor - so, roll up your sleeves and get stuck in!
+If you're eager to show current or future employers or clients your Magento skillz, there's no better way than by solving real problems that are currently affecting tens of thousands of users. **ALL** changes/fixes/modifications made will be detailed in the project's RELEASE_NOTES.txt, along with credit to the contributor - so, roll up your sleeves and get stuck in!
 
 **PLEASE NOTE :** all contributions made will be subject to the same OSL v3 license which Magento is licensed under
 

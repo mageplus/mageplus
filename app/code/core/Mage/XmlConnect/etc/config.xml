@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Mage_XmlConnect>
-            <version>1.6.0.0</version>
+            <version>1.6.1.0</version>
             <innerVersion>22.1</innerVersion>
         </Mage_XmlConnect>
     </modules>

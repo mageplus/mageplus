@@ -7,16 +7,18 @@ Mage+ was created for several reasons :
 
 1. in order to accelerate development of the Open Source Magento Community Edition project via increased collaboration with the open source community
 
-2. to provide a visible roadmap (with estimated release dates), which prefers bug fixes, stability and security over more features
+2. to provide a visible roadmap (with estimated release dates), which prefers bug fixes, stability and security over new or additional features
 
-3. to provide bug fixes in a timely fashion, releasing patches as soon as possible - rather than waiting for a complete new release
+3. to provide bug fixes in a timely fashion, releasing patches as soon as possible - rather than waiting for new features to complete before release
 
-4. to provide a simple and stable method to ensure that Magento CE users always have the most current, stable and bug free implementation - eliminating painful upgrade processes
+4. to provide a simple and stable method to ensure that Magento CE users always have the most current, stable and bug free implementation - and eliminating painful upgrade processes
+
+5. to ensure that all data within the application maintains the highest degree of integrity, and can be a reliable and creditable source of truth
 
 Mage+ has been created in order to help the Magento Open Source project to reach it's full potential by harnessing the input of anybody wishing to contribute.
 With this increased project velocity, Magento CE will become a more stable product, whilst at the same time creating a much greater engagment with the Magento community
 
-Put simply, Mage+ aims to always be the most stable, secure and up to date version of Magento available.
+**Put simply, Mage+ aims to always be the most stable, secure and up to date version of Magento available.**
 
 Anybody may contribute to this repository. There are no agreements to sign, no forms to complete.
 

@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Mage_Captcha>
-            <version>1.7.0.0.0</version>
+            <version>1.7.1.0</version>
         </Mage_Captcha>
     </modules>
     <global>

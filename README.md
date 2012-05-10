@@ -1,7 +1,7 @@
 Mage+
 ========
 
-A community owned and driven, enterprise fork of Magento Community Edition 1.7.0
+A community owned and driven, enterprise fork of Magento Community Edition (1.7.0)
 
 Mage+ was created for several reasons :
 
@@ -14,6 +14,8 @@ Mage+ was created for several reasons :
 4. to provide a simple and stable method to ensure that Magento CE users always have the most current, stable and bug free implementation - and eliminating painful upgrade processes
 
 5. to ensure that all data within the application maintains the highest degree of integrity, and can be a reliable and creditable source of truth
+
+6. to provide a viable LTS (Long Term Support) option to current Magento 1.x users who cannot or do not want to upgrade to Magento2
 
 Mage+ has been created in order to help the Magento Open Source project to reach it's full potential by harnessing the input of anybody wishing to contribute.
 With this increased project velocity, Magento CE will become a more stable product, whilst at the same time creating a much greater engagment with the Magento community

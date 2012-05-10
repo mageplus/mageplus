@@ -42,7 +42,7 @@ class Mage_Catalog_Block_Product_List_Random extends Mage_Catalog_Block_Product_
             $collection->getSelect()->order('rand()');
             $collection->addStoreFilter();
             $numProducts = $this->getNumProducts() ? $this->getNumProducts() : 0;
-            $collection->setPage(1, $numProducts);
+            $collection->setPage(1, $numProducts)->load();
 
             $this->_productCollection = $collection;
         }

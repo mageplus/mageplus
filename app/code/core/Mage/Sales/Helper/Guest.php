@@ -143,8 +143,8 @@ class Mage_Sales_Helper_Guest extends Mage_Core_Helper_Data
         $breadcrumbs->addCrumb(
             'cms_page',
             array(
-                'label' => 'Order Information',
-                'title' => 'Order Information'
+                'label' => Mage::helper('sales')->__('Order Information'),
+                'title' => Mage::helper('sales')->__('Order Information')
             )
         );
     }

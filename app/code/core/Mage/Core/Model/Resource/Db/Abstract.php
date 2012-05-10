@@ -466,14 +466,15 @@ abstract class Mage_Core_Model_Resource_Db_Abstract extends Mage_Core_Model_Reso
     }
 
     /**
-     * Forsed save object data
-     * forsed update If duplicate unique key data
+     * The original "forsedSave" function, implemented with correct spelling
+     * Forced save object data
+     * forced update If duplicate unique key data
      *
      * @deprecated
      * @param Mage_Core_Model_Abstract $object
      * @return Mage_Core_Model_Resource_Db_Abstract
      */
-    public function forsedSave(Mage_Core_Model_Abstract $object)
+    public function forcedSave(Mage_Core_Model_Abstract $object)
     {
         $this->_beforeSave($object);
         $bind = $this->_prepareDataForSave($object);
@@ -492,7 +493,21 @@ abstract class Mage_Core_Model_Resource_Db_Abstract extends Mage_Core_Model_Reso
 
         return $this;
     }
-
+    
+    /**
+     * Wrapper for correctly spelt function
+     * Forsed save object data
+     * forsed update If duplicate unique key data
+     *
+     * @deprecated since 1.0.0.0
+     * @param Mage_Core_Model_Abstract $object
+     * @return Mage_Core_Model_Resource_Db_Abstract
+     */
+    public function forsedSave(Mage_Core_Model_Abstract $object)
+    {
+        return $this->forcedSave($object);
+    }
+    
     /**
      * Delete the object
      *

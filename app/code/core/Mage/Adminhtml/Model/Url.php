@@ -70,6 +70,13 @@ class Mage_Adminhtml_Model_Url extends Mage_Core_Model_Url
     public function getUrl($routePath=null, $routeParams=null)
     {
         $cacheSecretKey = false;
+        
+        // automatically persist http/https state based on current state
+        // this is is overridden if the secure flag has been explicitly
+        // set in the params  
+        if (!isset($routeParams['_secure']))
+            $routeParams['_secure'] = $this->getSecure();
+            
         if (is_array($routeParams) && isset($routeParams['_cache_secret_key'])) {
             unset($routeParams['_cache_secret_key']);
             $cacheSecretKey = true;

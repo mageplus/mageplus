@@ -946,6 +946,12 @@ class Mage_Core_Model_Url extends Varien_Object
     public function getUrl($routePath = null, $routeParams = null)
     {
         $escapeQuery = false;
+        
+        // automatically persist http/https state based on current state
+        // this is is overridden if the secure flag has been explicitly
+        // set in the params  
+        if (!isset($routeParams['_secure']))
+            $routeParams['_secure'] = $this->getSecure();
 
         /**
          * All system params should be unset before we call getRouteUrl

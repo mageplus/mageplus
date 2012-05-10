@@ -178,7 +178,7 @@ class Mage_Paypal_Model_Api_Nvp extends Mage_Paypal_Model_Api_Abstract
         'REFERENCEID' => 'reference_id',
         'BILLINGAGREEMENTSTATUS' => 'billing_agreement_status',
         'BILLINGTYPE' => 'billing_type',
-        'SREET' => 'street',
+        'STREET' => 'street',
         'CITY' => 'city',
         'STATE' => 'state',
         'COUNTRYCODE' => 'countrycode',

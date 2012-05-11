@@ -7,9 +7,17 @@ Added environment indicator banner for frontend and backend - Lee Bolding [leesb
 Added pagination controls to the bottom of all grids in backend - Lee Bolding [leesbian]
 Added PHP 5.3 garbage collector - Lee Bolding [leesbian]
 Made SKUs in adminhtml clickable, to open product edit screen in new window - Lee Bolding [leesbian]
+Added http/https context preservation to getUrl helper - Lee Bolding [leesbian]
 
 === Changes ===
 Added profit indication to dashboard in adminhtml - Lee Bolding [leesbian]
+
+=== Fixes ===
+26820 - num_products not honored in Random.php [solarisjedi]
+26749 - Hard-Coded Texts [raqy]
+26905 - Typo in Paypal NVP API [newberemis]
+Fixed sales_flat_order.convered_at not being populated - Lee Bolding [leesbian]
+Fixed issue in Exception class - Lee Saferite
 
 ==== 1.7.0.0 ====
 

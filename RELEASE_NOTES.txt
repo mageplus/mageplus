@@ -18,6 +18,7 @@ Added profit indication to dashboard in adminhtml - Lee Bolding [leesbian]
 26905 - Typo in Paypal NVP API [newberemis]
 Fixed sales_flat_order.convered_at not being populated - Lee Bolding [leesbian]
 Fixed issue in Exception class - Lee Saferite
+Fixed variable initiation in product importer - Marco Grätsch [magdev]
 
 ==== 1.7.0.0 ====
 

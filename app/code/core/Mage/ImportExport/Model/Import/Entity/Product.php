@@ -1605,7 +1605,8 @@ class Mage_ImportExport_Model_Import_Entity_Product extends Mage_ImportExport_Mo
                 if (self::SCOPE_DEFAULT != $this->getRowScope($rowData)) {
                     continue;
                 }
-
+                
+                $row = array();
                 $row['product_id'] = $this->_newSku[$rowData[self::COL_SKU]]['entity_id'];
                 $row['stock_id'] = 1;
 

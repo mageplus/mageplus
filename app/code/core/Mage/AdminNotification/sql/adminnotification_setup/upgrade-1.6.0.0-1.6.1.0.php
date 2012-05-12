@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_AdminNotification
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org)
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -22,7 +22,7 @@
 $installer = $this;
 $installer->startSetup();
 
-// redefine created column, so that default is 0000-00-00 00:00:00 instead of CURRENT_TIMESTAMP
+// redefine date_added column, so that default is 0000-00-00 00:00:00 instead of CURRENT_TIMESTAMP
 $installer->getConnection()->modifyColumn($installer->getTable('adminnotification/inbox'), 'date_added', array(
     'type' => Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
     'nullable' => true,

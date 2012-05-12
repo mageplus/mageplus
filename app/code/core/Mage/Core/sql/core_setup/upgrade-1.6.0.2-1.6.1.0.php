@@ -45,7 +45,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/cache'), 'trig_' . $installer->getTable('core/cache') . '_updated',
-                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP, NEW.create_time = OLD.create_time',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -57,7 +57,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/email_template'), 'trig_' . $installer->getTable('core/email_template') . '_updated',
-                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP, NEW.added_at = OLD.added_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

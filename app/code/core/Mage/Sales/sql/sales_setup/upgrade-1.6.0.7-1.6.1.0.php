@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Sales
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -109,7 +109,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/recurring_profile'), 'trig_' . $installer->getTable('sales/recurring_profile') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 // add trigger on create
@@ -121,7 +121,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/order_item'), 'trig_' . $installer->getTable('sales/order_item') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -133,7 +133,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/quote'), 'trig_' . $installer->getTable('sales/quote') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -145,7 +145,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/quote_address'), 'trig_' . $installer->getTable('sales/quote_address') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -157,7 +157,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/quote_address_item'), 'trig_' . $installer->getTable('sales/quote_address_item') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -169,7 +169,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/quote_item'), 'trig_' . $installer->getTable('sales/quote_item') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -181,7 +181,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/quote_payment'), 'trig_' . $installer->getTable('sales/quote_payment') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -193,7 +193,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/quote_address_shipping_rate'), 'trig_' . $installer->getTable('sales/quote_address_shipping_rate') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 // add trigger on create
@@ -205,7 +205,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/creditmemo'), 'trig_' . $installer->getTable('sales/creditmemo') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -229,7 +229,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/order'), 'trig_' . $installer->getTable('sales/order') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -241,7 +241,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/order_grid'), 'trig_' . $installer->getTable('sales/order_grid') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -259,7 +259,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/invoice'), 'trig_' . $installer->getTable('sales/invoice') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -283,7 +283,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/billing_agreement'), 'trig_' . $installer->getTable('sales/billing_agreement') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -295,7 +295,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/shipment'), 'trig_' . $installer->getTable('sales/shipment') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 $installer->getConnection()
@@ -317,7 +317,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('sales/shipment_track'), 'trig_' . $installer->getTable('sales/shipment_track') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

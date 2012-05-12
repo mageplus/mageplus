@@ -55,7 +55,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('api/user'), 'trig_' . $installer->getTable('api/user') . '_updated',
-                  'FOR EACH ROW SET NEW.modified = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.modified = CURRENT_TIMESTAMP, NEW.created = OLD.created',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on update

@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Newsletter
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -29,7 +29,7 @@ $installer->getConnection()
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('newsletter/template'), 'trig_' . $installer->getTable('newsletter/template') . '_updated',
-                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP, NEW.added_at = OLD.added_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

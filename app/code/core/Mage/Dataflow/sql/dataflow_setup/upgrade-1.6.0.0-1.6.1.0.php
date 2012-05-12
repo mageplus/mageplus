@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Dataflow
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -36,7 +36,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('dataflow/profile'), 'trig_' . $installer->getTable('dataflow/profile') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create

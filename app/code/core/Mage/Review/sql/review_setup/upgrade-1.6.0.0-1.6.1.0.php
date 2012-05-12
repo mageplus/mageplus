@@ -13,8 +13,8 @@
  * to license@mageplus.org so we can send you a copy immediately.
  *
  * @category    Mage
- * @package     Mage_Admin
- * @copyright   Copyright (c) 2012 
+ * @package     Mage_Review
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org)  
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 

@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Index
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -34,12 +34,5 @@ $installer->getConnection()
     ->addTrigger($installer->getTable('index/event'), 'trig_' . $installer->getTable('index/event') . '_created',
                   'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
-
-/**
-$installer->getConnection()
-    ->addTrigger($installer->getTable('index/event'), 'trig_' . $installer->getTable('index/event') . '_updated',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
-                  Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
-*/
 
 $installer->endSetup();

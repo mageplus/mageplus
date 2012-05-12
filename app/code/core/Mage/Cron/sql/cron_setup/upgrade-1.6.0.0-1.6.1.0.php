@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Cron
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 

@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Log
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -81,7 +81,7 @@ $installer->getConnection()
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/visitor'), 'trig_' . $installer->getTable('log/visitor') . '_updated',
-                  'FOR EACH ROW SET NEW.last_visit_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.last_visit_at = CURRENT_TIMESTAMP, NEW.first_visit_at = OLD.first_visit_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 $installer->getConnection()
@@ -91,7 +91,7 @@ $installer->getConnection()
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/visitor_online'), 'trig_' . $installer->getTable('log/visitor_online') . '_updated',
-                  'FOR EACH ROW SET NEW.last_visit_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.last_visit_at = CURRENT_TIMESTAMP, NEW.first_visit_at = OLD.first_visit_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Cms
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -31,7 +31,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('cms/block'), 'trig_' . $installer->getTable('cms/block') . '_updated',
-                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP, NEW.creation_time = OLD.creation_time',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
@@ -43,7 +43,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('cms/page'), 'trig_' . $installer->getTable('cms/page') . '_updated',
-                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP, NEW.creation_time = OLD.creation_time',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

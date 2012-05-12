@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Api2
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org)
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -22,7 +22,7 @@
 $installer = $this;
 $installer->startSetup();
 
-// redefine created column, so that default is 0000-00-00 00:00:00 instead of CURRENT_TIMESTAMP
+// redefine created_at column, so that default is 0000-00-00 00:00:00 instead of CURRENT_TIMESTAMP
 $installer->getConnection()->modifyColumn($installer->getTable('api2/acl_role'), 'created_at', array(
     'type' => Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
     'nullable' => true,
@@ -30,6 +30,7 @@ $installer->getConnection()->modifyColumn($installer->getTable('api2/acl_role'),
     'comment' => 'Created At'
 ), true);
 
+// redefine updated_at column, so that default is 0000-00-00 00:00:00 instead of CURRENT_TIMESTAMP
 $installer->getConnection()->modifyColumn($installer->getTable('api2/acl_role'), 'updated_at', array(
     'type' => Varien_Db_Ddl_Table::TYPE_TIMESTAMP,
     'nullable' => true,
@@ -46,7 +47,7 @@ $installer->getConnection()
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('api2/acl_role'), 'trig_' . $installer->getTable('api2/acl_role') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

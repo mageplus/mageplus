@@ -2,6 +2,7 @@
 
 === Major Highlights ===
 Added environment indicator banner for frontend and backend - Lee Bolding [leesbian]
+All created and modified dates now populated via database triggers - Lee Bolding [leesbian]
 
 === Improvements ===
 Added pagination controls to the bottom of all grids in backend - Lee Bolding [leesbian]
@@ -19,6 +20,7 @@ Added profit indication to dashboard in adminhtml - Lee Bolding [leesbian]
 Fixed sales_flat_order.convered_at not being populated - Lee Bolding [leesbian]
 Fixed issue in Exception class - Lee Saferite
 Fixed variable initiation in product importer - Marco Grätsch [magdev]
+Fixed data inconsistencies where some object created dates were actually last modified dates - Lee Bolding [leesbian]
 
 ==== 1.7.0.0 ====
 

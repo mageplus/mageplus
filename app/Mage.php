@@ -172,7 +172,7 @@ final class Mage
             'minor'     => '0',
             'revision'  => '0',
             'patch'     => '0',
-            'stability' => 'BETA',
+            'stability' => 'RC-1',
             'number'    => '',
         );
     }

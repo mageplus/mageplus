@@ -25,13 +25,13 @@ $installer->startSetup();
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('wishlist/wishlist'), 'trig_' . $installer->getTable('wishlist/wishlist') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('wishlist/item'), 'trig_' . $installer->getTable('wishlist/item') . '_created',
-                  'FOR EACH ROW SET NEW.added_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.added_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

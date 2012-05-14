@@ -25,7 +25,7 @@ $installer->startSetup();
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('captcha/log'), 'trig_' . $installer->getTable('captcha/log') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

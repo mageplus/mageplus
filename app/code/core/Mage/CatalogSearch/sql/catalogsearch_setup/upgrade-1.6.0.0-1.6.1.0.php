@@ -32,7 +32,7 @@ $installer->getConnection()->modifyColumn($installer->getTable('catalogsearch_qu
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('catalogsearch_query'), 'trig_' . $installer->getTable('catalogsearch_query') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

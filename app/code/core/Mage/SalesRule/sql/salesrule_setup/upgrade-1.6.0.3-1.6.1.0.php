@@ -33,7 +33,7 @@ $installer->getConnection()->modifyColumn($installer->getTable('salesrule/coupon
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('salesrule/coupon'), 'trig_' . $installer->getTable('salesrule/coupon') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

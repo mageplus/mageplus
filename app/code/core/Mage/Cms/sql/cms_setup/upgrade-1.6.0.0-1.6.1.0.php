@@ -25,25 +25,25 @@ $installer->startSetup();
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('cms/block'), 'trig_' . $installer->getTable('cms/block') . '_created',
-                  'FOR EACH ROW SET NEW.creation_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.creation_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('cms/block'), 'trig_' . $installer->getTable('cms/block') . '_updated',
-                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP, NEW.creation_time = OLD.creation_time',
+                  'FOR EACH ROW SET NEW.update_time = UTC_TIMESTAMP, NEW.creation_time = OLD.creation_time',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('cms/page'), 'trig_' . $installer->getTable('cms/page') . '_created',
-                  'FOR EACH ROW SET NEW.creation_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.creation_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('cms/page'), 'trig_' . $installer->getTable('cms/page') . '_updated',
-                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP, NEW.creation_time = OLD.creation_time',
+                  'FOR EACH ROW SET NEW.update_time = UTC_TIMESTAMP, NEW.creation_time = OLD.creation_time',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

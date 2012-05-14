@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Api
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org)
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -49,19 +49,19 @@ $installer->getConnection()->modifyColumn($installer->getTable('api/session'), '
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('api/user'), 'trig_' . $installer->getTable('api/user') . '_created',
-                  'FOR EACH ROW SET NEW.created = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('api/user'), 'trig_' . $installer->getTable('api/user') . '_updated',
-                  'FOR EACH ROW SET NEW.modified = CURRENT_TIMESTAMP, NEW.created = OLD.created',
+                  'FOR EACH ROW SET NEW.modified = UTC_TIMESTAMP, NEW.created = OLD.created',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('api/session'), 'trig_' . $installer->getTable('api/session') . '_updated',
-                  'FOR EACH ROW SET NEW.logdate = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.logdate = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

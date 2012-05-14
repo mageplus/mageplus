@@ -40,17 +40,17 @@ $installer->getConnection()->modifyColumn($installer->getTable('oauth/token'), '
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('oauth/consumer'), 'trig_' . $installer->getTable('oauth/consumer') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('oauth/consumer'), 'trig_' . $installer->getTable('oauth/consumer') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('oauth/token'), 'trig_' . $installer->getTable('oauth/token') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

@@ -56,42 +56,42 @@ $installer->getConnection()->modifyColumn($installer->getTable('log/url_table'),
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/customer'), 'trig_' . $installer->getTable('log/customer') . '_created',
-                  'FOR EACH ROW SET NEW.login_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.login_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/quote_table'), 'trig_' . $installer->getTable('log/quote_table') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/summary_table'), 'trig_' . $installer->getTable('log/summary_table') . '_created',
-                  'FOR EACH ROW SET NEW.add_date = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.add_date = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/url_table'), 'trig_' . $installer->getTable('log/url_table') . '_created',
-                  'FOR EACH ROW SET NEW.visit_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.visit_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/visitor'), 'trig_' . $installer->getTable('log/visitor') . '_created',
-                  'FOR EACH ROW SET NEW.first_visit_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.first_visit_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/visitor'), 'trig_' . $installer->getTable('log/visitor') . '_updated',
-                  'FOR EACH ROW SET NEW.last_visit_at = CURRENT_TIMESTAMP, NEW.first_visit_at = OLD.first_visit_at',
+                  'FOR EACH ROW SET NEW.last_visit_at = UTC_TIMESTAMP, NEW.first_visit_at = OLD.first_visit_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/visitor_online'), 'trig_' . $installer->getTable('log/visitor_online') . '_created',
-                  'FOR EACH ROW SET NEW.first_visit_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.first_visit_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('log/visitor_online'), 'trig_' . $installer->getTable('log/visitor_online') . '_updated',
-                  'FOR EACH ROW SET NEW.last_visit_at = CURRENT_TIMESTAMP, NEW.first_visit_at = OLD.first_visit_at',
+                  'FOR EACH ROW SET NEW.last_visit_at = UTC_TIMESTAMP, NEW.first_visit_at = OLD.first_visit_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

@@ -33,7 +33,7 @@ $installer->getConnection()->modifyColumn($installer->getTable('review/review'),
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('review/review'), 'trig_' . $installer->getTable('review/review') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

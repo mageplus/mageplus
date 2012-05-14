@@ -32,12 +32,12 @@ $installer->getConnection()->modifyColumn($installer->getTable('poll/poll'), 'da
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('poll/poll'), 'trig_' . $installer->getTable('poll/poll') . '_created',
-                  'FOR EACH ROW SET NEW.date_posted = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.date_posted = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->getConnection()
     ->addTrigger($installer->getTable('poll/poll_vote'), 'trig_' . $installer->getTable('poll/poll_vote') . '_created',
-                  'FOR EACH ROW SET NEW.vote_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.vote_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

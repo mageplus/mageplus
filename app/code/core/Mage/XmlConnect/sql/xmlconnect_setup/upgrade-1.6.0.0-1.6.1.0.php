@@ -25,31 +25,31 @@ $installer->startSetup();
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('xmlconnect/application'), 'trig_' . $installer->getTable('xmlconnect/application') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('xmlconnect/history'), 'trig_' . $installer->getTable('xmlconnect/history') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('xmlconnect/template'), 'trig_' . $installer->getTable('xmlconnect/template') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('xmlconnect/template'), 'trig_' . $installer->getTable('xmlconnect/template') . '_updated',
-                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
+                  'FOR EACH ROW SET NEW.modified_at = UTC_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('xmlconnect/queue'), 'trig_' . $installer->getTable('xmlconnect/queue') . '_created',
-                  'FOR EACH ROW SET NEW.create_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.create_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->endSetup();

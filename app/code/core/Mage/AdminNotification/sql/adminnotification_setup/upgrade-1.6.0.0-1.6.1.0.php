@@ -33,7 +33,7 @@ $installer->getConnection()->modifyColumn($installer->getTable('adminnotificatio
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('adminnotification/inbox'), 'trig_' . $installer->getTable('adminnotification/inbox') . '_created',
-                  'FOR EACH ROW SET NEW.date_added = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.date_added = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

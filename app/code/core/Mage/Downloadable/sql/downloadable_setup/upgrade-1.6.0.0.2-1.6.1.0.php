@@ -41,25 +41,25 @@ $installer->getConnection()->modifyColumn($installer->getTable('downloadable/lin
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('downloadable/link_purchased'), 'trig_' . $installer->getTable('downloadable/link_purchased') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('downloadable/link_purchased'), 'trig_' . $installer->getTable('downloadable/link_purchased') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('downloadable/link_purchased_item'), 'trig_' . $installer->getTable('downloadable/link_purchased_item') . '_created',
-                  'FOR EACH ROW SET NEW.created_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('downloadable/link_purchased_item'), 'trig_' . $installer->getTable('downloadable/link_purchased_item') . '_updated',
-                  'FOR EACH ROW SET NEW.updated_at = CURRENT_TIMESTAMP, NEW.created_at = OLD.created_at',
+                  'FOR EACH ROW SET NEW.updated_at = UTC_TIMESTAMP, NEW.created_at = OLD.created_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

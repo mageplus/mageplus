@@ -14,7 +14,7 @@
  *
  * @category    Mage
  * @package     Mage_Core
- * @copyright   Copyright (c) 2012 MagePlus Ltd. (http://www.mageplus.org) 
+ * @copyright   Copyright (c) 2012 Mage+ (http://www.mageplus.org) 
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -33,31 +33,31 @@ $installer->getConnection()->modifyColumn($installer->getTable('core/flag'), 'la
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/flag'), 'trig_' . $installer->getTable('core/flag') . '_updated',
-                  'FOR EACH ROW SET NEW.last_update = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.last_update = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/cache'), 'trig_' . $installer->getTable('core/cache') . '_created',
-                  'FOR EACH ROW SET NEW.create_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.create_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/cache'), 'trig_' . $installer->getTable('core/cache') . '_updated',
-                  'FOR EACH ROW SET NEW.update_time = CURRENT_TIMESTAMP, NEW.create_time = OLD.create_time',
+                  'FOR EACH ROW SET NEW.update_time = UTC_TIMESTAMP, NEW.create_time = OLD.create_time',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/email_template'), 'trig_' . $installer->getTable('core/email_template') . '_created',
-                  'FOR EACH ROW SET NEW.added_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.added_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('core/email_template'), 'trig_' . $installer->getTable('core/email_template') . '_updated',
-                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP, NEW.added_at = OLD.added_at',
+                  'FOR EACH ROW SET NEW.modified_at = UTC_TIMESTAMP, NEW.added_at = OLD.added_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

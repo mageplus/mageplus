@@ -49,19 +49,19 @@ $installer->getConnection()->modifyColumn($installer->getTable('reports/viewed_p
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('reports/event'), 'trig_' . $installer->getTable('reports/event') . '_created',
-                  'FOR EACH ROW SET NEW.logged_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.logged_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('reports/compared_product_index'), 'trig_' . $installer->getTable('reports/compared_product_index') . '_created',
-                  'FOR EACH ROW SET NEW.added_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.added_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('reports/viewed_product_index'), 'trig_' . $installer->getTable('reports/viewed_product_index') . '_created',
-                  'FOR EACH ROW SET NEW.added_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.added_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 $installer->endSetup();

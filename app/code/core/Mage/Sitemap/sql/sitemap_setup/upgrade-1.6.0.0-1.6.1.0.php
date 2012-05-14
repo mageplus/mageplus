@@ -25,7 +25,7 @@ $installer->startSetup();
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('sitemap/sitemap'), 'trig_' . $installer->getTable('sitemap/sitemap') . '_created',
-                  'FOR EACH ROW SET NEW.sitemap_time = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.sitemap_time = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

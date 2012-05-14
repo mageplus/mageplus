@@ -41,13 +41,13 @@ $installer->getConnection()->modifyColumn($installer->getTable('productalert/sto
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('productalert/price'), 'trig_' . $installer->getTable('productalert/price') . '_created',
-                  'FOR EACH ROW SET NEW.add_date = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.add_date = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
     
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('productalert/stock'), 'trig_' . $installer->getTable('productalert/stock') . '_created',
-                  'FOR EACH ROW SET NEW.add_date = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.add_date = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->endSetup();

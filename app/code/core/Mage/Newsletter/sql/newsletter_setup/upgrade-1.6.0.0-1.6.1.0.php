@@ -24,12 +24,12 @@ $installer->startSetup();
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('newsletter/template'), 'trig_' . $installer->getTable('newsletter/template') . '_created',
-                  'FOR EACH ROW SET NEW.added_at = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.added_at = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 $installer->getConnection()
     ->addTrigger($installer->getTable('newsletter/template'), 'trig_' . $installer->getTable('newsletter/template') . '_updated',
-                  'FOR EACH ROW SET NEW.modified_at = CURRENT_TIMESTAMP, NEW.added_at = OLD.added_at',
+                  'FOR EACH ROW SET NEW.modified_at = UTC_TIMESTAMP, NEW.added_at = OLD.added_at',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

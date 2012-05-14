@@ -41,13 +41,13 @@ $installer->getConnection()->modifyColumn($installer->getTable('admin/user'), 'm
 // add trigger on create
 $installer->getConnection()
     ->addTrigger($installer->getTable('admin/user'), 'trig_' . $installer->getTable('admin/user') . '_created',
-                  'FOR EACH ROW SET NEW.created = CURRENT_TIMESTAMP',
+                  'FOR EACH ROW SET NEW.created = UTC_TIMESTAMP',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_INSERT);
 
 // add trigger on update
 $installer->getConnection()
     ->addTrigger($installer->getTable('admin/user'), 'trig_' . $installer->getTable('admin/user') . '_updated',
-                  'FOR EACH ROW SET NEW.modified = CURRENT_TIMESTAMP, NEW.created = OLD.created',
+                  'FOR EACH ROW SET NEW.modified = UTC_TIMESTAMP, NEW.created = OLD.created',
                   Varien_Db_Adapter_Interface::TRIGGER_TIME_BEFORE, Varien_Db_Adapter_Interface::EVENT_TYPE_UPDATE);
 
 $installer->endSetup();

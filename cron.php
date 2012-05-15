@@ -23,10 +23,6 @@
  * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-if (version_compare(phpversion(), '5.3.0', '>=') === true)
-{
-  gc_enable();
-}
 
 require 'app/Mage.php';
 

@@ -117,10 +117,6 @@
  * --encryption_key             // optional, will be automatically generated and displayed on success, if not specified
  *
  */
-if (version_compare(phpversion(), '5.3.0', '>=') === true)
-{
-  gc_enable();
-}
 
 if (version_compare(phpversion(), '5.2.0', '<')===true) {
     die('ERROR: Whoops, it looks like you have an invalid PHP version. Magento supports PHP 5.2.0 or newer.');

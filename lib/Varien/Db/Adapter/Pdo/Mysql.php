@@ -2491,10 +2491,9 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
         if ($ddl === false) {
             $ddl = array();
 
-            $sql = sprintf('SHOW TRIGGERS FROM %s',
-                $this->quoteIdentifier($this->_getTableName($tableName, $schemaName)));
-            foreach ($this->fetchAll($sql) as $row)
-            {
+            $sql = 'SHOW TRIGGERS WHERE `table` = :table';
+            $bind =  array( 'table' => $this->_getTableName($tableName) );
+            foreach ($this->fetchAll($sql, $bind) as $row) {
                 $triggerName      = 'Trigger';
                 $triggerEvent     = 'Event';
                 $triggerTable     = 'Table';
@@ -2502,8 +2501,7 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
                 $triggerTiming    = 'Timing';
 
                 $upperKeyName = strtoupper($row[$triggerName]);
-                if (!isset($ddl[$upperKeyName]))
-                {
+                if (!isset($ddl[$upperKeyName])) {
                     $ddl[$upperKeyName] = array(
                         'SCHEMA_NAME'        => $schemaName,
                         'TABLE_NAME'         => $tableName,

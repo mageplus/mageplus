@@ -32,16 +32,16 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
     // Admin store code
     const ADMIN_STORE_CODE = 'admin';
 
-    const AREA_ADMINHTML = MagePHPUnit_Model_App_Area::AREA_ADMINHTML;
-    const AREA_ADMIN = Mage_PHPUnit_Model_App_Area::AREA_ADMIN;
-    const AREA_FRONTEND = Mage_PHPUnit_Model_App_Area::AREA_FRONTEND;
-    const AREA_GLOBAL = Mage_PHPUnit_Model_App_Area::AREA_GLOBAL;
-    const AREA_TEST = Mage_PHPUnit_Model_App_Area::AREA_TEST;
+    const AREA_ADMINHTML = Mage_Test_Model_App_Area::AREA_ADMINHTML;
+    const AREA_ADMIN = Mage_Test_Model_App_Area::AREA_ADMIN;
+    const AREA_FRONTEND = Mage_Test_Model_App_Area::AREA_FRONTEND;
+    const AREA_GLOBAL = Mage_Test_Model_App_Area::AREA_GLOBAL;
+    const AREA_TEST = Mage_Test_Model_App_Area::AREA_TEST;
 
-    const AREA_PART_EVENTS = Mage_PHPUnit_Model_App_Area::PART_EVENTS;
-    const AREA_PART_DESIGN = Mage_PHPUnit_Model_App_Area::PART_DESIGN;
-    const AREA_PART_TRANSLATE = Mage_PHPUnit_Model_App_Area::PART_TRANSLATE;
-    const AREA_PART_CONFIG = Mage_PHPUnit_Model_App_Area::PART_CONFIG;
+    const AREA_PART_EVENTS = Mage_Test_Model_App_Area::PART_EVENTS;
+    const AREA_PART_DESIGN = Mage_Test_Model_App_Area::PART_DESIGN;
+    const AREA_PART_TRANSLATE = Mage_Test_Model_App_Area::PART_TRANSLATE;
+    const AREA_PART_CONFIG = Mage_Test_Model_App_Area::PART_CONFIG;
 
     const INTERFACE_ISOLATION = 'Mage_PHPUnit_Isolation_Interface';
 
@@ -94,7 +94,7 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
      *
      * @var string
      */
-    protected static $_configClass = 'Mage_PHPUnit_Model_Config';
+    protected static $_configClass = 'Mage_Test_Model_Config';
 
     /**
      * Configuration model class name for unit tests
@@ -232,7 +232,7 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
      */
     public function setCacheOptions(array $options)
     {
-        EcomDev_Utils_Reflection::setRestrictedPropertyValue(
+        Mage_Utils_Reflection::setRestrictedPropertyValue(
             $this->_cache,
             '_allowedCacheOptions',
             $options

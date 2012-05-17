@@ -24,8 +24,8 @@
  */
 class Mage_Test_Model_Layout
     extends Mage_Core_Model_Layout
-    implements Mage_Test_Constraint_Layout_Logger_Interface,
-               Mage_Test_Isolation_Interface
+    implements Mage_PHPUnit_Constraint_Layout_Logger_Interface,
+               Mage_PHPUnit_Isolation_Interface
 {
     /**
      * List of replaced blocks creation

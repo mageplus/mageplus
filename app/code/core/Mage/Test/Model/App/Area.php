@@ -24,7 +24,7 @@
 
 class Mage_Test_Model_App_Area
     extends Mage_Core_Model_App_Area
-    implements Mage_Test_Isolation_Interface
+    implements Mage_PHPUnit_Isolation_Interface
 {
     const AREA_TEST = 'test';
     const AREA_ADMINHTML = 'adminhtml';

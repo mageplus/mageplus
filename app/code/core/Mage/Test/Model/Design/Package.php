@@ -2,8 +2,8 @@
 
 class Mage_Test_Model_Design_Package
     extends Mage_Core_Model_Design_Package
-    implements Mage_Test_Design_Package_Interface,
-               Mage_Test_Isolation_Interface
+    implements Mage_PHPUnit_Design_Package_Interface,
+               Mage_PHPUnit_Isolation_Interface
 
 {
     /**

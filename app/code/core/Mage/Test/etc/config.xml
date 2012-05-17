@@ -54,7 +54,7 @@
                 <controllers>Controller</controllers>
             </groups>
             <!-- Test suite that will be used for creation of each of the tests -->
-            <test_suite>Mage_Test_Test_Suite_Group</test_suite>
+            <test_suite>Mage_Test_Unit_Suite_Group</test_suite>
             <layout>
                 <model>mage_test/layout</model>
             </layout>

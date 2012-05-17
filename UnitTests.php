@@ -17,7 +17,7 @@ $_SERVER['SCRIPT_FILENAME'] = dirname(__FILE__) . DS . 'index.php';
 Mage::app('admin');
 Mage::getConfig()->init();
 
-class UnitTests extends Mage_Test_Test_Suite
+class UnitTests extends Mage_Test_Unit_Suite
 {
 
 }

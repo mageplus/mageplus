@@ -41,12 +41,20 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
      * @var string
      */
     protected $_localConfigFile;
+    
+    /**
+     * Path to local unit test configuration file
+     *
+     * @var string
+     */
+    protected $_testConfigFile;
 
     protected $_configData = array();
 
     public function __construct()
     {
         $this->_localConfigFile = Mage::getBaseDir('etc') . DS . 'local.xml';
+        $this->_testConfigFile = Mage::getBaseDir('etc') . DS . 'local.xml.phpunit';
     }
 
     public function setConfigData($data)
@@ -100,12 +108,24 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
 
         $this->_getInstaller()->getDataModel()->setConfigData($data);
 
-        $template = file_get_contents(Mage::getBaseDir('etc') . DS . 'local.xml.template');
+        $this->_writeConfig('local.xml.template', $this->_localConfigFile);
+        $this->_writeConfig('local.xml.phpunit.template', $this->_testConfigFile);
+    }
+
+    /**
+     * creates the specified config file from specified template file
+     *
+     * @param string $input The template config file
+     * @param string $output The output config file name
+     */
+    private function _writeConfig($input, $output)
+    {
+        $template = file_get_contents(Mage::getBaseDir('etc') . DS . $input);
         foreach ($data as $index => $value) {
             $template = str_replace('{{' . $index . '}}', '<![CDATA[' . $value . ']]>', $template);
         }
-        file_put_contents($this->_localConfigFile, $template);
-        chmod($this->_localConfigFile, 0777);
+        file_put_contents($output, $template);
+        chmod($output, 0777);      
     }
 
     public function getFormData()

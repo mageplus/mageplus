@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <resources>
+            <default_setup>
+                <connection>
+                    <dbname><![CDATA[magento_unit_tests]]></dbname>
+                </connection>
+            </default_setup>
+        </resources>
+    </global>
+    <default>
+        <web>
+            <seo>
+                <use_rewrites>1</use_rewrites>
+            </seo>
+            <secure>
+                <base_url>{{base_url}}</base_url>
+            </secure>
+            <unsecure>
+                <base_url>{{base_url}}</base_url>
+            </unsecure> 
+        </web>
+    </default>
+</config>

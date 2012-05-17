@@ -108,8 +108,10 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
 
         $this->_getInstaller()->getDataModel()->setConfigData($data);
 
-        $this->_writeConfig('local.xml.template', $this->_localConfigFile);
-        $this->_writeConfig('local.xml.phpunit.template', $this->_testConfigFile);
+        $this->_writeConfig('local.xml.template', $this->_localConfigFile, $data);
+        
+        $data['dbname'] = $data['dbname'] . '_tests';
+        $this->_writeConfig('local.xml.phpunit.template', $this->_testConfigFile, $data);
     }
 
     /**
@@ -117,8 +119,9 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
      *
      * @param string $input The template config file
      * @param string $output The output config file name
+     * @param array $data The data to insert into the output file
      */
-    private function _writeConfig($input, $output)
+    private function _writeConfig($input, $output, $data)
     {
         $template = file_get_contents(Mage::getBaseDir('etc') . DS . $input);
         foreach ($data as $index => $value) {

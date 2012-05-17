@@ -2,9 +2,20 @@
 <config>
     <global>
         <resources>
+            <db>
+                <table_prefix>{{db_prefix}}</table_prefix>
+            </db>
             <default_setup>
                 <connection>
-                    <dbname><![CDATA[magento_unit_tests]]></dbname>
+                    <host>{{db_host}}</host>
+                    <username>{{db_user}}</username>
+                    <password>{{db_pass}}</password>
+                    <dbname>{{db_name}}</dbname>
+                    <initStatements>{{db_init_statemants}}</initStatements>
+                    <model>{{db_model}}</model>
+                    <type>{{db_type}}</type>
+                    <pdoType>{{db_pdo_type}}</pdoType>
+                    <active>1</active>
                 </connection>
             </default_setup>
         </resources>
@@ -15,7 +26,7 @@
                 <use_rewrites>1</use_rewrites>
             </seo>
             <secure>
-                <base_url>{{base_url}}</base_url>
+                <base_url>{{secure_base_url}}</base_url>
             </secure>
             <unsecure>
                 <base_url>{{base_url}}</base_url>

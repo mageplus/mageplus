@@ -302,7 +302,7 @@ class Mage_Test_Model_Fixture
         $method = $reflection->getMethod('getAnnotationByNameFromClass');
 
         if (!$method instanceof ReflectionMethod) {
-            throw new RuntimeException('Unable to read class annotations, because it is not extended from Mage_Test_Test_Case');
+            throw new RuntimeException('Unable to read class annotations, because it is not extended from Mage_Test_Unit_Case');
         }
 
         $fixtures = $method->invokeArgs(

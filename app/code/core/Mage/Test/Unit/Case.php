@@ -253,7 +253,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
     {
         $backTrace = debug_backtrace(true);
         foreach ($backTrace as $call) {
-            if (isset($call['object']) && $call['object'] instanceof Mage_Test_Test_Case) {
+            if (isset($call['object']) && $call['object'] instanceof Mage_Test_Unit_Case) {
                 return $call['object']->getModuleName();
             }
         }
@@ -329,7 +329,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
      * @param string $type
      * @param string $classAlias
      * @param PHPUnit_Framework_MockObject_MockObject|PHPUnit_Framework_MockObject_MockBuilder $mock
-     * @return Mage_Test_Test_Case
+     * @return Mage_Test_Unit_Case
      */
     protected function replaceByMock($type, $classAlias, $mock)
     {
@@ -712,7 +712,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
     /**
      * Protected wrapper for _getYamlFilePath method. Backward campatibility.
      *
-     * @see Mage_Test_Test_Case::getYamlFilePath()
+     * @see Mage_Test_Unit_Case::getYamlFilePath()
      *
      * @param string $type type of YAML data (fixtures,expectations,dataproviders)
      * @param string|null $name the file name for loading, if equals to null,
@@ -850,7 +850,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
      * Set current store scope for test
      *
      * @param int|string|Mage_Core_Model_Store $store
-     * @return Mage_Test_Test_Case
+     * @return Mage_Test_Unit_Case
      */
     public function setCurrentStore($store)
     {

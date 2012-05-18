@@ -1778,7 +1778,7 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Set up controller params
      * (non-PHPdoc)
-     * @see Mage_Test_Test_Case::setUp()
+     * @see Mage_Test_Unit_Case::setUp()
      */
     protected function setUp()
     {
@@ -1793,7 +1793,7 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Registers cookie stub
      *
-     * @return Mage_Test_Test_Case_Controller
+     * @return Mage_Test_Unit_Case_Controller
      */
     protected function registerCookieStub()
     {
@@ -1827,7 +1827,7 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
      * @param string|null $domain
      * @param boolean|null $secure
      * @param boolean|null $httponly
-     * @return Mage_Test_Test_Case_Controller
+     * @return Mage_Test_Unit_Case_Controller
      */
     public function setCookieCallback($name, $value, $period = null, $path = null, $domain = null, $secure = null, $httponly = null)
     {
@@ -1886,7 +1886,7 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * A callback that is invoked when a cookie is deleted
      *
-     * @return Mage_Test_Test_Case_Controller
+     * @return Mage_Test_Unit_Case_Controller
      */
     public function deleteCookieCallback($name, $path = null, $domain = null, $secure = null, $httponly = null)
     {
@@ -1897,7 +1897,7 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Resets controller test case
      *
-     * @return Mage_Test_Test_Case_Controller
+     * @return Mage_Test_Unit_Case_Controller
      */
     protected function reset()
     {

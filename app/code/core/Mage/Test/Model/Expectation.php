@@ -138,7 +138,7 @@ class Mage_Test_Model_Expectation
      *
      * @see Mage_Test_Model_Test_Loadable_Interface::loadByTestCase()
      */
-    public function loadByTestCase(Mage_Test_Test_Case $testCase)
+    public function loadByTestCase(Mage_Test_Unit_Case $testCase)
     {
         $expectations = $testCase->getAnnotationByName('loadExpectation');
 

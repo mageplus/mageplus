@@ -101,8 +101,9 @@ class Mage_Test_Unit_Suite extends PHPUnit_Framework_TestSuite
                     $group->getName(),
                     $module->getName()
                 );
-
+            
                 $testCases = self::_loadTestCases($searchPath, $moduleCodeDir);
+               
                 foreach ($testCases as $className) {
                     $suite->addTest($testSuiteClass->newInstance($className, $currentGroups));
                 }
@@ -155,7 +156,7 @@ class Mage_Test_Unit_Suite extends PHPUnit_Framework_TestSuite
             // if it is a valid class extended from Mage_PHPUnit_Unit_Case
             if (class_exists($className, true)) {
                 $reflectionClass = Mage_Utils_Reflection::getRelflection($className);
-                if (!$reflectionClass->isSubclassOf('Mage_PHPUnit_Test_Case')
+                if (!$reflectionClass->isSubclassOf('Mage_Test_Unit_Case')
                     || $reflectionClass->isAbstract()) {
                     continue;
                 }

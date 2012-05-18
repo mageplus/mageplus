@@ -269,10 +269,10 @@ class Mage_Test_Model_Fixture
     /**
      * Loads fixture files from test case annotations
      *
-     * @param Mage_Test_Test_Case $testCase
+     * @param Mage_Test_Unit_Case $testCase
      * @return Mage_Test_Model_Fixture
      */
-    public function loadByTestCase(Mage_Test_Test_Case $testCase)
+    public function loadByTestCase(Mage_Test_Unit_Case $testCase)
     {
         $fixtures = $testCase->getAnnotationByName(
             'loadFixture',
@@ -350,12 +350,12 @@ class Mage_Test_Model_Fixture
      * Loads fixture files
      *
      * @param array $fixtures
-     * @param string|Mage_Test_Test_Case $classOrInstance
+     * @param string|Mage_Test_Unit_Case $classOrInstance
      * @return Mage_Test_Model_Fixture
      */
     protected function _loadFixtureFiles(array $fixtures, $classOrInstance)
     {
-        $isShared = ($this->isScopeShared() || !$classOrInstance instanceof Mage_Test_Test_Case);
+        $isShared = ($this->isScopeShared() || !$classOrInstance instanceof Mage_Test_Unit_Case);
         foreach ($fixtures as $fixture) {
             if (empty($fixture) && $isShared) {
                 $fixture = self::DEFAULT_SHARED_FIXTURE_NAME;

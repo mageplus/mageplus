@@ -110,7 +110,7 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
 
         $this->_writeConfig('local.xml.template', $this->_localConfigFile, $data);
         
-        $data['dbname'] = $data['dbname'] . '_tests';
+        $data['db_name'] .= '_tests';
         $this->_writeConfig('local.xml.phpunit.template', $this->_testConfigFile, $data);
     }
 

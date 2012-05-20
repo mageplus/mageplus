@@ -549,16 +549,35 @@ abstract class Mage_Eav_Model_Entity_Abstract extends Mage_Core_Model_Resource_A
         Mage::getSingleton('eav/entity_attribute_set')
             ->addSetInfo($this->getEntityType(), $attributes, $setId);
 
+        $sortList       = array();
+        $sortPath       = sprintf('attribute_set_info/%s/sort', $sortId);
+        $groupSortPath  = sprintf('attribute_set_info/%s/group_sort', $sortId);
         foreach ($attributes as $code => $attribute) {
             /* @var $attribute Mage_Eav_Model_Entity_Attribute_Abstract */
             if (!$attribute->isInSet($setId)) {
                 unset($attributes[$code]);
+            } else {
+                $sortList[$code] = array($attribute,
+                    ($attribute->getData($groupSortPath) * 1000) +
+                    ($attribute->getData($sortPath) * 0.0001));
             }
         }
 
         $this->_sortingSetId = $setId;
-        uasort($attributes, array($this, 'attributesCompare'));
-        return $attributes;
+        uasort($attributes, array($this, 'attributesCompareData'));
+        return array_map('array_shift', $sortList);
+    }
+
+    /**
+     * Compare attribute data (for sorting)
+     *
+     * @param array $attribute1
+     * @param array $attribute2
+     * @return int
+     */
+    public function attributesCompareData($attribute1, $attribute2)
+    {
+        return intval($attribute1[1] - $attribute2[1]);
     }
 
     /**

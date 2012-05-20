@@ -81,11 +81,19 @@ class Mage_Adminhtml_Block_System_Config_Tabs extends Mage_Adminhtml_Block_Widge
         $sections = $configFields->getSections($current);
         $tabs     = (array)$configFields->getTabs()->children();
 
-
-        $sections = (array)$sections;
-
-        usort($sections, array($this, '_sort'));
         usort($tabs, array($this, '_sort'));
+
+        $tabSections = array();
+        foreach ((array)$sections as $section) {
+            $tab = (string)$section->tab;
+            if (!empty($tab)) {
+                if (!isset($tabSections[$tab])) {
+                    $tabSections[$tab] = array();
+                }
+                $tabSections[$tab][] = $section;
+            }
+        }
+        $sections = array();
 
         foreach ($tabs as $tab) {
             $helperName = $configFields->getAttributeModule($tab);
@@ -95,6 +103,12 @@ class Mage_Adminhtml_Block_System_Config_Tabs extends Mage_Adminhtml_Block_Widge
                 'label' => $label,
                 'class' => (string) $tab->class
             ));
+
+            if (isset($tabSections[$tab->getName()])) {
+                $section = $tabSections[$tab->getName()];
+                usort($section, array($this, '_sort'));
+                $sections = array_merge($sections, $section);
+            }
         }
 
 

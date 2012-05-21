@@ -101,4 +101,11 @@
             </email>
         </contacts>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Contacts/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -216,4 +216,11 @@
             </media_storage_configuration>
         </system>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Cms/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -319,4 +319,11 @@
             </persistent_clear_expired>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Persistent/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

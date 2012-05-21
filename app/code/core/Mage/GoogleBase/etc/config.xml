@@ -158,4 +158,11 @@
 <!--        </googlebase>-->
         </google>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_GoogleBase/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

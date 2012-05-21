@@ -26,8 +26,8 @@
  */
 class Mage_Test_Controller_Response_Http
     extends Mage_Core_Controller_Response_Http
-    implements Mage_Test_Isolation_Interface,
-               Mage_Test_Controller_Response_Interface
+    implements Mage_PHPUnit_Isolation_Interface,
+               Mage_PHPUnit_Controller_Response_Interface
 {
     const LINE_ENDING = "\r\n";
 

@@ -436,4 +436,11 @@
             </core_clean_cache>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Core/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

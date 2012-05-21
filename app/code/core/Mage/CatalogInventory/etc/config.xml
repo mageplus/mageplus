@@ -318,4 +318,11 @@
             </item_options>
         </cataloginventory>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_CatalogInventory/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

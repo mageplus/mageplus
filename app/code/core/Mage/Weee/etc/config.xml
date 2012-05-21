@@ -295,4 +295,11 @@
             </updates>
         </layout>
     </frontend>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Weee/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

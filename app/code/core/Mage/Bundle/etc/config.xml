@@ -320,4 +320,11 @@
             </catalog_product_new_action>
         </events>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Bundle/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

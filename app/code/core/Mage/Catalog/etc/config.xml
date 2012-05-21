@@ -824,4 +824,11 @@
             </catalog_product_index_price_reindex_all>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Catalog/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

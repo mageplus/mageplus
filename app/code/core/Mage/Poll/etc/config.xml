@@ -107,4 +107,11 @@
             </poll>
         </blocks>
     </global>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Poll/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

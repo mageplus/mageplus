@@ -119,4 +119,11 @@
             </updates>
         </layout>
     </frontend>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Rss/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -574,17 +574,17 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     }
 
     /**
-     * Remove script file name from url in case when server rewrites are enabled
+     * Add index filename to URL during installation or if URL rewrites are disabled
+     *
+     * Is we are adding the filename AND the custom_entry_point flag is set,
+     * then force usage of index.php for the filename instead of using $_SERVER
      *
      * @param   string $url
      * @return  string
      */
     protected function _updatePathUseRewrites($url)
     {
-        if ($this->isAdmin()
-            || !$this->getConfig(self::XML_PATH_USE_REWRITES)
-            || !Mage::isInstalled()
-        ) {
+        if (!Mage::isInstalled() || !$this->getConfig(self::XML_PATH_USE_REWRITES)) {
             if ($this->_isCustomEntryPoint()) {
                 $indexFileName = 'index.php';
             } else {

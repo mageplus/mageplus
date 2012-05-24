@@ -61,7 +61,7 @@ class Mage_Core_Test_Model_Design_PackagePublication extends Mage_Test_Unit_Case
     public static function setUpBeforeClass()
     {
         self::$_skinPublicDir = Mage::app()->getConfig()->getOptions()->getMediaDir() . '/skin';
-        self::$_fixtureTmpDir = Magento_Test_Bootstrap::getInstance()->getTmpDir() . '/publication';
+        //self::$_fixtureTmpDir = Magento_Test_Bootstrap::getInstance()->getTmpDir() . '/publication';
     }
 
     protected function setUp()
@@ -70,7 +70,7 @@ class Mage_Core_Test_Model_Design_PackagePublication extends Mage_Test_Unit_Case
             dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'design'
         );
         $this->_model = new Mage_Core_Model_Design_Package();
-        $this->_model->setDesignTheme('test/default/default', 'frontend');
+        //$this->_model->setDesignTheme('test/default/default', 'frontend');
     }
 
     protected function tearDown()
@@ -252,7 +252,7 @@ class Mage_Core_Test_Model_Design_PackagePublication extends Mage_Test_Unit_Case
             '_theme'   => $theme,
             '_skin'    => $skin,
         );
-        $originalFile = $this->_model->getSkinFile($file, $params);
+        //$originalFile = $this->_model->getSkinFile($file, $params);
         $this->assertFileExists($originalFile);
 
         // getSkinUrl() will trigger publication in development mode

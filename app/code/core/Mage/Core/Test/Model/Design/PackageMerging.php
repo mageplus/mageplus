@@ -53,8 +53,7 @@ class Mage_Core_Test_Model_Design_PackageMerging extends Mage_Test_Unit_Case
         Varien_Io_File::rmdirRecursive(Mage::app()->getConfig()->getOptions()->getMediaDir() . '/skin');
 
         $this->_model = new Mage_Core_Model_Design_Package();
-        $this->_model->setArea('frontend')
-            ->setDesignTheme('package/default/theme');
+        //$this->_model->setArea('frontend')->setDesignTheme('package/default/theme');
 
         $pub = Mage::getBaseDir('media');
         $this->_pubMerged = "{$pub}/skin/_merged";

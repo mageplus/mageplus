@@ -1424,7 +1424,7 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
     public function toArray($arrAttributes = array())
     {
         $arr = array();
-        foreach ($this->_items as $k => $item) {
+        foreach ($this as $k => $item) {
             $arr[$k] = $item->toArray($arrAttributes);
         }
         return $arr;

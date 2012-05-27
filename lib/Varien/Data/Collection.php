@@ -665,22 +665,11 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
      * @param  array $arrAttributes array of required attributes
      * @return string
      */
-    protected function __toJson(array $arrAttributes = array())
+    public function toJson(array $arrAttributes = array())
     {
         $arrData = $this->toArray($arrAttributes);
         $json = Zend_Json::encode($arrData);
         return $json;
-    }
-
-    /**
-     * Public wrapper for __toJson
-     *
-     * @param array $arrAttributes
-     * @return string
-     */
-    public function toJson(array $arrAttributes = array())
-    {
-        return $this->__toJson($arrAttributes);
     }
 
     /**

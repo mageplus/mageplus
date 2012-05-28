@@ -8,6 +8,7 @@ All created and modified dates now populated via database triggers - Lee Bolding
 Added pagination controls to the bottom of all grids in backend - Lee Bolding [leesbian]
 Made SKUs in adminhtml clickable, to open product edit screen in new window - Lee Bolding [leesbian]
 Added http/https context preservation to getUrl helper - Lee Bolding [leesbian]
+Added toJson functionality to collection classes - Lee Bolding [leesbian]
 
 === Changes ===
 Added profit indication to dashboard in adminhtml - Lee Bolding [leesbian]
@@ -20,6 +21,10 @@ Fixed sales_flat_order.convered_at not being populated - Lee Bolding [leesbian]
 Fixed issue in Exception class - Lee Saferite
 Fixed variable initiation in product importer - Marco Grätsch [magdev]
 Fixed data inconsistencies where some object created dates were actually last modified dates - Lee Bolding [leesbian]
+Fixed toArray functionality on collection classes - Lee Saferite [LeeSaferite]
+Fixed broken classname resolver during init stage - Lee Saferite [LeeSaferite]
+Fixed incorrect usage of connect/session vs. adminhtml/session in CurrencySymbol module - Lee Saferite [LeeSaferite]
+
 =======
 
 ==== 1.7.0.0 ====

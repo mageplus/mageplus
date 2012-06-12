@@ -136,6 +136,13 @@ class Mage_Core_Model_Url extends Varien_Object
     protected $_useSession;
 
     /**
+     * Array to hold already de-camelized controller or action names
+     *
+     * @var array
+     */
+    protected $_deCamelizeCache = array();
+
+    /**
      * Initialize object
      */
     protected function _construct()
@@ -454,17 +461,37 @@ class Mage_Core_Model_Url extends Varien_Object
         $path = $this->getRouteFrontName() . '/';
 
         if ($this->getControllerName()) {
-            $path .= $this->getControllerName() . '/';
+            $path .= $this->_deCamelize($this->getControllerName()) . '/';
         } elseif ($hasParams) {
             $path .= $this->getDefaultControllerName() . '/';
         }
         if ($this->getActionName()) {
-            $path .= $this->getActionName() . '/';
+            $path .= $this->_deCamelize($this->getActionName()) . '/';
         } elseif ($hasParams) {
             $path .= $this->getDefaultActionName() . '/';
         }
 
         return $path;
+    }
+
+    /**
+     * Convert a camel case name into a dash separated lowercase version
+     *
+     * @param $name
+     *
+     * @return string
+     */
+    protected function _deCamelize($name)
+    {
+        if (isset($this->_deCamelizeCache[$name])) {
+            return $this->_deCamelizeCache[$name];
+        }
+
+        $result = strtolower(preg_replace('/(.)([A-Z])/', '$1-$2', $name));
+
+        $this->_deCamelizeCache[$name] = $result;
+
+        return $result;
     }
 
     /**

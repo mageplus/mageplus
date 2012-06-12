@@ -193,6 +193,9 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
             } else {
                 if (!empty($p[1])) {
                     $controller = $p[1];
+                    if (strpos($controller, '-') !== false) {
+                        $controller = lcfirst(uc_words($controller, '', '-'));
+                    }
                 } else {
                     $controller = $front->getDefault('controller');
                     $request->setAlias(
@@ -207,7 +210,14 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
                 if ($request->getActionName()) {
                     $action = $request->getActionName();
                 } else {
-                    $action = !empty($p[2]) ? $p[2] : $front->getDefault('action');
+                    if(!empty($p[2])) {
+                        $action = $p[2];
+                        if (strpos($action, '-') !== false) {
+                            $action = lcfirst(uc_words($action, '', '-'));
+                        }
+                    } else {
+                        $action = $front->getDefault('action');
+                    }
                 }
             }
 

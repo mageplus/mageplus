@@ -132,6 +132,27 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         } else {
             if (!empty($p[0])) {
                 $module = $p[0];
+                if(count($p) > 1) {
+                    array_shift($p);
+                    // If there are additional segments, loop looking for the longest viable frontName
+                    while (count($p) > 0) {
+                        // Use a REGEX to filter all frontNames that start with the $module + the next segment
+                        $frontNames = preg_grep('/^' . preg_quote($module . '/' . $p[0], '/') . '.*/', $this->_routes);
+                        if (count($frontNames) > 0) {
+                            // As we found at least one match, we add the next segment to $module and loop
+                            $module .= '/' . array_shift($p);
+                        } else {
+                            // Since we had no matches, we have found the longest viable (but unverified) frontName
+                            break;
+                        }
+                    }
+                    // Back off the frontName segments until we hit a valid frontName or run out of segments
+                    while(!in_array($module, $this->_routes) && ($i = strrpos($module, '/')) !== false) {
+                        array_unshift($p, substr($module, $i + 1));
+                        $module = substr($module, 0, $i);
+                    }
+                    array_unshift($p, $module);
+                }
             } else {
                 $module = $this->getFront()->getDefault('module');
                 $request->setAlias(Mage_Core_Model_Url_Rewrite::REWRITE_REQUEST_PATH_ALIAS, '');

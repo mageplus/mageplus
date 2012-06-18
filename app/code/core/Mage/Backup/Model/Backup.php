@@ -176,7 +176,6 @@ class Mage_Backup_Model_Backup extends Varien_Object
      */
     public function &getFile()
     {
-
         if (!$this->exists()) {
             Mage::throwException(Mage::helper('backup')->__("Backup file does not exist."));
         }
@@ -285,6 +284,11 @@ class Mage_Backup_Model_Backup extends Varien_Object
         return gzread($this->_handler, $length);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function eof()
     {
         if (is_null($this->_handler)) {
@@ -349,6 +353,11 @@ class Mage_Backup_Model_Backup extends Varien_Object
         $ioAdapter->streamClose();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSize()
     {
         if (!is_null($this->getData('size'))) {

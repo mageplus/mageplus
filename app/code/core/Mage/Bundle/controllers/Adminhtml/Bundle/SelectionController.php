@@ -38,6 +38,11 @@ class Mage_Bundle_Adminhtml_Bundle_SelectionController extends Mage_Adminhtml_Co
         $this->setUsedModuleName('Mage_Bundle');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function searchAction()
     {
         return $this->getResponse()->setBody(
@@ -49,6 +54,11 @@ class Mage_Bundle_Adminhtml_Bundle_SelectionController extends Mage_Adminhtml_Co
            );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         return $this->getResponse()->setBody(

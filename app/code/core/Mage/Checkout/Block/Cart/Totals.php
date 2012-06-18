@@ -30,6 +30,11 @@ class Mage_Checkout_Block_Cart_Totals extends Mage_Checkout_Block_Cart_Abstract
     protected $_defaultRenderer = 'checkout/total_default';
     protected $_totals = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTotals()
     {
         if (is_null($this->_totals)) {
@@ -38,12 +43,26 @@ class Mage_Checkout_Block_Cart_Totals extends Mage_Checkout_Block_Cart_Abstract
         return $this->_totals;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * 
+     * @return
+     */
     public function setTotals($value)
     {
         $this->_totals = $value;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * 
+     * @return
+     */
     protected function _getTotalRenderer($code)
     {
         $blockName = $code.'_total_renderer';
@@ -64,6 +83,15 @@ class Mage_Checkout_Block_Cart_Totals extends Mage_Checkout_Block_Cart_Abstract
         return $block;
     }
 
+    /**
+     * @todo
+     *
+     * @param $total
+     * @param $area
+     * @param $colspan
+     * 
+     * @return
+     */
     public function renderTotal($total, $area = null, $colspan = 1)
     {
         $code = $total->getCode();

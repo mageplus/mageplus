@@ -31,6 +31,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Locale_Country
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return Mage::app()->getLocale()->getOptionCountries();

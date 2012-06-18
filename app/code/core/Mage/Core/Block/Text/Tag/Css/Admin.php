@@ -40,6 +40,14 @@ class Mage_Core_Block_Text_Tag_Css_Admin extends Mage_Core_Block_Text_Tag_Css
         $this->setAttribute('theme', $theme);
     }
 
+    /**
+     * @todo
+     *
+     * @param $href
+     * @param $type
+     *
+     * @return
+     */
     function setHref($href, $type=null)
     {
         $type = (string)$type;

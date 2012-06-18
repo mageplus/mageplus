@@ -34,6 +34,11 @@
  */
 class Mage_Core_Block_Html_Calendar extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         $localeCode = Mage::app()->getLocale()->getLocaleCode();

@@ -42,6 +42,11 @@ class Mage_Sales_Block_Order_Info extends Mage_Core_Block_Template
         $this->setTemplate('sales/order/info.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -53,6 +58,11 @@ class Mage_Sales_Block_Order_Info extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentInfoHtml()
     {
         return $this->getChildHtml('payment_info');
@@ -68,6 +78,15 @@ class Mage_Sales_Block_Order_Info extends Mage_Core_Block_Template
         return Mage::registry('current_order');
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param $path
+     * @param $label
+     * 
+     * @return
+     */
     public function addLink($name, $path, $label)
     {
         $this->_links[$name] = new Varien_Object(array(
@@ -78,12 +97,22 @@ class Mage_Sales_Block_Order_Info extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLinks()
     {
         $this->checkLinks();
         return $this->_links;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     private function checkLinks()
     {
         $order = $this->getOrder();

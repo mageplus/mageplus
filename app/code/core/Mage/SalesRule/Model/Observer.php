@@ -57,6 +57,12 @@ class Mage_SalesRule_Model_Observer
             ->process($observer->getEvent()->getItem());
     }
 
+    /**
+     * @todo
+     *
+     * @param $observer
+     * @return
+     */
     public function sales_order_afterPlace($observer)
     {
         $order = $observer->getEvent()->getOrder();

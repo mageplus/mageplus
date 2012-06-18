@@ -67,6 +67,12 @@ class Mage_Tax_Model_Calculation extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function getDefaultCustomerTaxClass($store = null)
     {
         if ($this->_defaultCustomerTaxClass === null) {
@@ -401,6 +407,14 @@ class Mage_Tax_Model_Calculation extends Mage_Core_Model_Abstract
         return $identical;
     }
 
+    /**
+     * @todo
+     *
+     * @param $request
+     * @param $fieldName
+     * @param $type
+     * @return
+     */
     protected function _getRates($request, $fieldName, $type)
     {
         $result = array();
@@ -415,10 +429,23 @@ class Mage_Tax_Model_Calculation extends Mage_Core_Model_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $request
+     * @return
+     */
     public function getRatesForAllProductTaxClasses($request)
     {
         return $this->_getRates($request, 'product_class_id', Mage_Tax_Model_Class::TAX_CLASS_TYPE_PRODUCT);
     }
+
+    /**
+     * @todo
+     *
+     * @param $request
+     * @return
+     */
     public function getRatesForAllCustomerTaxClasses($request)
     {
         return $this->_getRates($request, 'customer_class_id', Mage_Tax_Model_Class::TAX_CLASS_TYPE_CUSTOMER);
@@ -439,16 +466,35 @@ class Mage_Tax_Model_Calculation extends Mage_Core_Model_Abstract
         return $this->_rateCalculationProcess[$cacheKey];
     }
 
+    /**
+     * @todo
+     *
+     * @param $rates
+     * @return
+     */
     public function reproduceProcess($rates)
     {
         return $this->getResource()->getCalculationProcess(null, $rates);
     }
 
+    /**
+     * @todo
+     *
+     * @param $customerTaxClass
+     * @return
+     */
     public function getRatesByCustomerTaxClass($customerTaxClass)
     {
         return $this->getResource()->getRatesByCustomerTaxClass($customerTaxClass);
     }
 
+    /**
+     * @todo
+     *
+     * @param $customerTaxClass
+     * @param $productTaxClass
+     * @return
+     */
     public function getRatesByCustomerAndProductTaxClasses($customerTaxClass, $productTaxClass)
     {
         return $this->getResource()->getRatesByCustomerTaxClass($customerTaxClass, $productTaxClass);

@@ -217,6 +217,12 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
      */
     protected $_emptyCellLabel = '';
 
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -225,6 +231,11 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         $this->_emptyText = Mage::helper('adminhtml')->__('No records found.');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('export_button',
@@ -253,21 +264,41 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getExportButtonHtml()
     {
         return $this->getChildHtml('export_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResetFilterButtonHtml()
     {
         return $this->getChildHtml('reset_filter_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSearchButtonHtml()
     {
         return $this->getChildHtml('search_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMainButtonsHtml()
     {
         $html = '';
@@ -412,11 +443,21 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastColumnId()
     {
         return $this->_lastColumnId;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getColumnCount()
     {
         return count($this->getColumns());
@@ -446,6 +487,12 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this->_columns;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     protected function _setFilterValues($data)
     {
         foreach ($this->getColumns() as $columnId => $column) {
@@ -460,6 +507,12 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $column
+     * @return
+     */
     protected function _addColumnFilterToCollection($column)
     {
         if ($this->getCollection()) {
@@ -548,12 +601,22 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         $value = $this->helper('adminhtml')->decodeFilter($value);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _preparePage()
     {
         $this->getCollection()->setPageSize((int) $this->getParam($this->getVarNameLimit(), $this->_defaultLimit));
         $this->getCollection()->setCurPage((int) $this->getParam($this->getVarNamePage(), $this->_defaultPage));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->sortColumnsByOrder();
@@ -582,7 +645,6 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
      */
     protected function _prepareMassaction()
     {
-
         return $this;
     }
 
@@ -619,6 +681,11 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareGrid()
     {
         $this->_prepareColumns();
@@ -627,62 +694,127 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->_prepareGrid();
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _afterLoadCollection()
     {
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getVarNameLimit()
     {
         return $this->_varNameLimit;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getVarNamePage()
     {
         return $this->_varNamePage;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getVarNameSort()
     {
         return $this->_varNameSort;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getVarNameDir()
     {
         return $this->_varNameDir;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getVarNameFilter()
     {
         return $this->_varNameFilter;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function setVarNameLimit($name)
     {
         return $this->_varNameLimit = $name;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function setVarNamePage($name)
     {
         return $this->_varNamePage = $name;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function setVarNameSort($name)
     {
         return $this->_varNameSort = $name;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function setVarNameDir($name)
     {
         return $this->_varNameDir = $name;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function setVarNameFilter($name)
     {
         return $this->_varNameFilter = $name;
@@ -768,30 +900,60 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this->_messageBlockVisibility;
     }
 
+    /**
+     * @todo
+     *
+     * @param $limit
+     * @return
+     */
     public function setDefaultLimit($limit)
     {
         $this->_defaultLimit = $limit;
         return $this;
     }
-
+  
+    /**
+     * @todo
+     *
+     * @param $page
+     * @return
+     */
     public function setDefaultPage($page)
     {
         $this->_defaultPage = $page;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $sort
+     * @return
+     */
     public function setDefaultSort($sort)
     {
         $this->_defaultSort = $sort;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $dir
+     * @return
+     */
     public function setDefaultDir($dir)
     {
         $this->_defaultDir = $dir;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $filter
+     * @return
+     */
     public function setDefaultFilter($filter)
     {
         $this->_defaultFilter = $filter;
@@ -1070,6 +1232,11 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $csv;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getXml()
     {
         $this->_isExport = true;
@@ -1215,6 +1382,11 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $xmlObj->getData();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canDisplayContainer()
     {
         if ($this->getRequest()->getQuery('ajax')) {
@@ -1273,12 +1445,23 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $default;
     }
 
+    /**
+     * @todo
+     *
+     * @param $flag
+     * @return
+     */
     public function setSaveParametersInSession($flag)
     {
         $this->_saveParametersInSession = $flag;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getJsObjectName()
     {
         return $this->getId().'JsObject';
@@ -1370,6 +1553,11 @@ class Mage_Adminhtml_Block_Widget_Grid extends Mage_Adminhtml_Block_Widget
         return $this->getChild('massaction');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMassactionBlockHtml()
     {
         return $this->getChildHtml('massaction');

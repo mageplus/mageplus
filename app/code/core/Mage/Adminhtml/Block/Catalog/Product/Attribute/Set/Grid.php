@@ -43,6 +43,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Grid extends Mage_Admin
         $this->setSaveParametersInSession(true);
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareCollection()
     {
         $collection = Mage::getResourceModel('eav/entity_attribute_set_collection')
@@ -52,6 +57,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Grid extends Mage_Admin
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareColumns()
     {
         /*$this->addColumn('set_id', array(
@@ -70,6 +80,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Grid extends Mage_Admin
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @param $row
+     * @param
+     */
     public function getRowUrl($row)
     {
         return $this->getUrl('*/*/edit', array('id'=>$row->getAttributeSetId()));

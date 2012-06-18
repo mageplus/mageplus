@@ -27,6 +27,11 @@
 
 class Mage_SalesRule_Model_Rule_Condition_Address extends Mage_Rule_Model_Condition_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function loadAttributeOptions()
     {
         $attributes = array(
@@ -46,6 +51,11 @@ class Mage_SalesRule_Model_Rule_Condition_Address extends Mage_Rule_Model_Condit
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeElement()
     {
         $element = parent::getAttributeElement();
@@ -53,6 +63,11 @@ class Mage_SalesRule_Model_Rule_Condition_Address extends Mage_Rule_Model_Condit
         return $element;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getInputType()
     {
         switch ($this->getAttribute()) {
@@ -65,6 +80,11 @@ class Mage_SalesRule_Model_Rule_Condition_Address extends Mage_Rule_Model_Condit
         return 'string';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValueElementType()
     {
         switch ($this->getAttribute()) {
@@ -74,6 +94,11 @@ class Mage_SalesRule_Model_Rule_Condition_Address extends Mage_Rule_Model_Condit
         return 'text';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValueSelectOptions()
     {
         if (!$this->hasData('value_select_options')) {

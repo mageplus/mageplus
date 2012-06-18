@@ -32,7 +32,11 @@
  */
 class Mage_Core_Block_Flush extends Mage_Core_Block_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         if (!$this->_beforeToHtml()) {

@@ -28,6 +28,11 @@ class Mage_Index_Block_Adminhtml_Process_Edit_Tab_Main
     extends Mage_Adminhtml_Block_Widget_Form
     implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $model = Mage::registry('current_index_process');

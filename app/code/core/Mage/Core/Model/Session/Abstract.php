@@ -400,6 +400,11 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
         return self::$_encryptedSessionId;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getSessionIdQueryParam()
     {
         $_sessionName = $this->getSessionName();

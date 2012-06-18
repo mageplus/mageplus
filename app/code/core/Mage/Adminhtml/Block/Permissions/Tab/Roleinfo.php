@@ -30,32 +30,63 @@
  */
 class Mage_Adminhtml_Block_Permissions_Tab_Roleinfo extends Mage_Adminhtml_Block_Widget_Form implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabLabel()
     {
         return Mage::helper('adminhtml')->__('Role Info');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabTitle()
     {
         return $this->getTabLabel();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canShowTab()
     {
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isHidden()
     {
         return false;
     }
 
-    public function _beforeToHtml() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function _beforeToHtml()
+    {
         $this->_initForm();
 
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initForm()
     {
         $roleId = $this->getRequest()->getParam('rid');

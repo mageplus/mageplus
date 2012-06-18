@@ -36,12 +36,24 @@ abstract class Mage_Eav_Block_Adminhtml_Attribute_Edit_Main_Abstract extends Mag
 {
     protected $_attribute = null;
 
+    /**
+     * @todo
+     *
+     * @param $attribute
+     *
+     * @return
+     */
     public function setAttributeObject($attribute)
     {
         $this->_attribute = $attribute;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeObject()
     {
         if (null === $this->_attribute) {

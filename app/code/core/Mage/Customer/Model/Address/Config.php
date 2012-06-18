@@ -60,6 +60,20 @@ class Mage_Customer_Model_Address_Config extends Mage_Core_Model_Config_Base
      */
     protected $_defaultTypes    = array();
 
+    /**
+     * Define node
+     *
+     */
+    public function __construct()
+    {
+        parent::__construct(Mage::getConfig()->getNode()->global->customer->address);
+    }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function setStore($store)
     {
         $this->_store = Mage::app()->getStore($store);
@@ -77,15 +91,6 @@ class Mage_Customer_Model_Address_Config extends Mage_Core_Model_Config_Base
             $this->_store = Mage::app()->getStore();
         }
         return $this->_store;
-    }
-
-    /**
-     * Define node
-     *
-     */
-    public function __construct()
-    {
-        parent::__construct(Mage::getConfig()->getNode()->global->customer->address);
     }
 
     /**

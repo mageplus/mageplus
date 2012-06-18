@@ -30,17 +30,29 @@
  */
 class Mage_Adminhtml_Block_Api_Tab_Roleinfo extends Mage_Adminhtml_Block_Widget_Form
 {
+    // @todo - what's the point of this?????
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function _beforeToHtml() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function _beforeToHtml()
+    {
         $this->_initForm();
 
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initForm()
     {
         $roleId = $this->getRequest()->getParam('rid');

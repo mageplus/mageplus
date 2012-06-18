@@ -33,6 +33,11 @@
  */
 class Mage_Paygate_Model_Authorizenet_Source_Cctype extends Mage_Payment_Model_Source_Cctype
 {
+    /**
+     * @todo
+     * can these all be constants?
+     * @return
+     */
     public function getAllowedTypes()
     {
         return array('VI', 'MC', 'AE', 'DI', 'OT');

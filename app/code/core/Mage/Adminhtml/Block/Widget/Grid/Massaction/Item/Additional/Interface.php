@@ -34,5 +34,11 @@
  */
 interface Mage_Adminhtml_Block_Widget_Grid_Massaction_Item_Additional_Interface
 {
+    /**
+     * @todo
+     *
+     * @param array $configuration
+     * @return
+     */
     function createFromConfiguration(array $configuration);
 }

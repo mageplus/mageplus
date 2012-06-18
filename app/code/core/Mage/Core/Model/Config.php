@@ -1014,6 +1014,13 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
         return $this->_distroServerVars;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $data
+     *
+     * @return 
+     */
     public function substDistroServerVars($data)
     {
         $this->getDistroServerVars();
@@ -1096,6 +1103,13 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
         return $dir;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $dir
+     *
+     * @return 
+     */
     public function createDirIfNotExists($dir)
     {
         return $this->getOptions()->createDirIfNotExists($dir);
@@ -1355,6 +1369,12 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * @return
+     */
     public function getNodeClassInstance($path)
     {
         $config = Mage::getConfig()->getNode($path);

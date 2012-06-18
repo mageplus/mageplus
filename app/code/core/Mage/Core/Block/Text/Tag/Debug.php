@@ -41,6 +41,13 @@ class Mage_Core_Block_Text_Tag_Debug extends Mage_Core_Block_Text_Tag
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     *
+     * @return
+     */
     function setValue($value)
     {
         return $this->setContents(print_r($value, 1));

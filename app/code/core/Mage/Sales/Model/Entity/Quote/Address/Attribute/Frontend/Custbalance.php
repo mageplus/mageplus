@@ -28,6 +28,13 @@
 class Mage_Sales_Model_Entity_Quote_Address_Attribute_Frontend_Custbalance
     extends Mage_Sales_Model_Entity_Quote_Address_Attribute_Frontend
 {
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     *
+     * @return
+     */
     public function fetchTotals(Mage_Sales_Model_Quote_Address $address)
     {
         $custbalance = $address->getCustbalanceAmount();

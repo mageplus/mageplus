@@ -112,6 +112,11 @@ class Mage_Adminhtml_Controller_Sales_Invoice extends Mage_Adminhtml_Controller_
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function printAction()
     {
         if ($invoiceId = $this->getRequest()->getParam('invoice_id')) {
@@ -126,7 +131,13 @@ class Mage_Adminhtml_Controller_Sales_Invoice extends Mage_Adminhtml_Controller_
         }
     }
 
-    public function pdfinvoicesAction(){
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function pdfinvoicesAction()
+    {
         $invoicesIds = $this->getRequest()->getPost('invoice_ids');
         if (!empty($invoicesIds)) {
             $invoices = Mage::getResourceModel('sales/order_invoice_collection')
@@ -146,6 +157,11 @@ class Mage_Adminhtml_Controller_Sales_Invoice extends Mage_Adminhtml_Controller_
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('sales/invoice');

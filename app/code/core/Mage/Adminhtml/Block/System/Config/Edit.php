@@ -51,6 +51,11 @@ class Mage_Adminhtml_Block_System_Config_Edit extends Mage_Adminhtml_Block_Widge
         $this->setHeaderCss((string)$this->_section->header_css);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('save_button',
@@ -64,16 +69,31 @@ class Mage_Adminhtml_Block_System_Config_Edit extends Mage_Adminhtml_Block_Widge
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveButtonHtml()
     {
         return $this->getChildHtml('save_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
         return $this->getUrl('*/*/save', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function initForm()
     {
         /*
@@ -93,6 +113,4 @@ class Mage_Adminhtml_Block_System_Config_Edit extends Mage_Adminhtml_Block_Widge
         );
         return $this;
     }
-
-
 }

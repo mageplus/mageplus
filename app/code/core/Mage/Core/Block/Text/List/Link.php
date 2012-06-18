@@ -32,6 +32,16 @@
  */
 class Mage_Core_Block_Text_List_Link extends Mage_Core_Block_Text
 {
+    /**
+     * @todo
+     *
+     * @param $liParams
+     * @param $aParams
+     * @param $innerText
+     * @param $afterText
+     *
+     * @return
+     */
     function setLink($liParams, $aParams, $innerText, $afterText='')
     {
         $this->setLiParams($liParams);
@@ -42,6 +52,11 @@ class Mage_Core_Block_Text_List_Link extends Mage_Core_Block_Text
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         $this->setText('<li');

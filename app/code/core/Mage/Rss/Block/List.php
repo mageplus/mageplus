@@ -37,7 +37,6 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
 
     protected $_rssFeeds = array();
 
-
     /**
      * Add Link elements to head
      *
@@ -88,16 +87,31 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function resetRssFeed()
     {
         $this->_rssFeeds=array();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getCurrentStoreId()
     {
         return Mage::app()->getStore()->getId();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getCurrentCustomerGroupId()
     {
         return Mage::getSingleton('customer/session')->getCustomerGroupId();
@@ -130,6 +144,11 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
 */
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getRssMiscFeeds()
     {
         $this->resetRssFeed();
@@ -153,6 +172,11 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
     }
     */
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function NewProductRssFeed()
     {
         $path = self::XML_PATH_RSS_METHODS.'/catalog/new';
@@ -161,6 +185,11 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
         }
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function SpecialProductRssFeed()
     {
         $path = self::XML_PATH_RSS_METHODS.'/catalog/special';
@@ -169,6 +198,11 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
         }
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function SalesRuleProductRssFeed()
     {
         $path = self::XML_PATH_RSS_METHODS.'/catalog/salesrule';
@@ -177,6 +211,11 @@ class Mage_Rss_Block_List extends Mage_Core_Block_Template
         }
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function CategoriesRssFeed()
     {
         $path = self::XML_PATH_RSS_METHODS.'/catalog/category';

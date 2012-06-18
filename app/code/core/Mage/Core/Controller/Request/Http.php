@@ -90,6 +90,11 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
         return $this->_originalPathInfo;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreCodeFromPath()
     {
         if (!$this->_storeCode) {
@@ -229,6 +234,11 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
         return $this->_directFrontNames;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOriginalRequest()
     {
         $request = new Zend_Controller_Request_Http();
@@ -236,11 +246,21 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
         return $request;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRequestString()
     {
         return $this->_requestString;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBasePath()
     {
         $path = parent::getBasePath();
@@ -252,6 +272,11 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
         return $path;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseUrl()
     {
         $url = parent::getBaseUrl();
@@ -259,6 +284,13 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
         return $url;
     }
 
+    /**
+     * @todo
+     *
+     * @param $route
+     *
+     * @return
+     */
     public function setRouteName($route)
     {
         $this->_route = $route;
@@ -271,6 +303,11 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRouteName()
     {
         return $this->_route;
@@ -344,6 +381,7 @@ class Mage_Core_Controller_Request_Http extends Zend_Controller_Request_Http
     {
         return $this->_module;
     }
+    
     /**
      * Retrieve the controller name
      *

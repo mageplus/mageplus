@@ -141,6 +141,12 @@ abstract class Mage_Dataflow_Model_Convert_Action_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Dataflow_Model_Convert_Action_Interface $action
+     * @return
+     */
     public function addAction(Mage_Dataflow_Model_Convert_Action_Interface $action=null)
     {
         if (is_null($action)) {
@@ -184,6 +190,12 @@ abstract class Mage_Dataflow_Model_Convert_Action_Abstract
         return $this->_container;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Simplexml_Element $actionNode
+     * @return
+     */
     public function importXml(Varien_Simplexml_Element $actionNode)
     {
         foreach ($actionNode->attributes() as $key=>$value) {
@@ -250,6 +262,12 @@ abstract class Mage_Dataflow_Model_Convert_Action_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $args
+     * @return
+     */
     public function runActions(array $args=array())
     {
         if (empty($this->_actions)) {

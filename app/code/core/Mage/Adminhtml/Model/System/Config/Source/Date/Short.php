@@ -27,6 +27,11 @@
 
 class Mage_Adminhtml_Model_System_Config_Source_Date_Short
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $arr = array();

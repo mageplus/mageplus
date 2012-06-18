@@ -34,7 +34,7 @@
 class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_Product_Abstract
 {
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -44,7 +44,7 @@ class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_P
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -55,7 +55,7 @@ class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_P
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -66,7 +66,7 @@ class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_P
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return array
      */
@@ -77,7 +77,7 @@ class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_P
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Mage_Downloadable_Model_Link $link
      * @return string
@@ -131,7 +131,7 @@ class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_P
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return string
      */
@@ -147,6 +147,12 @@ class Mage_Downloadable_Block_Catalog_Product_Links extends Mage_Catalog_Block_P
         return $coreHelper->jsonEncode($config);
     }
 
+    /**
+     * @todo
+     *
+     * @param $link
+     * @return
+     */
     public function getLinkSamlpeUrl($link)
     {
         return $this->getUrl('downloadable/download/linkSample', array('link_id' => $link->getId()));

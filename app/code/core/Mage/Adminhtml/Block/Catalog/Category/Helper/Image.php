@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Block_Catalog_Category_Helper_Image extends Varien_Data_Form_Element_Image
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getUrl()
     {
         $url = false;

@@ -25,7 +25,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Package
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $dir = new Varien_Io_File();

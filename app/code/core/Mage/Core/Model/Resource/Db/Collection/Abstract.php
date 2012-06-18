@@ -505,6 +505,11 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
         return $this->getConnection()->fetchCol($idsSelect);
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getData()
     {
         if ($this->_data === null) {
@@ -544,6 +549,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
 
         return (string)$select;
     }
+    
     /**
      * Join table to collection select
      *
@@ -713,7 +719,4 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
     {
         return Varien_Date::formatDate($date, $includeTime);
     }
-
-
-
 }

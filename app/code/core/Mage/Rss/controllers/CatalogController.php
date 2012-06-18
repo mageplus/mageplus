@@ -34,11 +34,23 @@
 
 class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
 {
+   /**
+    * @todo
+    *
+    * @param $code
+    * @return
+    */
     protected function isFeedEnable($code)
     {
         return Mage::getStoreConfig('rss/catalog/'.$code);
     }
 
+   /**
+    * @todo
+    *
+    * @param $code
+    * @return
+    */
     protected function checkFeedEnable($code)
     {
         if ($this->isFeedEnable($code)) {
@@ -52,6 +64,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         }
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function newAction()
     {
         $this->checkFeedEnable('new');
@@ -59,6 +76,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function specialAction()
     {
         $this->checkFeedEnable('special');
@@ -66,6 +88,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function salesruleAction()
     {
         $this->checkFeedEnable('salesrule');
@@ -73,6 +100,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function tagAction()
     {
         if ($this->checkFeedEnable('tag')) {
@@ -89,6 +121,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         $this->_forward('nofeed', 'index', 'rss');
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function notifystockAction()
     {
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=UTF-8');
@@ -96,6 +133,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function reviewAction()
     {
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=UTF-8');
@@ -103,6 +145,11 @@ class Mage_Rss_CatalogController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function categoryAction()
     {
         if ($this->checkFeedEnable('category')) {

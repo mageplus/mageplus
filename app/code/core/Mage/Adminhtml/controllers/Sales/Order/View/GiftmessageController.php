@@ -43,6 +43,11 @@ class Mage_Adminhtml_Sales_Order_View_GiftmessageController extends Mage_Adminht
         $this->setUsedModuleName('Mage_Sales');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         try {

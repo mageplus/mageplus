@@ -33,9 +33,13 @@
  */
 class Mage_Adminhtml_Block_Newsletter_Subscriber_Grid_Filter_Website extends Mage_Adminhtml_Block_Widget_Grid_Column_Filter_Select
 {
-
     protected $_websiteCollection = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getOptions()
     {
         $result = $this->getCollection()->toOptionArray();
@@ -43,6 +47,11 @@ class Mage_Adminhtml_Block_Newsletter_Subscriber_Grid_Filter_Website extends Mag
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollection()
     {
         if(is_null($this->_websiteCollection)) {
@@ -55,9 +64,13 @@ class Mage_Adminhtml_Block_Newsletter_Subscriber_Grid_Filter_Website extends Mag
         return $this->_websiteCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCondition()
     {
-
         $id = $this->getValue();
         if(!$id) {
             return null;

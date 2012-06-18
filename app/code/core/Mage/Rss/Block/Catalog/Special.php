@@ -49,6 +49,11 @@ class Mage_Rss_Block_Catalog_Special extends Mage_Rss_Block_Catalog_Abstract
         $this->setCacheLifetime(600);
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _toHtml()
     {
          //store id is store view id

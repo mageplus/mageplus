@@ -79,6 +79,14 @@ class Mage_Payment_Model_Config
         return $methods;
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * @param $config
+     * @param $store
+     * @return
+     */
     protected function _getMethod($code, $config, $store=null)
     {
         if (isset(self::$_methods[$code])) {

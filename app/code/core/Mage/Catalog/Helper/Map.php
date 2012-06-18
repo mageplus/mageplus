@@ -31,11 +31,21 @@ class Mage_Catalog_Helper_Map extends Mage_Core_Helper_Abstract
 {
     CONST XML_PATH_USE_TREE_MODE = 'catalog/sitemap/tree_mode';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategoryUrl()
     {
         return $this->_getUrl('catalog/seo_sitemap/category');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductUrl()
     {
         return $this->_getUrl('catalog/seo_sitemap/product');

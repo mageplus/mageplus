@@ -25,7 +25,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Web_Redirect
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

@@ -38,6 +38,13 @@ abstract class Mage_CatalogIndex_Model_Indexer_Abstract
     protected $_processChildrenForConfigurable = true;
     protected $_runOnce = false;
 
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product $object
+     * @param $forceId
+     * @return
+     */
     public function processAfterSave(Mage_Catalog_Model_Product $object, $forceId = null)
     {
         $associated = array();
@@ -96,16 +103,38 @@ abstract class Mage_CatalogIndex_Model_Indexer_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @param $storeId
+     * @param $productId
+     * @return
+     */
     public function saveIndex($data, $storeId, $productId)
     {
         $this->_getResource()->saveIndex($data, $storeId, $productId);
     }
 
+    /**
+     * @todo
+     *
+     * @param array $data
+     * @param $storeId
+     * @param $productId
+     * @return
+     */
     public function saveIndices(array $data, $storeId, $productId)
     {
         $this->_getResource()->saveIndices($data, $storeId, $productId);
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product $object
+     * @return
+     */
     protected function _isObjectIndexable(Mage_Catalog_Model_Product $object)
     {
         if ($object->getStatus() != Mage_Catalog_Model_Product_Status::STATUS_ENABLED) {
@@ -120,11 +149,23 @@ abstract class Mage_CatalogIndex_Model_Indexer_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     public function isAttributeIndexable(Mage_Eav_Model_Entity_Attribute_Abstract $attribute)
     {
         return $this->_isAttributeIndexable($attribute);
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     protected function _isAttributeIndexable(Mage_Eav_Model_Entity_Attribute_Abstract $attribute)
     {
         return true;
@@ -135,16 +176,33 @@ abstract class Mage_CatalogIndex_Model_Indexer_Abstract
         return $this->_getResource()->loadAttributeCodesByCondition($this->_getIndexableAttributeConditions());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getIndexableAttributeConditions()
     {
         return array();
     }
 
+    /**
+     * @todo
+     *
+     * @param $productId
+     * @param $storeId
+     * @return
+     */
     public function cleanup($productId, $storeId = null)
     {
         $this->_getResource()->cleanup($productId, $storeId);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isAttributeIdUsed()
     {
         return true;

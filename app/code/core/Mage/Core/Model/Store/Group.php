@@ -203,6 +203,11 @@ class Mage_Core_Model_Store_Group extends Mage_Core_Model_Abstract
         return $this->_storeCodes;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getStoresCount()
     {
         if (is_null($this->_stores)) {
@@ -307,21 +312,41 @@ class Mage_Core_Model_Store_Group extends Mage_Core_Model_Abstract
         return $this->getWebsite()->getDefaultGroupId() != $this->getId();
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getDefaultStoreId()
     {
         return $this->_getData('default_store_id');
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getRootCategoryId()
     {
         return $this->_getData('root_category_id');
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getWebsiteId()
     {
         return $this->_getData('website_id');
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _beforeDelete()
     {
         $this->_protectFromNonAdmin();

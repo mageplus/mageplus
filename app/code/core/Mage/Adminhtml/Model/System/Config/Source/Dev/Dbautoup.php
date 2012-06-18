@@ -25,6 +25,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Dev_Dbautoup
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

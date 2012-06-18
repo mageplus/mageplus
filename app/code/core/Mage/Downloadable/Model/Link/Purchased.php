@@ -55,7 +55,7 @@
 class Mage_Downloadable_Model_Link_Purchased extends Mage_Core_Model_Abstract
 {
     /**
-     * Enter description here...
+     * @todo
      *
      */
     protected function _construct()
@@ -77,5 +77,4 @@ class Mage_Downloadable_Model_Link_Purchased extends Mage_Core_Model_Abstract
         }
         return parent::_beforeSave();
     }
-
 }

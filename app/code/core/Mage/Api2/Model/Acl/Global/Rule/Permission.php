@@ -33,12 +33,11 @@
  */
 class Mage_Api2_Model_Acl_Global_Rule_Permission
 {
-    /**#@+
+    /**
      * Source keys
      */
     const TYPE_ALLOW = 1;
     const TYPE_DENY  = 0;
-    /**#@-*/
 
     /**
      * Get options parameters

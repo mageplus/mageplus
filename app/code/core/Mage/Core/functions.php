@@ -29,7 +29,13 @@
  *
  * @link http://us3.php.net/manual/en/security.magicquotes.disabling.php
  */
-if (get_magic_quotes_gpc()) {
+if (get_magic_quotes_gpc())
+{
+    /**
+     * @todo
+     *
+     * @return
+     */
     function mageUndoMagicQuotes($array, $topLevel=true) {
         $newArray = array();
         foreach($array as $key => $value) {
@@ -132,6 +138,13 @@ function is_empty_date($date)
     return preg_replace('#[ 0:-]#', '', $date)==='';
 }
 
+    /**
+     * @todo
+     *
+     * @param $class
+     *
+     * @return
+     */
 function mageFindClassFile($class)
 {
     if (defined('COMPILER_INCLUDE_PATH')) {
@@ -248,6 +261,15 @@ function mageCoreErrorHandler($errno, $errstr, $errfile, $errline){
     }
 }
 
+    /**
+     * @todo
+     *
+     * @param $return
+     * @param $html
+     * @param $showFirst
+     *
+     * @return
+     */
 function mageDebugBacktrace($return=false, $html=true, $showFirst=false)
 {
     $d = debug_backtrace();
@@ -268,6 +290,11 @@ function mageDebugBacktrace($return=false, $html=true, $showFirst=false)
     }
 }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
 function mageSendErrorHeader()
 {
     return;
@@ -278,6 +305,11 @@ function mageSendErrorHeader()
     echo '<form id="error_report" method="post" style="display:none" action="'.$action.'"><textarea name="error">';
 }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
 function mageSendErrorFooter()
 {
     return;
@@ -288,6 +320,13 @@ function mageSendErrorFooter()
     exit;
 }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     *
+     * @return
+     */
 function mageDelTree($path) {
     if (is_dir($path)) {
         $entries = scandir($path);
@@ -302,6 +341,16 @@ function mageDelTree($path) {
     }
 }
 
+    /**
+     * @todo
+     *
+     * @param $string
+     * @param $delimiter
+     * @param $enclosure
+     * @param $escape
+     *
+     * @return
+     */
 function mageParseCsv($string, $delimiter=",", $enclosure='"', $escape='\\')
 {
     $elements = explode($delimiter, $string);
@@ -328,6 +377,13 @@ function mageParseCsv($string, $delimiter=",", $enclosure='"', $escape='\\')
     return $elements;
 }
 
+    /**
+     * @todo
+     *
+     * @param $dir
+     *
+     * @return
+     */
 function is_dir_writeable($dir)
 {
     if (is_dir($dir) && is_writable($dir)) {
@@ -352,6 +408,11 @@ function is_dir_writeable($dir)
 if ( !function_exists('sys_get_temp_dir') ) {
     // Based on http://www.phpit.net/
     // article/creating-zip-tar-archives-dynamically-php/2/
+    /**
+     * @todo
+     *
+     * @return
+     */
     function sys_get_temp_dir()
     {
         // Try to get from environment variable

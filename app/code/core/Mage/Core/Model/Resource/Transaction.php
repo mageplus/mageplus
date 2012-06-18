@@ -55,6 +55,7 @@ class Mage_Core_Model_Resource_Transaction
      * @var array
      */
     protected $_beforeCommitCallbacks = array();
+    
     /**
      * Begin transaction for all involved object resources
      *

@@ -508,7 +508,6 @@ class Mage_Wishlist_Model_Wishlist extends Mage_Core_Model_Abstract
         return $customerId == $this->getCustomerId();
     }
 
-
     /**
      * Update wishlist Item and set data from request
      *

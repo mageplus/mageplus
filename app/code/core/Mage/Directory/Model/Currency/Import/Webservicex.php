@@ -48,6 +48,14 @@ class Mage_Directory_Model_Currency_Import_Webservicex extends Mage_Directory_Mo
         $this->_httpClient = new Varien_Http_Client();
     }
 
+    /**
+     * @todo
+     *
+     * @param $currencyFrom
+     * @param $currencyTo
+     * @param $retry
+     * @return
+     */
     protected function _convert($currencyFrom, $currencyTo, $retry=0)
     {
         $url = str_replace('{{CURRENCY_FROM}}', $currencyFrom, $this->_url);

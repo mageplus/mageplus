@@ -412,13 +412,6 @@ class Mage_Adminhtml_Sales_Order_InvoiceController extends Mage_Adminhtml_Contro
         $this->getResponse()->setBody($response);
     }
 
-
-
-
-
-
-
-
     /**
      * Decides if we need to create dummy invoice item or not
      * for eaxample we don't need create dummy parent if all

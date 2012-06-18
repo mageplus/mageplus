@@ -174,7 +174,7 @@ class Mage_Sales_Model_Service_Quote
             $order->addItem($orderItem);
         }
 
-	$quote->setConvertedAt(Mage::getSingleton('core/date')->gmtDate());
+        $quote->setConvertedAt(Mage::getSingleton('core/date')->gmtDate());
         $order->setQuote($quote);
 
         $transaction->addObject($order);

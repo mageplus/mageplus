@@ -39,6 +39,11 @@ class Mage_Bundle_Block_Catalog_Product_List_Partof extends Mage_Catalog_Block_P
     protected $_itemCollection;
     protected $_product = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareData()
     {
         $collection = Mage::getModel('catalog/product')->getResourceCollection()
@@ -66,29 +71,56 @@ class Mage_Bundle_Block_Catalog_Product_List_Partof extends Mage_Catalog_Block_P
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->_prepareData();
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemCollection()
     {
         return $this->_itemCollection;
     }
 
-    public function getItems() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getItems()
+    {
         if (is_null($this->_items)) {
             $this->_items = $this->getItemCollection()->getItems();
         }
         return $this->_items;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRowCount()
     {
         return ceil($this->getItemCollection()->getSize()/$this->getColumnCount());
     }
 
+    /**
+     * @todo
+     *
+     * @param $columns
+     * @return
+     */
     public function setColumnCount($columns)
     {
         if (intval($columns) > 0) {
@@ -97,17 +129,32 @@ class Mage_Bundle_Block_Catalog_Product_List_Partof extends Mage_Catalog_Block_P
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getColumnCount()
     {
         return $this->_columnCount;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resetItemsIterator()
     {
         $this->getItems();
         reset($this->_items);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIterableItem()
     {
         $item = current($this->_items);

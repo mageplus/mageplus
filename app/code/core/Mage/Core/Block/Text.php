@@ -32,18 +32,37 @@
  */
 class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @param $text
+     *
+     * @return
+     */
     public function setText($text)
     {
         $this->setData('text', $text);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getText()
     {
         return $this->getData('text');
     }
 
+    /**
+     * @todo
+     *
+     * @param $text
+     * @param $before
+     *
+     * @return
+     */
     public function addText($text, $before=false)
     {
         if ($before) {
@@ -53,6 +72,11 @@ class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         if (!$this->_beforeToHtml()) {

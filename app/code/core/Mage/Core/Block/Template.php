@@ -189,6 +189,11 @@ class Mage_Core_Block_Template extends Mage_Core_Block_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShowTemplateHints()
     {
         if (is_null(self::$_showTemplateHints)) {

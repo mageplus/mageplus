@@ -34,12 +34,22 @@
 
 class Mage_Customer_ReviewController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function indexAction()
     {
         $this->loadLayout();
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function viewAction()
     {
         $this->loadLayout();

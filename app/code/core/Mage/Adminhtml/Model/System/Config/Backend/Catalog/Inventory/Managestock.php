@@ -35,7 +35,7 @@
 class Mage_Adminhtml_Model_System_Config_Backend_Catalog_Inventory_Managestock
     extends Mage_Core_Model_Config_Data
 {
-/**
+    /**
      * After change Catalog Inventory Manage value process
      *
      * @return Mage_Adminhtml_Model_System_Config_Backend_Catalog_Inventory_Managestock

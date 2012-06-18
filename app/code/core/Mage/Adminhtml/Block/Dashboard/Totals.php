@@ -40,6 +40,11 @@ class Mage_Adminhtml_Block_Dashboard_Totals extends Mage_Adminhtml_Block_Dashboa
         $this->setTemplate('dashboard/totalbar.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if (!Mage::helper('core')->isModuleEnabled('Mage_Reports')) {
@@ -72,7 +77,7 @@ class Mage_Adminhtml_Block_Dashboard_Totals extends Mage_Adminhtml_Block_Dashboa
         $totals = $collection->getFirstItem();
 
         $this->addTotal($this->__('Revenue'), $totals->getRevenue());
-	$this->addTotal($this->__('Profit'), $totals->getProfit());
+        $this->addTotal($this->__('Profit'), $totals->getProfit());
         $this->addTotal($this->__('Tax'), $totals->getTax());
         $this->addTotal($this->__('Shipping'), $totals->getShipping());
         $this->addTotal($this->__('Quantity'), $totals->getQuantity()*1, true);

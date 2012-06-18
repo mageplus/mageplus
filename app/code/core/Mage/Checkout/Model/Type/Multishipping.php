@@ -591,6 +591,11 @@ class Mage_Checkout_Model_Type_Multishipping extends Mage_Checkout_Model_Type_Ab
         return $descr;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMinimumAmountError()
     {
         $error = Mage::getStoreConfig('sales/minimum_order/multi_address_error_message');

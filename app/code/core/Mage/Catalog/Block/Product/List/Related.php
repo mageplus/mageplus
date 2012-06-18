@@ -43,6 +43,11 @@ class Mage_Catalog_Block_Product_List_Related extends Mage_Catalog_Block_Product
 
     protected $_itemCollection;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareData()
     {
         $product = Mage::registry('product');
@@ -72,12 +77,22 @@ class Mage_Catalog_Block_Product_List_Related extends Mage_Catalog_Block_Product
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->_prepareData();
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItems()
     {
         return $this->_itemCollection;

@@ -54,6 +54,11 @@ class Mage_CatalogIndex_Model_Aggregation extends Mage_Core_Model_Abstract
         $this->_init('catalogindex/aggregation');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isEnabled()
     {
         return Mage::app()->useCache(self::CACHE_FLAG_NAME);

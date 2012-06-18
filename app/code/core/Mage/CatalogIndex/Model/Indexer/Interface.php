@@ -32,5 +32,12 @@
  */
 interface Mage_CatalogIndex_Model_Indexer_Interface
 {
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product $object
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     public function createIndexData(Mage_Catalog_Model_Product $object, Mage_Eav_Model_Entity_Attribute_Abstract $attribute = null);
 }

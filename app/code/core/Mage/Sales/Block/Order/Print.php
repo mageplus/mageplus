@@ -33,6 +33,11 @@
 
 class Mage_Sales_Block_Order_Print extends Mage_Sales_Block_Items_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -44,16 +49,33 @@ class Mage_Sales_Block_Order_Print extends Mage_Sales_Block_Items_Abstract
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentInfoHtml()
     {
         return $this->getChildHtml('payment_info');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOrder()
     {
         return Mage::registry('current_order');
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Core_Block_Abstract $renderer
+     *
+     * @return
+     */
     protected function _prepareItem(Mage_Core_Block_Abstract $renderer)
     {
         $renderer->setPrintStatus(true);

@@ -214,13 +214,22 @@ class Mage_Poll_Model_Poll extends Mage_Core_Model_Abstract
         return false;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function resetVotesCount()
     {
         $this->_getResource()->resetVotesCount($this);
         return $this;
     }
 
-
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getVotedPollsIds()
     {
         $idsArray = array();
@@ -243,17 +252,34 @@ class Mage_Poll_Model_Poll extends Mage_Core_Model_Abstract
         return $idsArray;
     }
 
+   /**
+    * @todo
+    *
+    * @param $object
+    * @return
+    */
     public function addAnswer($object)
     {
         $this->_answersCollection[] = $object;
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getAnswers()
     {
         return $this->_answersCollection;
     }
 
+   /**
+    * @todo
+    *
+    * @param $storeId
+    * @return
+    */
     public function addStoreId($storeId)
     {
         $ids = $this->getStoreIds();
@@ -264,6 +290,11 @@ class Mage_Poll_Model_Poll extends Mage_Core_Model_Abstract
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getStoreIds()
     {
         $ids = $this->_getData('store_ids');
@@ -274,14 +305,23 @@ class Mage_Poll_Model_Poll extends Mage_Core_Model_Abstract
         return $ids;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function loadStoreIds()
     {
         $this->_getResource()->loadStoreIds($this);
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getVotesCount()
     {
         return $this->_getData('votes_count');
     }
-
 }

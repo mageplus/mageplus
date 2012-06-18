@@ -107,7 +107,7 @@ class Mage_CatalogSearch_Model_Resource_Query extends Mage_Core_Model_Resource_D
     }
 
     /**
-     * Enter description here ...
+     * @todo
      *
      * @param Mage_Core_Model_Abstract $object
      * @return Mage_CatalogSearch_Model_Resource_Query

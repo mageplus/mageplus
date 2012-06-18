@@ -37,6 +37,11 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
     protected $_countryCollection;
     protected $_regionCollection;
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
@@ -81,6 +86,11 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
         return $nameBlock->toHtml();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getTitle()
     {
         if ($title = $this->getData('title')) {
@@ -95,6 +105,11 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
         return $title;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getBackUrl()
     {
         if ($this->getData('back_url')) {
@@ -108,16 +123,31 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
         }
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getSaveUrl()
     {
         return Mage::getUrl('customer/address/formPost', array('_secure'=>true, 'id'=>$this->getAddress()->getId()));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAddress()
     {
         return $this->_address;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCountryId()
     {
         if ($countryId = $this->getAddress()->getCountryId()) {
@@ -126,16 +156,31 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
         return parent::getCountryId();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getRegionId()
     {
         return $this->getAddress()->getRegionId();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomerAddressCount()
     {
         return count(Mage::getSingleton('customer/session')->getCustomer()->getAddresses());
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function canSetAsDefaultBilling()
     {
         if (!$this->getAddress()->getId()) {
@@ -144,6 +189,11 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
         return !$this->isDefaultBilling();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function canSetAsDefaultShipping()
     {
         if (!$this->getAddress()->getId()) {
@@ -152,23 +202,43 @@ class Mage_Customer_Block_Address_Edit extends Mage_Directory_Block_Data
         return !$this->isDefaultShipping();;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function isDefaultBilling()
     {
         $defaultBilling = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling();
         return $this->getAddress()->getId() && $this->getAddress()->getId() == $defaultBilling;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function isDefaultShipping()
     {
         $defaultShipping = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping();
         return $this->getAddress()->getId() && $this->getAddress()->getId() == $defaultShipping;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomer()
     {
         return Mage::getSingleton('customer/session')->getCustomer();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getBackButtonUrl()
     {
         if ($this->getCustomerAddressCount()) {

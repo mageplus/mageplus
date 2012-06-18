@@ -306,7 +306,8 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Template
      *
      * @return int|string
      */
-    public function getType(){
+    public function getType()
+    {
         return $this->getTemplateType();
     }
 
@@ -535,6 +536,13 @@ class Mage_Core_Model_Email_Template extends Mage_Core_Model_Template
         return $processedResult;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $bcc
+     * 
+     * @return 
+     */
     public function addBcc($bcc)
     {
         if (is_array($bcc)) {

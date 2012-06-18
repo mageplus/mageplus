@@ -439,6 +439,7 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
         $this->_availableOrder[$order] = $value;
         return $this;
     }
+    
     /**
      * Remove order from available orders if exists
      *
@@ -766,33 +767,64 @@ class Mage_Catalog_Block_Product_List_Toolbar extends Mage_Core_Block_Template
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @param $limit
+     * @return
+     */
     public function isLimitCurrent($limit)
     {
         return $limit == $this->getLimit();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFirstNum()
     {
         $collection = $this->getCollection();
         return $collection->getPageSize()*($collection->getCurPage()-1)+1;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastNum()
     {
         $collection = $this->getCollection();
         return $collection->getPageSize()*($collection->getCurPage()-1)+$collection->count();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTotalNum()
     {
         return $this->getCollection()->getSize();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isFirstPage()
     {
         return $this->getCollection()->getCurPage() == 1;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastPageNum()
     {
         return $this->getCollection()->getLastPageNumber();

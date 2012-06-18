@@ -49,6 +49,11 @@ class Mage_Catalog_Block_Product_List_Upsell extends Mage_Catalog_Block_Product_
 
     protected $_itemLimits = array();
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareData()
     {
         $product = Mage::registry('product');
@@ -89,17 +94,32 @@ class Mage_Catalog_Block_Product_List_Upsell extends Mage_Catalog_Block_Product_
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->_prepareData();
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemCollection()
     {
         return $this->_itemCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItems()
     {
         if (is_null($this->_items)) {
@@ -108,11 +128,22 @@ class Mage_Catalog_Block_Product_List_Upsell extends Mage_Catalog_Block_Product_
         return $this->_items;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRowCount()
     {
         return ceil(count($this->getItemCollection()->getItems())/$this->getColumnCount());
     }
 
+    /**
+     * @todo
+     *
+     * @param $columns
+     * @return
+     */
     public function setColumnCount($columns)
     {
         if (intval($columns) > 0) {
@@ -121,17 +152,32 @@ class Mage_Catalog_Block_Product_List_Upsell extends Mage_Catalog_Block_Product_
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getColumnCount()
     {
         return $this->_columnCount;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resetItemsIterator()
     {
         $this->getItems();
         reset($this->_items);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIterableItem()
     {
         $item = current($this->_items);
@@ -155,6 +201,12 @@ class Mage_Catalog_Block_Product_List_Upsell extends Mage_Catalog_Block_Product_
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function getItemLimit($type = '')
     {
         if ($type == '') {

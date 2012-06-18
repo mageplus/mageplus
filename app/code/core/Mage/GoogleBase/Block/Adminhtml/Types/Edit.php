@@ -121,6 +121,11 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit extends Mage_Adminhtml_Block_Wi
         ';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         if(!is_null(Mage::registry('current_item_type')->getId())) {
@@ -130,8 +135,13 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit extends Mage_Adminhtml_Block_Wi
         }
     }
 
-    public function getHeaderCssClass() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getHeaderCssClass()
+    {
         return 'icon-head head-customer-groups';
     }
-
 }

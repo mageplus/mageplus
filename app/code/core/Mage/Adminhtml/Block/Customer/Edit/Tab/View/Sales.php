@@ -57,6 +57,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View_Sales extends Mage_Adminhtml_B
         $this->setId('customer_view_sales_grid');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _beforeToHtml()
     {
         $this->_currency = Mage::getModel('directory/currency')
@@ -98,16 +103,32 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View_Sales extends Mage_Adminhtml_B
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @param $websiteId
+     * @return
+     */
     public function getWebsiteCount($websiteId)
     {
         return isset($this->_websiteCounts[$websiteId]) ? $this->_websiteCounts[$websiteId] : 0;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRows()
     {
         return $this->_groupedCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTotals()
     {
         return $this->_collection->getTotals();

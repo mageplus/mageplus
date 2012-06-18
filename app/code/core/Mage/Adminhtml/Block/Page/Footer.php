@@ -44,21 +44,41 @@ class Mage_Adminhtml_Block_Page_Footer extends Mage_Adminhtml_Block_Template
         $this->setShowProfiler(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getChangeLocaleUrl()
     {
         return $this->getUrl('adminhtml/index/changeLocale');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUrlForReferer()
     {
         return $this->getUrlEncoded('*/*/*',array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRefererParamName()
     {
         return Mage_Core_Controller_Varien_Action::PARAM_NAME_URL_ENCODED;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLanguageSelect()
     {
         $locale  = Mage::app()->getLocale();

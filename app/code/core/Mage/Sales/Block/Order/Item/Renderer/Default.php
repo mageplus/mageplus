@@ -33,12 +33,24 @@
  */
 class Mage_Sales_Block_Order_Item_Renderer_Default extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @param Varien_Object $item
+     * 
+     * @return
+     */
     public function setItem(Varien_Object $item)
     {
         $this->setData('item', $item);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItem()
     {
         return $this->_getData('item');
@@ -54,7 +66,11 @@ class Mage_Sales_Block_Order_Item_Renderer_Default extends Mage_Core_Block_Templ
         return $this->getOrderItem()->getOrder();
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOrderItem()
     {
         if ($this->getItem() instanceof Mage_Sales_Model_Order_Item) {
@@ -64,6 +80,11 @@ class Mage_Sales_Block_Order_Item_Renderer_Default extends Mage_Core_Block_Templ
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemOptions()
     {
         $result = array();

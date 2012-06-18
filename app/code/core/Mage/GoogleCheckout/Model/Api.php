@@ -33,6 +33,12 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
      */
     protected $_debugReplacePrivateDataKeys = array();
 
+    /**
+     * @todo
+     *
+     * @param $area
+     * @return
+     */
     protected function _getApi($area)
     {
         $api = Mage::getModel('googlecheckout/api_xml_' . $area)->setStoreId($this->getStoreId());
@@ -41,6 +47,12 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
     }
 
 // CHECKOUT
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote $quote
+     * @return
+     */
     public function checkout(Mage_Sales_Model_Quote $quote)
     {
         $api = $this->_getApi('checkout')
@@ -50,6 +62,12 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
     }
 
 // FINANCIAL COMMANDS
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @return
+     */
     public function authorize($gOrderId)
     {
         $api = $this->_getApi('order')
@@ -58,6 +76,13 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @param $amount
+     * @return
+     */
     public function charge($gOrderId, $amount)
     {
         $api = $this->_getApi('order')
@@ -66,6 +91,15 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @param $amount
+     * @param $reason
+     * @param $comment
+     * @return
+     */
     public function refund($gOrderId, $amount, $reason, $comment = '')
     {
         $api = $this->_getApi('order')
@@ -74,6 +108,14 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @param $reason
+     * @param $comment
+     * @return
+     */
     public function cancel($gOrderId, $reason, $comment = '')
     {
         $api = $this->_getApi('order')
@@ -83,7 +125,12 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
     }
 
 // FULFILLMENT COMMANDS (ORDER BASED)
-
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @return
+     */
     public function process($gOrderId)
     {
         $api = $this->_getApi('order')
@@ -92,6 +139,15 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @param $carrier
+     * @param $trackingNo
+     * @param bool $sendMail
+     * @return
+     */
     public function deliver($gOrderId, $carrier, $trackingNo, $sendMail = true)
     {
         $gCarriers = array('dhl' => 'DHL', 'fedex' => 'FedEx', 'ups' => 'UPS', 'usps' => 'USPS');
@@ -104,6 +160,14 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @param $carrier
+     * @param $trackingNo
+     * @return
+     */
     public function addTrackingData($gOrderId, $carrier, $trackingNo)
     {
         $api = $this->_getApi('order')
@@ -113,7 +177,13 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
     }
 
 // FULFILLMENT COMMANDS (ITEM BASED)
-
+    /**
+     * @todo
+     *
+     * @param $gOrderId
+     * @param array $items
+     * @return
+     */
     public function shipItems($gOrderId, array $items)
     {
         $api = $this->_getApi('order')
@@ -122,6 +192,11 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function backorderItems()
     {
         $api = $this->_getApi('order')
@@ -131,6 +206,11 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function returnItems()
     {
         $api = $this->_getApi('order')
@@ -140,6 +220,11 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function cancelItems()
     {
         $api = $this->_getApi('order')
@@ -149,16 +234,31 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resetItemsShippingInformation()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function addMerchantOrderNumber()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function sendBuyerMessage()
     {
         $api = $this->_getApi('order')
@@ -169,7 +269,11 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
     }
 
 // OTHER ORDER COMMANDS
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function archiveOrder()
     {
         $api = $this->_getApi('order')
@@ -179,6 +283,11 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unarchiveOrder()
     {
         $api = $this->_getApi('order')
@@ -189,7 +298,11 @@ class Mage_GoogleCheckout_Model_Api extends Varien_Object
     }
 
 // WEB SERVICE SERVER PROCEDURES
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function processCallback()
     {
         $api = $this->_getApi('callback')->process();

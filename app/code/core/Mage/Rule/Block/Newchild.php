@@ -28,6 +28,12 @@
 class Mage_Rule_Block_Newchild extends Mage_Core_Block_Abstract
     implements Varien_Data_Form_Element_Renderer_Interface
 {
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         $element->addClass('element-value-changer');

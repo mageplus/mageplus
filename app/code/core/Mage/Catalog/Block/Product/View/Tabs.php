@@ -61,6 +61,11 @@ class Mage_Catalog_Block_Product_View_Tabs extends Mage_Core_Block_Template
             );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     function getTabs()
     {
         return $this->_tabs;

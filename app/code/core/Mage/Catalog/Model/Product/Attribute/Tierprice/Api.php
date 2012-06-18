@@ -40,6 +40,13 @@ class Mage_Catalog_Model_Product_Attribute_Tierprice_Api extends Mage_Catalog_Mo
         $this->_storeIdSessionField = 'product_store_id';
     }
 
+    /**
+     * @todo
+     *
+     * @param $productId
+     * @param $identifierType
+     * @return
+     */
     public function info($productId, $identifierType = null)
     {
         $product = $this->_initProduct($productId, $identifierType);

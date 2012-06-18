@@ -34,16 +34,93 @@
  */
 interface Mage_Eav_Model_Entity_Attribute_Backend_Interface
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTable();
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isStatic();
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getType();
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEntityIdField();
+    
+    /**
+     * @todo
+     *
+     * @param $valueId
+     *
+     * @return
+     */
     public function setValueId($valueId);
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValueId();
+    
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function afterLoad($object);
+    
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function beforeSave($object);
+    
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function afterSave($object);
+    
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function beforeDelete($object);
+    
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function afterDelete($object);
 
     /**

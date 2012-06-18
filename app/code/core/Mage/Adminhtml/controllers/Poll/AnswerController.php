@@ -34,6 +34,11 @@
 
 class Mage_Adminhtml_Poll_AnswerController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->loadLayout();
@@ -49,6 +54,11 @@ class Mage_Adminhtml_Poll_AnswerController extends Mage_Adminhtml_Controller_Act
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         //print '@@';
@@ -73,6 +83,11 @@ class Mage_Adminhtml_Poll_AnswerController extends Mage_Adminhtml_Controller_Act
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->getResponse()->setBody(
@@ -80,6 +95,11 @@ class Mage_Adminhtml_Poll_AnswerController extends Mage_Adminhtml_Controller_Act
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function jsonSaveAction()
     {
         $response = new Varien_Object();
@@ -102,6 +122,11 @@ class Mage_Adminhtml_Poll_AnswerController extends Mage_Adminhtml_Controller_Act
         $this->getResponse()->setBody( $response->toJson() );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function jsonDeleteAction()
     {
         $response = new Varien_Object();
@@ -123,6 +148,11 @@ class Mage_Adminhtml_Poll_AnswerController extends Mage_Adminhtml_Controller_Act
         $this->getResponse()->setBody( $response->toJson() );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('cms/poll');

@@ -49,6 +49,12 @@ class Mage_Api_Model_Acl_Assert_Time implements Zend_Acl_Assert_Interface
         return $this->_isCleanTime(time());
     }
 
+    /**
+     * @todo
+     *
+     * @param $time
+     * @return
+     */
     protected function _isCleanTime($time)
     {
         // ...

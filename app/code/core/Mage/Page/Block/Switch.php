@@ -35,21 +35,41 @@ class Mage_Page_Block_Switch extends Mage_Core_Block_Template
 {
     protected $_storeInUrl;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentWebsiteId()
     {
         return Mage::app()->getStore()->getWebsiteId();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentGroupId()
     {
         return Mage::app()->getStore()->getGroupId();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentStoreId()
     {
         return Mage::app()->getStore()->getId();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRawGroups()
     {
         if (!$this->hasData('raw_groups')) {
@@ -64,6 +84,11 @@ class Mage_Page_Block_Switch extends Mage_Core_Block_Template
         return $this->getData('raw_groups');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRawStores()
     {
         if (!$this->hasData('raw_stores')) {
@@ -127,6 +152,11 @@ class Mage_Page_Block_Switch extends Mage_Core_Block_Template
         return $this->getData('groups');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStores()
     {
         if (!$this->getData('stores')) {
@@ -143,11 +173,21 @@ class Mage_Page_Block_Switch extends Mage_Core_Block_Template
         return $this->getData('stores');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentStoreCode()
     {
         return Mage::app()->getStore()->getCode();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isStoreInUrl()
     {
         if (is_null($this->_storeInUrl)) {

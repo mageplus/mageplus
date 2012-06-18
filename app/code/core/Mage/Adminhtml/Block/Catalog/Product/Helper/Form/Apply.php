@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Apply extends Varien_Data_Form_Element_Multiselect
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $elementAttributeHtml = '';

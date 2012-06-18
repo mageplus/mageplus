@@ -29,6 +29,11 @@
  */
 class Mage_Install_WizardController extends Mage_Install_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         if (Mage::isInstalled()) {
@@ -188,6 +193,11 @@ class Mage_Install_WizardController extends Mage_Install_Controller_Action
         $this->getResponse()->setRedirect($step->getNextUrl());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function downloadAction()
     {
         $this->_checkIfInstalled();
@@ -203,6 +213,11 @@ class Mage_Install_WizardController extends Mage_Install_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function downloadPostAction()
     {
         $this->_checkIfInstalled();
@@ -225,12 +240,22 @@ class Mage_Install_WizardController extends Mage_Install_Controller_Action
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function downloadAutoAction()
     {
         $step = $this->_getWizard()->getStepByName('download');
         $this->getResponse()->setRedirect($step->getNextUrl());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function installAction()
     {
         $pear = Varien_Pear::getInstance();
@@ -257,16 +282,31 @@ class Mage_Install_WizardController extends Mage_Install_Controller_Action
         Mage::app()->getFrontController()->getResponse()->clearAllHeaders();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function installSuccessCallback()
     {
         echo 'parent.installSuccess()';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function installFailureCallback()
     {
         echo 'parent.installFailure()';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function downloadManualAction()
     {
         $step = $this->_getWizard()->getStepByName('download');

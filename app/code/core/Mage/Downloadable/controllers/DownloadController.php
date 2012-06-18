@@ -54,6 +54,13 @@ class Mage_Downloadable_DownloadController extends Mage_Core_Controller_Front_Ac
         return Mage::getSingleton('customer/session');
     }
 
+    /**
+     * @todo
+     *
+     * @param $resource
+     * @param $resourceType
+     * @return
+     */
     protected function _processDownload($resource, $resourceType)
     {
         $helper = Mage::helper('downloadable/download');

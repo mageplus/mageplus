@@ -30,6 +30,12 @@ class Mage_GoogleCheckout_Block_Adminhtml_Shipping_Applicable_Countries
     protected $_addRowButtonHtml = array();
     protected $_removeRowButtonHtml = array();
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
     {
         $html = parent::_getElementHtml($element);
@@ -37,6 +43,12 @@ class Mage_GoogleCheckout_Block_Adminhtml_Shipping_Applicable_Countries
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $element
+     * @return
+     */
     protected function _appendJs($element)
     {
         $elId = $element->getHtmlId();

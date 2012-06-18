@@ -33,7 +33,12 @@
  */
 class Mage_Adminhtml_Block_Customer_Online_Grid_Renderer_Ip extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function render(Varien_Object $row)
     {
         return long2ip($row->getData($this->getColumn()->getIndex()));

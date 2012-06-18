@@ -36,22 +36,22 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
     implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
     /**
-     * TODO
+     * @TODO
      */
     protected $_addRowButtonHtml;
 
     /**
-     * TODO
+     * @TODO
      */
     protected $_removeRowButtonHtml;
 
     /**
-     * TODO
+     * @TODO
      */
     protected $_addFileDepButtonHtml;
 
     /**
-     * TODO
+     * @TODO
      */
     public function __construct()
     {
@@ -60,7 +60,7 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
     }
 
     /**
-     * TODO   remove ???
+     * @TODO   remove ???
      */
     public function initForm()
     {
@@ -68,7 +68,12 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
     }
 
     /**
-     * TODO
+     * @TODO
+     *
+     * @param $key
+     * @param $default
+     *
+     * @return
      */
     public function getValue($key, $default='')
     {
@@ -77,7 +82,11 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
     }
 
     /**
-     * TODO
+     * @TODO
+     *
+     * @param $key
+     * @param $value
+     * @return
      */
     public function getSelected($key, $value)
     {
@@ -85,7 +94,10 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
     }
 
     /**
-     * TODO
+     * @TODO
+     *
+     * @param $key
+     * @return
      */
     public function getChecked($key)
     {
@@ -93,7 +105,12 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
     }
 
     /**
-     * TODO
+     * @TODO
+     *
+     * @param $container
+     * @param $template
+     * @param $title
+     * @return
      */
     public function getAddRowButtonHtml($container, $template, $title='Add')
     {
@@ -111,6 +128,9 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
 
     /**
      * TODO
+     *
+     * @param $selector
+     * @return
      */
     public function getRemoveRowButtonHtml($selector='span')
     {
@@ -126,6 +146,13 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
         return $this->_removeRowButtonHtml;
     }
 
+    /**
+     * @todo
+     *
+     * @param $selector
+     * @param $filesClass
+     * @return
+     */
     public function getAddFileDepsRowButtonHtml($selector='span', $filesClass='files')
     {
         if (!$this->_addFileDepButtonHtml) {
@@ -161,11 +188,21 @@ abstract class Mage_Connect_Block_Adminhtml_Extension_Custom_Edit_Tab_Abstract
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canShowTab()
     {
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isHidden()
     {
         return false;

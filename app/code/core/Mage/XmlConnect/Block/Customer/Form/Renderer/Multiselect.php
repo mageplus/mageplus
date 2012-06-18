@@ -39,7 +39,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Multiselect
      *
      * @var string
      */
-    protected $_filedType = 'multiselect';
+    protected $_fieldType = 'multiselect';
 
     /**
      * Add select field to fieldset xml object
@@ -59,7 +59,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Multiselect
         $attributes += Mage::helper('xmlconnect/customer_form_renderer')
             ->addTitleAndRequiredAttr($fieldsetXmlObj, $this);
 
-        $fieldsetXmlObj->addField($this->getHtmlId(), $this->_filedType, $attributes);
+        $fieldsetXmlObj->addField($this->getHtmlId(), $this->_fieldType, $attributes);
 
         return $this;
     }

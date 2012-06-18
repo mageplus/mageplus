@@ -111,7 +111,14 @@ class Mage_Catalog_Model_Category_Attribute_Backend_Sortby
         return $this;
     }
 
-    public function afterLoad($object) {
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
+    public function afterLoad($object)
+    {
         $attributeCode = $this->getAttribute()->getName();
         if ($attributeCode == 'available_sort_by') {
             $data = $object->getData($attributeCode);

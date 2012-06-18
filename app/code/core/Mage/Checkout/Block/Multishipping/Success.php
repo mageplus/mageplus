@@ -33,6 +33,11 @@
  */
 class Mage_Checkout_Block_Multishipping_Success extends Mage_Checkout_Block_Multishipping_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOrderIds()
     {
         $ids = Mage::getSingleton('core/session')->getOrderIds(true);
@@ -44,11 +49,23 @@ class Mage_Checkout_Block_Multishipping_Success extends Mage_Checkout_Block_Mult
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $orderId
+     * 
+     * @return
+     */
     public function getViewOrderUrl($orderId)
     {
         return $this->getUrl('sales/order/view/', array('order_id' => $orderId, '_secure' => true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getContinueUrl()
     {
         return Mage::getBaseUrl();

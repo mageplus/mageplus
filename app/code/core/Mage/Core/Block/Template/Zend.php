@@ -49,6 +49,14 @@ class Mage_Core_Block_Template_Zend extends Mage_Core_Block_Template
         $this->_view = new Zend_View();
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $value
+     *
+     * @return
+     */
     public function assign($key, $value=null)
     {
         if (is_array($key) && is_null($value)) {
@@ -61,11 +69,25 @@ class Mage_Core_Block_Template_Zend extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $dir
+     *
+     * @return
+     */
     public function setScriptPath($dir)
     {
         $this->_view->setScriptPath($dir.DS);
     }
 
+    /**
+     * @todo
+     *
+     * @param $fileName
+     *
+     * @return
+     */
     public function fetchView($fileName)
     {
         return $this->_view->render($fileName);

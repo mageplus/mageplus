@@ -94,6 +94,13 @@ class Mage_Customer_Model_Group extends Mage_Core_Model_Abstract
         return $this->getCustomerGroupCode();
     }
 
+    /**
+     * @todo
+     *
+     * @param $groupId
+     *
+     * @return
+     */
     public function getTaxClassId($groupId = null)
     {
         if (!is_null($groupId)) {
@@ -106,7 +113,11 @@ class Mage_Customer_Model_Group extends Mage_Core_Model_Abstract
         return $this->getData('tax_class_id');
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function usesAsDefault()
     {
         $data = Mage::getConfig()->getStoresConfigByPath(self::XML_PATH_DEFAULT_ID);

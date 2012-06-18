@@ -61,12 +61,23 @@ class Mage_Page_Block_Html_Footer extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @param $copyright
+     * @return
+     */
     public function setCopyright($copyright)
     {
         $this->_copyright = $copyright;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCopyright()
     {
         if (!$this->_copyright) {

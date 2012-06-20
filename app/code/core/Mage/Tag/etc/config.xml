@@ -161,4 +161,11 @@
             </updates>
         </layout>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Tag/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

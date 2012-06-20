@@ -74,4 +74,11 @@
             </modules>
         </translate>
     </frontend>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Media/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

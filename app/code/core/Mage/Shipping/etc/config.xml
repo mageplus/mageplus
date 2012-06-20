@@ -173,4 +173,11 @@
             </tablerate>
         </carriers>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Shipping/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

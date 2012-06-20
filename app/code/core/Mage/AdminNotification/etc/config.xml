@@ -100,4 +100,11 @@
             </adminnotification>
         </system>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_AdminNotification/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

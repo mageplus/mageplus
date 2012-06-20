@@ -92,4 +92,11 @@
             </updates>
         </layout>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Amin/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

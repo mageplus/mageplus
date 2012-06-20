@@ -163,4 +163,11 @@
             </review>
         </catalog>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Review/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

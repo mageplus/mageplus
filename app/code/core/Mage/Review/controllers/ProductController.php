@@ -41,6 +41,11 @@ class Mage_Review_ProductController extends Mage_Core_Controller_Front_Action
      */
     protected $_cookieCheckActions = array('post');
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         parent::preDispatch();
@@ -63,6 +68,7 @@ class Mage_Review_ProductController extends Mage_Core_Controller_Front_Action
 
         return $this;
     }
+    
     /**
      * Initialize and check product
      *

@@ -130,6 +130,12 @@ class Mage_GoogleCheckout_Model_Payment extends Mage_Payment_Model_Method_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Object $payment
+     * @return
+     */
     public function void(Varien_Object $payment)
     {
         $this->cancel($payment);

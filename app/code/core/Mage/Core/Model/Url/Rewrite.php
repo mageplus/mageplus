@@ -104,12 +104,26 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $path
+     * 
+     * @return 
+     */
     public function loadByIdPath($path)
     {
         $this->setId(null)->load($path, 'id_path');
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $path
+     *
+     * @return 
+     */
     public function loadByTags($tags)
     {
         $this->setId(null);
@@ -138,6 +152,13 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $key
+     *
+     * @return 
+     */
     public function hasOption($key)
     {
         $optArr = explode(',', $this->getOptions());
@@ -145,6 +166,13 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
         return array_search($key, $optArr) !== false;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $tags
+     *
+     * @return 
+     */
     public function addTag($tags)
     {
         $curTags = $this->getTags();
@@ -165,6 +193,13 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $tags
+     *
+     * @return 
+     */
     public function removeTag($tags)
     {
         $curTags = $this->getTags();
@@ -258,7 +293,6 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
             return false;
         }
 
-
         $request->setAlias(self::REWRITE_REQUEST_PATH_ALIAS, $this->getRequestPath());
         $external = substr($this->getTargetPath(), 0, 6);
         $isPermanentRedirectOption = $this->hasOption('RP');
@@ -294,6 +328,11 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
         return true;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _getQueryString()
     {
         if (!empty($_SERVER['QUERY_STRING'])) {
@@ -316,6 +355,11 @@ class Mage_Core_Model_Url_Rewrite extends Mage_Core_Model_Abstract
         return false;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getStoreId()
     {
         return $this->_getData('store_id');

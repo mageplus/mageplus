@@ -66,6 +66,11 @@ class Mage_Sales_Model_Quote_Address_Rate extends Mage_Shipping_Model_Rate_Abstr
         $this->_init('sales/quote_address_rate');
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     protected function _beforeSave()
     {
         parent::_beforeSave();
@@ -75,17 +80,36 @@ class Mage_Sales_Model_Quote_Address_Rate extends Mage_Shipping_Model_Rate_Abstr
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * 
+     * @return
+     */
     public function setAddress(Mage_Sales_Model_Quote_Address $address)
     {
         $this->_address = $address;
         return $this;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAddress()
     {
         return $this->_address;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Shipping_Model_Rate_Result_Abstract $rate
+     * 
+     * @return
+     */
     public function importShippingRate(Mage_Shipping_Model_Rate_Result_Abstract $rate)
     {
         if ($rate instanceof Mage_Shipping_Model_Rate_Result_Error) {

@@ -33,6 +33,11 @@ class Mage_Sales_Helper_Reorder extends Mage_Core_Helper_Data
 {
     const XML_PATH_SALES_REORDER_ALLOW = 'sales/reorder/allow';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isAllow()
     {
         return $this->isAllowed();
@@ -52,6 +57,13 @@ class Mage_Sales_Helper_Reorder extends Mage_Core_Helper_Data
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order $order
+     * 
+     * @return
+     */
     public function canReorder(Mage_Sales_Model_Order $order)
     {
         if (!$this->isAllowed($order->getStore())) {

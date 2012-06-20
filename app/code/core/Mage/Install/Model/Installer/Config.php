@@ -57,6 +57,12 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         $this->_testConfigFile = Mage::getBaseDir('etc') . DS . 'local.xml.phpunit';
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function setConfigData($data)
     {
         if (is_array($data)) {
@@ -65,11 +71,21 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getConfigData()
     {
         return $this->_configData;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function install()
     {
         $data = $this->getConfigData();
@@ -131,6 +147,11 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         chmod($output, 0777);      
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFormData()
     {
         $uri = Zend_Uri::factory(Mage::getBaseUrl('web'));
@@ -160,6 +181,12 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         return $data;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     protected function _checkHostsInfo($data)
     {
         $url  = $data['protocol'] . '://' . $data['host'] . ':' . $data['port'] . $data['base_path'];
@@ -172,6 +199,13 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $url
+     * @param $secure
+     * @return
+     */
     protected function _checkUrl($url, $secure = false)
     {
         $prefix = $secure ? 'install/wizard/checkSecureHost/' : 'install/wizard/checkHost/';
@@ -195,6 +229,12 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function replaceTmpInstallDate($date = null)
     {
         $stamp    = strtotime((string) $date);
@@ -205,6 +245,12 @@ class Mage_Install_Model_Installer_Config extends Mage_Install_Model_Installer_A
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function replaceTmpEncryptKey($key = null)
     {
         if (!$key) {

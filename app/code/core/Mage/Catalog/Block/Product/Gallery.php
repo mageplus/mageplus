@@ -33,6 +33,11 @@
  */
 class Mage_Catalog_Block_Product_Gallery extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -40,16 +45,32 @@ class Mage_Catalog_Block_Product_Gallery extends Mage_Core_Block_Template
         }
         return parent::_prepareLayout();
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProduct()
     {
         return Mage::registry('product');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGalleryCollection()
     {
         return $this->getProduct()->getMediaGalleryImages();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentImage()
     {
         $imageId = $this->getRequest()->getParam('image');
@@ -64,11 +85,21 @@ class Mage_Catalog_Block_Product_Gallery extends Mage_Core_Block_Template
         return $image;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageUrl()
     {
         return $this->getCurrentImage()->getUrl();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageFile()
     {
         return $this->getCurrentImage()->getFile();
@@ -96,7 +127,25 @@ class Mage_Catalog_Block_Product_Gallery extends Mage_Core_Block_Template
         return false;
     }
 
+    /**
+     * Wrapper for getPreviousImage
+     * Left in place after spelling correction
+     *
+     * @deprecated
+     *
+     * @return
+     */
     public function getPreviusImage()
+    {
+        return $this->getPreviousImage();
+    }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getPreviousImage()
     {
         $current = $this->getCurrentImage();
         if (!$current) {
@@ -112,6 +161,11 @@ class Mage_Catalog_Block_Product_Gallery extends Mage_Core_Block_Template
         return $previus;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNextImage()
     {
         $current = $this->getCurrentImage();
@@ -132,14 +186,37 @@ class Mage_Catalog_Block_Product_Gallery extends Mage_Core_Block_Template
         return $next;
     }
 
+    /**
+     * Wrapper for getPreviousImageUrl
+     * Left in place after spelling correction
+     *
+     * @deprecated
+     *
+     * @return
+     */
     public function getPreviusImageUrl()
     {
-        if ($image = $this->getPreviusImage()) {
+        return $this->getPreviousImageUrl();
+    }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getPreviousImageUrl()
+    {
+        if ($image = $this->getPreviousImage()) {
             return $this->getUrl('*/*/*', array('_current'=>true, 'image'=>$image->getValueId()));
         }
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNextImageUrl()
     {
         if ($image = $this->getNextImage()) {

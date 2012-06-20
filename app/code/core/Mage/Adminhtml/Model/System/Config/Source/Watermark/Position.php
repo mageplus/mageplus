@@ -34,7 +34,6 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Watermark_Position
 {
-
     /**
      * Get available options
      *

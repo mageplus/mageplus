@@ -27,6 +27,7 @@
 abstract class Mage_Core_Model_Resource_Entity_Abstract
 {
     protected $_name = null;
+    
     /**
      * Configuration object
      *
@@ -36,7 +37,7 @@ abstract class Mage_Core_Model_Resource_Entity_Abstract
 
     /**
      * Set config
-     *
+     * @todo typehinting
      * @param Varien_Simplexml_Config $config
      */
     public function __construct($config)

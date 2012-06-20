@@ -42,8 +42,8 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Boolean extends Mage_XmlConne
     {
         return array(
             array('value' => '', 'label' => ''),
-            array('value' => '0', 'label' => Mage::helper('enterprise_customer')->__('No')),
-            array('value' => '1', 'label' => Mage::helper('enterprise_customer')->__('Yes'))
+            array('value' => '0', 'label' => Mage::helper('customer')->__('No')),
+            array('value' => '1', 'label' => Mage::helper('customer')->__('Yes'))
         );
     }
 }

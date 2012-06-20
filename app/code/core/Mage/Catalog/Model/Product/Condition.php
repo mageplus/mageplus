@@ -26,6 +26,12 @@
 
 class Mage_Catalog_Model_Product_Condition extends Varien_Object implements Mage_Catalog_Model_Product_Condition_Interface
 {
+    /**
+     * @todo
+     *
+     * @param $collection
+     * @return
+     */
     public function applyToCollection($collection)
     {
         if ($this->getTable() && $this->getPkFieldName()) {
@@ -38,6 +44,12 @@ class Mage_Catalog_Model_Product_Condition extends Varien_Object implements Mage
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $dbAdapter
+     * @return
+     */
     public function getIdsSelect($dbAdapter)
     {
         if ($this->getTable() && $this->getPkFieldName()) {

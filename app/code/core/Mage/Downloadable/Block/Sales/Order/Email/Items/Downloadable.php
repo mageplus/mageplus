@@ -52,6 +52,11 @@ class Mage_Downloadable_Block_Sales_Order_Email_Items_Downloadable extends Mage_
         return $this->_purchased;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLinksTitle()
     {
         if ($this->_purchased->getLinkSectionTitle()) {
@@ -60,6 +65,12 @@ class Mage_Downloadable_Block_Sales_Order_Email_Items_Downloadable extends Mage_
         return Mage::getStoreConfig(Mage_Downloadable_Model_Link::XML_PATH_LINKS_TITLE);
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
     public function getPurchasedLinkUrl($item)
     {
         return $this->getUrl('downloadable/download/link', array(

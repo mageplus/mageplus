@@ -88,6 +88,13 @@ class Mage_Checkout_Block_Cart_Item_Renderer extends Mage_Core_Block_Template
         return $this->getItem()->getProduct();
     }
 
+    /**
+     * @todo
+     *
+     * @param $productThumbnail
+     * 
+     * @return
+     */
     public function overrideProductThumbnail($productThumbnail)
     {
         $this->_productThumbnail = $productThumbnail;
@@ -107,6 +114,13 @@ class Mage_Checkout_Block_Cart_Item_Renderer extends Mage_Core_Block_Template
         return $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail');
     }
 
+    /**
+     * @todo
+     *
+     * @param $productUrl
+     * 
+     * @return
+     */
     public function overrideProductUrl($productUrl)
     {
         $this->_productUrl = $productUrl;

@@ -29,6 +29,11 @@ class Mage_Adminhtml_Model_System_Config_Source_Website
 {
     protected $_options;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         if (!$this->_options) {

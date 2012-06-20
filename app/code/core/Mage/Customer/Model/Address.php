@@ -121,6 +121,11 @@ class Mage_Customer_Model_Address extends Mage_Customer_Model_Address_Abstract
         return $attributes;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function __clone()
     {
         $this->setId(null);

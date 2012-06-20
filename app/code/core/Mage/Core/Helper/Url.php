@@ -65,6 +65,13 @@ class Mage_Core_Helper_Url extends Mage_Core_Helper_Abstract
         return $this->urlEncode($this->getCurrentUrl());
     }
 
+    /**
+     * @todo
+     *
+     * @param $url
+     * 
+     * @return
+     */
     public function getEncodedUrl($url=null)
     {
         if (!$url) {
@@ -83,6 +90,13 @@ class Mage_Core_Helper_Url extends Mage_Core_Helper_Abstract
         return Mage::getBaseUrl();
     }
 
+    /**
+     * @todo
+     *
+     * @param $string
+     *
+     * @return 
+     */
     protected function _prepareString($string)
     {
         $string = preg_replace('#[^0-9a-z]+#i', '-', $string);

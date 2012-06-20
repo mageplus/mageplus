@@ -34,6 +34,11 @@
 */
 class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initAction()
     {
         $this->loadLayout()
@@ -43,6 +48,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Catalog'))
@@ -77,6 +87,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->loadLayout();
@@ -88,6 +103,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
            );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massAddAction()
     {
         $storeId = $this->_getStore()->getId();
@@ -135,6 +155,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
         $this->_redirect('*/*/index', array('store'=>$storeId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massDeleteAction()
     {
         $storeId = $this->_getStore()->getId();
@@ -171,6 +196,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
         $this->_redirect('*/*/index', array('store'=>$storeId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massPublishAction()
     {
         $storeId = $this->_getStore()->getId();
@@ -208,6 +238,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
         $this->_redirect('*/*/index', array('store'=>$storeId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massHideAction()
     {
         $storeId = $this->_getStore()->getId();
@@ -301,6 +336,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
         $this->_redirect('*/*/index', array('store'=>$storeId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function confirmCaptchaAction()
     {
         $storeId = $this->_getStore()->getId();
@@ -355,11 +395,21 @@ class Mage_GoogleBase_Adminhtml_Googlebase_ItemsController extends Mage_Adminhtm
         return $store;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getConfig()
     {
         return Mage::getSingleton('googlebase/config');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('catalog/googlebase/items');

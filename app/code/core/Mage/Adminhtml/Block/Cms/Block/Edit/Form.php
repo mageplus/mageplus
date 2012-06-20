@@ -56,6 +56,11 @@ class Mage_Adminhtml_Block_Cms_Block_Edit_Form extends Mage_Adminhtml_Block_Widg
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $model = Mage::registry('cms_block');

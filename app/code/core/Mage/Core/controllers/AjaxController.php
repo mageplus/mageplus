@@ -37,7 +37,7 @@ class Mage_Core_AjaxController extends Mage_Core_Controller_Front_Action
      * Ajax action for inline translation
      *
      */
-    public function translateAction ()
+    public function translateAction()
     {
         $translation = $this->getRequest()->getPost('translate');
         $area = $this->getRequest()->getPost('area');

@@ -39,6 +39,11 @@ class Mage_Catalog_Model_Product_Option_Type_File extends Mage_Catalog_Model_Pro
      */
     protected $_customOptionDownloadUrl = 'sales/download/downloadCustomOption';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isCustomizedView()
     {
         return true;
@@ -245,7 +250,6 @@ class Mage_Catalog_Model_Product_Option_Type_File extends Mage_Catalog_Model_Pro
         /**
          * Upload process
          */
-
         $this->_initFilesystem();
 
         if ($upload->isUploaded($file) && $upload->isValid($file)) {

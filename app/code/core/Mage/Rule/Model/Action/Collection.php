@@ -55,6 +55,12 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
         return $out;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $arr
+     * @return
+     */
     public function loadArray(array $arr)
     {
         if (!empty($arr['actions']) && is_array($arr['actions'])) {
@@ -70,6 +76,12 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Rule_Model_Action_Interface $action
+     * @return
+     */
     public function addAction(Mage_Rule_Model_Action_Interface $action)
     {
         $actions = $this->getActions();
@@ -85,6 +97,11 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function asHtml()
     {
         $html = $this->getTypeElement()->toHtml().'Perform following actions: ';
@@ -93,6 +110,12 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
         }
         return $html;
     }
+
+    /**
+     * @todo
+     *
+     * @return
+     */
    public function getNewChildElement()
    {
        return $this->getForm()->addField('action:'.$this->getId().':new_child', 'select', array(
@@ -102,6 +125,11 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
        ))->setRenderer(Mage::getBlockSingleton('rule/newchild'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function asHtmlRecursive()
     {
         $html = $this->asHtml().'<ul id="action:'.$this->getId().':children">';
@@ -112,12 +140,24 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $format
+     * @return
+     */
     public function asString($format='')
     {
         $str = Mage::helper('rule')->__("Perform following actions");
         return $str;
     }
 
+    /**
+     * @todo
+     *
+     * @param $level
+     * @return
+     */
     public function asStringRecursive($level=0)
     {
         $str = $this->asString();
@@ -127,6 +167,11 @@ class Mage_Rule_Model_Action_Collection extends Mage_Rule_Model_Action_Abstract
         return $str;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function process()
     {
         foreach ($this->getActions() as $action) {

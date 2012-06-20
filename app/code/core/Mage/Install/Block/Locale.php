@@ -158,6 +158,11 @@ class Mage_Install_Block_Locale extends Mage_Install_Block_Abstract
             : Mage::app()->getLocale()->getCurrency();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFormData()
     {
         $data = $this->getData('form_data');

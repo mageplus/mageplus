@@ -56,17 +56,32 @@ class Mage_Adminhtml_Block_Widget_View_Container extends Mage_Adminhtml_Block_Wi
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('plane', $this->getLayout()->createBlock('adminhtml/' . $this->_controller . '_view_plane'));
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditUrl()
     {
         return $this->getUrl('*/*/edit', array($this->_objectId => $this->getRequest()->getParam($this->_objectId)));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getViewHtml()
     {
         return $this->getChildHtml('plane');

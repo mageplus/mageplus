@@ -34,7 +34,6 @@
  */
 class Mage_Rss_Model_Observer
 {
-
     /**
      * Clean cache for catalog review rss
      *
@@ -43,9 +42,7 @@ class Mage_Rss_Model_Observer
      */
     public function reviewSaveAfter(Varien_Event_Observer $observer)
     {
-
         Mage::app()->cleanCache(array(Mage_Rss_Block_Catalog_Review::CACHE_TAG));
-
     }
 
     /**
@@ -56,9 +53,7 @@ class Mage_Rss_Model_Observer
      */
     public function salesOrderItemSaveAfterNotifyStock(Varien_Event_Observer $observer)
     {
-
         Mage::app()->cleanCache(array(Mage_Rss_Block_Catalog_NotifyStock::CACHE_TAG));
-
     }
 
     /**
@@ -69,8 +64,6 @@ class Mage_Rss_Model_Observer
      */
     public function salesOrderItemSaveAfterOrderNew(Varien_Event_Observer $observer)
     {
-
         Mage::app()->cleanCache(array(Mage_Rss_Block_Order_New::CACHE_TAG));
-
     }
 }

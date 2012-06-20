@@ -32,6 +32,7 @@
             <codePool>core</codePool>
             <depends>
                 <Mage_Catalog/>
+                <Mage_Index/>
             </depends>
         </Mage_Tag>
     </modules>

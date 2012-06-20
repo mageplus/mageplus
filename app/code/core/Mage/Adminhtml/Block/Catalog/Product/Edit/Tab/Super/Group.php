@@ -46,11 +46,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Group extends Mage_Adm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabUrl()
     {
         return $this->getUrl('*/*/superGroup', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabClass()
     {
         return 'ajax';
@@ -66,6 +76,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Group extends Mage_Adm
         return Mage::registry('current_product');
     }
 
+    /**
+     * @todo
+     *
+     * @param $column
+     * @return
+     */
     protected function _addColumnFilterToCollection($column)
     {
         // Set custom filter for in product flag
@@ -116,6 +132,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Group extends Mage_Adm
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('in_products', array(
@@ -217,18 +238,41 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Group extends Mage_Adm
         return $products;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabLabel()
     {
         return Mage::helper('catalog')->__('Associated Products');
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabTitle()
     {
         return Mage::helper('catalog')->__('Associated Products');
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canShowTab()
     {
         return true;
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isHidden()
     {
         return false;

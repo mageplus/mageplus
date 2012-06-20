@@ -27,6 +27,14 @@
 
 class Mage_Sales_Model_Email_Template extends Mage_Core_Model_Email_Template
 {
+    /**
+     * @todo
+     *
+     * @param $template
+     * @param $variables
+     *
+     * @return
+     */
     public function getInclude($template, array $variables)
     {
         $filename = Mage::getDesign()->getTemplateFilename($template);

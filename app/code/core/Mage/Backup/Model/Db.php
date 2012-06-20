@@ -34,7 +34,6 @@
  */
 class Mage_Backup_Model_Db
 {
-
     /**
      * Buffer length for multi rows
      * default 100 Kb
@@ -61,31 +60,64 @@ class Mage_Backup_Model_Db
         return Mage::getResourceSingleton('backup/db');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTables()
     {
         return $this->getResource()->getTables();
     }
 
+    /**
+     * @todo
+     *
+     * @param $tableName
+     * @param bool $addDropIfExists
+     * @return
+     */
     public function getTableCreateScript($tableName, $addDropIfExists=false)
     {
         return $this->getResource()->getTableCreateScript($tableName, $addDropIfExists);
     }
 
+    /**
+     * @todo
+     *
+     * @param $tableName
+     * @return
+     */
     public function getTableDataDump($tableName)
     {
         return $this->getResource()->getTableDataDump($tableName);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeader()
     {
         return $this->getResource()->getHeader();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFooter()
     {
         return $this->getResource()->getFooter();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function renderSql()
     {
         ini_set('max_execution_time', 0);

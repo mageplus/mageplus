@@ -28,6 +28,11 @@
 class Mage_Catalog_Model_Convert_Adapter_Catalog
     extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResource()
     {
         if (!$this->_resource) {
@@ -36,6 +41,11 @@ class Mage_Catalog_Model_Convert_Adapter_Catalog
         return $this->_resource;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
         $res = $this->getResource();
@@ -55,6 +65,11 @@ class Mage_Catalog_Model_Convert_Adapter_Catalog
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         /*

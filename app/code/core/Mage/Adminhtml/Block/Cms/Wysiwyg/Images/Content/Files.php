@@ -131,11 +131,21 @@ class Mage_Adminhtml_Block_Cms_Wysiwyg_Images_Content_Files extends Mage_Adminht
         return $file->getShortName();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImagesWidth()
     {
         return Mage::getSingleton('cms/wysiwyg_images_storage')->getConfigData('resize_width');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImagesHeight()
     {
         return Mage::getSingleton('cms/wysiwyg_images_storage')->getConfigData('resize_height');

@@ -77,6 +77,11 @@ class Mage_Core_Controller_Response_Http extends Zend_Controller_Response_Http
         return parent::sendHeaders();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function sendResponse()
     {
         Mage::dispatchEvent('http_response_send_before', array('response'=>$this));

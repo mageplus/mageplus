@@ -60,6 +60,11 @@ class Mage_Sales_GuestController extends Mage_Sales_Controller_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _viewAction()
     {
         if (!$this->_loadValidOrder()) {
@@ -85,6 +90,11 @@ class Mage_Sales_GuestController extends Mage_Sales_Controller_Abstract
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function printInvoiceAction()
     {
         if (!$this->_loadValidOrder()) {
@@ -110,6 +120,11 @@ class Mage_Sales_GuestController extends Mage_Sales_Controller_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function printShipmentAction()
     {
         if (!$this->_loadValidOrder()) {
@@ -134,6 +149,11 @@ class Mage_Sales_GuestController extends Mage_Sales_Controller_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function printCreditmemoAction()
     {
         if (!$this->_loadValidOrder()) {

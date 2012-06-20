@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Sales'))
@@ -45,11 +50,21 @@ class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('edit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('Sales'))
@@ -83,6 +98,11 @@ class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         if ($postData = $this->getRequest()->getPost()) {
@@ -117,6 +137,11 @@ class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
         $this->getResponse()->setRedirect($this->getUrl('*/tax_rule'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         $ruleId = (int)$this->getRequest()->getParam('rule');
@@ -161,6 +186,11 @@ class Mage_Adminhtml_Tax_RuleController extends Mage_Adminhtml_Controller_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('sales/tax/rules');

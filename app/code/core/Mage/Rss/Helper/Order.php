@@ -31,6 +31,11 @@
  */
 class Mage_Rss_Helper_Order extends Mage_Core_Helper_Abstract
 {
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function isStatusNotificationAllow()
     {
         if (Mage::getStoreConfig('rss/order/status_notified')) {
@@ -39,6 +44,12 @@ class Mage_Rss_Helper_Order extends Mage_Core_Helper_Abstract
         return false;
     }
 
+   /**
+    * @todo
+    *
+    * @param $order
+    * @return
+    */
     public function getStatusHistoryRssUrl($order)
     {
         $key = $order->getId().":".$order->getIncrementId().":".$order->getCustomerId();

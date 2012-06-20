@@ -33,6 +33,11 @@
  */
 class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Attributes_Special extends Mage_Adminhtml_Block_Catalog_Form_Renderer_Fieldset_Element
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $html = '<input id="'.$this->getElement()->getHtmlId().'" name="'.$this->getElement()->getName()

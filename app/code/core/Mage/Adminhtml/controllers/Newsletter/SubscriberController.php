@@ -33,7 +33,11 @@
  */
 class Mage_Adminhtml_Newsletter_SubscriberController extends Mage_Adminhtml_Controller_Action
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Newsletter'))->_title($this->__('Newsletter Subscribers'));
@@ -57,6 +61,11 @@ class Mage_Adminhtml_Newsletter_SubscriberController extends Mage_Adminhtml_Cont
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->loadLayout();
@@ -104,6 +113,11 @@ class Mage_Adminhtml_Newsletter_SubscriberController extends Mage_Adminhtml_Cont
         $this->_prepareDownloadResponse($fileName, $content, $contentType);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massUnsubscribeAction()
     {
         $subscribersIds = $this->getRequest()->getParam('subscriber');
@@ -127,6 +141,11 @@ class Mage_Adminhtml_Newsletter_SubscriberController extends Mage_Adminhtml_Cont
         $this->_redirect('*/*/index');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massDeleteAction()
     {
         $subscribersIds = $this->getRequest()->getParam('subscriber');
@@ -150,6 +169,11 @@ class Mage_Adminhtml_Newsletter_SubscriberController extends Mage_Adminhtml_Cont
         $this->_redirect('*/*/index');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('newsletter/subscriber');

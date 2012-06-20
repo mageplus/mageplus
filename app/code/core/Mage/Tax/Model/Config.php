@@ -231,7 +231,6 @@ class Mage_Tax_Model_Config
         return $this->_needUseShippingExcludeTax;
     }
 
-
     /**
      * Get defined tax calculation agorithm
      *
@@ -292,7 +291,6 @@ class Mage_Tax_Model_Config
         return $this;
     }
 
-
     /**
      * Check if need display full tax summary information in totals block
      *
@@ -329,155 +327,331 @@ class Mage_Tax_Model_Config
         return (bool)Mage::getStoreConfig(self::CONFIG_XML_PATH_DISPLAY_TAX_COLUMN, $store);
     }
 
-
-
-
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartPricesInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_PRICE, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartPricesExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_PRICE, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartPricesBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_PRICE, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartSubtotalInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_SUBTOTAL, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartSubtotalExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_SUBTOTAL, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartSubtotalBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_SUBTOTAL, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartShippingInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_SHIPPING, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartShippingExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_SHIPPING, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartShippingBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_SHIPPING, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartDiscountInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_DISCOUNT, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartDiscountExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_DISCOUNT, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartDiscountBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_DISCOUNT, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartTaxWithGrandTotal($store = null)
     {
         return (bool)Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_GRANDTOTAL, $store);
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartFullSummary($store = null)
     {
         return (bool)Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_FULL_SUMMARY, $store);
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displayCartZeroTax($store = null)
     {
         return (bool)Mage::getStoreConfig(self::XML_PATH_DISPLAY_CART_ZERO_TAX, $store);
     }
 
-
+	/**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesPricesInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_PRICE, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesPricesExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_PRICE, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesPricesBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_PRICE, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesSubtotalInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_SUBTOTAL, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesSubtotalExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_SUBTOTAL, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesSubtotalBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_SUBTOTAL, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesShippingInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_SHIPPING, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesShippingExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_SHIPPING, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesShippingBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_SHIPPING, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesDiscountInclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_DISCOUNT, $store) == self::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalestDiscountExclTax($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_DISCOUNT, $store) == self::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesDiscountBoth($store = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_DISCOUNT, $store) == self::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesTaxWithGrandTotal($store = null)
     {
         return (bool)Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_GRANDTOTAL, $store);
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesFullSummary($store = null)
     {
         return (bool)Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_FULL_SUMMARY, $store);
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function displaySalesZeroTax($store = null)
     {
         return (bool)Mage::getStoreConfig(self::XML_PATH_DISPLAY_SALES_ZERO_TAX, $store);

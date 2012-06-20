@@ -25,6 +25,11 @@
  */
 class Mage_Checkout_Block_Agreements extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAgreements()
     {
         if (!$this->hasAgreements()) {

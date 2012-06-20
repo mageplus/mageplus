@@ -53,16 +53,34 @@ class Mage_Admin_Model_Rules extends Mage_Core_Model_Abstract
         $this->_init('admin/rules');
     }
 
-    public function update() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function update()
+    {
         $this->getResource()->update($this);
         return $this;
     }
 
-    public function getCollection() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getCollection()
+    {
         return Mage::getResourceModel('admin/permissions_collection');
     }
 
-    public function saveRel() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function saveRel()
+    {
         $this->getResource()->saveRel($this);
         return $this;
     }

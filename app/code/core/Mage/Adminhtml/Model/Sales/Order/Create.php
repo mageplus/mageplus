@@ -371,6 +371,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order $order
+     * @return
+     */
     protected function _initBillingAddressFromOrder(Mage_Sales_Model_Order $order)
     {
         $this->getQuote()->getBillingAddress()->setCustomerAddressId('');
@@ -382,6 +388,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         );
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order $order
+     * @return
+     */
     protected function _initShippingAddressFromOrder(Mage_Sales_Model_Order $order)
     {
         $this->getQuote()->getShippingAddress()->setCustomerAddressId('');
@@ -510,6 +522,11 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this->_compareList;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomerGroupId()
     {
         $groupId = $this->getQuote()->getCustomerGroupId();
@@ -1011,6 +1028,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $newInfoOptions;
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * @return
+     */
     protected function _parseCustomPrice($price)
     {
         $price = Mage::app()->getLocale()->getNumber($price);
@@ -1106,6 +1129,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * @return
+     */
     public function setShippingAddress($address)
     {
         if (is_array($address)) {
@@ -1128,6 +1157,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $flag
+     * @return
+     */
     public function setShippingAsBilling($flag)
     {
         if ($flag) {
@@ -1153,6 +1188,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this->getQuote()->getBillingAddress();
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * @return
+     */
     public function setBillingAddress($address)
     {
         if (is_array($address)) {
@@ -1176,6 +1217,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $method
+     * @return
+     */
     public function setShippingMethod($method)
     {
         $this->getShippingAddress()->setShippingMethod($method);
@@ -1183,6 +1230,11 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resetShippingMethod()
     {
         $this->getShippingAddress()->setShippingMethod(false);
@@ -1200,17 +1252,34 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function collectRates()
     {
         $this->getQuote()->collectTotals();
     }
 
+    /**
+     * @todo
+     *
+     * @param $method
+     * @return
+     */
     public function setPaymentMethod($method)
     {
         $this->getQuote()->getPayment()->setMethod($method);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function setPaymentData($data)
     {
         if (!isset($data['method'])) {
@@ -1220,6 +1289,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * @return
+     */
     public function applyCoupon($code)
     {
         $code = trim((string)$code);
@@ -1228,6 +1303,12 @@ class Mage_Adminhtml_Model_Sales_Order_Create extends Varien_Object implements M
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $accountData
+     * @return
+     */
     public function setAccountData($accountData)
     {
         $customer   = $this->getQuote()->getCustomer();

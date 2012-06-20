@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Block_Customer_Edit_Tab_View_Accordion extends Mage_Adminhtml_Block_Widget_Accordion
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $customer = Mage::registry('current_customer');

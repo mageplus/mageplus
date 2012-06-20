@@ -34,6 +34,11 @@
 
 class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_initEnityId();
@@ -46,6 +51,11 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_initEnityId();
@@ -66,6 +76,11 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('edit');
@@ -127,6 +142,11 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         if( $this->getRequest()->getParam('id') > 0 ) {
@@ -145,6 +165,11 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initEnityId()
     {
         $this->_title($this->__('Catalog'))
@@ -154,6 +179,11 @@ class Mage_Adminhtml_RatingController extends Mage_Adminhtml_Controller_Action
         Mage::register('entityId', Mage::getModel('rating/rating_entity')->getIdByCode('product'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('catalog/reviews_ratings/ratings');

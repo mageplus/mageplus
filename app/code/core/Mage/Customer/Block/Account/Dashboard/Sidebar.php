@@ -45,11 +45,21 @@ class Mage_Customer_Block_Account_Dashboard_Sidebar extends Mage_Core_Block_Temp
 
     protected $_compareItems;
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getShoppingCartUrl()
     {
         return Mage::getUrl('checkout/cart');
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCartItemsCount()
     {
         if( !$this->_cartItemsCount ) {
@@ -62,6 +72,11 @@ class Mage_Customer_Block_Account_Dashboard_Sidebar extends Mage_Core_Block_Temp
         return $this->_cartItemsCount;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getWishlist()
     {
         if( !$this->_wishlist ) {
@@ -81,18 +96,35 @@ class Mage_Customer_Block_Account_Dashboard_Sidebar extends Mage_Core_Block_Temp
         return $this->_wishlist->getItemCollection();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getWishlistCount()
     {
         return $this->getWishlist()->getSize();
     }
 
+    /**
+     * @todo
+     *
+     * @param $wishlistItem
+     * 
+     * @return
+     */
     public function getWishlistAddToCartLink($wishlistItem)
     {
         return Mage::getUrl('wishlist/index/cart', array('item' => $wishlistItem->getId()));
     }
 
-     public function getCompareItems()
-     {
+    /**
+     * @todo
+     * 
+     * @return
+     */
+    public function getCompareItems()
+    {
          if( !$this->_compareItems ) {
              $this->_compareItems = Mage::getResourceModel('catalog/product_compare_item_collection')
                  ->setStoreId(Mage::app()->getStore()->getId());
@@ -105,23 +137,43 @@ class Mage_Customer_Block_Account_Dashboard_Sidebar extends Mage_Core_Block_Temp
          }
 
          return $this->_compareItems;
-     }
+    }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
      public function getCompareJsObjectName()
      {
          return "dashboardSidebarCompareJsObject";
      }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
      public function getCompareRemoveUrlTemplate()
      {
          return $this->getUrl('catalog/product_compare/remove',array('product'=>'#{id}'));
      }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
      public function getCompareAddUrlTemplate()
      {
          return $this->getUrl('catalog/product_compare/add',array('product'=>'#{id}'));
      }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
      public function getCompareUrl()
      {
          return $this->getUrl('catalog/product_compare');

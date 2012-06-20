@@ -113,31 +113,63 @@ class Mage_Customer_Model_Address_Abstract extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStreet1()
     {
         return $this->getStreet(1);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStreet2()
     {
         return $this->getStreet(2);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStreet3()
     {
         return $this->getStreet(3);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStreet4()
     {
         return $this->getStreet(4);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStreetFull()
     {
         return $this->getData('street');
     }
 
+    /**
+     * @todo
+     *
+     * @param $street
+     * 
+     * @return
+     */
     public function setStreetFull($street)
     {
         return $this->setStreet($street);
@@ -242,6 +274,11 @@ class Mage_Customer_Model_Address_Abstract extends Mage_Core_Model_Abstract
         return $this->getData('region_code');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionId()
     {
         $regionId = $this->getData('region_id');
@@ -259,6 +296,11 @@ class Mage_Customer_Model_Address_Abstract extends Mage_Core_Model_Abstract
         return $this->getData('region_id');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCountry()
     {
         /*if ($this->getData('country_id') && !$this->getData('country')) {
@@ -320,6 +362,13 @@ class Mage_Customer_Model_Address_Abstract extends Mage_Core_Model_Abstract
         //Mage::getModel('directory/country')->load($this->getCountryId())->formatAddress($this, $html);
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * 
+     * @return
+     */
     public function format($type)
     {
         if(!($formatType = $this->getConfig()->getFormatByCode($type))
@@ -340,6 +389,11 @@ class Mage_Customer_Model_Address_Abstract extends Mage_Core_Model_Abstract
         return Mage::getSingleton('customer/address_config');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeSave()
     {
         parent::_beforeSave();

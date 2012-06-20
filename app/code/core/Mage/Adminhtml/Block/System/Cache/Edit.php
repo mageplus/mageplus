@@ -40,6 +40,11 @@ class Mage_Adminhtml_Block_System_Cache_Edit extends Mage_Adminhtml_Block_Widget
         $this->setTitle('Cache Management');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('save_button',
@@ -53,16 +58,31 @@ class Mage_Adminhtml_Block_System_Cache_Edit extends Mage_Adminhtml_Block_Widget
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveButtonHtml()
     {
         return $this->getChildHtml('save_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
         return $this->getUrl('*/*/save', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function initForm()
     {
         $this->setChild('form',

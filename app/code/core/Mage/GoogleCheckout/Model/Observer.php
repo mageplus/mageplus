@@ -33,6 +33,12 @@
  */
 class Mage_GoogleCheckout_Model_Observer
 {
+    /**
+     * @todo
+     *
+     * @param Varien_Event_Observer $observer
+     * @return
+     */
     public function salesOrderShipmentTrackSaveAfter(Varien_Event_Observer $observer)
     {
         $track = $observer->getEvent()->getTrack();

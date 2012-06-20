@@ -97,7 +97,7 @@ class Mage_Core_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Resource_He
      * Returns array of quoted orders with direction
      *
      * @param Varien_Db_Select $select
-     * @param bool $autoReset
+     * @param boolean $autoReset
      * @return array
      */
     protected function _prepareOrder(Varien_Db_Select $select, $autoReset = false)
@@ -135,7 +135,7 @@ class Mage_Core_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Resource_He
      * Field can be with 'dot' delimiter.
      *
      * @param string $field
-     * @param bool   $reverse OPTIONAL
+     * @param boolean $reverse OPTIONAL
      * @return string
      */
     protected function _truncateAliasName($field, $reverse = false)
@@ -157,7 +157,7 @@ class Mage_Core_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Resource_He
      * Returns quoted group by fields
      *
      * @param Varien_Db_Select $select
-     * @param bool $autoReset
+     * @param boolean $autoReset
      * @return array
      */
     protected function _prepareGroup(Varien_Db_Select $select, $autoReset = false)
@@ -183,7 +183,7 @@ class Mage_Core_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Resource_He
      * Prepare and returns having array
      *
      * @param Varien_Db_Select $select
-     * @param bool $autoReset
+     * @param boolean $autoReset
      * @return array
      * @throws Zend_Db_Exception
      */
@@ -226,8 +226,8 @@ class Mage_Core_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Resource_He
     /**
      *
      * @param string $query
-     * @param int $limitCount
-     * @param int $limitOffset
+     * @param integer $limitCount
+     * @param integer $limitOffset
      * @param array $columnList
      * @return string
      */
@@ -261,7 +261,7 @@ class Mage_Core_Model_Resource_Helper_Mysql4 extends Mage_Core_Model_Resource_He
      * Prepare select column list
      *
      * @param Varien_Db_Select $select
-     * @param $groupByCondition OPTIONAL
+     * @param  string $groupByCondition OPTIONAL
      * @return array
      * @throws Zend_Db_Exception
      */

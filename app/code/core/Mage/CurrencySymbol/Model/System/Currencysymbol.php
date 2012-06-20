@@ -53,6 +53,7 @@ class Mage_CurrencySymbol_Model_System_Currencysymbol
      * @var string | null
      */
     protected $_websiteId;
+    
     /**
      * Cache types which should be invalidated
      *

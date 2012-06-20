@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Notification_Inbox extends Mage_Adminhtml_Block_Widge
         parent::__construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->_removeButton('add');

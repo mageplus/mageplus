@@ -226,6 +226,11 @@ class Mage_Sales_Model_Recurring_Profile extends Mage_Payment_Model_Recurring_Pr
         return $this->_checkWorkflow(self::STATE_CANCELED);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function fetchUpdate()
     {
         $result = new Varien_Object();
@@ -244,6 +249,11 @@ class Mage_Sales_Model_Recurring_Profile extends Mage_Payment_Model_Recurring_Pr
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canFetchUpdate()
     {
         return $this->getMethodInstance()->canGetRecurringProfileDetails();

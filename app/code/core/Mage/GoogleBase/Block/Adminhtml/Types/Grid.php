@@ -40,7 +40,12 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Grid extends Mage_Adminhtml_Block_Wi
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);
     }
-
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         $collection = Mage::getResourceModel('googlebase/type_collection')->addItemsCount();
@@ -49,6 +54,11 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Grid extends Mage_Adminhtml_Block_Wi
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('attribute_set_name',
@@ -83,11 +93,22 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Grid extends Mage_Adminhtml_Block_Wi
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function getRowUrl($row)
     {
         return $this->getUrl('*/*/edit', array('id'=>$row->getId(), '_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/*/grid', array('_current'=>true));

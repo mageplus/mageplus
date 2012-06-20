@@ -34,12 +34,21 @@
  */
 class Mage_Dataflow_Model_Convert_Adapter_Soap extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         return $this;

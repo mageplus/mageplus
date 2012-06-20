@@ -107,8 +107,6 @@ class Mage_Admin_Model_Config extends Varien_Simplexml_Config
             $children = $resource->children->children();
         }
 
-
-
         if (empty($children)) {
             return $this;
         }

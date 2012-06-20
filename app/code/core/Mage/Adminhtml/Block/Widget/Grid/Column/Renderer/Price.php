@@ -35,6 +35,7 @@ class Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Price
     extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
     protected $_defaultWidth = 100;
+    
     /**
      * Currency objects cache
      */

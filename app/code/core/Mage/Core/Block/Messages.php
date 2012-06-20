@@ -64,7 +64,7 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
     /**
      * Flag which require message text escape
      *
-     * @var bool
+     * @var boolean
      */
     protected $_escapeMessageFlag = false;
 
@@ -75,6 +75,11 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
      */
     protected $_usedStorageTypes = array('core/session');
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _prepareLayout()
     {
         $this->addMessages(Mage::getSingleton('core/session')->getMessages(true));
@@ -83,7 +88,7 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
 
     /**
      * Set message escape flag
-     * @param bool $flag
+     * @param boolean $flag
      * @return Mage_Core_Block_Messages
      */
     public function setEscapeMessageFlag($flag)
@@ -260,6 +265,11 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         return $this->getGroupedHtml();

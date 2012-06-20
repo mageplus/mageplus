@@ -152,12 +152,24 @@ class Mage_Downloadable_Helper_File extends Mage_Core_Helper_Abstract
         return $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $filePath
+     * @return
+     */
     public function getFileType($filePath)
     {
         $ext = substr($filePath, strrpos($filePath, '.')+1);
         return $this->_getFileTypeByExt($ext);
     }
 
+    /**
+     * @todo
+     *
+     * @param $ext
+     * @return
+     */
     protected function _getFileTypeByExt($ext)
     {
         $type = 'x' . $ext;
@@ -167,11 +179,21 @@ class Mage_Downloadable_Helper_File extends Mage_Core_Helper_Abstract
         return 'application/octet-stream';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllFileTypes()
     {
         return array_values(self::getAllMineTypes());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllMineTypes()
     {
         return self::$_mimeTypes;

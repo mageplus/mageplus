@@ -148,6 +148,11 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCategoryInstance()
     {
         if (is_null($this->_categoryInstance)) {

@@ -50,6 +50,12 @@ class Mage_Poll_Model_Poll_Answer extends Mage_Core_Model_Abstract
         $this->_init('poll/poll_answer');
     }
 
+   /**
+    * @todo
+    *
+    * @param $poll
+    * @return
+    */
     public function countPercent($poll)
     {
         $this->setPercent(
@@ -58,6 +64,11 @@ class Mage_Poll_Model_Poll_Answer extends Mage_Core_Model_Abstract
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _afterSave()
     {
         Mage::getModel('poll/poll')
@@ -65,11 +76,21 @@ class Mage_Poll_Model_Poll_Answer extends Mage_Core_Model_Abstract
             ->resetVotesCount();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _beforeDelete()
     {
         $this->setPollId($this->load($this->getId())->getPollId());
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _afterDelete()
     {
         Mage::getModel('poll/poll')

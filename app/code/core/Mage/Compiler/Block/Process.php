@@ -60,6 +60,11 @@ class Mage_Compiler_Block_Process extends Mage_Adminhtml_Block_Template
         return $this->_process;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('run_button',
@@ -101,6 +106,11 @@ class Mage_Compiler_Block_Process extends Mage_Adminhtml_Block_Template
         return Mage::helper('compiler')->__('Compilation');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getChangeStatusButtonHtml()
     {
         if ($this->getCollectedFilesCount()) {
@@ -153,16 +163,32 @@ class Mage_Compiler_Block_Process extends Mage_Adminhtml_Block_Template
         return $block;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCompilationList()
     {
         return $this->getProcess()->getCompileClassList();
     }
 
+    /**
+     * @todo
+     *
+     * @param array $arr
+     * @return
+     */
     public function arrToSting($arr)
     {
         return implode("\n", $arr);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCompilerState()
     {
         if ($this->getCollectedFilesCount() > 0) {
@@ -172,6 +198,11 @@ class Mage_Compiler_Block_Process extends Mage_Adminhtml_Block_Template
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCompilerStatus()
     {
         if (defined('COMPILER_INCLUDE_PATH')) {
@@ -181,6 +212,11 @@ class Mage_Compiler_Block_Process extends Mage_Adminhtml_Block_Template
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollectedFilesCount()
     {
         if (!$this->hasData('collected_files_count')) {
@@ -189,6 +225,11 @@ class Mage_Compiler_Block_Process extends Mage_Adminhtml_Block_Template
         return $this->_getData('collected_files_count');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCompiledFilesCount()
     {
         if (!$this->hasData('compiled_files_count')) {

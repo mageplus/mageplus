@@ -47,6 +47,7 @@
 class Mage_Index_Model_Process extends Mage_Core_Model_Abstract
 {
     const XML_PATH_INDEXER_DATA     = 'global/index/indexer';
+    
     /**
      * Process statuses
      */

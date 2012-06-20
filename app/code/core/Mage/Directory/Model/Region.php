@@ -63,6 +63,13 @@ class Mage_Directory_Model_Region extends Mage_Core_Model_Abstract
         return $name;
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * @param $countryId
+     * @return
+     */
     public function loadByCode($code, $countryId)
     {
         if ($code) {
@@ -71,6 +78,13 @@ class Mage_Directory_Model_Region extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param $countryId
+     * @return
+     */
     public function loadByName($name, $countryId)
     {
         $this->_getResource()->loadByName($this, $name, $countryId);

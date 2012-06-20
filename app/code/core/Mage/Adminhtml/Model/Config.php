@@ -80,6 +80,11 @@ class Mage_Adminhtml_Model_Config extends Varien_Simplexml_Config
         return $this->_tabs;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initSectionsAndTabs()
     {
         $mergeConfig = Mage::getModel('core/config_base');
@@ -90,8 +95,6 @@ class Mage_Adminhtml_Model_Config extends Varien_Simplexml_Config
 
         $this->_tabs = $config->getNode('tabs');
     }
-
-
 
     /**
      * Enter description here...

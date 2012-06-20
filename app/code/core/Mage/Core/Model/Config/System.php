@@ -33,11 +33,24 @@
  */
 class Mage_Core_Model_Config_System extends Mage_Core_Model_Config_Base
 {
+    /**
+     * @todo
+     * 
+     * @param $sourceData
+     * @return
+     */
     function __construct($sourceData=null)
     {
         parent::__construct($sourceData);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $module
+     *
+     * @return 
+     */
     public function load($module)
     {
         $file = Mage::getConfig()->getModuleDir('etc', $module).DS.'system.xml';

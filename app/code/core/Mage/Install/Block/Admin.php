@@ -23,7 +23,7 @@
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
- 
+
 /**
  * Administrator account install block
  *
@@ -31,17 +31,27 @@
  */
 class Mage_Install_Block_Admin extends Mage_Install_Block_Abstract
 {
-    public function __construct() 
+    public function __construct()
     {
         parent::__construct();
         $this->setTemplate('install/create_admin.phtml');
     }
-    
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPostUrl()
     {
         return $this->getUrl('*/*/administratorPost');
     }
-    
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFormData()
     {
         $data = $this->getData('form_data');

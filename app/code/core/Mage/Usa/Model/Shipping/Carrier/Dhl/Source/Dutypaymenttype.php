@@ -27,6 +27,11 @@
 
 class Mage_Usa_Model_Shipping_Carrier_Dhl_Source_Dutypaymenttype
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $dhl = Mage::getSingleton('usa/shipping_carrier_dhl');

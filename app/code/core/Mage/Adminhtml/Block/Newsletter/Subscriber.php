@@ -79,6 +79,11 @@ class Mage_Adminhtml_Block_Newsletter_Subscriber extends Mage_Adminhtml_Block_Te
         return $this->_queueCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShowQueueAdd()
     {
         return $this->getChild('grid')->getShowQueueAdd();

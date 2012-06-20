@@ -77,10 +77,6 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
      */
     protected $_allowTableChanges       = true;
 
-
-
-
-
     /**
      * Init resource model
      *
@@ -770,10 +766,6 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
 
         return null;
     }
-
-
-
-
 
     // Deprecated methods
 

@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_Block_Widget_Grid
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -42,11 +41,22 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_B
         $this->setUseAjax(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategory()
     {
         return Mage::registry('category');
     }
 
+    /**
+     * @todo
+     *
+     * @param $column
+     * @return
+     */
     protected function _addColumnFilterToCollection($column)
     {
         // Set custom filter for in category flag
@@ -68,6 +78,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_B
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         if ($this->getCategory()->getId()) {
@@ -97,6 +112,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_B
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         if (!$this->getCategory()->getProductsReadonly()) {
@@ -143,11 +163,21 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Product extends Mage_Adminhtml_B
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/*/grid', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getSelectedProducts()
     {
         $products = $this->getRequest()->getPost('selected_products');

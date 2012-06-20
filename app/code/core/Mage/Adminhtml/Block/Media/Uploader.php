@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Media_Uploader extends Mage_Adminhtml_Block_Widget
 {
-
     protected $_config;
 
     public function __construct()
@@ -60,6 +59,11 @@ class Mage_Adminhtml_Block_Media_Uploader extends Mage_Adminhtml_Block_Widget
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild(
@@ -99,21 +103,42 @@ class Mage_Adminhtml_Block_Media_Uploader extends Mage_Adminhtml_Block_Widget
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @param $buttonName
+     * @return
+     */
     protected function _getButtonId($buttonName)
     {
         return $this->getHtmlId() . '-' . $buttonName;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBrowseButtonHtml()
     {
         return $this->getChildHtml('browse_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUploadButtonHtml()
     {
         return $this->getChildHtml('upload_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_button');
@@ -153,21 +178,41 @@ class Mage_Adminhtml_Block_Media_Uploader extends Mage_Adminhtml_Block_Widget
         return $this->_config;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPostMaxSize()
     {
         return ini_get('post_max_size');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUploadMaxSize()
     {
         return ini_get('upload_max_filesize');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDataMaxSize()
     {
         return min($this->getPostMaxSize(), $this->getUploadMaxSize());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDataMaxSizeInBytes()
     {
         $iniSize = $this->getDataMaxSize();

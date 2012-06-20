@@ -27,7 +27,11 @@
 
 class Mage_Adminhtml_Model_System_Config_Backend_Sitemap extends Mage_Core_Model_Config_Data
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeSave()
     {
         $value     = $this->getValue();

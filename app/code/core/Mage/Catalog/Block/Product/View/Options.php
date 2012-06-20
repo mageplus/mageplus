@@ -110,6 +110,12 @@ class Mage_Catalog_Block_Product_View_Options extends Mage_Core_Block_Template
         return $this->_optionRenders['default'];
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function getGroupOfOption($type)
     {
         $group = Mage::getSingleton('catalog/product_option')->getGroupByType($type);
@@ -127,6 +133,11 @@ class Mage_Catalog_Block_Product_View_Options extends Mage_Core_Block_Template
         return $this->getProduct()->getOptions();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasOptions()
     {
         if ($this->getOptions()) {

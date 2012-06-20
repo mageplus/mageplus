@@ -45,6 +45,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function salesAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Sales'));
@@ -66,6 +71,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function bestsellersAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Products'))->_title($this->__('Bestsellers'));
@@ -164,6 +174,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function taxAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Tax'));
@@ -207,6 +222,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function shippingAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Shipping'));
@@ -250,6 +270,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function invoicedAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Total Invoiced'));
@@ -293,6 +318,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function refundedAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Total Refunded'));
@@ -336,6 +366,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function couponsAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Coupons'));
@@ -387,6 +422,11 @@ class Mage_Adminhtml_Report_SalesController extends Mage_Adminhtml_Controller_Re
         return $this->_forward('index', 'report_statistics');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         switch ($this->getRequest()->getActionName()) {

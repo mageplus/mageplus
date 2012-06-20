@@ -33,11 +33,21 @@
  */
 class Mage_Directory_Block_Data extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLoadrRegionUrl()
     {
         return $this->getUrl('directory/json/childRegion');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCountryCollection()
     {
         $collection = $this->getData('country_collection');
@@ -50,6 +60,15 @@ class Mage_Directory_Block_Data extends Mage_Core_Block_Template
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param $defValue
+     * @param $name
+     * @param $id
+     * @param $title
+     * @return
+     */
     public function getCountryHtmlSelect($defValue=null, $name='country_id', $id='country', $title='Country')
     {
         Varien_Profiler::start('TEST: '.__METHOD__);
@@ -78,6 +97,11 @@ class Mage_Directory_Block_Data extends Mage_Core_Block_Template
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionCollection()
     {
         $collection = $this->getData('region_collection');
@@ -91,7 +115,11 @@ class Mage_Directory_Block_Data extends Mage_Core_Block_Template
         return $collection;
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionHtmlSelect()
     {
         Varien_Profiler::start('TEST: '.__METHOD__);
@@ -116,6 +144,11 @@ class Mage_Directory_Block_Data extends Mage_Core_Block_Template
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCountryId()
     {
         $countryId = $this->getData('country_id');
@@ -125,6 +158,11 @@ class Mage_Directory_Block_Data extends Mage_Core_Block_Template
         return $countryId;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionsJs()
     {
         Varien_Profiler::start('TEST: '.__METHOD__);

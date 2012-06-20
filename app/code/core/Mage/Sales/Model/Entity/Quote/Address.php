@@ -42,6 +42,13 @@ class Mage_Sales_Model_Entity_Quote_Address extends Mage_Eav_Model_Entity_Abstra
         );
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     *
+     * @return
+     */
     public function collectTotals(Mage_Sales_Model_Quote_Address $address)
     {
         $attributes = $this->loadAllAttributes()->getAttributesByCode();
@@ -54,6 +61,13 @@ class Mage_Sales_Model_Entity_Quote_Address extends Mage_Eav_Model_Entity_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     *
+     * @return
+     */
     public function fetchTotals(Mage_Sales_Model_Quote_Address $address)
     {
         $attributes = $this->loadAllAttributes()->getAttributesByCode();

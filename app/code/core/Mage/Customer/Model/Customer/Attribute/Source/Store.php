@@ -33,6 +33,11 @@
  */
 class Mage_Customer_Model_Customer_Attribute_Source_Store extends Mage_Eav_Model_Entity_Attribute_Source_Table
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllOptions()
     {
         if (!$this->_options) {
@@ -48,6 +53,13 @@ class Mage_Customer_Model_Customer_Attribute_Source_Store extends Mage_Eav_Model
         return $this->_options;
     }
 
+    /**
+     * @todo
+     *
+     * @value
+     *
+     * @return
+     */
     public function getOptionText($value)
     {
         if(!$value)$value ='0';

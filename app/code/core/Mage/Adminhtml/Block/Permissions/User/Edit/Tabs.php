@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Permissions_User_Edit_Tabs extends Mage_Adminhtml_Block_Widget_Tabs
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -42,6 +41,11 @@ class Mage_Adminhtml_Block_Permissions_User_Edit_Tabs extends Mage_Adminhtml_Blo
         $this->setTitle(Mage::helper('adminhtml')->__('User Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->addTab('main_section', array(

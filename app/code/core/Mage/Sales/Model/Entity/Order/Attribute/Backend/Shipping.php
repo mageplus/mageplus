@@ -34,7 +34,13 @@
 
 class Mage_Sales_Model_Entity_Order_Attribute_Backend_Shipping extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function beforeSave($object)
     {
         $shippingAddressId = $object->getShippingAddressId();
@@ -43,6 +49,13 @@ class Mage_Sales_Model_Entity_Order_Attribute_Backend_Shipping extends Mage_Eav_
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function afterSave($object)
     {
         $shippingAddressId = false;

@@ -38,11 +38,21 @@ class Mage_Adminhtml_Block_Widget_Button extends Mage_Adminhtml_Block_Widget
         parent::__construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getType()
     {
         return ($type=$this->getData('type')) ? $type : 'button';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOnClick()
     {
         if (!$this->getData('on_click')) {
@@ -51,6 +61,11 @@ class Mage_Adminhtml_Block_Widget_Button extends Mage_Adminhtml_Block_Widget
         return $this->getData('on_click');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         $html = $this->getBeforeHtml().'<button '

@@ -27,7 +27,11 @@
 
 class Mage_Shipping_Model_Rate_Result_Error extends Mage_Shipping_Model_Rate_Result_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getErrorMessage()
     {
         if (!$this->getData('error_message')) {

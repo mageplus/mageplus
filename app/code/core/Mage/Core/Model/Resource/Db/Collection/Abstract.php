@@ -505,6 +505,11 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
         return $this->getConnection()->fetchCol($idsSelect);
     }
 
+    /**
+     * @todo
+     *
+     * @return array 
+     */
     public function getData()
     {
         if ($this->_data === null) {
@@ -527,6 +532,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
     /**
      * Prepare select for load
      *
+     * @param Varien_Db_Select $select
      * @return string
      */
     protected function _prepareSelect(Varien_Db_Select $select)
@@ -544,6 +550,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
 
         return (string)$select;
     }
+    
     /**
      * Join table to collection select
      *
@@ -657,7 +664,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
     /**
      * Check if cache can be used for collection
      *
-     * @return bool
+     * @return boolean
      */
     protected function _canUseCache()
     {
@@ -668,7 +675,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
      * Load cached data for select
      *
      * @param Zend_Db_Select $select
-     * @return string | false
+     * @return string|boolean
      */
     protected function _loadCache($select)
     {
@@ -713,7 +720,4 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
     {
         return Varien_Date::formatDate($date, $includeTime);
     }
-
-
-
 }

@@ -34,7 +34,6 @@
 
 class Mage_Adminhtml_Block_Widget_Grid_Container extends Mage_Adminhtml_Block_Widget_Container
 {
-
     protected $_addButtonLabel;
     protected $_backButtonLabel;
     protected $_blockGroup = 'adminhtml';
@@ -59,6 +58,11 @@ class Mage_Adminhtml_Block_Widget_Grid_Container extends Mage_Adminhtml_Block_Wi
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild( 'grid',
@@ -67,26 +71,51 @@ class Mage_Adminhtml_Block_Widget_Grid_Container extends Mage_Adminhtml_Block_Wi
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCreateUrl()
     {
         return $this->getUrl('*/*/new');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridHtml()
     {
         return $this->getChildHtml('grid');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function getAddButtonLabel()
     {
         return $this->_addButtonLabel;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function getBackButtonLabel()
     {
         return $this->_backButtonLabel;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _addBackButton()
     {
         $this->_addButton('back', array(
@@ -96,11 +125,21 @@ class Mage_Adminhtml_Block_Widget_Grid_Container extends Mage_Adminhtml_Block_Wi
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderCssClass()
     {
         return 'icon-head ' . parent::getHeaderCssClass();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderWidth()
     {
         return 'width:50%;';

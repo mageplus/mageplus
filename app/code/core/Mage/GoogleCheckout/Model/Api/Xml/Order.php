@@ -26,6 +26,11 @@
 
 class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_Api_Xml_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getApiUrl()
     {
         $url = $this->_getBaseApiUrl();
@@ -33,6 +38,12 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $url;
     }
 
+    /**
+     * @todo
+     *
+     * @param $response
+     * @return
+     */
     protected function _processGResponse($response)
     {
         if ($response[0]===200) {
@@ -47,7 +58,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
     }
 
 // FINANCIAL
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function authorize()
     {
         $GRequest = $this->getGRequest();
@@ -64,6 +79,12 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $amount
+     * @return
+     */
     public function charge($amount)
     {
         $response = $this->getGRequest()
@@ -71,6 +92,14 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $amount
+     * @param $reason
+     * @param $comment
+     * @return
+     */
     public function refund($amount, $reason, $comment = '')
     {
         $response = $this->getGRequest()
@@ -78,6 +107,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $reason
+     * @param $comment
+     * @return
+     */
     public function cancel($reason, $comment = '')
     {
         $response = $this->getGRequest()
@@ -86,7 +122,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
     }
 
 // FULFILLMENT
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function process()
     {
         $response = $this->getGRequest()
@@ -94,6 +134,14 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $carrier
+     * @param $trackingNo
+     * @param bool $sendMail
+     * @return
+     */
     public function deliver($carrier, $trackingNo, $sendMail = true)
     {
         $response = $this->getGRequest()
@@ -101,6 +149,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $carrier
+     * @param $trackingNo
+     * @return
+     */
     public function addTrackingData($carrier, $trackingNo)
     {
         $response = $this->getGRequest()
@@ -108,6 +163,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @param bool $sendMail
+     * @return
+     */
     public function shipItems($items, $sendMail = true)
     {
         $googleShipItems = array();
@@ -120,6 +182,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @param bool $sendMail
+     * @return
+     */
     public function backorderItems($items, $sendMail = true)
     {
         $response = $this->getGRequest()
@@ -127,6 +196,15 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @param $reason
+     * @param $comment
+     * @param bool $sendMail
+     * @return
+     */
     public function cancelItems($items, $reason, $comment = '', $sendMail = true)
     {
         $response = $this->getGRequest()
@@ -134,6 +212,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @param bool $sendMail
+     * @return
+     */
     public function returnItems($items, $sendMail = true)
     {
         $response = $this->getGRequest()
@@ -141,6 +226,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @param bool $sendMail
+     * @return
+     */
     public function resetItems($items, $sendMail = true)
     {
         $response = $this->getGRequest()
@@ -149,7 +241,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
     }
 
 // MISC
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function archive()
     {
         $response = $this->getGRequest()
@@ -157,6 +253,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unarchive()
     {
         $response = $this->getGRequest()
@@ -164,6 +265,12 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
+    /**
+     * @todo
+     *
+     * @param $merchantOrder
+     * @return
+     */
     public function addOrderNumber($merchantOrder)
     {
         $response = $this->getGRequest()
@@ -171,7 +278,13 @@ class Mage_GoogleCheckout_Model_Api_Xml_Order extends Mage_GoogleCheckout_Model_
         return $this->_processGResponse($response);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $message
+     * @param $sendMail
+     * @return
+     */
     public function addBuyerMessage($message, $sendMail = true)
     {
         $response = $this->getGRequest()

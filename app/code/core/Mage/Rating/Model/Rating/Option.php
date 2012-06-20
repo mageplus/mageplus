@@ -49,12 +49,23 @@ class Mage_Rating_Model_Rating_Option extends Mage_Core_Model_Abstract
         $this->_init('rating/rating_option');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function addVote()
     {
         $this->getResource()->addVote($this);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     public function setId($id)
     {
         $this->setOptionId($id);

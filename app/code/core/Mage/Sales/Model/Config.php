@@ -29,12 +29,26 @@ class Mage_Sales_Model_Config
 {
     const XML_PATH_ORDER_STATES = 'global/sales/order/states';
 
+    /**
+     * @todo
+     *
+     * @param $type
+     *
+     * @return
+     */
     public function getQuoteRuleConditionInstance($type)
     {
         $config = Mage::getConfig()->getNodeClassInstance("global/sales/quote/rule/conditions/$type");
         return $config;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     *
+     * @return
+     */
     public function getQuoteRuleActionInstance($type)
     {
         return Mage::getConfig()->getNodeClassInstance("global/sales/quote/rule/actions/$type");

@@ -34,11 +34,21 @@
 
 class Mage_Customer_Block_Account_Dashboard_Address extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomer()
     {
         return Mage::getSingleton('customer/session')->getCustomer();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryShippingAddressHtml()
     {
         $address = $this->getCustomer()->getPrimaryShippingAddress();
@@ -50,6 +60,11 @@ class Mage_Customer_Block_Account_Dashboard_Address extends Mage_Core_Block_Temp
         }
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryBillingAddressHtml()
     {
         $address = $this->getCustomer()->getPrimaryBillingAddress();
@@ -61,16 +76,31 @@ class Mage_Customer_Block_Account_Dashboard_Address extends Mage_Core_Block_Temp
         }
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryShippingAddressEditUrl()
     {
         return Mage::getUrl('customer/address/edit', array('id'=>$this->getCustomer()->getDefaultShipping()));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryBillingAddressEditUrl()
     {
         return Mage::getUrl('customer/address/edit', array('id'=>$this->getCustomer()->getDefaultBilling()));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAddressBookUrl()
     {
         return $this->getUrl('customer/address/');

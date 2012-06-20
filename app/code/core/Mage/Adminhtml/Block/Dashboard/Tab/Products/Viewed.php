@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Products_Viewed extends Mage_Adminhtml_
         $this->setId('productsReviewedGrid');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         if ($this->getParam('website')) {
@@ -63,6 +68,11 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Products_Viewed extends Mage_Adminhtml_
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('name', array(
@@ -94,6 +104,12 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Products_Viewed extends Mage_Adminhtml_
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function getRowUrl($row)
     {
         $params = array('id'=>$row->getId());

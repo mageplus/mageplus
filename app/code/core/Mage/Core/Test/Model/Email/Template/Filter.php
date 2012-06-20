@@ -87,7 +87,7 @@ class Mage_Core_Test_Model_Email_Template_Filter extends Mage_Test_Unit_Case
         );
 
         foreach ($expectedResults as $varName => $expectedResult) {
-            $result = $this->_model->escapehtmlDirective(array(
+            $result = $this->_model->htmlescapeDirective(array(
                 '{{escapehtml var=$' . $varName . ' allowed_tags=' . $allowedTags . '}}',
                 'escapehtml',
                 ' var=$' . $varName . ' allowed_tags=' . $allowedTags

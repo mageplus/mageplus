@@ -59,7 +59,7 @@ class Mage_Core_Block_Template extends Mage_Core_Block_Abstract
     /**
      * Is allowed symlinks flag
      *
-     * @var bool
+     * @var boolean
      */
     protected $_allowSymlinks = null;
 
@@ -179,7 +179,7 @@ class Mage_Core_Block_Template extends Mage_Core_Block_Abstract
     /**
      * Check if direct output is allowed for block
      *
-     * @return bool
+     * @return boolean
      */
     public function getDirectOutput()
     {

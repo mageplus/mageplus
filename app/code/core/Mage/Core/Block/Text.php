@@ -35,9 +35,8 @@ class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
     /**
      * @todo
      *
-     * @param $text
-     *
-     * @return
+     * @param string $text
+     * @return Mage_Core_Block_Text
      */
     public function setText($text)
     {
@@ -48,7 +47,7 @@ class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     public function getText()
     {
@@ -59,9 +58,8 @@ class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
      * @todo
      *
      * @param $text
-     * @param $before
-     *
-     * @return
+     * @param bool $before
+     * @return Mage_Core_Block_Text
      */
     public function addText($text, $before=false)
     {
@@ -75,7 +73,7 @@ class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {
@@ -85,5 +83,4 @@ class Mage_Core_Block_Text extends Mage_Core_Block_Abstract
 
         return $this->getText();
     }
-
 }

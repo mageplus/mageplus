@@ -41,9 +41,9 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
     protected $_namespace;
 
     /**
-     * @TODO
+     * Gets the session namespace
      *
-     * @return 
+     * @return Zend_Session_Namespace
      */
     public function getNamespace()
     {
@@ -51,9 +51,9 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
     }
 
     /**
-     * @TODO
+     * Starts the session
      *
-     * @return 
+     * @return Mage_Core_Model_Session_Abstract_Zend
      */
     public function start()
     {
@@ -126,7 +126,7 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
      * Redeclaration object getter
      *
      * @param   string $var
-     * @param   bool $clear
+     * @param   boolean $clear
      * @return  mixed
      */
     public function getData($var=null, $clear=false)
@@ -166,9 +166,10 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
     }
 
     /**
-     * @TODO
+     * Sets the session ID
      *
-     * @return 
+     * @param string $id The ID to set for the session
+     * @return Mage_Core_Model_Session_Abstract_Zend 
      */
     public function setSessionId($id=null)
     {

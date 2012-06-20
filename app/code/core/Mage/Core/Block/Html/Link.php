@@ -34,7 +34,6 @@
  */
 class Mage_Core_Block_Html_Link extends Mage_Core_Block_Template
 {
-
     /**
      * Internal constructor
      *

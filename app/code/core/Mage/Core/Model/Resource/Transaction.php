@@ -127,7 +127,7 @@ class Mage_Core_Model_Resource_Transaction
     /**
      * Add callback function which will be called before commit transactions
      *
-     * @param callback $callback
+     * @param string $callback
      * @return Mage_Core_Model_Resource_Transaction
      */
     public function addCommitCallback($callback)

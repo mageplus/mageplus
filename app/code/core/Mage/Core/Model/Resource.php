@@ -362,7 +362,7 @@ class Mage_Core_Model_Resource
     }
 
     /**
-     * @TODO
+     * @todo
      *
      * @return 
      */
@@ -374,7 +374,7 @@ class Mage_Core_Model_Resource
     }
 
     /**
-     * @TODO
+     * @todo
      *
      * @return 
      */
@@ -385,10 +385,9 @@ class Mage_Core_Model_Resource
     }
 
     /**
-     * @TODO
+     * @todo
      *
      * @param $value
-     *
      * @return 
      */
     public function setAutoUpdate($value)

@@ -64,7 +64,7 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
     /**
      * Flag which require message text escape
      *
-     * @var bool
+     * @var boolean
      */
     protected $_escapeMessageFlag = false;
 
@@ -88,7 +88,7 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
 
     /**
      * Set message escape flag
-     * @param bool $flag
+     * @param boolean $flag
      * @return Mage_Core_Block_Messages
      */
     public function setEscapeMessageFlag($flag)
@@ -268,7 +268,7 @@ class Mage_Core_Block_Messages extends Mage_Core_Block_Template
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {

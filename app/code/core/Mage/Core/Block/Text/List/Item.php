@@ -37,7 +37,6 @@ class Mage_Core_Block_Text_List_Item extends Mage_Core_Block_Text
      *
      * @param $liParams
      * @param $innerText
-     *
      * @return
      */
     function setLink($liParams, $innerText)
@@ -51,7 +50,7 @@ class Mage_Core_Block_Text_List_Item extends Mage_Core_Block_Text
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {
@@ -68,5 +67,4 @@ class Mage_Core_Block_Text_List_Item extends Mage_Core_Block_Text
 
         return parent::_toHtml();
     }
-
 }

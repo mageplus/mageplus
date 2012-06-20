@@ -34,13 +34,11 @@
  */
 class Mage_Core_Block_Template_Zend extends Mage_Core_Block_Template
 {
-
     protected $_view = null;
 
     /**
      * Class constructor. Base html block
      *
-     * @param      none
      * @return     void
      */
     function _construct()
@@ -54,8 +52,7 @@ class Mage_Core_Block_Template_Zend extends Mage_Core_Block_Template
      *
      * @param $key
      * @param $value
-     *
-     * @return
+     * @return Mage_Core_Block_Template_Zend 
      */
     public function assign($key, $value=null)
     {
@@ -92,5 +89,4 @@ class Mage_Core_Block_Template_Zend extends Mage_Core_Block_Template
     {
         return $this->_view->render($fileName);
     }
-
 }

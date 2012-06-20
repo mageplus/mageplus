@@ -32,7 +32,6 @@
  */
 class Mage_Core_Block_Text_Tag_Css extends Mage_Core_Block_Text_Tag
 {
-
     protected function _construct()
     {
         parent::_construct();
@@ -45,7 +44,6 @@ class Mage_Core_Block_Text_Tag_Css extends Mage_Core_Block_Text_Tag
      *
      * @param $href
      * @param $type
-     *
      * @return
      */
     function setHref($href, $type=null)
@@ -58,5 +56,4 @@ class Mage_Core_Block_Text_Tag_Css extends Mage_Core_Block_Text_Tag
 
         return $this->setTagParam('href', $url);
     }
-
 }

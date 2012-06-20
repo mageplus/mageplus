@@ -37,7 +37,7 @@ class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {
@@ -73,7 +73,6 @@ class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
         //]]>
         </script>';
 
-
         return $html;
     }
 
@@ -81,8 +80,7 @@ class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
      * @todo
      *
      * @param $index
-     *
-     * @return
+     * @return string
      */
     public function getEscapedValue($index=null) {
 
@@ -96,11 +94,10 @@ class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     public function getHtml()
     {
         return $this->toHtml();
     }
-
 }

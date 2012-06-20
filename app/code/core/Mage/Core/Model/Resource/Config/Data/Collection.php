@@ -47,7 +47,7 @@ class Mage_Core_Model_Resource_Config_Data_Collection extends Mage_Core_Model_Re
      * Add scope filter to collection
      *
      * @param string $scope
-     * @param int $scopeId
+     * @param integer $scopeId
      * @param string $section
      * @return Mage_Core_Model_Resource_Config_Data_Collection
      */
@@ -74,7 +74,7 @@ class Mage_Core_Model_Resource_Config_Data_Collection extends Mage_Core_Model_Re
     /**
      * Add value filter
      *
-     * @param int|string $value
+     * @param integer|string $value
      * @return Mage_Core_Model_Resource_Config_Data_Collection
      */
     public function addValueFilter($value)

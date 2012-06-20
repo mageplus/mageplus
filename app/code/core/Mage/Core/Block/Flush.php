@@ -35,7 +35,7 @@ class Mage_Core_Block_Flush extends Mage_Core_Block_Abstract
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {
@@ -53,5 +53,4 @@ class Mage_Core_Block_Flush extends Mage_Core_Block_Abstract
             echo $block->toHtml();
         }
     }
-
 }

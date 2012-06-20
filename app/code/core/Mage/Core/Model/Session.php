@@ -36,6 +36,11 @@
  */
 class Mage_Core_Model_Session extends Mage_Core_Model_Session_Abstract
 {
+    /**
+     * class constructor
+     *
+     * @param array $data data array to initialise session
+     */
     public function __construct($data=array())
     {
         $name = isset($data['name']) ? $data['name'] : null;

@@ -60,7 +60,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Multiline extends Enterprise_
             ->addTitleAndRequiredAttr($fieldsetXmlObj, $this);
 
         $fieldXmlObj = $fieldsetXmlObj->addField(
-            $this->_filedType . '_' . $this->getHtmlId(), $this->_fieldType, $attributes
+            $this->_fieldType . '_' . $this->getHtmlId(), $this->_fieldType, $attributes
         );
 
         $validateRules = $this->getAttributeObject()->getValidateRules();

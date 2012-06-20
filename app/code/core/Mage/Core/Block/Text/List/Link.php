@@ -55,7 +55,7 @@ class Mage_Core_Block_Text_List_Link extends Mage_Core_Block_Text
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {
@@ -83,5 +83,4 @@ class Mage_Core_Block_Text_List_Link extends Mage_Core_Block_Text
 
         return parent::_toHtml();
     }
-
 }

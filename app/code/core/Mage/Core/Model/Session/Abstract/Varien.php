@@ -181,7 +181,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
      * Additional get data with clear mode
      *
      * @param string $key
-     * @param bool $clear
+     * @param boolean $clear
      * @return mixed
      */
     public function getData($key='', $clear = false)
@@ -284,7 +284,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Use REMOTE_ADDR in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateRemoteAddr()
     {
@@ -294,7 +294,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Use HTTP_VIA in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateHttpVia()
     {
@@ -304,7 +304,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Use HTTP_X_FORWARDED_FOR in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateHttpXForwardedFor()
     {
@@ -314,7 +314,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Use HTTP_USER_AGENT in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateHttpUserAgent()
     {
@@ -356,7 +356,7 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
     /**
      * Validate data
      *
-     * @return bool
+     * @return boolean
      */
     protected function _validate()
     {

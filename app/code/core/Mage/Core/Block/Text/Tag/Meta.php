@@ -30,7 +30,7 @@ class Mage_Core_Block_Text_Tag_Meta extends Mage_Core_Block_Text
     /**
      * @todo
      *
-     * @return
+     * @return string
      */
     protected function _toHtml()
     {

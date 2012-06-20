@@ -121,7 +121,7 @@ class Mage_Core_Model_Resource_Store_Group_Collection extends Mage_Core_Model_Re
     /**
      * Add filter by website to collection
      *
-     * @param int|array $website
+     * @param integer|array $website
      *
      * @return Mage_Core_Model_Resource_Store_Group_Collection
      */

@@ -32,6 +32,16 @@
 class Mage_Newsletter_Model_Observer
 {
     /**
+     * @var string
+     */
+    const XML_PATH_NEWSLETTER_SENDING_COUNT_QUEUE = 'newsletter/sending/count_of_queue';
+
+    /**
+     * @var string
+     */
+    const XML_PATH_NEWSLETTER_SENDING_COUNT_SUBSCRIBER = 'newsletter/sending/count_of_subscriptions';
+
+    /**
      * @todo
      *
      * @param $observer
@@ -63,15 +73,15 @@ class Mage_Newsletter_Model_Observer
     }
 
     /**
-     * @todo
+     * Schedules the sending process of the newsletters
      *
      * @param $schedule
      * @return
      */
     public function scheduledSend($schedule)
     {
-        $countOfQueue  = 3;
-        $countOfSubscritions = 20;
+        $countOfQueue = (int) Mage::getStoreConfig(self::XML_PATH_NEWSLETTER_SENDING_COUNT_QUEUE);
+        $countOfSubscriptions = (int) Mage::getStoreConfig(self::XML_PATH_NEWSLETTER_SENDING_COUNT_SUBSCRIBER);
 
         $collection = Mage::getModel('newsletter/queue')->getCollection()
             ->setPageSize($countOfQueue)
@@ -79,6 +89,6 @@ class Mage_Newsletter_Model_Observer
             ->addOnlyForSendingFilter()
             ->load();
 
-         $collection->walk('sendPerSubscriber', array($countOfSubscritions));
+         $collection->walk('sendPerSubscriber', array($countOfSubscriptions));
     }
 }

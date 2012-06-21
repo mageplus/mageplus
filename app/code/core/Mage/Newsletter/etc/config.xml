@@ -195,6 +195,8 @@
             </subscription>
             <sending>
                 <set_return_path>0</set_return_path>
+                <count_of_queue>3</count_of_queue>
+                <count_of_subscriptions>20</count_of_subscriptions>
             </sending>
         </newsletter>
     </default>

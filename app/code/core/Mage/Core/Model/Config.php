@@ -1474,8 +1474,8 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * "Secure" should not be confused with https protocol, it is about web/secure/*_url settings usage only
      *
      * TODO: Update doc block - it is indeed https related and will result in a
-     *       Redirect loop when Use Secure in * is enabled and a http address
-     *       instead of an https address is set as secure url
+     *       Redirect loop when Use Secure in Frontend/Admin is enabled and a http address
+     *       instead of a https address is set as secure url
      *       Updated system.xml by adding a comment related to this issue
      *
      * @param string $url
@@ -1487,7 +1487,8 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
             return false;
         }
 
-        if (Mage::getStoreConfigFlag(Mage_Core_Model_Store::XML_PATH_SECURE_ENTIRE_FRONTEND)) {
+        // Check if entire store should be secure
+        if (Mage::getStoreConfig(Mage_Core_Model_Store::XML_PATH_SECURE_IN_FRONTEND) == Mage_Core_Model_Store::WEB_FRONTEND_SECURE_ALL) {
             return true;
         }
 

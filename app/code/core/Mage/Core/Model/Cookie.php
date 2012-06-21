@@ -183,7 +183,7 @@ class Mage_Core_Model_Cookie
      */
     public function isSecure()
     {
-        if ($this->getStore()->isAdmin()) {
+        if ($this->getStore()->isAdmin() || (bool)$this->getStore()->getConfig(Mage_Core_Model_Store::XML_PATH_SECURE_ENTIRE_FRONTEND)) {
             return $this->_getRequest()->isSecure();
         }
         return false;

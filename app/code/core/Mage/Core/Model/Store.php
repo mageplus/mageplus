@@ -58,6 +58,7 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     const XML_PATH_UNSECURE_BASE_URL      = 'web/unsecure/base_url';
     const XML_PATH_SECURE_BASE_URL        = 'web/secure/base_url';
     const XML_PATH_SECURE_IN_FRONTEND     = 'web/secure/use_in_frontend';
+    const XML_PATH_SECURE_ENTIRE_FRONTEND = 'web/secure/entire_frontend';
     const XML_PATH_SECURE_IN_ADMINHTML    = 'web/secure/use_in_adminhtml';
     const XML_PATH_SECURE_BASE_LINK_URL   = 'web/secure/base_link_url';
     const XML_PATH_UNSECURE_BASE_LINK_URL = 'web/unsecure/base_link_url';

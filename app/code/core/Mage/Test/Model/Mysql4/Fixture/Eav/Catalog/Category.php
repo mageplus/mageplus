@@ -36,7 +36,6 @@ class Mage_Test_Model_Mysql4_Fixture_Eav_Catalog_Category extends Mage_Test_Mode
         return $this->_getProductAssociationRecords($row, $entityTypeModel);
     }
 
-
     /**
      * Generates records for catalog_category_product table
      *

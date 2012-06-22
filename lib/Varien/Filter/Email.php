@@ -26,7 +26,13 @@
 
 
 class Varien_Filter_Email implements Zend_Filter_Interface
-{  
+{
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function filter($value)
     {
         $atIndex = 0;

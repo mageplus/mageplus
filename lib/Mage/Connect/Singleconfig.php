@@ -34,7 +34,6 @@
 
 class Mage_Connect_Singleconfig
 {
-
     /**
      * Cache data
      * @var array
@@ -48,13 +47,11 @@ class Mage_Connect_Singleconfig
     protected $_readFilename = false;
 
     /**
-     *
      * @var unknown_type
      */
     protected $_debug = false;
 
     /**
-     *
      * @var unknown_type
      */
     protected $_validator;
@@ -76,6 +73,12 @@ class Mage_Connect_Singleconfig
     const K_PACK_DEPS = 'pack_deps';
     const K_CONFIG = 'config';
 
+    /**
+     * @todo
+     *
+     * @param $str
+     * @return
+     */
     public function getValidUri($str)
     {
         $data = @parse_url($str);
@@ -85,11 +88,22 @@ class Mage_Connect_Singleconfig
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFilename()
     {
         return $this->_readFilename;
     }
 
+    /**
+     * @todo
+     *
+     * @param $uri
+     * @return
+     */
     public function formatUri($uri)
     {        
         $uri = rtrim($uri, "/");
@@ -120,7 +134,6 @@ class Mage_Connect_Singleconfig
             $this->load();
         }
     }
-
 
     /**
      * Load cache from file
@@ -162,7 +175,6 @@ class Mage_Connect_Singleconfig
         if(unserialize(false) === $data) {
             return $this->doError("Cannot unserialize data in file contents: '{$file}'");
         }
-
 
         $validData = true;
         foreach(array_keys($this->_data) as $k) {
@@ -215,7 +227,12 @@ class Mage_Connect_Singleconfig
         );
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @return
+     */
     public function isChannel($chanName)
     {
         if($this->isChannelName($chanName)) {
@@ -312,7 +329,6 @@ class Mage_Connect_Singleconfig
         return $this->_data[self::K_CHAN_URI][$uri];
     }
 
-
     /**
      * Unset channel record
      * @param string $chanName
@@ -366,8 +382,6 @@ class Mage_Connect_Singleconfig
             $this->_data[self::K_CHAN][$chanName][self::K_PACK][$packageName][$oneField] = $data;
         }
     }
-
-
 
     /**
      * Unset package record
@@ -471,8 +485,6 @@ class Mage_Connect_Singleconfig
         $this->save();
     }
 
-
-
     /**
      * Add channel
      * @param $chanName
@@ -496,8 +508,6 @@ class Mage_Connect_Singleconfig
         $this->setChannelUriRecord($chanName, $uri);
         $this->save();
     }
-
-
 
     /**
      * Delete channel
@@ -525,7 +535,6 @@ class Mage_Connect_Singleconfig
         $this->save();
     }
 
-
     /**
      * Converts channel name, url or alias to channel name
      * throws exception if not found
@@ -541,6 +550,12 @@ class Mage_Connect_Singleconfig
         return $channelData[self::K_NAME];
     }
 
+    /**
+     * @todo
+     *
+     * @param $chan
+     * @return
+     */
     public function chanUrl($chan)
     {
         $channelData = $this->getChannel($chan);
@@ -549,7 +564,6 @@ class Mage_Connect_Singleconfig
         }
         return $channelData[self::K_URI];
     }
-
 
     /**
      * Add package
@@ -572,9 +586,6 @@ class Mage_Connect_Singleconfig
         $this->setPackageDependencies($channel, $name, $package->getDependencyPackages());
         $this->save();
     }
-
-
-
 
     /**
      * Delete package
@@ -604,6 +615,13 @@ class Mage_Connect_Singleconfig
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $package
+     * @return
+     */
     public function getPackageObject($chanName, $package)
     {
         $chanName = $this->chanName($chanName);
@@ -614,7 +632,15 @@ class Mage_Connect_Singleconfig
         throw new Exception("Cannot get package: '{$package}'");
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $package
+     * @param boolean $versionMin
+     * @param boolean $versionMax
+     * @return
+     */
     public function hasPackage($chanName, $package, $versionMin = false, $versionMax = false)
     {
         $chanName = $this->chanName($chanName);
@@ -707,8 +733,14 @@ class Mage_Connect_Singleconfig
         }
         return false;
     }
-
-
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $package
+     * @param $data
+     * @return
+     */
     public function setPackageDependencies($chanName, $package, $data)
     {
         $chanName = $this->chanName($chanName);
@@ -720,6 +752,13 @@ class Mage_Connect_Singleconfig
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $package
+     * @return
+     */
     public function getPackageDependencies($chanName, $package)
     {
         $chanName = $this->chanName($chanName);
@@ -729,8 +768,14 @@ class Mage_Connect_Singleconfig
         return false;
     }
 
-
-
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $package
+     * @param $data
+     * @return
+     */
     public function setDependencyInfo($chanName, $package, $data)
     {
         $chanName = $this->chanName($chanName);
@@ -742,6 +787,13 @@ class Mage_Connect_Singleconfig
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $package
+     * @return
+     */
     public function getDependencyInfo($chanName, $package)
     {
         $chanName = $this->chanName($chanName);
@@ -751,13 +803,22 @@ class Mage_Connect_Singleconfig
         return false;
     }
 
-
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getChannelNames()
     {
         return array_keys($this->_data[self::K_CHAN]);
     }
 
+    /**
+     * @todo
+     *
+     * @param $channel
+     * @return
+     */
     public function getPackagesData($channel = false)
     {
         if(false == $channel) {
@@ -770,6 +831,14 @@ class Mage_Connect_Singleconfig
         return $this->getChannel($channel);
     }
 
+    /**
+     * @todo
+     *
+     * @param $deps
+     * @param $chanName
+     * @param $packageName
+     * @return
+     */
     public function specifiedInDependencyList($deps, $chanName, $packageName)
     {
         foreach($deps as $dep) {
@@ -780,6 +849,14 @@ class Mage_Connect_Singleconfig
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @param $packageName
+     * @param array $excludeList
+     * @return
+     */
     public function requiredByOtherPackages($chanName, $packageName, $excludeList = array())
     {
         $out = array();
@@ -787,7 +864,7 @@ class Mage_Connect_Singleconfig
             foreach($data[self::K_PACK] as $package) {
                 if($this->specifiedInDependencyList($excludeList, $channel, $package['name'])) {
                     continue;
-                }
+                 }
                 $deps = $package[self::K_PACK_DEPS];
                 if($this->specifiedInDependencyList($deps, $chanName, $packageName)) {
                     $out[] = array('channel'=>$channel, 'name' =>$package['name'], 'version'=>$package['version']); 
@@ -797,9 +874,12 @@ class Mage_Connect_Singleconfig
         return $out;
     }
 
-
-
-
+    /**
+     * @todo
+     *
+     * @param $chanName
+     * @return
+     */
     public function getInstalledPackages($chanName = false)
     {
         if(false == $chanName) {
@@ -822,8 +902,6 @@ class Mage_Connect_Singleconfig
         return $out;
     }
 
-
-    
     /**
      * Check if package conflicts with installed packages
      * Returns:
@@ -858,8 +936,4 @@ class Mage_Connect_Singleconfig
         }
         return count($conflicts) ? $conflicts : false;
     }
-
-
-
-
 }

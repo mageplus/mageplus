@@ -133,7 +133,6 @@ abstract class Mage_PHPUnit_Constraint_Abstract
         return $this;
     }
 
-
     /**
      * Calls internal protected method by defined constraint type
      * Also can be passed a single argument

@@ -46,11 +46,13 @@ class Mage_Core_Test_Model_Layout_Data extends Mage_Test_Unit_Case
             'xml' => '<layout/>',
             'sort_order' => 123,
         ));
+        /**
         $entityHelper = new Magento_Test_Entity($this->_model, array(
             'handle' => 'custom',
             'xml' => '<layout version="0.1.0"/>',
             'sort_order' => 456,
         ));
         $entityHelper->testCrud();
+        */
     }
 }

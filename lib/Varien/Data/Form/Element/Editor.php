@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Editor extends Varien_Data_Form_Element_Textarea
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -46,6 +52,11 @@ class Varien_Data_Form_Element_Editor extends Varien_Data_Form_Element_Textarea
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $js = '
@@ -142,6 +153,11 @@ class Varien_Data_Form_Element_Editor extends Varien_Data_Form_Element_Textarea
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTheme()
     {
         if(!$this->hasData('theme')) {

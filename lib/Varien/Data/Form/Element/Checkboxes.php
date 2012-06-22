@@ -119,6 +119,12 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getChecked($value)
     {
         if ($checked = $this->getValue()) {
@@ -142,6 +148,12 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         return ;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getDisabled($value)
     {
         if ($disabled = $this->getData('disabled')) {
@@ -160,6 +172,12 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         return ;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getOnclick($value)
     {
         if ($onclick = $this->getData('onclick')) {
@@ -168,6 +186,12 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
         return ;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getOnchange($value)
     {
         if ($onchange = $this->getData('onchange')) {
@@ -184,6 +208,12 @@ class Varien_Data_Form_Element_Checkboxes extends Varien_Data_Form_Element_Abstr
 //        return ;
 //    }
 
+    /**
+     * @todo
+     *
+     * @param $option
+     * @return
+     */
     protected function _optionToHtml($option)
     {
         $id = $this->getHtmlId().'_'.$this->_escape($option['value']);

@@ -59,7 +59,7 @@ class Mage_Test_Model_Expectation_Object
         return $current;
     }
 
-	/* (non-PHPdoc)
+		/* (non-PHPdoc)
      * @see Iterator::key()
      */
     public function key()
@@ -67,7 +67,7 @@ class Mage_Test_Model_Expectation_Object
         return current($this->_iterationKeys);
     }
 
-	/* (non-PHPdoc)
+		/* (non-PHPdoc)
      * @see Iterator::next()
      */
     public function next()
@@ -75,7 +75,7 @@ class Mage_Test_Model_Expectation_Object
         next($this->_iterationKeys);
     }
 
-	/* (non-PHPdoc)
+		/* (non-PHPdoc)
      * @see Iterator::rewind()
      */
     public function rewind()
@@ -83,7 +83,7 @@ class Mage_Test_Model_Expectation_Object
         $this->_iterationKeys = $this->keys();
     }
 
-	/* (non-PHPdoc)
+		/* (non-PHPdoc)
      * @see Iterator::valid()
      */
     public function valid()

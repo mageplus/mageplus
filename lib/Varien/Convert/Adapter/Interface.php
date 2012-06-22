@@ -34,7 +34,17 @@
  */
 interface Varien_Convert_Adapter_Interface
 {
-	public function load();
+    /**
+     * @todo
+     *
+     * @return
+     */
+		public function load();
     
-    public function save();
+    /**
+     * @todo
+     *
+     * @return
+     */
+		public function save();
 }

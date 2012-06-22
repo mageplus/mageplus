@@ -34,7 +34,6 @@
 
 class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_Tokenizer_Abstract
 {
-
     /**
      * Tokenize string and return getted variable stack path
      *
@@ -91,8 +90,8 @@ class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_T
      *
      * @return string
      */
-    public function getString() {
-
+    public function getString()
+    {
         $value = '';
         if($this->isWhiteSpace()) {
             return $value;
@@ -129,7 +128,8 @@ class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_T
      *
      * @return boolean
      */
-    public function isNumeric() {
+    public function isNumeric()
+    {
         return $this->char() >= '0' && $this->char() <= '9';
     }
 
@@ -138,7 +138,8 @@ class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_T
      *
      * @return boolean
      */
-    public function isQuote() {
+    public function isQuote()
+    {
         return $this->char() == '"' || $this->char() == "'";
     }
 
@@ -147,7 +148,8 @@ class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_T
      *
      * @return array
      */
-    public function getMethodArgs() {
+    public function getMethodArgs()
+    {
         $value = array();
         $numberStr = '';
 
@@ -169,7 +171,8 @@ class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_T
      *
      * @return float
      */
-    public function getNumber() {
+    public function getNumber()
+    {
         $value = $this->char();
         while( ($this->isNumeric() || $this->char()=='.') && $this->next() ) {
             $value.= $this->char();
@@ -181,5 +184,4 @@ class Varien_Filter_Template_Tokenizer_Variable extends Varien_Filter_Template_T
 
         return floatval($value);
     }
-
 }

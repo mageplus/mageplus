@@ -227,10 +227,14 @@ class Varien_Io_Sftp extends Varien_Io_Abstract implements Varien_Io_Interface
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function rawls()
     {
         $list = $this->_connection->rawlist();
         return $list;
     }
-
 }

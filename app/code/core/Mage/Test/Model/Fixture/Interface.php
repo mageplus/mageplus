@@ -59,7 +59,6 @@ interface Mage_Test_Model_Fixture_Interface extends Mage_Test_Model_Test_Loadabl
      */
     public function getStorageData($key, $scope = null);
 
-
     /**
      * Sets storage data for a particular fixture scope
      *

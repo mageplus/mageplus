@@ -40,6 +40,12 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
     protected $_elements;
     protected $_renderer;
 
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes = array())
     {
         parent::__construct($attributes);
@@ -63,21 +69,42 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getId()
     {
         return $this->_id;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getType()
     {
         return $this->_type;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getForm()
     {
         return $this->_form;
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     public function setId($id)
     {
         $this->_id = $id;
@@ -85,11 +112,21 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlId()
     {
         return $this->getForm()->getHtmlIdPrefix() . $this->getData('html_id') . $this->getForm()->getHtmlIdSuffix();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getName()
     {
         $name = $this->getData('name');
@@ -99,6 +136,12 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $name;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function setType($type)
     {
         $this->_type = $type;
@@ -106,23 +149,46 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $form
+     * @return
+     */
     public function setForm($form)
     {
         $this->_form = $form;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $elementId
+     * @return
+     */
     public function removeField($elementId)
     {
         $this->getForm()->removeField($elementId);
         return parent::removeField($elementId);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('type', 'title', 'class', 'style', 'onclick', 'onchange', 'disabled', 'readonly', 'tabindex');
     }
 
+    /**
+     * @todo
+     *
+     * @param $class
+     * @return
+     */
     public function addClass($class)
     {
         $oldClass = $this->getClass();
@@ -146,11 +212,23 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $string
+     * @return
+     */
     protected function _escape($string)
     {
         return htmlspecialchars($string, ENT_COMPAT);
     }
 
+    /**
+     * @todo
+     *
+     * @param $index
+     * @return
+     */
     public function getEscapedValue($index=null)
     {
         $value = $this->getValue($index);
@@ -161,17 +239,33 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $this->_escape($value);
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Renderer_Interface $renderer
+     * @return
+     */   
     public function setRenderer(Varien_Data_Form_Element_Renderer_Interface $renderer)
     {
         $this->_renderer = $renderer;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRenderer()
     {
         return $this->_renderer;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $html = '<input id="'.$this->getHtmlId().'" name="'.$this->getName()
@@ -180,6 +274,11 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAfterElementHtml()
     {
         return $this->getData('after_element_html');
@@ -202,6 +301,11 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDefaultHtml()
     {
         $html = $this->getData('default_html');
@@ -214,6 +318,11 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtml()
     {
         if ($this->getRequired()) {
@@ -228,11 +337,25 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toHtml()
     {
         return $this->getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @param $valueSeparator
+     * @param $fieldSeparator
+     * @param $quote
+     * @return
+     */
     public function serialize($attributes = array(), $valueSeparator='=', $fieldSeparator=' ', $quote='"')
     {
         if (in_array('disabled', $attributes) && !empty($this->_data['disabled'])) {
@@ -250,6 +373,11 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return parent::serialize($attributes, $valueSeparator, $fieldSeparator, $quote);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReadonly()
     {
         if ($this->hasData('readonly_disabled')) {
@@ -259,6 +387,11 @@ abstract class Varien_Data_Form_Element_Abstract extends Varien_Data_Form_Abstra
         return $this->_getData('readonly');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlContainerId()
     {
         if ($this->hasData('container_id')) {

@@ -29,7 +29,6 @@ class Mage_Test_Model_Mysql4_Fixture_Eav_Catalog_Product extends Mage_Test_Model
         'catalog_product_price'
     );
 
-
     /**
      * Overridden to fix issue with flat tables existance mark
      * (non-PHPdoc)
@@ -190,7 +189,6 @@ class Mage_Test_Model_Mysql4_Fixture_Eav_Catalog_Product extends Mage_Test_Model
         }
         return array();
     }
-
 
     /**
      * Adding enabled and visibility indexes

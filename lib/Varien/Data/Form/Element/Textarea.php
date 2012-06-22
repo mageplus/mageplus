@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Textarea extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -42,11 +48,21 @@ class Varien_Data_Form_Element_Textarea extends Varien_Data_Form_Element_Abstrac
         $this->setCols(15);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('title', 'class', 'style', 'onclick', 'onchange', 'rows', 'cols', 'readonly', 'disabled', 'onkeyup', 'tabindex');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $this->addClass('textarea');

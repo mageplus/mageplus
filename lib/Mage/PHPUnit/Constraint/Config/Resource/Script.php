@@ -25,7 +25,6 @@ class Mage_PHPUnit_Constraint_Config_Resource_Script
 {
     const XML_PATH_RESOURCES_NODE = 'global/resources';
 
-    
     const TYPE_SCRIPT_SCHEME = 'script_scheme';
     const TYPE_SCRIPT_DATA = 'script_data';
 
@@ -34,7 +33,6 @@ class Mage_PHPUnit_Constraint_Config_Resource_Script
 
     const FILE_INSTALL_DATA = '/^(mysql4-data-install|data-install)-([\\d\\.]+)$/';
     const FILE_UPGRADE_DATA = '/^(mysql4-data-upgrade|data-upgrade)-([\\d\\.]+)-([\\d\\.]+)$/';
-
 
     /**
      * Name of the module for constraint

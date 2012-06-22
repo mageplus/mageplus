@@ -141,7 +141,6 @@ class Mage_PHPUnit_Constraint_Config_Node
         return sprintf('is greater than %s', (float)$this->_expectedValue);
     }
 
-
     /**
      * Checks that string is not false value of a config flag
      *
@@ -193,7 +192,6 @@ class Mage_PHPUnit_Constraint_Config_Node
 
         return $this->_expectedValue->asNiceXml() == $other->asNiceXml();
     }
-
 
     /**
      * Returns text representatation of xml comparisment

@@ -22,5 +22,10 @@
  */
 interface Mage_PHPUnit_Constraint_Config_Interface
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNodePath();
 }

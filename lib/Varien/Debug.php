@@ -34,6 +34,7 @@
 class Varien_Debug
 {
     public static $argLength = 16;
+    
     /**
      * Magento Root path
      *

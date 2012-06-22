@@ -15,8 +15,8 @@
  * versions in the future. If you wish to customize this module for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category   EcomDev
- * @package    EcomDev_PHPUnit
+ * @category   Mage
+ * @package    Mage_Test
  * @copyright  Copyright (c) 2012 Oggetto Web ltd. (http://www.oggettoweb.com/)
  * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
@@ -24,8 +24,8 @@
 /**
  * api.xml config test case
  *
- * @category   EcomDev
- * @package    EcomDev_PHPUnit
+ * @category   Mage
+ * @package    Mage_Test
  * @author     Valentin Sushkov <vsushkov@oggettoweb.com>
  */
 class Mage_Test_Unit_Case_Config_Api extends Mage_Test_Unit_Case_Config

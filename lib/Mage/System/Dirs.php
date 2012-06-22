@@ -3,7 +3,12 @@
 
 class Mage_System_Dirs
 {
-
+    /**
+     * @todo
+     *
+     * @param $dirname
+     * @return
+     */
     public static function rm($dirname)
     {
         if(is_array($dirname)) {
@@ -54,7 +59,14 @@ class Mage_System_Dirs
         return true;
     }  
     
-    
+    /**
+     * @todo
+     *
+     * @param $path
+     * @param boolean $recursive
+     * @param $mode
+     * @return
+     */
     public static function mkdirStrict($path, $recursive = true, $mode = 0777)
     {
         $exists = file_exists($path);        
@@ -71,6 +83,13 @@ class Mage_System_Dirs
         return true;
     }
     
+    /**
+     * @todo
+     *
+     * @param $source
+     * @param $dest
+     * @return
+     */
     public static function copyFileStrict($source, $dest)
     {
         $exists = file_exists($source);

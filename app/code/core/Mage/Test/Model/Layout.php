@@ -57,7 +57,6 @@ class Mage_Test_Model_Layout
      */
     protected $_collectedBlock = null;
 
-
     /**
      * Replaces creation of some block by mock object
      *
@@ -121,7 +120,6 @@ class Mage_Test_Model_Layout
         $this->_blocks = array();
         return $this;
     }
-
 
     /**
      * Returns all the recorded actions
@@ -365,7 +363,6 @@ class Mage_Test_Model_Layout
         return $block;
     }
 
-
     /**
      * Records information about blocks removal and loaded layout handles
      * (non-PHPdoc)
@@ -404,7 +401,6 @@ class Mage_Test_Model_Layout
         return $this;
     }
 
-
     /**
      * Returns block position information in the parent subling.
      * Returned array contains two keys "before" and "after"
@@ -438,7 +434,7 @@ class Mage_Test_Model_Layout
         return $result;
     }
 
-	/**
+    /**
      * Returns block parent
      *
      * @param string $block

@@ -36,12 +36,23 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
     private $_nodes;
     private $_container;
     
+    /**
+     * @todo
+     *
+     * @param $container
+     * @return
+     */
     public function __construct($container) 
     {
         $this->_nodes = array();
         $this->_container = $container;
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNodes()
     {
         return $this->_nodes;
@@ -56,8 +67,12 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
     }
 
     /**
-    * Implementation of ArrayAccess:offsetSet()
-    */
+     * Implementation of ArrayAccess:offsetSet()
+     *
+     * @param $key
+     * @param $value
+     * @return
+     */
     public function offsetSet($key, $value)
     {
         $this->_nodes[$key] = $value;
@@ -65,6 +80,9 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
     
     /**
     * Implementation of ArrayAccess:offsetGet()
+    *
+    *  @param $key
+    *  @return
     */
     public function offsetGet($key)
     {
@@ -73,6 +91,9 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
     
     /**
     * Implementation of ArrayAccess:offsetUnset()
+    *
+    * @param $key
+    * @return
     */
     public function offsetUnset($key)
     {
@@ -81,6 +102,9 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
     
     /**
     * Implementation of ArrayAccess:offsetExists()
+    *
+    * @param $key
+    * @return
     */
     public function offsetExists($key)
     {
@@ -89,6 +113,9 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
     
     /**
     * Adds a node to this node
+    *
+    * @param Varien_Data_Triee_Node $node
+    * @return
     */
     public function add(Varien_Data_Tree_Node $node)
     {
@@ -104,6 +131,12 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
         return $node;
     }
     
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     public function delete($node)
     {
         if (isset($this->_nodes[$node->getId()])) {
@@ -112,16 +145,32 @@ class Varien_Data_Tree_Node_Collection implements ArrayAccess, IteratorAggregate
         return $this;
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function count()
     {
         return count($this->_nodes);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function lastNode()
     {
         return !empty($this->_nodes) ? $this->_nodes[count($this->_nodes) - 1] : null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $nodeId
+     * @return
+     */
     public function searchById($nodeId)
     {
         if (isset($this->_nodes[$nodeId])) {

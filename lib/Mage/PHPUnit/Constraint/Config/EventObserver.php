@@ -160,7 +160,6 @@ class Mage_PHPUnit_Constraint_Config_EventObserver
         return $text;
     }
 
-
     /**
      * Custom failure description for showing config related errors
      * (non-PHPdoc)

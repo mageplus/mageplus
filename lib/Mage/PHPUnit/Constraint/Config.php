@@ -53,7 +53,8 @@ class Mage_PHPUnit_Constraint_Config extends PHPUnit_Framework_Constraint
     }
 
     /**
-     *
+     * @todo
+     * 
      * @param mixed   $other
      * @param string  $description
      * @param boolean $not

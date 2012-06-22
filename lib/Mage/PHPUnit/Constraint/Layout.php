@@ -30,7 +30,6 @@ class Mage_PHPUnit_Constraint_Layout extends Mage_PHPUnit_Constraint_Layout_Abst
     /**
      * Constraint for main layout functions
      *
-     *
      * @param string $type
      */
     public function __construct($type = self::TYPE_LOADED)
@@ -40,7 +39,6 @@ class Mage_PHPUnit_Constraint_Layout extends Mage_PHPUnit_Constraint_Layout_Abst
 
     /**
      * Evaluates that layout was loaded
-     *
      *
      * @param Mage_PHPUnit_Constraint_Layout_Logger_Interface $other
      * @return boolean

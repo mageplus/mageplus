@@ -27,10 +27,8 @@ require_once 'Spyc/spyc.php';
  */
 abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
 {
-
     const XML_PATH_DEFAULT_FIXTURE_MODEL = 'phpunit/suite/fixture/model';
     const XML_PATH_DEFAULT_EXPECTATION_MODEL = 'phpunit/suite/expectation/model';
-
 
     /**
      * List of system registry values replaced by test case
@@ -231,7 +229,6 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
         );
     }
 
-
     /**
      * Retrieves the module name for current test case
      *
@@ -247,7 +244,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
      * Retrieves module name from call stack objects
      *
      * @return string
-     * @throws RuntimeException if assertion is called in not from EcomDev_PHPUnit_Test_Case
+     * @throws RuntimeException if assertion is called in not from Mage_PHPUnit_Test_Case
      */
     protected static function getModuleNameFromCallStack()
     {
@@ -258,9 +255,8 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
             }
         }
 
-        throw new RuntimeException('Unable to retrieve module name from call stack, because assertion is not called from EcomDev_PHPUnit_Test_Case based class method');
+        throw new RuntimeException('Unable to retrieve module name from call stack, because assertion is not called from Mage_PHPUnit_Test_Case based class method');
     }
-
 
     /**
      * Retrieves annotation by its name from different sources (class, method)
@@ -490,7 +486,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
                                    $callAutoload);
     }
 
-	/**
+    /**
      * Retrieves a mock object for the specified resource model class alias.
      *
      * @param  string  $classAlias
@@ -627,7 +623,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
         return $mockBuilder->getMock();
     }
 
-	/**
+    /**
      * Retrieves fixture model singleton
      *
      * @return Mage_Test_Model_Fixture
@@ -638,7 +634,7 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
         return $this->getFixture();
     }
 
-	/**
+    /**
      * Retrieves fixture model singleton
      *
      * @return Mage_Test_Model_Fixture
@@ -683,7 +679,6 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
             )
         );
     }
-
 
     /**
      * Retrieves loadable class alias from annotation or configuration node
@@ -906,5 +901,4 @@ abstract class Mage_Test_Unit_Case extends PHPUnit_Framework_TestCase
 
         parent::tearDownAfterClass();
     }
-
 }

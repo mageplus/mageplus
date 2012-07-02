@@ -171,11 +171,7 @@ final class Mage
             'major'     => '1',
             'minor'     => '1',
             'revision'  => '0',
-<<<<<<< HEAD
             'patch'     => '0',
-=======
-            'patch'     => '2',
->>>>>>> avstudnitz/master
             'stability' => '',
             'number'    => '',
         );

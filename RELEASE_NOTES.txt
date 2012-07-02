@@ -4,6 +4,8 @@
 Added unit test framework
 All functions now contain documentation 
 
+==== Mage+ 1.0.0.2 ====
+Fixed error with orderIncrementId on 32bit systems, or where orderId is alphanumeric [aromicon]
 
 ==== Mage+ 1.0.0.1 ====
 Fixed URL generation for admin URLs - Lee Saferite [LeeSaferite]

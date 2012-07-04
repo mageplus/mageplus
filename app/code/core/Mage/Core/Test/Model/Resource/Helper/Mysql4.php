@@ -39,9 +39,9 @@ class Mage_Core_Test_Model_Resource_Helper_Mysql4 extends Mage_Test_Unit_Case
 
     protected function setUp()
     {
-        if (Magento_Test_Bootstrap::getInstance()->getDbVendorName() != 'mysql') {
-            $this->markTestSkipped('Test is designed to run on MySQL only.');
-        }
+        //if (Mage::app()->getInstance()->getDbVendorName() != 'mysql') {
+        //    $this->markTestSkipped('Test is designed to run on MySQL only.');
+        //}
         $this->_model = new Mage_Core_Model_Resource_Helper_Mysql4('core');
         $collection = new Mage_Core_Model_Resource_Store_Collection();
         $this->_select = $collection->getSelect();

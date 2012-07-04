@@ -34,6 +34,7 @@ class Mage_Catalog_Test_Model_Product_Type_Configurable_Price extends Mage_Test_
     {
         $product = new Mage_Catalog_Model_Product;
         $product->load(1); // fixture
+        $product->setTypeInstance(new Mage_Catalog_Model_Product_Type_Configurable, TRUE);
         $model = new Mage_Catalog_Model_Product_Type_Configurable_Price;
 
         // without configurable options

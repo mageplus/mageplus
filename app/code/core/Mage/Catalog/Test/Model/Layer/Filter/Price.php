@@ -94,7 +94,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Price extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_model->getData('price_range'));
 
-        $this->_model->apply(new Magento_Test_Request(), new Mage_Core_Block_Text());
+        $this->_model->apply(new Mage_Test_Controller_Request_Http, new Mage_Core_Block_Text());
 
         $this->assertEmpty($this->_model->getData('price_range'));
     }
@@ -103,7 +103,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Price extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_model->getData('price_range'));
 
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http;
         $request->setParam('price', 'non-numeric');
         $this->_model->apply($request, new Mage_Core_Block_Text());
 
@@ -115,7 +115,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Price extends Mage_Test_Unit_Case
      */
     public function testApplyManual()
     {
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http;
         $request->setParam('price', '10-20');
         $this->_model->apply($request, new Mage_Core_Block_Text());
 

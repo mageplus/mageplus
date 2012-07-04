@@ -42,7 +42,6 @@ class Mage_Catalog_Test_Block_Product_View extends Mage_Test_Unit_Case
      */
     protected $_product;
 
-
     protected function setUp()
     {
         $this->_block = new Mage_Catalog_Block_Product_View;

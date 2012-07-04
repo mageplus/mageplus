@@ -69,9 +69,9 @@ class Mage_Sales_Test_Block_Recurring_Profile_View extends Mage_Test_Unit_Case
     {
         $this->_block->setShouldPrepareInfoTabs(true);
         $child1 = $this->_layout->addBlock('Mage_Core_Block_Text', 'child1', 'block');
-        $this->_layout->addToParentGroup('child1', 'info_tabs');
+        //$this->_layout->addToParentGroup('child1', 'info_tabs');
         $child2 = $this->_layout->addBlock('Mage_Core_Block_Text', 'child2', 'block');
-        $this->_layout->addToParentGroup('child2', 'info_tabs');
+        //$this->_layout->addToParentGroup('child2', 'info_tabs');
 
         $this->assertEmpty($child1->getViewUrl());
         $this->assertEmpty($child2->getViewUrl());

@@ -34,9 +34,9 @@ class Mage_Core_Test_Model_ResourceMysql extends Mage_Test_Unit_Case
 
     public function setUp()
     {
-        if (Magento_Test_Bootstrap::getInstance()->getDbVendorName() != 'mysql') {
-            $this->markTestSkipped('Test is designed to run on MySQL only.');
-        }
+        //if (Magento_Test_Bootstrap::getInstance()->getDbVendorName() != 'mysql') {
+        //    $this->markTestSkipped('Test is designed to run on MySQL only.');
+        //}
         $this->_model = new Mage_Core_Model_Resource();
     }
 

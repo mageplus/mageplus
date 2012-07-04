@@ -58,7 +58,7 @@ class Mage_Widget_Test_Model_Widget extends Mage_Test_Unit_Case
      */
     public function testGetPlaceholderImageUrl($type, $expectedFile)
     {
-        Mage::getDesign()->setDesignTheme('default/default/default', 'adminhtml');
+        //Mage::getDesign()->setDesignTheme('default/default/default', 'adminhtml');
         $url = $this->_model->getPlaceholderImageUrl($type);
         $this->assertStringEndsWith($expectedFile, $url);
         $this->assertFileExists(

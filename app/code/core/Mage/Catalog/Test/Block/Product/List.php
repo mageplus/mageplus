@@ -92,7 +92,7 @@ class Mage_Catalog_Test_Block_Product_List extends Mage_Test_Unit_Case
         $layout = $this->_getLayout();
         $parent = $layout->createBlock('Mage_Catalog_Block_Product_List');
         $childBlock = $layout->createBlock('Mage_Core_Block_Text', 'test', array('text' => 'test'));
-        $layout->setChild($parent->getNameInLayout(), $childBlock->getNameInLayout(), 'additional');
+        //$layout->setChild($parent->getNameInLayout(), $childBlock->getNameInLayout(), 'additional');
         $this->assertEquals('test', $parent->getAdditionalHtml());
     }
 

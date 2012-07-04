@@ -90,7 +90,7 @@ class Mage_Core_Test_Model_Url extends Mage_Test_Unit_Case
     public function testSetGetRequest()
     {
         $this->assertInstanceOf('Zend_Controller_Request_Http', $this->_model->getRequest());
-        $request = new Magento_Test_Request;
+        //$request = new Magento_Test_Request;
         $this->_model->setRequest($request);
         $this->assertSame($request, $this->_model->getRequest());
     }

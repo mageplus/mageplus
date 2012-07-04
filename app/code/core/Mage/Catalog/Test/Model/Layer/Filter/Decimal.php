@@ -59,7 +59,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Decimal extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_model->getData('range'));
 
-        $this->_model->apply(new Magento_Test_Request(), new Mage_Core_Block_Text());
+        $this->_model->apply(new Mage_Test_Controller_Request_Http(), new Mage_Core_Block_Text());
 
         $this->assertEmpty($this->_model->getData('range'));
     }
@@ -68,7 +68,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Decimal extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_model->getData('range'));
 
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('decimal', 'non-decimal');
         $this->_model->apply($request, new Mage_Core_Block_Text());
 
@@ -77,7 +77,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Decimal extends Mage_Test_Unit_Case
 
     public function testApply()
     {
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('decimal', '1,100');
         $this->_model->apply($request, new Mage_Core_Block_Text());
 

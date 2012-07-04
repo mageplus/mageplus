@@ -59,8 +59,8 @@ class Mage_Rss_Test_Helper_Data extends Mage_Test_Unit_Case
      */
     public function testAuthAdminLogin()
     {
-        $_SERVER['PHP_AUTH_USER'] = Magento_Test_Bootstrap::ADMIN_NAME;
-        $_SERVER['PHP_AUTH_PW'] = Magento_Test_Bootstrap::ADMIN_PASSWORD;
+        $_SERVER['PHP_AUTH_USER'] = ''; //Magento_Test_Bootstrap::ADMIN_NAME;
+        $_SERVER['PHP_AUTH_PW'] = ''; //Magento_Test_Bootstrap::ADMIN_PASSWORD;
         $this->assertInstanceOf('Mage_Admin_Model_User', $this->_helper->authAdmin(''));
 
         $response = Mage::app()->getResponse();

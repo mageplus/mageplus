@@ -36,7 +36,7 @@ class Mage_Core_Test_Model_Translate_Inline extends Mage_Test_Unit_Case
 
     public static function setUpBeforeClass()
     {
-        Mage::getDesign()->setDesignTheme('default/default/default');
+        //Mage::getDesign()->setDesignTheme('default/default/default');
     }
 
     public function setUp()

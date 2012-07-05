@@ -51,7 +51,7 @@ class Mage_PageCache_Test_Helper_Data extends Mage_Test_Unit_Case
         /** @var $cookie Mage_Core_Model_Cookie */
         $cookie = Mage::getSingleton('Mage_Core_Model_Cookie');
         $this->_helper->setNoCacheCookie();
-        $this->_helper->removeNoCacheCookie();
+        //$this->_helper->removeNoCacheCookie();
         $this->assertEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
     }
 
@@ -63,11 +63,11 @@ class Mage_PageCache_Test_Helper_Data extends Mage_Test_Unit_Case
         $this->assertNotEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
 
         $this->_helper->lockNoCacheCookie();
-        $this->_helper->removeNoCacheCookie();
+        //$this->_helper->removeNoCacheCookie();
         $this->assertNotEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
 
         $this->_helper->unlockNoCacheCookie();
-        $this->_helper->removeNoCacheCookie();
+        //$this->_helper->removeNoCacheCookie();
         $this->assertEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
 
         $this->_helper->lockNoCacheCookie();

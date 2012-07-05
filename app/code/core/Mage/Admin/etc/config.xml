@@ -95,7 +95,7 @@
 		<phpunit>
 			<suite>
 				<modules>
-					<Mage_Amin/>
+					<Mage_Admin/>
 				</modules>
 			</suite>
 		</phpunit>

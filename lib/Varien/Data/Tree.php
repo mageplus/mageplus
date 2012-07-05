@@ -34,7 +34,6 @@
  */
 class Varien_Data_Tree
 {
-
     /**
      * Nodes collection
      *
@@ -43,7 +42,7 @@ class Varien_Data_Tree
     protected $_nodes;
 
     /**
-     * Enter description here...
+     * @todo
      *
      */
     public function __construct()
@@ -52,7 +51,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return Varien_Data_Tree
      */
@@ -62,7 +61,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $parentNode
      */
@@ -71,7 +70,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param unknown_type $nodeId
      */
@@ -80,7 +79,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param array|Varien_Data_Tree_Node $data
      * @param Varien_Data_Tree_Node $parentNode
@@ -101,7 +100,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      * @param Varien_Data_Tree_Node $parent
@@ -118,7 +117,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      * @param Varien_Data_Tree_Node $parentNode
@@ -129,7 +128,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      * @param Varien_Data_Tree_Node $parentNode
@@ -140,7 +139,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      * @return Varien_Data_Tree
@@ -156,7 +155,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $parentNode
      * @param Varien_Data_Tree_Node $prevNode
@@ -166,7 +165,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      */
@@ -175,7 +174,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      */
@@ -184,7 +183,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return Varien_Data_Tree_Node_Collection
      */
@@ -194,7 +193,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param unknown_type $nodeId
      * @return Varien_Data_Tree_Node
@@ -205,7 +204,7 @@ class Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Data_Tree_Node $node
      * @return array
@@ -221,5 +220,4 @@ class Varien_Data_Tree
         }
         return array();
     }
-
 }

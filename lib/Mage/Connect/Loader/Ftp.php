@@ -33,7 +33,6 @@
  */
 class Mage_Connect_Loader_Ftp
 {
-
     const TEMPORARY_DIR = 'var/package/tmp';
 
     const FTP_USER = 'magconnect';

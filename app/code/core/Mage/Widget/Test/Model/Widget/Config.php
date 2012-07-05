@@ -44,7 +44,7 @@ class Mage_Widget_Test_Model_Widget_Config extends Mage_Test_Unit_Case
      */
     public function testGetPluginSettings()
     {
-        Mage::getDesign()->setDesignTheme('default/default/default', 'adminhtml');
+        //Mage::getDesign()->setDesignTheme('default/default/default', 'adminhtml');
 
         $config = new Varien_Object();
         $settings = $this->_model->getPluginSettings($config);

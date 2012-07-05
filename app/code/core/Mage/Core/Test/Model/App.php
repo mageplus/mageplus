@@ -276,9 +276,9 @@ class Mage_Core_Test_Model_App extends Mage_Test_Unit_Case
 
     public function testSetGetRequest()
     {
-        //$this->assertInstanceOf('Mage_Core_Controller_Request_Http', $this->_model->getRequest());
-        //$this->_model->setRequest(new Magento_Test_Request());
-        //$this->assertInstanceOf('Magento_Test_Request', $this->_model->getRequest());
+        $this->assertInstanceOf('Mage_Core_Controller_Request_Http', $this->_model->getRequest());
+        $this->_model->setRequest(new Mage_Test_Controller_Request_Http);
+        $this->assertInstanceOf('Mage_Test_Controller_Request_Http', $this->_model->getRequest());
     }
 
     public function testSetGetResponse()
@@ -288,9 +288,9 @@ class Mage_Core_Test_Model_App extends Mage_Test_Unit_Case
             $this->markTestSkipped('Can\'t test get response without sending headers');
         }
         */
-        //$this->assertInstanceOf('Mage_Core_Controller_Response_Http', $this->_model->getResponse());
-        //$this->_model->setResponse(new Magento_Test_Response());
-        //$this->assertInstanceOf('Magento_Test_Response', $this->_model->getResponse());
+        $this->assertInstanceOf('Mage_Core_Controller_Response_Http', $this->_model->getResponse());
+        $this->_model->setResponse(new Mage_Test_Controller_Request_Http);
+        $this->assertInstanceOf('Mage_Test_Controller_Request_Http', $this->_model->getResponse());
     }
 
     public function testSetGetUpdateMode()

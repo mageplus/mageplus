@@ -33,7 +33,6 @@
  */
 class Mage_Connect_Loader
 {
-
     /**
      * Factory for HTTP client
      * @param string/false $protocol  'curl'/'socket' or false for auto-detect
@@ -47,5 +46,4 @@ class Mage_Connect_Loader
             return Mage_HTTP_Client::getInstance();
         }
     }
-
 }

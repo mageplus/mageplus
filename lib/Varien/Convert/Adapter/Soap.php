@@ -34,11 +34,21 @@
  */
  class Varien_Convert_Adapter_Soap extends Varien_Convert_Adapter_Abstract
  {
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function load()
      {
          return $this;
      }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function save()
      {
          return $this;

@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Column extends Varien_Data_Form_Element_Abstract 
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes = array()) 
     {
         parent::__construct($attributes);

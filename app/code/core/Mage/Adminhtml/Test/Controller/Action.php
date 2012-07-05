@@ -37,7 +37,7 @@ class Mage_Adminhtml_Test_Controller_Action extends Mage_Test_Unit_Case_Controll
         $this->_model = $this->getMock(
             'Mage_Adminhtml_Controller_Action',
             null,
-            array(new Magento_Test_Request(), new Magento_Test_Response())
+            array(new Mage_Test_Controller_Request_Http, new Mage_Test_Controller_Response_Http)
         );
     }
 

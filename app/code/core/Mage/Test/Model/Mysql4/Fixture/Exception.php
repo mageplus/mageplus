@@ -18,6 +18,13 @@
 
 class Mage_Test_Model_Mysql4_Fixture_Exception extends RuntimeException
 {
+	/**
+	 * @todo
+	 *
+	 * @param $message
+	 * @param Exception $previous
+	 * @return
+	 */
 	public function __construct($message, Exception $previous)
 	{
 		parent::__construct($message, 0, $previous);

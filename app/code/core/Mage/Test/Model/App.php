@@ -279,7 +279,7 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
     /**
      * Initialize front controller for test suite
      *
-     * @return EcomDev_PHPUnit_Model_App
+     * @return Mage_PHPUnit_Model_App
      */
     protected function _initFrontController()
     {
@@ -314,7 +314,7 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
      */
     public function resetAreas()
     {
-        /* @var $area EcomDev_PHPUnit_Model_App_Area */
+        /* @var $area Mage_PHPUnit_Model_App_Area */
         foreach ($this->_areas as $code => $area) {
             if (!in_array($code, $this->_resetIgnoreAreas)) {
                 $area->reset();
@@ -552,7 +552,6 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
         return $this;
     }
 
-
     /**
      * Returns number of times when the event was dispatched
      *
@@ -567,7 +566,6 @@ class Mage_Test_Model_App extends Mage_Core_Model_App
 
         return 0;
     }
-
 
     /**
      * Resets dispatched events information

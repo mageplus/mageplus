@@ -55,7 +55,7 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
         return self::app()->getRequest();
     }
 
-	/**
+		/**
      * Returns response object
      *
      * @return Mage_Test_Controller_Response_Http
@@ -146,7 +146,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
 
     /**
      * Controller request constraint creation
-     *
      *
      * @param string $type
      * @param string|null $expectedValue
@@ -936,7 +935,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
         self::assertResponseHeaderRegExp('Location', $pcrePattern, $message);
     }
 
-
     /**
      * Assert shortcut for layout constaints
      *
@@ -1007,7 +1005,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Assert that layout handle is loaded into layout updates
      *
-     *
      * @param string $handle
      * @param string $message
      */
@@ -1023,7 +1020,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
 
     /**
      * Assert that layout handle is not loaded into layout updates
-     *
      *
      * @param string $handle
      * @param string $message
@@ -1043,7 +1039,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Assert that layout handle is loaded into layout updates after expected one
      *
-     *
      * @param string $handle
      * @param string $message
      */
@@ -1062,7 +1057,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Assert that layout handle is loaded into layout updates after expected one
      *
-     *
      * @param string $handle
      * @param string $message
      */
@@ -1080,7 +1074,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
 
     /**
      * Assert that layout block is created via layout file
-     *
      *
      * @param string $blockName
      * @param string $message
@@ -1385,8 +1378,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
         self::assertThatLayout($logicalAnd, $message);
     }
 
-
-
     /**
      * Assert that layout block type is on the root rendering level
      *
@@ -1426,7 +1417,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Assert that layout block action was invoked
      *
-     *
      * @param string $blockName
      * @param string $method
      * @param string $message
@@ -1448,7 +1438,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
 
     /**
      * Assert that layout block action was not invoked
-     *
      *
      * @param string $blockName
      * @param string $method
@@ -1474,7 +1463,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
     /**
      * Assert that layout block action was invoked at least expected number of times
      *
-     *
      * @param string $blockName
      * @param string $method
      * @param string $message
@@ -1497,7 +1485,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
 
     /**
      * Assert that layout block action was invoked exactly expected number of times
-     *
      *
      * @param string $blockName
      * @param string $method
@@ -1673,7 +1660,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
             $message
        );
     }
-
 
     /**
      * Assert that layout block property is an instance of expected class name
@@ -1910,7 +1896,6 @@ abstract class Mage_Test_Unit_Case_Controller extends Mage_Test_Unit_Case
 
     /**
      * Dispatches controller action
-     *
      *
      * @param string $route
      * @param array $params

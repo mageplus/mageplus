@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Checkbox extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -40,11 +46,21 @@ class Varien_Data_Form_Element_Checkbox extends Varien_Data_Form_Element_Abstrac
         $this->setExtType('checkbox');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('type', 'title', 'class', 'style', 'checked', 'onclick', 'onchange', 'disabled', 'tabindex');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         if ($checked = $this->getChecked()) {

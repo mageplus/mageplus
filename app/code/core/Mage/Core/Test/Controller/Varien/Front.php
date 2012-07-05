@@ -54,9 +54,11 @@ class Mage_Core_Test_Controller_Varien_Front extends Mage_Test_Unit_Case_Control
 
     public function testGetResponse()
     {
+        /**
         if (!Magento_Test_Bootstrap::canTestHeaders()) {
             $this->markTestSkipped('Can\'t test get response without sending headers');
         }
+        */
         $this->assertInstanceOf('Mage_Core_Controller_Response_Http', $this->_model->getResponse());
     }
 
@@ -84,9 +86,11 @@ class Mage_Core_Test_Controller_Varien_Front extends Mage_Test_Unit_Case_Control
 
     public function testDispatch()
     {
+        /**
         if (!Magento_Test_Bootstrap::canTestHeaders()) {
             $this->markTestSkipped('Cant\'t test dispatch process without sending headers');
         }
+        */
         $_SERVER['HTTP_HOST'] = 'localhost';
         $this->_model->init();
         /* empty action */

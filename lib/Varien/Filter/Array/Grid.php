@@ -27,6 +27,12 @@
 
 class Varien_Filter_Array_Grid extends Varien_Filter_Array
 {
+    /**
+     * @todo
+     *
+     * @param $grid
+     * @return
+     */
     function filter($grid)
     {
         $out = array();

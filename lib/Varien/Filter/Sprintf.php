@@ -32,6 +32,15 @@ class Varien_Filter_Sprintf implements Zend_Filter_Interface
     protected $_decPoint = null;
     protected $_thousandsSep = null;
     
+    /**
+     * @todo
+     *
+     * @param $format
+     * @param $decimals
+     * @param $decPoint
+     * @param $thousandsSep
+     * @return
+     */
     public function __construct($format, $decimals=null, $decPoint='.', $thousandsSep=',')
     {
         $this->_format = $format;
@@ -40,6 +49,12 @@ class Varien_Filter_Sprintf implements Zend_Filter_Interface
         $this->_thousandsSep = $thousandsSep;
     }
     
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function filter($value)
     {
         if (!is_null($this->_decimals)) {

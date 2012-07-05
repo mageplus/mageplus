@@ -61,14 +61,14 @@ class Mage_Catalog_Test_Model_Layer_Filter_Category extends Mage_Test_Unit_Case
 
     public function testApplyNothing()
     {
-        $this->_model->apply(new Magento_Test_Request(), new Mage_Core_Block_Text());
+        $this->_model->apply(new Mage_Test_Controller_Request_Http(), new Mage_Core_Block_Text());
 
         $this->assertNull(Mage::registry('current_category_filter'));
     }
 
     public function testApply()
     {
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('cat', 3);
         $this->_model->apply($request, new Mage_Core_Block_Text());
 

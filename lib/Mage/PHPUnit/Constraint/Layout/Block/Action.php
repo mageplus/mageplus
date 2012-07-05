@@ -9,8 +9,8 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/osl-3.0.php
  *
- * @category   EcomDev
- * @package    EcomDev_PHPUnit
+ * @category   Mage
+ * @package    Mage_PHPUnit
  * @copyright  Copyright (c) 2012 EcomDev BV (http://www.ecomdev.org)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @author     Ivan Chepurnyi <ivan.chepurnyi@ecomdev.org>
@@ -20,17 +20,17 @@
  * Constaint related to main layout block action calls functionality
  *
  */
-class EcomDev_PHPUnit_Constraint_Layout_Block_Action extends EcomDev_PHPUnit_Constraint_Layout_Abstract
+class Mage_PHPUnit_Constraint_Layout_Block_Action extends Mage_PHPUnit_Constraint_Layout_Abstract
 {
     const TYPE_INVOKED = 'invoked';
     const TYPE_INVOKED_AT_LEAST = 'invoked_at_least';
     const TYPE_INVOKED_EXACTLY = 'invoked_exactly';
 
-    const ACTION_BLOCK_ACTION = EcomDev_PHPUnit_Constraint_Layout_Logger_Interface::ACTION_BLOCK_ACTION;
+    const ACTION_BLOCK_ACTION = Mage_PHPUnit_Constraint_Layout_Logger_Interface::ACTION_BLOCK_ACTION;
 
-    const SEARCH_TYPE_OR = EcomDev_PHPUnit_Constraint_Layout_Logger_Interface::SEARCH_TYPE_OR;
-    const SEARCH_TYPE_EXACT = EcomDev_PHPUnit_Constraint_Layout_Logger_Interface::SEARCH_TYPE_EXACT;
-    const SEARCH_TYPE_AND = EcomDev_PHPUnit_Constraint_Layout_Logger_Interface::SEARCH_TYPE_AND;
+    const SEARCH_TYPE_OR = Mage_PHPUnit_Constraint_Layout_Logger_Interface::SEARCH_TYPE_OR;
+    const SEARCH_TYPE_EXACT = Mage_PHPUnit_Constraint_Layout_Logger_Interface::SEARCH_TYPE_EXACT;
+    const SEARCH_TYPE_AND = Mage_PHPUnit_Constraint_Layout_Logger_Interface::SEARCH_TYPE_AND;
 
     /**
      * Block name for the action
@@ -108,7 +108,7 @@ class EcomDev_PHPUnit_Constraint_Layout_Block_Action extends EcomDev_PHPUnit_Con
     /**
      * Finds records in layout logger history
      *
-     * @param EcomDev_PHPUnit_Constraint_Layout_Logger_Interface $other
+     * @param Mage_PHPUnit_Constraint_Layout_Logger_Interface $other
      * @return array
      */
     protected function findRecords($other)
@@ -128,7 +128,7 @@ class EcomDev_PHPUnit_Constraint_Layout_Block_Action extends EcomDev_PHPUnit_Con
     /**
      * Evaluates that method was invoked at least once
      *
-     * @param EcomDev_PHPUnit_Constraint_Layout_Logger_Interface $other
+     * @param Mage_PHPUnit_Constraint_Layout_Logger_Interface $other
      * @return boolean
      */
     protected function evaluateInvoked($other)
@@ -158,7 +158,7 @@ class EcomDev_PHPUnit_Constraint_Layout_Block_Action extends EcomDev_PHPUnit_Con
      * Evaluates that method was invoked
      * at least expected number of times
      *
-     * @param EcomDev_PHPUnit_Constraint_Layout_Logger_Interface $other
+     * @param Mage_PHPUnit_Constraint_Layout_Logger_Interface $other
      * @return boolean
      */
     protected function evaluateInvokedAtLeast($other)
@@ -181,7 +181,7 @@ class EcomDev_PHPUnit_Constraint_Layout_Block_Action extends EcomDev_PHPUnit_Con
      * Evaluates that method was invoked
      * exactly expected number of times
      *
-     * @param EcomDev_PHPUnit_Constraint_Layout_Logger_Interface $other
+     * @param Mage_PHPUnit_Constraint_Layout_Logger_Interface $other
      * @return boolean
      */
     protected function evaluateInvokedExactly($other)

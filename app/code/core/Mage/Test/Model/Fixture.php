@@ -138,7 +138,6 @@ class Mage_Test_Model_Fixture
      */
     protected $_currentScope = array();
 
-
     /**
      * Model constructor, just defines which resource model to use
      * (non-PHPdoc)
@@ -201,7 +200,6 @@ class Mage_Test_Model_Fixture
         return $this->getStorage()->getData($dataKey);
     }
 
-
     /**
      * Sets storage data for a particular fixture scope
      *
@@ -222,7 +220,6 @@ class Mage_Test_Model_Fixture
 
         return $this;
     }
-
 
     /**
      * Returns current fixture scope

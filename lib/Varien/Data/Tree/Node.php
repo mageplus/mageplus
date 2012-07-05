@@ -164,18 +164,36 @@ class Varien_Data_Tree_Node extends Varien_Object
         return $this->_childNodes->count() > 0;
     }
 
+    /**
+     * @todo
+     *
+     * @param $level
+     * @return
+     */
     public function setLevel($level)
     {
         $this->setData('level', $level);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * @return
+     */
     public function setPathId($path)
     {
         $this->setData('path_id', $path);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     public function isChildOf($node)
     {
 
@@ -203,6 +221,12 @@ class Varien_Data_Tree_Node extends Varien_Object
         return $this->_childNodes;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $nodes
+     * @return
+     */
     public function getAllChildNodes(&$nodes = array())
     {
         foreach ($this->_childNodes as $node) {
@@ -212,6 +236,11 @@ class Varien_Data_Tree_Node extends Varien_Object
         return $nodes;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastChild()
     {
         return $this->_childNodes->lastNode();
@@ -229,30 +258,62 @@ class Varien_Data_Tree_Node extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $prevNode
+     * @return
+     */
     public function appendChild($prevNode=null)
     {
         $this->_tree->appendChild($this, $prevNode);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $parentNode
+     * @param $prevNode
+     * @return
+     */
     public function moveTo($parentNode, $prevNode=null)
     {
         $this->_tree->moveNodeTo($this, $parentNode, $prevNode);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $parentNode
+     * @param $prevNode
+     * @return
+     */
     public function copyTo($parentNode, $prevNode=null)
     {
         $this->_tree->copyNodeTo($this, $parentNode, $prevNode);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $childNode
+     * @return
+     */
     public function removeChild($childNode)
     {
         $this->_childNodes->delete($childNode);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $prevNodes
+     * @return
+     */
     public function getPath(&$prevNodes = array())
     {
         if ($this->_parent) {
@@ -262,14 +323,23 @@ class Varien_Data_Tree_Node extends Varien_Object
         return $prevNodes;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsActive()
     {
         return $this->_getData('is_active');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getName()
     {
         return $this->_getData('name');
     }
-
 }

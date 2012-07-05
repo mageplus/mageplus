@@ -37,6 +37,18 @@ final class Mage_Connect_Converter
 {
     protected $_archiver;
 
+    protected $fileMap = array();
+    
+    /**
+     * @todo is this necessary???
+     *
+     * @return
+     */
+    public function __construct()
+    {
+
+    }
+    
     /**
      *
      * @return Mage_Archive
@@ -49,6 +61,11 @@ final class Mage_Connect_Converter
         return $this->_archiver;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newPackage()
     {
         return new Mage_Connect_Package();
@@ -63,13 +80,12 @@ final class Mage_Connect_Converter
         return new Pear_Package_Parser_v2();
     }
 
-
-    public function __construct()
-    {
-
-    }
-
-
+    /**
+     * @todo
+     *
+     * @param $channel
+     * @return
+     */
     public function convertChannelName($channel)
     {
         return str_replace("connect.magentocommerce.com/", "", $channel);
@@ -100,6 +116,12 @@ final class Mage_Connect_Converter
         return $out;
     }
 
+    /**
+     * @todo
+     *
+     * @param $oldLicense
+     * @return
+     */
     public function convertLicense($oldLicense)
     {
         if(is_scalar($oldLicense)) {
@@ -108,6 +130,12 @@ final class Mage_Connect_Converter
         return array($oldLicense['_content'], $oldLicense['attribs']['uri']);
     }
 
+    /**
+     * @todo
+     *
+     * @param $maintainers
+     * @return
+     */
     public function convertMaintainers($maintainers)
     {
         if(!is_array($maintainers) || !count($maintainers)) {
@@ -119,16 +147,13 @@ final class Mage_Connect_Converter
         }
         return $out;
     }
-
-    protected $fileMap = array();
-
     
     /**
      * Conver pear package object to magento object
+     *
      * @param Pear_Package_V2 $pearObject
      * @return Mage_Connect_Package
      */
-
     public function convertPackageObject($pearObject)
     {
         $data = array();
@@ -331,7 +356,4 @@ final class Mage_Connect_Converter
         }
         return $destFile;
     }
-
-
-
 }

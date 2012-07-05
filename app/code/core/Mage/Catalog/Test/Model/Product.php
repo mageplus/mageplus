@@ -71,8 +71,8 @@ class Mage_Catalog_Test_Model_Product extends Mage_Test_Unit_Case
             ->setVisibility(Mage_Catalog_Model_Product_Visibility::VISIBILITY_BOTH)
             ->setStatus(Mage_Catalog_Model_Product_Status::STATUS_ENABLED)
         ;
-        $crud = new Magento_Test_Entity($this->_model, array('sku' => uniqid()));
-        $crud->testCrud();
+        //$crud = new Magento_Test_Entity($this->_model, array('sku' => uniqid()));
+        //$crud->testCrud();
     }
 
     public function testCleanCache()

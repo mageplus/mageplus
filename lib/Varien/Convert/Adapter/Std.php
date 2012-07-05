@@ -34,6 +34,11 @@
  */
  class Varien_Convert_Adapter_Std extends Varien_Convert_Adapter_Abstract
  {
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function load()
      {
          $data = '';
@@ -45,6 +50,11 @@
          return $this;
      }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function save()
      {
          echo $this->getData();

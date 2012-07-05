@@ -42,7 +42,8 @@ class Mage_Rss_Test_Controller_CatalogController extends Mage_Test_Unit_Case_Con
     public function testRssActionsLoggedUser($action)
     {
         $admin = new Mage_Admin_Model_User;
-        $admin->loadByUsername(Magento_Test_Bootstrap::ADMIN_NAME);
+        //$admin->loadByUsername(Magento_Test_Bootstrap::ADMIN_NAME);
+        $admin->loadByUsername('admin');
         $session = Mage::getSingleton('Mage_Rss_Model_Session');
         $session->setAdmin($admin);
 
@@ -86,4 +87,3 @@ class Mage_Rss_Test_Controller_CatalogController extends Mage_Test_Unit_Case_Con
         );
     }
 }
-

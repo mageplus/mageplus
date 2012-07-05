@@ -231,7 +231,6 @@ abstract class Mage_Test_Model_Mysql4_Fixture_Eav_Abstract extends Mage_Test_Mod
         return $this;
     }
 
-
     /**
      * Performs custom action on entity
      *
@@ -296,7 +295,6 @@ abstract class Mage_Test_Model_Mysql4_Fixture_Eav_Abstract extends Mage_Test_Mod
         return $columnsByTable;
     }
 
-
     /**
      * Retrieves attribute records for single entity
      *
@@ -334,7 +332,6 @@ abstract class Mage_Test_Model_Mysql4_Fixture_Eav_Abstract extends Mage_Test_Mod
             $this->_getEntityIdField($attribute) => $row[$this->_getEntityIdField($attribute)]
         );
     }
-
 
     /**
      * Retrieves attribute value

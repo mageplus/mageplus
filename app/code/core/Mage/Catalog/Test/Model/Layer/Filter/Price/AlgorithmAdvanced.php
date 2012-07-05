@@ -76,7 +76,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Price_AlgorithmAdvanced extends Mage_
     public function testWithoutLimits()
     {
         $this->markTestIncomplete('Bug MAGE-6498');
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('price', null);
         $this->_prepareFilter();
         $this->assertEquals(array(
@@ -88,7 +88,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Price_AlgorithmAdvanced extends Mage_
     public function testWithLimits()
     {
         $this->markTestIncomplete('Bug MAGE-6561');
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('price', '10-100');
         $this->_prepareFilter($request);
         $this->assertEquals(array(

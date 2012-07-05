@@ -487,6 +487,13 @@ class Varien_Io_File extends Varien_Io_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @param boolean $onlyFile
+     * @return
+     */
     public function fileExists($file, $onlyFile = true)
     {
         @chdir($this->_cwd);
@@ -498,6 +505,12 @@ class Varien_Io_File extends Varien_Io_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * @return
+     */
     public function isWriteable($path)
     {
         @chdir($this->_cwd);
@@ -506,6 +519,12 @@ class Varien_Io_File extends Varien_Io_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $filepath
+     * @return
+     */
     public function getDestinationFolder($filepath)
     {
         preg_match('/^(.*[!\/])/', $filepath, $mathces);
@@ -550,6 +569,12 @@ class Varien_Io_File extends Varien_Io_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $destinationFolder
+     * @return
+     */
     private function _createDestinationFolder($destinationFolder)
     {
         return $this->checkAndCreateFolder($destinationFolder);
@@ -588,6 +613,7 @@ class Varien_Io_File extends Varien_Io_Abstract
         }
         return $this;
     }
+    
     /**
      * Delete a file
      *
@@ -801,11 +827,22 @@ class Varien_Io_File extends Varien_Io_Abstract
         return $owner['name'] . ' / ' . $groupinfo;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function dirsep()
     {
         return DIRECTORY_SEPARATOR;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function dirname($file)
     {
         return $this->getCleanPath(dirname($file));

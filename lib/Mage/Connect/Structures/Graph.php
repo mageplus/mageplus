@@ -36,7 +36,7 @@ class Mage_Connect_Structures_Graph
      
     /**
      * Constructor
-     * @param bool $directed directed graph?
+     * @param boolean $directed directed graph?
      * @return void
      */
     public function __construct($directed = true)
@@ -44,11 +44,10 @@ class Mage_Connect_Structures_Graph
         $this->_directed = $directed;
     }
 
-
     /**
      * Is graph directed?
      *
-     * @return bool
+     * @return boolean
      */
     public function isDirected()
     {
@@ -77,6 +76,7 @@ class Mage_Connect_Structures_Graph
 
     /**
      * Remove a Node from the Graph
+     * @todo make this function remove a node from the graph
      * @param  Mage_Connect_Structures_Graph_Node  $node
      */
     public function removeNode(&$node)
@@ -127,7 +127,7 @@ class Mage_Connect_Structures_Graph
     /**
      * Is graph acyclic?
      * @param $graph
-     * @return bool
+     * @return boolean
      */
     protected static function _isAcyclic(&$graph)
     {
@@ -208,6 +208,12 @@ class Mage_Connect_Structures_Graph
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $graph
+     * @return
+     */
     protected static function _topologicalSort(&$graph)
     {
         // Mark every node as not visited
@@ -244,5 +250,4 @@ class Mage_Connect_Structures_Graph
             $nodes[$key]->unsetMetadata(self::SORT_VISITED_KEY);
         }
     }
-
 }

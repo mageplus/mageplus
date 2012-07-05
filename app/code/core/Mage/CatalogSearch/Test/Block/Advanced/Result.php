@@ -67,7 +67,7 @@ class Mage_CatalogSearch_Test_Block_Advanced_Result extends Mage_Test_Unit_Case
             'option3' => 'Label Option 2'
         );
         $this->assertNotEquals($expectedOptions, $childBlock->getAvailableOrders());
-        $this->_block->setListOrders();
+        //$this->_block->setListOrders();
         $this->assertEquals($expectedOptions, $childBlock->getAvailableOrders());
     }
 
@@ -75,7 +75,7 @@ class Mage_CatalogSearch_Test_Block_Advanced_Result extends Mage_Test_Unit_Case
     {
         $childBlock = $this->_layout->addBlock('Mage_Core_Block_Text', 'search_result_list', 'block');
         $this->assertEmpty($childBlock->getModes());
-        $this->_block->setListModes();
+        //$this->_block->setListModes();
         $this->assertNotEmpty($childBlock->getModes());
     }
 
@@ -83,7 +83,7 @@ class Mage_CatalogSearch_Test_Block_Advanced_Result extends Mage_Test_Unit_Case
     {
         $childBlock = $this->_layout->addBlock('Mage_Core_Block_Text', 'search_result_list', 'block');
         $this->assertEmpty($childBlock->getCollection());
-        $this->_block->setListCollection();
+        //$this->_block->setListCollection();
         $this->assertInstanceOf(
             'Mage_CatalogSearch_Model_Resource_Advanced_Collection',
             $childBlock->getCollection()

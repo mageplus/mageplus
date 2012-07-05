@@ -25,7 +25,7 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-//require Mage::getBaseDir() . '/app/code/core/Mage/Catalog/controllers/ProductController.php';
+require Mage::getBaseDir() . '/app/code/core/Mage/Catalog/controllers/ProductController.php';
 
 class Mage_Catalog_Test_Helper_Product_View extends Mage_Test_Unit_Case
 {
@@ -42,11 +42,11 @@ class Mage_Catalog_Test_Helper_Product_View extends Mage_Test_Unit_Case
     protected function setUp()
     {
         $this->_helper = new Mage_Catalog_Helper_Product_View;
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setRouteName('catalog')
             ->setControllerName('product')
             ->setActionName('view');
-        $this->_controller = new Mage_Catalog_ProductController($request, new Magento_Test_Response);
+        $this->_controller = new Mage_Catalog_ProductController($request, new Mage_Test_Controller_Response_Http);
     }
 
     /**
@@ -93,7 +93,7 @@ class Mage_Catalog_Test_Helper_Product_View extends Mage_Test_Unit_Case
      */
     public function testPrepareAndRenderWrongController()
     {
-        $controller = new Mage_Core_Controller_Front_Action(new Magento_Test_Request, new Magento_Test_Response);
+        $controller = new Mage_Core_Controller_Front_Action(new Mage_Test_Controller_Request_Http, new Mage_Test_Controller_Response_Http);
         $this->_helper->prepareAndRender(10, $controller);
     }
 

@@ -135,7 +135,7 @@ class Mage_Core_Test_Block_Template extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_block->renderView());
         Mage::app()->getConfig()->getOptions()->setDesignDir(__DIR__ . DIRECTORY_SEPARATOR . '_files');
-        Mage::getDesign()->setDesignTheme('default/default/default');
+        //Mage::getDesign()->setDesignTheme('default/default/default');
         $this->_block->setTemplate('dummy.phtml');
         $this->assertEquals('1234567890', $this->_block->renderView());
     }

@@ -75,7 +75,6 @@ abstract class Mage_PHPUnit_Constraint_Config_Abstract
         return parent::evaluate($other, $description, $returnResult);
     }
 
-
     /**
      * Returns a scalar representation of actual value,
      * Returns $other if internal acutal value is not set

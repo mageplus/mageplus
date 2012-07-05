@@ -48,14 +48,16 @@ class Mage_Admin_Test_Model_Session extends Mage_Test_Unit_Case
      */
     public function testLoginSuccessful()
     {
-        $result = $this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        //$result = $this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        $result = $this->_model->login('', '');
         $this->assertInstanceOf('Mage_Admin_Model_User', $result);
         $this->assertGreaterThan(time() - 10, $this->_model->getUpdatedAt());
     }
 
     public function testLogout()
     {
-        $this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        //$this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        $this->_model->login('', '');
         $this->assertNotEmpty($this->_model->getData());
         $this->_model->getCookie()->set($this->_model->getSessionName(), 'session_id');
         $this->_model->logout();
@@ -69,7 +71,8 @@ class Mage_Admin_Test_Model_Session extends Mage_Test_Unit_Case
      */
     public function testIsLoggedIn()
     {
-        $this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        //$this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        $this->_model->login('', '');
         $this->assertTrue($this->_model->isLoggedIn());
 
         $this->_model->setUpdatedAt(time() - 101);
@@ -82,7 +85,8 @@ class Mage_Admin_Test_Model_Session extends Mage_Test_Unit_Case
      */
     public function testIsLoggedInWithIgnoredLifetime()
     {
-        $this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        //$this->_model->login(Magento_Test_Bootstrap::ADMIN_NAME, Magento_Test_Bootstrap::ADMIN_PASSWORD);
+        $this->_model->login('', '');
         $this->assertTrue($this->_model->isLoggedIn());
 
         $this->_model->setUpdatedAt(time() - 101);

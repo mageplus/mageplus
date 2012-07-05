@@ -27,7 +27,6 @@
 
 class Varien_Profiler
 {
-
     /**
      * Timers for code profiling
      *
@@ -37,17 +36,33 @@ class Varien_Profiler
     static private $_enabled = false;
     static private $_memory_get_usage = false;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function enable()
     {
         self::$_enabled = true;
         self::$_memory_get_usage = function_exists('memory_get_usage');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function disable()
     {
         self::$_enabled = false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $timerName
+     * @return
+     */
     public static function reset($timerName)
     {
         self::$_timers[$timerName] = array(
@@ -59,6 +74,12 @@ class Varien_Profiler
         );
     }
 
+    /**
+     * @todo
+     *
+     * @param $timerName
+     * @return
+     */
     public static function resume($timerName)
     {
         if (!self::$_enabled) {
@@ -76,11 +97,23 @@ class Varien_Profiler
         self::$_timers[$timerName]['count'] ++;
     }
 
+    /**
+     * @todo
+     *
+     * @param $timerName
+     * @return
+     */
     public static function start($timerName)
     {
         self::resume($timerName);
     }
 
+    /**
+     * @todo
+     *
+     * @param $timerName
+     * @return
+     */
     public static function pause($timerName)
     {
         if (!self::$_enabled) {
@@ -102,11 +135,24 @@ class Varien_Profiler
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $timerName
+     * @return
+     */
     public static function stop($timerName)
     {
         self::pause($timerName);
     }
 
+    /**
+     * @todo
+     *
+     * @param $timerName
+     * @param $key
+     * @return
+     */
     public static function fetch($timerName, $key='sum')
     {
         if (empty(self::$_timers[$timerName])) {
@@ -146,6 +192,11 @@ class Varien_Profiler
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function getTimers()
     {
         return self::$_timers;
@@ -155,7 +206,8 @@ class Varien_Profiler
      * Output SQl Zend_Db_Profiler
      *
      */
-    public static function getSqlProfiler($res) {
+    public static function getSqlProfiler($res)
+		{
         if(!$res){
             return '';
         }

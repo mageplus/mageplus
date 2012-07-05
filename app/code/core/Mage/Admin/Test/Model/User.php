@@ -44,7 +44,8 @@ class Mage_Admin_Test_Model_User extends Mage_Test_Unit_Case
     {
         $this->_model->loadByUsername('non_existing_user');
         $this->assertNull($this->_model->getId(), 'The admin user has an unexpected ID');
-        $this->_model->loadByUsername(Magento_Test_Bootstrap::ADMIN_NAME);
+        //$this->_model->loadByUsername(Magento_Test_Bootstrap::ADMIN_NAME);
+        $this->_model->loadByUsername('');
         $this->assertNotEmpty($this->_model->getId(), 'The admin user should have been loaded');
     }
 }

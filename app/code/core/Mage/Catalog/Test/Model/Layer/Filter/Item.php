@@ -61,7 +61,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Item extends Mage_Test_Unit_Case
 
     public function testGetUrl()
     {
-        new Mage_Core_Controller_Front_Action(new Magento_Test_Request(), new Magento_Test_Response());
+        new Mage_Core_Controller_Front_Action(new Mage_Test_Controller_Request_Http, new Mage_Test_Controller_Response_Http);
         /*
          * Mage::app()->getFrontController()->setAction($action); // done in action's constructor
          */
@@ -79,7 +79,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Item extends Mage_Test_Unit_Case
             'requested_action'     => 'z',
         ));
 
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http;
         $request->setParam('cat', 4);
         $this->_model->getFilter()->apply($request, new Mage_Core_Block_Text());
 

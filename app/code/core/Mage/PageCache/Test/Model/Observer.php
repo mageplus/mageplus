@@ -45,7 +45,7 @@ class Mage_PageCache_Test_Model_Observer extends Mage_Test_Unit_Case
         /** @var $cookie Mage_Core_Model_Cookie */
         $cookie = Mage::getSingleton('Mage_Core_Model_Cookie');
         $this->assertEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
-        $this->_observer->designEditorSessionActivate(new Varien_Event_Observer());
+        //$this->_observer->designEditorSessionActivate(new Varien_Event_Observer());
         $this->assertNotEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
     }
 
@@ -57,7 +57,7 @@ class Mage_PageCache_Test_Model_Observer extends Mage_Test_Unit_Case
         /** @var $cookie Mage_Core_Model_Cookie */
         $cookie = Mage::getSingleton('Mage_Core_Model_Cookie');
         $cookie->set(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE, '1');
-        $this->_observer->designEditorSessionDeactivate(new Varien_Event_Observer());
+        //$this->_observer->designEditorSessionDeactivate(new Varien_Event_Observer());
         $this->assertEmpty($cookie->get(Mage_PageCache_Helper_Data::NO_CACHE_COOKIE));
     }
 }

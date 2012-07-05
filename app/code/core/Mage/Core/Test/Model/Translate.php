@@ -38,8 +38,7 @@ class Mage_Core_Test_Model_Translate extends Mage_Test_Unit_Case
             'locale_dir' => dirname(__FILE__) . '/_files/locale',
             'design_dir' => dirname(__FILE__) . '/_files/design',
         ));
-        Mage::getDesign()->setArea('frontend')
-            ->setDesignTheme('test/default/default');
+        //Mage::getDesign()->setArea('frontend')->setDesignTheme('test/default/default');
     }
 
     public function setUp()

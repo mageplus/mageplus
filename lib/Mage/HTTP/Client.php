@@ -34,7 +34,6 @@
  
 class Mage_HTTP_Client
 {
-
 	/**
 	 * Disallow to instantiate - pvt constructor
 	 */
@@ -43,7 +42,6 @@ class Mage_HTTP_Client
 		
 	}
 	
-
 	/**
 	 * Factory for HTTP client
 	 * @param string/false $frontend  'curl'/'socket' or false for auto-detect

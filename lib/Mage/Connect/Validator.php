@@ -34,78 +34,80 @@
 
 class Mage_Connect_Validator
 {
-	protected static $_stability = array(0=>'devel',1=>'alpha',2=>'beta',3=>'stable');
+    protected static $_stability = array(0=>'devel',1=>'alpha',2=>'beta',3=>'stable');
 
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public static function getStabilities()
+    {
+	return self::$_stability;
+    }
 	
-	public static function getStabilities()
-	{
-	    return self::$_stability;
-	}
-	
-	
-	
-	/**
-	 * Compare stabilities. Returns:
-	 * 
-	 * -1 if the first stability is lower than the second
-	 *  0 if they are equal
-	 *  1 if the second is lower. 
-	 * @param $s1
-	 * @param $s2
-	 * @return int
-	 */
-	public function compareStabilities($s1, $s2)
-	{
-	    $list = $this->getStabilities();
-	    $tmp = array_combine(array_values($list),array_keys($list));
+    /**
+     * Compare stabilities. Returns:
+     * 
+     * -1 if the first stability is lower than the second
+     *  0 if they are equal
+     *  1 if the second is lower. 
+     * @param $s1
+     * @param $s2
+     * @return integer
+    */
+    public function compareStabilities($s1, $s2)
+    {
+	$list = $this->getStabilities();
+	$tmp = array_combine(array_values($list),array_keys($list));
 	    
-	    if(!isset($tmp[$s1], $tmp[$s2])) {
-	        throw new Exception("Invalid stability in compareStabilities argument");
-	    }
-	    
-	    	    
-	    // 'stable' turns to 3
-	    // 'devel' turns to 0	    
-	    $s1 = $tmp[$s1];
-	    $s2 = $tmp[$s2];
-	    if($s1 === $s2) {
-	        return 0;
-	    } elseif($s1 > $s2) {
-	        return 1;
-	    } elseif($s1 < $s2) {
-	        return -1;
-	    }	    
-	}
+	if(!isset($tmp[$s1], $tmp[$s2])) {
+	    throw new Exception("Invalid stability in compareStabilities argument");
+        }
+	        	    
+	// 'stable' turns to 3
+	// 'devel' turns to 0	    
+	$s1 = $tmp[$s1];
+	$s2 = $tmp[$s2];
+	if($s1 === $s2) {
+	    return 0;
+	} elseif($s1 > $s2) {
+	    return 1;
+	} elseif($s1 < $s2) {
+	    return -1;
+	}	    
+    }
 	
-	/**
-	 * Constructor
-	 */
-	public function __construct()
-	{
+    /**
+     * Constructor
+     * @todo is this necessary???
+     */
+    public function __construct()
+    {
 
-	}
+    }
 
-	/**
-	 * Validate max len of string
-	 * @param string $str
-	 * @param int $maxLen
-	 * @return bool
-	 */
-	public function validateMaxLen($str, $maxLen)
-	{
-		return strlen((string) $str) <= (int) $maxLen;
-	}
+    /**
+     * Validate max len of string
+     * @param string $str
+     * @param int $maxLen
+     * @return bool
+     */
+    public function validateMaxLen($str, $maxLen)
+    {
+	return strlen((string) $str) <= (int) $maxLen;
+    }
 
-	/**
+    /**
     * Validate channel name and url
     *
     * @param mixed $str
-    * @return bool
+    * @return boolean
     */
     public function validateChannelNameOrUri($str)
-	{
+    {
 	    return ( $this->validateUrl($str) || $this->validatePackageName($str));
-	}
+    }
 
     /**
     * Validate License url
@@ -126,14 +128,15 @@ class Mage_Connect_Validator
      * @param array $data
      * @return bool
      */
-	public function validateCompatible(array $data)
-	{
-	    if(!count($data)) {
+    public function validateCompatible(array $data)
+    {
+	if(!count($data)) {
 	    	/**
 	    	 * Allow empty
 	    	 */
             return true;
         }
+        
         $count = 0;
         foreach($data as $k=>$v) {
            foreach(array('name','channel','min','max') as $fld) {
@@ -164,22 +167,23 @@ class Mage_Connect_Validator
 
         }
         return ! $this->hasErrors();
-	}
+    }
 
-	/**
-	 * Validate authors of package
-	 * @param array $authors
-	 * @return bool
-	 */
-	public function validateAuthors(array $authors)
-	{
-		if(!count($authors)) {
-			$this->addError('Empty authors section');
-			return false;
-		}
-		$count = 0;
-		foreach($authors as $k=>$v) {
-		   $count++;
+    /**
+     * Validate authors of package
+     * @param array $authors
+     * @return bool
+     */
+    public function validateAuthors(array $authors)
+    {
+	if(!count($authors)) {
+	    $this->addError('Empty authors section');
+	    return false;
+	}
+        
+	$count = 0;
+	foreach($authors as $k=>$v) {
+	    $count++;
 		   array_map('trim', $v);
 		   $name = $v['name'];
 		   $login = $v['user'];
@@ -198,14 +202,13 @@ class Mage_Connect_Validator
 		   }
 		}
 		return ! $this->hasErrors();
-	}
+    }
 
-
-	/**
-	 * Validator errors
-	 * @var array
-	 */
-	private $_errors = array();
+    /**
+     * Validator errors
+     * @var array
+    */
+    private $_errors = array();
 
 	/**
 	 * Add error
@@ -300,7 +303,6 @@ class Mage_Connect_Validator
 		return checkdate($subs[2], $subs[3], $subs[1]);
 	}
 
-
 	/**
 	 * Validate email
 	 * @param string $email
@@ -353,7 +355,6 @@ class Mage_Connect_Validator
 		return version_compare($v1, $v2, "le");
 	}
 
-
 	/**
 	 * Check if version $v1 lower than $v2
 	 * @param string $v1
@@ -376,7 +377,6 @@ class Mage_Connect_Validator
 		return version_compare($v1, $v2, "ge");
 	}
 
-
 	/**
 	 * Generic regex validation
 	 * @param string $str
@@ -388,7 +388,6 @@ class Mage_Connect_Validator
 		return preg_match($regex, $str);
 	}
 
-
 	/**
 	 * Check if PHP extension loaded
 	 * @param string $name Extension name
@@ -396,10 +395,17 @@ class Mage_Connect_Validator
 	 */
 	public function validatePhpExtension($name)
 	{
-        return extension_loaded($name);
+            return extension_loaded($name);
 	}
 
-
+    /**
+     * @todo
+     *
+     * @param $min
+     * @param $max
+     * @param $ver
+     * @return
+     */
 	public function validatePHPVersion($min, $max, $ver = PHP_VERSION)
 	{
 	    $minAccepted = true;
@@ -412,6 +418,4 @@ class Mage_Connect_Validator
 	    }
 	    return (bool) $minAccepted && $maxAccepted;
 	}
-
-
 }

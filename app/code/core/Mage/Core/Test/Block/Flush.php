@@ -63,7 +63,7 @@ class Mage_Core_Test_Block_Flush extends Mage_Test_Unit_Case
     {
         $listName = $this->_block->getNameInLayout();
         $block1 = $this->_layout->addBlock('Mage_Core_Block_Text', '', $listName);
-        $this->_layout->insertContainer($listName, 'container');
+        //$this->_layout->insertContainer($listName, 'container');
         $block2 = $this->_layout->addBlock('Mage_Core_Block_Text', '', 'container');
         $block3 = $this->_layout->addBlock('Mage_Core_Block_Text', '', $listName);
         $block1->setText('text1');

@@ -50,11 +50,23 @@ class Varien_Pear_Frontend extends PEAR_Frontend
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLogStream()
     {
         return $this->_logStream;
     }
 
+    /**
+     * @todo
+     *
+     * @param $msg
+     * @param boolean $append_crlf
+     * @return
+     */
     public function log($msg, $append_crlf = true)
     {
         if (is_null($msg) || false===$msg or ''===$msg) {
@@ -78,6 +90,13 @@ class Varien_Pear_Frontend extends PEAR_Frontend
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @param $command
+     * @return
+     */
     public function outputData($data, $command = '_default')
     {
         $this->_out[] = array('output'=>$data, 'command'=>$command);
@@ -95,22 +114,42 @@ class Varien_Pear_Frontend extends PEAR_Frontend
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function userConfirm()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clear()
     {
         $this->_log = array();
         $this->_out = array();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLog()
     {
         return $this->_log;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLogText()
     {
         $text = '';
@@ -120,6 +159,11 @@ class Varien_Pear_Frontend extends PEAR_Frontend
         return $text;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOutput()
     {
         return $this->_out;

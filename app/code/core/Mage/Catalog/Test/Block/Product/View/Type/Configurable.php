@@ -43,6 +43,7 @@ class Mage_Catalog_Test_Block_Product_View_Type_Configurable extends Mage_Test_U
     {
         $this->_product = new Mage_Catalog_Model_Product();
         $this->_product->load(1);
+        $this->_product->setTypeInstance(new Mage_Catalog_Model_Product_Type_Configurable(), TRUE);
         $this->_block = new Mage_Catalog_Block_Product_View_Type_Configurable;
         $this->_block->setProduct($this->_product);
     }

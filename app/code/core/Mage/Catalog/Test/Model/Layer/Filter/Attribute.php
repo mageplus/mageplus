@@ -65,7 +65,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Attribute extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_model->getLayer()->getState()->getFilters());
 
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('attribute', array());
         $this->_model->apply($request, new Mage_Core_Block_Text());
 
@@ -76,7 +76,7 @@ class Mage_Catalog_Test_Model_Layer_Filter_Attribute extends Mage_Test_Unit_Case
     {
         $this->assertEmpty($this->_model->getLayer()->getState()->getFilters());
 
-        $request = new Magento_Test_Request();
+        $request = new Mage_Test_Controller_Request_Http();
         $request->setParam('attribute', $this->_attributeOptionId);
         $this->_model->apply($request, new Mage_Core_Block_Text());
 

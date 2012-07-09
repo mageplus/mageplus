@@ -34,9 +34,15 @@
  */
 interface Mage_Dataflow_Model_Convert_Parser_Interface
 {
-
+    /**
+     * @todo
+     * @return
+     */
     public function parse();
 
+    /**
+     * @todo
+     * @return
+     */
     public function unparse();
-
 }

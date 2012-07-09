@@ -33,21 +33,40 @@ class Mage_Catalog_Model_Mysql4_Convert
     protected $_productEntity;
     protected $_skuAttribute;
 
+    /**
+     * @todo
+     * @return
+     */
     public function getConnection()
     {
         return Mage::getSingleton('core/resource')->getConnection('catalog_write');
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getSelect()
     {
         return $this->getConnection()->select();
     }
 
+    /**
+     * @todo
+     *
+     * @param $table
+     * @return
+     */
     public function getTable($table)
     {
         return Mage::getSingleton('core/resource')->getTableName($table);
     }
 
+    /**
+     * @todo
+     * @param $field
+     * @return
+     */
     public function getProductEntity($field=null)
     {
         if (!$this->_productEntity) {
@@ -57,6 +76,11 @@ class Mage_Catalog_Model_Mysql4_Convert
         return is_null($field) ? $this->_productEntity : $this->_productEntity->getData($field);
     }
 
+    /**
+     * @todo
+     * @param $field
+     * @return
+     */
     public function getSkuAttribute($field='attribute_id')
     {
         if (!$this->_skuAttribute) {
@@ -65,6 +89,11 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $this->_skuAttribute->getData($field);
     }
 
+    /**
+     * @todo
+     * @param $sku
+     * @return
+     */
     public function getProductIdBySku($sku)
     {
         if (!$this->_productsBySku) {
@@ -80,6 +109,13 @@ class Mage_Catalog_Model_Mysql4_Convert
         return isset($this->_productsBySku[$sku]) ? $this->_productsBySku[$sku] : false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $productId
+     * @param $storeId
+     * @return
+     */
     public function addProductToStore($productId, $storeId)
     {
         $write = $this->getConnection();
@@ -94,6 +130,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportAttributes()
     {
         $attributeFields = array(
@@ -117,6 +157,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $attributes;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportAttributeSets()
     {
         $select = $this->getSelect()
@@ -133,6 +177,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $sets;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportAttributeOptions()
     {
         $select = $this->getSelect()
@@ -156,6 +204,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $options;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportProductLinks()
     {
         $skuTable = $this->getTable('catalog/product').'_'.$this->getSkuAttribute('backend_type');
@@ -172,6 +224,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $links;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportProductsInCategories()
     {
         $skuTable = $this->getTable('catalog/product').'_'.$this->getSkuAttribute('backend_type');
@@ -187,6 +243,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $prodCats;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportProductsInStores()
     {
         $skuTable = $this->getTable('catalog/product').'_'.$this->getSkuAttribute('backend_type');
@@ -203,6 +263,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $prodStores;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportCategories()
     {
         $collection = Mage::getResourceModel('catalog/category_collection')
@@ -218,6 +282,10 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $categories;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportProducts()
     {
         $attrSets = Mage::getResourceModel('eav/entity_attribute_set_collection')->load();
@@ -248,16 +316,33 @@ class Mage_Catalog_Model_Mysql4_Convert
         return $products;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function exportImageGallery()
     {
         return array();
     }
 
+    /**
+     * @todo
+     *
+     * @param $attribute
+     * @param $value
+     * @return
+     */
     public function getProductAttributeOption($attribute, $value)
     {
         #$attribute = Mage::get
     }
 
+    /**
+     * @todo
+     *
+     * @param array $data
+     * @return
+     */
     public function importProducts(array $data)
     {
         /*

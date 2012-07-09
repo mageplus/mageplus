@@ -34,7 +34,6 @@
  */
 class Mage_Dataflow_Model_Convert_Adapter_Http_Curl extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
-
     /**
      * @todo
      *
@@ -80,5 +79,4 @@ class Mage_Dataflow_Model_Convert_Adapter_Http_Curl extends Mage_Dataflow_Model_
         // no save implemented
         return $this;
     }
-
 }

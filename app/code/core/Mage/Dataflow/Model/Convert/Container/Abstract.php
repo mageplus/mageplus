@@ -47,6 +47,13 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
 
     protected $_position;
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $default
+     * @return
+     */
     public function getVar($key, $default=null)
     {
         if (!isset($this->_vars[$key]) || (!is_array($this->_vars[$key]) && strlen($this->_vars[$key]) == 0)) {
@@ -55,11 +62,22 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $this->_vars[$key];
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getVars()
     {
         return $this->_vars;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $value
+     * @return
+     */
     public function setVar($key, $value=null)
     {
         if (is_array($key) && is_null($value)) {
@@ -70,28 +88,52 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getAction()
     {
         return $this->_action;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Dataflow_Model_Convert_Action_Interface $action
+     * @return
+     */
     public function setAction(Mage_Dataflow_Model_Convert_Action_Interface $action)
     {
         $this->_action = $action;
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getProfile()
     {
         return $this->_profile;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Dataflow_Model_Convert_Profile_Interface $profile
+     * @return
+     */
     public function setProfile(Mage_Dataflow_Model_Convert_Profile_Interface $profile)
     {
         $this->_profile = $profile;
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getData()
     {
         if (is_null($this->_data) && $this->getProfile()) {
@@ -100,6 +142,12 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $this->_data;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function setData($data)
     {
         if ($this->getProfile()) {
@@ -109,6 +157,12 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function validateDataString($data=null)
     {
         if (is_null($data)) {
@@ -120,6 +174,12 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function validateDataArray($data=null)
     {
         if (is_null($data)) {
@@ -131,6 +191,12 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function validateDataGrid($data=null)
     {
         if (is_null($data)) {
@@ -145,6 +211,12 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $grid
+     * @return
+     */
     public function getGridFields($grid)
     {
         $fields = array();
@@ -158,6 +230,13 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $fields;
     }
 
+    /**
+     * @todo
+     *
+     * @param $error
+     * @param $level
+     * @return
+     */
     public function addException($error, $level=null)
     {
         $e = new Mage_Dataflow_Model_Convert_Exception($error);
@@ -172,17 +251,33 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $e;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getPosition()
     {
         return $this->_position;
     }
 
+    /**
+     * @todo
+     *
+     * @param $position
+     * @return
+     */
     public function setPosition($position)
     {
         $this->_position = $position;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function setBatchParams($data)
     {
         if (is_array($data)) {
@@ -191,6 +286,12 @@ abstract class Mage_Dataflow_Model_Convert_Container_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function getBatchParams($key = null)
     {
         if (!empty($key)) {

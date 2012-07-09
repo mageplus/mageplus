@@ -38,6 +38,16 @@ class Mage_Core_Model_Message
     const NOTICE    = 'notice';
     const SUCCESS   = 'success';
     
+    /**
+     * @TODO
+     *
+     * @param $code
+     * @param $type
+     * @param $class
+     * @param $method
+     * 
+     * @return 
+     */
     protected function _factory($code, $type, $class='', $method='')
     {
         switch (strtolower($type)) {
@@ -60,21 +70,53 @@ class Mage_Core_Model_Message
         return $message;
     }
     
+    /**
+     * @TODO
+     *
+     * @param $code
+     * @param $class
+     * @param $method
+     * @return 
+     */
     public function error($code, $class='', $method='')
     {
         return $this->_factory($code, self::ERROR, $class, $method);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $code
+     * @param $class
+     * @param $method
+     * @return 
+     */
     public function warning($code, $class='', $method='')
     {
         return $this->_factory($code, self::WARNING, $class, $method);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $code
+     * @param $class
+     * @param $method
+     * @return 
+     */
     public function notice($code, $class='', $method='')
     {
         return $this->_factory($code, self::NOTICE, $class, $method);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $code
+     * @param $class
+     * @param $method
+     * @return 
+     */
     public function success($code, $class='', $method='')
     {
         return $this->_factory($code, self::SUCCESS, $class, $method);

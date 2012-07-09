@@ -33,6 +33,11 @@
  */
 class Mage_Api_IndexController extends Mage_Api_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         /* @var $server Mage_Api_Model_Server */

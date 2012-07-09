@@ -222,4 +222,11 @@
             </auto_generated_coupon_codes>
         </promo>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_SalesRule/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

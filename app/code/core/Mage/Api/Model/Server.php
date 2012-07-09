@@ -33,7 +33,6 @@
  */
 class Mage_Api_Model_Server
 {
-
     /**
      * Api Name by Adapter
      * @var string

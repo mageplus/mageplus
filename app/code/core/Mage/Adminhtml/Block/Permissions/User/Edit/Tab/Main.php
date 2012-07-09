@@ -34,7 +34,11 @@
 
 class Mage_Adminhtml_Block_Permissions_User_Edit_Tab_Main extends Mage_Adminhtml_Block_Widget_Form
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $model = Mage::registry('permissions_user');

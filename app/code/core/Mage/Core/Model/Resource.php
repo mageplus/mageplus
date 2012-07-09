@@ -361,6 +361,11 @@ class Mage_Core_Model_Resource
         return $this->_connections[$name];
     }
 
+    /**
+     * @todo
+     *
+     * @return 
+     */
     public function checkDbConnection()
     {
         if (!$this->getConnection('core_read')) {
@@ -368,17 +373,29 @@ class Mage_Core_Model_Resource
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return 
+     */
     public function getAutoUpdate()
     {
         return self::AUTO_UPDATE_ALWAYS;
         #return Mage::app()->loadCache(self::AUTO_UPDATE_CACHE_KEY);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return 
+     */
     public function setAutoUpdate($value)
     {
         #Mage::app()->saveCache($value, self::AUTO_UPDATE_CACHE_KEY);
         return $this;
     }
+    
     /**
      * Retrieve 32bit UNIQUE HASH for a Table index
      *

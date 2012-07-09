@@ -70,6 +70,11 @@ class Mage_CatalogInventory_Block_Adminhtml_Form_Field_Customergroup extends Mag
         return $this->_customerGroups;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function setInputName($value)
     {
         return $this->setName($value);

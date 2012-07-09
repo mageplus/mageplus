@@ -38,7 +38,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_File extends Enterprise_Custo
      *
      * @var string
      */
-    protected $_filedType = 'file';
+    protected $_fieldType = 'file';
 
     /**
      * Change form post params for file upload compliance
@@ -70,7 +70,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_File extends Enterprise_Custo
         $attributes += Mage::helper('xmlconnect/customer_form_renderer')
             ->addTitleAndRequiredAttr($fieldsetXmlObj, $this);
 
-        $fieldXmlObj = $fieldsetXmlObj->addField($this->getHtmlId(), $this->_filedType, $attributes);
+        $fieldXmlObj = $fieldsetXmlObj->addField($this->getHtmlId(), $this->_fieldType, $attributes);
         $this->_addValidator($fieldXmlObj);
 
         return $this;

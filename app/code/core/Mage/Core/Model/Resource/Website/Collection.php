@@ -81,7 +81,7 @@ class Mage_Core_Model_Resource_Website_Collection extends Mage_Core_Model_Resour
     /**
      * Convert items array to array for select options
      *
-     * @return Array
+     * @return array
      */
     public function toOptionArray()
     {
@@ -91,7 +91,7 @@ class Mage_Core_Model_Resource_Website_Collection extends Mage_Core_Model_Resour
     /**
      * Convert items array to hash for select options
      *
-     * @return Array
+     * @return array
      */
     public function toOptionHash()
     {
@@ -102,7 +102,7 @@ class Mage_Core_Model_Resource_Website_Collection extends Mage_Core_Model_Resour
     /**
      * Add website filter to collection
      *
-     * @param int $ids|array
+     * @param integer $ids|array
      * @return Mage_Core_Model_Resource_Website_Collection
      */
     public function addIdFilter($ids)
@@ -174,7 +174,7 @@ class Mage_Core_Model_Resource_Website_Collection extends Mage_Core_Model_Resour
      * Adding filter by group id or array of ids but only if
      * tables with appropriate information were joined before.
      *
-     * @param int|array $groupIds
+     * @param integer|array $groupIds
      * @return Mage_Core_Model_Resource_Website_Collection
      */
     public function addFilterByGroupIds($groupIds)

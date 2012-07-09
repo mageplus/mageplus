@@ -40,6 +40,11 @@ class Mage_Adminhtml_Block_Cms_Page_Edit_Tab_Meta
         parent::__construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         /*

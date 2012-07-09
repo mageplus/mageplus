@@ -35,14 +35,14 @@
 class Mage_Review_Model_Resource_Review_Summary_Collection extends Varien_Data_Collection_Db
 {
     /**
-     * Enter description here ...
+     * @todo
      *
      * @var unknown
      */
     protected $_summaryTable;
 
     /**
-     * Enter description here ...
+     * @todo
      *
      */
     public function __construct()

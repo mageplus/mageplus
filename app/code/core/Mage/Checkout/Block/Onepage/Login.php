@@ -42,31 +42,61 @@ class Mage_Checkout_Block_Onepage_Login extends Mage_Checkout_Block_Onepage_Abst
         parent::_construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMessages()
     {
         return Mage::getSingleton('customer/session')->getMessages(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPostAction()
     {
         return Mage::getUrl('customer/account/loginPost', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMethod()
     {
         return $this->getQuote()->getMethod();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMethodData()
     {
         return $this->getCheckout()->getMethodData();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSuccessUrl()
     {
         return $this->getUrl('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getErrorUrl()
     {
         return $this->getUrl('*/*');

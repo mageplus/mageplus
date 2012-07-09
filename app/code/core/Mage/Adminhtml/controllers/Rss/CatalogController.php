@@ -34,6 +34,11 @@
 
 class Mage_Adminhtml_Rss_CatalogController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         $path = '';
@@ -47,6 +52,11 @@ class Mage_Adminhtml_Rss_CatalogController extends Mage_Adminhtml_Controller_Act
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function notifystockAction()
     {
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=UTF-8');
@@ -54,6 +64,11 @@ class Mage_Adminhtml_Rss_CatalogController extends Mage_Adminhtml_Controller_Act
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function reviewAction()
     {
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=UTF-8');

@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Multiselect extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -41,6 +47,11 @@ class Varien_Data_Form_Element_Multiselect extends Varien_Data_Form_Element_Abst
         $this->setSize(10);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getName()
     {
         $name = parent::getName();
@@ -50,6 +61,11 @@ class Varien_Data_Form_Element_Multiselect extends Varien_Data_Form_Element_Abst
         return $name;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $this->addClass('select multiselect');
@@ -86,17 +102,26 @@ class Varien_Data_Form_Element_Multiselect extends Varien_Data_Form_Element_Abst
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('title', 'class', 'style', 'onclick', 'onchange', 'disabled', 'size', 'tabindex');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDefaultHtml()
     {
         $result = ( $this->getNoSpan() === true ) ? '' : '<span class="field-row">'."\n";
         $result.= $this->getLabelHtml();
         $result.= $this->getElementHtml();
-
 
         if($this->getSelectAll() && $this->getDeselectAll()) {
             $result .= '<a href="#" onclick="return ' . $this->getJsObjectName() . '.selectAll()">' .
@@ -106,7 +131,6 @@ class Varien_Data_Form_Element_Multiselect extends Varien_Data_Form_Element_Abst
         }
 
         $result.= ( $this->getNoSpan() === true ) ? '' : '</span>'."\n";
-
 
         $result.= '<script type="text/javascript">' . "\n";
         $result.= '   var ' . $this->getJsObjectName() . ' = {' . "\n";
@@ -130,10 +154,23 @@ class Varien_Data_Form_Element_Multiselect extends Varien_Data_Form_Element_Abst
         return $result;
     }
 
-    public function getJsObjectName() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getJsObjectName()
+    {
          return $this->getHtmlId() . 'ElementControl';
     }
 
+    /**
+     * @todo
+     *
+     * @param $option
+     * @param $selected
+     * @return
+     */
     protected function _optionToHtml($option, $selected)
     {
         $html = '<option value="'.$this->_escape($option['value']).'"';

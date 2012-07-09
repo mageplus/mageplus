@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Newsletter_ProblemController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Newsletter'))->_title($this->__('Newsletter Problems'));
@@ -58,6 +63,11 @@ class Mage_Adminhtml_Newsletter_ProblemController extends Mage_Adminhtml_Control
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         if($this->getRequest()->getParam('_unsubscribe')) {
@@ -97,6 +107,11 @@ class Mage_Adminhtml_Newsletter_ProblemController extends Mage_Adminhtml_Control
         $this->getResponse()->setBody($grid->toHtml());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('newsletter/problem');

@@ -32,13 +32,19 @@
  */
 class Mage_Core_Block_Text_Tag extends Mage_Core_Block_Text
 {
-
     protected function _construct()
     {
         parent::_construct();
         $this->setTagParams(array());
     }
 
+    /**
+     * @todo
+     *
+     * @param $param
+     * @param $value
+     * @return Mage_Core_Block_Text_Tag
+     */
     function setTagParam($param, $value=null)
     {
         if (is_array($param) && is_null($value)) {
@@ -53,12 +59,23 @@ class Mage_Core_Block_Text_Tag extends Mage_Core_Block_Text
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param string $text
+     * @return Mage_Core_Block_Text_Tag
+     */
     function setContents($text)
     {
         $this->setTagContents($text);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         $this->setText('<'.$this->getTagName().' ');
@@ -71,5 +88,4 @@ class Mage_Core_Block_Text_Tag extends Mage_Core_Block_Text
         $this->addText('>'.$this->getTagContents().'</'.$this->getTagName().'>'."\r\n");
         return parent::_toHtml();
     }
-
 }

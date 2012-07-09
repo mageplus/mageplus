@@ -33,6 +33,11 @@
  */
 class Mage_GoogleCheckout_Block_Link extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageStyle()
     {
         $s = Mage::getStoreConfig('google/checkout/checkout_image');
@@ -42,6 +47,11 @@ class Mage_GoogleCheckout_Block_Link extends Mage_Core_Block_Template
         return explode('/', $s);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageUrl()
     {
         $url = 'https://checkout.google.com/buttons/checkout.gif';
@@ -53,6 +63,11 @@ class Mage_GoogleCheckout_Block_Link extends Mage_Core_Block_Template
         return $url;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCheckoutUrl()
     {
         return $this->getUrl('googlecheckout/redirect/checkout');
@@ -67,12 +82,22 @@ class Mage_GoogleCheckout_Block_Link extends Mage_Core_Block_Template
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageWidth()
     {
          $v = $this->getImageStyle();
          return $v[0];
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageHeight()
     {
          $v = $this->getImageStyle();
@@ -93,6 +118,11 @@ class Mage_GoogleCheckout_Block_Link extends Mage_Core_Block_Template
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsDisabled()
     {
         $quote = Mage::getSingleton('checkout/session')->getQuote();

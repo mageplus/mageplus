@@ -173,4 +173,11 @@
             </email>
         </wishlist>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Wishlist/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

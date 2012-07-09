@@ -47,54 +47,107 @@ class Mage_GiftMessage_Block_Message_Helper extends Mage_Core_Block_Template
         $this->setTemplate('giftmessage/helper.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @param $entity
+     * @return
+     */
     public function setEntity($entity)
     {
         $this->_entity = $entity;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEntity()
     {
         return $this->_entity;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function setType($type)
     {
         $this->_type = $type;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getType()
     {
         return $this->_type;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasGiftMessage()
     {
         return $this->getEntity()->getGiftMessageId() > 0;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function setScriptIncluded($value)
     {
         self::$_scriptIncluded = $value;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getScriptIncluded()
     {
         return self::$_scriptIncluded;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getJsObjectName()
     {
         return $this->getId() . 'JsObject';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditUrl()
     {
         return $this->helper('giftmessage/url')->getEditUrl($this->getEntity(), $this->getType());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initMessage()
     {
         $this->_giftMessage = $this->helper('giftmessage/message')->getGiftMessage(
@@ -103,6 +156,11 @@ class Mage_GiftMessage_Block_Message_Helper extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMessage()
     {
         if(is_null($this->_giftMessage)) {

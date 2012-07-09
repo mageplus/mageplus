@@ -65,6 +65,13 @@ class Mage_CatalogIndex_Model_Indexer_Tierprice extends Mage_CatalogIndex_Model_
         return parent::_construct();
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product $object
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     public function createIndexData(Mage_Catalog_Model_Product $object, Mage_Eav_Model_Entity_Attribute_Abstract $attribute = null)
     {
         $data = array();
@@ -102,6 +109,12 @@ class Mage_CatalogIndex_Model_Indexer_Tierprice extends Mage_CatalogIndex_Model_
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     protected function _isAttributeIndexable(Mage_Eav_Model_Entity_Attribute_Abstract $attribute)
     {
         if ($attribute->getAttributeCode() != 'tier_price') {
@@ -111,6 +124,11 @@ class Mage_CatalogIndex_Model_Indexer_Tierprice extends Mage_CatalogIndex_Model_
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getIndexableAttributeConditions()
     {
         $conditions = array();

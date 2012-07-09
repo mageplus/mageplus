@@ -33,7 +33,11 @@
  */
 class Mage_Adminhtml_PollController extends Mage_Adminhtml_Controller_Action
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('CMS'))->_title($this->__('Polls'));
@@ -46,6 +50,11 @@ class Mage_Adminhtml_PollController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('CMS'))->_title($this->__('Polls'));
@@ -74,6 +83,11 @@ class Mage_Adminhtml_PollController extends Mage_Adminhtml_Controller_Action
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         if ($id = $this->getRequest()->getParam('id')) {
@@ -95,6 +109,11 @@ class Mage_Adminhtml_PollController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('The poll has been saved.'));
@@ -102,12 +121,22 @@ class Mage_Adminhtml_PollController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->getRequest()->setParam('id', 0);
         $this->_forward('edit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function validateAction()
     {
         $response = new Varien_Object();
@@ -208,6 +237,11 @@ class Mage_Adminhtml_PollController extends Mage_Adminhtml_Controller_Action
         $this->getResponse()->setBody($response->toJson());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('cms/poll');

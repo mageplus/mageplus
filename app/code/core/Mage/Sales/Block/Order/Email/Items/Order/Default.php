@@ -44,6 +44,11 @@ class Mage_Sales_Block_Order_Email_Items_Order_Default extends Mage_Core_Block_T
         return $this->getItem()->getOrder();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemOptions()
     {
         $result = array();
@@ -62,6 +67,13 @@ class Mage_Sales_Block_Order_Email_Items_Order_Default extends Mage_Core_Block_T
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * 
+     * @return
+     */
     public function getValueHtml($value)
     {
         if (is_array($value)) {
@@ -71,6 +83,13 @@ class Mage_Sales_Block_Order_Email_Items_Order_Default extends Mage_Core_Block_T
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * 
+     * @return
+     */
     public function getSku($item)
     {
         if ($item->getProductOptionByCode('simple_sku'))

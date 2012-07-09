@@ -300,4 +300,11 @@
             </adminhtml>
         </routers>
     </admin>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Paypal/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

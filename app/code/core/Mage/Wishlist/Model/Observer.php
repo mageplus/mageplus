@@ -89,6 +89,12 @@ class Mage_Wishlist_Model_Observer extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $observer
+     * @return
+     */
     public function processAddToCart($observer)
     {
         $request = $observer->getEvent()->getRequest();

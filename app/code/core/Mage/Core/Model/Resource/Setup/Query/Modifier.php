@@ -50,8 +50,9 @@ class Mage_Core_Model_Resource_Setup_Query_Modifier
 
     /**
      * Inits query modifier
+     * @todo - doesn't seem particularly robust
      *
-     * @param $adapter Varien_Db_Adapter_Pdo_Mysql
+     * @param array $args
      * @return void
      */
     public function __construct($args)
@@ -103,7 +104,7 @@ class Mage_Core_Model_Resource_Setup_Query_Modifier
      * @param string $haystack
      * @param string $needle
      * @param array $replacement
-     * @param bool $caseInsensitive
+     * @param boolean $caseInsensitive
      * @return string
      */
     protected function _firstReplace($haystack, $needle, $replacement, $caseInsensitive = false)
@@ -236,7 +237,7 @@ class Mage_Core_Model_Resource_Setup_Query_Modifier
      * Returns whether table exists
      *
      * @param string $table
-     * @return bool
+     * @return boolean
      */
     protected function _tableExists($table)
     {

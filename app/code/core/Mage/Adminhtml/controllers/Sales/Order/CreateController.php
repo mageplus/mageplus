@@ -339,7 +339,11 @@ class Mage_Adminhtml_Sales_Order_CreateController extends Mage_Adminhtml_Control
             ->renderLayout();
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function reorderAction()
     {
 //        $this->_initSession();
@@ -362,6 +366,11 @@ class Mage_Adminhtml_Sales_Order_CreateController extends Mage_Adminhtml_Control
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _reloadQuote()
     {
         $id = $this->_getQuote()->getId();
@@ -387,7 +396,6 @@ class Mage_Adminhtml_Sales_Order_CreateController extends Mage_Adminhtml_Control
             $this->_reloadQuote();
             $this->_getSession()->addException($e, $e->getMessage());
         }
-
 
         $asJson= $request->getParam('json');
         $block = $request->getParam('block');

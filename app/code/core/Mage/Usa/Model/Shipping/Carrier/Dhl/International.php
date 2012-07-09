@@ -260,6 +260,12 @@ class Mage_Usa_Model_Shipping_Carrier_Dhl_International
         return $this->_result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $requestObject
+     * @return
+     */
     protected function _addParams($requestObject)
     {
         $request = $this->_request;
@@ -1158,7 +1164,6 @@ class Mage_Usa_Model_Shipping_Carrier_Dhl_International
      */
     protected function _mapRequestToShipment(Varien_Object $request)
     {
-
         $request->setOrigCountryId($request->getShipperAddressCountryCode());
         $this->_rawRequest = $request;
         $customsValue = 0;

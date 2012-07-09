@@ -182,4 +182,11 @@
             </checkout_shipping_virtual>
         </google>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_GoogleCheckout/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -86,6 +86,11 @@ abstract class Varien_Simplexml_Config_Cache_Abstract extends Varien_Object
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getComponentsHash()
     {
         $sum = '';

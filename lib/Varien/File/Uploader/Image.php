@@ -34,7 +34,12 @@
 
 class Varien_File_Uploader_Image extends Varien_File_Uploader
 {
-
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     function __construct($file=null)
     {
         $this->newUploader($file);
@@ -208,71 +213,155 @@ class Varien_File_Uploader_Image extends Varien_File_Uploader
         $this->uploader->image_text = $string;
     }
 
+    /**
+     * @todo
+     *
+     * @param $direction
+     * @return
+     */
     public function setTextDirection($direction)
     {
         $this->uploader->image_text_direction = $direction;
     }
 
+    /**
+     * @todo
+     *
+     * @param $color
+     * @return
+     */
     public function setTextColor($color)
     {
         $this->uploader->image_text_color = $color;
     }
 
+    /**
+     * @todo
+     *
+     * @param $percent
+     * @return
+     */
     public function setTextVisibilityPercent($percent)
     {
         $this->uploader->image_text_percent = $visibilityPercent;
     }
 
+    /**
+     * @todo
+     *
+     * @param $color
+     * @return
+     */
     public function setTextBackgroundColor($color)
     {
         $this->uploader->image_text_background = $color;
     }
 
+    /**
+     * @todo
+     *
+     * @param $percent
+     * @return
+     */
     public function setTextBackgroundVisPercent($percent)
     {
         $this->uploader->image_text_background_percent = $percent;
     }
 
+    /**
+     * @todo
+     *
+     * @param $font
+     * @return
+     */
     public function setTextFont($font)
     {
         $this->uploader->image_text_font = $font;
     }
 
+    /**
+     * @todo
+     *
+     * @param $position
+     * @return
+     */
     public function setTextPosition($position="TR")
     {
         $this->uploader->image_text_position = $position;
     }
 
+    /**
+     * @todo
+     *
+     * @param $absoluteX
+     * @return
+     */
     public function setTextAbsoluteX($absoluteX)
     {
         $this->uploader->image_text_x = $absoluteX;
     }
 
+    /**
+     * @todo
+     *
+     * @param $absoluteY
+     * @return
+     */
     public function setTextAbsoluteY($absoluteY)
     {
         $this->uploader->image_text_y = $absoluteY;
     }
 
+    /**
+     * @todo
+     *
+     * @param $padding
+     * @return
+     */
     public function setTextPadding($padding)
     {
         $this->uploader->image_text_padding = $padding;
     }
 
+    /**
+     * @todo
+     *
+     * @param $padding
+     * @return
+     */
     public function setTextPaddingX($padding)
     {
         $this->uploader->image_text_padding_x = $padding;
     }
 
+    /**
+     * @todo
+     *
+     * @param $padding
+     * @return
+     */
     public function setTextPaddingY($padding)
     {
         $this->uploader->image_text_padding_y = $padding;
     }
 
+    /**
+     * @todo
+     *
+     * @param $alignment
+     * @return
+     */
     public function setTextAlignment($alignment)
     {
         $this->uploader->image_text_alignment = $alignment;
     }
 
+    /**
+     * @todo
+     *
+     * @param $lineSpacing
+     * @return
+     */
     public function setTextLineSpacing($lineSpacing)
     {
         $this->uploader->image_text_line_spacing = $lineSpacing;
@@ -354,13 +443,13 @@ class Varien_File_Uploader_Image extends Varien_File_Uploader
         $this->uploader->image_background_color = $color;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     function __destruct()
     {
         $this->uploader->Clean();
     }
 }
- 
-// ft:php
-// fileformat:unix
-// tabstop:4
-?>

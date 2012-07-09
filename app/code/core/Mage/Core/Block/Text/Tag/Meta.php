@@ -27,6 +27,11 @@
 
 class Mage_Core_Block_Text_Tag_Meta extends Mage_Core_Block_Text
 {
+    /**
+     * @todo
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         if (!$this->getContentType()) {

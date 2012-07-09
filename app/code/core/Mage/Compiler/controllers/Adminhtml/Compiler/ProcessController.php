@@ -35,6 +35,11 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
 {
     protected $_compiler = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         parent::preDispatch();
@@ -52,6 +57,12 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
         }
         return $this->_compiler;
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('System'))->_title($this->__('Tools'))->_title($this->__('Compilation'));
@@ -61,6 +72,11 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function runAction()
     {
         try {
@@ -78,6 +94,11 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function recompileAction()
     {
         /**
@@ -89,6 +110,11 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
         exit;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function disableAction()
     {
         $this->_getCompiler()->registerIncludePath(false);
@@ -98,6 +124,11 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function enableAction()
     {
         $this->_getCompiler()->registerIncludePath();
@@ -107,6 +138,11 @@ class Mage_Compiler_Adminhtml_Compiler_ProcessController extends Mage_Adminhtml_
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/tools/compiler');

@@ -220,6 +220,11 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
         return '&nbsp;';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCreditmemo()
     {
         return Mage::registry('current_creditmemo');
@@ -450,7 +455,8 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
      * @see self::_canEditQty
      * @see self::canEditQty
      */
-    public function setCanEditQty($value) {
+    public function setCanEditQty($value)
+    {
         $this->_canEditQty = $value;
         return $this;
     }
@@ -484,6 +490,11 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canCapture()
     {
         if (Mage::getSingleton('admin/session')->isAllowed('sales/order/actions/capture')) {
@@ -492,6 +503,12 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * @return
+     */
     public function formatPrice($price)
     {
         return $this->getOrder()->formatPrice($price);
@@ -521,7 +538,13 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
      * CREDITMEMO
      */
 
-    public function canReturnToStock() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function canReturnToStock()
+    {
         $canReturnToStock = Mage::getStoreConfig(Mage_CatalogInventory_Model_Stock_Item::XML_PATH_CAN_SUBTRACT);
         if (Mage::getStoreConfig(Mage_CatalogInventory_Model_Stock_Item::XML_PATH_CAN_SUBTRACT)) {
             return true;
@@ -535,7 +558,8 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
      * @param Mage_Sales_Model_Order_Creditmemo_Item $item
      * @return bool
      */
-    public function canReturnItemToStock($item=null) {
+    public function canReturnItemToStock($item=null)
+    {
         $canReturnToStock = Mage::getStoreConfig(Mage_CatalogInventory_Model_Stock_Item::XML_PATH_CAN_SUBTRACT);
         if (!is_null($item)) {
             if (!$item->hasCanReturnToStock()) {
@@ -551,6 +575,7 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
         }
         return $canReturnToStock;
     }
+    
     /**
      * Whether to show 'Return to stock' column for item parent
      * @param Mage_Sales_Model_Order_Creditmemo_Item $item
@@ -605,6 +630,11 @@ class  Mage_Adminhtml_Block_Sales_Items_Abstract extends Mage_Adminhtml_Block_Te
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isShipmentRegular()
     {
         if (!$this->canShipPartiallyItem() || !$this->canShipPartially()) {

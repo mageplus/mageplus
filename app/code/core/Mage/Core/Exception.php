@@ -37,6 +37,13 @@ class Mage_Core_Exception extends Exception
 {
     protected $_messages = array();
 
+    /**
+     * @todo
+     *
+     * @param Mage_Core_Model_Message_Abstract $message
+     * 
+     * @return
+     */
     public function addMessage(Mage_Core_Model_Message_Abstract $message)
     {
         if (!isset($this->_messages[$message->getType()])) {
@@ -46,6 +53,13 @@ class Mage_Core_Exception extends Exception
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * 
+     * @return
+     */
     public function getMessages($type='')
     {
         if ('' == $type) {

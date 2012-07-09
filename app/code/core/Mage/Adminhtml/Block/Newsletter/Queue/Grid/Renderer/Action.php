@@ -34,6 +34,12 @@
 
 class Mage_Adminhtml_Block_Newsletter_Queue_Grid_Renderer_Action extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Action
 {
+    /**
+     * @todo
+     *
+     * @param Varien_Object $row
+     * @return
+     */
     public function render(Varien_Object $row)
     {
         $actions = array();

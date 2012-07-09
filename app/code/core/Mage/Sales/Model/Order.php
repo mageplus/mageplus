@@ -1097,6 +1097,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Item $quoteItem
+     * 
+     * @return
+     */
     public function hold()
     {
         if (!$this->canHold()) {
@@ -1395,6 +1402,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $configPath
+     * 
+     * @return
+     */
     protected function _getEmails($configPath)
     {
         $data = Mage::getStoreConfig($configPath, $this->getStoreId());
@@ -1406,6 +1420,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 
 /*********************** ADDRESSES ***************************/
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAddressesCollection()
     {
         if (is_null($this->_addresses)) {
@@ -1422,6 +1441,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this->_addresses;
     }
 
+    /**
+     * @todo
+     *
+     * @param $addressId
+     * 
+     * @return
+     */
     public function getAddressById($addressId)
     {
         foreach ($this->getAddressesCollection() as $address) {
@@ -1432,6 +1458,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Address $address
+     * 
+     * @return
+     */
     public function addAddress(Mage_Sales_Model_Order_Address $address)
     {
         $address->setOrder($this)->setParentId($this->getId());
@@ -1441,6 +1474,14 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $filterByTypes
+     * @param $nonChildrenOnly
+     * 
+     * @return
+     */
     public function getItemsCollection($filterByTypes = array(), $nonChildrenOnly = false)
     {
         if (is_null($this->_items)) {
@@ -1525,6 +1566,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $collection;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAllItems()
     {
         $items = array();
@@ -1536,6 +1582,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $items;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAllVisibleItems()
     {
         $items = array();
@@ -1547,11 +1598,25 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $items;
     }
 
+    /**
+     * @todo
+     *
+     * @param $itemId
+     * 
+     * @return
+     */
     public function getItemById($itemId)
     {
         return $this->getItemsCollection()->getItemById($itemId);
     }
 
+    /**
+     * @todo
+     *
+     * @param $quoteItemId
+     * 
+     * @return
+     */
     public function getItemByQuoteItemId($quoteItemId)
     {
         foreach ($this->getItemsCollection() as $item) {
@@ -1562,6 +1627,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Item $item
+     *
+     * @return
+     */
     public function addItem(Mage_Sales_Model_Order_Item $item)
     {
         $item->setOrder($this);
@@ -1588,6 +1660,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
 
 /*********************** PAYMENTS ***************************/
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPaymentsCollection()
     {
         if (is_null($this->_payments)) {
@@ -1603,6 +1680,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this->_payments;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAllPayments()
     {
         $payments = array();
@@ -1614,7 +1696,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $payments;
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $paymentId
+     * 
+     * @return
+     */
     public function getPaymentById($paymentId)
     {
         foreach ($this->getPaymentsCollection() as $payment) {
@@ -1625,6 +1713,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Payment $payment
+     * 
+     * @return
+     */
     public function addPayment(Mage_Sales_Model_Order_Payment $payment)
     {
         $payment->setOrder($this)
@@ -1635,6 +1730,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Payment $payment
+     * 
+     * @return
+     */
     public function setPayment(Mage_Sales_Model_Order_Payment $payment)
     {
         if (!$this->getIsMultiPayment() && ($old = $this->getPayment())) {
@@ -1700,6 +1802,13 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $history;
     }
 
+    /**
+     * @todo
+     *
+     * @param $statusId
+     * 
+     * @return
+     */
     public function getStatusHistoryById($statusId)
     {
         foreach ($this->getStatusHistoryCollection() as $status) {
@@ -1769,6 +1878,15 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this->formatPricePrecision($price, 2, $addBrackets);
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * @param $precision
+     * @param $addBrackets
+     * 
+     * @return
+     */
     public function formatPricePrecision($price, $precision, $addBrackets = false)
     {
         return $this->getOrderCurrency()->formatPrecision($price, $precision, array(), true, $addBrackets);
@@ -1809,16 +1927,36 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this->getData('store_currency');
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * 
+     * @return
+     */
     public function formatBasePrice($price)
     {
         return $this->formatBasePricePrecision($price, 2);
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * @param $precision
+     * 
+     * @return
+     */
     public function formatBasePricePrecision($price, $precision)
     {
         return $this->getBaseCurrency()->formatPrecision($price, $precision);
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function isCurrencyDifferent()
     {
         return $this->getOrderCurrencyCode() != $this->getBaseCurrencyCode();
@@ -1848,6 +1986,14 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return max($total, 0);
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $index
+     * 
+     * @return
+     */
     public function getData($key='', $index=null)
     {
         if ($key == 'total_due') {
@@ -1965,7 +2111,6 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this->getCreditmemosCollection()->count();
     }
 
-
     /**
      * Retrieve array of related objects
      *
@@ -1978,6 +2123,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this->_relatedObjects;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomerName()
     {
         if ($this->getCustomerFirstname()) {
@@ -2012,6 +2162,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return Mage::helper('core')->formatDate($this->getCreatedAtStoreDate(), $format, true);
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getEmailCustomerNote()
     {
         if ($this->getCustomerNoteNotify()) {
@@ -2155,6 +2310,11 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return parent::_afterSave();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getStoreGroupName()
     {
         $storeId = $this->getStoreId();
@@ -2189,11 +2349,21 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getIsNotVirtual()
     {
         return !$this->getIsVirtual();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getFullTaxInfo()
     {
         $rates = Mage::getModel('tax/sales_order_tax')->getCollection()->loadByOrder($this)->toArray();

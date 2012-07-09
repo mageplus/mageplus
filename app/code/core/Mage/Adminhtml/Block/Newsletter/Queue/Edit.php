@@ -57,8 +57,13 @@ class Mage_Adminhtml_Block_Newsletter_Queue_Edit extends Mage_Adminhtml_Block_Te
         return Mage::registry('current_queue');
     }
 
-    protected  function _beforeToHtml() {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
+    protected  function _beforeToHtml()
+    {
         $this->setTemplate('newsletter/queue/edit.phtml');
 
         $this->setChild('form',
@@ -68,6 +73,11 @@ class Mage_Adminhtml_Block_Newsletter_Queue_Edit extends Mage_Adminhtml_Block_Te
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
         if ($this->getTemplateId()) {
@@ -78,6 +88,11 @@ class Mage_Adminhtml_Block_Newsletter_Queue_Edit extends Mage_Adminhtml_Block_Te
         return $this->getUrl('*/*/save', $params);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         // Load Wysiwyg on demand and Prepare layout

@@ -33,6 +33,13 @@
  */
 class Mage_Api_Model_Wsdl_Config_Element extends Varien_Simplexml_Element
 {
+    /**
+     * @todo
+     *
+     * @param $source
+     * @param bool $overwrite
+     * @return
+     */
     public function extend($source, $overwrite=false)
     {
         if (!$source instanceof Varien_Simplexml_Element) {

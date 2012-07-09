@@ -59,6 +59,11 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _ajaxRedirectResponse()
     {
         $this->getResponse()
@@ -123,6 +128,11 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
         return $output;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getAdditionalHtml()
     {
         $layout = $this->getLayout();
@@ -200,6 +210,11 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function shippingMethodAction()
     {
         if ($this->_expireAjax()) {
@@ -209,6 +224,11 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function reviewAction()
     {
         if ($this->_expireAjax()) {
@@ -244,6 +264,11 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function failureAction()
     {
         $lastQuoteId = $this->getOnepage()->getCheckout()->getLastQuoteId();
@@ -258,7 +283,11 @@ class Mage_Checkout_OnepageController extends Mage_Checkout_Controller_Action
         $this->renderLayout();
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAdditionalAction()
     {
         $this->getResponse()->setBody($this->_getAdditionalHtml());

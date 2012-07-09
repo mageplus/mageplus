@@ -75,7 +75,6 @@ extends Mage_Connect_Command
         }
     }
 
-
     /**
      * Display/get dependencies
      * @param string $command
@@ -113,6 +112,14 @@ extends Mage_Connect_Command
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $command
+     * @param $options
+     * @param array $params
+     * @return
+     */
     public function doConvert($command, $options, $params)
     {
         $this->cleanupParams($params);
@@ -128,7 +135,5 @@ extends Mage_Connect_Command
         } catch (Exception $e) {
             $this->doError($command, $e->getMessage());
         }
-
     }
-
 }

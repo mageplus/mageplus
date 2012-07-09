@@ -35,6 +35,12 @@
 class Mage_Downloadable_Block_Adminhtml_Sales_Items_Column_Downloadable_Name extends Mage_Adminhtml_Block_Sales_Items_Column_Name
 {
     protected $_purchased = null;
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLinks()
     {
         $this->_purchased = Mage::getModel('downloadable/link_purchased')
@@ -45,6 +51,11 @@ class Mage_Downloadable_Block_Adminhtml_Sales_Items_Column_Downloadable_Name ext
         return $this->_purchased;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLinksTitle()
     {
         if ($this->_purchased && $this->_purchased->getLinkSectionTitle()) {
@@ -53,4 +64,3 @@ class Mage_Downloadable_Block_Adminhtml_Sales_Items_Column_Downloadable_Name ext
         return Mage::getStoreConfig(Mage_Downloadable_Model_Link::XML_PATH_LINKS_TITLE);
     }
 }
-?>

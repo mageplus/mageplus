@@ -65,6 +65,11 @@ class Mage_Checkout_Block_Onepage_Billing extends Mage_Checkout_Block_Onepage_Ab
         parent::_construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isUseBillingAddressForShipping()
     {
         if (($this->getQuote()->getIsVirtual())
@@ -158,6 +163,11 @@ class Mage_Checkout_Block_Onepage_Billing extends Mage_Checkout_Block_Onepage_Ab
         return !$this->getQuote()->isVirtual();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
     }
@@ -186,6 +196,11 @@ class Mage_Checkout_Block_Onepage_Billing extends Mage_Checkout_Block_Onepage_Ab
         return $this->_getTaxvat()->isEnabled();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTaxvatHtml()
     {
         return $this->_getTaxvat()

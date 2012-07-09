@@ -33,6 +33,11 @@ class Mage_SalesRule_Model_Rule_Action_Collection extends Mage_Rule_Model_Action
         $this->setType('salesrule/rule_action_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNewChildSelectOptions()
     {
         $actions = parent::getNewChildSelectOptions();

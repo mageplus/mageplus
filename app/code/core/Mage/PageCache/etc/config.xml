@@ -124,4 +124,11 @@
             </external_page_cache>
         </system>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_PageCache/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

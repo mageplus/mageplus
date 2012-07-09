@@ -69,6 +69,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $this->_destElementId;
     }
 
+    /**
+     * @todo
+     *
+     * @param $elementId
+     * @return
+     */
     public function setDestElementId($elementId)
     {
         $this->_destElementId = $elementId;
@@ -143,6 +149,11 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getActiveTabId()
     {
         return $this->getTabId($this->_tabs[$this->_activeTab]);
@@ -187,6 +198,11 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         if ($activeTab = $this->getRequest()->getParam('active_tab')) {
@@ -216,11 +232,21 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getJsObjectName()
     {
         return $this->getId() . 'JsTabs';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabsIds()
     {
         if (empty($this->_tabs))
@@ -228,6 +254,13 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return array_keys($this->_tabs);
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @param $withPrefix
+     * @return
+     */
     public function getTabId($tab, $withPrefix = true)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -236,6 +269,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return ($withPrefix ? $this->getId().'_' : '').$tab->getId();
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function canShowTab($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -244,6 +283,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function getTabIsHidden($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -252,6 +297,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $tab->getIsHidden();
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function getTabUrl($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -266,6 +317,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return '#';
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function getTabTitle($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -274,6 +331,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $tab->getTitle();
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function getTabClass($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -285,7 +348,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $tab->getClass();
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function getTabLabel($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {
@@ -294,6 +362,12 @@ class Mage_Adminhtml_Block_Widget_Tabs extends Mage_Adminhtml_Block_Widget
         return $tab->getLabel();
     }
 
+    /**
+     * @todo
+     *
+     * @param $tab
+     * @return
+     */
     public function getTabContent($tab)
     {
         if ($tab instanceof Mage_Adminhtml_Block_Widget_Tab_Interface) {

@@ -38,6 +38,14 @@ class Mage_Review_Block_Helper extends Mage_Core_Block_Template
         'short'   => 'review/helper/summary_short.phtml'
     );
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @param $templateType
+     * @param $displayIfNoReviews
+     * @return
+     */
     public function getSummaryHtml($product, $templateType, $displayIfNoReviews)
     {
         // pick template among available
@@ -57,16 +65,31 @@ class Mage_Review_Block_Helper extends Mage_Core_Block_Template
         return $this->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRatingSummary()
     {
         return $this->getProduct()->getRatingSummary()->getRatingSummary();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewsCount()
     {
         return $this->getProduct()->getRatingSummary()->getReviewsCount();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewsUrl()
     {
         return Mage::getUrl('review/product/list', array(

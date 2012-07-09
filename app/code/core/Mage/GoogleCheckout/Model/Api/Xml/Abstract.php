@@ -33,12 +33,24 @@ require_once('googlerequest.php');
 
 abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
 {
+    /**
+     * @todo
+     *
+     * @param $text
+     * @param $nl
+     * @return
+     */
     public function log($text, $nl=true)
     {
         error_log(print_r($text, 1) . ($nl ? "\n" : ''), 3, Mage::getBaseDir('log') . DS . 'callback.log');
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function __()
     {
         $args = func_get_args();
@@ -47,6 +59,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return Mage::app()->getTranslator()->translate($args);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMerchantId()
     {
         if (!$this->hasData('merchant_id')) {
@@ -55,6 +72,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $this->getData('merchant_id');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMerchantKey()
     {
         if (!$this->hasData('merchant_key')) {
@@ -63,6 +85,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $this->getData('merchant_key');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getServerType()
     {
         if (!$this->hasData('server_type')) {
@@ -74,6 +101,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $this->getData('server_type');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLocale()
     {
         if (!$this->hasData('locale')) {
@@ -82,6 +114,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $this->getData('locale');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrency()
     {
         if (!$this->hasData('currency')) {
@@ -141,6 +178,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $this->getData('g_response');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getBaseApiUrl()
     {
         $url = 'https://';
@@ -152,6 +194,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $url;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     abstract protected function _getApiUrl();
 
     public function _call($xml)
@@ -203,6 +250,11 @@ abstract class Mage_GoogleCheckout_Model_Api_Xml_Abstract extends Varien_Object
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCallbackUrl()
     {
         return Mage::getUrl(

@@ -25,6 +25,11 @@
  */
 class Mage_Checkout_Model_Config_Source_Cart_Summary
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

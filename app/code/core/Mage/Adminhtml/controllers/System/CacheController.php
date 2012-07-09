@@ -280,6 +280,11 @@ class Mage_Adminhtml_System_CacheController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function refreshCatalogRewritesAction()
     {
         try {
@@ -298,6 +303,11 @@ class Mage_Adminhtml_System_CacheController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clearImagesCacheAction()
     {
         try {
@@ -316,6 +326,11 @@ class Mage_Adminhtml_System_CacheController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function refreshLayeredNavigationAction()
     {
         try {
@@ -334,6 +349,11 @@ class Mage_Adminhtml_System_CacheController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/cache');

@@ -29,6 +29,12 @@ class Mage_Adminhtml_Model_System_Config_Source_Country
 {
     protected $_options;
 
+    /**
+     * @todo
+     *
+     * @param bool $isMultiselect
+     * @return
+     */
     public function toOptionArray($isMultiselect=false)
     {
         if (!$this->_options) {

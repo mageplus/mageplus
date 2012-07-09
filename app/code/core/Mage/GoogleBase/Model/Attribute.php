@@ -66,6 +66,12 @@ class Mage_GoogleBase_Model_Attribute extends Mage_Core_Model_Abstract
         $this->_init('googlebase/attribute');
     }
 
+    /**
+     * @todo
+     *
+     * @param $setId
+     * @return
+     */
     public function getAllowedAttributes($setId)
     {
         $attributes = Mage::getModel('catalog/product')->getResource()

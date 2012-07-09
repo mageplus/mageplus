@@ -39,6 +39,11 @@ class Mage_Sales_Block_Order_Shipment extends Mage_Core_Block_Template
         $this->setTemplate('sales/order/shipment.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -50,6 +55,11 @@ class Mage_Sales_Block_Order_Shipment extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentInfoHtml()
     {
         return $this->getChildHtml('payment_info');
@@ -91,27 +101,63 @@ class Mage_Sales_Block_Order_Shipment extends Mage_Core_Block_Template
         return Mage::helper('sales')->__('View Another Order');
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getInvoiceUrl($order)
     {
         return Mage::getUrl('*/*/invoice', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getViewUrl($order)
     {
         return Mage::getUrl('*/*/view', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
     public function getCreditmemoUrl($order)
     {
         return Mage::getUrl('*/*/creditmemo', array('order_id' => $order->getId()));
     }
 
-
-    public function getPrintShipmentUrl($shipment){
+    /**
+     * @todo
+     *
+     * @param $shipment
+     *
+     * @return
+     */
+    public function getPrintShipmentUrl($shipment)
+    {
         return Mage::getUrl('*/*/printShipment', array('shipment_id' => $shipment->getId()));
     }
 
-    public function getPrintAllShipmentsUrl($order){
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
+    public function getPrintAllShipmentsUrl($order)
+    {
         return Mage::getUrl('*/*/printShipment', array('order_id' => $order->getId()));
     }
 }

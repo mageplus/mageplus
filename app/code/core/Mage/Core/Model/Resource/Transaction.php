@@ -55,6 +55,7 @@ class Mage_Core_Model_Resource_Transaction
      * @var array
      */
     protected $_beforeCommitCallbacks = array();
+    
     /**
      * Begin transaction for all involved object resources
      *
@@ -126,7 +127,7 @@ class Mage_Core_Model_Resource_Transaction
     /**
      * Add callback function which will be called before commit transactions
      *
-     * @param callback $callback
+     * @param string $callback
      * @return Mage_Core_Model_Resource_Transaction
      */
     public function addCommitCallback($callback)

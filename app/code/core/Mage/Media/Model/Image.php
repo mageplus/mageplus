@@ -90,6 +90,11 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return $this->_config;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImage()
     {
         if(is_null($this->_image)) {
@@ -99,6 +104,11 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return $this->_image;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTmpImage()
     {
         if(is_null($this->_image)) {
@@ -135,11 +145,22 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return $this->getData('destanation_dimensions');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getExtension()
     {
         return substr($this->getFileName(), strrpos($this->getFileName(), '.')+1);
     }
 
+    /**
+     * @todo
+     *
+     * @param bool $useParams
+     * @return
+     */
     public function getFilePath($useParams=false)
     {
         if($useParams && sizeof($this->getParams())) {
@@ -152,6 +173,12 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
              . ( ( $useParams && $this->getParam('extension')) ? $this->getParam('extension') : $this->getExtension() );
     }
 
+    /**
+     * @todo
+     *
+     * @param bool $useParams
+     * @return
+     */
     public function getFileUrl($useParams=false)
     {
         if($useParams && sizeof($this->getParams())) {
@@ -164,11 +191,23 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
              . ( ( $useParams && $this->getParam('extension')) ? $this->getParam('extension') : $this->getExtension() );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getName()
     {
         return substr($this->getFileName(), 0, strrpos($this->getFileName(), '.'));
     }
 
+    /**
+     * @todo
+     *
+     * @param $param
+     * @param $value
+     * @return
+     */
     public function addParam($param, $value=null)
     {
         if(is_array($param)) {
@@ -180,6 +219,13 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $param
+     * @param $value
+     * @return
+     */
     public function setParam($param, $value=null)
     {
         if(is_array($param)) {
@@ -191,6 +237,12 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $param
+     * @return
+     */
     public function getParam($param)
     {
         if(isset($this->_params[$param])) {
@@ -200,11 +252,21 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getParams()
     {
         return $this->_params;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getParamsSum()
     {
         return md5(serialize($this->_params));
@@ -261,11 +323,21 @@ class Mage_Media_Model_Image extends Mage_Core_Model_Abstract
         return $this->getFileUrl(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasSpecialImage()
     {
         return $this->_getResource()->hasSpecialImage($this);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _removeResources()
     {
         if ($this->_image) {

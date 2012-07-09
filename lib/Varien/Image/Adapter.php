@@ -32,6 +32,12 @@ class Varien_Image_Adapter
     const ADAPTER_IM    = 'IMAGEMAGIC';
     const ADAPTER_IME   = 'IMAGEMAGIC_EXTERNAL';
 
+    /**
+     * @todo
+     *
+     * @param $adapter
+     * @return
+     */
     public static function factory($adapter)
     {
         switch( $adapter ) {

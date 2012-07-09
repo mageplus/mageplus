@@ -66,6 +66,12 @@ abstract class Mage_Dataflow_Model_Convert_Adapter_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getNumber($value)
     {
         if (!($separator = $this->getBatchParams('decimal_separator'))) {

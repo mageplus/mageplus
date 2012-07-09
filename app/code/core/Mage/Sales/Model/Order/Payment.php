@@ -251,16 +251,31 @@ class Mage_Sales_Model_Order_Payment extends Mage_Payment_Model_Info
         return true;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function canRefund()
     {
         return $this->getMethodInstance()->canRefund();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function canRefundPartialPerInvoice()
     {
         return $this->getMethodInstance()->canRefundPartialPerInvoice();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function canCapturePartial()
     {
         return $this->getMethodInstance()->canCapturePartial();

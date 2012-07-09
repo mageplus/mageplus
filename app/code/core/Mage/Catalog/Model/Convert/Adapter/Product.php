@@ -99,6 +99,52 @@ class Mage_Catalog_Model_Convert_Adapter_Product
 
     protected $_toNumber = array();
 
+    protected $_productId = '';
+
+    /**
+     * Initialize convert adapter model for products collection
+     *
+     */
+    public function __construct()
+    {
+        $fieldset = Mage::getConfig()->getFieldset('catalog_product_dataflow', 'admin');
+        foreach ($fieldset as $code => $node) {
+            /* @var $node Mage_Core_Model_Config_Element */
+            if ($node->is('inventory')) {
+                foreach ($node->product_type->children() as $productType) {
+                    $productType = $productType->getName();
+                    $this->_inventoryFieldsProductTypes[$productType][] = $code;
+                    if ($node->is('use_config')) {
+                        $this->_inventoryFieldsProductTypes[$productType][] = 'use_config_' . $code;
+                    }
+                }
+
+                $this->_inventoryFields[] = $code;
+                if ($node->is('use_config')) {
+                    $this->_inventoryFields[] = 'use_config_'.$code;
+                }
+            }
+            if ($node->is('required')) {
+                $this->_requiredFields[] = $code;
+            }
+            if ($node->is('ignore')) {
+                $this->_ignoreFields[] = $code;
+            }
+            if ($node->is('to_number')) {
+                $this->_toNumber[] = $code;
+            }
+        }
+
+        $this->setVar('entity_type', 'catalog/product');
+        if (!Mage::registry('Object_Cache_Product')) {
+            $this->setProduct(Mage::getModel('catalog/product'));
+        }
+
+        if (!Mage::registry('Object_Cache_StockItem')) {
+            $this->setStockItem(Mage::getModel('cataloginventory/stock_item'));
+        }
+    }
+    
     /**
      * Retrieve event prefix for adapter
      *
@@ -307,7 +353,7 @@ class Mage_Catalog_Model_Convert_Adapter_Product
     /**
      *  Init stores
      */
-    protected function _initStores ()
+    protected function _initStores()
     {
         if (is_null($this->_stores)) {
             $this->_stores = Mage::app()->getStores(true, true);
@@ -363,6 +409,11 @@ class Mage_Catalog_Model_Convert_Adapter_Product
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function parse()
     {
         $batchModel = Mage::getSingleton('dataflow/batch');
@@ -380,52 +431,6 @@ class Mage_Catalog_Model_Convert_Adapter_Product
         }
     }
 
-    protected $_productId = '';
-
-    /**
-     * Initialize convert adapter model for products collection
-     *
-     */
-    public function __construct()
-    {
-        $fieldset = Mage::getConfig()->getFieldset('catalog_product_dataflow', 'admin');
-        foreach ($fieldset as $code => $node) {
-            /* @var $node Mage_Core_Model_Config_Element */
-            if ($node->is('inventory')) {
-                foreach ($node->product_type->children() as $productType) {
-                    $productType = $productType->getName();
-                    $this->_inventoryFieldsProductTypes[$productType][] = $code;
-                    if ($node->is('use_config')) {
-                        $this->_inventoryFieldsProductTypes[$productType][] = 'use_config_' . $code;
-                    }
-                }
-
-                $this->_inventoryFields[] = $code;
-                if ($node->is('use_config')) {
-                    $this->_inventoryFields[] = 'use_config_'.$code;
-                }
-            }
-            if ($node->is('required')) {
-                $this->_requiredFields[] = $code;
-            }
-            if ($node->is('ignore')) {
-                $this->_ignoreFields[] = $code;
-            }
-            if ($node->is('to_number')) {
-                $this->_toNumber[] = $code;
-            }
-        }
-
-        $this->setVar('entity_type', 'catalog/product');
-        if (!Mage::registry('Object_Cache_Product')) {
-            $this->setProduct(Mage::getModel('catalog/product'));
-        }
-
-        if (!Mage::registry('Object_Cache_StockItem')) {
-            $this->setStockItem(Mage::getModel('cataloginventory/stock_item'));
-        }
-    }
-
     /**
      * Retrieve not loaded collection
      *
@@ -440,6 +445,12 @@ class Mage_Catalog_Model_Convert_Adapter_Product
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product $object
+     * @return
+     */
     public function setProduct(Mage_Catalog_Model_Product $object)
     {
         $id = Mage::objects()->save($object);
@@ -447,22 +458,43 @@ class Mage_Catalog_Model_Convert_Adapter_Product
         Mage::register('Object_Cache_Product', $id);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProduct()
     {
         return Mage::objects()->load(Mage::registry('Object_Cache_Product'));
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_CatalogInventory_Model_Stock_Item $object
+     * @return
+     */
     public function setStockItem(Mage_CatalogInventory_Model_Stock_Item $object)
     {
         $id = Mage::objects()->save($object);
         Mage::register('Object_Cache_StockItem', $id);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStockItem()
     {
         return Mage::objects()->load(Mage::registry('Object_Cache_StockItem'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         $stores = array();

@@ -30,6 +30,12 @@ class Mage_Adminhtml_Model_System_Config_Source_Allregion
     protected $_countries;
     protected $_options;
 
+    /**
+     * @todo
+     *
+     * @param bool $isMultiselect
+     * @return
+     */
     public function toOptionArray($isMultiselect=false)
     {
         if (!$this->_options) {
@@ -64,6 +70,13 @@ class Mage_Adminhtml_Model_System_Config_Source_Allregion
         return $options;
     }
 
+    /**
+     * @todo
+     *
+     * @param $a
+     * $param $b
+     * @return
+     */
     public function sortRegionCountries($a, $b)
     {
         return strcmp($this->_countries[$a], $this->_countries[$b]);

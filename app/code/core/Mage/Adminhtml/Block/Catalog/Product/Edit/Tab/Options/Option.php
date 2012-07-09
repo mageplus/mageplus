@@ -53,11 +53,22 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         $this->setCanEditPrice(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemCount()
     {
         return $this->_itemCount;
     }
 
+    /**
+     * @todo
+     *
+     * @param $itemCount
+     * @return
+     */
     public function setItemCount($itemCount)
     {
         $this->_itemCount = max($this->_itemCount, $itemCount);
@@ -82,6 +93,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         return $this->_productInstance;
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @return
+     */
     public function setProduct($product)
     {
         $this->_productInstance = $product;
@@ -118,6 +135,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
          return $this->getProduct()->getOptionsReadonly();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('delete_button',
@@ -141,6 +163,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonId()
     {
         $buttonId = $this->getLayout()
@@ -149,11 +176,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         return $buttonId;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTypeSelectHtml()
     {
         $select = $this->getLayout()->createBlock('adminhtml/html_select')
@@ -167,6 +204,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         return $select->getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRequireSelectHtml()
     {
         $select = $this->getLayout()->createBlock('adminhtml/html_select')
@@ -213,6 +255,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         return $templates;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOptionValues()
     {
         $optionsArr = array_reverse($this->getProduct()->getOptions(), true);
@@ -334,6 +381,13 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Option extends Mage_
         return $checkbox;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @param $type
+     * @return
+     */
     public function getPriceValue($value, $type)
     {
         if ($type == 'percent') {

@@ -39,11 +39,21 @@ class Mage_Rss_Model_Session extends Mage_Core_Model_Session_Abstract
         $this->init('rss');
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function isAdminLoggedIn()
     {
         return $this->getAdmin() && $this->getAdmin()->getId();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function isCustomerLoggedIn()
     {
         return $this->getCustomer() && $this->getCustomer()->getId();

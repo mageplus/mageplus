@@ -267,6 +267,11 @@ class Mage_Checkout_MultishippingController extends Mage_Checkout_Controller_Act
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function backToAddressesAction()
     {
         $this->_getState()->setActiveStep(
@@ -292,6 +297,11 @@ class Mage_Checkout_MultishippingController extends Mage_Checkout_Controller_Act
         $this->_redirect('*/*/addresses');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _validateMinimumAmount()
     {
         if (!$this->_getCheckout()->validateMinimumAmount()) {
@@ -326,6 +336,11 @@ class Mage_Checkout_MultishippingController extends Mage_Checkout_Controller_Act
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function backToShippingAction()
     {
         $this->_getState()->setActiveStep(
@@ -337,6 +352,11 @@ class Mage_Checkout_MultishippingController extends Mage_Checkout_Controller_Act
         $this->_redirect('*/*/shipping');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function shippingPostAction()
     {
         $shippingMethods = $this->getRequest()->getPost('shipping_method');
@@ -422,6 +442,11 @@ class Mage_Checkout_MultishippingController extends Mage_Checkout_Controller_Act
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function backToBillingAction()
     {
         $this->_getState()->setActiveStep(
@@ -468,6 +493,11 @@ class Mage_Checkout_MultishippingController extends Mage_Checkout_Controller_Act
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function overviewPostAction()
     {
         if (!$this->_validateMinimumAmount()) {

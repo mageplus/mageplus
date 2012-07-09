@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Simple
      */
     protected $_product = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form();

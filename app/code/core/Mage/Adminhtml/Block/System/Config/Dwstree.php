@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_System_Config_Dwstree extends Mage_Adminhtml_Block_Wi
         $this->setDestElementId('system_config_form');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function initTabs()
     {
         $section = $this->getRequest()->getParam('section');

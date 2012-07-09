@@ -42,6 +42,11 @@ class Mage_Adminhtml_Model_System_Config_Backend_Locale_Timezone extends Mage_Co
      */
     const ALL_WITH_BC = 4095;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeSave()
     {
         $allWithBc = self::ALL_WITH_BC;

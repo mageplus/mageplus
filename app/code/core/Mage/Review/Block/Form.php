@@ -67,18 +67,33 @@ class Mage_Review_Block_Form extends Mage_Core_Block_Template
             ->assign('messages', Mage::getSingleton('review/session')->getMessages(true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductInfo()
     {
         $product = Mage::getModel('catalog/product');
         return $product->load($this->getRequest()->getParam('id'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAction()
     {
         $productId = Mage::app()->getRequest()->getParam('id', false);
         return Mage::getUrl('review/product/post', array('id' => $productId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRatings()
     {
         $ratingCollection = Mage::getModel('rating/rating')

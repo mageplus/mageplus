@@ -205,6 +205,11 @@ class Mage_Adminhtml_Sales_Order_StatusController extends Mage_Adminhtml_Control
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unassignAction()
     {
         $state  = $this->getRequest()->getParam('state');

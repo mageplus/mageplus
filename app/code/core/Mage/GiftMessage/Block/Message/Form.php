@@ -43,6 +43,11 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         $this->setTemplate('giftmessage/form.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
         return $this->helper('giftmessage/url')->getSaveUrl(
@@ -53,6 +58,11 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditUrl()
     {
         return $this->helper('giftmessage/url')->getEditUrl(
@@ -61,6 +71,11 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getButtonUrl()
     {
         return $this->helper('giftmessage/url')->getButtonUrl(
@@ -69,6 +84,11 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRemoveUrl()
     {
         return $this->helper('giftmessage/url')->getRemoveUrl(
@@ -78,6 +98,11 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initMessage()
     {
         $this->_giftMessage = $this->helper('giftmessage/message')->getGiftMessage(
@@ -86,6 +111,11 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMessage()
     {
         if(is_null($this->_giftMessage)) {
@@ -95,20 +125,35 @@ class Mage_GiftMessage_Block_Message_Form extends Mage_Core_Block_Template
         return $this->_giftMessage;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getEscaped($value)
     {
         return $this->htmlEscape($value);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getEscapedForJs($value)
     {
         return addcslashes($value, "\\'\n\r\t");
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUniqueId()
     {
         return $this->getRequest()->getParam('uniqueId');
     }
-
-
 }

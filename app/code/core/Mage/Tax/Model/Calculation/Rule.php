@@ -86,6 +86,11 @@ class Mage_Tax_Model_Calculation_Rule extends Mage_Core_Model_Abstract
         return parent::_afterDelete();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveCalculationData()
     {
         $ctc = $this->getData('tax_customer_class');
@@ -108,6 +113,11 @@ class Mage_Tax_Model_Calculation_Rule extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCalculationModel()
     {
         if (is_null($this->_calculationModel)) {
@@ -116,19 +126,33 @@ class Mage_Tax_Model_Calculation_Rule extends Mage_Core_Model_Abstract
         return $this->_calculationModel;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRates()
     {
         return $this->getCalculationModel()->getRates($this->getId());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomerTaxClasses()
     {
         return $this->getCalculationModel()->getCustomerTaxClasses($this->getId());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductTaxClasses()
     {
         return $this->getCalculationModel()->getProductTaxClasses($this->getId());
     }
 }
-

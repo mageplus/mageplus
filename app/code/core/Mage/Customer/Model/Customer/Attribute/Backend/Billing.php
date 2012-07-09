@@ -33,6 +33,13 @@
  */
 class Mage_Customer_Model_Customer_Attribute_Backend_Billing extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function beforeSave($object)
     {
         $defaultBilling = $object->getDefaultBilling();
@@ -41,6 +48,13 @@ class Mage_Customer_Model_Customer_Attribute_Backend_Billing extends Mage_Eav_Mo
         }
     }
     
+    /**
+     * @todo
+     *
+     * @param $object
+     * 
+     * @return
+     */
     public function afterSave($object)
     {
         if ($defaultBilling = $object->getDefaultBilling()) 

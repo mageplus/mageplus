@@ -34,7 +34,13 @@
  */
 class Mage_Catalog_Model_Product_Attribute_Frontend_Image extends Mage_Eav_Model_Entity_Attribute_Frontend_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @param $object
+     * @param $size
+     * @return
+     */
     public function getUrl($object, $size=null)
     {
         $url = false;

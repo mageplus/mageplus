@@ -34,7 +34,13 @@
 
 class Mage_Checkout_Model_Cart_Payment_Api extends Mage_Checkout_Model_Api_Resource
 {
-
+    /**
+     * @todo
+     *
+     * @param $data
+     * 
+     * @return
+     */
     protected function _preparePaymentData($data)
     {
         if (!(is_array($data) && is_null($data[0]))) {
@@ -77,6 +83,13 @@ class Mage_Checkout_Model_Cart_Payment_Api extends Mage_Checkout_Model_Api_Resou
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $method
+     * 
+     * @return
+     */
     protected function _getPaymentMethodAvailableCcTypes($method)
     {
         $ccTypes = Mage::getSingleton('payment/config')->getCcTypes();

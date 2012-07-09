@@ -34,6 +34,11 @@
 
 class Mage_Adminhtml_System_AccountController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('System'))->_title($this->__('My Account'));
@@ -89,6 +94,11 @@ class Mage_Adminhtml_System_AccountController extends Mage_Adminhtml_Controller_
         $this->getResponse()->setRedirect($this->getUrl("*/*/"));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/myaccount');

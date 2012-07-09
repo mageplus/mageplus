@@ -41,11 +41,21 @@ class Mage_Customer_Block_Newsletter extends Mage_Customer_Block_Account_Dashboa
         $this->setTemplate('customer/form/newsletter.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsSubscribed()
     {
         return $this->getSubscriptionObject()->isSubscribed();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAction()
     {
         return $this->getUrl('*/*/save');

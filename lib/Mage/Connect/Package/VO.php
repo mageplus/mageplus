@@ -45,52 +45,98 @@ class Mage_Connect_Package_VO implements Iterator
 		'hotfix' => ''  
 		);
 
-		public function rewind() {
-		    reset($this->properties);
-		}
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function rewind()
+    {
+	reset($this->properties);
+    }
 
-		public function valid() {
-		    return current($this->properties) !== false;
-		}
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function valid()
+    {
+	return current($this->properties) !== false;
+    }
 
-		public function key() {
-		    return key($this->properties);
-		}
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function key()
+    {
+	return key($this->properties);
+    }
 
-		public function current() {
-		    return current($this->properties);
-		}
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function current()
+    {
+	return current($this->properties);
+    }
 
-		public function next() {
-		    next($this->properties);
-		}
+    /**
+     * @todo
+     *
+     * @param
+     */
+    public function next()
+    {
+	next($this->properties);
+    }
 
-		public function __get($var)
-		{
-		    if (isset($this->properties[$var])) {
-		        return $this->properties[$var];
-		    }
-		    return null;
-		}
+    /**
+     * @todo
+     *
+     * @param $var
+     * @return
+     */
+    public function __get($var)
+    {
+	if (isset($this->properties[$var])) {
+	    return $this->properties[$var];
+	}
+	
+        return null;
+    }
 
-		public function __set($var, $value)
-		{
-		    if (is_string($value)) {
-		        $value = trim($value);
-		    }
-		    if (isset($this->properties[$var])) {
-		        if ($value === null) {
-		            $value = '';
-		        }
-		        $this->properties[$var] = $value;
-		    }
-		}
+    /**
+     * @todo
+     *
+     * @param $var
+     * @param $value
+     * @return
+     */
+    public function __set($var, $value)
+    {
+	if (is_string($value)) {
+	    $value = trim($value);
+	}
+	if (isset($this->properties[$var])) {
+	    if ($value === null) {
+		$value = '';
+	    }
+            $this->properties[$var] = $value;
+	}
+    }
 
-		public function toArray()
-		{
-		    return $this->properties;
-		}
-
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function toArray()
+    {
+	return $this->properties;
+    }
 }
-
-

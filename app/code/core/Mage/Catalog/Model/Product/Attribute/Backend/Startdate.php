@@ -35,6 +35,12 @@
 
 class Mage_Catalog_Model_Product_Attribute_Backend_Startdate extends Mage_Eav_Model_Entity_Attribute_Backend_Datetime
 {
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function beforeSave($object)
     {
         $attributeName  = $this->getAttribute()->getName();

@@ -33,6 +33,11 @@ class Mage_SalesRule_Model_Rule_Condition_Combine extends Mage_Rule_Model_Condit
         $this->setType('salesrule/rule_condition_combine');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNewChildSelectOptions()
     {
         $addressCondition = Mage::getModel('salesrule/rule_condition_address');

@@ -203,18 +203,35 @@ class Mage_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abstrac
         return $this->getChildHtml('toolbar');
     }
 
+    /**
+     * @todo
+     *
+     * @param $collection
+     * @return
+     */
     public function setCollection($collection)
     {
         $this->_productCollection = $collection;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * @return
+     */
     public function addAttribute($code)
     {
         $this->_getProductCollection()->addAttributeToSelect($code);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPriceBlockTemplate()
     {
         return $this->_getData('price_block_template');

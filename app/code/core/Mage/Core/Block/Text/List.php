@@ -32,6 +32,11 @@
 
 class Mage_Core_Block_Text_List extends Mage_Core_Block_Text
 {
+    /**
+     * @todo
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         $this->setText('');

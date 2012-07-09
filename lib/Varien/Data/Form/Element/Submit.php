@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Submit extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -40,6 +46,11 @@ class Varien_Data_Form_Element_Submit extends Varien_Data_Form_Element_Abstract
         $this->setType('submit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtml()
     {
         $this->addClass('submit');

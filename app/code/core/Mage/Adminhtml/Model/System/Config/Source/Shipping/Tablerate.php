@@ -27,6 +27,11 @@
 
 class Mage_Adminhtml_Model_System_Config_Source_Shipping_Tablerate
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $tableRate = Mage::getSingleton('shipping/carrier_tablerate');

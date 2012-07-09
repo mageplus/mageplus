@@ -78,26 +78,52 @@ class Mage_Catalog_Model_Product_Media_Config implements Mage_Media_Model_Image_
         return 'tmp/' . $this->getBaseMediaUrlAddition();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseMediaPath()
     {
         return Mage::getBaseDir('media') . DS . 'catalog' . DS . 'product';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseMediaUrl()
     {
         return Mage::getBaseUrl('media') . 'catalog/product';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseTmpMediaPath()
     {
         return Mage::getBaseDir('media') . DS . $this->getBaseTmpMediaPathAddition();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseTmpMediaUrl()
     {
         return Mage::getBaseUrl('media') . $this->getBaseTmpMediaUrlAddition();
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function getMediaUrl($file)
     {
         $file = $this->_prepareFileForUrl($file);
@@ -109,6 +135,12 @@ class Mage_Catalog_Model_Product_Media_Config implements Mage_Media_Model_Image_
         return $this->getBaseMediaUrl() . '/' . $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function getMediaPath($file)
     {
         $file = $this->_prepareFileForPath($file);
@@ -120,6 +152,12 @@ class Mage_Catalog_Model_Product_Media_Config implements Mage_Media_Model_Image_
         return $this->getBaseMediaPath() . DS . $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function getTmpMediaUrl($file)
     {
         $file = $this->_prepareFileForUrl($file);
@@ -164,6 +202,12 @@ class Mage_Catalog_Model_Product_Media_Config implements Mage_Media_Model_Image_
         return $this->getBaseMediaUrlAddition() . '/' . $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function getTmpMediaPath($file)
     {
         $file = $this->_prepareFileForPath($file);
@@ -175,11 +219,23 @@ class Mage_Catalog_Model_Product_Media_Config implements Mage_Media_Model_Image_
         return $this->getBaseTmpMediaPath() . DS . $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     protected function _prepareFileForUrl($file)
     {
         return str_replace(DS, '/', $file);
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     protected function _prepareFileForPath($file)
     {
         return str_replace('/', DS, $file);

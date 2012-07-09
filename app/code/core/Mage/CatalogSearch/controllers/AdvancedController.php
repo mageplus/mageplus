@@ -33,7 +33,11 @@
  */
 class Mage_CatalogSearch_AdvancedController extends Mage_Core_Controller_Front_Action
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->loadLayout();
@@ -41,6 +45,11 @@ class Mage_CatalogSearch_AdvancedController extends Mage_Core_Controller_Front_A
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resultAction()
     {
         $this->loadLayout();

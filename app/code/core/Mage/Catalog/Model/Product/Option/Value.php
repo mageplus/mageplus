@@ -53,35 +53,68 @@ class Mage_Catalog_Model_Product_Option_Value extends Mage_Core_Model_Abstract
         $this->_init('catalog/product_option_value');
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function addValue($value)
     {
         $this->_values[] = $value;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValues()
     {
         return $this->_values;
     }
 
+    /**
+     * @todo
+     *
+     * @param $values
+     * @return
+     */
     public function setValues($values)
     {
         $this->_values = $values;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unsetValues()
     {
         $this->_values = array();
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product_Option $option
+     * @return
+     */
     public function setOption(Mage_Catalog_Model_Product_Option $option)
     {
         $this->_option = $option;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unsetOption()
     {
         $this->_option = null;
@@ -98,12 +131,23 @@ class Mage_Catalog_Model_Product_Option_Value extends Mage_Core_Model_Abstract
         return $this->_option;
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @return
+     */
     public function setProduct($product)
     {
         $this->_product = $product;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProduct()
     {
         if (is_null($this->_product)) {
@@ -112,6 +156,11 @@ class Mage_Catalog_Model_Product_Option_Value extends Mage_Core_Model_Abstract
         return $this->_product;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveValues()
     {
         foreach ($this->getValues() as $value) {
@@ -169,6 +218,14 @@ class Mage_Catalog_Model_Product_Option_Value extends Mage_Core_Model_Abstract
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param $optionIds
+     * @param $option_id
+     * @param $store_id
+     * @return
+     */
     public function getValuesByOption($optionIds, $option_id, $store_id)
     {
         $collection = Mage::getResourceModel('catalog/product_option_value_collection')
@@ -178,12 +235,24 @@ class Mage_Catalog_Model_Product_Option_Value extends Mage_Core_Model_Abstract
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param $option_id
+     * @return
+     */
     public function deleteValue($option_id)
     {
         $this->getResource()->deleteValue($option_id);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $option_type_id
+     * @return
+     */
     public function deleteValues($option_type_id)
     {
         $this->getResource()->deleteValues($option_type_id);

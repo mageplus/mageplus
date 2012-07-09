@@ -34,7 +34,11 @@
  */
 class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
 {
-
+    /**
+     * @todo
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         $displayFormat = Varien_Date::convertZendToStrFtime($this->getFormat(), true, (bool)$this->getTime());
@@ -69,10 +73,15 @@ class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
         //]]>
         </script>';
 
-
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $index
+     * @return string
+     */
     public function getEscapedValue($index=null) {
 
         if($this->getFormat() && $this->getValue()) {
@@ -82,9 +91,13 @@ class Mage_Core_Block_Html_Date extends Mage_Core_Block_Template
         return htmlspecialchars($this->getValue());
     }
 
+    /**
+     * @todo
+     *
+     * @return string
+     */
     public function getHtml()
     {
         return $this->toHtml();
     }
-
 }

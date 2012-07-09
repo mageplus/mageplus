@@ -47,8 +47,8 @@ class Mage_Core_Model_Resource_Translate_String extends Mage_Core_Model_Resource
      * Load
      *
      * @param Mage_Core_Model_Abstract $object
-     * @param String $value
-     * @param String $field
+     * @param string $value
+     * @param string $field
      * @return array
      */
     public function load(Mage_Core_Model_Abstract $object, $value, $field = null)
@@ -69,8 +69,8 @@ class Mage_Core_Model_Resource_Translate_String extends Mage_Core_Model_Resource
     /**
      * Retrieve select for load
      *
-     * @param String $field
-     * @param String $value
+     * @param string $field
+     * @param string $value
      * @param Mage_Core_Model_Abstract $object
      * @return Varien_Db_Select
      */
@@ -171,7 +171,7 @@ class Mage_Core_Model_Resource_Translate_String extends Mage_Core_Model_Resource
      *
      * @param string $string
      * @param string $locale
-     * @param int|null $storeId
+     * @param integer|null $storeId
      * @return Mage_Core_Model_Resource_Translate_String
      */
     public function deleteTranslate($string, $locale = null, $storeId = null)
@@ -199,10 +199,10 @@ class Mage_Core_Model_Resource_Translate_String extends Mage_Core_Model_Resource
     /**
      * Save translation
      *
-     * @param String $string
-     * @param String $translate
-     * @param String $locale
-     * @param int|null $storeId
+     * @param string $string
+     * @param string $translate
+     * @param string $locale
+     * @param integer|null $storeId
      * @return Mage_Core_Model_Resource_Translate_String
      */
     public function saveTranslate($string, $translate, $locale = null, $storeId = null)

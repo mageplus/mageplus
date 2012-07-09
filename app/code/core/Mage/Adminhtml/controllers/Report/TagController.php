@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _initAction()
     {
         $act = $this->getRequest()->getActionName();
@@ -45,6 +50,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function customerAction()
     {
         $this->_title($this->__('Reports'))
@@ -82,6 +92,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function productAction()
     {
         $this->_title($this->__('Reports'))
@@ -119,7 +134,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function popularAction()
     {
         $this->_title($this->__('Reports'))
@@ -157,6 +176,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function customerDetailAction()
     {
         $detailBlock = $this->getLayout()->createBlock('adminhtml/report_tag_customer_detail');
@@ -198,6 +222,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function productDetailAction()
     {
         $detailBlock = $this->getLayout()->createBlock('adminhtml/report_tag_product_detail');
@@ -239,6 +268,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function tagDetailAction()
     {
         $detailBlock = $this->getLayout()->createBlock('adminhtml/report_tag_popular_detail');
@@ -280,6 +314,11 @@ class Mage_Adminhtml_Report_TagController extends Mage_Adminhtml_Controller_Acti
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         switch ($this->getRequest()->getActionName()) {

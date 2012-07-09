@@ -32,6 +32,11 @@
  */
 class Mage_Paygate_Model_Authorizenet_Source_PaymentAction
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

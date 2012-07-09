@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_ReportController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _initAction()
     {
         $this->loadLayout()
@@ -75,6 +80,12 @@ class Mage_Adminhtml_ReportController extends Mage_Adminhtml_Controller_Action
         $this->_prepareDownloadResponse($fileName, $content);
     }
 */
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function searchAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Search Terms'));
@@ -129,6 +140,11 @@ class Mage_Adminhtml_ReportController extends Mage_Adminhtml_Controller_Action
     }
 */
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         switch ($this->getRequest()->getActionName()) {

@@ -150,4 +150,11 @@
             </catalog_product_alert>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_ProductAlert/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

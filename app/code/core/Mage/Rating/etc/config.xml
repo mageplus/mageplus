@@ -110,4 +110,11 @@
             </catalog_product_delete_after_done>
         </events>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Rating/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

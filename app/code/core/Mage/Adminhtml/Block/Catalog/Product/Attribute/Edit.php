@@ -34,7 +34,6 @@
 
 class Mage_Adminhtml_Block_Catalog_Product_Attribute_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
-
     public function __construct()
     {
         $this->_objectId = 'attribute_id';
@@ -75,6 +74,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Edit extends Mage_Adminhtml
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getHeaderText()
     {
         if (Mage::registry('entity_attribute')->getId()) {
@@ -89,11 +93,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Edit extends Mage_Adminhtml
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getValidationUrl()
     {
         return $this->getUrl('*/*/validate', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getSaveUrl()
     {
         return $this->getUrl('*/'.$this->_controller.'/save', array('_current'=>true, 'back'=>null));

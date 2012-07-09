@@ -113,7 +113,12 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return $result;
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $date
+     * @return
+     */
     public function convertDate($date)
     {
         if ($date instanceof Zend_Date) {
@@ -122,6 +127,12 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return strftime('%Y-%m-%d', strtotime($date));
     }
 
+    /**
+     * @todo
+     *
+     * @param $datetime
+     * @return
+     */
     public function convertDateTime($datetime)
     {
         if ($datetime instanceof Zend_Date) {
@@ -130,8 +141,13 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return strftime('%Y-%m-%d %H:%M:%S', strtotime($datetime));
     }
 
-
-
+    /**
+     * @todo
+     *
+     * @param $sql
+     * @param $field
+     * @return
+     */
     public function raw_fetchRow($sql, $field=null)
     {
         if (!$result = $this->raw_query($sql)) {
@@ -147,6 +163,12 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $sql
+     * @return
+     */
     public function multi_query($sql)
     {
         $this->beginTransaction();
@@ -166,6 +188,11 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clear_result()
     {
         while ($this->getConnection()->next_result()) {
@@ -178,6 +205,13 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
 
     }
 
+    /**
+     * @todo
+     *
+     * @param $table
+     * @param $fk
+     * @return
+     */
     public function dropForeignKey($table, $fk)
     {
         $create = $this->raw_fetchRow("show create table `$table`", 'Create Table');
@@ -187,6 +221,13 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $table
+     * @param $key
+     * @return
+     */
     public function dropKey($table, $key)
     {
         $create = $this->raw_fetchRow("show create table `$table`", 'Create Table');
@@ -227,6 +268,13 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return $this->raw_query($sql);
     }
 
+    /**
+     * @todo
+     *
+     * @param $tableName
+     * @param $columnName
+     * @return
+     */
     public function tableColumnExists($tableName, $columnName)
     {
         foreach ($this->fetchAll('DESCRIBE `'.$tableName.'`') as $row) {
@@ -237,6 +285,14 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $tableName
+     * @param $columnName
+     * @param $definition
+     * @return
+     */
     public function addColumn($tableName, $columnName, $definition)
     {
         if ($this->tableColumnExists($tableName, $columnName)) {
@@ -246,6 +302,13 @@ class Varien_Db_Adapter_Mysqli extends Zend_Db_Adapter_Mysqli
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $tableName
+     * @param $columnName
+     * @return
+     */
     public function dropColumn($tableName, $columnName)
     {
         if (!$this->tableColumnExists($tableName, $columnName)) {

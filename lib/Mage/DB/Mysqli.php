@@ -35,7 +35,7 @@ class Mage_DB_Mysqli
 {
     /**
      * Default port
-     * @var int
+     * @var integer
      */
     const DEFAULT_PORT = 3306;
 
@@ -77,7 +77,7 @@ class Mage_DB_Mysqli
      * @param string $user
      * @param string $paswd
      * @param string $db
-     * @param int $port
+     * @param integer $port
      * @return mixed
      */
     public function connect($host, $user, $paswd, $db, $port = self::DEFAULT_PORT)
@@ -264,7 +264,7 @@ class Mage_DB_Mysqli
      * List by key grouped
      * @param string $table
      * @param string $key
-     * @param bool $forcedArrayMode
+     * @param boolean $forcedArrayMode
      * @return array
      */
     public function listByKeyGrouped($table,  $key = 'id', $forcedArrayMode = false)
@@ -273,7 +273,6 @@ class Mage_DB_Mysqli
         $sql = "SELECT * FROM {$table}";
         return $this->fetchGroupedArrayByKey($sql, $key, $forcedArrayMode);
     }
-
 
     /**
      * Escape field names
@@ -306,7 +305,6 @@ class Mage_DB_Mysqli
         }
         return $out;
     }
-
 
     /**
      * Throw connect exception
@@ -347,7 +345,7 @@ class Mage_DB_Mysqli
      * Insert assoc array to table
      * @param string $table
      * @param array $data
-     * @param bool $replace
+     * @param boolean $replace
      * @return mixed
      */
     public function insertAssocOne($table, array $data, $replace = false) {
@@ -365,7 +363,7 @@ class Mage_DB_Mysqli
      * Insert several records to table
      * @param string $table
      * @param array $data
-     * @param bool $replace   use REPLACE INTO instead of INSERT INTO
+     * @param boolean $replace   use REPLACE INTO instead of INSERT INTO
      * @return array
      */
     public function insertAssocMultiple($table, array $data, $replace = false, $excludeFields = array())
@@ -459,7 +457,6 @@ class Mage_DB_Mysqli
         return $this->query($sql);
     }
 
-
     /**
      * Convert ids to string
      * @param array|string $ids
@@ -489,7 +486,6 @@ class Mage_DB_Mysqli
         return $condition;
     }
 
-
     /**
      * Delete items by id
      * @param string $table
@@ -510,7 +506,7 @@ class Mage_DB_Mysqli
      * Count items in table by condition
      * @param string $table
      * @param string $condition ex: "a>0"
-     * @return int
+     * @return integer
      */
     public function simpleCount($table, $condition) {
         $sql = "SELECT count(*) AS `cnt` WHERE {$condition}";
@@ -522,11 +518,15 @@ class Mage_DB_Mysqli
 
     }
     
+    /**
+     * @todo
+     *
+     * @return integer
+     */
     public function lastInsertId()
     {
         $sql = "SELECT LAST_INSERT_ID() as `id`";
         $data = $this->fetchOne($sql);
         return $data['id'];        
     }
-
 }

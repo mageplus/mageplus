@@ -122,4 +122,11 @@
             </adminhtml>
         </routers>
     </admin>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Widget/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

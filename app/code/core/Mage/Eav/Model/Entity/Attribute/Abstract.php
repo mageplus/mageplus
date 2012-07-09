@@ -163,83 +163,179 @@ abstract class Mage_Eav_Model_Entity_Attribute_Abstract extends Mage_Core_Model_
         return $this->_getData('attribute_id');
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     *
+     * @return
+     */
     public function setAttributeCode($data)
     {
         return $this->setData('attribute_code', $data);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeCode()
     {
         return $this->_getData('attribute_code');
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     *
+     * @return
+     */
     public function setAttributeModel($data)
     {
         return $this->setData('attribute_model', $data);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeModel()
     {
         return $this->_getData('attribute_model');
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     *
+     * @return
+     */
     public function setBackendType($data)
     {
         return $this->setData('backend_type', $data);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackendType()
     {
         return $this->_getData('backend_type');
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     *
+     * @return
+     */
     public function setBackendModel($data)
     {
         return $this->setData('backend_model', $data);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackendModel()
     {
         return $this->_getData('backend_model');
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     *
+     * @return
+     */
     public function setBackendTable($data)
     {
         return $this->setData('backend_table', $data);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsVisibleOnFront()
     {
         return $this->_getData('is_visible_on_front');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDefaultValue()
     {
         return $this->_getData('default_value');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeSetId()
     {
         return $this->_getData('attribute_set_id');
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     *
+     * @return
+     */
     public function setAttributeSetId($id)
     {
         $this->_data['attribute_set_id'] = $id;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEntityTypeId()
     {
         return $this->_getData('entity_type_id');
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     *
+     * @return
+     */
     public function setEntityTypeId($id)
     {
         $this->_data['entity_type_id'] = $id;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     *
+     * @return
+     */
     public function setEntityType($type)
     {
         $this->setData('entity_type', $type);
@@ -391,27 +487,54 @@ abstract class Mage_Eav_Model_Entity_Attribute_Abstract extends Mage_Core_Model_
         return $this->_source;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function usesSource()
     {
         return $this->getFrontendInput() === 'select' || $this->getFrontendInput() === 'multiselect'
             || $this->getData('source_model') != '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getDefaultBackendModel()
     {
         return Mage_Eav_Model_Entity::DEFAULT_BACKEND_MODEL;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getDefaultFrontendModel()
     {
         return Mage_Eav_Model_Entity::DEFAULT_FRONTEND_MODEL;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getDefaultSourceModel()
     {
         return $this->getEntity()->getDefaultAttributeSourceModel();
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     *
+     * @return
+     */
     public function isValueEmpty($value)
     {
         $attrType = $this->getBackend()->getType();

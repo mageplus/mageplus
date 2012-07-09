@@ -53,6 +53,11 @@ class Mage_Adminhtml_Block_Poll_Answer_Edit extends Mage_Adminhtml_Block_Widget_
         $this->_updateButton('delete', 'label', Mage::helper('poll')->__('Delete Answer'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         return Mage::helper('poll')->__("Edit Answer '%s'", $this->htmlEscape(Mage::registry('answer_data')->getAnswerTitle()));

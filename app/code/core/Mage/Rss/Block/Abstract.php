@@ -25,6 +25,11 @@
  */
 class Mage_Rss_Block_Abstract extends Mage_Core_Block_Template
 {
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _getStoreId()
     {
         //store id is store view id
@@ -35,6 +40,11 @@ class Mage_Rss_Block_Abstract extends Mage_Core_Block_Template
         return $storeId;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _getCustomerGroupId()
     {
         //customer group id

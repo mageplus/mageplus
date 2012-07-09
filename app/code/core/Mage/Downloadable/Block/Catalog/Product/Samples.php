@@ -35,7 +35,7 @@ class Mage_Downloadable_Block_Catalog_Product_Samples extends Mage_Catalog_Block
 {
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -56,6 +56,12 @@ class Mage_Downloadable_Block_Catalog_Product_Samples extends Mage_Catalog_Block
             ->getSamples($this->getProduct());
     }
 
+    /**
+     * @todo
+     *
+     * @param $sample
+     * @return
+     */
     public function getSampleUrl($sample)
     {
         return $this->getUrl('downloadable/download/sample', array('sample_id' => $sample->getId()));

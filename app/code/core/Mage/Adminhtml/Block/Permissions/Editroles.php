@@ -34,6 +34,11 @@ class Mage_Adminhtml_Block_Permissions_Editroles extends Mage_Adminhtml_Block_Wi
         $this->setTitle(Mage::helper('adminhtml')->__('Role Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $role = Mage::registry('current_role');

@@ -34,15 +34,24 @@
 
 class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_Controller_Action
 {
-
     protected $_entityTypeId;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         parent::preDispatch();
         $this->_entityTypeId = Mage::getModel('eav/entity')->setType(Mage_Catalog_Model_Product::ENTITY)->getTypeId();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initAction()
     {
         $this->_title($this->__('Catalog'))
@@ -63,6 +72,11 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_initAction()
@@ -70,11 +84,21 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('edit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $id = $this->getRequest()->getParam('attribute_id');
@@ -123,6 +147,11 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function validateAction()
     {
         $response = new Varien_Object();
@@ -165,6 +194,11 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
         return $data;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         $data = $this->getRequest()->getPost();
@@ -307,6 +341,11 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         if ($id = $this->getRequest()->getParam('attribute_id')) {
@@ -339,6 +378,11 @@ class Mage_Adminhtml_Catalog_Product_AttributeController extends Mage_Adminhtml_
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('catalog/attributes/attributes');

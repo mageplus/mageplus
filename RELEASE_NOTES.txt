@@ -1,3 +1,9 @@
+==== Mage+ 1.1.0.0 ===
+
+=== Major Highlights ===
+Added unit test framework
+All functions now contain documentation
+
 ==== Mage+ 1.0.0.3 ===
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
 

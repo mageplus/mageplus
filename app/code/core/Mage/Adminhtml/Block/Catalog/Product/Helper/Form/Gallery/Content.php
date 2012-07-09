@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
         $this->setTemplate('catalog/product/helper/gallery.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('uploader',
@@ -82,11 +87,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
         return $this->getChildHtml('uploader');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getJsObjectName()
     {
         return $this->getHtmlId() . 'JsObject';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddImagesButton()
     {
         return $this->getButtonHtml(
@@ -97,6 +112,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImagesJson()
     {
         if(is_array($this->getElement()->getValue())) {
@@ -112,6 +132,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
         return '[]';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImagesValuesJson()
     {
         $values = array();
@@ -143,6 +168,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
         return $imageTypes;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasUseDefault()
     {
         foreach ($this->getMediaAttributes() as $attribute) {
@@ -164,6 +194,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery_Content extends M
         return $this->getElement()->getDataObject()->getMediaAttributes();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageTypesJson()
     {
         return Mage::helper('core')->jsonEncode($this->getImageTypes());

@@ -29,6 +29,12 @@ class Mage_Adminhtml_Model_System_Config_Source_Language
 {
     protected $_options;
     
+    /**
+     * @todo
+     *
+     * @param $isMultiselect
+     * @return
+     */
     public function toOptionArray($isMultiselect)
     {
         if (!$this->_options) {

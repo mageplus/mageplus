@@ -33,7 +33,12 @@
  */
 class Mage_Adminhtml_Block_Customer_Edit_Tab_Newsletter_Grid_Renderer_Action extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function render(Varien_Object $row)
     {
         $actions = array();
@@ -54,11 +59,23 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Newsletter_Grid_Renderer_Action ext
         return $this->_actionsToHtml($actions);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     protected function _getEscapedValue($value)
     {
         return addcslashes(htmlspecialchars($value),'\\\'');
     }
 
+    /**
+     * @todo
+     *
+     * @param array $actions
+     * @return
+     */
     protected function _actionsToHtml(array $actions)
     {
         $html = array();

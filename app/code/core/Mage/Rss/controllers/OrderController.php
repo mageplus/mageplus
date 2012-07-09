@@ -34,6 +34,11 @@
 
 class Mage_Rss_OrderController extends Mage_Core_Controller_Front_Action
 {
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function newAction()
     {
         $this->getResponse()->setHeader('Content-type', 'text/xml; charset=UTF-8');
@@ -41,6 +46,11 @@ class Mage_Rss_OrderController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function customerAction()
     {
         if (Mage::app()->getStore()->isCurrentlySecure()) {
@@ -52,6 +62,11 @@ class Mage_Rss_OrderController extends Mage_Core_Controller_Front_Action
         }
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function statusAction()
     {
         $decrypt = Mage::helper('core')->decrypt($this->getRequest()->getParam('data'));

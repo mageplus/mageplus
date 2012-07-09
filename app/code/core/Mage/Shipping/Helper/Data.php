@@ -150,6 +150,13 @@ class Mage_Shipping_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->_getUrl('shipping/tracking/ajax');
     }
 
+    /**
+     * @todo
+     *
+     * @param $method
+     * @param $storeId
+     * @return
+     */
     public function isFreeMethod($method, $storeId = null)
     {
         $arr = explode('_', $method, 2);

@@ -69,7 +69,7 @@ class Mage_Core_Model_Resource_Url_Rewrite_Collection extends Mage_Core_Model_Re
      * Filter collections by stores
      *
      * @param mixed $store
-     * @param bool $withAdmin
+     * @param boolean $withAdmin
      * @return Mage_Core_Model_Resource_Url_Rewrite_Collection
      */
     public function addStoreFilter($store, $withAdmin = true)
@@ -89,7 +89,7 @@ class Mage_Core_Model_Resource_Url_Rewrite_Collection extends Mage_Core_Model_Re
     /**
      *  Add filter by catalog product Id
      *
-     * @param int $productId
+     * @param integer $productId
      * @return Mage_Core_Model_Resource_Url_Rewrite_Collection
      */
     public function filterAllByProductId($productId)

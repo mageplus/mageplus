@@ -41,8 +41,7 @@ class Mage_Api_Model_Server_WSI_Handler extends Mage_Api_Model_Server_Handler_Ab
      * @param string $function
      * @param array $args
      */
-
-    public function __call ($function, $args)
+    public function __call($function, $args)
     {
         $args = $args[0];
 
@@ -109,8 +108,8 @@ class Mage_Api_Model_Server_WSI_Handler extends Mage_Api_Model_Server_Handler_Ab
      * @param String $apiPath
      * @return Array
      */
-    protected function _getResourceName($apiPath){
-
+    protected function _getResourceName($apiPath)
+    {
         list($resourceName, $methodName) = explode('.', $apiPath);
 
         if (empty($resourceName) || empty($methodName)) {
@@ -141,8 +140,8 @@ class Mage_Api_Model_Server_WSI_Handler extends Mage_Api_Model_Server_Handler_Ab
      * @param String $methodName
      * @return Array of ReflectionParameter
      */
-    public function getMethodParams($modelName, $methodName) {
-
+    public function getMethodParams($modelName, $methodName)
+    {
         $method = new ReflectionMethod($modelName, $methodName);
 
         return $method->getParameters();
@@ -155,8 +154,8 @@ class Mage_Api_Model_Server_WSI_Handler extends Mage_Api_Model_Server_Handler_Ab
      * @param Array $args
      * @return Array
      */
-    public function prepareArgs($params, $args) {
-
+    public function prepareArgs($params, $args)
+    {
         $callArgs = array();
 
         /** @var $parameter ReflectionParameter */

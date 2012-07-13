@@ -75,11 +75,21 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         $this->setCanEditPrice(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldId()
     {
         return 'bundle_option';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldName()
     {
         return 'bundle_options';
@@ -98,28 +108,55 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         return $this->getData('product');
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         $this->setElement($element);
         return $this->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function setElement(Varien_Data_Form_Element_Abstract $element)
     {
         $this->_element = $element;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElement()
     {
         return $this->_element;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isMultiWebsites()
     {
         return !Mage::app()->isSingleStoreMode();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('add_selection_button',
@@ -156,16 +193,31 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         return $this->getChildHtml('add_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCloseSearchButtonHtml()
     {
         return $this->getChildHtml('close_search_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddSelectionButtonHtml()
     {
         return $this->getChildHtml('add_selection_button');
@@ -204,6 +256,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         return $this->_options;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonId()
     {
         $buttonId = $this->getLayout()
@@ -212,16 +269,31 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         return $buttonId;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOptionDeleteButtonHtml()
     {
         return $this->getChildHtml('option_delete_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSelectionHtml()
     {
         return $this->getChildHtml('selection_template');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTypeSelectHtml()
     {
         $select = $this->getLayout()->createBlock('adminhtml/html_select')
@@ -236,6 +308,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         return $select->getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRequireSelectHtml()
     {
         $select = $this->getLayout()->createBlock('adminhtml/html_select')
@@ -249,6 +326,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option extends
         return $select->getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isDefaultStore()
     {
         return ($this->getProduct()->getStoreId() == '0');

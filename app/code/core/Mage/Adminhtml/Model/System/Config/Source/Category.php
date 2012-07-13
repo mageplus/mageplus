@@ -33,6 +33,12 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Category
 {
+    /**
+     * @todo
+     *
+     * @param bool $addEmpty
+     * @return
+     */
     public function toOptionArray($addEmpty = true)
     {
         $tree = Mage::getResourceModel('catalog/category_tree');

@@ -34,7 +34,6 @@
  */
 class Mage_Adminhtml_Model_System_Store extends Varien_Object
 {
-
     /**
      * Website collection
      * websiteId => Mage_Core_Model_Website

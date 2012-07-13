@@ -36,11 +36,21 @@
  */
 class Mage_Eav_Model_Entity_Increment_Alphanum extends Mage_Eav_Model_Entity_Increment_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllowedChars()
     {
         return '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNextId()
     {
         $lastId = $this->getLastId();

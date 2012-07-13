@@ -34,12 +34,23 @@
 class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Price extends Varien_Data_Form_Element_Text
 {
 
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
         $this->addClass('validate-zero-or-greater');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAfterElementHtml()
     {
         $html = parent::getAfterElementHtml();
@@ -67,6 +78,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Price extends Varien_Data
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $attribute
+     * @return
+     */
     protected function _getTaxObservingCode($attribute)
     {
         $spanId = "dynamic-tax-{$attribute->getAttributeCode()}";
@@ -75,6 +92,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Price extends Varien_Data
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $index
+     * @return
+     */
     public function getEscapedValue($index=null)
     {
         $value = $this->getValue();
@@ -85,6 +108,5 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Price extends Varien_Data
 
         return number_format($value, 2, null, '');
     }
-
 }
 

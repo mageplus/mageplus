@@ -174,4 +174,11 @@
             </email>
         </oauth>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Oauth/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

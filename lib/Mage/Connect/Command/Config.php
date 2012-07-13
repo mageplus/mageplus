@@ -32,7 +32,6 @@ extends Mage_Connect_Command
     const PARAM_KEY = 0;
     const PARAM_VAL = 1;
 
-
     /**
      * Show config variable
      * @param string $command
@@ -69,7 +68,6 @@ extends Mage_Connect_Command
             return $this->doError($command, $e->getMessage());
         }
     }
-
 
     /**
      * Set config variable
@@ -205,7 +203,4 @@ extends Mage_Connect_Command
             return $this->doError($command, $e->getMessage());
         }
     }
-
 }
-
-

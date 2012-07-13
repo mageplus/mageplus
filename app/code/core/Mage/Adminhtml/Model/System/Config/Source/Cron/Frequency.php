@@ -34,6 +34,11 @@ class Mage_Adminhtml_Model_System_Config_Source_Cron_Frequency
     const CRON_WEEKLY   = 'W';
     const CRON_MONTHLY  = 'M';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         if (!self::$_options) {

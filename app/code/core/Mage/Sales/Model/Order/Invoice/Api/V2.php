@@ -102,6 +102,13 @@ class Mage_Sales_Model_Order_Invoice_Api_V2 extends Mage_Sales_Model_Order_Invoi
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     *
+     * @return
+     */
     protected function _prepareItemQtyData($data)
     {
         $_data = array();

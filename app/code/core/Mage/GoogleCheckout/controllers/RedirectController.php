@@ -92,6 +92,11 @@ class Mage_GoogleCheckout_RedirectController extends Mage_Core_Controller_Front_
         return $api;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function checkoutAction()
     {
         $session = Mage::getSingleton('checkout/session');
@@ -125,6 +130,11 @@ class Mage_GoogleCheckout_RedirectController extends Mage_Core_Controller_Front_
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function cartAction()
     {
         if (Mage::getStoreConfigFlag('google/checkout/hide_cart_contents')) {
@@ -139,6 +149,11 @@ class Mage_GoogleCheckout_RedirectController extends Mage_Core_Controller_Front_
         $this->_redirect('checkout/cart');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function continueAction()
     {
         $session = Mage::getSingleton('checkout/session');

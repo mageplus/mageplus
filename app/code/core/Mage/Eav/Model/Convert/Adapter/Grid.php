@@ -30,6 +30,11 @@ class Mage_Eav_Model_Convert_Adapter_Grid
 {
     protected $_entity;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEntity()
     {
         if (!$this->_entityType) {
@@ -42,6 +47,11 @@ class Mage_Eav_Model_Convert_Adapter_Grid
         return $this->_entity;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
         try {
@@ -59,6 +69,11 @@ class Mage_Eav_Model_Convert_Adapter_Grid
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         foreach ($this->getData() as $i=>$row) {

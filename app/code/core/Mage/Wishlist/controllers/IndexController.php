@@ -48,6 +48,11 @@ class Mage_Wishlist_IndexController extends Mage_Wishlist_Controller_Abstract
      */
     protected $_skipAuthentication = false;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         parent::preDispatch();

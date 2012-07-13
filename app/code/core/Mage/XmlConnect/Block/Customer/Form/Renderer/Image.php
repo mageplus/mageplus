@@ -38,7 +38,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Image extends Mage_XmlConnect
      *
      * @var string
      */
-    protected $_filedType = 'image';
+    protected $_fieldType = 'image';
 
     /**
      * Add validator for image file field to fieldset xml object
@@ -71,8 +71,8 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Image extends Mage_XmlConnect
                 ));
             }
 
-            if (!empty($validateRules['max_image_heght'])) {
-                $maxTextLength = $validateRules['max_image_heght'];
+            if (!empty($validateRules['max_image_height'])) {
+                $maxTextLength = $validateRules['max_image_height'];
                 $validatorXmlObj->addRule(array(
                     'type' => 'max_image_height', 'value' => $maxTextLength, 'field_label' => $this->getLabel()
                 ));

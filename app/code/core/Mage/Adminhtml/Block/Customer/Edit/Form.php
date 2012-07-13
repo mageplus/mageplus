@@ -34,7 +34,11 @@
 
 class Mage_Adminhtml_Block_Customer_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form(array(

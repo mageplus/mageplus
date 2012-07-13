@@ -48,7 +48,13 @@
  */
 class Mage_Shipping_Model_Tracking_Result_Status extends Mage_Shipping_Model_Tracking_Result_Abstract
 {
-    public function getAllData(){
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getAllData()
+    {
         return $this->_data;
     }
 }

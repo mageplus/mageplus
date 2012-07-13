@@ -157,4 +157,11 @@
             </authorizenet_directpost>
         </payment>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Authorizenet/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

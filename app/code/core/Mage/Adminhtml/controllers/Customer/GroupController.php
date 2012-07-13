@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Customer_GroupController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initGroup()
     {
         $this->_title($this->__('Customers'))->_title($this->__('Customer Groups'));
@@ -44,6 +49,7 @@ class Mage_Adminhtml_Customer_GroupController extends Mage_Adminhtml_Controller_
         }
 
     }
+    
     /**
      * Customer groups list.
      */
@@ -153,6 +159,11 @@ class Mage_Adminhtml_Customer_GroupController extends Mage_Adminhtml_Controller_
         $this->_redirect('*/customer_group');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('customer/group');

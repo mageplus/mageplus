@@ -35,6 +35,11 @@ class Mage_CatalogRule_Model_Rule_Condition_Combine extends Mage_Rule_Model_Cond
         $this->setType('catalogrule/rule_condition_combine');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNewChildSelectOptions()
     {
         $productCondition = Mage::getModel('catalogrule/rule_condition_product');
@@ -51,6 +56,12 @@ class Mage_CatalogRule_Model_Rule_Condition_Combine extends Mage_Rule_Model_Cond
         return $conditions;
     }
 
+    /**
+     * @todo
+     *
+     * @param $productCollection
+     * @return
+     */
     public function collectValidatedAttributes($productCollection)
     {
         foreach ($this->getConditions() as $condition) {

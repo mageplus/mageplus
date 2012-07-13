@@ -37,7 +37,6 @@
  */
 class Varien_Data_Tree_Dbp extends Varien_Data_Tree
 {
-
     const ID_FIELD      = 'id';
     const PATH_FIELD    = 'path';
     const ORDER_FIELD   = 'order';
@@ -199,6 +198,15 @@ class Varien_Data_Tree_Dbp extends Varien_Data_Tree
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $children
+     * @param $path
+     * @param $parentNode
+     * @param $level
+     * @return
+     */
     public function addChildNodes($children, $path, $parentNode, $level = 0)
     {
         if (isset($children[$path])) {
@@ -215,7 +223,6 @@ class Varien_Data_Tree_Dbp extends Varien_Data_Tree
                 $node->setPathId($node->getData($this->_pathField));
                 $this->addNode($node, $parentNode);
 
-
                 if ($path) {
                     $childrenPath = explode('/', $path);
                 } else {
@@ -230,7 +237,7 @@ class Varien_Data_Tree_Dbp extends Varien_Data_Tree
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param int|string $nodeId
      * @return Varien_Data_Tree_Node
@@ -251,7 +258,16 @@ class Varien_Data_Tree_Dbp extends Varien_Data_Tree
         return $node;
     }
 
-    public function getChildren($node, $recursive = true, $result = array()) {
+    /**
+     * @todo
+     *
+     * @param $node
+     * @param boolean $recursive
+     * @param array $result
+     * @return
+     */
+    public function getChildren($node, $recursive = true, $result = array())
+    {
         if (is_numeric($node)) {
             $node = $this->getNodeById($node);
         }
@@ -325,6 +341,13 @@ class Varien_Data_Tree_Dbp extends Varien_Data_Tree
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $category
+     * @param $rootNode
+     * @return
+     */
     public function loadEnsuredNodes($category, $rootNode)
     {
         $pathIds = $category->getPathIds();
@@ -359,6 +382,16 @@ class Varien_Data_Tree_Dbp extends Varien_Data_Tree
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $children
+     * @param $path
+     * @param $parentNode
+     * @param boolean $withChildren
+     * @param $level
+     * @return
+     */
     protected function _addChildNodes($children, $path, $parentNode, $withChildren=false, $level = 0)
     {
         if (isset($children[$path])) {

@@ -1,4 +1,5 @@
 <?php
+
 class Mage_Xml_Generator
 {
     protected $_dom = null;
@@ -12,16 +13,32 @@ class Mage_Xml_Generator
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDom()
     {
         return $this->_dom;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCurrentDom()
     {
         return $this->_currentDom;
     }
 
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     protected function _setCurrentDom($node)
     {
         $this->_currentDom = $node;
@@ -29,6 +46,8 @@ class Mage_Xml_Generator
     }
 
     /**
+    * @todo
+    * 
     * @param array $content
     */
     public function arrayToXml($content)
@@ -76,15 +95,25 @@ class Mage_Xml_Generator
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function __toString()
     {
         return $this->getDom()->saveXML();
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function save($file)
     {
         $this->getDom()->save($file);
         return $this;
     }
-
 }

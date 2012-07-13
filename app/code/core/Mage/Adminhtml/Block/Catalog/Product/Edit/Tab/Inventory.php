@@ -37,6 +37,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Inventory extends Mage_Admin
         $this->setTemplate('catalog/product/tab/inventory.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackordersOption()
     {
         if (Mage::helper('catalog')->isModuleEnabled('Mage_CatalogInventory')) {
@@ -80,11 +85,22 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Inventory extends Mage_Admin
         return $this->getProduct()->getStockItem();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isConfigurable()
     {
         return $this->getProduct()->isConfigurable();
     }
 
+    /**
+     * @todo
+     *
+     * @param $field
+     * @return
+     */
     public function getFieldValue($field)
     {
         if ($this->getStockItem()) {
@@ -94,6 +110,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Inventory extends Mage_Admin
         return Mage::getStoreConfig(Mage_CatalogInventory_Model_Stock_Item::XML_PATH_ITEM . $field);
     }
 
+    /**
+     * @todo
+     *
+     * @param $field
+     * @return
+     */
     public function getConfigFieldValue($field)
     {
         if ($this->getStockItem()) {
@@ -105,6 +127,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Inventory extends Mage_Admin
         return Mage::getStoreConfig(Mage_CatalogInventory_Model_Stock_Item::XML_PATH_ITEM . $field);
     }
 
+    /**
+     * @todo
+     *
+     * @param $field
+     * @return
+     */
     public function getDefaultConfigValue($field)
     {
         return Mage::getStoreConfig(Mage_CatalogInventory_Model_Stock_Item::XML_PATH_ITEM . $field);
@@ -120,6 +148,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Inventory extends Mage_Admin
         return $this->getProduct()->getInventoryReadonly();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isNew()
     {
         if ($this->getProduct()->getId()) {
@@ -128,6 +161,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Inventory extends Mage_Admin
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldSuffix()
     {
         return 'product';

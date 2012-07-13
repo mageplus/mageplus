@@ -34,7 +34,11 @@
  */
 class Mage_Dataflow_Model_Convert_Adapter_Db_Table extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResource()
     {
         if (!$this->_resource) {
@@ -43,14 +47,23 @@ class Mage_Dataflow_Model_Convert_Adapter_Db_Table extends Mage_Dataflow_Model_C
         return $this->_resource;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
 
     }
-
 }

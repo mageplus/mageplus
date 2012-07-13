@@ -55,6 +55,12 @@ class Mage_Tag_Model_Entity_Customer_Collection extends Mage_Customer_Model_Enti
 
     }
 
+    /**
+     * @todo
+     *
+     * @param $tagId
+     * @return
+     */
     public function addTagFilter($tagId)
     {
         $this->joinField('tag_tag_id', $this->_tagRelTable, 'tag_id', 'customer_id=entity_id');
@@ -62,6 +68,12 @@ class Mage_Tag_Model_Entity_Customer_Collection extends Mage_Customer_Model_Enti
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $productId
+     * @return
+     */
     public function addProductFilter($productId)
     {
         $this->joinField('tag_product_id', $this->_tagRelTable, 'product_id', 'customer_id=entity_id');
@@ -69,6 +81,13 @@ class Mage_Tag_Model_Entity_Customer_Collection extends Mage_Customer_Model_Enti
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $printQuery
+     * @param $tagQuery
+     * @return
+     */
     public function load($printQuery = false, $logQuery = false)
     {
         parent::load($printQuery, $logQuery);
@@ -76,6 +95,13 @@ class Mage_Tag_Model_Entity_Customer_Collection extends Mage_Customer_Model_Enti
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $printQuery
+     * @param $logQuery
+     * @return
+     */
     protected function _loadTags($printQuery = false, $logQuery = false)
     {
         if (empty($this->_items)) {

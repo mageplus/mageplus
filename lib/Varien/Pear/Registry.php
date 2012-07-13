@@ -34,6 +34,11 @@
 
 class Varien_Pear_Registry extends PEAR_Registry
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     function _initializeDepDB()
     {
         if (!isset($this->_dependencyDB)) {

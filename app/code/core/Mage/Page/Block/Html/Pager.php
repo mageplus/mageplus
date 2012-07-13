@@ -83,6 +83,11 @@ class Mage_Page_Block_Html_Pager extends Mage_Core_Block_Template
         $this->setTemplate('page/html/pager.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentPage()
     {
         if ($page = (int) $this->getRequest()->getParam($this->getPageVarName())) {
@@ -91,6 +96,11 @@ class Mage_Page_Block_Html_Pager extends Mage_Core_Block_Template
         return 1;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLimit()
     {
         if ($this->_limit !== null) {
@@ -118,6 +128,12 @@ class Mage_Page_Block_Html_Pager extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $collection
+     * @return
+     */
     public function setCollection($collection)
     {
         $this->_collection = $collection
@@ -140,23 +156,45 @@ class Mage_Page_Block_Html_Pager extends Mage_Core_Block_Template
         return $this->_collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param $varName
+     * @return
+     */
     public function setPageVarName($varName)
     {
         $this->_pageVarName = $varName;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPageVarName()
     {
         return $this->_pageVarName;
     }
 
+    /**
+     * @todo
+     *
+     * @param $varName
+     * @return
+     */
     public function setShowPerPage($varName)
     {
         $this->_showPerPage=$varName;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShowPerPage()
     {
         if(sizeof($this->getAvailableLimit())<=1) {
@@ -165,69 +203,138 @@ class Mage_Page_Block_Html_Pager extends Mage_Core_Block_Template
         return $this->_showPerPage;
     }
 
+    /**
+     * @todo
+     *
+     * @param $varName
+     * @return
+     */
     public function setLimitVarName($varName)
     {
         $this->_limitVarName = $varName;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLimitVarName()
     {
         return $this->_limitVarName;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $limits
+     * @return
+     */
     public function setAvailableLimit(array $limits)
     {
         $this->_availableLimit = $limits;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAvailableLimit()
     {
         return $this->_availableLimit;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFirstNum()
     {
         $collection = $this->getCollection();
         return $collection->getPageSize()*($collection->getCurPage()-1)+1;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastNum()
     {
         $collection = $this->getCollection();
         return $collection->getPageSize()*($collection->getCurPage()-1)+$collection->count();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTotalNum()
     {
         return $this->getCollection()->getSize();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isFirstPage()
     {
         return $this->getCollection()->getCurPage() == 1;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastPageNum()
     {
         return $this->getCollection()->getLastPageNumber();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isLastPage()
     {
         return $this->getCollection()->getCurPage() >= $this->getLastPageNum();
     }
 
+    /**
+     * @todo
+     *
+     * @param $limit
+     * @return
+     */
     public function isLimitCurrent($limit)
     {
         return $limit == $this->getLimit();
     }
 
+    /**
+     * @todo
+     *
+     * @param $page
+     * @return
+     */
     public function isPageCurrent($page)
     {
         return $page == $this->getCurrentPage();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPages()
     {
         $collection = $this->getCollection();
@@ -256,36 +363,74 @@ class Mage_Page_Block_Html_Pager extends Mage_Core_Block_Template
         return $pages;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFirstPageUrl()
     {
         return $this->getPageUrl(1);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPreviousPageUrl()
     {
         return $this->getPageUrl($this->getCollection()->getCurPage(-1));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNextPageUrl()
     {
         return $this->getPageUrl($this->getCollection()->getCurPage(+1));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastPageUrl()
     {
         return $this->getPageUrl($this->getCollection()->getLastPageNumber());
     }
 
+    /**
+     * @todo
+     *
+     * @param $page
+     * @return
+     */
     public function getPageUrl($page)
     {
         return $this->getPagerUrl(array($this->getPageVarName()=>$page));
     }
 
+    /**
+     * @todo
+     *
+     * @param $limit
+     * @return
+     */
     public function getLimitUrl($limit)
     {
         return $this->getPagerUrl(array($this->getLimitVarName()=>$limit));
     }
 
+    /**
+     * @todo
+     *
+     * @param array $params
+     * @return
+     */
     public function getPagerUrl($params=array())
     {
         $urlParams = array();

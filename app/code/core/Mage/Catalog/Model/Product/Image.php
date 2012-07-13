@@ -57,6 +57,7 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
     protected $_watermarkImageOpacity = 70;
 
     /**
+     * @param $width
      * @return Mage_Catalog_Model_Product_Image
      */
     public function setWidth($width)
@@ -65,12 +66,18 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWidth()
     {
         return $this->_width;
     }
 
     /**
+     * @param $height
      * @return Mage_Catalog_Model_Product_Image
      */
     public function setHeight($height)
@@ -79,6 +86,11 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeight()
     {
         return $this->_height;
@@ -170,6 +182,12 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     protected function _checkMemory($file = null)
     {
 //        print '$this->_getMemoryLimit() = '.$this->_getMemoryLimit();
@@ -179,6 +197,11 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this->_getMemoryLimit() > ($this->_getMemoryUsage() + $this->_getNeedMemoryForFile($file)) || $this->_getMemoryLimit() == -1;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getMemoryLimit()
     {
         $memoryLimit = trim(strtoupper(ini_get('memory_limit')));
@@ -199,6 +222,11 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $memoryLimit;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getMemoryUsage()
     {
         if (function_exists('memory_get_usage')) {
@@ -207,6 +235,12 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return 0;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     protected function _getNeedMemoryForFile($file = null)
     {
         $file = is_null($file) ? $this->getBaseFile() : $file;
@@ -348,11 +382,21 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseFile()
     {
         return $this->_baseFile;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNewFile()
     {
         return $this->_newFile;
@@ -496,6 +540,11 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return Mage::getBaseUrl('media') . str_replace(DS, '/', $path);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function push()
     {
         $this->getImageProcessor()->display();
@@ -518,6 +567,11 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this->_destinationSubdir;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isCached()
     {
         return $this->_fileExists($this->_newFile);
@@ -683,6 +737,11 @@ class Mage_Catalog_Model_Product_Image extends Mage_Core_Model_Abstract
         return $this->_watermarkHeigth;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clearCache()
     {
         $directory = Mage::getBaseDir('media') . DS.'catalog'.DS.'product'.DS.'cache'.DS;

@@ -36,6 +36,12 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
     public $sessionIds = array();
     protected $_currentSessId = null;
 
+    /**
+     * @todo
+     *
+     * @param $sessionName
+     * @return
+     */
     public function start($sessionName=null)
     {
 //        parent::start($sessionName=null);
@@ -44,6 +50,13 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $namespace
+     * @param $sessionName
+     * @return
+     */
     public function init($namespace, $sessionName=null)
     {
         if (is_null($this->_currentSessId)) {
@@ -52,11 +65,22 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSessionId()
     {
         return $this->_currentSessId;
     }
 
+    /**
+     * @todo
+     *
+     * @param $sessId
+     * @return
+     */
     public function setSessionId($sessId = null)
     {
         if (!is_null($sessId)) {
@@ -65,12 +89,23 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function revalidateCookie()
     {
         // In api we don't use cookies
     }
 
-    public function clear() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function clear()
+    {
         if ($sessId = $this->getSessionId()) {
             try {
                 Mage::getModel('api/user')->logoutBySessId($sessId);
@@ -81,6 +116,13 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $username
+     * @param $apiKey
+     * @return
+     */
     public function login($username, $apiKey)
     {
         $user = Mage::getModel('api/user')
@@ -103,6 +145,12 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
         return $user;
     }
 
+    /**
+     * @todo
+     *
+     * @param $user
+     * @return
+     */
     public function refreshAcl($user=null)
     {
         if (is_null($user)) {
@@ -164,7 +212,12 @@ class Mage_Api_Model_Session extends Mage_Core_Model_Session_Abstract
         return $timeout > Mage::getStoreConfig('api/config/session_timeout');
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $sessId
+     * @return
+     */
     public function isLoggedIn($sessId = false)
     {
         $userExists = $this->getUser() && $this->getUser()->getId();

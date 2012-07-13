@@ -209,4 +209,11 @@
             </dashboard>
         </reports>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Reports/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

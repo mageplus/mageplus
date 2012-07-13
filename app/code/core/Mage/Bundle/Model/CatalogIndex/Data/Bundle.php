@@ -69,7 +69,7 @@ class Mage_Bundle_Model_CatalogIndex_Data_Bundle extends Mage_CatalogIndex_Model
             );
     }
 
-/**
+    /**
      * Prepare select statement before 'fetchLinkInformation' function result fetch
      *
      * @param int $store

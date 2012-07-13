@@ -27,6 +27,11 @@ class Mage_Sales_Block_Order_Creditmemo_Totals extends Mage_Sales_Block_Order_To
 {
     protected $_creditmemo = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCreditmemo()
     {
         if ($this->_creditmemo === null) {
@@ -41,6 +46,13 @@ class Mage_Sales_Block_Order_Creditmemo_Totals extends Mage_Sales_Block_Order_To
         return $this->_creditmemo;
     }
 
+    /**
+     * @todo
+     *
+     * @param $creditmemo
+     * 
+     * @return
+     */
     public function setCreditmemo($creditmemo)
     {
         $this->_creditmemo = $creditmemo;

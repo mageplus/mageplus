@@ -33,7 +33,6 @@
  */
 class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -45,6 +44,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search_
         $this->setUseAjax(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->setId($this->getId().'_'.$this->getIndex());
@@ -54,6 +58,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search_
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('catalog/product')->getCollection()
@@ -82,6 +91,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search_
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('id', array(
@@ -150,17 +164,32 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search_
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/bundle_selection/grid', array('index' => $this->getIndex(), 'productss' => implode(',', $this->_getProducts())));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getSelectedProducts()
     {
         $products = $this->getRequest()->getPost('selected_products', array());
         return $products;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getProducts()
     {
         if ($products = $this->getRequest()->getPost('products', null)) {
@@ -172,6 +201,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search_
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStore()
     {
         return Mage::app()->getStore();

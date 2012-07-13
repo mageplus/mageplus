@@ -30,6 +30,12 @@ class Mage_GoogleCheckout_Block_Adminhtml_Shipping_Merchant
     protected $_addRowButtonHtml = array();
     protected $_removeRowButtonHtml = array();
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
     {
         $this->setElement($element);
@@ -92,6 +98,11 @@ class Mage_GoogleCheckout_Block_Adminhtml_Shipping_Merchant
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function getShippingMethods()
     {
         if (!$this->hasData('shipping_methods')) {
@@ -136,21 +147,47 @@ class Mage_GoogleCheckout_Block_Adminhtml_Shipping_Merchant
         return $this->getData('shipping_methods');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getDisabled()
     {
         return $this->getElement()->getDisabled() ? ' disabled' : '';
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     protected function _getValue($key)
     {
         return $this->getElement()->getData('value/' . $key);
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $value
+     * @return
+     */
     protected function _getSelected($key, $value)
     {
         return $this->getElement()->getData('value/' . $key) == $value ? 'selected="selected"' : '';
     }
 
+    /**
+     * @todo
+     *
+     * @param $container
+     * @param $template
+     * @param $title
+     * @return
+     */
     protected function _getAddRowButtonHtml($container, $template, $title='Add')
     {
         if (!isset($this->_addRowButtonHtml[$container])) {
@@ -165,6 +202,13 @@ class Mage_GoogleCheckout_Block_Adminhtml_Shipping_Merchant
         return $this->_addRowButtonHtml[$container];
     }
 
+    /**
+     * @todo
+     *
+     * @param $selector
+     * @param $title
+     * @return
+     */
     protected function _getRemoveRowButtonHtml($selector = 'li', $title = 'Remove')
     {
         if (!$this->_removeRowButtonHtml) {

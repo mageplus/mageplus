@@ -36,7 +36,7 @@ class Mage_CatalogRule_Model_Resource_Rule_Product_Price_Collection
     extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
     /**
-     * Enter description here ...
+     * @todo
      *
      */
     protected function _construct()
@@ -46,7 +46,7 @@ class Mage_CatalogRule_Model_Resource_Rule_Product_Price_Collection
     }
 
     /**
-     * Enter description here ...
+     * @todo
      *
      * @return unknown
      */

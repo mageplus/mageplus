@@ -39,6 +39,11 @@ class Mage_Tag_Block_All extends Mage_Core_Block_Template
     protected $_minPopularity;
     protected $_maxPopularity;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _loadTags()
     {
         if (empty($this->_tags)) {
@@ -66,22 +71,42 @@ class Mage_Tag_Block_All extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTags()
     {
         $this->_loadTags();
         return $this->_tags;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMaxPopularity()
     {
         return $this->_maxPopularity;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMinPopularity()
     {
         return $this->_minPopularity;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getHeadText()
     {
         return Mage::helper('tag')->__('All Tags');

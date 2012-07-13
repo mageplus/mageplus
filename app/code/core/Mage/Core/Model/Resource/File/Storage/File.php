@@ -58,7 +58,7 @@ class Mage_Core_Model_Resource_File_Storage_File
     /**
      * Collect files and directories recursively
      *
-     * @param  string$dir
+     * @param string $dir
      * @return array
      */
     public function getStorageData($dir = '')
@@ -134,7 +134,7 @@ class Mage_Core_Model_Resource_File_Storage_File
      * Save directory to storage
      *
      * @param  array $dir
-     * @return bool
+     * @return boolean
      */
     public function saveDir($dir)
     {
@@ -163,8 +163,8 @@ class Mage_Core_Model_Resource_File_Storage_File
      *
      * @param  string $filePath
      * @param  string $content
-     * @param  bool $overwrite
-     * @return bool
+     * @param  boolean $overwrite
+     * @return boolean
      */
     public function saveFile($filePath, $content, $overwrite = false)
     {

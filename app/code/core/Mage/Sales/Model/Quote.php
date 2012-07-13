@@ -484,6 +484,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomerTaxClassId()
     {
         /*
@@ -557,6 +562,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $this->_getAddressByType(Mage_Sales_Model_Quote_Address::TYPE_SHIPPING);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllShippingAddresses()
     {
         $addresses = array();
@@ -569,6 +579,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $addresses;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllAddresses()
     {
         $addresses = array();
@@ -595,6 +610,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddressByCustomerAddressId($addressId)
     {
         foreach ($this->getAddressesCollection() as $address) {
@@ -605,6 +625,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingAddressByCustomerAddressId($addressId)
     {
         foreach ($this->getAddressesCollection() as $address) {
@@ -616,6 +641,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function removeAddress($addressId)
     {
         foreach ($this->getAddressesCollection() as $address) {
@@ -627,6 +657,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function removeAllAddresses()
     {
         foreach ($this->getAddressesCollection() as $address) {
@@ -635,6 +670,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function addAddress(Mage_Sales_Model_Quote_Address $address)
     {
         $address->setQuote($this);
@@ -685,6 +725,13 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * 
+     * @return
+     */
     public function addShippingAddress(Mage_Sales_Model_Quote_Address $address)
     {
         $this->setShippingAddress($address);
@@ -1113,6 +1160,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemsSummaryQty()
     {
         $qty = $this->getData('all_items_qty');
@@ -1136,6 +1188,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $qty;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemVirtualQty()
     {
         $qty = $this->getData('virtual_items_qty');
@@ -1164,6 +1221,12 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
     }
 
     /*********************** PAYMENTS ***************************/
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentsCollection()
     {
         if (is_null($this->_payments)) {
@@ -1194,6 +1257,13 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $payment;
     }
 
+    /**
+     * @todo
+     *
+     * @param $paymentId
+     * 
+     * @return
+     */
     public function getPaymentById($paymentId)
     {
         foreach ($this->getPaymentsCollection() as $payment) {
@@ -1204,6 +1274,13 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Payment $payment
+     * 
+     * @return
+     */
     public function addPayment(Mage_Sales_Model_Quote_Payment $payment)
     {
         $payment->setQuote($this);
@@ -1213,6 +1290,13 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Payment $payment
+     * 
+     * @return
+     */
     public function setPayment(Mage_Sales_Model_Quote_Payment $payment)
     {
         if (!$this->getIsMultiPayment() && ($old = $this->getPayment())) {
@@ -1223,6 +1307,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $payment;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function removePayment()
     {
         $this->getPayment()->isDeleted(true);
@@ -1355,6 +1444,14 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $sortedTotals;
     }
 
+    /**
+     * @todo
+     *
+     * @param $message
+     * @param $index
+     * 
+     * @return
+     */
     public function addMessage($message, $index = 'error')
     {
         $messages = $this->getData('messages');
@@ -1573,6 +1670,13 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $multishipping
+     * 
+     * @return
+     */
     public function validateMinimumAmount($multishipping = false)
     {
         $storeId = $this->getStoreId();
@@ -1807,6 +1911,11 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     protected function _validateCouponCode()
     {
         $code = $this->_getData('coupon_code');

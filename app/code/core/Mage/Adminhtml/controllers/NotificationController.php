@@ -34,6 +34,11 @@
  */
 class Mage_Adminhtml_NotificationController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('System'))->_title($this->__('Notifications'));
@@ -45,6 +50,11 @@ class Mage_Adminhtml_NotificationController extends Mage_Adminhtml_Controller_Ac
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function markAsReadAction()
     {
         if ($id = $this->getRequest()->getParam('id')) {
@@ -74,6 +84,11 @@ class Mage_Adminhtml_NotificationController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massMarkAsReadAction()
     {
         $session = Mage::getSingleton('adminhtml/session');
@@ -102,6 +117,11 @@ class Mage_Adminhtml_NotificationController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function removeAction()
     {
         if ($id = $this->getRequest()->getParam('id')) {
@@ -130,6 +150,11 @@ class Mage_Adminhtml_NotificationController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massRemoveAction()
     {
         $session = Mage::getSingleton('adminhtml/session');
@@ -158,6 +183,11 @@ class Mage_Adminhtml_NotificationController extends Mage_Adminhtml_Controller_Ac
         $this->_redirectReferer();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         switch ($this->getRequest()->getActionName()) {

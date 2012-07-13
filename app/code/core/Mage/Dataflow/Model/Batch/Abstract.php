@@ -81,6 +81,12 @@ abstract class Mage_Dataflow_Model_Batch_Abstract extends Mage_Core_Model_Abstra
         return $this->getResource()->getIdCollection($this);
     }
 
+    /**
+     * @todo
+     *
+     * @param $batchId
+     * @return
+     */
     public function deleteCollection($batchId = null)
     {
         if (!is_null($batchId)) {

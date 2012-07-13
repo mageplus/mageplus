@@ -58,18 +58,38 @@ class Mage_Media_Model_File_Image extends Mage_Core_Model_Resource_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Media_Model_Image $object
+     * @param $file
+     * @param $field
+     * @return
+     */
     public function load(Mage_Media_Model_Image $object, $file, $field=null)
     {
         // Do some implementation
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Media_Model_Image $object
+     * @return
+     */
     public function save(Mage_Media_Model_Image $object)
     {
         // Do some implementation
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Media_Model_Image $object
+     * @return
+     */
     public function delete(Mage_Media_Model_Image $object)
     {
         return $this;
@@ -229,6 +249,4 @@ class Mage_Media_Model_File_Image extends Mage_Core_Model_Resource_Abstract
 
         return false;
     }
-
-
 }

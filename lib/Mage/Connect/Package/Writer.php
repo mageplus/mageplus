@@ -33,7 +33,6 @@
  */
 class Mage_Connect_Package_Writer
 {
-
     /**
     * Name of package configuration file
     */
@@ -205,5 +204,4 @@ class Mage_Connect_Package_Writer
     {
         return $this->_pathToArchive;
     }
-
 }

@@ -25,6 +25,11 @@
  */
 class Mage_Tax_Model_Config_Price_Include extends Mage_Core_Model_Config_Data
 {
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function afterSave()
     {
         parent::afterSave();

@@ -306,4 +306,11 @@
             </aggregate_sales_report_tax_data>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Tax/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -47,6 +47,11 @@ class Mage_Review_CustomerController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->loadLayout();
@@ -64,6 +69,11 @@ class Mage_Review_CustomerController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function viewAction()
     {
         $this->loadLayout();

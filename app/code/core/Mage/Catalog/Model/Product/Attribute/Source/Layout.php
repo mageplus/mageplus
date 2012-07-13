@@ -33,6 +33,11 @@
  */
 class Mage_Catalog_Model_Product_Attribute_Source_Layout extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllOptions()
     {
         if (!$this->_options) {

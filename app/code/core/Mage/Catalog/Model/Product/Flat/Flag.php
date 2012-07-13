@@ -46,7 +46,8 @@ class Mage_Catalog_Model_Product_Flat_Flag extends Mage_Core_Model_Flag
      *
      * @return array
      */
-    public function getFlagData() {
+    public function getFlagData()
+    {
         $flagData = parent::getFlagData();
         if (!is_array($flagData)) {
             $flagData = array();
@@ -60,7 +61,8 @@ class Mage_Catalog_Model_Product_Flat_Flag extends Mage_Core_Model_Flag
      *
      * @return bool
      */
-    public function getIsBuilt() {
+    public function getIsBuilt()
+    {
         $flagData = $this->getFlagData();
         if (!isset($flagData['is_built'])) {
             $flagData['is_built'] = false;
@@ -75,7 +77,8 @@ class Mage_Catalog_Model_Product_Flat_Flag extends Mage_Core_Model_Flag
      * @param bool $flag
      * @return Mage_Catalog_Model_Product_Flat_Flag
      */
-    public function setIsBuild($flag) {
+    public function setIsBuild($flag)
+    {
         $flagData = $this->getFlagData();
         $flagData['is_built'] = (bool)$flag;
         $this->setFlagData($flagData);

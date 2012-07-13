@@ -107,9 +107,13 @@ class Mage_Shipping_Model_Carrier_Flatrate
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllowedMethods()
     {
         return array('flatrate'=>$this->getConfigData('name'));
     }
-
 }

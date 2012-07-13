@@ -68,6 +68,12 @@ abstract class Mage_Usa_Model_Shipping_Carrier_Abstract extends Mage_Shipping_Mo
         return isset($this->_code) ? $this->_code : null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $tracking
+     * @return
+     */
     public function getTrackingInfo($tracking)
     {
         $info = array();

@@ -27,7 +27,6 @@
 
 class Mage_Connect_Channel_VO implements Iterator
 {
-    
     private $_validator = null;
     
     protected $properties = array(
@@ -36,26 +35,62 @@ class Mage_Connect_Channel_VO implements Iterator
         'summary' => '',
     );
 
-    public function rewind() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function rewind()
+    {
         reset($this->properties);
     }
 
-    public function valid() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function valid()
+    {
         return current($this->properties) !== false;
     }
 
-    public function key() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function key()
+    {
         return key($this->properties);
     }
 
-    public function current() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function current()
+    {
         return current($this->properties);
     }
 
-    public function next() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function next()
+    {
         next($this->properties);
     }
 
+    /**
+     * @todo
+     *
+     * @param $var
+     * @return
+     */
     public function __get($var)
     {
         if (isset($this->properties[$var])) {
@@ -64,6 +99,13 @@ class Mage_Connect_Channel_VO implements Iterator
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $var
+     * @param $value
+     * @return
+     */
     public function __set($var, $value)
     {
         if (is_string($value)) {
@@ -77,11 +119,22 @@ class Mage_Connect_Channel_VO implements Iterator
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toArray()
     {
         return array('channel' => $this->properties);
     }
      
+    /**
+     * @todo
+     *
+     * @param array $arr
+     * @return
+     */
     public function fromArray(array $arr)
     {
         foreach($arr as $k=>$v) {
@@ -89,7 +142,11 @@ class Mage_Connect_Channel_VO implements Iterator
         }
     }
 
-    
+    /**
+     * @todo
+     *
+     * @return
+     */
     private function validator()
     { 
         if(is_null($this->_validator)) {
@@ -109,5 +166,4 @@ class Mage_Connect_Channel_VO implements Iterator
         }
         return true;
     }
-
 }

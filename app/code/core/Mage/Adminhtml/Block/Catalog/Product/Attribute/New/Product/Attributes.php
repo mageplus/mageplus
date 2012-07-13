@@ -33,9 +33,13 @@
  */
 class Mage_Adminhtml_Block_Catalog_Product_Attribute_New_Product_Attributes extends Mage_Adminhtml_Block_Catalog_Form
 {
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareForm()
     {
-
         $form = new Varien_Data_Form();
         /**
          * Initialize product object as form property
@@ -67,6 +71,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_New_Product_Attributes exte
         $this->setForm($form);
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _getAdditionalElementTypes()
     {
         $result = array(
@@ -86,6 +95,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_New_Product_Attributes exte
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _toHtml()
     {
         parent::_toHtml();

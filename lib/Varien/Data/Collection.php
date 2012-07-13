@@ -702,11 +702,21 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
         return $res;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return $this->_toOptionArray();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionHash()
     {
         return $this->_toOptionHash();
@@ -766,28 +776,55 @@ class Varien_Data_Collection implements IteratorAggregate, Countable
         return count($this->_items);
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function setCacheKey($key)
     {
         $this->_cacheKey = $key;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCacheKey()
     {
         return $this->_cacheKey;
     }
 
+    /**
+     * @todo
+     *
+     * @param $tags
+     * @return
+     */
     public function setCacheTags($tags)
     {
         $this->_cacheTags = $tags;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCacheTags()
     {
         return $this->_cacheTags;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCacheLifetime()
     {
         return $this->_cacheLifetime;

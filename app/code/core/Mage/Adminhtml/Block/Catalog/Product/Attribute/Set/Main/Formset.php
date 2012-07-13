@@ -32,6 +32,7 @@
 
 class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Main_Formset extends Mage_Adminhtml_Block_Widget_Form
 {
+    // @todo - what's the point of this?????
     public function __construct()
     {
         parent::__construct();

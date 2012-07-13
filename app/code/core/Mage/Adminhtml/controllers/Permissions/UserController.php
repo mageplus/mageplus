@@ -25,7 +25,11 @@
  */
 class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controller_Action
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initAction()
     {
         $this->loadLayout()
@@ -37,6 +41,11 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('System'))
@@ -48,11 +57,21 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('edit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('System'))
@@ -95,6 +114,11 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         if ($data = $this->getRequest()->getPost()) {
@@ -159,6 +183,11 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         $currentUser = Mage::getSingleton('admin/session')->getUser();
@@ -187,6 +216,11 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function rolesGridAction()
     {
         $id = $this->getRequest()->getParam('user_id');
@@ -204,6 +238,11 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function roleGridAction()
     {
         $this->getResponse()
@@ -213,9 +252,13 @@ class Mage_Adminhtml_Permissions_UserController extends Mage_Adminhtml_Controlle
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/acl/users');
     }
-
 }

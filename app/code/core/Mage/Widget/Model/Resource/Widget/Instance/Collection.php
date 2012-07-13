@@ -41,7 +41,6 @@ class Mage_Widget_Model_Resource_Widget_Instance_Collection extends Mage_Core_Mo
      */
     protected $_map = array('fields' => array('type' => 'instance_type'));
 
-
     /**
      * Constructor
      *

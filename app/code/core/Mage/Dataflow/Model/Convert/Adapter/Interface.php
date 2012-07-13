@@ -34,9 +34,17 @@
  */
 interface Mage_Dataflow_Model_Convert_Adapter_Interface
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load();
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save();
-
 }

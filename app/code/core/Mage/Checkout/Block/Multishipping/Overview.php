@@ -56,6 +56,11 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return Mage::getSingleton('checkout/type_multishipping');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -66,11 +71,21 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBillingAddress()
     {
         return $this->getCheckout()->getQuote()->getBillingAddress();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentHtml()
     {
         return $this->getChildHtml('payment_info');
@@ -91,11 +106,21 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         //return $this->getCheckout()->getQuote()->getPayment();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingAddresses()
     {
         return $this->getCheckout()->getQuote()->getAllShippingAddresses();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingAddressCount()
     {
         $count = $this->getData('shipping_address_count');
@@ -106,6 +131,13 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return $count;
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getShippingAddressRate($address)
     {
         if ($rate = $address->getShippingRateByCode($address->getShippingMethod())) {
@@ -114,6 +146,13 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getShippingPriceInclTax($address)
     {
         $exclTax = $address->getShippingAmount();
@@ -121,21 +160,49 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return $this->formatPrice($exclTax + $taxAmount);
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getShippingPriceExclTax($address)
     {
         return $this->formatPrice($address->getShippingAmount());
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * 
+     * @return
+     */
     public function formatPrice($price)
     {
         return $this->getQuote()->getStore()->formatPrice($price);
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getShippingAddressItems($address)
     {
         return $address->getAllVisibleItems();
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getShippingAddressTotals($address)
     {
         $totals = $address->getTotals();
@@ -152,41 +219,85 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return $totals;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTotal()
     {
         return $this->getCheckout()->getQuote()->getGrandTotal();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddressesEditUrl()
     {
         return $this->getUrl('*/*/backtoaddresses');
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getEditShippingAddressUrl($address)
     {
         return $this->getUrl('*/multishipping_address/editShipping', array('id'=>$address->getCustomerAddressId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getEditBillingAddressUrl($address)
     {
         return $this->getUrl('*/multishipping_address/editBilling', array('id'=>$address->getCustomerAddressId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditShippingUrl()
     {
         return $this->getUrl('*/*/backtoshipping');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPostActionUrl()
     {
         return $this->getUrl('*/*/overviewPost');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditBillingUrl()
     {
         return $this->getUrl('*/*/backtobilling');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return $this->getUrl('*/*/backtobilling');
@@ -231,13 +342,25 @@ class Mage_Checkout_Block_Multishipping_Overview extends Mage_Sales_Block_Items_
         return $this->getCheckout()->getQuote();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBillinAddressTotals()
     {
         $_address = $this->getQuote()->getBillingAddress();
         return $this->getShippingAddressTotals($_address);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $totals
+     * @param $colspan
+     * 
+     * @return
+     */
     public function renderTotals($totals, $colspan=null)
     {
         if ($colspan === null) {

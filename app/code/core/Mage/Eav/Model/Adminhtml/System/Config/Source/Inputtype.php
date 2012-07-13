@@ -25,6 +25,11 @@
  */
 class Mage_Eav_Model_Adminhtml_System_Config_Source_Inputtype
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

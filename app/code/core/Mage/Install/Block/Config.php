@@ -68,16 +68,31 @@ class Mage_Install_Block_Config extends Mage_Install_Block_Abstract
         return $data;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSkipUrlValidation()
     {
         return Mage::getSingleton('install/session')->getSkipUrlValidation();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSkipBaseUrlValidation()
     {
         return Mage::getSingleton('install/session')->getSkipBaseUrlValidation();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSessionSaveOptions()
     {
         return array(
@@ -86,6 +101,11 @@ class Mage_Install_Block_Config extends Mage_Install_Block_Abstract
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSessionSaveSelect()
     {
         $html = $this->getLayout()->createBlock('core/html_select')

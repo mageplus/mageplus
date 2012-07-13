@@ -124,4 +124,11 @@
         </layout>
         <eula_file>LICENSE.html</eula_file>
     </install>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Install/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

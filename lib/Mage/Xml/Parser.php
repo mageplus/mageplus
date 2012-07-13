@@ -12,28 +12,55 @@ class Mage_Xml_Parser
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDom()
     {
         return $this->_dom;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCurrentDom()
     {
         return $this->_currentDom;
     }
 
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     protected function _setCurrentDom($node)
     {
         $this->_currentDom = $node;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function xmlToArray()
     {
         $this->_content = $this->_xmlToArray();
         return $this->_content;
     }
 
+    /**
+     * @todo
+     *
+     * @param $currentNode
+     * @return
+     */
     protected function _xmlToArray($currentNode=false)
     {
         if (!$currentNode) {
@@ -76,16 +103,27 @@ class Mage_Xml_Parser
         return $content;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function load($file)
     {
         $this->getDom()->load($file);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $string
+     * @return
+     */
     public function loadXML($string)
     {
         $this->getDom()->loadXML($string);
         return $this;
     }
-
 }

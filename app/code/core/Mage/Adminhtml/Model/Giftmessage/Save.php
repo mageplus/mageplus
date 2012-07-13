@@ -56,11 +56,21 @@ class Mage_Adminhtml_Model_Giftmessage_Save extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaved()
     {
         return $this->_saved;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAllInOrder()
     {
         $giftmessages = $this->getGiftmessages();
@@ -277,6 +287,12 @@ class Mage_Adminhtml_Model_Giftmessage_Save extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @return
+     */
     public function importAllowQuoteItemsFromItems($items)
     {
         $allowedItems = $this->getAllowQuoteItems();

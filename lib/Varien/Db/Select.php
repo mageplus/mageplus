@@ -447,6 +447,7 @@ class Varien_Db_Select extends Zend_Db_Select
 
         return $sql;
     }
+    
     /**
      * Add EXISTS clause
      *

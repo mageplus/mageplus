@@ -56,6 +56,14 @@ class Mage_Page_Block_Html_Breadcrumbs extends Mage_Core_Block_Template
         $this->setTemplate('page/html/breadcrumbs.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @param $crumbName
+     * @param $crumbInfo
+     * @param $after
+     * @return
+     */
     function addCrumb($crumbName, $crumbInfo, $after = false)
     {
         $this->_prepareArray($crumbInfo, array('label', 'title', 'link', 'first', 'last', 'readonly'));
@@ -65,6 +73,11 @@ class Mage_Page_Block_Html_Breadcrumbs extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         if (is_array($this->_crumbs)) {

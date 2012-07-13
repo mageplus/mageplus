@@ -58,18 +58,33 @@ class Mage_Catalog_Model_Product_Link extends Mage_Core_Model_Abstract
         $this->_init('catalog/product_link');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function useRelatedLinks()
     {
         $this->setLinkTypeId(self::LINK_TYPE_RELATED);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function useGroupedLinks()
     {
         $this->setLinkTypeId(self::LINK_TYPE_GROUPED);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function useUpSellLinks()
     {
         $this->setLinkTypeId(self::LINK_TYPE_UPSELL);
@@ -116,6 +131,12 @@ class Mage_Catalog_Model_Product_Link extends Mage_Core_Model_Abstract
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function getAttributes($type=null)
     {
         if (is_null($type)) {

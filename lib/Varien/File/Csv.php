@@ -35,6 +35,7 @@ class Varien_File_Csv
     protected $_delimiter = ',';
     protected $_enclosure = '"';
     
+    // @todo is this necessary???
     public function __construct() 
     {
         
@@ -134,7 +135,17 @@ class Varien_File_Csv
         return $this;
     }
     
-    public function fputcsv(&$handle, $fields = array(), $delimiter = ',', $enclosure = '"') {
+    /**
+     * @todo
+     *
+     * @param $handle
+     * @param array $fields
+     * @param $delimiter
+     * @param $enclosure
+     * @return
+     */
+    public function fputcsv(&$handle, $fields = array(), $delimiter = ',', $enclosure = '"')
+    {
         $str = '';
         $escape_char = '\\';
         foreach ($fields as $value) {
@@ -167,5 +178,4 @@ class Varien_File_Csv
         $str .= "\n";
         return fwrite($handle, $str);
     }
-    
 }

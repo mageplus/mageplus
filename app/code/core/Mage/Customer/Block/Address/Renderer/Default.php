@@ -63,6 +63,13 @@ class Mage_Customer_Block_Address_Renderer_Default extends Mage_Core_Block_Abstr
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Customer_Model_Address_Abstract $address
+     * 
+     * @return
+     */
     public function getFormat(Mage_Customer_Model_Address_Abstract $address=null)
     {
         $countryFormat = is_null($address) ? false : $address->getCountryModel()->getFormat($this->getType()->getCode());

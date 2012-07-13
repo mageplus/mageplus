@@ -51,6 +51,12 @@ class Mage_Payment_Block_Form_Container extends Mage_Core_Block_Template
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @param $method
+     * @return
+     */
     protected function _canUseMethod($method)
     {
         if (!$method->canUseForCountry($this->getQuote()->getBillingAddress()->getCountry())) {

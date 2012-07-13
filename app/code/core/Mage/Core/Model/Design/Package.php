@@ -210,6 +210,14 @@ class Mage_Core_Model_Design_Package
         return $this->_name;
     }
 
+    /**
+     * @TODO
+     * 
+     * @param $packageName
+     * @param $area
+     *
+     * @return 
+     */
     public function designPackageExists($packageName, $area = self::DEFAULT_AREA)
     {
         return is_dir(Mage::getBaseDir('design') . DS . $area . DS . $packageName);
@@ -242,6 +250,13 @@ class Mage_Core_Model_Design_Package
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $type
+     *
+     * @return 
+     */
     public function getTheme($type)
     {
         if (empty($this->_theme[$type])) {
@@ -267,11 +282,23 @@ class Mage_Core_Model_Design_Package
         return $this->_theme[$type];
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getDefaultTheme()
     {
         return self::DEFAULT_THEME;
     }
 
+    /**
+     * @TODO
+     *
+     * @param array $params
+     *
+     * @return 
+     */
     public function updateParamDefaults(array &$params)
     {
         if ($this->getStore()) {
@@ -292,6 +319,13 @@ class Mage_Core_Model_Design_Package
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param array $params
+     *
+     * @return 
+     */
     public function getBaseDir(array $params)
     {
         $this->updateParamDefaults($params);
@@ -300,6 +334,13 @@ class Mage_Core_Model_Design_Package
         return $baseDir;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $params
+     *
+     * @return 
+     */
     public function getSkinBaseDir(array $params=array())
     {
         $params['_type'] = 'skin';
@@ -309,6 +350,13 @@ class Mage_Core_Model_Design_Package
         return $baseDir;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $params
+     *
+     * @return 
+     */
     public function getLocaleBaseDir(array $params=array())
     {
         $params['_type'] = 'locale';
@@ -319,6 +367,13 @@ class Mage_Core_Model_Design_Package
         return $baseDir;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $params
+     *
+     * @return 
+     */
     public function getSkinBaseUrl(array $params=array())
     {
         $params['_type'] = 'skin';
@@ -436,18 +491,42 @@ class Mage_Core_Model_Design_Package
         return Mage::getStoreConfig('design/theme/default', $this->getStore());
     }
 
+    /**
+     * @TODO
+     *
+     * @param $file
+     * @param $params
+     *
+     * @return 
+     */
     public function getLayoutFilename($file, array $params=array())
     {
         $params['_type'] = 'layout';
         return $this->getFilename($file, $params);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $file
+     * @param $params
+     *
+     * @return 
+     */
     public function getTemplateFilename($file, array $params=array())
     {
         $params['_type'] = 'template';
         return $this->getFilename($file, $params);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $file
+     * @param $params
+     *
+     * @return 
+     */
     public function getLocaleFileName($file, array $params=array())
     {
         $params['_type'] = 'locale';

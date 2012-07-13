@@ -34,7 +34,6 @@
  
 class Varien_Filter_Template_Tokenizer_Parameter extends Varien_Filter_Template_Tokenizer_Abstract
 {
-       
     /**
      * Tokenize string and return getted parameters
      *
@@ -63,7 +62,8 @@ class Varien_Filter_Template_Tokenizer_Parameter extends Varien_Filter_Template_
      * 
      * @return string
      */
-    public function getValue() {
+    public function getValue()
+    {
         $this->next();
         $value = '';
         if($this->isWhiteSpace()) { 
@@ -94,5 +94,4 @@ class Varien_Filter_Template_Tokenizer_Parameter extends Varien_Filter_Template_
         
         return $value;
     }
-    
 }

@@ -80,21 +80,41 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Action_Attribute_Tab_Inventory
     /**
      * ######################## TAB settings #################################
      */
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabLabel()
     {
         return Mage::helper('catalog')->__('Inventory');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabTitle()
     {
         return Mage::helper('catalog')->__('Inventory');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canShowTab()
     {
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isHidden()
     {
         return false;

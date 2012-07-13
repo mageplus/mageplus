@@ -33,6 +33,12 @@
  */
 class Mage_Cms_Model_Wysiwyg_Images_Storage_Collection extends Varien_Data_Collection_Filesystem
 {
+    /**
+     * @todo
+     *
+     * @param $filename
+     * @return
+     */
     protected function _generateRow($filename)
     {
         $filename = preg_replace('~[/\\\]+~', DIRECTORY_SEPARATOR, $filename);

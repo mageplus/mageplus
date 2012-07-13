@@ -36,6 +36,11 @@ class Mage_ProductAlert_Block_Price extends Mage_Core_Block_Template
         $this->setTemplate('productalert/price.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isShow()
     {
         if (!Mage::getStoreConfig('catalog/productalert/allow_price')) {
@@ -45,6 +50,13 @@ class Mage_ProductAlert_Block_Price extends Mage_Core_Block_Template
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $route
+     * @param array $params
+     * @return
+     */
     public function getUrl($route = '', $params = array())
     {
         return Mage::helper('productalert')->getSaveUrl('price');

@@ -250,7 +250,6 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
         return $this;
     }
 
-
     /**
      * Add an object to the collection
      *
@@ -455,6 +454,14 @@ abstract class Mage_Eav_Model_Entity_Collection_Abstract extends Varien_Data_Col
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $entityType
+     * @param $prefix
+     *
+     * @return
+     */
     public function addEntityTypeToSelect($entityType, $prefix)
     {
         $this->_selectEntityTypes[$entityType] = array(

@@ -30,6 +30,14 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
     protected $_routes = array();
     protected $_dispatchData = array();
 
+    /**
+     * @todo
+     *
+     * @param $configArea
+     * @param $useRouterName
+     * 
+     * @return
+     */
     public function collectRoutes($configArea, $useRouterName)
     {
         $routers = array();
@@ -69,6 +77,11 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function fetchDefault()
     {
         $this->getFront()->setDefault(array(
@@ -329,6 +342,15 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $frontName
+     * @param $moduleName
+     * @param $routeName
+     * 
+     * @return
+     */
     public function addModule($frontName, $moduleName, $routeName)
     {
         $this->_modules[$frontName] = $moduleName;
@@ -336,6 +358,13 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $frontName
+     * 
+     * @return
+     */
     public function getModuleByFrontName($frontName)
     {
         if (isset($this->_modules[$frontName])) {
@@ -344,6 +373,14 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $moduleName
+     * @param $modules
+     *
+     * @return
+     */
     public function getModuleByName($moduleName, $modules)
     {
         foreach ($modules as $module) {
@@ -355,6 +392,13 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $routeName
+     *
+     * @return
+     */
     public function getFrontNameByRoute($routeName)
     {
         if (isset($this->_routes[$routeName])) {
@@ -363,11 +407,26 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $frontName
+     *
+     * @return
+     */
     public function getRouteByFrontName($frontName)
     {
         return array_search($frontName, $this->_routes);
     }
 
+    /**
+     * @todo
+     *
+     * @param $realModule
+     * @param $controller
+     *
+     * @return
+     */
     public function getControllerFileName($realModule, $controller)
     {
         $parts = explode('_', $realModule);
@@ -380,6 +439,13 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $fileName
+     *
+     * @return
+     */
     public function validateControllerFileName($fileName)
     {
         if ($fileName && is_readable($fileName) && false===strpos($fileName, '//')) {
@@ -388,12 +454,27 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $realModule
+     * @param $controller
+     *
+     * @return
+     */
     public function getControllerClassName($realModule, $controller)
     {
         $class = $realModule.'_'.uc_words($controller).'Controller';
         return $class;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $p
+     *
+     * @return
+     */
     public function rewrite(array $p)
     {
         $rewrite = Mage::getConfig()->getNode('global/rewrite');
@@ -443,6 +524,13 @@ class Mage_Core_Controller_Varien_Router_Standard extends Mage_Core_Controller_V
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $request
+     *
+     * @return
+     */
     protected function _getCurrentSecureUrl($request)
     {
         if ($alias = $request->getAlias(Mage_Core_Model_Url_Rewrite::REWRITE_REQUEST_PATH_ALIAS)) {

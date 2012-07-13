@@ -61,6 +61,11 @@ class Mage_Adminhtml_Block_Customer_Grid extends Mage_Adminhtml_Block_Widget_Gri
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('entity_id', array(
@@ -168,6 +173,11 @@ class Mage_Adminhtml_Block_Customer_Grid extends Mage_Adminhtml_Block_Widget_Gri
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareMassaction()
     {
         $this->setMassactionIdField('entity_id');
@@ -209,11 +219,22 @@ class Mage_Adminhtml_Block_Customer_Grid extends Mage_Adminhtml_Block_Widget_Gri
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/*/grid', array('_current'=> true));
     }
 
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function getRowUrl($row)
     {
         return $this->getUrl('*/*/edit', array('id'=>$row->getId()));

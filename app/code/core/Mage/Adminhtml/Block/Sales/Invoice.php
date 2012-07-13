@@ -43,6 +43,11 @@ class Mage_Adminhtml_Block_Sales_Invoice extends Mage_Adminhtml_Block_Widget_Gri
         $this->_removeButton('add');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentInfoHtml()
     {
         return $this->getChildHtml('payment_info');

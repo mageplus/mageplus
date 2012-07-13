@@ -333,6 +333,12 @@ class Mage_CatalogRule_Model_Observer
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Event_Observer $observer
+     * @return
+     */
     public function prepareCatalogProductCollectionPrices(Varien_Event_Observer $observer)
     {
         /* @var $collection Mage_Catalog_Model_Resource_Eav_Mysql4_Product_Collection */

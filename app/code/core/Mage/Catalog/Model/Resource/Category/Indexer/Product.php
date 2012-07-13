@@ -949,7 +949,6 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
         return $this;
     }
 
-
     /**
      * Create temporary table with enabled products visibility info
      *
@@ -1049,7 +1048,6 @@ class Mage_Catalog_Model_Resource_Category_Indexer_Product extends Mage_Index_Mo
 
         return $this->_storesInfo;
     }
-
 
     /**
      * @param int $storeId

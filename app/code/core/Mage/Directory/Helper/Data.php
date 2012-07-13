@@ -117,7 +117,6 @@ class Mage_Directory_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function getRegionJson()
     {
-
         Varien_Profiler::start('TEST: '.__METHOD__);
         if (!$this->_regionJson) {
             $cacheKey = 'DIRECTORY_REGIONS_JSON_STORE'.Mage::app()->getStore()->getId();

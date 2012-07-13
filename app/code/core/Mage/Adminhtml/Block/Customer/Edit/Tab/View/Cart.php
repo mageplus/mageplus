@@ -45,6 +45,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View_Cart extends Mage_Adminhtml_Bl
         $this->setEmptyText(Mage::helper('customer')->__('There are no items in customer\'s shopping cart at the moment'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         $quote = Mage::getModel('sales/quote');
@@ -67,6 +72,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View_Cart extends Mage_Adminhtml_Bl
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('product_id', array(
@@ -110,11 +120,22 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View_Cart extends Mage_Adminhtml_Bl
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function getRowUrl($row)
     {
         return $this->getUrl('*/catalog_product/edit', array('id' => $row->getProductId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeadersVisibility()
     {
         return ($this->getCollection()->getSize() > 0);

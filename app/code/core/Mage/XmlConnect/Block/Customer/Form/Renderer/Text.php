@@ -38,7 +38,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Text extends Enterprise_Custo
      *
      * @var string
      */
-    protected $_filedType = 'text';
+    protected $_fieldType = 'text';
 
     /**
      * Add text field to fieldset xml object
@@ -55,7 +55,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Text extends Enterprise_Custo
         $attributes += Mage::helper('xmlconnect/customer_form_renderer')
             ->addTitleAndRequiredAttr($fieldsetXmlObj, $this);
 
-        $fieldXmlObj = $fieldsetXmlObj->addField($this->getHtmlId(), $this->_filedType, $attributes);
+        $fieldXmlObj = $fieldsetXmlObj->addField($this->getHtmlId(), $this->_fieldType, $attributes);
 
         $validateRules = $this->getAttributeObject()->getValidateRules();
 

@@ -40,17 +40,33 @@ class Mage_Adminhtml_Block_Widget_Accordion_Item extends Mage_Adminhtml_Block_Wi
         parent::__construct();
     }
 
+    /**
+     * @todo
+     *
+     * @param $accordion
+     * @return
+     */
     public function setAccordion($accordion)
     {
         $this->_accordion = $accordion;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTarget()
     {
         return ($this->getAjax()) ? 'ajax' : '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTitle()
     {
         $title  = $this->getData('title');
@@ -60,6 +76,11 @@ class Mage_Adminhtml_Block_Widget_Accordion_Item extends Mage_Adminhtml_Block_Wi
         return $title;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getContent()
     {
         $content = $this->getData('content');
@@ -72,6 +93,11 @@ class Mage_Adminhtml_Block_Widget_Accordion_Item extends Mage_Adminhtml_Block_Wi
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getClass()
     {
         $class = $this->getData('class');
@@ -81,6 +107,11 @@ class Mage_Adminhtml_Block_Widget_Accordion_Item extends Mage_Adminhtml_Block_Wi
         return $class;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         $content = $this->getContent();

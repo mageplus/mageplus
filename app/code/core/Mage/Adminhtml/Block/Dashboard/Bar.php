@@ -43,11 +43,24 @@ class Mage_Adminhtml_Block_Dashboard_Bar extends Mage_Adminhtml_Block_Dashboard_
         $this->setTemplate('dashboard/bar.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function getTotals()
     {
         return $this->_totals;
     }
 
+    /**
+     * @todo
+     *
+     * @param $label
+     * @param $value
+     * @param bool $isQuantity
+     * @return
+     */
     public function addTotal($label, $value, $isQuantity=false)
     {
         /*if (!$isQuantity) {

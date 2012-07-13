@@ -69,7 +69,7 @@ class Mage_Core_Block_Template_Facade extends Mage_Core_Block_Template
      * $conditionKeys can be array or arbitrary set of params (func_get_args())
      *
      * @param array $conditionKeys
-     * @return bool
+     * @return boolean
      */
     public function ifEquals($conditionKeys)
     {

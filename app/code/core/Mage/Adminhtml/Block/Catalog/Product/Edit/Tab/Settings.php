@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Settings extends Mage_Adminhtml_Block_Widget_Form
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('continue_button',
@@ -46,6 +51,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Settings extends Mage_Adminh
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form();
@@ -79,6 +89,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Settings extends Mage_Adminh
         $this->setForm($form);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getContinueUrl()
     {
         return $this->getUrl('*/*/new', array(

@@ -72,7 +72,7 @@ class Mage_Core_Model_Resource_Session implements Zend_Session_SaveHandler_Inter
      * value zero means no automatic cleaning, one means automatic cleaning each time a session is closed, and x>1 means
      * cleaning once in x calls
      *
-     * @var int
+     * @var integer
      */
     protected $_automaticCleaningFactor    = 50;
 
@@ -100,7 +100,7 @@ class Mage_Core_Model_Resource_Session implements Zend_Session_SaveHandler_Inter
     /**
      * Retrieve session life time
      *
-     * @return int
+     * @return integer
      */
     public function getLifeTime()
     {
@@ -127,7 +127,7 @@ class Mage_Core_Model_Resource_Session implements Zend_Session_SaveHandler_Inter
     /**
      * Check DB connection
      *
-     * @return bool
+     * @return boolean
      */
     public function hasConnection()
     {
@@ -259,7 +259,7 @@ class Mage_Core_Model_Resource_Session implements Zend_Session_SaveHandler_Inter
     /**
      * Garbage collection
      *
-     * @param int $sessMaxLifeTime ignored
+     * @param integer $sessMaxLifeTime ignored
      * @return boolean
      */
     public function gc($sessMaxLifeTime)

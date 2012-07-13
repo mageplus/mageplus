@@ -177,4 +177,11 @@
             </currency_rates_update>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Directory/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

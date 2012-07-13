@@ -34,11 +34,21 @@
 
 class Mage_Adminhtml_Block_Newsletter_Subscriber_Grid_Filter_Checkbox extends Mage_Adminhtml_Block_Widget_Grid_Column_Filter_Abstract
 {
-     public function getCondition()
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getCondition()
     {
         return array();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtml()
     {
         return '<input type="checkbox" onclick="subscriberController.checkCheckboxes(this)"/>';

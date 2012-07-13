@@ -115,6 +115,12 @@ class Mage_Core_Model_Message_Collection
         }
     }
 
+    /**
+     * @TODO
+     *
+     * @param $identifier
+     * @return 
+     */
     public function deleteMessageByIdentifier($identifier)
     {
         foreach ($this->_messages as $type => $messages) {
@@ -170,6 +176,11 @@ class Mage_Core_Model_Message_Collection
         return $this->getItemsByType(Mage_Core_Model_Message::ERROR);
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function toString()
     {
         $out = '';

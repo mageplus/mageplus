@@ -127,6 +127,11 @@ class Mage_Dataflow_Model_Batch extends Mage_Core_Model_Abstract
         return $this->_ioAdapter;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeSave()
     {
         if (is_null($this->getData('created_at'))) {
@@ -134,6 +139,11 @@ class Mage_Dataflow_Model_Batch extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _afterDelete()
     {
         $this->getIoAdapter()->clear();

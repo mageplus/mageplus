@@ -43,6 +43,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Tag_Customer extends Mage_Ad
         $this->setUseAjax(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         if (Mage::helper('catalog')->isModuleEnabled('Mage_Tag')) {
@@ -57,11 +62,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Tag_Customer extends Mage_Ad
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _afterLoadCollection()
     {
         return parent::_afterLoadCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('firstname', array(
@@ -87,11 +102,22 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Tag_Customer extends Mage_Ad
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @param $row
+     * @return
+     */
     public function getRowUrl($row)
     {
         return $this->getUrl('*/customer/edit', array('id' => $row->getCustomerId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/catalog_product/tagCustomerGrid', array(

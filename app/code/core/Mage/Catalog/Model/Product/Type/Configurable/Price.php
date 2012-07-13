@@ -120,7 +120,15 @@ class Mage_Catalog_Model_Product_Type_Configurable_Price extends Mage_Catalog_Mo
         return $price;
     }
 
-    protected function _getValueByIndex($values, $index) {
+    /**
+     * @todo
+     *
+     * @param $values
+     * @param $index
+     * @return
+     */
+    protected function _getValueByIndex($values, $index)
+    {
         foreach ($values as $value) {
             if($value['value_index'] == $index) {
                 return $value;

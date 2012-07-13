@@ -48,6 +48,12 @@ class Mage_Tax_Model_Calculation_Rate_Title extends Mage_Core_Model_Abstract
         $this->_init('tax/calculation_rate_title');
     }
 
+    /**
+     * @todo
+     *
+     * @param $rateId
+     * @return
+     */
     public function deleteByRateId($rateId)
     {
         $this->getResource()->deleteByRateId($rateId);

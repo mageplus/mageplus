@@ -65,11 +65,22 @@ abstract class Varien_Io_Abstract implements Varien_Io_Interface
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function dirsep()
     {
         return '/';
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * @return
+     */
     public function getCleanPath($path)
     {
         if (empty($path)) {
@@ -111,6 +122,13 @@ abstract class Varien_Io_Abstract implements Varien_Io_Interface
         return $pathTokR . implode('/', $realPathParts);
     }
 
+    /**
+     * @todo
+     *
+     * @param $haystackPath
+     * @param $needlePath
+     * @return
+     */
     public function allowedPath($haystackPath, $needlePath)
     {
         return strpos($this->getCleanPath($haystackPath), $this->getCleanPath($needlePath)) === 0;

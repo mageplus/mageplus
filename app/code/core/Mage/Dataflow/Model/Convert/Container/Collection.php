@@ -34,17 +34,29 @@
  */
 class Mage_Dataflow_Model_Convert_Container_Collection
 {
-
     protected $_items = array();
 
     protected $_defaultClass = 'Mage_Dataflow_Model_Convert_Container_Generic';
 
+    /**
+     * @todo
+     *
+     * @param $className
+     * @return
+     */
     public function setDefaultClass($className)
     {
         $this->_defaultClass = $className;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param Mage_Dataflow_Model_Convert_Container_Interface $item
+     * @return
+     */
     public function addItem($name, Mage_Dataflow_Model_Convert_Container_Interface $item)
     {
         if (is_null($name)) {
@@ -60,6 +72,12 @@ class Mage_Dataflow_Model_Convert_Container_Collection
         return $item;
     }
 
+    /**
+     * @todo
+     *
+     * @poram $name
+     * @return
+     */
     public function getItem($name)
     {
         if (!isset($this->_items[$name])) {
@@ -68,9 +86,14 @@ class Mage_Dataflow_Model_Convert_Container_Collection
         return $this->_items[$name];
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function hasItem($name)
     {
         return isset($this->_items[$name]);
     }
-
 }

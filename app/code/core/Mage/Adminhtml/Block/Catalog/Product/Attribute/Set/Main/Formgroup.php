@@ -32,11 +32,17 @@
 
 class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Main_Formgroup extends Mage_Adminhtml_Block_Widget_Form
 {
+    // @todo - what's the point of this?????
     public function __construct()
     {
         parent::__construct();
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form();
@@ -77,6 +83,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Main_Formgroup extends 
         $this->setForm($form);
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _getSetId()
     {
         return ( intval($this->getRequest()->getParam('id')) > 0 )

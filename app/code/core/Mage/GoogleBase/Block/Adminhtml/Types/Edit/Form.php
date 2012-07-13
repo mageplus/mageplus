@@ -34,6 +34,11 @@
 
 class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form();
@@ -111,6 +116,12 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Blo
         $this->setForm($form);
     }
 
+    /**
+     * @todo
+     *
+     * @param $targetCountry
+     * @return
+     */
     public function getAttributeSetsSelectElement($targetCountry)
     {
         $field = new Varien_Data_Form_Element_Select();
@@ -122,6 +133,12 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Blo
         return $field;
     }
 
+    /**
+     * @todo
+     *
+     * @param $targetCountry
+     * @return
+     */
     public function getItemTypesSelectElement($targetCountry)
     {
         $field = new Varien_Data_Form_Element_Select();
@@ -133,6 +150,11 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Blo
         return $field;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCountriesArray()
     {
         $_allowed = Mage::getSingleton('googlebase/config')->getAllowedCountries();
@@ -143,6 +165,12 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Blo
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $targetCountry
+     * @return
+     */
     protected function _getAttributeSetsArray($targetCountry)
     {
         $entityType = Mage::getModel('catalog/product')->getResource()->getEntityType();
@@ -169,6 +197,12 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Blo
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $targetCountry
+     * @return
+     */
     protected function _getGbaseItemTypesArray($targetCountry)
     {
         $itemTypes = Mage::getModel('googlebase/service_feed')->getItemTypes($targetCountry);
@@ -179,11 +213,21 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Form extends Mage_Adminhtml_Blo
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemType()
     {
         return Mage::registry('current_item_type');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
         return $this->getUrl('*/*/save', array('type_id' => $this->getItemType()->getId()));

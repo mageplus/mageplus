@@ -33,14 +33,13 @@
  */
 class Mage_Api2_Model_Acl_Global_Rule_Tree extends Mage_Core_Helper_Abstract
 {
-    /**#@+
+    /**
      * Tree types
      */
     const TYPE_ATTRIBUTE = 'attribute';
     const TYPE_PRIVILEGE = 'privilege';
-    /**#@-*/
 
-    /**#@+
+    /**
      * Names
      */
     const NAME_CHILDREN         = 'children';
@@ -50,7 +49,6 @@ class Mage_Api2_Model_Acl_Global_Rule_Tree extends Mage_Core_Helper_Abstract
     const NAME_RESOURCE         = 'resource';
     const NAME_RESOURCE_GROUPS  = 'resource_groups';
     const NAME_GROUP            = 'group';
-    /**#@-*/
 
     /**
      * Separator for tree ID

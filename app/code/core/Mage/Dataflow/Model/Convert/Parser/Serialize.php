@@ -34,17 +34,23 @@
  */
 class Mage_Dataflow_Model_Convert_Parser_Serialize extends Mage_Dataflow_Model_Convert_Parser_Abstract
 {
-
+    /**
+     * @todo
+     * @return
+     */
     public function parse()
     {
         $this->setData(unserialize($this->getData()));
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function unparse()
     {
         $this->setData(serialize($this->getData()));
         return $this;
     }
-
 }

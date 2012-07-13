@@ -51,6 +51,13 @@ class Mage_Checkout_Block_Total_Default extends Mage_Checkout_Block_Cart_Totals
         return $this->getTotal()->getStyle();
     }
 
+    /**
+     * @todo
+     *
+     * @param $total
+     * 
+     * @return
+     */
     public function setTotal($total)
     {
         $this->setData('total', $total);
@@ -60,6 +67,11 @@ class Mage_Checkout_Block_Total_Default extends Mage_Checkout_Block_Cart_Totals
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStore()
     {
         return $this->_store;

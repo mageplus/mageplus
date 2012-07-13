@@ -76,6 +76,11 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
         $this->_init('catalogsearch/advanced');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getEngine()
     {
         if ($this->_engine == null) {

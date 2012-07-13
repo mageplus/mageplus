@@ -236,6 +236,11 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function addgroupAction()
     {
         $orderItemIds = $this->getRequest()->getParam('order_items', array());
@@ -487,6 +492,11 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
         $this->_goBack();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function estimateUpdatePostAction()
     {
         $code = (string) $this->getRequest()->getParam('estimate_method');

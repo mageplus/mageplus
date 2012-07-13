@@ -42,6 +42,12 @@ class Mage_Api_Model_Wsdl_Config_Base extends Varien_Simplexml_Config
 
     protected $_loadedFiles = array();
 
+    /**
+     * @todo
+     *
+     * @param $sourceData
+     * @return
+     */
     public function __construct($sourceData=null)
     {
         $this->_elementClass = 'Mage_Api_Model_Wsdl_Config_Element';
@@ -100,6 +106,12 @@ class Mage_Api_Model_Wsdl_Config_Base extends Varien_Simplexml_Config
         return $template->filter($text);
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function addLoadedFile($file)
     {
         if (!in_array($file, $this->_loadedFiles)) {
@@ -108,6 +120,12 @@ class Mage_Api_Model_Wsdl_Config_Base extends Varien_Simplexml_Config
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function loadFile($file)
     {
         if (in_array($file, $this->_loadedFiles)) {

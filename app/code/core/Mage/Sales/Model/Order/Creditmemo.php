@@ -256,6 +256,11 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $this->getOrder()->getShippingAddress();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemsCollection()
     {
         if (empty($this->_items)) {
@@ -271,6 +276,11 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $this->_items;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllItems()
     {
         $items = array();
@@ -282,6 +292,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $items;
     }
 
+    /**
+     * @todo
+     *
+     * @param $itemId
+     *
+     * @return
+     */
     public function getItemById($itemId)
     {
         foreach ($this->getItemsCollection() as $item) {
@@ -308,6 +325,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Creditmemo_Item $item
+     *
+     * @return
+     */
     public function addItem(Mage_Sales_Model_Order_Creditmemo_Item $item)
     {
         $item->setCreditmemo($this)
@@ -351,6 +375,11 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $price;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canRefund()
     {
         if ($this->getState() != self::STATE_CANCELED
@@ -400,7 +429,11 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $canVoid;
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function refund()
     {
         $this->setState(self::STATE_REFUNDED);
@@ -605,6 +638,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return Mage::helper('sales')->__('Unknown State');
     }
 
+    /**
+     * @todo
+     *
+     * @param $amount
+     *
+     * @return
+     */
     public function setShippingAmount($amount)
     {
         // base shipping amount calculated in total model
@@ -618,7 +658,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $this;
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $amount
+     *
+     * @return
+     */
     public function setAdjustmentPositive($amount)
     {
         $amount = trim($amount);
@@ -637,6 +683,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $amount
+     *
+     * @return
+     */
     public function setAdjustmentNegative($amount)
     {
         $amount = trim($amount);
@@ -682,6 +735,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param boolean $reload
+     *
+     * @return
+     */
     public function getCommentsCollection($reload=false)
     {
         if (is_null($this->_comments) || $reload) {
@@ -866,6 +926,13 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $configPath
+     *
+     * @return
+     */
     protected function _getEmails($configPath)
     {
         $data = Mage::getStoreConfig($configPath, $this->getStoreId());
@@ -875,6 +942,11 @@ class Mage_Sales_Model_Order_Creditmemo extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeDelete()
     {
         $this->_protectFromNonAdmin();

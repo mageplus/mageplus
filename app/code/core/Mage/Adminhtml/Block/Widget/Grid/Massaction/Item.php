@@ -79,6 +79,12 @@ class Mage_Adminhtml_Block_Widget_Grid_Massaction_Item extends Mage_Adminhtml_Bl
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $config
+     * @return
+     */
     protected function _createFromConfig(array $config)
     {
         $type = isset($config['type']) ? $config['type'] : 'default';

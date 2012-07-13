@@ -58,6 +58,11 @@ class Varien_Event_Observer_Cron extends Varien_Event_Observer
             && $this->matchCronExpression($e[4], $d['wday']);
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNow()
     {
         if (!$this->hasNow()) {
@@ -66,6 +71,13 @@ class Varien_Event_Observer_Cron extends Varien_Event_Observer
         return $this->getData('now');
     }
     
+    /**
+     * @todo
+     *
+     * @param $expr
+     * @param $num
+     * @return
+     */
     public function matchCronExpression($expr, $num)
     {
         // handle ALL match
@@ -117,6 +129,12 @@ class Varien_Event_Observer_Cron extends Varien_Event_Observer
         return ($value!==false) && ($num==$value) && ($num%$mod===0);
     }
     
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getNumeric($value) 
     {
         static $data = array(

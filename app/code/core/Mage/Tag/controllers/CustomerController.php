@@ -34,6 +34,11 @@
 
 class Mage_Tag_CustomerController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getTagId()
     {
         $tagId = (int) $this->getRequest()->getParam('tagId');
@@ -47,6 +52,11 @@ class Mage_Tag_CustomerController extends Mage_Core_Controller_Front_Action
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         if( !Mage::getSingleton('customer/session')->isLoggedIn() ) {
@@ -72,6 +82,11 @@ class Mage_Tag_CustomerController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function viewAction()
     {
         if( !Mage::getSingleton('customer/session')->isLoggedIn() ) {
@@ -109,6 +124,11 @@ class Mage_Tag_CustomerController extends Mage_Core_Controller_Front_Action
         $this->_forward('noRoute');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function removeAction()
     {
         if( !Mage::getSingleton('customer/session')->isLoggedIn() ) {

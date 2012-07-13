@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_SystemController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->loadLayout();
@@ -41,6 +46,11 @@ class Mage_Adminhtml_SystemController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function setStoreAction()
     {
         $storeId = (int) $this->getRequest()->getParam('store');
@@ -50,6 +60,11 @@ class Mage_Adminhtml_SystemController extends Mage_Adminhtml_Controller_Action
         $this->_redirectReferer();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system');

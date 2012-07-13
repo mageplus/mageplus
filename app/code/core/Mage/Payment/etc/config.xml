@@ -210,4 +210,11 @@
             </cashondelivery>
         </payment>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Payment/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

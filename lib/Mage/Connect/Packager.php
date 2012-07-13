@@ -48,8 +48,6 @@ class Mage_Connect_Packager
     protected $_archiver = null;
     protected $_http = null;
 
-
-
     /**
      *
      * @return Mage_Archive
@@ -62,6 +60,11 @@ class Mage_Connect_Packager
         return $this->_archiver;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDownloader()
     {
         if(is_null($this->_http)) {
@@ -71,13 +74,18 @@ class Mage_Connect_Packager
     }
 
 
+    /**
+     * @todo
+     *
+     * @param $ftpString
+     * @return
+     */
     public function getRemoteConf($ftpString)
     {
         $ftpObj = new Mage_Connect_Ftp();
         $ftpObj->connect($ftpString);
         $cfgFile = "connect.cfg";
         $cacheFile = "cache.cfg";
-
 
         $wd = $ftpObj->getcwd();
 
@@ -109,10 +117,14 @@ class Mage_Connect_Packager
         return array($remoteCache, $remoteCfg, $ftpObj);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $ftpString
+     * @return
+     */
     public function getRemoteCache($ftpString)
     {
-
         $ftpObj = new Mage_Connect_Ftp();
         $ftpObj->connect($ftpString);
         $remoteConfigExists = $ftpObj->fileExists("cache.cfg");
@@ -129,7 +141,12 @@ class Mage_Connect_Packager
         return array($remoteCfg, $ftpObj);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $ftpString    
+     * @return
+     */
     public function getRemoteConfig($ftpString)
     {
         $ftpObj = new Mage_Connect_Ftp();
@@ -151,6 +168,13 @@ class Mage_Connect_Packager
         return array($remoteCfg, $ftpObj);
     }
 
+    /**
+     * @todo
+     *
+     * @param $cache
+     * @param $ftpObj
+     * @return
+     */
     public function writeToRemoteCache($cache, $ftpObj)
     {
         $wd = $ftpObj->getcwd();
@@ -159,6 +183,13 @@ class Mage_Connect_Packager
         $ftpObj->chdir($wd);
     }
 
+    /**
+     * @todo
+     *
+     * @param $cache
+     * @param $ftpObj
+     * @return
+     */
     public function writeToRemoteConfig($cache, $ftpObj)
     {
         $wd = $ftpObj->getcwd();
@@ -168,7 +199,6 @@ class Mage_Connect_Packager
     }
 
     /**
-     *
      * @param $chanName
      * @param $package
      * @param Mage_Connect_Singleconfig $cacheObj
@@ -193,7 +223,6 @@ class Mage_Connect_Packager
     }
 
     /**
-     *
      * @param $chanName
      * @param $package
      * @param Mage_Connect_Singleconfig $cacheObj
@@ -211,11 +240,26 @@ class Mage_Connect_Packager
         $ftp->chdir($ftpDir);
     }
 
+    /**
+     * @todo
+     *
+     * @param $str
+     * @return
+     */
     protected function convertFtpPath($str)
     {
         return str_replace("\\", "/", $str);
     }
 
+    /**
+     * @todo
+     *
+     * @param $package
+     * @param $file
+     * @param $configObj
+     * @param $ftp
+     * @return
+     */
     public function processInstallPackageFtp($package, $file, $configObj, $ftp)
     {
         $ftpDir = $ftp->getcwd();
@@ -279,7 +323,6 @@ class Mage_Connect_Packager
         Mage_System_Dirs::rm(array("-r",$target));
     }
 
-
     /**
      * Get local modified files
      * @param $chanName
@@ -329,9 +372,7 @@ class Mage_Connect_Packager
         return $listModified;
     }
 
-
     /**
-     *
      * Get upgrades list
      *
      * @param string/array $channels
@@ -482,7 +523,6 @@ class Mage_Connect_Packager
 
     /**
      * Get dependencies list/install order info
-     *
      *
      * @param string $chanName
      * @param string $package

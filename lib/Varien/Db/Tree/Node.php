@@ -27,8 +27,8 @@
 
 require_once 'Varien/Db/Tree/Node/Exception.php';
 
-class Varien_Db_Tree_Node {
-
+class Varien_Db_Tree_Node
+{
     private $left;
     private $right;
     private $id;
@@ -37,12 +37,18 @@ class Varien_Db_Tree_Node {
     private $title;
     private $data;
 
-
     public $hasChild = false;
     public $numChild = 0;
 
-
-    function __construct($nodeData = array(), $keys) {
+    /**
+     * @todo
+     *
+     * @param array $nodeData
+     * @param $keys
+     * @return
+     */
+    function __construct($nodeData = array(), $keys)
+    {
         if (empty($nodeData)) {
             throw new Varien_Db_Tree_Node_Exception('Empty array of node information');
         }
@@ -65,7 +71,14 @@ class Varien_Db_Tree_Node {
         return $this;
     }
 
-    function getData($name) {
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
+    function getData($name)
+    {
         if (isset($this->data[$name])) {
             return $this->data[$name];
         } else {
@@ -73,23 +86,53 @@ class Varien_Db_Tree_Node {
         }
     }
 
-    function getLevel() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    function getLevel()
+    {
         return $this->level;
     }
 
-    function getLeft() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    function getLeft()
+    {
         return $this->left;
     }
 
-    function getRight() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    function getRight()
+    {
         return $this->right;
     }
 
-    function getPid() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    function getPid()
+    {
         return $this->pid;
     }
 
-    function getId() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    function getId()
+    {
         return $this->id;
     }
     
@@ -98,7 +141,8 @@ class Varien_Db_Tree_Node {
      *
      * @return boolean
      */
-    function isParent() {
+    function isParent()
+    {
         if ($this->right - $this->left > 1) {
             return true;
         } else {

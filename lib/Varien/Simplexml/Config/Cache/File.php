@@ -34,7 +34,6 @@
  */
 class Varien_Simplexml_Config_Cache_File extends Varien_Simplexml_Config_Cache_Abstract
 {
-
     /**
      * Initialize variables that depend on the cache key
      *

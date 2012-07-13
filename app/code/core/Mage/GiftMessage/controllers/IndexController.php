@@ -34,6 +34,11 @@
  */
 class Mage_GiftMessage_IndexController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         $giftMessage = Mage::getModel('giftmessage/message');
@@ -62,5 +67,4 @@ class Mage_GiftMessage_IndexController extends Mage_Core_Controller_Front_Action
         $this->loadLayout();
         $this->renderLayout();
     }
-
 }

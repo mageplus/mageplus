@@ -42,7 +42,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Created extends Mage_Adminhtml_Block_
         $this->setTemplate('catalog/product/created.phtml');
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild(
@@ -55,12 +59,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Created extends Mage_Adminhtml_Block_
         );
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCloseButtonHtml()
     {
         return $this->getChildHtml('close_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductId()
     {
         return (int) $this->getRequest()->getParam('id');
@@ -97,6 +110,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Created extends Mage_Adminhtml_Block_
         return Mage::helper('core')->jsonEncode($result);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributes()
     {
         if ($this->getConfigurableProduct()->getId()) {

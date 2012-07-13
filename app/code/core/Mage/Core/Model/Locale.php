@@ -89,6 +89,11 @@ class Mage_Core_Model_Locale
 
     protected static $_currencyCache = array();
 
+    /**
+     * @todo
+     *
+     * @param $locale
+     */
     public function __construct($locale = null)
     {
         $this->setLocale($locale);
@@ -361,6 +366,12 @@ class Mage_Core_Model_Locale
         return $this->_sortOptionArray($options);
     }
 
+    /**
+     * @todo
+     *
+     * @param $option
+     * @return
+     */
     protected function _sortOptionArray($option)
     {
         $data = array();
@@ -426,7 +437,6 @@ class Mage_Core_Model_Locale
         return preg_replace('/(?<!y)yy(?!y)/', 'yyyy',
             $this->getTranslation(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT, 'date'));
     }
-
 
     /**
      * Retrieve ISO time format
@@ -749,7 +759,7 @@ class Mage_Core_Model_Locale
         return $this->getLocale()->getTranslation($value, $path, $this->getLocale());
     }
 
-/**
+    /**
      * Returns the localized country name
      *
      * @param  string             $value  Name to get detailed information about

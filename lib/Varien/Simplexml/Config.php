@@ -34,7 +34,6 @@
  */
 class Varien_Simplexml_Config
 {
-
     /**
      * Configuration xml
      *
@@ -107,7 +106,8 @@ class Varien_Simplexml_Config
      * @param string|Varien_Simplexml_Element $sourceData
      * @param string $sourceType
      */
-    public function __construct($sourceData=null) {
+    public function __construct($sourceData=null)
+    {
         if (is_null($sourceData)) {
             return;
         }
@@ -174,7 +174,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Simplexml_Config_Cache_Abstract $cache
      * @return Varien_Simplexml_Config
@@ -186,7 +186,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return Varien_Simplexml_Config_Cache_Abstract
      */
@@ -196,7 +196,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param boolean $flag
      * @return Varien_Simplexml_Config
@@ -208,7 +208,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -218,7 +218,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $id
      * @return Varien_Simplexml_Config
@@ -230,7 +230,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return string
      */
@@ -240,7 +240,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param array $tags
      * @return Varien_Simplexml_Config
@@ -252,7 +252,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return array
      */
@@ -262,7 +262,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param int $lifetime
      * @return Varien_Simplexml_Config
@@ -274,7 +274,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return int
      */
@@ -284,7 +284,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $data
      * @return Varien_Simplexml_Config
@@ -302,7 +302,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $data
      * @return Varien_Simplexml_Config
@@ -321,7 +321,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return string
      */
@@ -331,7 +331,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return string
      */
@@ -341,7 +341,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -351,7 +351,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -369,7 +369,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -391,7 +391,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param array $tags
      * @return Varien_Simplexml_Config
@@ -432,7 +432,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return Varien_Simplexml_Config
      */
@@ -444,7 +444,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $id
      * @return boolean
@@ -455,7 +455,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $data
      * @param string $id
@@ -469,8 +469,6 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
-     *
      * @todo check this, as there are no caches that implement remove() method
      * @param string $id
      * @return unknown
@@ -589,7 +587,7 @@ class Varien_Simplexml_Config
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Varien_Simplexml_Config $config
      * @param boolean $overwrite
@@ -600,5 +598,4 @@ class Varien_Simplexml_Config
         $this->getNode()->extend($config->getNode(), $overwrite);
         return $this;
     }
-
 }

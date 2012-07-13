@@ -257,6 +257,13 @@ class Mage_Core_Model_Translate
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $string
+     *
+     * @return 
+     */
     protected function _prepareDataString($string)
     {
         return str_replace('""', '"', $string);
@@ -344,7 +351,14 @@ class Mage_Core_Model_Translate
         return $this->_locale;
     }
 
-    public function setLocale( $locale )
+    /**
+     * @TODO
+     *
+     * @param $locale
+     *
+     * @return 
+     */
+    public function setLocale($locale)
     {
         $this->_locale = $locale;
         return $this;

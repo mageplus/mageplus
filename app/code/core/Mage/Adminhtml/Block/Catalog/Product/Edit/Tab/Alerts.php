@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Alerts extends Mage_Adminhtm
         $this->setTemplate('catalog/product/tab/alert.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $accordion = $this->getLayout()->createBlock('adminhtml/widget_accordion')
@@ -70,6 +75,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Alerts extends Mage_Adminhtm
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAccordionHtml()
     {
         return $this->getChildHtml('accordion');

@@ -32,13 +32,11 @@
  */
 class Mage_Catalog_Test_Controller_CategoryController extends Mage_Test_Unit_Case_Controller
 {
-    /**
     public function assert404NotFound()
     {
-        parent::assert404NotFound();
+        parent::assertResponseHttpCode('404');
         $this->assertNull(Mage::registry('current_category'));
     }
-    */
 
     public function getViewActionDataProvider()
     {
@@ -115,13 +113,13 @@ class Mage_Catalog_Test_Controller_CategoryController extends Mage_Test_Unit_Cas
     {
         $this->dispatch('catalog/category/view/');
 
-        //$this->assert404NotFound();
+        $this->assert404NotFound();
     }
 
     public function testViewActionInactiveCategory()
     {
         $this->dispatch('catalog/category/view/id/8');
 
-        //$this->assert404NotFound();
+        $this->assert404NotFound();
     }
 }

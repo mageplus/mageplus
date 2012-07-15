@@ -62,6 +62,10 @@ class Mage_Dataflow_Model_Profile extends Mage_Core_Model_Abstract
         $this->_init('dataflow/profile');
     }
 
+    /**
+     * @todo
+     * @return
+     */
     protected function _afterLoad()
     {
         if (is_string($this->getGuiData())) {
@@ -74,6 +78,10 @@ class Mage_Dataflow_Model_Profile extends Mage_Core_Model_Abstract
         parent::_afterLoad();
     }
 
+    /**
+     * @todo
+     * @return
+     */
     protected function _beforeSave()
     {
         parent::_beforeSave();
@@ -124,6 +132,10 @@ class Mage_Dataflow_Model_Profile extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     * @return
+     */
     protected function _afterSave()
     {
         if (is_string($this->getGuiData())) {
@@ -132,7 +144,7 @@ class Mage_Dataflow_Model_Profile extends Mage_Core_Model_Abstract
 
         $profileHistory = Mage::getModel('dataflow/profile_history');
 
-        $adminUserId = $this->getAdminUserId();
+        $adminUserId = Mage::getSingleton('admin/session')->getUser()->getId();
         if($adminUserId) {
             $profileHistory->setUserId($adminUserId);
         }
@@ -216,6 +228,10 @@ class Mage_Dataflow_Model_Profile extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function _parseGuiData()
     {
         $nl = "\r\n";

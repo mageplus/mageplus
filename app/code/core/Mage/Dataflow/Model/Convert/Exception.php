@@ -34,7 +34,6 @@
  */
 class Mage_Dataflow_Model_Convert_Exception extends Varien_Exception
 {
-
     const NOTICE = 'NOTICE';
     const WARNING = 'WARNING';
     const ERROR = 'ERROR';
@@ -46,37 +45,66 @@ class Mage_Dataflow_Model_Convert_Exception extends Varien_Exception
 
     protected $_position;
 
+    /**
+     * @todo
+     *
+     * @param $container
+     * @return
+     */
     public function setContainer($container)
     {
         $this->_container = $container;
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getContainer()
     {
         return $this->_container;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getLevel()
     {
         return $this->_level;
     }
 
+    /**
+     * @todo
+     *
+     * @param $level
+     * @return
+     */
     public function setLevel($level)
     {
         $this->_level = $level;
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getPosition()
     {
         return $this->_position;
     }
 
+    /**
+     * @todo
+     *
+     * @param $position
+     * @return
+     */
     public function setPosition($position)
     {
         $this->_position = $position;
         return $this;
     }
-
 }

@@ -720,10 +720,7 @@ class Mage_Adminhtml_Sales_OrderController extends Mage_Adminhtml_Controller_Act
     public function addressAction()
     {
         $addressId = $this->getRequest()->getParam('address_id');
-        $address = Mage::getModel('sales/order_address')
-            ->getCollection()
-            ->addFilter('entity_id', $addressId)
-            ->getItemById($addressId);
+        $address = Mage::getModel('sales/order_address')->load($addressId);
         if ($address) {
             Mage::register('order_address', $address);
             $this->loadLayout();

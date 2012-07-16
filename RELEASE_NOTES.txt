@@ -1,8 +1,12 @@
-==== Mage+ 1.0.0.4 ===
+==== Mage+ 1.0.0.5 ====
+Fixed issue 27893 (Memory leak on edit order address load) - Lee Bolding [leesbian]
+Fixed issue 27781 (Error in region.list API - region name is empty) - Lee Bolding [leesbian]
+
+==== Mage+ 1.0.0.4 ====
 Fixed issue 27872 (Dataflow profile history always empty) - Lee Bolding [Leesbian]
 Added .htaccess to shell folder - [xyphoid]
 
-==== Mage+ 1.0.0.3 ===
+==== Mage+ 1.0.0.3 ====
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
 
 ==== Mage+ 1.0.0.2 ====

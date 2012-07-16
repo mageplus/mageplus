@@ -4,13 +4,13 @@
 Added unit test framework
 All functions now contain documentation
 
+==== Mage+ 1.0.0.4 ===
+Fixed issue 27872 (Dataflow profile history always empty) - Lee Bolding [Leesbian]
+Added .htaccess to shell folder - [xyphoid]
+
 ==== Mage+ 1.0.0.3 ===
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
 
-=== Changes ===
-
-
-=== Fixes ===
 
 ==== Mage+ 1.0.0.3 ===
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01) 

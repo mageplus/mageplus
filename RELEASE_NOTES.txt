@@ -1,3 +1,6 @@
+==== Mage+ 1.0.0.6 ====
+Fixed issue 114 (issue with admin user id in dataflow profile during installation) - Lee Bolding [leesbian]
+
 ==== Mage+ 1.0.0.5 ====
 Fixed issue 27893 (Memory leak on edit order address load) - Lee Bolding [leesbian]
 Fixed issue 27781 (Error in region.list API - region name is empty) - Lee Bolding [leesbian]

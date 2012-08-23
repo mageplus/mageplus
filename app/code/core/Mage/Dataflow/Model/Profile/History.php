@@ -58,9 +58,11 @@ class Mage_Dataflow_Model_Profile_History extends Mage_Core_Model_Abstract
             }
         }
 
-        if(!$this->hasData('user_id')) {
+        if(!$this->hasData('user_id') && Mage::app()->isInstalled()) {
             $this->setUserId(Mage::getSingleton('admin/session')->getUser()->getId());
-        }
+        } else {
+	    $this->setUserId(1);
+	}
 
         parent::_beforeSave();
         return $this;

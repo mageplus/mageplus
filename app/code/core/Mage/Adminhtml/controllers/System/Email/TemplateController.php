@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_System_Email_TemplateController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('System'))->_title($this->__('Transactional Emails'));
@@ -50,11 +55,15 @@ class Mage_Adminhtml_System_Email_TemplateController extends Mage_Adminhtml_Cont
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->getResponse()->setBody($this->getLayout()->createBlock('adminhtml/system_email_template_grid')->toHtml());
     }
-
 
     /**
      * New transactional email action
@@ -89,6 +98,11 @@ class Mage_Adminhtml_System_Email_TemplateController extends Mage_Adminhtml_Cont
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         $request = $this->getRequest();
@@ -138,8 +152,13 @@ class Mage_Adminhtml_System_Email_TemplateController extends Mage_Adminhtml_Cont
 
     }
 
-    public function deleteAction() {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function deleteAction()
+    {
         $template = $this->_initTemplate('id');
         if($template->getId()) {
             try {
@@ -169,6 +188,11 @@ class Mage_Adminhtml_System_Email_TemplateController extends Mage_Adminhtml_Cont
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function previewAction()
     {
         $this->loadLayout('systemPreview');
@@ -218,6 +242,11 @@ class Mage_Adminhtml_System_Email_TemplateController extends Mage_Adminhtml_Cont
         return $model;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/email_template');

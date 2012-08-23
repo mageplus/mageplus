@@ -55,6 +55,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return Mage::registry('current_product');
     }
 
+    /**
+     * @todo
+     *
+     * @param $column
+     * @return
+     */
     protected function _addColumnFilterToCollection($column)
     {
         // Set custom filter for in product flag
@@ -92,6 +98,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCreatedProducts()
     {
         $products = $this->getRequest()->getPost('new_products', null);
@@ -145,6 +156,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getSelectedProducts()
     {
         $products = $this->getRequest()->getPost('products', null);
@@ -167,6 +183,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return $this->_getProduct()->getCompositeReadonly();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $product = $this->_getProduct();
@@ -262,6 +283,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditParamsForAssociated()
     {
         return array(
@@ -293,7 +319,14 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return implode(',', $attributesIds);
     }
 
-    public function getOptions($attribute) {
+    /**
+     * @todo
+     *
+     * @param $attribute
+     * @return
+     */
+    public function getOptions($attribute)
+    {
         $result = array();
         foreach ($attribute->getProductAttribute()->getSource()->getAllOptions() as $option) {
             if($option['value']!='') {
@@ -304,6 +337,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid extends Ma
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/*/superConfig', array('_current'=>true));

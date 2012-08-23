@@ -42,6 +42,11 @@ class Mage_Adminhtml_Block_Poll_Edit_Tabs extends Mage_Adminhtml_Block_Widget_Ta
         $this->setTitle(Mage::helper('poll')->__('Poll Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->addTab('form_section', array(

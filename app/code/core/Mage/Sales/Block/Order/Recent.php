@@ -54,16 +54,35 @@ class Mage_Sales_Block_Order_Recent extends Mage_Core_Block_Template
         $this->setOrders($orders);
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getViewUrl($order)
     {
         return $this->getUrl('sales/order/view', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getTrackUrl($order)
     {
         return $this->getUrl('sales/order/track', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         if ($this->getOrders()->getSize() > 0) {
@@ -72,6 +91,13 @@ class Mage_Sales_Block_Order_Recent extends Mage_Core_Block_Template
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getReorderUrl($order)
     {
         return $this->getUrl('sales/order/reorder', array('order_id' => $order->getId()));

@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Customers_Most extends Mage_Adminhtml_B
         $this->setId('customersMostGrid');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         $collection = Mage::getResourceModel('reports/order_collection');
@@ -70,6 +75,11 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Customers_Most extends Mage_Adminhtml_B
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('name', array(
@@ -111,6 +121,12 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Customers_Most extends Mage_Adminhtml_B
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @row
+     * @return
+     */
     public function getRowUrl($row)
     {
         return $this->getUrl('*/customer/edit', array('id'=>$row->getCustomerId()));

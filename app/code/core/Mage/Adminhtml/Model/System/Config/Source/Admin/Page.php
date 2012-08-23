@@ -36,6 +36,11 @@ class Mage_Adminhtml_Model_System_Config_Source_Admin_Page
 {
     protected $_url;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $options = array();
@@ -46,6 +51,13 @@ class Mage_Adminhtml_Model_System_Config_Source_Admin_Page
         return $options;
     }
 
+    /**
+     * @todo
+     *
+     * @param $optionArray
+     * @param $menuNode
+     * @return
+     */
     protected function _createOptions(&$optionArray, $menuNode)
     {
         $nonEscapableNbspChar = html_entity_decode('&#160;', ENT_NOQUOTES, 'UTF-8');
@@ -77,6 +89,11 @@ class Mage_Adminhtml_Model_System_Config_Source_Admin_Page
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getUrlModel()
     {
         if (is_null($this->_url)) {
@@ -85,6 +102,14 @@ class Mage_Adminhtml_Model_System_Config_Source_Admin_Page
         return $this->_url;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Simplexml_Element $parent
+     * @param $path
+     * @param $level
+     * @return
+     */
     protected function _buildMenuArray(Varien_Simplexml_Element $parent=null, $path='', $level=0)
     {
         if (is_null($parent)) {
@@ -134,6 +159,13 @@ class Mage_Adminhtml_Model_System_Config_Source_Admin_Page
         return $parentArr;
     }
 
+    /**
+     * @todo
+     *
+     * @param $a
+     * @param $b
+     * @return
+     */
     protected function _sortMenu($a, $b)
     {
         return $a['sort_order']<$b['sort_order'] ? -1 : ($a['sort_order']>$b['sort_order'] ? 1 : 0);
@@ -153,6 +185,12 @@ class Mage_Adminhtml_Model_System_Config_Source_Admin_Page
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Simplexml_Element $child
+     * @return
+     */
     protected function _getHelperValue(Varien_Simplexml_Element $child)
     {
         $helperName         = 'adminhtml';

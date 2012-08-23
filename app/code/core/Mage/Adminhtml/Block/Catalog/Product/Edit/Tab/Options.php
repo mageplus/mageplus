@@ -40,7 +40,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options extends Mage_Adminht
         $this->setTemplate('catalog/product/edit/options.phtml');
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('add_button',
@@ -59,11 +63,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options extends Mage_Adminht
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         return $this->getChildHtml('add_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOptionsBoxHtml()
     {
         return $this->getChildHtml('options_box');

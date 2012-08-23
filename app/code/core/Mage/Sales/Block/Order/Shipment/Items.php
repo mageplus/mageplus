@@ -43,11 +43,27 @@ class Mage_Sales_Block_Order_Shipment_Items extends Mage_Sales_Block_Items_Abstr
         return Mage::registry('current_order');
     }
 
-    public function getPrintShipmentUrl($shipment){
+    /**
+     * @todo
+     *
+     * @param $shipment
+     *
+     * @return
+     */
+    public function getPrintShipmentUrl($shipment)
+    {
         return Mage::getUrl('*/*/printShipment', array('shipment_id' => $shipment->getId()));
     }
 
-    public function getPrintAllShipmentsUrl($order){
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
+    public function getPrintAllShipmentsUrl($order)
+    {
         return Mage::getUrl('*/*/printShipment', array('order_id' => $order->getId()));
     }
 

@@ -33,12 +33,23 @@
  */
 class Varien_Data_Form_Element_Time extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
         $this->setType('time');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getName()
     {
         $name = parent::getName();
@@ -48,6 +59,11 @@ class Varien_Data_Form_Element_Time extends Varien_Data_Form_Element_Abstract
         return $name;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $this->addClass('select');

@@ -69,6 +69,12 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
     public function isShipmentSeparately($item = null)
     {
         if ($item) {
@@ -102,6 +108,12 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
     public function isChildCalculated($item = null)
     {
         if ($item) {
@@ -136,7 +148,14 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         return false;
     }
 
-    public function getSelectionAttributes($item) {
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
+    public function getSelectionAttributes($item)
+    {
         if ($item instanceof Mage_Sales_Model_Order_Item) {
             $options = $item->getProductOptions();
         } else {
@@ -148,6 +167,12 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
     public function getOrderOptions($item = null)
     {
         $result = array();
@@ -166,6 +191,11 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOrderItem()
     {
         if ($this->getItem() instanceof Mage_Sales_Order_Item) {
@@ -175,6 +205,12 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
     public function getValueHtml($item)
     {
         $result = $this->htmlEscape($item->getName());
@@ -191,6 +227,12 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * @return
+     */
     public function canShowPriceInfo($item)
     {
         if (($item->getOrderItem()->getParentItem() && $this->isChildCalculated())

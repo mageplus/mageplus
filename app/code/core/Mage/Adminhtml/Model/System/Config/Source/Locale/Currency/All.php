@@ -28,6 +28,11 @@ class Mage_Adminhtml_Model_System_Config_Source_Locale_Currency_All
 {
     protected $_options;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray($isMultiselect)
     {
         if (!$this->_options) {

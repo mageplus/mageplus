@@ -34,6 +34,11 @@
  */
  class Varien_Convert_Adapter_Io extends Varien_Convert_Adapter_Abstract
  {
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function getResource()
      {
          if (!$this->_resource) {
@@ -49,6 +54,11 @@
          return $this->_resource;
      }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function load()
      {
          $data = $this->getResource()->read($this->getVar('filename'));
@@ -62,6 +72,11 @@
          return $this;
      }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
      public function save()
      {
          $data = $this->getData();

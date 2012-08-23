@@ -34,17 +34,30 @@
 class Mage_Adminhtml_Block_Widget_Accordion extends Mage_Adminhtml_Block_Widget 
 {
     protected $_items = array();
+    
     public function __construct() 
     {
         parent::__construct();
         $this->setTemplate('widget/accordion.phtml');
     }
-    
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItems()
     {
         return $this->_items;
     }
     
+    /**
+     * @todo
+     *
+     * @param $itemId
+     * @param $config
+     * @return
+     */
     public function addItem($itemId, $config)
     {
         $this->_items[$itemId] = $this->getLayout()->createBlock('adminhtml/widget_accordion_item')

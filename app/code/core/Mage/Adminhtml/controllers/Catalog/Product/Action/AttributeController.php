@@ -34,13 +34,17 @@
  */
 class Mage_Adminhtml_Catalog_Product_Action_AttributeController extends Mage_Adminhtml_Controller_Action
 {
-
     protected function _construct()
     {
         // Define module dependent translate
         $this->setUsedModuleName('Mage_Catalog');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         if (!$this->_validateProducts()) {
@@ -218,6 +222,11 @@ class Mage_Adminhtml_Catalog_Product_Action_AttributeController extends Mage_Adm
         return Mage::helper('adminhtml/catalog_product_edit_action_attribute');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('catalog/update_attributes');

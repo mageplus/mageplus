@@ -34,7 +34,6 @@
 abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
     implements Mage_Dataflow_Model_Convert_Profile_Interface
 {
-
     protected $_actions;
 
     protected $_containers;
@@ -49,6 +48,12 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
 
     protected $_dataflow_profile = null;
 
+    /**
+     * @todo
+     *
+     * @param Mage_Dataflow_Model_Convert_Action_Interface $action
+     * @return
+     */
     public function addAction(Mage_Dataflow_Model_Convert_Action_Interface $action=null)
     {
         if (is_null($action)) {
@@ -59,12 +64,22 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
         return $action;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Dataflow_Model_Convert_Container_Collection $containers
+     * @return
+     */
     public function setContainers(Mage_Dataflow_Model_Convert_Container_Collection $containers)
     {
         $this->_containers = $containers;
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getContainers()
     {
         if (!$this->_containers) {
@@ -73,6 +88,12 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
         return $this->_containers;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function getContainer($name=null)
     {
         if (is_null($name)) {
@@ -81,6 +102,13 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
         return $this->getContainers()->getItem($name);
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param Mage_Dataflow_Model_Convert_Container_Interface $container
+     * @return
+     */
     public function addContainer($name, Mage_Dataflow_Model_Convert_Container_Interface $container)
     {
         $container = $this->getContainers()->addItem($name, $container);
@@ -88,28 +116,54 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
         return $container;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getExceptions()
     {
         return $this->_exceptions;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getDryRun()
     {
         return $this->_dryRun;
     }
 
+    /**
+     * @todo
+     *
+     * @param $flag
+     * @return
+     */
     public function setDryRun($flag)
     {
         $this->_dryRun = $flag;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Dataflow_Model_Convert_Exception $e
+     * @return
+     */
     public function addException(Mage_Dataflow_Model_Convert_Exception $e)
     {
         $this->_exceptions[] = $e;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Simplexml_Element $profileNode
+     * @return
+     */
     public function importXml(Varien_Simplexml_Element $profileNode)
     {
         foreach ($profileNode->action as $actionNode) {
@@ -120,6 +174,10 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function run()
     {
 //        print '<pre>';
@@ -148,13 +206,24 @@ abstract class Mage_Dataflow_Model_Convert_Profile_Abstract
         return $this;
     }
 
-    function setDataflowProfile($profile) {
+    /**
+     * @todo
+     *
+     * @param $profile
+     * @return
+     */
+    function setDataflowProfile($profile)
+    {
         if (is_array($profile)) {
             $this->_dataflow_profile = $profile;
         }
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     function getDataflowProfile()
     {
         return $this->_dataflow_profile;

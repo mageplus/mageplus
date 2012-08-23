@@ -44,6 +44,11 @@ class Mage_Customer_AddressController extends Mage_Core_Controller_Front_Action
         return Mage::getSingleton('customer/session');
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function preDispatch()
     {
         parent::preDispatch();
@@ -73,11 +78,21 @@ class Mage_Customer_AddressController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function editAction()
     {
         $this->_forward('form');
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('form');
@@ -97,6 +112,11 @@ class Mage_Customer_AddressController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function formPostAction()
     {
         if (!$this->_validateFormKey()) {
@@ -161,6 +181,11 @@ class Mage_Customer_AddressController extends Mage_Core_Controller_Front_Action
         return $this->_redirectError(Mage::getUrl('*/*/edit', array('id' => $address->getId())));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function deleteAction()
     {
         $addressId = $this->getRequest()->getParam('id', false);

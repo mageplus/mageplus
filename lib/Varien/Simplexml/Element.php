@@ -34,7 +34,6 @@
  */
 class Varien_Simplexml_Element extends SimpleXMLElement
 {
-
     /**
      * Would keep reference to parent node
      *
@@ -75,7 +74,7 @@ class Varien_Simplexml_Element extends SimpleXMLElement
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return boolean
      */
@@ -300,7 +299,7 @@ class Varien_Simplexml_Element extends SimpleXMLElement
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param int $level
      * @return string
@@ -451,6 +450,14 @@ class Varien_Simplexml_Element extends SimpleXMLElement
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * @param $value
+     * @param boolean $overwrite
+     * @return
+     */
     public function setNode($path, $value, $overwrite=true)
     {
         $arr1 = explode('/', $path);
@@ -626,6 +633,4 @@ class Varien_Simplexml_Element extends SimpleXMLElement
         return $this;
     }
 */
-
-
 }

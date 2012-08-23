@@ -33,7 +33,12 @@
  */
 class Mage_Adminhtml_Block_Customer_Edit_Renderer_Newpass extends Mage_Adminhtml_Block_Abstract implements Varien_Data_Form_Element_Renderer_Interface
 {
-
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         $html = '<tr>';

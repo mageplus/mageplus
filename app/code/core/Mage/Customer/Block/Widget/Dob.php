@@ -41,16 +41,33 @@ class Mage_Customer_Block_Widget_Dob extends Mage_Customer_Block_Widget_Abstract
         $this->setTemplate('customer/widget/dob.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isEnabled()
     {
         return (bool)$this->_getAttribute('dob')->getIsVisible();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isRequired()
     {
         return (bool)$this->_getAttribute('dob')->getIsRequired();
     }
 
+    /**
+     * @todo
+     *
+     * @param $date
+     * 
+     * @return
+     */
     public function setDate($date)
     {
         $this->setTime($date ? strtotime($date) : false);
@@ -58,16 +75,31 @@ class Mage_Customer_Block_Widget_Dob extends Mage_Customer_Block_Widget_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDay()
     {
         return $this->getTime() ? date('d', $this->getTime()) : '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMonth()
     {
         return $this->getTime() ? date('m', $this->getTime()) : '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getYear()
     {
         return $this->getTime() ? date('Y', $this->getTime()) : '';

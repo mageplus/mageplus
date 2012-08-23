@@ -56,11 +56,21 @@ class Mage_ProductAlert_Model_Stock extends Mage_Core_Model_Abstract
         $this->_init('productalert/stock');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomerCollection()
     {
         return Mage::getResourceModel('productalert/stock_customer_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function loadByParam()
     {
         if (!is_null($this->getProductId()) && !is_null($this->getCustomerId()) && !is_null($this->getWebsiteId())) {
@@ -69,6 +79,13 @@ class Mage_ProductAlert_Model_Stock extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $customerId
+     * @param $websiteId
+     * @return
+     */
     public function deleteCustomer($customerId, $websiteId = 0)
     {
         $this->getResource()->deleteCustomer($this, $customerId, $websiteId);

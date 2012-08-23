@@ -35,6 +35,7 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle extends Mage_A
     implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
     protected $_product = null;
+    
     public function __construct()
     {
         parent::__construct();
@@ -42,11 +43,21 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle extends Mage_A
         $this->setTemplate('bundle/product/edit/bundle.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabUrl()
     {
         return $this->getUrl('*/bundle_product_edit/form', array('_current' => true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabClass()
     {
         return 'ajax';
@@ -87,38 +98,81 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle extends Mage_A
         return $this->getProduct()->getCompositeReadonly();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         return $this->getChildHtml('add_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOptionsBoxHtml()
     {
         return $this->getChildHtml('options_box');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldSuffix()
     {
         return 'product';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProduct()
     {
         return Mage::registry('product');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabLabel()
     {
         return Mage::helper('bundle')->__('Bundle Items');
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */    
     public function getTabTitle()
     {
         return Mage::helper('bundle')->__('Bundle Items');
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */    
     public function canShowTab()
     {
         return true;
     }
+    
+    /**
+     * @todo
+     *
+     * @return
+     */    
     public function isHidden()
     {
         return false;

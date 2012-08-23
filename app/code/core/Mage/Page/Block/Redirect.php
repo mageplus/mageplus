@@ -45,7 +45,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  string URL
      */
-    public function getTargetURL ()
+    public function getTargetURL()
     {
         return '';
     }
@@ -55,7 +55,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  string Output message
      */
-    public function getMessage ()
+    public function getMessage()
     {
         return '';
     }
@@ -65,7 +65,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  string
      */
-    public function getRedirectOutput ()
+    public function getRedirectOutput()
     {
         if ($this->isHtmlFormRedirect()) {
             return $this->getHtmlFormRedirect();
@@ -79,7 +79,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  string
      */
-    public function getJsRedirect ()
+    public function getJsRedirect()
     {
         $js  = '<script type="text/javascript">';
         $js .= 'document.location.href="' . $this->getTargetURL() . '";';
@@ -92,7 +92,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  string
      */
-    public function getHtmlFormRedirect ()
+    public function getHtmlFormRedirect()
     {
         $form = new Varien_Data_Form();
         $form->setAction($this->getTargetURL())
@@ -113,7 +113,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  boolean
      */
-    public function isHtmlFormRedirect ()
+    public function isHtmlFormRedirect()
     {
         return is_array($this->_getFormFields()) && count($this->_getFormFields()) > 0;
     }
@@ -133,7 +133,7 @@ class Mage_Page_Block_Redirect extends Mage_Core_Block_Template
      *
      *  @return	  string Method
      */
-    public function getFormMethod ()
+    public function getFormMethod()
     {
         return 'POST';
     }

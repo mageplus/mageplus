@@ -24,9 +24,10 @@
  * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-class Mage_Adminhtml_Block_Api_Tab_Rolesedit extends Mage_Adminhtml_Block_Widget_Form {
-
-    public function __construct() {
+class Mage_Adminhtml_Block_Api_Tab_Rolesedit extends Mage_Adminhtml_Block_Widget_Form
+{
+    public function __construct()
+    {
         parent::__construct();
 
         $rid = Mage::app()->getRequest()->getParam('rid', false);
@@ -53,11 +54,21 @@ class Mage_Adminhtml_Block_Api_Tab_Rolesedit extends Mage_Adminhtml_Block_Widget
         //->assign('checkedResources', join(',', $selrids));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEverythingAllowed()
     {
         return in_array('all', $this->getSelectedResources());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResTreeJson()
     {
         $rid = Mage::app()->getRequest()->getParam('rid', false);
@@ -70,12 +81,25 @@ class Mage_Adminhtml_Block_Api_Tab_Rolesedit extends Mage_Adminhtml_Block_Widget
         return $json;
     }
 
+    /**
+     * @todo
+     *
+     * @param $a
+     * @param $b
+     * @return
+     */
     protected function _sortTree($a, $b)
     {
         return $a['sort_order']<$b['sort_order'] ? -1 : ($a['sort_order']>$b['sort_order'] ? 1 : 0);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $node
+     * @param $level
+     * @return
+     */
     protected function _getNodeJson($node, $level=0)
     {
         $item = array();

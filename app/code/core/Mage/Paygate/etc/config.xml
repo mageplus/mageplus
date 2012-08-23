@@ -123,4 +123,11 @@
             </authorizenet>
         </payment>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Paygate/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

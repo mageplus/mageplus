@@ -41,6 +41,11 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Products_Ordered extends Mage_Adminhtml
         $this->setId('productsOrderedGrid');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         if (!Mage::helper('core')->isModuleEnabled('Mage_Sales')) {
@@ -66,9 +71,13 @@ class Mage_Adminhtml_Block_Dashboard_Tab_Products_Ordered extends Mage_Adminhtml
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
-
         $this->addColumn('name', array(
             'header'    => Mage::helper('sales')->__('Product Name'),
             'sortable'  => false,

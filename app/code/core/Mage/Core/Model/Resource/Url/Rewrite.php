@@ -97,7 +97,7 @@ class Mage_Core_Model_Resource_Url_Rewrite extends Mage_Core_Model_Resource_Db_A
      * Retrieve request_path using id_path and current store's id.
      *
      * @param string $idPath
-     * @param int|Mage_Core_Model_Store $store
+     * @param integer|Mage_Core_Model_Store $store
      * @return string|false
      */
     public function getRequestPathByIdPath($idPath, $store)

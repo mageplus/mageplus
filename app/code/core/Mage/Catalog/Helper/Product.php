@@ -136,6 +136,12 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @return
+     */
     public function getEmailToFriendUrl($product)
     {
         $categoryId = null;
@@ -148,6 +154,11 @@ class Mage_Catalog_Helper_Product extends Mage_Core_Helper_Url
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStatuses()
     {
         if(is_null($this->_statuses)) {

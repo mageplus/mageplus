@@ -34,6 +34,8 @@
  */
  abstract class Mage_Adminhtml_Helper_Dashboard_Abstract extends Mage_Core_Helper_Data
  {
+/////// TODO : formatting on this file is REALLY BAD
+  
         /**
          * Helper collection
          *
@@ -48,6 +50,11 @@
          */
         protected  $_params = array();
 
+    /**
+     * @todo
+     *
+     * @return
+     */
         public function getCollection()
         {
             if(is_null($this->_collection)) {
@@ -56,6 +63,11 @@
             return $this->_collection;
         }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
         abstract protected  function _initCollection();
 
         /**
@@ -68,11 +80,22 @@
             return is_array($this->getCollection()) ? $this->getCollection() : $this->getCollection()->getItems();
         }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
         public function getCount()
         {
             return sizeof($this->getItems());
         }
 
+    /**
+     * @todo
+     *
+     * @param $index
+     * @return
+     */
         public function getColumn($index)
         {
             $result = array();
@@ -92,16 +115,35 @@
             return $result;
         }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param $value
+     * @return
+     */
         public function setParam($name, $value)
         {
             $this->_params[$name] = $value;
         }
 
+    /**
+     * @todo
+     *
+     * @param array $params
+     * @return
+     */
         public function setParams(array $params)
         {
             $this->_params = $params;
         }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
         public function getParam($name)
         {
             if(isset($this->_params[$name])) {
@@ -111,6 +153,11 @@
             return null;
         }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
         public function getParams()
         {
             return $this->_params;

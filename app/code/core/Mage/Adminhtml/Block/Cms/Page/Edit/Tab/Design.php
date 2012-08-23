@@ -33,6 +33,11 @@ class Mage_Adminhtml_Block_Cms_Page_Edit_Tab_Design
         $this->setShowGlobalIcon(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         /*
@@ -106,7 +111,6 @@ class Mage_Adminhtml_Block_Cms_Page_Edit_Tab_Design
             'values'    => Mage::getModel('core/design_source_design')->getAllOptions(),
             'disabled'  => $isElementDisabled
         ));
-
 
         $designFieldset->addField('custom_root_template', 'select', array(
             'name'      => 'custom_root_template',

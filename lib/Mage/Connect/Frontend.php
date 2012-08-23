@@ -26,7 +26,6 @@
 
 class Mage_Connect_Frontend
 {
-
     /**
      * Silent flag. If set no output is produced to view.
      * Should be used in derived classes.
@@ -40,7 +39,6 @@ class Mage_Connect_Frontend
      * @var bool
      */
     protected $_capture = false;
-
 
     /**
      * push/pop variable for capture
@@ -196,7 +194,6 @@ class Mage_Connect_Frontend
     {
 
     }
-
 
     /**
      * Save silent mode

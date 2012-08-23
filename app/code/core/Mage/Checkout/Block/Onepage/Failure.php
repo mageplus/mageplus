@@ -27,6 +27,11 @@
 
 class Mage_Checkout_Block_Onepage_Failure extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRealOrderId()
     {
         return Mage::getSingleton('checkout/session')->getLastRealOrderId();

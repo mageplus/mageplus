@@ -43,11 +43,22 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
         $this->setTemplate('weee/renderer/tax.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProduct()
     {
         return Mage::registry('product');
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         $this->setElement($element);
@@ -55,17 +66,33 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
         return $this->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function setElement(Varien_Data_Form_Element_Abstract $element)
     {
         $this->_element = $element;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElement()
     {
         return $this->_element;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValues()
     {
         $values =array();
@@ -78,6 +105,13 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
         return $values;
     }
 
+    /**
+     * @todo
+     *
+     * @param $a
+     * @param $b
+     * @return
+     */
     protected function _sortWeeeTaxes($a, $b)
     {
         if ($a['website_id']!=$b['website_id']) {
@@ -89,16 +123,31 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
         return 0;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWebsiteCount()
     {
         return count($this->getWebsites());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isMultiWebsites()
     {
         return !Mage::app()->isSingleStoreMode();
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCountries()
     {
         if (is_null($this->_countries)) {
@@ -109,6 +158,11 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
         return $this->_countries;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWebsites()
     {
         if (!is_null($this->_websites)) {
@@ -143,6 +197,11 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
         return $this->_websites;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _setAddButton()
     {
         $this->setChild('add_button',
@@ -154,6 +213,11 @@ class Mage_Weee_Block_Renderer_Weee_Tax extends Mage_Adminhtml_Block_Widget impl
                 )));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         return $this->getChildHtml('add_button');

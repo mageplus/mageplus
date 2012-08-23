@@ -27,6 +27,13 @@
 
 class Mage_Sales_Model_Order_Invoice_Total_Grand extends Mage_Sales_Model_Order_Invoice_Total_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Invoice $invoice
+     *
+     * @return
+     */
     public function collect(Mage_Sales_Model_Order_Invoice $invoice)
     {
         /**

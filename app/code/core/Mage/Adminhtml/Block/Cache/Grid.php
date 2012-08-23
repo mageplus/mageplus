@@ -27,6 +27,7 @@
 class Mage_Adminhtml_Block_Cache_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     protected $_invalidatedTypes = array();
+    
     /**
      * Class constructor
      */

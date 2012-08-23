@@ -289,7 +289,6 @@ class Mage_Catalog_Model_Product_Indexer_Flat extends Mage_Index_Model_Indexer_A
             return;
         }
 
-
         if (!empty($data['catalog_product_flat_reindex_all'])) {
             $this->reindexAll();
         } else if (!empty($data['catalog_product_flat_product_id'])) {

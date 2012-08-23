@@ -40,12 +40,26 @@ class Mage_Sales_Model_Entity_Order_Shipment_Track_Collection extends Mage_Eav_M
         $this->_init('sales/order_shipment_track');
     }
 
+    /**
+     * @todo
+     *
+     * @param $shipmentId
+     *
+     * @return
+     */
     public function setShipmentFilter($shipmentId)
     {
         $this->addAttributeToFilter('parent_id', $shipmentId);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $orderId
+     *
+     * @return
+     */
     public function setOrderFilter($orderId)
     {
         $this->addAttributeToFilter('order_id', $orderId);

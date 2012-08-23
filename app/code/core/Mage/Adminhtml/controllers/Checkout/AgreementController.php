@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Checkout_AgreementController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Sales'))->_title($this->__('Terms and Conditions'));
@@ -43,11 +48,21 @@ class Mage_Adminhtml_Checkout_AgreementController extends Mage_Adminhtml_Control
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('edit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('Sales'))->_title($this->__('Terms and Conditions'));
@@ -81,6 +96,11 @@ class Mage_Adminhtml_Checkout_AgreementController extends Mage_Adminhtml_Control
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         if ($postData = $this->getRequest()->getPost()) {
@@ -107,6 +127,11 @@ class Mage_Adminhtml_Checkout_AgreementController extends Mage_Adminhtml_Control
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         $id = (int)$this->getRequest()->getParam('id');
@@ -151,6 +176,11 @@ class Mage_Adminhtml_Checkout_AgreementController extends Mage_Adminhtml_Control
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('sales/checkoutagreement');

@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Block_Catalog_Form extends Mage_Adminhtml_Block_Widget_Form
 {
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareLayout()
     {
         Varien_Data_Form::setElementRenderer(

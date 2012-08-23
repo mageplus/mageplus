@@ -190,4 +190,11 @@
             </log_clean>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Log/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

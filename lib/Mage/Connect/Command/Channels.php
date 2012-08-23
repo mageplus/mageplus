@@ -27,7 +27,6 @@
 final class Mage_Connect_Command_Channels
 extends Mage_Connect_Command
 {
-
     /**
      * List available channels
      * @param $command
@@ -176,14 +175,29 @@ extends Mage_Connect_Command
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $command
+     * @param $options
+     * @param array $params
+     * @return
+     */
     public function doLogin($command, $options, $params)
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @param $command
+     * @param $options
+     * @param array $params
+     * @return
+     */
     public function doLogout($command, $options, $params)
     {
 
     }
-
 }

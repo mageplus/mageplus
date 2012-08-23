@@ -50,6 +50,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         return Mage::registry('current_product');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if (!$this->getRequest()->getParam('popup')) {
@@ -128,46 +133,91 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackButtonHtml()
     {
         return $this->getChildHtml('back_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCancelButtonHtml()
     {
         return $this->getChildHtml('reset_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveButtonHtml()
     {
         return $this->getChildHtml('save_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveAndEditButtonHtml()
     {
         return $this->getChildHtml('save_and_edit_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDuplicateButtonHtml()
     {
         return $this->getChildHtml('duplicate_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValidationUrl()
     {
         return $this->getUrl('*/*/validate', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveUrl()
     {
         return $this->getUrl('*/*/save', array('_current'=>true, 'back'=>null));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveAndContinueUrl()
     {
         return $this->getUrl('*/*/save', array(
@@ -178,11 +228,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductId()
     {
         return $this->getProduct()->getId();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductSetId()
     {
         $setId = false;
@@ -192,21 +252,41 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         return $setId;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsGrouped()
     {
         return $this->getProduct()->isGrouped();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteUrl()
     {
         return $this->getUrl('*/*/delete', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDuplicateUrl()
     {
         return $this->getUrl('*/*/duplicate', array('_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeader()
     {
         $header = '';
@@ -222,6 +302,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         return $header;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeSetName()
     {
         if ($setId = $this->getProduct()->getAttributeSetId()) {
@@ -232,6 +317,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsConfigured()
     {
         if ($this->getProduct()->isConfigurable()
@@ -242,6 +332,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit extends Mage_Adminhtml_Block_Wid
         return !$this->getProduct()->isConfigurable() || $superAttributes !== false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSelectedTabId()
     {
         return addslashes(htmlspecialchars($this->getRequest()->getParam('tab')));

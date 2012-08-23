@@ -36,12 +36,23 @@ abstract class Mage_Eav_Block_Adminhtml_Attribute_Edit_Main_Abstract extends Mag
 {
     protected $_attribute = null;
 
+    /**
+     * @todo
+     *
+     * @param $attribute
+     * @return Mage_Eav_Block_Adminhtml_Attribute_Edit_Main_Abstract
+     */
     public function setAttributeObject($attribute)
     {
         $this->_attribute = $attribute;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeObject()
     {
         if (null === $this->_attribute) {
@@ -167,7 +178,7 @@ abstract class Mage_Eav_Block_Adminhtml_Attribute_Edit_Main_Abstract extends Mag
     }
 
     /**
-     * Initialize form fileds values
+     * Initialize form fields values
      *
      * @return Mage_Eav_Block_Adminhtml_Attribute_Edit_Main_Abstract
      */
@@ -217,5 +228,4 @@ abstract class Mage_Eav_Block_Adminhtml_Attribute_Edit_Main_Abstract extends Mag
             ->createBlock('eav/adminhtml_attribute_edit_js')->toHtml();
         return $html.$jsScripts;
     }
-
 }

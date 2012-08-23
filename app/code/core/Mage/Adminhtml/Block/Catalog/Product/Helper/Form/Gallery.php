@@ -34,7 +34,11 @@
  */
 class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery extends Varien_Data_Form_Element_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $html = $this->getContentHtml();
@@ -59,6 +63,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery extends Varien_Da
         return $content->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLabel()
     {
         return '';
@@ -172,6 +181,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Helper_Form_Gallery extends Varien_Da
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toHtml()
     {
         return '<tr><td class="value" colspan="3">' . $this->getElementHtml() . '</td></tr>';

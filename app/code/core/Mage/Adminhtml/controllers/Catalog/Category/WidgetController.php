@@ -62,6 +62,11 @@ class Mage_Adminhtml_Catalog_Category_WidgetController extends Mage_Adminhtml_Co
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCategoryTreeBlock()
     {
         return $this->getLayout()->createBlock('adminhtml/catalog_category_widget_chooser', '', array(

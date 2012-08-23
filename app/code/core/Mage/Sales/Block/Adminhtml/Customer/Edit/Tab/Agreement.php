@@ -91,6 +91,11 @@ class Mage_Sales_Block_Adminhtml_Customer_Edit_Tab_Agreement
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/sales_billing_agreement/customerGrid', array('_current'=>true));

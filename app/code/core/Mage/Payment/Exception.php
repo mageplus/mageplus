@@ -36,12 +36,24 @@ class Mage_Payment_Exception extends Exception
 {
     protected $_code = null;
 
+    /**
+     * @todo
+     *
+     * @param $message
+     * @param $code
+     * @return
+     */
     public function __construct($message = null, $code = 0)
     {
         $this->_code = $code;
         parent::__construct($message, 0);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFields()
     {
         return $this->_code;

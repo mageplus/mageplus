@@ -29,6 +29,11 @@
  */
 class Mage_Core_Model_Design_Source_Apply extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getAllOptions()
     {
         if (!$this->_options) {

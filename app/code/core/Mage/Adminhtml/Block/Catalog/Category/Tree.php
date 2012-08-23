@@ -45,6 +45,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         $this->_withProductCount = true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $addUrl = $this->getUrl("*/*/add", array(
@@ -84,11 +89,21 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getDefaultStoreId()
     {
         return Mage_Catalog_Model_Abstract::DEFAULT_STORE_ID;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategoryCollection()
     {
         $storeId = $this->getRequest()->getParam('store', $this->_getDefaultStoreId());
@@ -108,31 +123,62 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddRootButtonHtml()
     {
         return $this->getChildHtml('add_root_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddSubButtonHtml()
     {
         return $this->getChildHtml('add_sub_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getExpandButtonHtml()
     {
         return $this->getChildHtml('expand_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollapseButtonHtml()
     {
         return $this->getChildHtml('collapse_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreSwitcherHtml()
     {
         return $this->getChildHtml('store_switcher');
     }
 
+    /**
+     * @todo
+     *
+     * @param $expanded
+     * @return
+     */
     public function getLoadTreeUrl($expanded=null)
     {
         $params = array('_current'=>true, 'id'=>null,'store'=>null);
@@ -144,26 +190,52 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         return $this->getUrl('*/*/categoriesJson', $params);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNodesUrl()
     {
         return $this->getUrl('*/catalog_category/jsonTree');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSwitchTreeUrl()
     {
         return $this->getUrl("*/catalog_category/tree", array('_current'=>true, 'store'=>null, '_query'=>false, 'id'=>null, 'parent'=>null));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsWasExpanded()
     {
         return Mage::getSingleton('admin/session')->getIsTreeWasExpanded();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMoveUrl()
     {
         return $this->getUrl('*/catalog_category/move', array('store'=>$this->getRequest()->getParam('store')));
     }
 
+    /**
+     * @todo
+     *
+     * @param $parenNodeCategory
+     * @return
+     */
     public function getTree($parenNodeCategory=null)
     {
            $rootArray = $this->_getNodeJson($this->getRoot($parenNodeCategory));
@@ -171,6 +243,12 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         return $tree;
     }
 
+    /**
+     * @todo
+     *
+     * @param $parenNodeCategory
+     * @return
+     */
     public function getTreeJson($parenNodeCategory=null)
     {
         $rootArray = $this->_getNodeJson($this->getRoot($parenNodeCategory));
@@ -274,6 +352,12 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     protected function _isCategoryMoveable($node)
     {
         $options = new Varien_Object(array(
@@ -288,6 +372,12 @@ class Mage_Adminhtml_Block_Catalog_Category_Tree extends Mage_Adminhtml_Block_Ca
         return $options->getIsMoveable();
     }
 
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     protected function _isParentSelectedCategory($node)
     {
         if ($node && $this->getCategory()) {

@@ -33,5 +33,12 @@
  */
 interface Mage_XmlConnect_Model_Simplexml_Form_Element_Renderer_Interface
 {
+    /**
+     * @todo
+     *
+     * @param Mage_XmlConnect_Model_Simplexml_Form_Element_Abstract $element
+     *
+     * @return
+     */
     public function render(Mage_XmlConnect_Model_Simplexml_Form_Element_Abstract $element);
 }

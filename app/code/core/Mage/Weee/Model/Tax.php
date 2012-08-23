@@ -54,7 +54,11 @@ class Mage_Weee_Model_Tax extends Mage_Core_Model_Abstract
         $this->_init('weee/tax', 'weee/tax');
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWeeeAmount(
         $product,
         $shipping = null,
@@ -78,6 +82,12 @@ class Mage_Weee_Model_Tax extends Mage_Core_Model_Abstract
         return $amount;
     }
 
+    /**
+     * @todo
+     *
+     * @param bool $forceEnabled
+     * @return
+     */
     public function getWeeeAttributeCodes($forceEnabled = false)
     {
         return $this->getWeeeTaxAttributeCodes($forceEnabled);
@@ -101,6 +111,11 @@ class Mage_Weee_Model_Tax extends Mage_Core_Model_Abstract
         return $this->_allAttributes;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductWeeeAttributes(
         $product,
         $shipping = null,
@@ -187,6 +202,12 @@ class Mage_Weee_Model_Tax extends Mage_Core_Model_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @return
+     */
     protected function _getDiscountPercentForProduct($product)
     {
         $website = Mage::app()->getStore()->getWebsiteId();

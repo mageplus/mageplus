@@ -39,13 +39,27 @@ class Mage_Core_Model_Translate_Expr
         $this->_text    = $text;
         $this->_module  = $module;
     }
-    
+
+    /**
+     * @TODO
+     *
+     * @param $text
+     *
+     * @return 
+     */
     public function setText($text)
     {
         $this->_text = $text;
         return $this;
     }
-    
+
+    /**
+     * @TODO
+     *
+     * @param $module
+     *
+     * @return 
+     */
     public function setModule($module)
     {
         $this->_module = $module;

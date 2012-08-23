@@ -34,6 +34,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Email_Method
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $options    = array(

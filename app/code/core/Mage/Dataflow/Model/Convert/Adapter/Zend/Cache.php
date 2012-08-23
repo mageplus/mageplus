@@ -34,7 +34,10 @@
  */
 class Mage_Dataflow_Model_Convert_Adapter_Zend_Cache extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
-
+    /**
+     * @todo
+     * @return
+     */
     public function getResource()
     {
         if (!$this->_resource) {
@@ -43,16 +46,23 @@ class Mage_Dataflow_Model_Convert_Adapter_Zend_Cache extends Mage_Dataflow_Model
         return $this->_resource;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function load()
     {
         $this->setData($this->getResource()->load($this->getVar('id')));
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function save()
     {
         $this->getResource()->save($this->getData(), $this->getVar('id'));
         return $this;
     }
-
 }

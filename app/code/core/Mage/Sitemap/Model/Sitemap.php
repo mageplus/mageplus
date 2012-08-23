@@ -62,6 +62,11 @@ class Mage_Sitemap_Model_Sitemap extends Mage_Core_Model_Abstract
         $this->_init('sitemap/sitemap');
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _beforeSave()
     {
         $io = new Varien_Io_File();

@@ -209,4 +209,11 @@
             </catalog_entity_attribute_save_after>
         </events>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Api2/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

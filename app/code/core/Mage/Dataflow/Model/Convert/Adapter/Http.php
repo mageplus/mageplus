@@ -34,7 +34,11 @@
  */
 class Mage_Dataflow_Model_Convert_Adapter_Http extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
-
+    /**
+     * @todo
+     * THIS INLINE HTML IS HORRIBLE!!!
+     * @return
+     */
     public function load()
     {
         if (!$_FILES) {
@@ -51,6 +55,10 @@ File to upload: <input type="file" name="io_file"/> <input type="submit" value="
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function save()
     {
         if ($this->getVars()) {
@@ -62,7 +70,11 @@ File to upload: <input type="file" name="io_file"/> <input type="submit" value="
         return $this;
     }
 
-    // experimental code
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function loadFile()
     {
         if (!$_FILES) {
@@ -95,5 +107,4 @@ File to upload: <input type="file" name="io_file"/> <input type="submit" value="
         }
         return $this;
     }
-
 }

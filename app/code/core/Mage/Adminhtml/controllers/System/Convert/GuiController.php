@@ -71,6 +71,11 @@ class Mage_Adminhtml_System_Convert_GuiController extends Mage_Adminhtml_System_
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->getResponse()->setBody($this->getLayout()->createBlock('adminhtml/system_convert_gui_grid')->toHtml());
@@ -110,18 +115,33 @@ class Mage_Adminhtml_System_Convert_GuiController extends Mage_Adminhtml_System_
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function uploadAction()
     {
         $this->_initProfile();
         $profile = Mage::registry('current_convert_profile');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function uploadPostAction()
     {
         $this->_initProfile();
         $profile = Mage::registry('current_convert_profile');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function downloadAction()
     {
         $filename = $this->getRequest()->getParam('filename');
@@ -132,6 +152,11 @@ class Mage_Adminhtml_System_Convert_GuiController extends Mage_Adminhtml_System_
         $profile = Mage::registry('current_convert_profile');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
 //        switch ($this->getRequest()->getActionName()) {

@@ -490,6 +490,11 @@ class Mage_Checkout_Model_Cart extends Varien_Object implements Mage_Checkout_Mo
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductIds()
     {
         $quoteId = Mage::getSingleton('checkout/session')->getQuoteId();

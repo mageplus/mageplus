@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Select extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -41,6 +47,11 @@ class Varien_Data_Form_Element_Select extends Varien_Data_Form_Element_Abstract
         $this->_prepareOptions();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getElementHtml()
     {
         $this->addClass('select');
@@ -78,6 +89,13 @@ class Varien_Data_Form_Element_Select extends Varien_Data_Form_Element_Abstract
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $option
+     * @param $selected
+     * @return
+     */
     protected function _optionToHtml($option, $selected)
     {
         if (is_array($option['value'])) {
@@ -99,6 +117,11 @@ class Varien_Data_Form_Element_Select extends Varien_Data_Form_Element_Abstract
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareOptions()
     {
         $values = $this->getValues();
@@ -116,6 +139,11 @@ class Varien_Data_Form_Element_Select extends Varien_Data_Form_Element_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('title', 'class', 'style', 'onclick', 'onchange', 'disabled', 'readonly', 'tabindex');

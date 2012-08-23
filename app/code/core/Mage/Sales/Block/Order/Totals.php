@@ -71,6 +71,13 @@ class Mage_Sales_Block_Order_Totals extends Mage_Core_Block_Template
         return $this->_order;
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function setOrder($order)
     {
         $this->_order = $order;

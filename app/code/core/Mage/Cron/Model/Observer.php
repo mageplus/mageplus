@@ -129,6 +129,11 @@ class Mage_Cron_Model_Observer
         $this->cleanup();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPendingSchedules()
     {
         if (!$this->_pendingSchedules) {
@@ -230,6 +235,11 @@ class Mage_Cron_Model_Observer
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function cleanup()
     {
         // check if history cleanup is needed

@@ -36,12 +36,21 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
 {
     protected $_productCollection;
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTag()
     {
         return Mage::registry('current_tag');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $title = $this->getHeaderText();
@@ -50,7 +59,13 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
         return parent::_prepareLayout();
     }
 
-    public function setListOrders() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function setListOrders()
+    {
         $this->getChild('search_result_list')
             ->setAvailableOrders(array(
                 'name' => Mage::helper('tag')->__('Name'),
@@ -58,7 +73,13 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
             );
     }
 
-    public function setListModes() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function setListModes()
+    {
         $this->getChild('search_result_list')
             ->setModes(array(
                 'grid' => Mage::helper('tag')->__('Grid'),
@@ -66,16 +87,32 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
             );
     }
 
-    public function setListCollection() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function setListCollection()
+    {
         $this->getChild('search_result_list')
            ->setCollection($this->_getProductCollection());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductListHtml()
     {
         return $this->getChildHtml('search_result_list');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getProductCollection()
     {
         if(is_null($this->_productCollection)) {
@@ -94,6 +131,11 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
         return $this->_productCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResultCount()
     {
         if (!$this->getData('result_count')) {
@@ -103,6 +145,11 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
         return $this->getData('result_count');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         if( $this->getTag()->getName() ) {
@@ -112,11 +159,21 @@ class Mage_Tag_Block_Product_Result extends Mage_Catalog_Block_Product_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSubheaderText()
     {
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNoResultText()
     {
         return Mage::helper('tag')->__('No matches found.');

@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Product_Thumbnail
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

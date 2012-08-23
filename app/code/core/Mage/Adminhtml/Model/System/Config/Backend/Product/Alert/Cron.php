@@ -37,6 +37,11 @@ class Mage_Adminhtml_Model_System_Config_Backend_Product_Alert_Cron extends Mage
     const CRON_STRING_PATH  = 'crontab/jobs/catalog_product_alert/schedule/cron_expr';
     const CRON_MODEL_PATH   = 'crontab/jobs/catalog_product_alert/run/model';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _afterSave()
     {
         $priceEnable = $this->getData('groups/productalert/fields/allow_price/value');

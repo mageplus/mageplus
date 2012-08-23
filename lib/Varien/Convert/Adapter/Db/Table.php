@@ -34,6 +34,11 @@
  */
 class Varien_Convert_Adapter_Db_Table extends Varien_Convert_Adapter_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResource()
     {
         if (!$this->_resource) {
@@ -42,11 +47,21 @@ class Varien_Convert_Adapter_Db_Table extends Varien_Convert_Adapter_Abstract
         return $this->_resource;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
 

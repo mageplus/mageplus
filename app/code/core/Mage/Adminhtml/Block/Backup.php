@@ -40,6 +40,11 @@ class Mage_Adminhtml_Block_Backup extends Mage_Adminhtml_Block_Template
      */
     protected $_template = 'backup/list.phtml';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
@@ -74,6 +79,11 @@ class Mage_Adminhtml_Block_Backup extends Mage_Adminhtml_Block_Template
         $this->setChild('dialogs', $this->getLayout()->createBlock('adminhtml/backup_dialogs'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCreateButtonHtml()
     {
         return $this->getChildHtml('createButton');
@@ -99,6 +109,11 @@ class Mage_Adminhtml_Block_Backup extends Mage_Adminhtml_Block_Template
         return $this->getChildHtml('createMediaBackupButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridHtml()
     {
         return $this->getChildHtml('backupsGrid');

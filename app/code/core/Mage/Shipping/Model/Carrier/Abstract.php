@@ -234,6 +234,12 @@ abstract class Mage_Shipping_Model_Carrier_Abstract extends Varien_Object
         return array();
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Shipping_Model_Rate_Request $request
+     * @return
+     */
     public function checkAvailableShipCountries(Mage_Shipping_Model_Rate_Request $request)
     {
         $speCountriesAllow = $this->getConfigData('sallowspecific');

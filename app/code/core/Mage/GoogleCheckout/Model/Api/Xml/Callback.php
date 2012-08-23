@@ -123,31 +123,61 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
         return $quote;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getApiUrl()
     {
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function getGoogleOrderNumber()
     {
         return $this->getData('root/google-order-number/VALUE');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _responseRequestReceived()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _responseError()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _responseDiagnosis()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _responseCheckoutRedirect()
     {
 
@@ -741,6 +771,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
         return $this->getData('order');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _responseRiskInformationNotification()
     {
         $this->getGResponse()->SendAck();
@@ -840,6 +875,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
         $order->save();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _createInvoice()
     {
         $order = $this->getOrder();
@@ -859,6 +899,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
         return $invoice;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _createShipment()
     {
         $order = $this->getOrder();
@@ -955,6 +1000,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
         $order->save();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _responseOrderStateChangeNotification()
     {
         $this->getGResponse()->SendAck();
@@ -1023,37 +1073,72 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialReviewing()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialChargeable()
     {
         #$this->getGRequest()->SendProcessOrder($this->getGoogleOrderNumber());
         #$this->getGRequest()->SendChargeOrder($this->getGoogleOrderNumber(), '');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialCharging()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialCharged()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialPaymentDeclined()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialCancelled()
     {
         $this->getOrder()->setBeingCanceledFromGoogleApi(true)->cancel()->save();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFinancialCancelledByGoogle()
     {
         $this
@@ -1067,16 +1152,31 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
             ->SendBuyerMessage($this->getGoogleOrderNumber(), "Sorry, your order is cancelled by Google", true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFulfillmentNew()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFulfillmentProcessing()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFulfillmentDelivered()
     {
         $shipment = $this->_createShipment();
@@ -1084,6 +1184,11 @@ class Mage_GoogleCheckout_Model_Api_Xml_Callback extends Mage_GoogleCheckout_Mod
             $shipment->save();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _orderStateChangeFulfillmentWillNotDeliver()
     {
 

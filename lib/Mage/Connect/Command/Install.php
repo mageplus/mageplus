@@ -28,7 +28,6 @@
 final class Mage_Connect_Command_Install
 extends Mage_Connect_Command
 {
-
     /**
      * Install action callback
      * @param string $command
@@ -41,9 +40,6 @@ extends Mage_Connect_Command
         $this->cleanupParams($params);
 
         $installFileMode = $command === 'install-file';
-
-
-         
 
         try {
             $packager = $this->getPackager();
@@ -237,7 +233,6 @@ extends Mage_Connect_Command
                             throw new Exception("Package {$pChan}/{$pName} {$pVer} conflicts with: ".$conflicts);
                         }
                     }
-
                      
                     /**
                      * Modifications
@@ -269,8 +264,6 @@ extends Mage_Connect_Command
                         $rest->downloadPackageFileOfRelease($pName, $pVer, $file);
                     }
                     $package = new Mage_Connect_Package($file);
-
-
 
                     $conflicts = $package->checkPhpDependencies();
                     if(true !== $conflicts) {                       
@@ -309,8 +302,6 @@ extends Mage_Connect_Command
                     $this->doError($command, $e->getMessage());
                 }
             }
-
-
 
             $title = isset($options['title']) ? $options['title'] : "Package installed: ";
             $out = array($command => array('data'=>$installedDeps, 'assoc'=>$installedDepsAssoc,  'title'=>$title));
@@ -443,6 +434,4 @@ extends Mage_Connect_Command
         }
 
     }
-
 }
-

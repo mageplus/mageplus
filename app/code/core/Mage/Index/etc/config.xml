@@ -154,4 +154,11 @@
             </modules>
         </translate>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Index/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

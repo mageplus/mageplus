@@ -29,6 +29,12 @@ class Mage_Connect_Channel_Generator extends Mage_Xml_Generator
     protected $_file      = 'channel.xml';
     protected $_generator = null;
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     public function __construct($file='')
     {
         if ($file) {
@@ -37,11 +43,21 @@ class Mage_Connect_Channel_Generator extends Mage_Xml_Generator
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFile()
     {
         return $this->_file;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGenerator()
     {
         if (is_null($this->_generator)) {
@@ -51,6 +67,8 @@ class Mage_Connect_Channel_Generator extends Mage_Xml_Generator
     }
 
     /**
+     * @todo
+     * 
      * @param array $content
      */
     public function save($content)

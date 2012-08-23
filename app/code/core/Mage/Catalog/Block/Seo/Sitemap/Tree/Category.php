@@ -43,6 +43,7 @@ class Mage_Catalog_Block_Seo_Sitemap_Tree_Category extends Mage_Catalog_Block_Se
     protected $_to = 0;
     protected $_currentPage = 0;
     protected $_categoriesToPages = array();
+    
     /**
      * Initialize categories collection
      *

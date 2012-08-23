@@ -591,7 +591,6 @@ class Mage_Core_Model_Resource_Setup
      * @return string|false
      * @throws Mage_Core_Exception
      */
-
     protected function _modifyResourceDb($actionType, $fromVersion, $toVersion)
     {
         switch ($actionType) {

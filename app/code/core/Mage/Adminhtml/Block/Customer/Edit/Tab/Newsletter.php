@@ -40,6 +40,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Newsletter extends Mage_Adminhtml_B
         $this->setTemplate('customer/tab/newsletter.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function initForm()
     {
         $form = new Varien_Data_Form();
@@ -82,6 +87,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Newsletter extends Mage_Adminhtml_B
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStatusChangedDate()
     {
         $subscriber = Mage::registry('subscriber');
@@ -95,6 +105,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Newsletter extends Mage_Adminhtml_B
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('grid',

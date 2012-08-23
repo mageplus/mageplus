@@ -32,16 +32,31 @@ class Mage_Customer_Block_Widget_Taxvat extends Mage_Customer_Block_Widget_Abstr
         $this->setTemplate('customer/widget/taxvat.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return boolean
+     */
     public function isEnabled()
     {
         return (bool)$this->_getAttribute('taxvat')->getIsVisible();
     }
 
+    /**
+     * @todo
+     *
+     * @return boolean
+     */
     public function isRequired()
     {
         return (bool)$this->_getAttribute('taxvat')->getIsRequired();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomer()
     {
         return Mage::getSingleton('customer/session')->getCustomer();

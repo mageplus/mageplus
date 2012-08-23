@@ -47,6 +47,11 @@ class Mage_Checkout_Block_Onepage_Payment_Info extends Mage_Payment_Block_Info_C
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         $html = '';

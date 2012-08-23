@@ -35,6 +35,11 @@ class Mage_XmlConnect_Block_Adminhtml_Mobile_Edit_Tab_Settings
     extends Mage_Adminhtml_Block_Widget_Form
     implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('continue_button',

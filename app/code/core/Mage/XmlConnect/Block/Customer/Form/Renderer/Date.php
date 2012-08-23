@@ -38,7 +38,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Date extends Enterprise_Custo
      *
      * @var string
      */
-    protected $_filedType = 'date';
+    protected $_fieldType = 'date';
 
     /**
      * Prepare values for renderer
@@ -82,7 +82,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Date extends Enterprise_Custo
 
         $attributes += Mage::helper('xmlconnect/customer_form_renderer')
             ->addTitleAndRequiredAttr($fieldsetXmlObj, $this);
-        $fieldXmlObj = $fieldsetXmlObj->addField($this->getHtmlId('full'), $this->_filedType, $attributes);
+        $fieldXmlObj = $fieldsetXmlObj->addField($this->getHtmlId('full'), $this->_fieldType, $attributes);
         $validateRules = $this->getAttributeObject()->getValidateRules();
 
         if (!empty($validateRules)) {

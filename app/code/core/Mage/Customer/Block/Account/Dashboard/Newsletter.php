@@ -34,6 +34,11 @@
 
 class Mage_Customer_Block_Account_Dashboard_Newsletter extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getSubscriptionObject()
     {
         if(is_null($this->_subscription)) {

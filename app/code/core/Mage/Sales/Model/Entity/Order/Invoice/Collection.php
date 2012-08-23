@@ -39,6 +39,13 @@ class Mage_Sales_Model_Entity_Order_Invoice_Collection extends Mage_Eav_Model_En
         $this->_init('sales/order_invoice');
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function setOrderFilter($order)
     {
         if ($order instanceof Mage_Sales_Model_Order) {

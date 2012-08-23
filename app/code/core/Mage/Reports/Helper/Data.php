@@ -83,6 +83,15 @@ class Mage_Reports_Helper_Data extends Mage_Core_Helper_Abstract
         return  $intervals;
     }
 
+   /**
+    * @todo
+    *
+    * @param $collection
+    * @param $from
+    * @param $to
+    * @param $periodType
+    * @return
+    */
     public function prepareIntervalsCollection($collection, $from, $to, $periodType = self::REPORT_PERIOD_TYPE_DAY)
     {
         $intervals = $this->getIntervals($from, $to, $periodType);
@@ -95,4 +104,3 @@ class Mage_Reports_Helper_Data extends Mage_Core_Helper_Abstract
         }
     }
 }
-

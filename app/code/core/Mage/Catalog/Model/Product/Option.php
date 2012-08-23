@@ -110,6 +110,11 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValues()
     {
         return $this->_values;
@@ -306,6 +311,11 @@ class Mage_Catalog_Model_Product_Option extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _afterSave()
     {
         $this->getValueInstance()->unsetValues();

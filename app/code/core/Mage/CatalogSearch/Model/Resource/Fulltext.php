@@ -77,10 +77,6 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
      */
     protected $_allowTableChanges       = true;
 
-
-
-
-
     /**
      * Init resource model
      *
@@ -328,7 +324,7 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
                     $like[] = $helper->getCILike('s.data_index', $word, array('position' => 'any'));
                 }
                 if ($like) {
-                    $likeCond = '(' . join(' OR ', $like) . ')';
+                    $likeCond = '(' . join(' AND ', $like) . ')';
                 }
             }
             $mainTableAlias = 's';
@@ -352,7 +348,7 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
             }
 
             if ($likeCond != '' && $searchType == Mage_CatalogSearch_Model_Fulltext::SEARCH_TYPE_COMBINE) {
-                    $where .= ($where ? ' OR ' : '') . $likeCond;
+                    $where .= ($where ? ' AND ' : '') . $likeCond;
             } elseif ($likeCond != '' && $searchType == Mage_CatalogSearch_Model_Fulltext::SEARCH_TYPE_LIKE) {
                 $select->columns(array('relevance'  => new Zend_Db_Expr(0)));
                 $where = $likeCond;
@@ -770,10 +766,6 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
 
         return null;
     }
-
-
-
-
 
     // Deprecated methods
 

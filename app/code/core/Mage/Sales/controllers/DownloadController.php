@@ -34,7 +34,6 @@
 
 class Mage_Sales_DownloadController extends Mage_Core_Controller_Front_Action
 {
-
     /**
      * Custom options downloader
      *

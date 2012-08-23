@@ -287,7 +287,6 @@ class Mage_Tax_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->_config->displaySalesPricesBoth($store);
     }
 
-
     /**
      * Check if we need display price include and exclude tax for order/invoice subtotal
      *
@@ -375,7 +374,6 @@ class Mage_Tax_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return $this->_getAllRatesByProductClass($store);
     }
-
 
     /**
      * Get all tax rates JSON for all product tax classes of specific store
@@ -563,37 +561,76 @@ class Mage_Tax_Helper_Data extends Mage_Core_Helper_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $flag
+     * @return
+     */
     public function getIncExcTaxLabel($flag)
     {
         $text = $this->getIncExcText($flag);
         return $text ? ' <span class="tax-flag">('.$text.')</span>' : '';
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function shippingPriceIncludesTax($store = null)
     {
         return $this->_config->shippingPriceIncludesTax($store);
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function getShippingPriceDisplayType($store = null)
     {
         return $this->_config->getShippingPriceDisplayType($store);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function displayShippingPriceIncludingTax()
     {
         return $this->getShippingPriceDisplayType() == Mage_Tax_Model_Config::DISPLAY_TYPE_INCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function displayShippingPriceExcludingTax()
     {
         return $this->getShippingPriceDisplayType() == Mage_Tax_Model_Config::DISPLAY_TYPE_EXCLUDING_TAX;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function displayShippingBothPrices()
     {
         return $this->getShippingPriceDisplayType() == Mage_Tax_Model_Config::DISPLAY_TYPE_BOTH;
     }
 
+    /**
+     * @todo
+     *
+     * @param $store
+     * @return
+     */
     public function getShippingTaxClass($store)
     {
         return $this->_config->getShippingTaxClass($store);
@@ -627,6 +664,13 @@ class Mage_Tax_Helper_Data extends Mage_Core_Helper_Abstract
         return $price;
     }
 
+    /**
+     * @todo
+     *
+     * @param $priceField
+     * @param $taxClassField
+     * @return
+     */
     public function getPriceTaxSql($priceField, $taxClassField)
     {
         if (!$this->priceIncludesTax() && $this->displayPriceExcludingTax()) {

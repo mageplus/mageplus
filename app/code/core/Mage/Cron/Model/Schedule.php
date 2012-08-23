@@ -61,6 +61,11 @@ class Mage_Cron_Model_Schedule extends Mage_Core_Model_Abstract
         $this->_init('cron/schedule');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function setCronExpr($expr)
     {
         $e = preg_split('#\s+#', $expr, null, PREG_SPLIT_NO_EMPTY);
@@ -105,6 +110,13 @@ class Mage_Cron_Model_Schedule extends Mage_Core_Model_Abstract
         return $match;
     }
 
+    /**
+     * @todo
+     *
+     * @param $expr
+     * @param $num
+     * @return
+     */
     public function matchCronExpression($expr, $num)
     {
         // handle ALL match
@@ -165,6 +177,12 @@ class Mage_Cron_Model_Schedule extends Mage_Core_Model_Abstract
         return ($num>=$from) && ($num<=$to) && ($num%$mod===0);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function getNumeric($value)
     {
         static $data = array(

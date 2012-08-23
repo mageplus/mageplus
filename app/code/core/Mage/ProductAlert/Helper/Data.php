@@ -66,16 +66,32 @@ class Mage_ProductAlert_Helper_Data extends Mage_Core_Helper_Url
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomer()
     {
         return Mage::getSingleton('customer/session');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStore()
     {
         return Mage::app()->getStore();
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function getSaveUrl($type)
     {
         return $this->_getUrl('productalert/add/' . $type, array(
@@ -84,6 +100,12 @@ class Mage_ProductAlert_Helper_Data extends Mage_Core_Helper_Url
         ));
     }
 
+    /**
+     * @todo
+     *
+     * @param $block
+     * @return
+     */
     public function createBlock($block)
     {
         $error = Mage::helper('core')->__('Invalid block type: %s', $block);

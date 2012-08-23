@@ -1,3 +1,9 @@
+==== Mage+ 1.1.0.0 ===
+
+=== Major Highlights ===
+Added unit test framework
+All functions now contain documentation
+
 ==== Mage+ 1.0.0.6 ====
 Fixed issue 114 (issue with admin user id in dataflow profile during installation) - Lee Bolding [leesbian]
 
@@ -11,6 +17,10 @@ Added .htaccess to shell folder - [xyphoid]
 
 ==== Mage+ 1.0.0.3 ====
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
+
+
+==== Mage+ 1.0.0.3 ===
+Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01) 
 
 ==== Mage+ 1.0.0.2 ====
 Fixed error with orderIncrementId on 32bit systems, or where orderId is alphanumeric [aromicon]

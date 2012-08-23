@@ -105,6 +105,11 @@ class Mage_Catalog_Model_Product_Type
         return self::$_priceModels[$productType];
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     static public function getOptionArray()
     {
         $options = array();
@@ -115,6 +120,11 @@ class Mage_Catalog_Model_Product_Type
         return $options;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     static public function getAllOption()
     {
         $options = self::getOptionArray();
@@ -122,6 +132,11 @@ class Mage_Catalog_Model_Product_Type
         return $options;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     static public function getAllOptions()
     {
         $res = array();
@@ -135,6 +150,11 @@ class Mage_Catalog_Model_Product_Type
         return $res;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     static public function getOptions()
     {
         $res = array();
@@ -147,12 +167,23 @@ class Mage_Catalog_Model_Product_Type
         return $res;
     }
 
+    /**
+     * @todo
+     *
+     * @param $optionId
+     * @return
+     */
     static public function getOptionText($optionId)
     {
         $options = self::getOptionArray();
         return isset($options[$optionId]) ? $options[$optionId] : null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     static public function getTypes()
     {
         if (is_null(self::$_types)) {

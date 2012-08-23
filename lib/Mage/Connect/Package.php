@@ -414,6 +414,12 @@ END;
         return $this->_target;
     }
 
+    /**
+     * @todo
+     *
+     * @param $arg
+     * @return
+     */
     public function setTarget($arg)
     {
         if ($arg instanceof Mage_Connect_Package_Target) {
@@ -727,7 +733,6 @@ END;
         return $this;
     }
 
-
     /**
      * Check PHP version restriction
      * @param $phpVersion PHP_VERSION by default
@@ -756,7 +761,6 @@ END;
         return true;
     }
 
-
     /**
      * Check PHP extensions availability
      * @throws Exceptiom on failure
@@ -776,7 +780,6 @@ END;
         }
         return true;
     }
-
 
     /**
      * Set dependency from php extensions.
@@ -834,8 +837,6 @@ END;
         return $this;
     }
 
-
-
     /**
      * Add package to dependency packages.
      *
@@ -867,8 +868,6 @@ END;
         }
         return $this;
     }
-
-
 
     /**
      * Add package to dependency extension.
@@ -1218,9 +1217,6 @@ END;
         return $this->_dependencyPackages;
     }
 
-
-
-
     /**
      * Get string with XML content.
      *
@@ -1230,7 +1226,6 @@ END;
     {
         return $this->_packageXml->asXml();
     }
-
 
     /**
      * Validator instance (single)
@@ -1486,5 +1481,4 @@ END;
         $this->_packageXml->contents = null;
         return $this;
     }
-
 }

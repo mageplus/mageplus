@@ -35,16 +35,31 @@ class Mage_Tag_Block_Product_List extends Mage_Core_Block_Template
      */
     protected $_uniqueHtmlId = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCount()
     {
         return count($this->getTags());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTags()
     {
         return $this->_getCollection()->getItems();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductId()
     {
         if ($product = Mage::registry('current_product')) {
@@ -53,6 +68,11 @@ class Mage_Tag_Block_Product_List extends Mage_Core_Block_Template
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCollection()
     {
         if( !$this->_collection && $this->getProductId() ) {
@@ -70,6 +90,11 @@ class Mage_Tag_Block_Product_List extends Mage_Core_Block_Template
         return $this->_collection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         if (!$this->getProductId()) {
@@ -79,6 +104,11 @@ class Mage_Tag_Block_Product_List extends Mage_Core_Block_Template
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFormAction()
     {
         return Mage::getUrl('tag/index/save', array(

@@ -349,7 +349,6 @@ class Mage_XmlConnect_CheckoutController extends Mage_XmlConnect_Controller_Acti
         }
     }
 
-
     /**
      * Save checkout method
      *

@@ -44,6 +44,11 @@ class Mage_Adminhtml_Block_System_Account_Edit extends Mage_Adminhtml_Block_Widg
         $this->_removeButton('back');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         return Mage::helper('adminhtml')->__('My Account');

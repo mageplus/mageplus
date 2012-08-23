@@ -34,7 +34,6 @@
  */
 class Mage_Adminhtml_Block_Promo_Catalog_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -42,6 +41,11 @@ class Mage_Adminhtml_Block_Promo_Catalog_Edit_Form extends Mage_Adminhtml_Block_
         $this->setTitle(Mage::helper('catalogrule')->__('Rule Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareForm()
     {
         $form = new Varien_Data_Form(array('id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post'));
@@ -49,6 +53,4 @@ class Mage_Adminhtml_Block_Promo_Catalog_Edit_Form extends Mage_Adminhtml_Block_
         $this->setForm($form);
         return parent::_prepareForm();
     }
-
-
 }

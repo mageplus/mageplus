@@ -35,11 +35,15 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
  extends Mage_Adminhtml_Block_Template
  implements Mage_Adminhtml_Block_Widget_Tab_Interface
 {
-
     protected $_customer;
 
     protected $_customerLog;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomer()
     {
         if (!$this->_customer) {
@@ -48,6 +52,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return $this->_customer;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGroupName()
     {
         if ($groupId = $this->getCustomer()->getGroupId()) {
@@ -82,6 +91,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
             Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM, true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreCreateDate()
     {
         $date = Mage::app()->getLocale()->storeDate(
@@ -92,6 +106,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return $this->formatDate($date, Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM, true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreCreateDateTimezone()
     {
         return Mage::app()->getStore($this->getCustomer()->getStoreId())
@@ -112,6 +131,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return Mage::helper('customer')->__('Never');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreLastLoginDate()
     {
         if ($date = $this->getCustomerLog()->getLoginAtTimestamp()) {
@@ -125,12 +149,22 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return Mage::helper('customer')->__('Never');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreLastLoginDateTimezone()
     {
         return Mage::app()->getStore($this->getCustomer()->getStoreId())
             ->getConfig(Mage_Core_Model_Locale::XML_PATH_DEFAULT_TIMEZONE);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentStatus()
     {
         $log = $this->getCustomerLog();
@@ -141,6 +175,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return Mage::helper('customer')->__('Online');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsConfirmedStatus()
     {
         $this->getCustomer();
@@ -153,16 +192,31 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return Mage::helper('customer')->__('Not confirmed, can login');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCreatedInStore()
     {
         return Mage::app()->getStore($this->getCustomer()->getStoreId())->getName();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreId()
     {
         return $this->getCustomer()->getStoreId();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBillingAddressHtml()
     {
         $html = '';
@@ -175,26 +229,51 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAccordionHtml()
     {
         return $this->getChildHtml('accordion');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSalesHtml()
     {
         return $this->getChildHtml('sales');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabLabel()
     {
         return Mage::helper('customer')->__('Customer View');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabTitle()
     {
         return Mage::helper('customer')->__('Customer View');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canShowTab()
     {
         if (Mage::registry('current_customer')->getId()) {
@@ -203,6 +282,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_View
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isHidden()
     {
         if (Mage::registry('current_customer')->getId()) {

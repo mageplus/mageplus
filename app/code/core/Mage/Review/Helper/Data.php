@@ -33,7 +33,14 @@ class Mage_Review_Helper_Data extends Mage_Core_Helper_Abstract
 {
     const XML_REVIEW_GUETS_ALLOW = 'catalog/review/allow_guest';
 
-    public function getDetail($origDetail){
+    /**
+     * @todo
+     *
+     * @param $origDetail
+     * @return
+     */
+    public function getDetail($origDetail)
+    {
         return nl2br(Mage::helper('core/string')->truncate($origDetail, 50));
     }
 
@@ -42,10 +49,16 @@ class Mage_Review_Helper_Data extends Mage_Core_Helper_Abstract
      * @param string $origDetail Full detail info
      * @return string
      */
-    public function getDetailHtml($origDetail){
+    public function getDetailHtml($origDetail)
+    {
         return nl2br(Mage::helper('core/string')->truncate($this->escapeHtml($origDetail), 50));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsGuestAllowToWrite()
     {
         return Mage::getStoreConfigFlag(self::XML_REVIEW_GUETS_ALLOW);

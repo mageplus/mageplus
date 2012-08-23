@@ -45,6 +45,11 @@ class Mage_Core_Block_Store_Switcher extends Mage_Core_Block_Template
         return parent::__construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _loadData()
     {
         if ($this->_loaded) {
@@ -74,6 +79,11 @@ class Mage_Core_Block_Store_Switcher extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return integer
+     */
     public function getStoreCount()
     {
         $stores = array();
@@ -98,6 +108,11 @@ class Mage_Core_Block_Store_Switcher extends Mage_Core_Block_Template
         return count($this->getStores());
     }
 
+    /**
+     * @todo
+     *
+     * @return integer
+     */
     public function getLanguageCount()
     {
         $groupId = Mage::app()->getStore()->getGroupId();
@@ -109,11 +124,21 @@ class Mage_Core_Block_Store_Switcher extends Mage_Core_Block_Template
         return count($this->getLanguages());
     }
 
+    /**
+     * @todo
+     *
+     * @return integer
+     */
     public function getCurrentStoreId()
     {
         return Mage::app()->getStore()->getId();
     }
 
+    /**
+     * @todo
+     *
+     * @return string
+     */
     public function getCurrentStoreCode()
     {
         return Mage::app()->getStore()->getCode();

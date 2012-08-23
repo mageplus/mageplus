@@ -34,6 +34,10 @@
  */
 class Mage_Dataflow_Model_Convert_Iterator_Http extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
+    /**
+     * @todo
+     * @return
+     */
     public function load()
     {
         if (!$_FILES) {
@@ -59,5 +63,4 @@ File to upload: <input type="file" name="io_file"/> <input type="submit" value="
         }
         return $this;
     }
-
 }

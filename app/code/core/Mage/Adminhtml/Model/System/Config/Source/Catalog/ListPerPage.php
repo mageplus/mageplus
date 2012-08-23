@@ -34,7 +34,11 @@
  */
 class Mage_Adminhtml_Model_System_Config_Source_Catalog_ListPerPage
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         $result = array();

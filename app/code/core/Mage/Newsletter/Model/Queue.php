@@ -365,7 +365,8 @@ class Mage_Newsletter_Model_Queue extends Mage_Core_Model_Template
      *
      * @return int|string
      */
-    public function getType(){
+    public function getType()
+	{
         return $this->getNewsletterType();
     }
 

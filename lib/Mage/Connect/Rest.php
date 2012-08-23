@@ -34,7 +34,6 @@
 
 class Mage_Connect_Rest
 {
-
     const CHANNELS_XML = "channels.xml";
     const CHANNEL_XML = "channel.xml";
     const PACKAGES_XML = "packages.xml";
@@ -67,9 +66,13 @@ class Mage_Connect_Rest
     * @var string http or ftp
     */
     protected $_protocol = '';
+    
+    protected $states = array('b'=>'beta', 'd'=>'dev', 's'=>'stable', 'a'=>'alpha');
 
     /**
      * Constructor
+     *
+     * @param $protocol
      */
     public function __construct($protocol="http")
     {
@@ -105,7 +108,6 @@ class Mage_Connect_Rest
         }
         return $this->_loader;
     }
-
 
     /**
      * Get parser
@@ -159,7 +161,6 @@ class Mage_Connect_Rest
         return $vo;
     }
 
-
     /**
      * Get packages list of channel
      * @return array
@@ -174,7 +175,6 @@ class Mage_Connect_Rest
         $parser = $this->getParser();
         $out = $parser->loadXML($out)->xmlToArray();
 
-
         if(!isset($out['data']['p'])) {
             return array();
         }
@@ -187,7 +187,11 @@ class Mage_Connect_Rest
         return array();
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPackagesHashed()
     {
         $out = $this->loadChannelUri(self::PACKAGES_XML);
@@ -325,7 +329,6 @@ class Mage_Connect_Rest
         $package = $this->escapePackageName($package);
         $version = $this->escapePackageName($version);
 
-
         if(file_exists($targetFile)) {
             $chksum = $this->loadChannelUri($package."/".$version."/checksum");
             $statusCode = $this->getLoader()->getStatus();
@@ -334,8 +337,7 @@ class Mage_Connect_Rest
                     return true;
                 }
             }
-        }
-        
+        }        
         
         $out = $this->loadChannelUri($package."/".$version."/".$package."-".$version.".".self::EXT);
 
@@ -351,14 +353,15 @@ class Mage_Connect_Rest
         }
         return true;
     }
-
-    protected $states = array('b'=>'beta', 'd'=>'dev', 's'=>'stable', 'a'=>'alpha');
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function shortStateToLong($s)
     {
         return isset($this->states[$s]) ? $this->states[$s] : 'dev';
     }
-            
-    
 }
 

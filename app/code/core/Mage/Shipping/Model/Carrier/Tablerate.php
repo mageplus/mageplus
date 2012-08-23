@@ -45,7 +45,7 @@ class Mage_Shipping_Model_Carrier_Tablerate
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param Mage_Shipping_Model_Rate_Request $data
      * @return Mage_Shipping_Model_Rate_Result
@@ -135,11 +135,24 @@ class Mage_Shipping_Model_Carrier_Tablerate
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Shipping_Model_Rate_Request $request
+     * @return
+     */
     public function getRate(Mage_Shipping_Model_Rate_Request $request)
     {
         return Mage::getResourceModel('shipping/carrier_tablerate')->getRate($request);
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @param $code
+     * @return
+     */
     public function getCode($type, $code='')
     {
         $codes = array(

@@ -57,6 +57,11 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         $this->_order = Mage::getModel('sales/order');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getStores()
     {
         if (!self::$_storeCollection) {
@@ -66,6 +71,11 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         return self::$_storeCollection->getItems();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCustomers()
     {
         if (!self::$_customerCollection) {
@@ -77,6 +87,11 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         return self::$_customerCollection->getItems();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getProducts()
     {
         if (!$this->_productCollection) {
@@ -107,6 +122,11 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         return $this->_customer;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getRandomProduct()
     {
         $items = $this->_getProducts();
@@ -114,6 +134,11 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         return isset($items[$randKey]) ? $items[$randKey] : false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getStore()
     {
         if (!$this->_store) {
@@ -124,6 +149,11 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         return $this->_store;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function render()
     {
         $customer = $this->_getCustomer();
@@ -150,12 +180,22 @@ class Mage_Adminhtml_Model_Sales_Order_Random
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getRandomDate()
     {
         $timestamp = mktime(rand(0,23), rand(0,59), 0, rand(1,11), rand(1,28), rand(2006, 2007));
         return date('Y-m-d H:i:s', $timestamp);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         $this->_order->setStoreId($this->_getStore()->getId());

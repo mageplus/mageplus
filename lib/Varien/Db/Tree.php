@@ -41,7 +41,6 @@ Zend_Loader::loadClass('Varien_Db_Tree_NodeSet');
 
 class Varien_Db_Tree
 {
-
     private $_id;
     private $_left;
     private $_right;
@@ -72,6 +71,9 @@ class Varien_Db_Tree
 
     private $_table;
 
+    /**
+     * @param array $attributes
+     */
     function __construct($config = array())
     {
         // set a Zend_Db_Adapter connection
@@ -101,7 +103,6 @@ class Varien_Db_Tree
         } else {
             throw new Varien_Db_Tree_Exception('db object is not set in config');
         }
-
 
         if (!empty($config['table'])) {
             $this->setTable($config['table']);
@@ -137,7 +138,6 @@ class Varien_Db_Tree
         } else {
             $this->setPidField('parent_id');
         }
-
     }
 
     /**
@@ -146,7 +146,8 @@ class Varien_Db_Tree
      * @param string $name
      * @return Varien_Db_Tree
      */
-    public function setIdField($name) {
+    public function setIdField($name)
+    {
         $this->_id = $name;
         return $this;
     }
@@ -157,7 +158,8 @@ class Varien_Db_Tree
      * @param string $name
      * @return Varien_Db_Tree
      */
-    public function setLeftField($name) {
+    public function setLeftField($name)
+    {
         $this->_left = $name;
         return $this;
     }
@@ -168,7 +170,8 @@ class Varien_Db_Tree
      * @param string $name
      * @return Varien_Db_Tree
      */
-    public function setRightField($name) {
+    public function setRightField($name)
+    {
         $this->_right = $name;
         return $this;
     }
@@ -179,7 +182,8 @@ class Varien_Db_Tree
      * @param string $name
      * @return Varien_Db_Tree
      */
-    public function setLevelField($name) {
+    public function setLevelField($name)
+    {
         $this->_level = $name;
         return $this;
     }
@@ -190,7 +194,8 @@ class Varien_Db_Tree
      * @param string $name
      * @return Varien_Db_Tree
      */
-    public function setPidField($name) {
+    public function setPidField($name)
+    {
         $this->_pid = $name;
         return $this;
     }
@@ -201,12 +206,19 @@ class Varien_Db_Tree
      * @param string $name
      * @return Varien_Db_Tree
      */
-    public function setTable($name) {
+    public function setTable($name)
+    {
         $this->_table = $name;
         return $this;
     }
 
-    public function getKeys() {
+    /**
+     * @param $todo
+     *
+     * @return
+     */
+    public function getKeys()
+    {
         $keys = array();
         $keys['id'] = $this->_id;
         $keys['left'] = $this->_left;
@@ -219,6 +231,7 @@ class Varien_Db_Tree
     /**
      * Cleare table and add root element
      *
+     * @param array $data
      */
     public function clear($data = array())
     {
@@ -240,7 +253,14 @@ class Varien_Db_Tree
         return $this->_db->lastInsertId();
     }
 
-    public function getNodeInfo($ID) {
+    /**
+     * @param $todo
+     *
+     * @param $ID
+     * @return
+     */
+    public function getNodeInfo($ID)
+    {
         if (empty($this->_nodesInfo[$ID])) {
             $sql = 'SELECT * FROM '.$this->_table.' WHERE '.$this->_id.'=:id';
             $res = $this->_db->query($sql, array('id' => $ID));
@@ -252,8 +272,15 @@ class Varien_Db_Tree
         return $data;
     }
 
-    public function appendChild($ID, $data) {
-
+    /**
+     * @param $todo
+     *
+     * @param $ID
+     * @param $data
+     * @return
+     */
+    public function appendChild($ID, $data)
+    {
         if (!$info = $this->getNodeInfo($ID)) {
             return false;
         }
@@ -296,13 +323,18 @@ class Varien_Db_Tree
         return  false;
     }
 
-    public function checkNodes() {
+    /**
+     * @param $todo
+     *
+     * @return
+     */
+    public function checkNodes()
+    {
         $sql = $this->_db->select();
 
         $sql->from(array('t1'=>$this->_table), array('t1.'.$this->_id, new Zend_Db_Expr('COUNT(t1.'.$this->_id.') AS rep')))
         ->from(array('t2'=>$this->_table))
         ->from(array('t3'=>$this->_table), new Zend_Db_Expr('MAX(t3.'.$this->_right.') AS max_right'));
-
 
         $sql->where('t1.'.$this->_left.' <> t2.'.$this->_left)
         ->where('t1.'.$this->_left.' <> t2.'.$this->_right)
@@ -311,16 +343,29 @@ class Varien_Db_Tree
         $sql->group('t1.'.$this->_id);
         $sql->having('max_right <> SQRT(4 * rep + 1) + 1');
 
-
         return $this->_db->fetchAll($sql);
     }
 
-    public function insertBefore($ID, $data) {
+    /**
+     * @param $todo
+     *
+     * @param $ID
+     * @param $data
+     * @return
+     */
+    public function insertBefore($ID, $data)
+    {
 
     }
 
-    public function removeNode($ID) {
-
+    /**
+     * @param $todo
+     *
+     * @param $ID
+     * @return
+     */
+    public function removeNode($ID)
+    {
         if (!$info = $this->getNodeInfo($ID)) {
             return false;
         }
@@ -348,12 +393,18 @@ class Varien_Db_Tree
         }
     }
 
-
-    public function moveNode($eId, $pId, $aId = 0) {
-
+    /**
+     * @param $todo
+     *
+     * @param $eId
+     * @param $pId
+     * @param $aId
+     * @return
+     */
+    public function moveNode($eId, $pId, $aId = 0)
+    {
         $eInfo = $this->getNodeInfo($eId);
         $pInfo = $this->getNodeInfo($pId);
-
 
         $leftId = $eInfo[$this->_left];
         $rightId = $eInfo[$this->_right];
@@ -413,9 +464,16 @@ class Varien_Db_Tree
         }
     }
 
-
-    public function __moveNode($eId, $pId, $aId = 0) {
-
+    /**
+     * @param $todo
+     *
+     * @param $eId
+     * @param $pId
+     * @param $aId
+     * @return
+     */
+    public function __moveNode($eId, $pId, $aId = 0)
+    {
         $eInfo = $this->getNodeInfo($eId);
         if ($pId != 0) {
             $pInfo = $this->getNodeInfo($pId);
@@ -447,7 +505,6 @@ class Varien_Db_Tree
             $right_key_near = $pInfo[$this->_right] - 1;
         }
 
-
         $skew_level = $pInfo[$this->_level] - $eInfo[$this->_level] + 1;
         $skew_tree = $eInfo[$this->_right] - $eInfo[$this->_left] + 1;
 
@@ -474,7 +531,6 @@ class Varien_Db_Tree
                     '.$this->_right.' > '.$left_key.' AND '.$this->_left.' <= '.$right_key_near;
         }
 
-
         $this->_db->beginTransaction();
         try {
            $this->_db->query($sql);
@@ -492,6 +548,14 @@ class Varien_Db_Tree
         echo "alert('node added')";
     }
 
+    /**
+     * @param $todo
+     *
+     * @param $tableName
+     * @param $joinCondition
+     * @param $fields
+     * @return
+     */
     public function addTable($tableName, $joinCondition, $fields='*')
     {
         $this->_extTables[$tableName] = array(
@@ -500,6 +564,12 @@ class Varien_Db_Tree
         );
     }
 
+    /**
+     * @param $todo
+     *
+     * @param Zend_Db_Select &$select
+     * @return
+     */
     protected function _addExtTablesToSelect(Zend_Db_Select &$select)
     {
         foreach ($this->_extTables as $tableName=>$info) {
@@ -507,6 +577,14 @@ class Varien_Db_Tree
         }
     }
 
+    /**
+     * @param $todo
+     *
+     * @param $ID
+     * @param $start_level
+     * @param $end_level
+     * @return
+     */
     public function getChildren($ID, $start_level = 0, $end_level = 0)
     {
         try {
@@ -543,6 +621,12 @@ class Varien_Db_Tree
         return $nodeSet;
     }
 
+    /**
+     * @param $todo
+     *
+     * @param $nodeId
+     * @return
+     */
     public function getNode($nodeId)
     {
         $dbSelect = new Zend_Db_Select($this->_db);

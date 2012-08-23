@@ -40,6 +40,11 @@ class Mage_Adminhtml_Report_StatisticsController extends Mage_Adminhtml_Controll
      */
     protected $_adminSession = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _initAction()
     {
         $act = $this->getRequest()->getActionName();
@@ -53,6 +58,11 @@ class Mage_Adminhtml_Report_StatisticsController extends Mage_Adminhtml_Controll
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _initReportAction($blocks)
     {
         if (!is_array($blocks)) {
@@ -175,6 +185,11 @@ class Mage_Adminhtml_Report_StatisticsController extends Mage_Adminhtml_Controll
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Reports'))->_title($this->__('Sales'))->_title($this->__('Refresh Statistics'));
@@ -185,6 +200,11 @@ class Mage_Adminhtml_Report_StatisticsController extends Mage_Adminhtml_Controll
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return $this->_getSession()->isAllowed('report/statistics');

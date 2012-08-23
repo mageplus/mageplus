@@ -34,7 +34,6 @@
  */
 class Mage_Install_Model_Installer extends Varien_Object
 {
-
     /**
      * Installer host response used to check urls
      *
@@ -316,6 +315,11 @@ class Mage_Install_Model_Installer extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function finish()
     {
         Mage::getSingleton('install/installer_config')->replaceTmpInstallDate();

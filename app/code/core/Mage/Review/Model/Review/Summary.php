@@ -40,16 +40,31 @@ class Mage_Review_Model_Review_Summary extends Mage_Core_Model_Abstract
         $this->_init('review/review_summary');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEntityPkValue()
     {
         return $this->_getData('entity_pk_value');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRatingSummary()
     {
         return $this->_getData('rating_summary');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewsCount()
     {
         return $this->_getData('reviews_count');

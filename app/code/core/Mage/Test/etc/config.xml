@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * PHP Unit test suite for Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Mage
+ * @package    Mage_Test
+ * @copyright  Copyright (c) 2012 EcomDev BV (http://www.ecomdev.org)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Ivan Chepurnyi <ivan.chepurnyi@ecomdev.org>
+ */
+-->
+<config>
+    <modules>
+        <Mage_Test>
+            <version>0.1.0</version>
+				</Mage_Test>
+    </modules>
+    <global>
+        <models>
+            <mage_test>
+                <class>Mage_Test_Model</class>
+                <resourceModel>mage_test_mysql4</resourceModel>
+            </mage_test>
+            <mage_test_mysql4>
+                <class>Mage_Test_Model_Mysql4</class>
+            </mage_test_mysql4>
+        </models>
+        <cache>
+            <types>
+                <mage_test>
+                    <label>Unit Test Cases</label>
+                    <description>Unit test case file paths cache.</description>
+                    <tags>MAGE_TEST</tags>
+								</mage_test>
+            </types>
+        </cache>
+    </global>
+    <phpunit>
+        <suite>
+            <!-- The names of directories inside Test for recognizion of tests per group -->
+            <groups>
+                <models>Model</models>
+                <helpers>Helper</helpers>
+                <blocks>Block</blocks>
+                <config>Config</config>
+                <controllers>Controller</controllers>
+            </groups>
+            <!-- Test suite that will be used for creation of each of the tests -->
+            <test_suite>Mage_Test_Unit_Suite_Group</test_suite>
+            <layout>
+                <model>mage_test/layout</model>
+            </layout>
+            <design>
+                <package>
+                    <model>mage_test/design_package</model>
+                </package>
+            </design>
+            <expectation>
+                <!-- Default model for loading of expectations -->
+                <model>mage_test/expectation</model>
+            </expectation>
+            <fixture>
+                <!-- Default model for loading of fixtures -->
+                <model>mage_test/fixture</model>
+                <eav>
+                    <!-- Here goes the list of fixture loaders for EAV
+                         If no fixture loader is specified for entity, then default will be used 
+                    -->
+                    <default>mage_test/fixture_eav_default</default>
+                    <catalog_product>mage_test/fixture_eav_catalog_product</catalog_product>
+                    <catalog_category>mage_test/fixture_eav_catalog_category</catalog_category>
+                </eav>
+            </fixture>
+            <app>
+                <!-- Application class name for running tests -->
+                <class>Mage_Test_Model_App</class>
+                <area>
+                    <!-- Application area class name for tests -->
+                    <class>Mage_Test_Model_App_Area</class>
+                </area>
+            </app>
+            <!-- Configuration of controller for test cases -->
+            <controller>
+                <front>
+                    <class>Mage_Test_Controller_Front</class>
+                </front>
+                <request>
+                    <class>Mage_Test_Controller_Request_Http</class>
+                </request>
+                <response>
+                    <class>Mage_Test_Controller_Response_Http</class>
+                </response>
+            </controller>
+
+            <modules>
+                <!-- Place your module name in your module config.xml 
+                     For adding it to test suite -->
+                <!-- Example: 
+                <Namespace_MyModule />
+                -->
+            </modules>
+        </suite>
+    </phpunit>
+    <test>
+        <!-- Definition of event observers that will be used only for test environment -->
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <mage_test>
+                        <class>core/layout</class>
+                        <method>recordBlockRender</method>
+                    </mage_test>
+                </observers>
+            </core_block_abstract_to_html_after>
+        </events>
+    </test>
+</config>

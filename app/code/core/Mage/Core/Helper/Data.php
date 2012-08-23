@@ -243,11 +243,26 @@ class Mage_Core_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->getEncryptor()->decrypt($data);
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     *
+     * @return 
+     */
     public function validateKey($key)
     {
         return $this->getEncryptor()->validateKey($key);
     }
 
+    /**
+     * @todo
+     *
+     * @param $len
+     * @param $chars
+     *
+     * @return 
+     */
     public function getRandomString($len, $chars = null)
     {
         if (is_null($chars)) {
@@ -271,6 +286,14 @@ class Mage_Core_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->getEncryptor()->getHash($password, $salt);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $password
+     * @param $hash
+     *
+     * @return 
+     */
     public function validateHash($password, $hash)
     {
         return $this->getEncryptor()->validateHash($password, $hash);
@@ -287,6 +310,14 @@ class Mage_Core_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::app()->getStore($store)->getId();
     }
 
+    /**
+     * @TODO
+     *
+     * @param $string
+     * @param $german
+     *
+     * @return 
+     */
     public function removeAccents($string, $german=false)
     {
         static $replacements;
@@ -341,6 +372,13 @@ class Mage_Core_Helper_Data extends Mage_Core_Helper_Abstract
         return $string;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $storeId
+     *
+     * @return 
+     */
     public function isDevAllowed($storeId=null)
     {
         $allow = true;
@@ -518,6 +556,16 @@ class Mage_Core_Helper_Data extends Mage_Core_Helper_Abstract
         return $array;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $element
+     * @param $key
+     * @param $value
+     * @param $dontSkip
+     *
+     * @return 
+     */
     private function _decorateArrayObject($element, $key, $value, $dontSkip) {
         if ($dontSkip) {
             if ($element instanceof Varien_Object) {

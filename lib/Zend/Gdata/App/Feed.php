@@ -16,20 +16,20 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Feed.php 22880 2010-08-21 23:44:00Z ramon $
+ * @version    $Id: Feed.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Gdata_App_Entry
  */
-#require_once 'Zend/Gdata/App/Entry.php';
+require_once 'Zend/Gdata/App/Entry.php';
 
 /**
  * @see Zend_Gdata_App_FeedSourceParent
  */
-#require_once 'Zend/Gdata/App/FeedSourceParent.php';
+require_once 'Zend/Gdata/App/FeedSourceParent.php';
 
 /**
  * Atom feed class
@@ -37,7 +37,7 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage App
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
@@ -281,7 +281,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
     {
         $nextLink = $this->getNextLink();
         if (!$nextLink) {
-            #require_once 'Zend/Gdata/App/HttpException.php';
+            require_once 'Zend/Gdata/App/HttpException.php';
             throw new Zend_Gdata_App_Exception('No link to next set ' .
             'of results found.');
         }
@@ -302,7 +302,7 @@ class Zend_Gdata_App_Feed extends Zend_Gdata_App_FeedSourceParent
     {
         $previousLink = $this->getPreviousLink();
         if (!$previousLink) {
-            #require_once 'Zend/Gdata/App/HttpException.php';
+            require_once 'Zend/Gdata/App/HttpException.php';
             throw new Zend_Gdata_App_Exception('No link to previous set ' .
             'of results found.');
         }

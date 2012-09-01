@@ -14,20 +14,20 @@
  *
  * @category   Zend
  * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Ini.php 21983 2010-04-25 08:09:09Z jan $
+ * @version    $Id: Ini.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Config_Writer
  */
-#require_once 'Zend/Config/Writer/FileAbstract.php';
+require_once 'Zend/Config/Writer/FileAbstract.php';
 
 /**
  * @category   Zend
  * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Config_Writer_Ini extends Zend_Config_Writer_FileAbstract
@@ -157,15 +157,15 @@ class Zend_Config_Writer_Ini extends Zend_Config_Writer_FileAbstract
             return '"' . $value .  '"';
         } else {
             /** @see Zend_Config_Exception */
-            #require_once 'Zend/Config/Exception.php';
+            require_once 'Zend/Config/Exception.php';
             throw new Zend_Config_Exception('Value can not contain double quotes "');
         }
     }
-    
+
     /**
      * Root elements that are not assigned to any section needs to be
      * on the top of config.
-     * 
+     *
      * @see    http://framework.zend.com/issues/browse/ZF-6289
      * @param  Zend_Config
      * @return Zend_Config
@@ -174,7 +174,7 @@ class Zend_Config_Writer_Ini extends Zend_Config_Writer_FileAbstract
     {
         $configArray = $config->toArray();
         $sections = array();
-        
+
         // remove sections from config array
         foreach ($configArray as $key => $value) {
             if (is_array($value)) {
@@ -182,12 +182,12 @@ class Zend_Config_Writer_Ini extends Zend_Config_Writer_FileAbstract
                 unset($configArray[$key]);
             }
         }
-        
+
         // readd sections to the end
         foreach ($sections as $key => $value) {
             $configArray[$key] = $value;
         }
-        
+
         return new Zend_Config($configArray);
     }
 }

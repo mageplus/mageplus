@@ -14,20 +14,20 @@
  *
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Alnum.php 22668 2010-07-25 14:50:46Z thomas $
+ * @version    $Id: Alnum.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Validate_Abstract
  */
-#require_once 'Zend/Validate/Abstract.php';
+require_once 'Zend/Validate/Abstract.php';
 
 /**
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Validate_Alnum extends Zend_Validate_Abstract
@@ -133,7 +133,7 @@ class Zend_Validate_Alnum extends Zend_Validate_Abstract
             /**
              * @see Zend_Filter_Alnum
              */
-            #require_once 'Zend/Filter/Alnum.php';
+            require_once 'Zend/Filter/Alnum.php';
             self::$_filter = new Zend_Filter_Alnum();
         }
 

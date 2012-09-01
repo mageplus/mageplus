@@ -15,25 +15,25 @@
  * @category   Zend
  * @package    Zend_Controller
  * @subpackage Dispatcher
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Interface.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Interface.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * Zend_Controller_Request_Abstract
  */
-#require_once 'Zend/Controller/Request/Abstract.php';
+require_once 'Zend/Controller/Request/Abstract.php';
 
 /**
  * Zend_Controller_Response_Abstract
  */
-#require_once 'Zend/Controller/Response/Abstract.php';
+require_once 'Zend/Controller/Response/Abstract.php';
 
 /**
  * @package    Zend_Controller
  * @subpackage Dispatcher
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 interface Zend_Controller_Dispatcher_Interface

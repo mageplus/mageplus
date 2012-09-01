@@ -15,21 +15,21 @@
  * @category   Zend
  * @package    Zend_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Empty.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Empty.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /** Zend_Search_Lucene_Search_Query */
-#require_once 'Zend/Search/Lucene/Search/Query.php';
+require_once 'Zend/Search/Lucene/Search/Query.php';
 
 
 /**
  * @category   Zend
  * @package    Zend_Search_Lucene
  * @subpackage Search
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Search_Lucene_Search_Query_Empty extends Zend_Search_Lucene_Search_Query
@@ -65,7 +65,7 @@ class Zend_Search_Lucene_Search_Query_Empty extends Zend_Search_Lucene_Search_Qu
      */
     public function createWeight(Zend_Search_Lucene_Interface $reader)
     {
-        #require_once 'Zend/Search/Lucene/Search/Weight/Empty.php';
+        require_once 'Zend/Search/Lucene/Search/Weight/Empty.php';
         return new Zend_Search_Lucene_Search_Weight_Empty();
     }
 

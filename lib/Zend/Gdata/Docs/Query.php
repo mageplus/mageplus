@@ -16,15 +16,15 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Query.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Query.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * Zend_Gdata_Query
  */
-#require_once('Zend/Gdata/Query.php');
+require_once('Zend/Gdata/Query.php');
 
 /**
  * Assists in constructing queries for Google Document List documents
@@ -34,7 +34,7 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_Docs_Query extends Zend_Gdata_Query
@@ -45,7 +45,7 @@ class Zend_Gdata_Docs_Query extends Zend_Gdata_Query
      *
      * @var string
      */
-    const DOCUMENTS_LIST_FEED_URI = 'http://docs.google.com/feeds/documents';
+    const DOCUMENTS_LIST_FEED_URI = 'https://docs.google.com/feeds/documents';
 
     /**
      * The generic base URL used by some inherited methods
@@ -202,7 +202,7 @@ class Zend_Gdata_Docs_Query extends Zend_Gdata_Query
         if ($this->_visibility !== null) {
             $uri .= '/' . $this->_visibility;
         } else {
-            #require_once 'Zend/Gdata/App/Exception.php';
+            require_once 'Zend/Gdata/App/Exception.php';
             throw new Zend_Gdata_App_Exception(
                 'A visibility must be provided for cell queries.');
         }
@@ -210,7 +210,7 @@ class Zend_Gdata_Docs_Query extends Zend_Gdata_Query
         if ($this->_projection !== null) {
             $uri .= '/' . $this->_projection;
         } else {
-            #require_once 'Zend/Gdata/App/Exception.php';
+            require_once 'Zend/Gdata/App/Exception.php';
             throw new Zend_Gdata_App_Exception(
                 'A projection must be provided for cell queries.');
         }

@@ -15,20 +15,20 @@
  * @category   Zend
  * @package    Zend_Crypt
  * @subpackage Rsa
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Public.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Public.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Crypt_Rsa_Key
  */
-#require_once 'Zend/Crypt/Rsa/Key.php';
+require_once 'Zend/Crypt/Rsa/Key.php';
 
 /**
  * @category   Zend
  * @package    Zend_Crypt
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Crypt_Rsa_Key_Public extends Zend_Crypt_Rsa_Key
@@ -57,7 +57,7 @@ class Zend_Crypt_Rsa_Key_Public extends Zend_Crypt_Rsa_Key
             /**
              * @see Zend_Crypt_Exception
              */
-            #require_once 'Zend/Crypt/Exception.php';
+            require_once 'Zend/Crypt/Exception.php';
             throw new Zend_Crypt_Exception('Unable to load public key');
         }
         //openssl_pkey_export($result, $public);

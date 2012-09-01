@@ -14,21 +14,21 @@
  *
  * @category   Zend
  * @package    Zend_Filter
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Abstract.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Filter_PregReplace
  */
-#require_once 'Zend/Filter/PregReplace.php';
+require_once 'Zend/Filter/PregReplace.php';
 
 /**
  * @category   Zend
  * @package    Zend_Filter
  * @uses       Zend_Filter_PregReplace
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Filter_Word_Separator_Abstract extends Zend_Filter_PregReplace
@@ -56,7 +56,7 @@ abstract class Zend_Filter_Word_Separator_Abstract extends Zend_Filter_PregRepla
     public function setSeparator($separator)
     {
         if ($separator == null) {
-            #require_once 'Zend/Filter/Exception.php';
+            require_once 'Zend/Filter/Exception.php';
             throw new Zend_Filter_Exception('"' . $separator . '" is not a valid separator.');
         }
         $this->_separator = $separator;

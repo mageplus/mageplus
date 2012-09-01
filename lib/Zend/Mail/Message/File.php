@@ -14,26 +14,26 @@
  *
  * @category   Zend
  * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: File.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: File.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /**
  * Zend_Mail_Part
  */
-#require_once 'Zend/Mail/Part/File.php';
+require_once 'Zend/Mail/Part/File.php';
 
 /**
  * Zend_Mail_Message_Interface
  */
-#require_once 'Zend/Mail/Message/Interface.php';
+require_once 'Zend/Mail/Message/Interface.php';
 
 /**
  * @category   Zend
  * @package    Zend_Mail
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Mail_Message_File extends Zend_Mail_Part_File implements Zend_Mail_Message_Interface

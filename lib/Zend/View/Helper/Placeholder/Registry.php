@@ -15,26 +15,26 @@
  * @category   Zend
  * @package    Zend_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Registry.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Registry.php 24593 2012-01-05 20:35:02Z matthew $
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /** Zend_Registry */
-#require_once 'Zend/Registry.php';
+require_once 'Zend/Registry.php';
 
 /** Zend_View_Helper_Placeholder_Container_Abstract */
-#require_once 'Zend/View/Helper/Placeholder/Container/Abstract.php';
+require_once 'Zend/View/Helper/Placeholder/Container/Abstract.php';
 
 /** Zend_View_Helper_Placeholder_Container */
-#require_once 'Zend/View/Helper/Placeholder/Container.php';
+require_once 'Zend/View/Helper/Placeholder/Container.php';
 
 /**
  * Registry for placeholder containers
  *
  * @package    Zend_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_View_Helper_Placeholder_Registry
@@ -85,7 +85,7 @@ class Zend_View_Helper_Placeholder_Registry
     {
         $key = (string) $key;
 
-        $this->_items[$key] = new $this->_containerClass(array());
+        $this->_items[$key] = new $this->_containerClass($value);
         return $this->_items[$key];
     }
 
@@ -160,13 +160,13 @@ class Zend_View_Helper_Placeholder_Registry
     public function setContainerClass($name)
     {
         if (!class_exists($name)) {
-            #require_once 'Zend/Loader.php';
+            require_once 'Zend/Loader.php';
             Zend_Loader::loadClass($name);
         }
 
         $reflection = new ReflectionClass($name);
         if (!$reflection->isSubclassOf(new ReflectionClass('Zend_View_Helper_Placeholder_Container_Abstract'))) {
-            #require_once 'Zend/View/Helper/Placeholder/Registry/Exception.php';
+            require_once 'Zend/View/Helper/Placeholder/Registry/Exception.php';
             $e = new Zend_View_Helper_Placeholder_Registry_Exception('Invalid Container class specified');
             $e->setView($this->view);
             throw $e;

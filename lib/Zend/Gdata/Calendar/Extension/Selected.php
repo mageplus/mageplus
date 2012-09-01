@@ -16,15 +16,15 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Selected.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Selected.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Gdata_Extension
  */
-#require_once 'Zend/Gdata/Extension.php';
+require_once 'Zend/Gdata/Extension.php';
 
 /**
  * Represents the gCal:selected element used by the Calendar data API
@@ -32,7 +32,7 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_Calendar_Extension_Selected extends Zend_Gdata_Extension
@@ -90,7 +90,7 @@ class Zend_Gdata_Calendar_Extension_Selected extends Zend_Gdata_Extension
                 $this->_value = false;
             }
             else {
-                #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+                require_once 'Zend/Gdata/App/InvalidArgumentException.php';
                 throw new Zend_Gdata_App_InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
             }
             break;

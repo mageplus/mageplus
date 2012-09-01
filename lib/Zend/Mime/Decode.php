@@ -14,20 +14,20 @@
  *
  * @category   Zend
  * @package    Zend_Mime
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Decode.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Decode.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Mime
  */
-#require_once 'Zend/Mime.php';
+require_once 'Zend/Mime.php';
 
 /**
  * @category   Zend
  * @package    Zend_Mime
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Mime_Decode
@@ -239,6 +239,6 @@ class Zend_Mime_Decode
      */
     public static function decodeQuotedPrintable($string)
     {
-        return iconv_mime_decode($string, ICONV_MIME_DECODE_CONTINUE_ON_ERROR);
+        return quoted_printable_decode($string);
     }
 }

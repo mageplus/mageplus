@@ -14,22 +14,22 @@
  *
  * @category  Zend
  * @package   Zend_TimeSync
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
- * @version   $Id: Ntp.php 21480 2010-03-13 22:09:26Z thomas $
+ * @version   $Id: Ntp.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * Zend_TimeSync_Protocol
  */
-#require_once 'Zend/TimeSync/Protocol.php';
+require_once 'Zend/TimeSync/Protocol.php';
 
 /**
  * NTP Protocol handling class
  *
  * @category  Zend
  * @package   Zend_TimeSync
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_TimeSync_Ntp extends Zend_TimeSync_Protocol

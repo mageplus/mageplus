@@ -15,36 +15,36 @@
  * @category   Zend
  * @package    Zend_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SecurityTokenServer.php 20166 2010-01-09 19:00:17Z bkarwin $
+ * @version    $Id: SecurityTokenServer.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Service_DeveloperGarden_SecurityTokenServer_Cache
  */
-#require_once 'Zend/Service/DeveloperGarden/SecurityTokenServer/Cache.php';
+require_once 'Zend/Service/DeveloperGarden/SecurityTokenServer/Cache.php';
 
 /**
  * @see Zend_Service_DeveloperGarden_Client_ClientAbstract
  */
-#require_once 'Zend/Service/DeveloperGarden/Client/ClientAbstract.php';
+require_once 'Zend/Service/DeveloperGarden/Client/ClientAbstract.php';
 
 /**
  * @see Zend_Service_DeveloperGarden_Response_SecurityTokenServer_SecurityTokenResponse
  */
-#require_once 'Zend/Service/DeveloperGarden/Response/SecurityTokenServer/SecurityTokenResponse.php';
+require_once 'Zend/Service/DeveloperGarden/Response/SecurityTokenServer/SecurityTokenResponse.php';
 
 /**
  * @see Zend_Service_DeveloperGarden_Response_SecurityTokenServer_GetTokensResponse
  */
-#require_once 'Zend/Service/DeveloperGarden/Response/SecurityTokenServer/GetTokensResponse.php';
+require_once 'Zend/Service/DeveloperGarden/Response/SecurityTokenServer/GetTokensResponse.php';
 
 /**
  * @category   Zend
  * @package    Zend_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */

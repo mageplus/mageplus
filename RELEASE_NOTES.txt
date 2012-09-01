@@ -1,8 +1,15 @@
 ==== Mage+ 1.1.0.0 ===
 
 === Major Highlights ===
-Added unit test framework
-All functions now contain documentation
+Added unit test framework - Lee Bolding [leesbian]
+All functions now contain documentation - Lee Bolding [leesbian]
+Upgraded Zend Framework to v1.12.0 - Lee Bolding [leesbian]
+
+=== Improvements ===
+
+=== Changes ===
+
+=== Fixes ===
 
 ==== Mage+ 1.0.0.6 ====
 Fixed issue 114 (issue with admin user id in dataflow profile during installation) - Lee Bolding [leesbian]
@@ -14,10 +21,6 @@ Fixed issue 27781 (Error in region.list API - region name is empty) - Lee Boldin
 ==== Mage+ 1.0.0.4 ====
 Fixed issue 27872 (Dataflow profile history always empty) - Lee Bolding [Leesbian]
 Added .htaccess to shell folder - [xyphoid]
-
-==== Mage+ 1.0.0.3 ====
-Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
-
 
 ==== Mage+ 1.0.0.3 ===
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01) 

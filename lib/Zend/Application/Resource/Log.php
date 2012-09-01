@@ -15,25 +15,25 @@
  * @category   Zend
  * @package    Zend_Application
  * @subpackage Resource
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Log.php 20814 2010-02-01 20:13:08Z freak $
+ * @version    $Id: Log.php 24607 2012-01-16 16:45:49Z xerkus $
  */
 
 /**
  * @see Zend_Application_Resource_ResourceAbstract
  */
-#require_once 'Zend/Application/Resource/ResourceAbstract.php';
+require_once 'Zend/Application/Resource/ResourceAbstract.php';
 
 
 /**
- * Resource for initializing the locale
+ * Resource for initializing logger
  *
  * @uses       Zend_Application_Resource_ResourceAbstract
  * @category   Zend
  * @package    Zend_Application
  * @subpackage Resource
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Application_Resource_Log
@@ -56,8 +56,8 @@ class Zend_Application_Resource_Log
 
     /**
      * Attach logger
-     * 
-     * @param  Zend_Log $log 
+     *
+     * @param  Zend_Log $log
      * @return Zend_Application_Resource_Log
      */
     public function setLog(Zend_Log $log)
@@ -66,6 +66,11 @@ class Zend_Application_Resource_Log
         return $this;
     }
 
+    /**
+     * Retrieve logger object
+     *
+     * @return Zend_Log
+     */
     public function getLog()
     {
         if (null === $this->_log) {

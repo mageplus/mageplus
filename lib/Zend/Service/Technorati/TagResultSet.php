@@ -15,16 +15,16 @@
  * @category   Zend
  * @package    Zend_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TagResultSet.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: TagResultSet.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /**
  * @see Zend_Service_Technorati_ResultSet
  */
-#require_once 'Zend/Service/Technorati/ResultSet.php';
+require_once 'Zend/Service/Technorati/ResultSet.php';
 
 
 /**
@@ -33,7 +33,7 @@
  * @category   Zend
  * @package    Zend_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Service_Technorati_TagResultSet extends Zend_Service_Technorati_ResultSet
@@ -104,7 +104,7 @@ class Zend_Service_Technorati_TagResultSet extends Zend_Service_Technorati_Resul
         /**
          * @see Zend_Service_Technorati_TagResult
          */
-        #require_once 'Zend/Service/Technorati/TagResult.php';
+        require_once 'Zend/Service/Technorati/TagResult.php';
         return new Zend_Service_Technorati_TagResult($this->_results->item($this->_currentIndex));
     }
 }

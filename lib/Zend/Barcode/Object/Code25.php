@@ -15,27 +15,27 @@
  * @category   Zend
  * @package    Zend_Barcode
  * @subpackage Object
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Code25.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Code25.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Barcode_Object_ObjectAbstract
  */
-#require_once 'Zend/Barcode/Object/ObjectAbstract.php';
+require_once 'Zend/Barcode/Object/ObjectAbstract.php';
 
 /**
  * @see Zend_Validate_Barcode
  */
-#require_once 'Zend/Validate/Barcode.php';
+require_once 'Zend/Validate/Barcode.php';
 
 /**
  * Class for generate Interleaved 2 of 5 barcode
  *
  * @category   Zend
  * @package    Zend_Barcode
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Barcode_Object_Code25 extends Zend_Barcode_Object_ObjectAbstract
@@ -97,7 +97,7 @@ class Zend_Barcode_Object_Code25 extends Zend_Barcode_Object_ObjectAbstract
         $barcodeTable[] = array(1 , $this->_barThickWidth , 0 , 1);
         $barcodeTable[] = array(0 , $this->_barThinWidth , 0 , 1);
         $barcodeTable[] = array(1 , $this->_barThinWidth , 0 , 1);
-        $barcodeTable[] = array(0 , 1);
+        $barcodeTable[] = array(0 , $this->_barThinWidth);
 
         $text = str_split($this->getText());
         foreach ($text as $char) {
@@ -106,7 +106,7 @@ class Zend_Barcode_Object_Code25 extends Zend_Barcode_Object_ObjectAbstract
                 /* visible, width, top, length */
                 $width = $c ? $this->_barThickWidth : $this->_barThinWidth;
                 $barcodeTable[] = array(1 , $width , 0 , 1);
-                $barcodeTable[] = array(0 , 1);
+                $barcodeTable[] = array(0 , $this->_barThinWidth);
             }
         }
 

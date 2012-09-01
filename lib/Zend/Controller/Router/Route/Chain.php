@@ -15,20 +15,20 @@
  * @category   Zend
  * @package    Zend_Controller
  * @subpackage Router
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Chain.php 23187 2010-10-20 18:42:37Z matthew $
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Chain.php 24593 2012-01-05 20:35:02Z matthew $
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /** Zend_Controller_Router_Route_Abstract */
-#require_once 'Zend/Controller/Router/Route/Abstract.php';
+require_once 'Zend/Controller/Router/Route/Abstract.php';
 
 /**
  * Chain route is used for managing route chaining.
  *
  * @package    Zend_Controller
  * @subpackage Router
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Abstract
@@ -54,7 +54,7 @@ class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Ab
      * @param  string                                $separator
      * @return Zend_Controller_Router_Route_Chain
      */
-    public function chain(Zend_Controller_Router_Route_Abstract $route, $separator = '/')
+    public function chain(Zend_Controller_Router_Route_Abstract $route, $separator = self::URI_DELIMITER)
     {
         $this->_routes[]     = $route;
         $this->_separators[] = $separator;
@@ -72,14 +72,14 @@ class Zend_Controller_Router_Route_Chain extends Zend_Controller_Router_Route_Ab
      */
     public function match($request, $partial = null)
     {
-        $path    = trim($request->getPathInfo(), '/');
+        $path    = trim($request->getPathInfo(), self::URI_DELIMITER);
         $subPath = $path;
         $values  = array();
 
         foreach ($this->_routes as $key => $route) {
-            if ($key > 0 
-                && $matchedPath !== null 
-                && $subPath !== '' 
+            if ($key > 0
+                && $matchedPath !== null
+                && $subPath !== ''
                 && $subPath !== false
             ) {
                 $separator = substr($subPath, 0, strlen($this->_separators[$key]));

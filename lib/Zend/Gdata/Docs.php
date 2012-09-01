@@ -16,35 +16,35 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Docs.php 20112 2010-01-07 02:39:32Z tjohns $
+ * @version    $Id: Docs.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Gdata
  */
-#require_once 'Zend/Gdata.php';
+require_once 'Zend/Gdata.php';
 
 /**
  * @see Zend_Gdata_Docs_DocumentListFeed
  */
-#require_once 'Zend/Gdata/Docs/DocumentListFeed.php';
+require_once 'Zend/Gdata/Docs/DocumentListFeed.php';
 
 /**
  * @see Zend_Gdata_Docs_DocumentListEntry
  */
-#require_once 'Zend/Gdata/Docs/DocumentListEntry.php';
+require_once 'Zend/Gdata/Docs/DocumentListEntry.php';
 
 /**
  * @see Zend_Gdata_App_Extension_Category
  */
-#require_once 'Zend/Gdata/App/Extension/Category.php';
+require_once 'Zend/Gdata/App/Extension/Category.php';
 
 /**
  * @see Zend_Gdata_App_Extension_Title
  */
-#require_once 'Zend/Gdata/App/Extension/Title.php';
+require_once 'Zend/Gdata/App/Extension/Title.php';
 
 /**
  * Service class for interacting with the Google Document List data API
@@ -53,14 +53,14 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Docs
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_Docs extends Zend_Gdata
 {
 
-    const DOCUMENTS_LIST_FEED_URI = 'http://docs.google.com/feeds/documents/private/full';
-    const DOCUMENTS_FOLDER_FEED_URI = 'http://docs.google.com/feeds/folders/private/full';
+    const DOCUMENTS_LIST_FEED_URI = 'https://docs.google.com/feeds/documents/private/full';
+    const DOCUMENTS_FOLDER_FEED_URI = 'https://docs.google.com/feeds/folders/private/full';
     const DOCUMENTS_CATEGORY_SCHEMA = 'http://schemas.google.com/g/2005#kind';
     const DOCUMENTS_CATEGORY_TERM = 'http://schemas.google.com/docs/2007#folder';
     const AUTH_SERVICE_NAME = 'writely';
@@ -139,7 +139,7 @@ class Zend_Gdata_Docs extends Zend_Gdata
     public function getDocumentListEntry($location = null)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -162,7 +162,7 @@ class Zend_Gdata_Docs extends Zend_Gdata
      * @return Zend_Gdata_Docs_DocumentListEntry
      */
     public function getDoc($docId, $docType) {
-        $location = 'http://docs.google.com/feeds/documents/private/full/' .
+        $location = 'https://docs.google.com/feeds/documents/private/full/' .
             $docType . '%3A' . $docId;
         return $this->getDocumentListEntry($location);
     }
@@ -215,7 +215,7 @@ class Zend_Gdata_Docs extends Zend_Gdata
      *         which are enumerated in SUPPORTED_FILETYPES.
      * @param string $uri (optional) The URL to which the upload should be
      *         made.
-     *         Example: 'http://docs.google.com/feeds/documents/private/full'.
+     *         Example: 'https://docs.google.com/feeds/documents/private/full'.
      * @return Zend_Gdata_Docs_DocumentListEntry The entry for the newly
      *         created Google Document.
      */
@@ -265,7 +265,7 @@ class Zend_Gdata_Docs extends Zend_Gdata
      *       the appropriate type doesn't exist yet.
      */
     public function createFolder($folderName, $folderResourceId=null) {
-        $category = new Zend_Gdata_App_Extension_Category(self::DOCUMENTS_CATEGORY_TERM, 
+        $category = new Zend_Gdata_App_Extension_Category(self::DOCUMENTS_CATEGORY_TERM,
                                                           self::DOCUMENTS_CATEGORY_SCHEMA);
         $title = new Zend_Gdata_App_Extension_Title($folderName);
         $entry = new Zend_Gdata_Entry();

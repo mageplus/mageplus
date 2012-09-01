@@ -15,25 +15,25 @@
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: DbAdapter.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: DbAdapter.php 25024 2012-07-30 15:08:15Z rob $
  */
 
 /**
  * @see Zend_Db_Adapter_Abstract
  */
-#require_once "Zend/Db/Adapter/Abstract.php";
+require_once "Zend/Db/Adapter/Abstract.php";
 
 /**
  * @see Zend_Test_DbStatement
  */
-#require_once "Zend/Test/DbStatement.php";
+require_once "Zend/Test/DbStatement.php";
 
 /**
  * @see Zend_Db_Profiler
  */
-#require_once 'Zend/Db/Profiler.php';
+require_once 'Zend/Db/Profiler.php';
 
 /**
  * Testing Database Adapter which acts as a stack for SQL Results
@@ -41,7 +41,7 @@
  * @category   Zend
  * @package    Zend_Test
  * @subpackage PHPUnit
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Test_DbAdapter extends Zend_Db_Adapter_Abstract
@@ -73,7 +73,7 @@ class Zend_Test_DbAdapter extends Zend_Db_Adapter_Abstract
 
     /**
      * @var string
-     */ 
+     */
     protected $_quoteIdentifierSymbol = '';
 
     /**
@@ -112,7 +112,7 @@ class Zend_Test_DbAdapter extends Zend_Db_Adapter_Abstract
 
     /**
      * @var string
-     */ 
+     */
     public function setQuoteIdentifierSymbol($symbol)
     {
         $this->_quoteIdentifierSymbol = $symbol;

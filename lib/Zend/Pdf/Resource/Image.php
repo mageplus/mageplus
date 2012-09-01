@@ -14,27 +14,27 @@
  *
  * @category   Zend
  * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Image.php 22908 2010-08-25 20:52:47Z alexander $
+ * @version    $Id: Image.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /** Internally used classes */
 
 /** Zend_Pdf_Element_Name */
-#require_once 'Zend/Pdf/Element/Name.php';
+require_once 'Zend/Pdf/Element/Name.php';
 
 
 /** Zend_Pdf_Resource */
-#require_once 'Zend/Pdf/Resource.php';
+require_once 'Zend/Pdf/Resource.php';
 
 
 /**
  * Image abstraction.
  *
  * @package    Zend_Pdf
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Pdf_Resource_Image extends Zend_Pdf_Resource

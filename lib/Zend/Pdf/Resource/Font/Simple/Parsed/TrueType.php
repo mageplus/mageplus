@@ -15,21 +15,21 @@
  * @category   Zend
  * @package    Zend_Pdf
  * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: TrueType.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: TrueType.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /** Internally used classes */
-#require_once 'Zend/Pdf/Element/Name.php';
+require_once 'Zend/Pdf/Element/Name.php';
 
 /** Zend_Pdf_Resource_Font_FontDescriptor */
-#require_once 'Zend/Pdf/Resource/Font/FontDescriptor.php';
+require_once 'Zend/Pdf/Resource/Font/FontDescriptor.php';
 
 
 /** Zend_Pdf_Resource_Font_Simple_Parsed */
-#require_once 'Zend/Pdf/Resource/Font/Simple/Parsed.php';
+require_once 'Zend/Pdf/Resource/Font/Simple/Parsed.php';
 
 /**
  * TrueType fonts implementation
@@ -39,7 +39,7 @@
  *
  * @package    Zend_Pdf
  * @subpackage Fonts
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Pdf_Resource_Font_Simple_Parsed_TrueType extends Zend_Pdf_Resource_Font_Simple_Parsed

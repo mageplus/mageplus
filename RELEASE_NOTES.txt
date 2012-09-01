@@ -1,3 +1,6 @@
+==== Mage+ 1.0.0.7 ====
+fixed issue where orders with partial fulfilment will not charge shipping on subsequent shipments if initial shipment did not charge shipping - Tim Reynolds [tim-reynolds-briteskies]
+
 ==== Mage+ 1.0.0.6 ====
 Fixed issue 114 (issue with admin user id in dataflow profile during installation) - Lee Bolding [leesbian]
 

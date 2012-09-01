@@ -6,6 +6,7 @@ All functions now contain documentation - Lee Bolding [leesbian]
 Upgraded Zend Framework to v1.12.0 - Lee Bolding [leesbian]
 
 === Improvements ===
+Magento autloader now allows for other autloaders to locate file if it fails - Daniel Fahlke [Flyingmana]
 
 === Changes ===
 

@@ -15,26 +15,26 @@
  * @category   Zend
  * @package    Zend_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: DailyCountsResultSet.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: DailyCountsResultSet.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /**
  * @see Zend_Date
  */
-#require_once 'Zend/Date.php';
+require_once 'Zend/Date.php';
 
 /**
  * @see Zend_Service_Technorati_ResultSet
  */
-#require_once 'Zend/Service/Technorati/ResultSet.php';
+require_once 'Zend/Service/Technorati/ResultSet.php';
 
 /**
  * @see Zend_Service_Technorati_Utils
  */
-#require_once 'Zend/Service/Technorati/Utils.php';
+require_once 'Zend/Service/Technorati/Utils.php';
 
 
 /**
@@ -43,7 +43,7 @@
  * @category   Zend
  * @package    Zend_Service
  * @subpackage Technorati
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Service_Technorati_DailyCountsResultSet extends Zend_Service_Technorati_ResultSet
@@ -119,7 +119,7 @@ class Zend_Service_Technorati_DailyCountsResultSet extends Zend_Service_Technora
         /**
          * @see Zend_Service_Technorati_DailyCountsResult
          */
-        #require_once 'Zend/Service/Technorati/DailyCountsResult.php';
+        require_once 'Zend/Service/Technorati/DailyCountsResult.php';
         return new Zend_Service_Technorati_DailyCountsResult($this->_results->item($this->_currentIndex));
     }
 }

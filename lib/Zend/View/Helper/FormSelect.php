@@ -15,16 +15,16 @@
  * @category   Zend
  * @package    Zend_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: FormSelect.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: FormSelect.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /**
  * Abstract class for extension
  */
-#require_once 'Zend/View/Helper/FormElement.php';
+require_once 'Zend/View/Helper/FormElement.php';
 
 
 /**
@@ -33,7 +33,7 @@
  * @category   Zend
  * @package    Zend_View
  * @subpackage Helper
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_View_Helper_FormSelect extends Zend_View_Helper_FormElement
@@ -123,8 +123,11 @@ class Zend_View_Helper_FormSelect extends Zend_View_Helper_FormElement
                 if (null !== $translator) {
                     $opt_value = $translator->translate($opt_value);
                 }
+                $opt_id = ' id="' . $this->view->escape($id) . '-optgroup-'
+                        . $this->view->escape($opt_value) . '"';
                 $list[] = '<optgroup'
                         . $opt_disable
+                        . $opt_id
                         . ' label="' . $this->view->escape($opt_value) .'">';
                 foreach ($opt_label as $val => $lab) {
                     $list[] = $this->_build($val, $lab, $value, $disable);

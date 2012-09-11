@@ -15,23 +15,23 @@
  * @category   Zend
  * @package    Zend_Ldap
  * @subpackage Schema
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: ActiveDirectory.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: ActiveDirectory.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Ldap_Node_Schema
  */
-#require_once 'Zend/Ldap/Node/Schema.php';
+require_once 'Zend/Ldap/Node/Schema.php';
 /**
  * @see Zend_Ldap_Node_Schema_AttributeType_ActiveDirectory
  */
-#require_once 'Zend/Ldap/Node/Schema/AttributeType/ActiveDirectory.php';
+require_once 'Zend/Ldap/Node/Schema/AttributeType/ActiveDirectory.php';
 /**
  * @see Zend_Ldap_Node_Schema_ObjectClass_ActiveDirectory
  */
-#require_once 'Zend/Ldap/Node/Schema/ObjectClass/ActiveDirectory.php';
+require_once 'Zend/Ldap/Node/Schema/ObjectClass/ActiveDirectory.php';
 
 /**
  * Zend_Ldap_Node_Schema_ActiveDirectory provides a simple data-container for the Schema node of
@@ -40,7 +40,7 @@
  * @category   Zend
  * @package    Zend_Ldap
  * @subpackage Schema
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Ldap_Node_Schema_ActiveDirectory extends Zend_Ldap_Node_Schema

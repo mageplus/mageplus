@@ -16,18 +16,18 @@
  * @package    Zend_Config
  * @copyright  Copyright (c) 2005-2009 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Yaml.php 23294 2010-11-05 00:27:34Z ramon $
+ * @version    $Id: Yaml.php 23650 2011-01-21 21:32:57Z mikaelkael $
  */
 
 /**
  * @see Zend_Config_Writer
  */
-#require_once 'Zend/Config/Writer/FileAbstract.php';
+require_once 'Zend/Config/Writer/FileAbstract.php';
 
 /**
  * @see Zend_Config_Yaml
  */
-#require_once 'Zend/Config/Yaml.php';
+require_once 'Zend/Config/Yaml.php';
 
 /**
  * @category   Zend
@@ -57,13 +57,13 @@ class Zend_Config_Writer_Yaml extends Zend_Config_Writer_FileAbstract
     /**
      * Set callback for decoding YAML
      *
-     * @param  $yamlEncoder the decoder to set
+     * @param  callable $yamlEncoder the decoder to set
      * @return Zend_Config_Yaml
      */
     public function setYamlEncoder($yamlEncoder)
     {
         if (!is_callable($yamlEncoder)) {
-            #require_once 'Zend/Config/Exception.php';
+            require_once 'Zend/Config/Exception.php';
             throw new Zend_Config_Exception('Invalid parameter to setYamlEncoder - must be callable');
         }
 

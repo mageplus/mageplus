@@ -1,16 +1,31 @@
 ==== Mage+ 1.1.0.0 ===
 
 === Major Highlights ===
-Added unit test framework
-All functions now contain documentation
+Added unit test framework - Lee Bolding [leesbian]
+All functions now contain documentation - Lee Bolding [leesbian]
+Upgraded Zend Framework to v1.12.0 - Lee Bolding [leesbian]
 
-==== Mage+ 1.0.0.4 ===
+=== Improvements ===
+Magento autloader now allows for other autloaders to locate file if it fails - Daniel Fahlke [Flyingmana]
+
+=== Changes ===
+
+=== Fixes ===
+
+==== Mage+ 1.0.0.7 ====
+Fixed issue where orders with partial fulfilment will not charge shipping on subsequent shipments if initial shipment did not charge shipping - Tim Reynolds [tim-reynolds-briteskies]
+Fixed issue adding to compare from search result page - Jonathan Alexander [encryptedband]
+
+==== Mage+ 1.0.0.6 ====
+Fixed issue 114 (issue with admin user id in dataflow profile during installation) - Lee Bolding [leesbian]
+
+==== Mage+ 1.0.0.5 ====
+Fixed issue 27893 (Memory leak on edit order address load) - Lee Bolding [leesbian]
+Fixed issue 27781 (Error in region.list API - region name is empty) - Lee Bolding [leesbian]
+
+==== Mage+ 1.0.0.4 ====
 Fixed issue 27872 (Dataflow profile history always empty) - Lee Bolding [Leesbian]
 Added .htaccess to shell folder - [xyphoid]
-
-==== Mage+ 1.0.0.3 ===
-Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
-
 
 ==== Mage+ 1.0.0.3 ===
 Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01) 

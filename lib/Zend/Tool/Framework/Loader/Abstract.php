@@ -15,28 +15,28 @@
  * @category   Zend
  * @package    Zend_Tool
  * @subpackage Framework
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Abstract.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Tool_Framework_Registry_EnabledInterface
  */
-#require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
+require_once 'Zend/Tool/Framework/Registry/EnabledInterface.php';
 
-#require_once 'Zend/Tool/Framework/Loader/Interface.php';
-#require_once 'Zend/Tool/Framework/Manifest/Interface.php';
-#require_once 'Zend/Tool/Framework/Provider/Interface.php';
+require_once 'Zend/Tool/Framework/Loader/Interface.php';
+require_once 'Zend/Tool/Framework/Manifest/Interface.php';
+require_once 'Zend/Tool/Framework/Provider/Interface.php';
 
 
 /**
  * @category   Zend
  * @package    Zend_Tool
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-abstract class Zend_Tool_Framework_Loader_Abstract 
+abstract class Zend_Tool_Framework_Loader_Abstract
     implements Zend_Tool_Framework_Loader_Interface, Zend_Tool_Framework_Registry_EnabledInterface
 {
     /**

@@ -14,25 +14,25 @@
  *
  * @category   Zend
  * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Xml.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Xml.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Config_Writer
  */
-#require_once 'Zend/Config/Writer/FileAbstract.php';
+require_once 'Zend/Config/Writer/FileAbstract.php';
 
 /**
  * @see Zend_Config_Xml
  */
-#require_once 'Zend/Config/Xml.php';
+require_once 'Zend/Config/Xml.php';
 
 /**
  * @category   Zend
  * @package    Zend_Config
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Config_Writer_Xml extends Zend_Config_Writer_FileAbstract
@@ -101,7 +101,7 @@ class Zend_Config_Writer_Xml extends Zend_Config_Writer_FileAbstract
                     $branchType = 'string';
                 }
             } else if ($branchType !== (is_numeric($key) ? 'numeric' : 'string')) {
-                #require_once 'Zend/Config/Exception.php';
+                require_once 'Zend/Config/Exception.php';
                 throw new Zend_Config_Exception('Mixing of string and numeric keys is not allowed');
             }
 

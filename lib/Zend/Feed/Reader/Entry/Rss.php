@@ -14,70 +14,70 @@
  *
  * @category   Zend
  * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Rss.php 22300 2010-05-26 10:13:34Z padraic $
+ * @version    $Id: Rss.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Feed_Reader
  */
-#require_once 'Zend/Feed/Reader.php';
+require_once 'Zend/Feed/Reader.php';
 
 /**
  * @see Zend_Feed_Reader_EntryInterface
  */
-#require_once 'Zend/Feed/Reader/EntryInterface.php';
+require_once 'Zend/Feed/Reader/EntryInterface.php';
 
 /**
  * @see Zend_Feed_Reader_EntryAbstract
  */
-#require_once 'Zend/Feed/Reader/EntryAbstract.php';
+require_once 'Zend/Feed/Reader/EntryAbstract.php';
 
 /**
  * @see Zend_Feed_Reader_Extension_DublinCore_Entry
  */
-#require_once 'Zend/Feed/Reader/Extension/DublinCore/Entry.php';
+require_once 'Zend/Feed/Reader/Extension/DublinCore/Entry.php';
 
 /**
  * @see Zend_Feed_Reader_Extension_Content_Entry
  */
-#require_once 'Zend/Feed/Reader/Extension/Content/Entry.php';
+require_once 'Zend/Feed/Reader/Extension/Content/Entry.php';
 
 /**
  * @see Zend_Feed_Reader_Extension_Atom_Entry
  */
-#require_once 'Zend/Feed/Reader/Extension/Atom/Entry.php';
+require_once 'Zend/Feed/Reader/Extension/Atom/Entry.php';
 
 /**
  * @see Zend_Feed_Reader_Extension_WellformedWeb_Entry
  */
-#require_once 'Zend/Feed/Reader/Extension/WellFormedWeb/Entry.php';
+require_once 'Zend/Feed/Reader/Extension/WellFormedWeb/Entry.php';
 
 /**
  * @see Zend_Feed_Reader_Extension_Slash_Entry
  */
-#require_once 'Zend/Feed/Reader/Extension/Slash/Entry.php';
+require_once 'Zend/Feed/Reader/Extension/Slash/Entry.php';
 
 /**
  * @see Zend_Feed_Reader_Extension_Thread_Entry
  */
-#require_once 'Zend/Feed/Reader/Extension/Thread/Entry.php';
+require_once 'Zend/Feed/Reader/Extension/Thread/Entry.php';
 
 /**
  * @see Zend_Date
  */
-#require_once 'Zend/Date.php';
+require_once 'Zend/Date.php';
 
 /**
  * @see Zend_Feed_Reader_Collection_Category
  */
-#require_once 'Zend/Feed/Reader/Collection/Category.php';
+require_once 'Zend/Feed/Reader/Collection/Category.php';
 
 /**
  * @category   Zend
  * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implements Zend_Feed_Reader_EntryInterface
@@ -159,7 +159,7 @@ class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implemen
         if (array_key_exists('authors', $this->_data)) {
             return $this->_data['authors'];
         }
-        
+
         $authors = array();
         $authors_dc = $this->getExtension('DublinCore')->getAuthors();
         if (!empty($authors_dc)) {
@@ -169,7 +169,7 @@ class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implemen
                 );
             }
         }
-        
+
         if ($this->getType() !== Zend_Feed_Reader::TYPE_RSS_10
         && $this->getType() !== Zend_Feed_Reader::TYPE_RSS_090) {
             $list = $this->_xpath->query($this->_xpathQueryRss . '//author');
@@ -189,7 +189,7 @@ class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implemen
                         $data['name'] = $matches[1];
                     }
                     $authors[] = $data;
-                } 
+                }
             }
         }
 
@@ -278,7 +278,7 @@ class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implemen
                             break;
                         } catch (Zend_Date_Exception $e) {
                             if ($standard == Zend_Date::DATES) {
-                                #require_once 'Zend/Feed/Exception.php';
+                                require_once 'Zend/Feed/Exception.php';
                                 throw new Zend_Feed_Exception(
                                     'Could not load date due to unrecognised'
                                     .' format (should follow RFC 822 or 2822):'
@@ -472,7 +472,7 @@ class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implemen
 
         return $this->_data['links'];
     }
-    
+
     /**
      * Get all categories
      *
@@ -503,7 +503,7 @@ class Zend_Feed_Reader_Entry_Rss extends Zend_Feed_Reader_EntryAbstract implemen
         } else {
             $categoryCollection = $this->getExtension('DublinCore')->getCategories();
         }
-        
+
         if (count($categoryCollection) == 0) {
             $categoryCollection = $this->getExtension('Atom')->getCategories();
         }

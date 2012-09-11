@@ -14,25 +14,25 @@
  *
  * @category   Zend
  * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: FeedAbstract.php 22092 2010-05-04 12:50:51Z padraic $
+ * @version    $Id: FeedAbstract.php 25024 2012-07-30 15:08:15Z rob $
  */
 
 /**
  * @see Zend_Feed_Reader
  */
-#require_once 'Zend/Feed/Reader.php';
+require_once 'Zend/Feed/Reader.php';
 
 /**
  * @see Zend_feed_Reader_FeedInterface
  */
-#require_once 'Zend/Feed/Reader/FeedInterface.php';
+require_once 'Zend/Feed/Reader/FeedInterface.php';
 
 /**
  * @category   Zend
  * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInterface
@@ -273,7 +273,7 @@ abstract class Zend_Feed_Reader_FeedAbstract implements Zend_Feed_Reader_FeedInt
                 return call_user_func_array(array($extension, $method), $args);
             }
         }
-        #require_once 'Zend/Feed/Exception.php';
+        require_once 'Zend/Feed/Exception.php';
         throw new Zend_Feed_Exception('Method: ' . $method
         . 'does not exist and could not be located on a registered Extension');
     }

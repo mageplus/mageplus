@@ -15,9 +15,9 @@
  * @category   Zend
  * @package    Zend_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Client.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Client.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
@@ -25,44 +25,44 @@
  * For handling the HTTP connection to the XML-RPC service
  * @see Zend_Http_Client
  */
-#require_once 'Zend/Http/Client.php';
+require_once 'Zend/Http/Client.php';
 
 /**
  * Enables object chaining for calling namespaced XML-RPC methods.
  * @see Zend_XmlRpc_Client_ServerProxy
  */
-#require_once 'Zend/XmlRpc/Client/ServerProxy.php';
+require_once 'Zend/XmlRpc/Client/ServerProxy.php';
 
 /**
  * Introspects remote servers using the XML-RPC de facto system.* methods
  * @see Zend_XmlRpc_Client_ServerIntrospection
  */
-#require_once 'Zend/XmlRpc/Client/ServerIntrospection.php';
+require_once 'Zend/XmlRpc/Client/ServerIntrospection.php';
 
 /**
  * Represent a native XML-RPC value, used both in sending parameters
  * to methods and as the parameters retrieve from method calls
  * @see Zend_XmlRpc_Value
  */
-#require_once 'Zend/XmlRpc/Value.php';
+require_once 'Zend/XmlRpc/Value.php';
 
 /**
  * XML-RPC Request
  * @see Zend_XmlRpc_Request
  */
-#require_once 'Zend/XmlRpc/Request.php';
+require_once 'Zend/XmlRpc/Request.php';
 
 /**
  * XML-RPC Response
  * @see Zend_XmlRpc_Response
  */
-#require_once 'Zend/XmlRpc/Response.php';
+require_once 'Zend/XmlRpc/Response.php';
 
 /**
  * XML-RPC Fault
  * @see Zend_XmlRpc_Fault
  */
-#require_once 'Zend/XmlRpc/Fault.php';
+require_once 'Zend/XmlRpc/Fault.php';
 
 
 /**
@@ -71,7 +71,7 @@
  * @category   Zend
  * @package    Zend_XmlRpc
  * @subpackage Client
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_XmlRpc_Client
@@ -211,7 +211,7 @@ class Zend_XmlRpc_Client
     /**
      * Returns a proxy object for more convenient method calls
      *
-     * @param $namespace  Namespace to proxy or empty string for none
+     * @param string $namespace  Namespace to proxy or empty string for none
      * @return Zend_XmlRpc_Client_ServerProxy
      */
     public function getProxy($namespace = '')
@@ -284,7 +284,7 @@ class Zend_XmlRpc_Client
              * Exception thrown when an HTTP error occurs
              * @see Zend_XmlRpc_Client_HttpException
              */
-            #require_once 'Zend/XmlRpc/Client/HttpException.php';
+            require_once 'Zend/XmlRpc/Client/HttpException.php';
             throw new Zend_XmlRpc_Client_HttpException(
                                     $httpResponse->getMessage(),
                                     $httpResponse->getStatus());
@@ -294,7 +294,7 @@ class Zend_XmlRpc_Client
             $response = new Zend_XmlRpc_Response();
         }
         $this->_lastResponse = $response;
-        $this->_lastResponse->loadXml($httpResponse->getBody());
+        $this->_lastResponse->loadXml(trim($httpResponse->getBody()));
     }
 
     /**
@@ -333,22 +333,33 @@ class Zend_XmlRpc_Client
                 if (!is_array($params)) {
                     $params = array($params);
                 }
-                foreach ($params as $key => $param) {
 
+                foreach ($params as $key => $param)
+                {
                     if ($param instanceof Zend_XmlRpc_Value) {
                         continue;
                     }
 
-                    $type = Zend_XmlRpc_Value::AUTO_DETECT_TYPE;
-                    foreach ($signatures as $signature) {
-                        if (!is_array($signature)) {
-                            continue;
+                    if (count($signatures) > 1) {
+                        $type = Zend_XmlRpc_Value::getXmlRpcTypeByValue($param);
+                        foreach ($signatures as $signature) {
+                            if (!is_array($signature)) {
+                                continue;
+                            }
+                            if (isset($signature['parameters'][$key])) {
+                                if ($signature['parameters'][$key] == $type) {
+                                    break;
+                                }
+                            }
                         }
+                    } elseif (isset($signatures[0]['parameters'][$key])) {
+                        $type = $signatures[0]['parameters'][$key];
+                    } else {
+                        $type = null;
+                    }
 
-                        if (isset($signature['parameters'][$key])) {
-                            $type = $signature['parameters'][$key];
-                            $type = in_array($type, $validTypes) ? $type : Zend_XmlRpc_Value::AUTO_DETECT_TYPE;
-                        }
+                    if (empty($type) || !in_array($type, $validTypes)) {
+                        $type = Zend_XmlRpc_Value::AUTO_DETECT_TYPE;
                     }
 
                     $params[$key] = Zend_XmlRpc_Value::getXmlRpcValue($param, $type);
@@ -366,7 +377,7 @@ class Zend_XmlRpc_Client
              * Exception thrown when an XML-RPC fault is returned
              * @see Zend_XmlRpc_Client_FaultException
              */
-            #require_once 'Zend/XmlRpc/Client/FaultException.php';
+            require_once 'Zend/XmlRpc/Client/FaultException.php';
             throw new Zend_XmlRpc_Client_FaultException($fault->getMessage(),
                                                         $fault->getCode());
         }

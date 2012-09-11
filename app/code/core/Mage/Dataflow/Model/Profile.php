@@ -144,13 +144,15 @@ class Mage_Dataflow_Model_Profile extends Mage_Core_Model_Abstract
 
         $profileHistory = Mage::getModel('dataflow/profile_history');
 
-<<<<<<< HEAD
-        $adminUserId = Mage::getSingleton('admin/session')->getUser()->getId();
-=======
-        $adminUserId = Mage::getSingleton('admin/session')->getUser()->getId(); 
->>>>>>> hotfix/BUG-27872
-        if($adminUserId) {
-            $profileHistory->setUserId($adminUserId);
+	if (Mage::app()->isInstalled())
+	{	
+        	$adminUserId = Mage::getSingleton('admin/session')->getUser()->getId();
+	} else {
+		$adminUserId = 1;
+	} 
+        
+	if($adminUserId) {
+            	$profileHistory->setUserId($adminUserId);
         }
 
         $profileHistory

@@ -15,32 +15,34 @@
  * @category   Zend
  * @package    Zend_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Db.php 22513 2010-07-01 13:48:39Z ramon $
+ * @version    $Id: Db.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /** Zend_Log_Writer_Abstract */
-#require_once 'Zend/Log/Writer/Abstract.php';
+require_once 'Zend/Log/Writer/Abstract.php';
 
 /**
  * @category   Zend
  * @package    Zend_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Db.php 22513 2010-07-01 13:48:39Z ramon $
+ * @version    $Id: Db.php 24593 2012-01-05 20:35:02Z matthew $
  */
 class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
 {
     /**
      * Database adapter instance
+     *
      * @var Zend_Db_Adapter
      */
     private $_db;
 
     /**
      * Name of the log table in the database
+     *
      * @var string
      */
     private $_table;
@@ -58,6 +60,7 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      * @param Zend_Db_Adapter $db   Database adapter instance
      * @param string $table         Log table in database
      * @param array $columnMap
+     * @return void
      */
     public function __construct($db, $table, $columnMap = null)
     {
@@ -71,7 +74,6 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      *
      * @param  array|Zend_Config $config
      * @return Zend_Log_Writer_Db
-     * @throws Zend_Log_Exception
      */
     static public function factory($config)
     {
@@ -95,10 +97,13 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
 
     /**
      * Formatting is not possible on this writer
+     *
+     * @return void
+     * @throws Zend_Log_Exception
      */
     public function setFormatter(Zend_Log_Formatter_Interface $formatter)
     {
-        #require_once 'Zend/Log/Exception.php';
+        require_once 'Zend/Log/Exception.php';
         throw new Zend_Log_Exception(get_class($this) . ' does not support formatting');
     }
 
@@ -117,11 +122,12 @@ class Zend_Log_Writer_Db extends Zend_Log_Writer_Abstract
      *
      * @param  array  $event  event data
      * @return void
+     * @throws Zend_Log_Exception
      */
     protected function _write($event)
     {
         if ($this->_db === null) {
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('Database adapter is null');
         }
 

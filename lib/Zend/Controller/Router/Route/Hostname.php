@@ -15,20 +15,20 @@
  * @category   Zend
  * @package    Zend_Controller
  * @subpackage Router
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Hostname.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Hostname.php 24593 2012-01-05 20:35:02Z matthew $
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /** Zend_Controller_Router_Route_Abstract */
-#require_once 'Zend/Controller/Router/Route/Abstract.php';
+require_once 'Zend/Controller/Router/Route/Abstract.php';
 
 /**
  * Hostname Route
  *
  * @package    Zend_Controller
  * @subpackage Router
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @see        http://manuals.rubyonrails.com/read/chapter/65
  */
@@ -111,7 +111,7 @@ class Zend_Controller_Router_Route_Hostname extends Zend_Controller_Router_Route
     public function getRequest()
     {
         if ($this->_request === null) {
-            #require_once 'Zend/Controller/Front.php';
+            require_once 'Zend/Controller/Front.php';
             $this->_request = Zend_Controller_Front::getInstance()->getRequest();
         }
 
@@ -271,7 +271,7 @@ class Zend_Controller_Router_Route_Hostname extends Zend_Controller_Router_Route
                 } elseif (isset($this->_defaults[$name])) {
                     $host[$key] = $this->_defaults[$name];
                 } else {
-                    #require_once 'Zend/Controller/Router/Exception.php';
+                    require_once 'Zend/Controller/Router/Exception.php';
                     throw new Zend_Controller_Router_Exception($name . ' is not specified');
                 }
             } else {
@@ -302,7 +302,6 @@ class Zend_Controller_Router_Route_Hostname extends Zend_Controller_Router_Route
             }
         }
 
-        $hostname = implode('.', $host);
         $url      = $scheme . '://' . $url;
 
         return $url;

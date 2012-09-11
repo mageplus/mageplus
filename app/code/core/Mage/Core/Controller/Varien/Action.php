@@ -810,6 +810,7 @@ abstract class Mage_Core_Controller_Varien_Action
         if (empty($refererUrl)) {
             $refererUrl = empty($defaultUrl) ? Mage::getBaseUrl() : $defaultUrl;
         }
+	$refererUrl = htmlspecialchars_decode($refererUrl);
 
         $this->getResponse()->setRedirect($refererUrl);
         return $this;

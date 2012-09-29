@@ -27,12 +27,23 @@
 -->
 <config>
     <global>
-			<environment>
-				<name>production</name>
-				<banner_color>#FF0000</banner_color>
-				<show_banner_in_frontend>0</show_banner_in_frontend>
-				<show_banner_in_backend>1</show_banner_in_backend>
-			</environment>
+	<environment>
+	    <name>production</name>
+	    <banner_color>#FF0000</banner_color>
+	    <show_banner_in_frontend>0</show_banner_in_frontend>
+	    <show_banner_in_backend>1</show_banner_in_backend>
+	</environment>
+	<compatibility>
+	    <enable>1</enable>
+	    <version>
+		<major>1</major>
+		<minor>7</minor>
+		<revision>0</revision>
+		<patch>2</patch>
+		<stability></stability>
+		<number></number>
+	    </version>
+	</compatibility>
         <install>
             <date>{{date}}</date>
         </install>

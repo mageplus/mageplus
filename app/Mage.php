@@ -160,21 +160,37 @@ final class Mage
     }
 
     /**
-     * Gets the detailed Magento version information
+     * Gets the detailed Mageplus version information
+     * Returns the detailed Magento version information specified in configuration if
+     * compatibility mode has been enabled
      * @link http://www.magentocommerce.com/blog/new-community-edition-release-process/
      *
      * @return array
      */
     public static function getVersionInfo()
     {
-        return array(
-            'major'     => '1',
-            'minor'     => '1',
-            'revision'  => '0',
-            'patch'     => '0',
-            'stability' => '',
-            'number'    => '',
-        );
+        if (Mage::getConfig('global/compatibility/enable'))
+        {
+            $info = array(
+                'major'     => Mage::getConfig('global/compatibility/version/major'),
+                'minor'     => Mage::getConfig('global/compatibility/version/minor'),
+                'revision'  => Mage::getConfig('global/compatibility/version/revision'),
+                'patch'     => Mage::getConfig('global/compatibility/version/patch'),
+                'stability' => Mage::getConfig('global/compatibility/version/stability'),
+                'number'    => Mage::getConfig('global/compatibility/version/number'),
+            );
+        } else {
+            $info = array(
+                'major'     => '1',
+                'minor'     => '1',
+                'revision'  => '0',
+                'patch'     => '0',
+                'stability' => '',
+                'number'    => '',
+            );
+        }
+
+        return $info;
     }
 
     /**

@@ -72,7 +72,7 @@ class Zend_Pdf_FileParserDataSource_File extends Zend_Pdf_FileParserDataSource
      * @param string $filePath Fully-qualified path to the file.
      * @throws Zend_Pdf_Exception
      */
-    public function __construct($filePath)
+    public function __construct($filePath = null)
     {
         if (! (is_file($filePath) || is_link($filePath))) {
             #require_once 'Zend/Pdf/Exception.php';

@@ -352,6 +352,17 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
             Varien_Profiler::start('config/load-db');
             $dbConf = $this->getResourceModel();
             $dbConf->loadToXml($this);
+
+            /**
+             * Prevent local.xml directives overwriting
+             */
+            $mergeConfig = clone $this->_prototype;
+            $this->_isLocalConfigLoaded = $mergeConfig->loadFile($this->getOptions()->getEtcDir() . DS . 'local.xml');
+            if ($this->_isLocalConfigLoaded) {
+                $this->extend($mergeConfig);
+            }
+
+            $this->applyExtends();
             Varien_Profiler::stop('config/load-db');
         }
         return $this;

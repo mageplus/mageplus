@@ -71,7 +71,7 @@ class Mage_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abstrac
                 // if the product is associated with any category
                 if ($categories->count()) {
                     // show products from this category
-                    $this->setCategoryId(current($categories->getIterator()));
+                    $this->setCategoryId(current($categories->getIterator())->getId());
                 }
             }
 

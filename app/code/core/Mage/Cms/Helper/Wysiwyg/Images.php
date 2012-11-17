@@ -172,7 +172,8 @@ class Mage_Cms_Helper_Wysiwyg_Images extends Mage_Core_Helper_Abstract
     public function getImageHtmlDeclaration($filename, $renderAsTag = false)
     {
         $fileurl = $this->getCurrentUrl() . $filename;
-        $mediaPath = str_replace(Mage::getBaseUrl('media'), '', $fileurl);
+        $baseurl = Mage::app()->getStore($this->_storeId)->getBaseUrl('media');
+        $mediaPath = str_replace($baseurl, '', $fileurl);
         $directive = sprintf('{{media url="%s"}}', $mediaPath);
         if ($renderAsTag) {
             $html = sprintf('<img src="%s" alt="" />', $this->isUsingStaticUrlsAllowed() ? $fileurl : $directive);

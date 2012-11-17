@@ -1,3 +1,11 @@
+==== Mage+ 1.0.0.8 ===
+Fixed issue where object was set as category ID - Simon Sprankel [sprankhub]
+Fixed issue where customer view's shopping cart container is always empty - Roland Schilter [rndstr]
+Fixed issue with PHP 5.4 compatibility - Lars Strojny [lstrojny]
+Fixed issue that prevents setting a required EAV text value to 0 - Tim Reynolds [tim-reynolds]
+Fixed issue with image URL in WYSIWYG mode for multistore installations - Thomas Birke [quafzi]
+Fixed issue causing __root__ to be included in selected resource list during role resource edit - Lee Saferite [LeeSaferite]
+
 ==== Mage+ 1.0.0.7 ====
 Fixed issue where orders with partial fulfilment will not charge shipping on subsequent shipments if initial shipment did not charge shipping - Tim Reynolds [tim-reynolds-briteskies]
 Fixed issue adding to compare from search result page - Jonathan Alexander [encryptedband]
@@ -42,7 +50,7 @@ Added profit indication to dashboard in adminhtml - Lee Bolding [leesbian]
 26749 - Hard-Coded Texts [raqy]
 26905 - Typo in Paypal NVP API [newberemis]
 Fixed sales_flat_order.convered_at not being populated - Lee Bolding [leesbian]
-Fixed issue in Exception class - Lee Saferite
+Fixed issue in Exception class - Lee Saferite [LeeSaferite]
 Fixed variable initiation in product importer - Marco Grätsch [magdev]
 Fixed data inconsistencies where some object created dates were actually last modified dates - Lee Bolding [leesbian]
 Fixed toArray functionality on collection classes - Lee Saferite [LeeSaferite]

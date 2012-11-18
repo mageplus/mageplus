@@ -41,7 +41,7 @@ For those wishing to contribute, what we ask of you, is that you concentrate you
  7. fixing mark up, JS, CSS errors in default themes / conversion to HTML5 / jQuery
  8. completion of language packs, translations and default transactional emails
 
-You can view the project raodmap here : https://github.com/mageplus/mageplus/wiki/roadmap
+You can view the project roadmap here : https://github.com/mageplus/mageplus/wiki/roadmap
 
 If you're eager to show current or future employers or clients your Magento skillz, there's no better way than by solving real problems that are currently affecting tens of thousands of users. **ALL** changes/fixes/modifications made will be detailed in the project's RELEASE_NOTES.txt, along with credit to the contributor - so, roll up your sleeves and get stuck in!
 

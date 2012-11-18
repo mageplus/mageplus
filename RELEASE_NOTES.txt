@@ -1,4 +1,9 @@
 ==== Mage+ 1.0.0.8 ===
+
+=== Changes ===
+Added compatibility mode to Mage::getVersionInfo to allow for returning Magento version Mage+ is based on - Lee Bolding [leesbian]
+
+=== Fixes ===
 Fixed issue where object was set as category ID - Simon Sprankel [sprankhub]
 Fixed issue where customer view's shopping cart container is always empty - Roland Schilter [rndstr]
 Fixed issue with PHP 5.4 compatibility - Lars Strojny [lstrojny]

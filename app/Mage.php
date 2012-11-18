@@ -154,27 +154,47 @@ final class Mage
      */
     public static function getVersion()
     {
-        $i = self::getVersionInfo();
+        $i = self::getVersionInfo(TRUE);
         return trim("{$i['major']}.{$i['minor']}.{$i['revision']}" . ($i['patch'] != '' ? ".{$i['patch']}" : "")
                         . "-{$i['stability']}{$i['number']}", '.-');
     }
 
     /**
      * Gets the detailed Magento version information
+     * Returns the detailed Magento version information specified in configuration if
+     * compatibility mode has been enabled
      * @link http://www.magentocommerce.com/blog/new-community-edition-release-process/
      *
+     * @static
+     * @param bool $compatibiltiy
      * @return array
      */
-    public static function getVersionInfo()
+    public static function getVersionInfo($compatibility = false)
     {
-        return array(
-            'major'     => '1',
-            'minor'     => '0',
-            'revision'  => '0',
-            'patch'     => '8',
-            'stability' => '',
-            'number'    => '',
-        );
+	$enabled = (string) Mage::getConfig()->getNode('global/compatibility')->enable;
+	
+        if ((!empty($enabled) && 'false' !== $enabled ) || $compatibility)
+        {
+            $info = array(
+                'major'     => Mage::getConfig()->getNode('global/compatibility/version/major'),
+                'minor'     => Mage::getConfig()->getNode('global/compatibility/version/minor'),
+                'revision'  => Mage::getConfig()->getNode('global/compatibility/version/revision'),
+                'patch'     => Mage::getConfig()->getNode('global/compatibility/version/patch'),
+                'stability' => Mage::getConfig()->getNode('global/compatibility/version/stability'),
+                'number'    => Mage::getConfig()->getNode('global/compatibility/version/number'),
+            );
+        } else {
+            $info = array(
+                'major'     => '1',
+                'minor'     => '1',
+                'revision'  => '0',
+                'patch'     => '0',
+                'stability' => '',
+                'number'    => '',
+            );
+        }
+
+        return $info;
     }
 
     /**

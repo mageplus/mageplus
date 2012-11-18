@@ -10,6 +10,7 @@ Fixed issue with PHP 5.4 compatibility - Lars Strojny [lstrojny]
 Fixed issue that prevents setting a required EAV text value to 0 - Tim Reynolds [tim-reynolds]
 Fixed issue with image URL in WYSIWYG mode for multistore installations - Thomas Birke [quafzi]
 Fixed issue causing __root__ to be included in selected resource list during role resource edit - Lee Saferite [LeeSaferite]
+Fixed typo in readme.md - [joedevon] 
 
 ==== Mage+ 1.0.0.7 ====
 Fixed issue where orders with partial fulfilment will not charge shipping on subsequent shipments if initial shipment did not charge shipping - Tim Reynolds [tim-reynolds-briteskies]

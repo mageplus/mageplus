@@ -70,7 +70,8 @@ class Mage_Bundle_Model_Selection extends Mage_Core_Model_Abstract
      */
     protected function _beforeSave()
     {
-        $storeId = Mage::registry('product')->getStoreId();
+        $product = Mage::registry('product');
+        $storeId = ($product instanceof Mage_Catalog_Model_Product ? $product->getStoreId() : null);
         if (!Mage::helper('catalog')->isPriceGlobal() && $storeId) {
             $this->setWebsiteId(Mage::app()->getStore($storeId)->getWebsiteId());
             $this->getResource()->saveSelectionPrice($this);

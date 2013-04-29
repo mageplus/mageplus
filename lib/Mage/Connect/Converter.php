@@ -315,13 +315,13 @@ final class Mage_Connect_Converter
             $mageObject->save(getcwd());
             @chdir($cwd);            
             $filename = $outDir. DS . $mageObject->getReleaseFilename().".tgz";         
-            if(@file_exists($targetArchive)) {
-                @unlink($targetArchive);
+            if(@file_exists($destFile)) {
+                @unlink($destFile);
             }
             Mage_System_Dirs::mkdirStrict(dirname($destFile));
             $copy = @copy($filename, $destFile);
             if(false === $copy) {
-                throw new Exception("Cannot copy '{$filename}' to '{$targetArchive}'");
+                throw new Exception("Cannot copy '{$filename}' to '{$destFile}'");
             }
             Mage_System_Dirs::rm($tempDir);
             Mage_System_Dirs::rm($outDir);

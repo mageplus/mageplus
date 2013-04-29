@@ -47,7 +47,7 @@ extends Mage_Connect_Command
                 $cache = $this->getSconfig();
             }
             if(!empty($params[0])) {
-                $chanName = $conf->chanName($params[0]);
+                $chanName = $cache->chanName($params[0]);
                 $data = $cache->getInstalledPackages($chanName);
             } else {
                 $data = $cache->getInstalledPackages();

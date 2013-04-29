@@ -47,7 +47,7 @@ class Mage_Shipping_Model_Carrier_Pickup
 
         $result = Mage::getModel('shipping/rate_result');
 
-        if (!empty($rate)) {
+        if (!empty($result)) {
             $method = Mage::getModel('shipping/rate_result_method');
 
             $method->setCarrier('pickup');

@@ -1248,25 +1248,42 @@ XMLAuth;
                         $timeArr[] = substr($time,2,2);
                         $timeArr[] = substr($time,-2,2);
 
-                        if($i==1){
-                           $resultArr['status'] = (string)$activityTag->Status->StatusType->Description;
-                           $resultArr['deliverydate'] = implode('-',$dateArr);//YYYY-MM-DD
-                           $resultArr['deliverytime'] = implode(':',$timeArr);//HH:MM:SS
-                           $resultArr['deliverylocation'] = (string)$activityTag->ActivityLocation->Description;
-                           $resultArr['signedby'] = (string)$activityTag->ActivityLocation->SignedForByName;
-                           if ($addArr) {
-                            $resultArr['deliveryto']=implode(', ',$addArr);
-                           }
-                        }else{
-                           $tempArr=array();
-                           $tempArr['activity'] = (string)$activityTag->Status->StatusType->Description;
-                           $tempArr['deliverydate'] = implode('-',$dateArr);//YYYY-MM-DD
-                           $tempArr['deliverytime'] = implode(':',$timeArr);//HH:MM:SS
-                           if ($addArr) {
-                            $tempArr['deliverylocation']=implode(', ',$addArr);
-                           }
-                           $packageProgress[] = $tempArr;
+                        if($i==1) {
+                            switch((string)$activityTag->Status->StatusType->Code) {
+                                case 'D':
+                                    $resultArr['status'] = 'Delivered';
+                                    $resultArr['deliverydate'] = implode('-',$dateArr);//YYYY-MM-DD
+                                    $resultArr['deliverytime'] = implode(':',$timeArr);//HH:MM:SS
+                                    $resultArr['deliverylocation'] = (string)$activityTag->ActivityLocation->Description;
+                                    $resultArr['signedby'] = (string)$activityTag->ActivityLocation->SignedForByName;
+                                    if ($addArr) {
+                                        $resultArr['deliveryto']=implode(', ',$addArr);
+                                    }
+                                    break;
+                                case 'I':
+                                    $description = $xml->getXpath("//TrackResponse/Shipment/Package/Message/Description/text()");
+                                    $description = $description ? " ({$description[0]})" : '';
+                                    $resultArr['status'] = 'In-Transit'.$description;
+                                    break;
+                                case 'X':
+                                    $resultArr['status'] = 'Exception';
+                                    break;
+                                case 'P':
+                                    $resultArr['status'] = 'Pickup';
+                                    break;
+                                case 'M':
+                                    $resultArr['status'] = 'Manifest';
+                                    break;
+                            }
                         }
+                        $tempArr=array();
+                        $tempArr['activity'] = (string)$activityTag->Status->StatusType->Description;
+                        $tempArr['deliverydate'] = implode('-',$dateArr);//YYYY-MM-DD
+                        $tempArr['deliverytime'] = implode(':',$timeArr);//HH:MM:SS
+                        if ($addArr) {
+                            $tempArr['deliverylocation']=implode(', ',$addArr);
+                        }
+                        $packageProgress[] = $tempArr;
                         $i++;
                     }
                     $resultArr['progressdetail'] = $packageProgress;

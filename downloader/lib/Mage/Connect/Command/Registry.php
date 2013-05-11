@@ -91,7 +91,7 @@ extends Mage_Connect_Command
                 list($cache, $config, $ftpObj) = $packager->getRemoteConf($ftp);
             } else {
                 $cache = $this->getSconfig();
-                $confif = $this->config();
+                $config = $this->config();
             }
             if(!$cache->hasPackage($channel, $package)) {
                 return $this->ui()->output("No package found: {$channel}/{$package}");

@@ -134,26 +134,56 @@ class Varien_Image
         $this->_getAdapter()->resize($width, $height);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function keepAspectRatio($value)
     {
         return $this->_getAdapter()->keepAspectRatio($value);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function keepFrame($value)
     {
         return $this->_getAdapter()->keepFrame($value);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function keepTransparency($value)
     {
         return $this->_getAdapter()->keepTransparency($value);
     }
-
+    
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function constrainOnly($value)
     {
         return $this->_getAdapter()->constrainOnly($value);
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function backgroundColor($value)
     {
         return $this->_getAdapter()->backgroundColor($value);

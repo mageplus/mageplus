@@ -86,6 +86,11 @@ class Varien_Pear
         $this->getConfig();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getInstance()
     {
         if (!self::$_instance) {
@@ -94,21 +99,42 @@ class Varien_Pear
         return self::$_instance;
     }
 
+    /**
+     * @todo
+     *
+     * @param $pkg
+     * @return
+     */
     public function isSystemPackage($pkg)
     {
         return in_array($pkg, array('Archive_Tar', 'Console_Getopt', 'PEAR', 'Structures_Graph'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseDir()
     {
         return dirname(dirname(dirname(__FILE__)));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPearDir()
     {
         return $this->getBaseDir().DS.'downloader'.DS.'pearlib';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getConfig()
     {
         if (!$this->_config) {
@@ -153,11 +179,22 @@ class Varien_Pear
         return $this->_config;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMagentoChannels()
     {
         return array('connect.magentocommerce.com/core', 'connect.magentocommerce.com/community');
     }
 
+    /**
+     * @todo
+     *
+     * @param boolean $redirectOnChange
+     * @return
+     */
     public function getRegistry($redirectOnChange=true)
     {
         if (!$this->_registry) {
@@ -185,6 +222,11 @@ class Varien_Pear
         return $this->_registry;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFrontend()
     {
         if (!$this->_frontend) {
@@ -193,16 +235,34 @@ class Varien_Pear
         return $this->_frontend;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLog()
     {
         return $this->getFrontend()->getLog();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOutput()
     {
         return $this->getFrontend()->getOutput();
     }
 
+    /**
+     * @todo
+     *
+     * @param $command
+     * @param array $options
+     * @param array $params
+     * @return
+     */
     public function run($command, $options=array(), $params=array())
     {
         @set_time_limit(0);
@@ -222,6 +282,12 @@ class Varien_Pear
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $uri
+     * @return
+     */
     public function setRemoteConfig($uri) #$host, $user, $password, $path='', $port=null)
     {
         #$uri = 'ftp://' . $user . ':' . $password . '@' . $host . (is_numeric($port) ? ':' . $port : '') . '/' . trim($path, '/') . '/';

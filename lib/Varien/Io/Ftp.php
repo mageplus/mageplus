@@ -302,6 +302,12 @@ class Varien_Io_Ftp extends Varien_Io_Abstract
         return @ftp_chmod($this->_conn, $mode, $filename);
     }
 
+    /**
+     * @todo
+     *
+     * @param $grep
+     * @return
+     */
     public function ls($grep=null)
     {
         $ls = @ftp_nlist($this->_conn, '.');
@@ -317,6 +323,12 @@ class Varien_Io_Ftp extends Varien_Io_Abstract
         return $list;
     }
 
+    /**
+     * @todo
+     *
+     * @param boolean $new
+     * @return
+     */
     protected function _tmpFilename($new=false)
     {
         if ($new || !$this->_tmpFilename) {

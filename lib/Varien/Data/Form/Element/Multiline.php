@@ -31,6 +31,12 @@
  */
 class Varien_Data_Form_Element_Multiline extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -38,11 +44,22 @@ class Varien_Data_Form_Element_Multiline extends Varien_Data_Form_Element_Abstra
         $this->setLineCount(2);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('type', 'title', 'class', 'style', 'onclick', 'onchange', 'disabled', 'maxlength');
     }
 
+    /**
+     * @todo
+     *
+     * @param $suffix
+     * @return
+     */
     public function getLabelHtml($suffix = 0)
     {
         return parent::getLabelHtml($suffix);
@@ -75,6 +92,11 @@ class Varien_Data_Form_Element_Multiline extends Varien_Data_Form_Element_Abstra
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDefaultHtml()
     {
         $html = '';

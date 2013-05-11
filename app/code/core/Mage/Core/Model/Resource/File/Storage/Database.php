@@ -163,8 +163,8 @@ class Mage_Core_Model_Resource_File_Storage_Database extends Mage_Core_Model_Res
     /**
      * Get files from storage at defined range
      *
-     * @param  int $offset
-     * @param  int $count
+     * @param  integer $offset
+     * @param  integer $count
      * @return array
      */
     public function getFiles($offset = 0, $count = 100)
@@ -270,7 +270,7 @@ class Mage_Core_Model_Resource_File_Storage_Database extends Mage_Core_Model_Res
      *
      * @param string $filename
      * @param string $path
-     * @return bool
+     * @return boolean
      */
     public function fileExists($filename, $path)
     {

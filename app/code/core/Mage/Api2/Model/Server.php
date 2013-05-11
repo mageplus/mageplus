@@ -38,7 +38,7 @@ class Mage_Api2_Model_Server
      */
     const API_TYPE_REST = 'rest';
 
-    /**#@+
+    /**
      * HTTP Response Codes
      */
     const HTTP_OK                 = 200;
@@ -51,7 +51,6 @@ class Mage_Api2_Model_Server
     const HTTP_METHOD_NOT_ALLOWED = 405;
     const HTTP_NOT_ACCEPTABLE     = 406;
     const HTTP_INTERNAL_ERROR     = 500;
-    /**#@- */
 
     /**
      * List of api types

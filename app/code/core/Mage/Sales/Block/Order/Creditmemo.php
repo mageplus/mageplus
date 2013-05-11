@@ -39,6 +39,11 @@ class Mage_Sales_Block_Order_Creditmemo extends Mage_Sales_Block_Order_Creditmem
         $this->setTemplate('sales/order/creditmemo.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -50,6 +55,11 @@ class Mage_Sales_Block_Order_Creditmemo extends Mage_Sales_Block_Order_Creditmem
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentInfoHtml()
     {
         return $this->getChildHtml('payment_info');
@@ -91,26 +101,63 @@ class Mage_Sales_Block_Order_Creditmemo extends Mage_Sales_Block_Order_Creditmem
         return Mage::helper('sales')->__('View Another Order');
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
     public function getInvoiceUrl($order)
     {
         return Mage::getUrl('*/*/invoice', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
     public function getShipmentUrl($order)
     {
         return Mage::getUrl('*/*/shipment', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
     public function getViewUrl($order)
     {
         return Mage::getUrl('*/*/view', array('order_id' => $order->getId()));
     }
 
-    public function getPrintCreditmemoUrl($creditmemo){
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
+    public function getPrintCreditmemoUrl($creditmemo)
+    {
         return Mage::getUrl('*/*/printCreditmemo', array('creditmemo_id' => $creditmemo->getId()));
     }
 
-    public function getPrintAllCreditmemosUrl($order){
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
+    public function getPrintAllCreditmemosUrl($order)
+    {
         return Mage::getUrl('*/*/printCreditmemo', array('order_id' => $order->getId()));
     }
 }

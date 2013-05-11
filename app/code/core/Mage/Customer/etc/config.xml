@@ -576,4 +576,11 @@ T: {{var telephone}}
             </address_templates>
         </customer>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Customer/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

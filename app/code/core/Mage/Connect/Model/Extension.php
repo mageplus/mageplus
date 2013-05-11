@@ -132,7 +132,12 @@ class Mage_Connect_Model_Extension extends Varien_Object
         return $this;
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $filesString
+     * @return
+     */
     protected function packageFilesToArray($filesString)
     {
         $packageFiles = array();

@@ -33,16 +33,31 @@
  */
 class Mage_Checkout_Block_Multishipping_Link extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCheckoutUrl()
     {
         return $this->getUrl('checkout/multishipping', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getQuote()
     {
         return Mage::getSingleton('checkout/session')->getQuote();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _toHtml()
     {
         if (!Mage::helper('checkout')->isMultishippingCheckoutAvailable()){

@@ -14,21 +14,21 @@
  *
  * @category   Zend
  * @package    Zend_Ldap
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Exception.php 22996 2010-09-22 17:01:46Z sgehrig $
+ * @version    $Id: Exception.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Exception
  */
-#require_once 'Zend/Exception.php';
+require_once 'Zend/Exception.php';
 
 /**
  * @category   Zend
  * @package    Zend_Ldap
  * @uses       Zend_Exception
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Ldap_Exception extends Zend_Exception

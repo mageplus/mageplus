@@ -541,6 +541,11 @@ class Mage_Sales_Model_Order_Invoice extends Mage_Sales_Model_Abstract
         return $this->_items;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAllItems()
     {
         $items = array();
@@ -552,6 +557,13 @@ class Mage_Sales_Model_Order_Invoice extends Mage_Sales_Model_Abstract
         return $items;
     }
 
+    /**
+     * @todo
+     *
+     * @param $itemId
+     * 
+     * @return
+     */
     public function getItemById($itemId)
     {
         foreach ($this->getItemsCollection() as $item) {
@@ -562,6 +574,13 @@ class Mage_Sales_Model_Order_Invoice extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Invoice_Item $item
+     * 
+     * @return
+     */
     public function addItem(Mage_Sales_Model_Order_Invoice_Item $item)
     {
         $item->setInvoice($this)
@@ -727,6 +746,13 @@ class Mage_Sales_Model_Order_Invoice extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param boolean $reload
+     * 
+     * @return
+     */
     public function getCommentsCollection($reload=false)
     {
         if (is_null($this->_comments) || $reload) {
@@ -910,6 +936,13 @@ class Mage_Sales_Model_Order_Invoice extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $configPath
+     * 
+     * @return
+     */
     protected function _getEmails($configPath)
     {
         $data = Mage::getStoreConfig($configPath, $this->getStoreId());
@@ -919,6 +952,11 @@ class Mage_Sales_Model_Order_Invoice extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     protected function _beforeDelete()
     {
         $this->_protectFromNonAdmin();

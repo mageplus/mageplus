@@ -588,6 +588,11 @@ class Mage_Core_Model_App
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function reinitStores()
     {
         return $this->_initStores();
@@ -894,6 +899,11 @@ class Mage_Core_Model_App
         return $stores;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _getDefaultStore()
     {
         if (empty($this->_store)) {
@@ -922,6 +932,11 @@ class Mage_Core_Model_App
         return null;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getDistroLocaleCode()
     {
         return self::DISTRO_LOCALE_CODE;
@@ -962,6 +977,11 @@ class Mage_Core_Model_App
         return $this->_websites[$id];
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getWebsites($withDefault = false, $codeKey = false)
     {
         $websites = array();
@@ -1260,6 +1280,13 @@ class Mage_Core_Model_App
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $area
+     *
+     * @return 
+     */
     public function addEventArea($area)
     {
         if (!isset($this->_events[$area])) {
@@ -1268,6 +1295,14 @@ class Mage_Core_Model_App
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $eventName
+     * @param $args
+     *
+     * @return 
+     */
     public function dispatchEvent($eventName, $args)
     {
         foreach ($this->_events as $area=>$events) {
@@ -1342,16 +1377,33 @@ class Mage_Core_Model_App
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $value
+     *
+     * @return 
+     */
     public function setUpdateMode($value)
     {
         $this->_updateMode = $value;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getUpdateMode()
     {
         return $this->_updateMode;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function throwStoreException()
     {
         throw new Mage_Core_Model_Store_Exception('');
@@ -1457,9 +1509,6 @@ class Mage_Core_Model_App
 
         return $groups;
     }
-
-
-
 
     /**
      * Retrieve application installation flag

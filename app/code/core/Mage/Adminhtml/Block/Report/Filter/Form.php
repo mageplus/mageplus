@@ -52,7 +52,7 @@ class Mage_Adminhtml_Block_Report_Filter_Form extends Mage_Adminhtml_Block_Widge
      * Set field visibility
      *
      * @param string Field id
-     * @param bool Field visibility
+     * @param boolean Field visibility
      */
     public function setFieldVisibility($fieldId, $visibility)
     {
@@ -63,8 +63,8 @@ class Mage_Adminhtml_Block_Report_Filter_Form extends Mage_Adminhtml_Block_Widge
      * Get field visibility
      *
      * @param string Field id
-     * @param bool Default field visibility
-     * @return bool
+     * @param boolean Default field visibility
+     * @return boolean
      */
     public function getFieldVisibility($fieldId, $defaultVisibility = true)
     {
@@ -182,7 +182,7 @@ class Mage_Adminhtml_Block_Report_Filter_Form extends Mage_Adminhtml_Block_Widge
     }
 
     /**
-     * Initialize form fileds values
+     * Initialize form fields values
      * Method will be called after prepareForm and can be used for field values initialization
      *
      * @return Mage_Adminhtml_Block_Widget_Form

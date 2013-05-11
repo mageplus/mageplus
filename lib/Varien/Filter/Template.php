@@ -141,7 +141,12 @@ class Varien_Filter_Template implements Zend_Filter_Interface
         return $value;
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $construction
+     * @return
+     */
     public function varDirective($construction)
     {
         if (count($this->_templateVars)==0) {
@@ -153,6 +158,12 @@ class Varien_Filter_Template implements Zend_Filter_Interface
     	return $replacedValue;
     }
 
+    /**
+     * @todo
+     *
+     * @param $construction
+     * @return
+     */
     public function includeDirective($construction)
     {
         // Processing of {include template=... [...]} statement
@@ -170,6 +181,12 @@ class Varien_Filter_Template implements Zend_Filter_Interface
         return $replacedValue;
     }
 
+    /**
+     * @todo
+     *
+     * @param $construction
+     * @return
+     */
     public function dependDirective($construction)
     {
         if (count($this->_templateVars)==0) {
@@ -184,6 +201,12 @@ class Varien_Filter_Template implements Zend_Filter_Interface
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $construction
+     * @return
+     */
     public function ifDirective($construction)
     {
         if (count($this->_templateVars) == 0) {

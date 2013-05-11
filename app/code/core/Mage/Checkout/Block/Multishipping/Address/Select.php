@@ -33,6 +33,11 @@
  */
 class Mage_Checkout_Block_Multishipping_Address_Select extends Mage_Checkout_Block_Multishipping_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -41,11 +46,21 @@ class Mage_Checkout_Block_Multishipping_Address_Select extends Mage_Checkout_Blo
         return parent::_prepareLayout();
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCheckout()
     {
         return Mage::getSingleton('checkout/type_multishipping');
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddressCollection()
     {
         $collection = $this->getData('address_collection');
@@ -56,31 +71,69 @@ class Mage_Checkout_Block_Multishipping_Address_Select extends Mage_Checkout_Blo
         return $collection;
     }
     
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function isAddressDefaultBilling($address)
     {
         return $address->getId() == $this->_getCheckout()->getCustomer()->getDefaultBilling();
     }
     
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function isAddressDefaultShipping($address)
     {
         return $address->getId() == $this->_getCheckout()->getCustomer()->getDefaultShipping();
     }
     
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getEditAddressUrl($address)
     {
         return $this->getUrl('*/*/editAddress', array('id'=>$address->getId()));
     }
     
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getSetAddressUrl($address)
     {
         return $this->getUrl('*/*/setBilling', array('id'=>$address->getId()));
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddNewUrl()
     {
         return $this->getUrl('*/*/newBilling');
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return $this->getUrl('*/multishipping/billing');

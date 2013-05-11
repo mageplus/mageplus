@@ -172,16 +172,33 @@ class Mage_Checkout_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this->_quote;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getQuoteIdKey()
     {
         return 'quote_id_' . Mage::app()->getStore()->getWebsiteId();
     }
 
+    /**
+     * @todo
+     *
+     * @param $quoteId
+     * 
+     * @return
+     */
     public function setQuoteId($quoteId)
     {
         $this->setData($this->_getQuoteIdKey(), $quoteId);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getQuoteId()
     {
         return $this->getData($this->_getQuoteIdKey());
@@ -228,6 +245,15 @@ class Mage_Checkout_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $step
+     * @param $data
+     * @param $value
+     * 
+     * @return
+     */
     public function setStepData($step, $data, $value=null)
     {
         $steps = $this->getSteps();
@@ -248,6 +274,14 @@ class Mage_Checkout_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $step
+     * @param $data
+     * 
+     * @return
+     */
     public function getStepData($step=null, $data=null)
     {
         $steps = $this->getSteps();
@@ -357,6 +391,11 @@ class Mage_Checkout_Model_Session extends Mage_Core_Model_Session_Abstract
         return $this->addItemAdditionalMessage('quote_item' . $itemId, $message);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clear()
     {
         Mage::dispatchEvent('checkout_quote_destroy', array('quote'=>$this->getQuote()));
@@ -379,12 +418,24 @@ class Mage_Checkout_Model_Session extends Mage_Core_Model_Session_Abstract
         ;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resetCheckout()
     {
         $this->setCheckoutState(self::CHECKOUT_STATE_BEGIN);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $quote
+     * 
+     * @return
+     */
     public function replaceQuote($quote)
     {
         $this->_quote = $quote;

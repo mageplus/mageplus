@@ -34,6 +34,12 @@
  
 class Mage_Adminhtml_Block_Newsletter_Template_Grid_Renderer_Sender extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param Varien_Object $row
+     * @return
+     */
     public function render(Varien_Object $row)
     {
         $str = '';

@@ -33,6 +33,11 @@
  */
 class Mage_Bundle_Model_Source_Option_Selection_Price_Type
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

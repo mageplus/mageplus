@@ -47,11 +47,25 @@ class Mage_Sales_Model_Order_Config extends Mage_Core_Model_Config_Base
         parent::__construct(Mage::getConfig()->getNode('global/sales/order'));
     }
 
+    /**
+     * @todo
+     *
+     * @param $status
+     *
+     * @return
+     */
     protected function _getStatus($status)
     {
         return $this->getNode('statuses/'.$status);
     }
 
+    /**
+     * @todo
+     *
+     * @param $state
+     *
+     * @return
+     */
     protected function _getState($state)
     {
         return $this->getNode('states/'.$state);
@@ -195,6 +209,11 @@ class Mage_Sales_Model_Order_Config extends Mage_Core_Model_Config_Base
         return $this->_states['invisible'];
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     private function _getStates()
     {
         if (null === $this->_states) {

@@ -43,6 +43,11 @@ class Mage_Checkout_Block_Multishipping_Addresses extends Mage_Sales_Block_Items
         return Mage::getSingleton('checkout/type_multishipping');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -51,6 +56,11 @@ class Mage_Checkout_Block_Multishipping_Addresses extends Mage_Sales_Block_Items
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItems()
     {
         $items = $this->getCheckout()->getQuoteShippingAddressesItems();
@@ -98,36 +108,75 @@ class Mage_Checkout_Block_Multishipping_Addresses extends Mage_Sales_Block_Items
         return $options;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCustomer()
     {
         return $this->getCheckout()->getCustomerSession()->getCustomer();
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * 
+     * @return
+     */
     public function getItemUrl($item)
     {
         return $this->getUrl('catalog/product/view/id/'.$item->getProductId());
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * 
+     * @return
+     */
     public function getItemDeleteUrl($item)
     {
         return $this->getUrl('*/*/removeItem', array('address'=>$item->getQuoteAddressId(), 'id'=>$item->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPostActionUrl()
     {
         return $this->getUrl('*/*/addressesPost');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNewAddressUrl()
     {
         return Mage::getUrl('*/multishipping_address/newShipping');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return Mage::getUrl('*/cart/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isContinueDisabled()
     {
         return !$this->getCheckout()->validateMinimumAmount();

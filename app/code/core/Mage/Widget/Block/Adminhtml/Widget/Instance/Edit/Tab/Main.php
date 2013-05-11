@@ -68,7 +68,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
     /**
      * Returns status flag about this tab can be showen or not
      *
-     * @return true
+     * @return boolean
      */
     public function canShowTab()
     {
@@ -78,7 +78,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
     /**
      * Returns status flag about this tab hidden or not
      *
-     * @return true
+     * @return boolean
      */
     public function isHidden()
     {
@@ -205,7 +205,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
     }
 
     /**
-     * Initialize form fileds values
+     * Initialize form fields values
      *
      * @return Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Main
      */

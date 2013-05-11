@@ -38,6 +38,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Toolbar_Add extends Mag
         $this->setTemplate('catalog/product/attribute/set/toolbar/add.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareLayout()
     {
         $this->setChild('save_button',
@@ -61,26 +66,51 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_Set_Toolbar_Add extends Mag
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _getHeader()
     {
         return Mage::helper('catalog')->__('Add New Attribute Set');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function getSaveButtonHtml()
     {
         return $this->getChildHtml('save_button');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function getBackButtonHtml()
     {
         return $this->getChildHtml('back_button');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function getFormHtml()
     {
         return $this->getChildHtml('setForm');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function getFormId()
     {
         return $this->getChild('setForm')->getForm()->getId();

@@ -128,6 +128,11 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $url;
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getFirstVisitAt()
     {
         if (!$this->hasData('first_visit_at')) {
@@ -136,6 +141,11 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $this->getData('first_visit_at');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getLastVisitAt()
     {
         if (!$this->hasData('last_visit_at')) {
@@ -227,6 +237,12 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $observer
+     * @return
+     */
     public function bindQuoteCreate($observer)
     {
         if ($quote = $observer->getEvent()->getQuote()) {
@@ -238,6 +254,12 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $observer
+     * @return
+     */
     public function bindQuoteDestroy($observer)
     {
         if ($quote = $observer->getEvent()->getQuote()) {
@@ -256,6 +278,12 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function addCustomerData($data)
     {
         $customerId = $data->getCustomerId();
@@ -272,6 +300,12 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function addQuoteData($data)
     {
         $quoteId = $data->getQuoteId();
@@ -282,6 +316,12 @@ class Mage_Log_Model_Visitor extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $observer
+     * @return
+     */
     public function isModuleIgnored($observer)
     {
         $ignores = Mage::getConfig()->getNode('global/ignoredModules/entities')->asArray();

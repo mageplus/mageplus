@@ -1,3 +1,17 @@
+==== Mage+ 1.1.0.0 ===
+
+=== Major Highlights ===
+Added unit test framework - Lee Bolding [leesbian]
+All functions now contain documentation - Lee Bolding [leesbian]
+Upgraded Zend Framework to v1.12.0 - Lee Bolding [leesbian]
+
+=== Improvements ===
+Magento autloader now allows for other autloaders to locate file if it fails - Daniel Fahlke [Flyingmana]
+
+=== Changes ===
+
+=== Fixes ===
+
 ==== Mage+ 1.0.0.8 ===
 
 === Changes ===
@@ -10,7 +24,7 @@ Fixed issue with PHP 5.4 compatibility - Lars Strojny [lstrojny]
 Fixed issue that prevents setting a required EAV text value to 0 - Tim Reynolds [tim-reynolds]
 Fixed issue with image URL in WYSIWYG mode for multistore installations - Thomas Birke [quafzi]
 Fixed issue causing __root__ to be included in selected resource list during role resource edit - Lee Saferite [LeeSaferite]
-Fixed typo in readme.md - [joedevon] 
+Fixed typo in readme.md - [joedevon]
 
 ==== Mage+ 1.0.0.7 ====
 Fixed issue where orders with partial fulfilment will not charge shipping on subsequent shipments if initial shipment did not charge shipping - Tim Reynolds [tim-reynolds-briteskies]
@@ -27,8 +41,8 @@ Fixed issue 27781 (Error in region.list API - region name is empty) - Lee Boldin
 Fixed issue 27872 (Dataflow profile history always empty) - Lee Bolding [Leesbian]
 Added .htaccess to shell folder - [xyphoid]
 
-==== Mage+ 1.0.0.3 ====
-Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01)
+==== Mage+ 1.0.0.3 ===
+Fixed Zend Framework XML-RPC vulnerability (http://framework.zend.com/security/advisory/ZF2012-01) 
 
 ==== Mage+ 1.0.0.2 ====
 Fixed error with orderIncrementId on 32bit systems, or where orderId is alphanumeric [aromicon]

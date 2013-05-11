@@ -38,7 +38,7 @@ class Mage_Payment_Block_Info_Checkmo extends Mage_Payment_Block_Info
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return string
      */
@@ -51,7 +51,7 @@ class Mage_Payment_Block_Info_Checkmo extends Mage_Payment_Block_Info
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return string
      */
@@ -64,7 +64,7 @@ class Mage_Payment_Block_Info_Checkmo extends Mage_Payment_Block_Info
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return Mage_Payment_Block_Info_Checkmo
      */
@@ -80,7 +80,12 @@ class Mage_Payment_Block_Info_Checkmo extends Mage_Payment_Block_Info
         }
         return $this;
     }
-    
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toPdf()
     {
         $this->setTemplate('payment/info/pdf/checkmo.phtml');

@@ -15,15 +15,15 @@
  * @category   Zend
  * @package    Zend_Application
  * @subpackage Resource
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Db.php 22544 2010-07-10 15:01:37Z freak $
+ * @version    $Id: Db.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Application_Resource_ResourceAbstract
  */
-#require_once 'Zend/Application/Resource/ResourceAbstract.php';
+require_once 'Zend/Application/Resource/ResourceAbstract.php';
 
 /**
  * Resource for creating database adapter
@@ -32,7 +32,7 @@
  * @category   Zend
  * @package    Zend_Application
  * @subpackage Resource
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbstract
@@ -45,7 +45,7 @@ class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbs
     protected $_adapter = null;
 
     /**
-     * @var Zend_Db_Adapter_Interface
+     * @var Zend_Db_Adapter_Abstract
      */
     protected $_db;
 
@@ -66,7 +66,7 @@ class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbs
     /**
      * Set the adapter
      *
-     * @param  $adapter string
+     * @param  string $adapter
      * @return Zend_Application_Resource_Db
      */
     public function setAdapter($adapter)
@@ -88,7 +88,7 @@ class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbs
     /**
      * Set the adapter params
      *
-     * @param  $adapter string
+     * @param  string $adapter
      * @return Zend_Application_Resource_Db
      */
     public function setParams(array $params)
@@ -132,7 +132,7 @@ class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbs
     /**
      * Retrieve initialized DB connection
      *
-     * @return null|Zend_Db_Adapter_Interface
+     * @return null|Zend_Db_Adapter_Abstract
      */
     public function getDbAdapter()
     {
@@ -161,7 +161,7 @@ class Zend_Application_Resource_Db extends Zend_Application_Resource_ResourceAbs
 
     /**
      * Set the default metadata cache
-     * 
+     *
      * @param string|Zend_Cache_Core $cache
      * @return Zend_Application_Resource_Db
      */

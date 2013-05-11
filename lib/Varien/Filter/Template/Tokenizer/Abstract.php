@@ -112,10 +112,15 @@ abstract class Varien_Filter_Template_Tokenizer_Abstract
      *
      * @return boolean
      */
-    public function isWhiteSpace() {
+    public function isWhiteSpace()
+    {
         return trim($this->char()) != $this->char();
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     abstract public function tokenize();
-    
 }

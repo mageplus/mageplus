@@ -39,7 +39,8 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Composite_Fieldset_Bundle
      *
      * @return string
      */
-    public function getJsonConfig() {
+    public function getJsonConfig()
+    {
         $options = array();
         $optionsArray = $this->getOptions();
         foreach ($optionsArray as $option) {

@@ -39,6 +39,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_New_Product_Created extends
         $this->setTemplate('catalog/product/attribute/new/created.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _prepareLayout()
     {
 
@@ -59,6 +64,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_New_Product_Created extends
 
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     protected function _getGroupAttributes()
     {
         $attributes = array();
@@ -73,11 +83,21 @@ class Mage_Adminhtml_Block_Catalog_Product_Attribute_New_Product_Created extends
         return $attributes;
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getCloseButtonHtml()
     {
         return $this->getChildHtml('close_button');
     }
 
+    /**
+     * @todo
+     *
+     * @param
+     */
     public function getAttributesBlockJson()
     {
         $result = array(

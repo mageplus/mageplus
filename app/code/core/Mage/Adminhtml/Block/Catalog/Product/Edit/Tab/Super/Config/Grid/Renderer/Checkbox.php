@@ -46,6 +46,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Super_Config_Grid_Renderer_C
         return $result.'<input type="hidden" class="value-json" value="'.htmlspecialchars($this->getAttributesJson($row)).'" />';
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Object $row
+     * @return
+     */
     public function getAttributesJson(Varien_Object $row)
     {
         if(!$this->getColumn()->getAttributes()) {

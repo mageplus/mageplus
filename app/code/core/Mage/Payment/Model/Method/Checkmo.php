@@ -27,7 +27,6 @@
 
 class Mage_Payment_Model_Method_Checkmo extends Mage_Payment_Model_Method_Abstract
 {
-
     protected $_code  = 'checkmo';
     protected $_formBlockType = 'payment/form_checkmo';
     protected $_infoBlockType = 'payment/info_checkmo';
@@ -53,11 +52,21 @@ class Mage_Payment_Model_Method_Checkmo extends Mage_Payment_Model_Method_Abstra
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPayableTo()
     {
         return $this->getConfigData('payable_to');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMailingAddress()
     {
         return $this->getConfigData('mailing_address');

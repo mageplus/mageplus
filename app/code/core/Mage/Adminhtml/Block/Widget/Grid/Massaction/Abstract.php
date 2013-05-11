@@ -222,6 +222,11 @@ abstract class Mage_Adminhtml_Block_Widget_Grid_Massaction_Abstract extends Mage
         return $this->getButtonHtml($this->__('Submit'), $this->getJsObjectName() . ".apply()");
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getJavaScript()
     {
         return " var {$this->getJsObjectName()} = new varienGridMassaction('{$this->getHtmlId()}', "
@@ -234,6 +239,11 @@ abstract class Mage_Adminhtml_Block_Widget_Grid_Massaction_Abstract extends Mage
                 . "{$this->getJsObjectName()}.errorText = '{$this->getErrorText()}';";
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridIdsJson()
     {
         if (!$this->getUseSelectAll()) {
@@ -248,6 +258,11 @@ abstract class Mage_Adminhtml_Block_Widget_Grid_Massaction_Abstract extends Mage
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlId()
     {
         return $this->getParentBlock()->getHtmlId() . '_massaction';

@@ -28,36 +28,74 @@ class Mage_Adminhtml_Model_Report_Item extends Varien_Object
     protected $_isEmpty  = false;
     protected $_children = array();
 
+    /**
+     * @todo
+     *
+     * @param bool $flag
+     * @return
+     */
     public function setIsEmpty($flag = true)
     {
         $this->_isEmpty = $flag;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsEmpty()
     {
         return $this->_isEmpty;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasIsEmpty()
     {}
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getChildren()
     {
         return $this->_children;
     }
 
+    /**
+     * @todo
+     *
+     * @param $children
+     * @return
+     */
     public function setChildren($children)
     {
         $this->_children = $children;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasChildren()
     {
         return (count($this->_children) > 0) ? true : false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $child
+     * @return
+     */
     public function addChild($child)
     {
         $this->_children[] = $child;

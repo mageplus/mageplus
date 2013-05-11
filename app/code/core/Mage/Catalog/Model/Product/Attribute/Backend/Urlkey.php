@@ -34,6 +34,12 @@
 
 class Mage_Catalog_Model_Product_Attribute_Backend_Urlkey extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function beforeSave($object)
     {
         $attributeName = $this->getAttribute()->getName();
@@ -51,6 +57,12 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Urlkey extends Mage_Eav_Model
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function afterSave($object)
     {
         /* @var $object Mage_Catalog_Model_Product */

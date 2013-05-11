@@ -50,17 +50,33 @@ class Mage_Catalog_Block_Product_Price extends Mage_Core_Block_Template
         return $product;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDisplayMinimalPrice()
     {
         return $this->_getData('display_minimal_price');
     }
 
+    /**
+     * @todo
+     *
+     * @param $idSuffix
+     * @return
+     */
     public function setIdSuffix($idSuffix)
     {
         $this->_idSuffix = $idSuffix;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIdSuffix()
     {
         return $this->_idSuffix;

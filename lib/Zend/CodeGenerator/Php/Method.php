@@ -15,30 +15,30 @@
  * @category   Zend
  * @package    Zend_CodeGenerator
  * @subpackage PHP
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Method.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Method.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_CodeGenerator_Php_Member_Abstract
  */
-#require_once 'Zend/CodeGenerator/Php/Member/Abstract.php';
+require_once 'Zend/CodeGenerator/Php/Member/Abstract.php';
 
 /**
  * @see Zend_CodeGenerator_Php_Docblock
  */
-#require_once 'Zend/CodeGenerator/Php/Docblock.php';
+require_once 'Zend/CodeGenerator/Php/Docblock.php';
 
 /**
  * @see Zend_CodeGenerator_Php_Parameter
  */
-#require_once 'Zend/CodeGenerator/Php/Parameter.php';
+require_once 'Zend/CodeGenerator/Php/Parameter.php';
 
 /**
  * @category   Zend
  * @package    Zend_CodeGenerator
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_CodeGenerator_Php_Method extends Zend_CodeGenerator_Php_Member_Abstract
@@ -141,7 +141,7 @@ class Zend_CodeGenerator_Php_Method extends Zend_CodeGenerator_Php_Member_Abstra
         } elseif ($parameter instanceof Zend_CodeGenerator_Php_Parameter) {
             $parameterName = $parameter->getName();
         } else {
-            #require_once 'Zend/CodeGenerator/Php/Exception.php';
+            require_once 'Zend/CodeGenerator/Php/Exception.php';
             throw new Zend_CodeGenerator_Php_Exception('setParameter() expects either an array of method options or an instance of Zend_CodeGenerator_Php_Parameter');
         }
 
@@ -220,10 +220,12 @@ class Zend_CodeGenerator_Php_Method extends Zend_CodeGenerator_Php_Member_Abstra
 
         $output .= ')' . self::LINE_FEED . $indent . '{' . self::LINE_FEED;
 
-        if ($this->_body) {
+        if ($this->_body && $this->isSourceDirty()) {
             $output .= '        '
                     .  str_replace(self::LINE_FEED, self::LINE_FEED . $indent . $indent, trim($this->_body))
                     .  self::LINE_FEED;
+        } elseif ($this->_body) {
+            $output .= $this->_body . self::LINE_FEED;
         }
 
         $output .= $indent . '}' . self::LINE_FEED;

@@ -31,6 +31,11 @@ class Mage_CatalogSearch_Block_Autocomplete extends Mage_Core_Block_Abstract
 {
     protected $_suggestData = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         $html = '';
@@ -65,6 +70,11 @@ class Mage_CatalogSearch_Block_Autocomplete extends Mage_Core_Block_Abstract
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSuggestData()
     {
         if (!$this->_suggestData) {
@@ -90,7 +100,4 @@ class Mage_CatalogSearch_Block_Autocomplete extends Mage_Core_Block_Abstract
         }
         return $this->_suggestData;
     }
-/*
- *
-*/
 }

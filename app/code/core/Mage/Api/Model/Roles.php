@@ -63,37 +63,78 @@ class Mage_Api_Model_Roles extends Mage_Core_Model_Abstract
         $this->_init('api/roles');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function update()
     {
         $this->getResource()->update($this);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUsersCollection()
     {
         return Mage::getResourceModel('api/roles_user_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResourcesTree()
     {
         return $this->_buildResourcesArray(null, null, null, null, true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResourcesList()
     {
         return $this->_buildResourcesArray();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResourcesList2D()
     {
         return $this->_buildResourcesArray(null, null, null, true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRoleUsers()
     {
         return $this->getResource()->getRoleUsers($this);
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Simplexml_Element $resource
+     * @param $parentName
+     * @param $level
+     * @param $represent2Darray
+     * @param bool $rawNodes
+     * @param $module
+     * @return
+     */
     protected function _buildResourcesArray(
         Varien_Simplexml_Element $resource = null, $parentName = null, $level = 0, $represent2Darray = null,
         $rawNodes = false, $module = 'adminhtml'

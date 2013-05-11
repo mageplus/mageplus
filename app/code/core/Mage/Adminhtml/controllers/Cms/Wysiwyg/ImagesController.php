@@ -44,6 +44,11 @@ class Mage_Adminhtml_Cms_Wysiwyg_ImagesController extends Mage_Adminhtml_Control
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $storeId = (int) $this->getRequest()->getParam('store');
@@ -61,6 +66,11 @@ class Mage_Adminhtml_Cms_Wysiwyg_ImagesController extends Mage_Adminhtml_Control
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function treeJsonAction()
     {
         try {
@@ -74,6 +84,11 @@ class Mage_Adminhtml_Cms_Wysiwyg_ImagesController extends Mage_Adminhtml_Control
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function contentsAction()
     {
         try {
@@ -86,6 +101,11 @@ class Mage_Adminhtml_Cms_Wysiwyg_ImagesController extends Mage_Adminhtml_Control
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newFolderAction()
     {
         try {
@@ -99,6 +119,11 @@ class Mage_Adminhtml_Cms_Wysiwyg_ImagesController extends Mage_Adminhtml_Control
         $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteFolderAction()
     {
         try {

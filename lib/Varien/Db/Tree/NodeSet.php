@@ -35,32 +35,58 @@ class Varien_Db_Tree_NodeSet implements Iterator
     private $_currentNode = 0;
     private $_current = 0;
 
-
-    function __construct() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    function __construct()
+    {
         $this->_nodes = array();
         $this->_current = 0;
         $this->_currentNode = 0;
         $this->count = 0;
     }
 
-
-
-    function addNode(Varien_Db_Tree_Node $node) {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function addNode(Varien_Db_Tree_Node $node)
+    {
         $this->_nodes[$this->_currentNode] = $node;
         $this->count++;
         return ++$this->_currentNode;
     }
 
-    function count() {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function count()
+    {
         return $this->count;
     }
 
-
-    function valid() {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function valid()
+    {
         return  isset($this->_nodes[$this->_current]);
     }
 
-    function next() {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function next()
+    {
         if ($this->_current > $this->_currentNode) {
             return false;
         } else {
@@ -68,16 +94,33 @@ class Varien_Db_Tree_NodeSet implements Iterator
         }
     }
 
-    function key() {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function key()
+    {
         return $this->_current;
     }
 
-
-    function current() {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function current()
+    {
         return $this->_nodes[$this->_current];
     }
 
-    function rewind() {
+    /**
+     * @ptodo
+     *
+     * @return
+     */
+    function rewind()
+    {
         $this->_current = 0;
     }
 }

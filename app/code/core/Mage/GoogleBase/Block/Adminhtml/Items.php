@@ -40,6 +40,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items extends Mage_Adminhtml_Block_Widget_
         $this->setTemplate('googlebase/items.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('item', $this->getLayout()->createBlock('googlebase/adminhtml_items_item'));
@@ -47,6 +52,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items extends Mage_Adminhtml_Block_Widget_
         $this->setChild('store_switcher', $this->getLayout()->createBlock('googlebase/adminhtml_store_switcher'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         $addButtonData = array(
@@ -59,11 +69,21 @@ class Mage_GoogleBase_Block_Adminhtml_Items extends Mage_Adminhtml_Block_Widget_
             ->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreSwitcherHtml()
     {
         return $this->getChildHtml('store_switcher');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCaptchaHtml()
     {
         return $this->getLayout()->createBlock('googlebase/adminhtml_captcha')
@@ -72,6 +92,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items extends Mage_Adminhtml_Block_Widget_
             ->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStore()
     {
         return $this->_getData('store');

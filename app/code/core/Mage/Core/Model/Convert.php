@@ -47,6 +47,13 @@ class Mage_Core_Model_Convert extends Mage_Dataflow_Model_Convert_Profile_Collec
         }
     }
 
+    /**
+     * @TODO
+     *
+     * @param $type
+     *
+     * @return 
+     */
     public function getClassNameByType($type)
     {
         if (strpos($type, '/')!==false) {

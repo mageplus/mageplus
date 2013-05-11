@@ -47,6 +47,11 @@ class Mage_Newsletter_ManageController extends Mage_Core_Controller_Front_Action
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->loadLayout();
@@ -60,6 +65,11 @@ class Mage_Newsletter_ManageController extends Mage_Core_Controller_Front_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         if (!$this->_validateFormKey()) {

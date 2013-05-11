@@ -25,6 +25,11 @@
  */
 class Mage_Catalog_Block_Product_List_Promotion extends Mage_Catalog_Block_Product_List
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getProductCollection()
     {
         if (is_null($this->_productCollection)) {

@@ -41,30 +41,27 @@
  */
 abstract class Mage_Api2_Model_Resource
 {
-    /**#@+
+    /**
      *  Action types
      */
     const ACTION_TYPE_ENTITY = 'entity';
     const ACTION_TYPE_COLLECTION  = 'collection';
-    /**#@-*/
 
-    /**#@+
+    /**
      * Operations. Resource method names
      */
     const OPERATION_CREATE   = 'create';
     const OPERATION_RETRIEVE = 'retrieve';
     const OPERATION_UPDATE   = 'update';
     const OPERATION_DELETE   = 'delete';
-    /**#@-*/
 
-    /**#@+
+    /**
      * Common operations for attributes
      */
     const OPERATION_ATTRIBUTE_READ  = 'read';
     const OPERATION_ATTRIBUTE_WRITE = 'write';
-    /**#@-*/
 
-    /**#@+
+    /**
      *  Default error messages
      */
     const RESOURCE_NOT_FOUND = 'Resource not found.';
@@ -75,9 +72,8 @@ abstract class Mage_Api2_Model_Resource
     const RESOURCE_DATA_INVALID = 'Resource data invalid.'; //error while checking data inside method
     const RESOURCE_UNKNOWN_ERROR = 'Resource unknown error.';
     const RESOURCE_REQUEST_DATA_INVALID = 'The request data is invalid.';
-    /**#@-*/
 
-    /**#@+
+    /**
      *  Default collection resources error messages
      */
     const RESOURCE_COLLECTION_PAGING_ERROR       = 'Resource collection paging error.';
@@ -85,20 +81,17 @@ abstract class Mage_Api2_Model_Resource
     const RESOURCE_COLLECTION_ORDERING_ERROR     = 'Resource collection ordering error.';
     const RESOURCE_COLLECTION_FILTERING_ERROR    = 'Resource collection filtering error.';
     const RESOURCE_COLLECTION_ATTRIBUTES_ERROR   = 'Resource collection including additional attributes error.';
-    /**#@-*/
 
-    /**#@+
+    /**
      *  Default success messages
      */
     const RESOURCE_UPDATED_SUCCESSFUL = 'Resource updated successful.';
-    /**#@-*/
 
-    /**#@+
+    /**
      * Collection page sizes
      */
     const PAGE_SIZE_DEFAULT = 10;
     const PAGE_SIZE_MAX     = 100;
-    /**#@-*/
 
     /**
      * Request

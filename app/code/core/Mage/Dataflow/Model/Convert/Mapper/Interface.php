@@ -34,7 +34,9 @@
  */
 interface Mage_Dataflow_Model_Convert_Mapper_Interface
 {
-
+    /**
+     * @todo
+     * @return
+     */
     public function map();
-
 }

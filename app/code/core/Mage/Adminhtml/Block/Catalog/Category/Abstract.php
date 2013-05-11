@@ -34,6 +34,7 @@
 class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Block_Template
 {
 
+    // @todo - what's the point of this????
     public function __construct()
     {
         parent::__construct();
@@ -49,6 +50,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return Mage::registry('category');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategoryId()
     {
         if ($this->getCategory()) {
@@ -57,11 +63,21 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return Mage_Catalog_Model_Category::TREE_ROOT_ID;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategoryName()
     {
         return $this->getCategory()->getName();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategoryPath()
     {
         if ($this->getCategory()) {
@@ -70,6 +86,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return Mage_Catalog_Model_Category::TREE_ROOT_ID;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasStoreRootCategory()
     {
         $root = $this->getRoot();
@@ -79,12 +100,24 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStore()
     {
         $storeId = (int) $this->getRequest()->getParam('store');
         return Mage::app()->getStore($storeId);
     }
 
+    /**
+     * @todo
+     *
+     * @param $parentNodeCategory
+     * @param $recursionLevel
+     * @return
+     */
     public function getRoot($parentNodeCategory=null, $recursionLevel=3)
     {
         if (!is_null($parentNodeCategory) && $parentNodeCategory->getId()) {
@@ -156,6 +189,13 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return $root;
     }
 
+    /**
+     * @todo
+     *
+     * @param $parentNodeCategory
+     * @param $recursionLevel
+     * @return
+     */
     public function getNode($parentNodeCategory, $recursionLevel=2)
     {
         $tree = Mage::getResourceModel('catalog/category_tree');
@@ -177,6 +217,12 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return $node;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $args
+     * @return
+     */
     public function getSaveUrl(array $args = array())
     {
         $params = array('_current'=>true);
@@ -184,6 +230,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Abstract extends Mage_Adminhtml_Bloc
         return $this->getUrl('*/*/save', $params);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEditUrl()
     {
         return $this->getUrl("*/catalog_category/edit", array('_current'=>true, 'store'=>null, '_query'=>false, 'id'=>null, 'parent'=>null));

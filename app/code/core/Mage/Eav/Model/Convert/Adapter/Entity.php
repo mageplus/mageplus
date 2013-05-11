@@ -79,6 +79,16 @@ class Mage_Eav_Model_Convert_Adapter_Entity
         return $filters;
     }
 
+    /**
+     * @todo
+     *
+     * @param $attrFilterArray
+     * @param $attrToDb
+     * @param $bind
+     * @param $joinType
+     *
+     * @return
+     */
     public function setFilter($attrFilterArray, $attrToDb = null, $bind = null, $joinType = null)
     {
         if (is_null($bind)) {
@@ -184,11 +194,24 @@ class Mage_Eav_Model_Convert_Adapter_Entity
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFilter()
     {
         return $this->_filter;
     }
 
+    /**
+     * @todo
+     *
+     * @param $fields
+     * @param $name
+     *
+     * @return
+     */
     protected function getFieldValue($fields = array(), $name)
     {
         $result = array();
@@ -204,6 +227,13 @@ class Mage_Eav_Model_Convert_Adapter_Entity
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $joinAttr
+     *
+     * @return
+     */
     public function setJoinAttr($joinAttr)
     {
         if(is_array($joinAttr)){
@@ -245,6 +275,11 @@ class Mage_Eav_Model_Convert_Adapter_Entity
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
         if (!($entityType = $this->getVar('entity_type'))
@@ -322,6 +357,11 @@ class Mage_Eav_Model_Convert_Adapter_Entity
         return Mage::getResourceModel($entityType.'_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         $collection = $this->getData();

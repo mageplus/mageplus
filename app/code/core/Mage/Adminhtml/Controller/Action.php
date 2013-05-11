@@ -69,6 +69,11 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
      */
     protected $_sessionNamespace = self::SESSION_NAMESPACE;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return true;
@@ -97,6 +102,7 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
     /**
      * Define active menu item in menu block
      *
+     * @param $menuPath
      * @return Mage_Adminhtml_Controller_Action
      */
     protected function _setActiveMenu($menuPath)
@@ -106,6 +112,11 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
     }
 
     /**
+     * @todo
+     *
+     * @param $label
+     * @param $title
+     * @param $link
      * @return Mage_Adminhtml_Controller_Action
      */
     protected function _addBreadcrumb($label, $title, $link=null)
@@ -115,6 +126,9 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
     }
 
     /**
+     * @todo
+     *
+     * @param Mage_Core_Block_Abstract $block
      * @return Mage_Adminhtml_Controller_Action
      */
     protected function _addContent(Mage_Core_Block_Abstract $block)
@@ -123,12 +137,24 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Core_Block_Abstract $block
+     * @return
+     */
     protected function _addLeft(Mage_Core_Block_Abstract $block)
     {
         $this->getLayout()->getBlock('left')->append($block);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Core_Block_Abstract $block
+     * @return
+     */
     protected function _addJs(Mage_Core_Block_Abstract $block)
     {
         $this->getLayout()->getBlock('js')->append($block);
@@ -259,6 +285,11 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deniedAction()
     {
         $this->getResponse()->setHeader('HTTP/1.1','403 Forbidden');
@@ -270,6 +301,14 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @param $ids
+     * @param $generateBlocks
+     * @param $generateXml
+     * @return
+     */
     public function loadLayout($ids=null, $generateBlocks=true, $generateXml=true)
     {
         parent::loadLayout($ids, $generateBlocks, $generateXml);
@@ -277,6 +316,12 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $coreRoute
+     * @return
+     */
     public function norouteAction($coreRoute = null)
     {
         $this->getResponse()->setHeader('HTTP/1.1','404 Not Found');
@@ -284,7 +329,6 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
         $this->loadLayout(array('default', 'adminhtml_noroute'));
         $this->renderLayout();
     }
-
 
     /**
      * Retrieve currently used module name
@@ -349,6 +393,15 @@ class Mage_Adminhtml_Controller_Action extends Mage_Core_Controller_Varien_Actio
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $action
+     * @param $controller
+     * @param $module
+     * @param array $params
+     * @return
+     */
     protected function _forward($action, $controller = null, $module = null, array $params = null)
     {
         $this->_getSession()->setIsUrlNotice($this->getFlag('', self::FLAG_IS_URLS_CHECKED));

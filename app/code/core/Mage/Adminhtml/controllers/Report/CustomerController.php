@@ -34,6 +34,11 @@
  */
 class Mage_Adminhtml_Report_CustomerController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _initAction()
     {
         $act = $this->getRequest()->getActionName();
@@ -46,6 +51,11 @@ class Mage_Adminhtml_Report_CustomerController extends Mage_Adminhtml_Controller
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function accountsAction()
     {
         $this->_title($this->__('Reports'))
@@ -83,6 +93,11 @@ class Mage_Adminhtml_Report_CustomerController extends Mage_Adminhtml_Controller
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function ordersAction()
     {
         $this->_title($this->__('Reports'))
@@ -121,6 +136,11 @@ class Mage_Adminhtml_Report_CustomerController extends Mage_Adminhtml_Controller
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function totalsAction()
     {
         $this->_title($this->__('Reports'))
@@ -159,6 +179,11 @@ class Mage_Adminhtml_Report_CustomerController extends Mage_Adminhtml_Controller
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         switch ($this->getRequest()->getActionName()) {

@@ -29,6 +29,11 @@ class Mage_Sales_Model_Quote_Config
 {
     const XML_PATH_QUOTE_PRODUCT_ATTRIBUTES = 'global/sales/quote/item/product_attributes';
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getProductAttributes()
     {
         $attributes = Mage::getConfig()->getNode(self::XML_PATH_QUOTE_PRODUCT_ATTRIBUTES)->asArray();
@@ -38,6 +43,11 @@ class Mage_Sales_Model_Quote_Config
         return array_keys($attributes);
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getTotalModels()
     {
 

@@ -120,6 +120,13 @@ class Mage_Checkout_Model_Type_Multishipping_State extends Varien_Object
         return self::STEP_SELECT_ADDRESSES;
     }
 
+    /**
+     * @todo
+     *
+     * @param $step
+     * 
+     * @return
+     */
     public function setActiveStep($step)
     {
         if (isset($this->_steps[$step])) {
@@ -181,21 +188,41 @@ class Mage_Checkout_Model_Type_Multishipping_State extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canSelectAddresses()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canInputShipping()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canSeeOverview()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function canSuccess()
     {
 

@@ -51,6 +51,11 @@ class Mage_Downloadable_Block_Sales_Order_Item_Renderer_Downloadable extends Mag
         return $this->_purchasedLinks;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLinksTitle()
     {
         if ($this->_purchasedLinks->getLinkSectionTitle()) {

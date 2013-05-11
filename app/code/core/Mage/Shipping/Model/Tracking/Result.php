@@ -39,17 +39,30 @@ class Mage_Shipping_Model_Tracking_Result
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $error
+     * @return
+     */
     public function setError($error)
     {
         $this->_error = $error;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getError()
     {
         return $this->_error;
     }
+
     /**
      * Add a tracking to the result
+     * @param $result
      */
     public function append($result)
     {

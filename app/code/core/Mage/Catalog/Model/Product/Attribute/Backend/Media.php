@@ -60,6 +60,13 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
         $object->setData($attrCode, $value);
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $image
+     * @return
+     */
     protected function _getDefaultValue($key, &$image)
     {
         if (isset($image[$key . '_default'])) {
@@ -96,6 +103,12 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function beforeSave($object)
     {
         $attrCode = $this->getAttribute()->getAttributeCode();
@@ -111,8 +124,6 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
         if (!is_array($value['images'])) {
            $value['images'] = array();
         }
-
-
 
         $clearImages = array();
         $newImages   = array();
@@ -185,6 +196,12 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
         return $file;
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function afterSave($object)
     {
         if ($object->getIsDuplicate() == true) {
@@ -647,6 +664,12 @@ class Mage_Catalog_Model_Product_Attribute_Backend_Media extends Mage_Eav_Model_
         return str_replace($ioObject->dirsep(), '/', $destFile);
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function duplicate($object)
     {
         $attrCode = $this->getAttribute()->getAttributeCode();

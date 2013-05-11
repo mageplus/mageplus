@@ -32,7 +32,8 @@
 
 require_once 'Varien/File/Csv.php';
 
-class Varien_File_Csv_Multy extends Varien_File_Csv {
+class Varien_File_Csv_Multy extends Varien_File_Csv
+{
 	/**
      * Retrieve CSV file data as pairs with duplicates
      *
@@ -72,4 +73,3 @@ class Varien_File_Csv_Multy extends Varien_File_Csv {
     }
 	
 }
-?>

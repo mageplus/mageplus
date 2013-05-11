@@ -264,7 +264,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
 
     /**
      * Check if block is using auto generated (Anonymous) name
-     * @return bool
+     * @return boolean
      */
     public function getIsAnonymous()
     {
@@ -274,7 +274,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
     /**
      * Set the anonymous flag
      *
-     * @param  bool $flag
+     * @param  boolean $flag
      * @return Mage_Core_Block_Abstract
      */
     public function setIsAnonymous($flag)
@@ -530,8 +530,8 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
     /**
      * @param string $name          Parent block name
      * @param string $childName     OPTIONAL Child block name
-     * @param bool $useCache        OPTIONAL Use cache flag
-     * @param bool $sorted          OPTIONAL @see getChildHtml()
+     * @param boolean $useCache        OPTIONAL Use cache flag
+     * @param boolean $sorted          OPTIONAL @see getChildHtml()
      * @return string
      */
     public function getChildChildHtml($name, $childName = '', $useCache = true, $sorted = false)
@@ -769,7 +769,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
      *
      * @param string $groupName
      * @param string $callback
-     * @param bool $skipEmptyResults
+     * @param boolean $skipEmptyResults
      * @return array
      */
     public function getChildGroup($groupName, $callback = null, $skipEmptyResults = true)
@@ -1034,7 +1034,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
      *
      * @param   string $date
      * @param   string $format
-     * @param   bool $showTime
+     * @param   boolean $showTime
      * @return  string
      */
     public function formatDate($date = null, $format =  Mage_Core_Model_Locale::FORMAT_TYPE_SHORT, $showTime = false)
@@ -1047,7 +1047,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
      *
      * @param   string $time
      * @param   string $format
-     * @param   bool $showDate
+     * @param   boolean $showDate
      * @return  string
      */
     public function formatTime($time = null, $format =  Mage_Core_Model_Locale::FORMAT_TYPE_SHORT, $showDate = false)
@@ -1110,7 +1110,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
      *
      * @param string $data
      * @param string $allowableTags
-     * @param bool $allowHtmlEntities
+     * @param boolean $allowHtmlEntities
      * @return string
      */
     public function stripTags($data, $allowableTags = null, $allowHtmlEntities = false)
@@ -1253,7 +1253,7 @@ abstract class Mage_Core_Block_Abstract extends Varien_Object
     /**
      * Get block cache life time
      *
-     * @return int
+     * @return integer
      */
     public function getCacheLifetime()
     {

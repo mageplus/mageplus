@@ -50,6 +50,7 @@ class Mage_Checkout_Block_Multishipping_Billing extends Mage_Payment_Block_Form_
     /**
      * Check and prepare payment method model
      *
+     * @param $method
      * @return bool
      */
     protected function _canUseMethod($method)

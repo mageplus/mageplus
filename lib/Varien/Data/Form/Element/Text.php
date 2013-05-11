@@ -33,6 +33,12 @@
  */
 class Varien_Data_Form_Element_Text extends Varien_Data_Form_Element_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -40,12 +46,22 @@ class Varien_Data_Form_Element_Text extends Varien_Data_Form_Element_Abstract
         $this->setExtType('textfield');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtml()
     {
         $this->addClass('input-text');
         return parent::getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtmlAttributes()
     {
         return array('type', 'title', 'class', 'style', 'onclick', 'onchange', 'onkeyup', 'disabled', 'readonly', 'maxlength', 'tabindex');

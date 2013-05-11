@@ -45,6 +45,11 @@ class Mage_Adminhtml_Block_Api_User_Edit extends Mage_Adminhtml_Block_Widget_For
         $this->_updateButton('delete', 'label', Mage::helper('adminhtml')->__('Delete User'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         if (Mage::registry('api_user')->getId()) {

@@ -14,15 +14,15 @@
  *
  * @category   Zend
  * @package    Zend_Validate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 23356 2010-11-18 15:59:10Z ralph $
+ * @version    $Id: Abstract.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Validate_Abstract
  */
-#require_once 'Zend/Validate/Abstract.php';
+require_once 'Zend/Validate/Abstract.php';
 
 /**
  * Class for Database record validation
@@ -30,7 +30,7 @@
  * @category   Zend
  * @package    Zend_Validate
  * @uses       Zend_Validate_Abstract
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
@@ -122,12 +122,12 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
         }
 
         if (!array_key_exists('table', $options) && !array_key_exists('schema', $options)) {
-            #require_once 'Zend/Validate/Exception.php';
+            require_once 'Zend/Validate/Exception.php';
             throw new Zend_Validate_Exception('Table or Schema option missing!');
         }
 
         if (!array_key_exists('field', $options)) {
-            #require_once 'Zend/Validate/Exception.php';
+            require_once 'Zend/Validate/Exception.php';
             throw new Zend_Validate_Exception('Field option missing!');
         }
 
@@ -162,7 +162,7 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
         if ($this->_adapter === null) {
             $this->_adapter = Zend_Db_Table_Abstract::getDefaultAdapter();
             if (null === $this->_adapter) {
-                #require_once 'Zend/Validate/Exception.php';
+                require_once 'Zend/Validate/Exception.php';
                 throw new Zend_Validate_Exception('No database adapter present');
             }
         }
@@ -178,7 +178,7 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
     public function setAdapter($adapter)
     {
         if (!($adapter instanceof Zend_Db_Adapter_Abstract)) {
-            #require_once 'Zend/Validate/Exception.php';
+            require_once 'Zend/Validate/Exception.php';
             throw new Zend_Validate_Exception('Adapter option must be a database adapter!');
         }
 
@@ -276,7 +276,7 @@ abstract class Zend_Validate_Db_Abstract extends Zend_Validate_Abstract
 
     /**
      * Sets the select object to be used by the validator
-     * 
+     *
      * @param Zend_Db_Select $select
      * @return Zend_Validate_Db_Abstract
      */

@@ -38,18 +38,27 @@ class Mage_GoogleCheckout_Block_Redirect extends Mage_Page_Block_Redirect
      *
      *  @return string
      */
-    public function getTargetURL ()
+    public function getTargetURL()
     {
         return $this->getRedirectUrl();
     }
 
-
-    public function getMethod ()
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getMethod()
     {
         return 'GET';
     }
 
-    public function getMessage ()
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getMessage()
     {
         return $this->__('You will be redirected to GoogleCheckout in a few seconds.');
     }

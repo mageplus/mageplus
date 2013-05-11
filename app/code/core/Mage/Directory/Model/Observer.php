@@ -39,6 +39,12 @@ class Mage_Directory_Model_Observer
     const XML_PATH_ERROR_IDENTITY = 'currency/import/error_email_identity';
     const XML_PATH_ERROR_RECIPIENT = 'currency/import/error_email';
 
+    /**
+     * @todo
+     *
+     * @param $schedule
+     * @return
+     */
     public function scheduledUpdateCurrencyRates($schedule)
     {
         $importWarnings = array();

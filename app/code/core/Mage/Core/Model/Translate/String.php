@@ -46,7 +46,14 @@ class Mage_Core_Model_Translate_String extends Mage_Core_Model_Abstract
     {
         $this->_init('core/translate_string');
     }
-    
+
+    /**
+     * @TODO
+     *
+     * @param $string
+     *
+     * @return 
+     */
     public function setString($string)
     {
         $this->setData('string', $string);

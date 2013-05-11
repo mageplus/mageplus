@@ -15,51 +15,41 @@
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
  * @subpackage Diagnostics
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
  */
 
 /**
- * @see Zend_Service_WindowsAzure_Diagnostics_Exception
- */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/Exception.php';
-
-/**
- * @see Zend_Service_WindowsAzure_Diagnostics_ConfigurationObjectBaseAbstract
- */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationObjectBaseAbstract.php';
-
-/**
  * @see Zend_Service_WindowsAzure_Diagnostics_ConfigurationLogs
  */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationLogs.php';
+require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationLogs.php';
 
 /**
  * @see Zend_Service_WindowsAzure_Diagnostics_ConfigurationDiagnosticInfrastructureLogs
  */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationDiagnosticInfrastructureLogs.php';
+require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationDiagnosticInfrastructureLogs.php';
 
 /**
  * @see Zend_Service_WindowsAzure_Diagnostics_ConfigurationPerformanceCounters
  */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationPerformanceCounters.php';
+require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationPerformanceCounters.php';
 
 /**
  * @see Zend_Service_WindowsAzure_Diagnostics_ConfigurationWindowsEventLog
  */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationWindowsEventLog.php';
+require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationWindowsEventLog.php';
 
 /**
  * @see Zend_Service_WindowsAzure_Diagnostics_ConfigurationDirectories
  */
-#require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationDirectories.php';
+require_once 'Zend/Service/WindowsAzure/Diagnostics/ConfigurationDirectories.php';
 
 /**
  * @category   Zend
  * @package    Zend_Service_WindowsAzure
  * @subpackage Diagnostics
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  *
  * @property	int																				OverallQuotaInMB				Overall quota in MB

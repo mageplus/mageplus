@@ -447,4 +447,11 @@
             </xmlconnect_notification_send_all>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_XmlConnect/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

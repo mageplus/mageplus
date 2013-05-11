@@ -43,6 +43,12 @@ class Mage_Compiler_Model_Process
 
     protected $_controllerFolders = array();
 
+    /**
+     * @todo
+     *
+     * @param $options
+     * @return
+     */
     public function __construct($options=array())
     {
         if (isset($options['compile_dir'])) {
@@ -249,16 +255,31 @@ class Mage_Compiler_Model_Process
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollectedFilesCount()
     {
         return count(glob($this->_includeDir.DS.'*'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCompiledFilesCount()
     {
         return count(glob($this->_includeDir.DS.Varien_Autoload::SCOPE_FILE_PREFIX.'*'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCompileClassList()
     {
         $arrFiles = array();
@@ -337,6 +358,13 @@ class Mage_Compiler_Model_Process
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $classes
+     * @param $scope
+     * @return
+     */
     protected function _getClassesSourceCode($classes, $scope)
     {
         $sortedClasses = array();
@@ -381,6 +409,11 @@ class Mage_Compiler_Model_Process
         return $classesSource;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clear()
     {
         $this->registerIncludePath(false);
@@ -401,7 +434,6 @@ class Mage_Compiler_Model_Process
         $this->_compileFiles();
         $this->registerIncludePath();
         return $this;
-
     }
 
     /**

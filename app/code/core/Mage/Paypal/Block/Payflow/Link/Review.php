@@ -34,7 +34,6 @@
  */
 class Mage_Paypal_Block_Payflow_Link_Review extends Mage_Paypal_Block_Express_Review
 {
-
     /**
      * Retrieve payment method and assign additional template values
      *

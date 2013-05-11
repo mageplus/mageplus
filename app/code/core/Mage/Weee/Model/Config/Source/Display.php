@@ -25,7 +25,11 @@
  */
 class Mage_Weee_Model_Config_Source_Display
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         /**

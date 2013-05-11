@@ -70,4 +70,11 @@
             </system_backup>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Backup/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

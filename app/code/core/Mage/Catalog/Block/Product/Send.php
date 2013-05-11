@@ -43,22 +43,36 @@ class Mage_Catalog_Block_Product_Send extends Mage_Catalog_Block_Product_Abstrac
      *
      * @return string
      */
-
     public function getUserName()
     {
         return Mage::getSingleton('customer/session')->getCustomer()->getName();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getEmail()
     {
         return (string)Mage::getSingleton('customer/session')->getCustomer()->getEmail();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductId()
     {
         return $this->getRequest()->getParam('id');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMaxRecipients()
     {
         $sendToFriendModel = Mage::registry('send_to_friend_model');

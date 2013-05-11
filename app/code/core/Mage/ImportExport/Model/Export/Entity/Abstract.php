@@ -40,7 +40,6 @@ abstract class Mage_ImportExport_Model_Export_Entity_Abstract
      */
     protected $_attributeValues = array();
 
-
     /**
      * Attribute code to its values. Only attributes with options and only default store values used.
      *

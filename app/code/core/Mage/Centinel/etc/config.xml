@@ -168,4 +168,11 @@
             </cc>
         </payment>
     </global>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Centinel/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -101,6 +101,11 @@ class Mage_Shipping_Model_Carrier_Freeshipping
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllowedMethods()
     {
         return array('freeshipping'=>$this->getConfigData('name'));

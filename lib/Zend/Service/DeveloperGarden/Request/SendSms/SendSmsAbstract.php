@@ -16,21 +16,21 @@
  * @category   Zend
  * @package    Zend_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: SendSmsAbstract.php 20418 2010-01-19 11:43:30Z bate $
+ * @version    $Id: SendSmsAbstract.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Service_DeveloperGarden_Request_RequestAbstract
  */
-#require_once 'Zend/Service/DeveloperGarden/Request/RequestAbstract.php';
+require_once 'Zend/Service/DeveloperGarden/Request/RequestAbstract.php';
 
 /**
  * @category   Zend
  * @package    Zend_Service
  * @subpackage DeveloperGarden
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @author     Marco Kaiser
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
@@ -72,14 +72,14 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_SendSmsAbstract
      * @var array
      */
     private $_specialChars = array(
-        '|', 
-        '^', 
-        '{', 
-        '}', 
-        '[', 
-        ']', 
-        '~', 
-        '\\', 
+        '|',
+        '^',
+        '{',
+        '}',
+        '[',
+        ']',
+        '~',
+        '\\',
         "\n",
         // '€', removed because its counted in utf8 correctly
     );
@@ -139,7 +139,7 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_SendSmsAbstract
     {
         $this->number = $number;
         if ($this->getNumberCount() > $this->_maxNumbers) {
-            #require_once 'Zend/Service/DeveloperGarden/Request/Exception.php';
+            require_once 'Zend/Service/DeveloperGarden/Request/Exception.php';
             throw new Zend_Service_DeveloperGarden_Request_Exception('The message is too long.');
         }
         return $this;
@@ -167,7 +167,7 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_SendSmsAbstract
     {
         $this->message = $message;
         if ($this->getMessageLength() > $this->_maxLength) {
-            #require_once 'Zend/Service/DeveloperGarden/Request/Exception.php';
+            require_once 'Zend/Service/DeveloperGarden/Request/Exception.php';
             throw new Zend_Service_DeveloperGarden_Request_Exception('The message is too long.');
         }
         return $this;
@@ -207,7 +207,7 @@ abstract class Zend_Service_DeveloperGarden_Request_SendSms_SendSmsAbstract
     /**
      * sets a new accounts
      *
-     * @param $account the $account to set
+     * @param int $account the $account to set
      * @return Zend_Service_DeveloperGarden_Request_SendSms_SendSmsAbstract
      */
     public function setAccount($account)

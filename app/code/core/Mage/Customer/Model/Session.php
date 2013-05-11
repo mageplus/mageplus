@@ -54,16 +54,6 @@ class Mage_Customer_Model_Session extends Mage_Core_Model_Session_Abstract
      */
     protected $_persistentCustomerGroupId = null;
 
-    /**
-     * Retrieve customer sharing configuration model
-     *
-     * @return Mage_Customer_Model_Config_Share
-     */
-    public function getCustomerConfigShare()
-    {
-        return Mage::getSingleton('customer/config_share');
-    }
-
     public function __construct()
     {
         $namespace = 'customer';
@@ -73,6 +63,16 @@ class Mage_Customer_Model_Session extends Mage_Core_Model_Session_Abstract
 
         $this->init($namespace);
         Mage::dispatchEvent('customer_session_init', array('customer_session'=>$this));
+    }
+    
+    /**
+     * Retrieve customer sharing configuration model
+     *
+     * @return Mage_Customer_Model_Config_Share
+     */
+    public function getCustomerConfigShare()
+    {
+        return Mage::getSingleton('customer/config_share');
     }
 
     /**
@@ -219,6 +219,13 @@ class Mage_Customer_Model_Session extends Mage_Core_Model_Session_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $customer
+     * 
+     * @return
+     */
     public function setCustomerAsLoggedIn($customer)
     {
         $this->setCustomer($customer);

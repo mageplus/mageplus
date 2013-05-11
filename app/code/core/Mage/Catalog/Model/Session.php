@@ -38,6 +38,11 @@ class Mage_Catalog_Model_Session extends Mage_Core_Model_Session_Abstract
         $this->init('catalog');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDisplayMode()
     {
         return $this->_getData('display_mode');

@@ -39,6 +39,16 @@ class Mage_Customer_Block_Account_Navigation extends Mage_Core_Block_Template
 
     protected $_activeLink = false;
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param $path
+     * @param $label
+     * @param $urlParams
+     * 
+     * @return
+     */
     public function addLink($name, $path, $label, $urlParams=array())
     {
         $this->_links[$name] = new Varien_Object(array(
@@ -50,17 +60,36 @@ class Mage_Customer_Block_Account_Navigation extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * 
+     * @return
+     */
     public function setActive($path)
     {
         $this->_activeLink = $this->_completePath($path);
         return $this;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getLinks()
     {
         return $this->_links;
     }
 
+    /**
+     * @todo
+     *
+     * @param $link
+     * 
+     * @return
+     */
     public function isActive($link)
     {
         if (empty($this->_activeLink)) {
@@ -72,6 +101,13 @@ class Mage_Customer_Block_Account_Navigation extends Mage_Core_Block_Template
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $path
+     * 
+     * @return
+     */
     protected function _completePath($path)
     {
         $path = rtrim($path, '/');

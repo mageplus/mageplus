@@ -210,4 +210,11 @@
             </newsletter_send_all>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Newsletter/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -83,6 +83,11 @@ class Mage_Checkout_Block_Cart extends Mage_Checkout_Block_Cart_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function chooseTemplate()
     {
         $itemsCount = $this->getItemsCount() ? $this->getItemsCount() : $this->getQuote()->getItemsCount();
@@ -93,16 +98,31 @@ class Mage_Checkout_Block_Cart extends Mage_Checkout_Block_Cart_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasError()
     {
         return $this->getQuote()->getHasError();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItemsSummaryQty()
     {
         return $this->getQuote()->getItemsSummaryQty();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isWishlistActive()
     {
         $isActive = $this->_getData('is_wishlist_active');
@@ -114,11 +134,21 @@ class Mage_Checkout_Block_Cart extends Mage_Checkout_Block_Cart_Abstract
         return $isActive;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCheckoutUrl()
     {
         return $this->getUrl('checkout/onepage', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getContinueShoppingUrl()
     {
         $url = $this->getData('continue_shopping_url');
@@ -132,6 +162,11 @@ class Mage_Checkout_Block_Cart extends Mage_Checkout_Block_Cart_Abstract
         return $url;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getIsVirtual()
     {
         return $this->helper('checkout/cart')->getIsVirtualQuote();

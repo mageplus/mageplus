@@ -33,7 +33,6 @@
  */
 class Mage_Rss_Block_Catalog_Review extends Mage_Rss_Block_Abstract
 {
-
     /**
      * Cache tag constant for feed reviews
      *

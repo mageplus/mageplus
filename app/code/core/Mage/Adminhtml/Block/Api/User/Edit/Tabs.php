@@ -42,6 +42,11 @@ class Mage_Adminhtml_Block_Api_User_Edit_Tabs extends Mage_Adminhtml_Block_Widge
         $this->setTitle(Mage::helper('adminhtml')->__('User Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->addTab('main_section', array(

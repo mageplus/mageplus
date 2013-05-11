@@ -92,6 +92,13 @@ abstract class Mage_Eav_Model_Entity_Attribute_Source_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $value
+     *
+     * @return
+     */
     public function getOptionId($value)
     {
         foreach ($this->getAllOptions() as $option) {

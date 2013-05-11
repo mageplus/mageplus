@@ -68,7 +68,6 @@ extends Mage_Connect_Command
         }
     }
 
-
     /**
      * List available
      * @param $command
@@ -76,7 +75,6 @@ extends Mage_Connect_Command
      * @param $params
      * @return unknown_type
      */
-
     public function doListAvailable($command, $options, $params)
     {
         $this->cleanupParams($params);
@@ -97,8 +95,6 @@ extends Mage_Connect_Command
             } else {
                 $channels =  $cache->getChannelNames();
             }
-            
-            
 
             $packs = array();
             foreach ($channels as $channel) {
@@ -133,8 +129,7 @@ extends Mage_Connect_Command
 
         } catch(Exception $e) {
             $this->doError($command, $e->getMessage());
-        }
-         
+        }   
     }
 
     /**
@@ -218,9 +213,4 @@ extends Mage_Connect_Command
              $this->doError($command, $e->getMessage());
         }
     }
-
-
-
-
-
 }

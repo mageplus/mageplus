@@ -70,21 +70,43 @@ class Mage_Customer_Helper_Address extends Mage_Core_Helper_Abstract
 
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getEditUrl()
     {
 
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getDeleteUrl()
     {
 
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCreateUrl()
     {
 
     }
 
+    /**
+     * @todo
+     *
+     * @param $renderer
+     * 
+     * @return
+     */
     public function getRenderer($renderer)
     {
         if(is_string($renderer) && $className = Mage::getConfig()->getBlockClassName($renderer)) {
@@ -132,6 +154,13 @@ class Mage_Customer_Helper_Address extends Mage_Core_Helper_Abstract
         return $this->_streetLines[$websiteId];
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * 
+     * @return
+     */
     public function getFormat($code)
     {
         $format = Mage::getSingleton('customer/address_config')->getFormatByCode($code);

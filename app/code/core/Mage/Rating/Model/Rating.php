@@ -60,6 +60,13 @@ class Mage_Rating_Model_Rating extends Mage_Core_Model_Abstract
         $this->_init('rating/rating');
     }
 
+    /**
+     * @todo
+     *
+     * @param $optionId
+     * @param $entityPkValue
+     * @return
+     */
     public function addOptionVote($optionId, $entityPkValue)
     {
         Mage::getModel('rating/rating_option')->setOptionId($optionId)
@@ -70,6 +77,12 @@ class Mage_Rating_Model_Rating extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $optionId
+     * @return
+     */
     public function updateOptionVote($optionId)
     {
         Mage::getModel('rating/rating_option')->setOptionId($optionId)
@@ -103,15 +116,23 @@ class Mage_Rating_Model_Rating extends Mage_Core_Model_Abstract
     /**
      * Get rating collection object
      *
+     * @param $entityPkValue
+     * @param $onlyForCurrentStore
      * @return Varien_Data_Collection_Db
      */
-
     public function getEntitySummary($entityPkValue,  $onlyForCurrentStore = true)
     {
         $this->setEntityPkValue($entityPkValue);
         return $this->_getResource()->getEntitySummary($this, $onlyForCurrentStore);
     }
 
+    /**
+     * @todo
+     *
+     * @param $reviewId
+     * @param $onlyForCurrentStore
+     * @return
+     */
     public function getReviewSummary($reviewId,  $onlyForCurrentStore = true)
     {
         $this->setReviewId($reviewId);

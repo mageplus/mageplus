@@ -40,37 +40,77 @@ abstract class Mage_Core_Model_Message_Abstract
     protected $_identifier;
     protected $_isSticky = false;
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @param $code
+     */
     public function __construct($type, $code='')
     {
         $this->_type = $type;
         $this->_code = $code;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getCode()
     {
         return $this->_code;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getText()
     {
         return $this->getCode();
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getType()
     {
         return $this->_type;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $class
+     *
+     * @return 
+     */
     public function setClass($class)
     {
         $this->_class = $class;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $method
+     *
+     * @return 
+     */
     public function setMethod($method)
     {
         $this->_method = $method;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function toString()
     {
         $out = $this->getType().': '.$this->getText();

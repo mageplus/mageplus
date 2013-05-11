@@ -138,4 +138,11 @@
             </search>
         </catalog>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_CatalogSearch/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

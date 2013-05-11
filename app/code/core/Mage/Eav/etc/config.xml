@@ -150,4 +150,11 @@
             </validator_data>
         </general>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Eav/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

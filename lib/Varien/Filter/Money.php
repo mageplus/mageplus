@@ -29,11 +29,23 @@ class Varien_Filter_Money implements Zend_Filter_Interface
 {
     protected $_format = null;
     
+    /**
+     * @todo
+     *
+     * @param $format
+     * @return
+     */
     public function __construct($format)
     {
         $this->_format = $format;
     }
     
+    /**
+     * @todo
+     *
+     * @param $value
+     * @return
+     */
     public function filter($value)
     {
         return money_format($this->_format, $value);

@@ -40,6 +40,11 @@ class Mage_Adminhtml_Helper_Data extends Mage_Core_Helper_Abstract
 
     protected $_pageHelpUrl;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPageHelpUrl()
     {
         if (!$this->_pageHelpUrl) {
@@ -48,6 +53,12 @@ class Mage_Adminhtml_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->_pageHelpUrl;
     }
 
+    /**
+     * @todo
+     *
+     * @param $url
+     * @return
+     */
     public function setPageHelpUrl($url=null)
     {
         if (is_null($url)) {
@@ -75,12 +86,25 @@ class Mage_Adminhtml_Helper_Data extends Mage_Core_Helper_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $suffix
+     * @return
+     */
     public function addPageHelpUrl($suffix)
     {
         $this->_pageHelpUrl = $this->getPageHelpUrl().$suffix;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $route
+     * @param array $params
+     * @return
+     */
     public static function getUrl($route='', $params=array())
     {
         return Mage::getModel('adminhtml/url')->getUrl($route, $params);
@@ -90,6 +114,12 @@ class Mage_Adminhtml_Helper_Data extends Mage_Core_Helper_Abstract
 //    {
 //        return Mage::getSingleton('admin/session')->getUser()->getId();
 //    }
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentUserId()
     {
         if (Mage::getSingleton('admin/session')->getUser()) {

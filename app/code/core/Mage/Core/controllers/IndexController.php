@@ -27,6 +27,11 @@
 
 class Mage_Core_IndexController extends Mage_Core_Controller_Front_Action {
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     function indexAction()
     {
         

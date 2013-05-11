@@ -240,4 +240,11 @@
             </updates>
         </layout>
     </frontend>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_GiftMessage/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

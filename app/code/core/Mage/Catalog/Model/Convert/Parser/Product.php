@@ -109,6 +109,12 @@ class Mage_Catalog_Model_Convert_Parser_Product
         return $this->_resource;
     }
 
+    /**
+     * @todo
+     *
+     * @param $storeId
+     * @return
+     */
     public function getCollection($storeId)
     {
         if (!isset($this->_collections[$storeId])) {
@@ -228,6 +234,11 @@ class Mage_Catalog_Model_Convert_Parser_Product
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAttributeSetInstance()
     {
         $productType = $this->getProductModel()->getType();
@@ -389,11 +400,22 @@ class Mage_Catalog_Model_Convert_Parser_Product
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $items
+     * @return
+     */
     public function setInventoryItems($items)
     {
         $this->_inventoryItems = $items;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getInventoryItems()
     {
         return $this->_inventoryItems;

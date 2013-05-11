@@ -38,6 +38,11 @@ class Mage_Tag_Block_Customer_Edit extends Mage_Core_Block_Template
 {
     protected $_tag;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTag()
     {
         if( !$this->_tag ) {
@@ -47,11 +52,21 @@ class Mage_Tag_Block_Customer_Edit extends Mage_Core_Block_Template
         return $this->_tag;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFormAction()
     {
         return $this->getUrl('*/*/save', array('tagId' => $this->getTag()->getTagId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return $this->getUrl('*/*/view', array('tagId' => $this->getTag()->getTagId()));

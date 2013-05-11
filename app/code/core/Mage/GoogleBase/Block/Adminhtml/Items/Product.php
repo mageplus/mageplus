@@ -33,7 +33,6 @@
  */
 class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block_Widget_Grid
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -42,6 +41,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block
         $this->setUseAjax(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->setId($this->getId() . '_' . $this->getIndex());
@@ -50,6 +54,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('catalog/product')->getCollection()
@@ -76,6 +85,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $this->addColumn('id', array(
@@ -131,6 +145,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareMassaction()
     {
         $this->setMassactionIdField('product_id');
@@ -143,11 +162,21 @@ class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGridUrl()
     {
         return $this->getUrl('*/googlebase_selection/grid', array('index' => $this->getIndex(), '_current' => true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getGoogleBaseProductIds()
     {
         $collection = Mage::getResourceModel('googlebase/item_collection')
@@ -160,6 +189,11 @@ class Mage_GoogleBase_Block_Adminhtml_Items_Product extends Mage_Adminhtml_Block
         return $productIds;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getStore()
     {
         return Mage::app()->getStore($this->getRequest()->getParam('store'));

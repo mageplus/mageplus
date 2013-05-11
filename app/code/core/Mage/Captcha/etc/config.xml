@@ -268,4 +268,11 @@
 
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Captcha/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

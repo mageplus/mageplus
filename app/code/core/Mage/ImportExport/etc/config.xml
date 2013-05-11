@@ -140,4 +140,11 @@
             </file>
         </general>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_ImportExport/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

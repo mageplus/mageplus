@@ -31,7 +31,11 @@
  */
 class Mage_Rss_Helper_Catalog extends Mage_Core_Helper_Abstract
 {
-
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getTagFeedUrl()
     {
         $url = '';
@@ -43,5 +47,4 @@ class Mage_Rss_Helper_Catalog extends Mage_Core_Helper_Abstract
         }
         return $url;
     }
-
 }

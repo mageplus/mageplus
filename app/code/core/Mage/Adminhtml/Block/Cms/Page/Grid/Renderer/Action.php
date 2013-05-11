@@ -27,6 +27,12 @@
 class Mage_Adminhtml_Block_Cms_Page_Grid_Renderer_Action
     extends Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param Varien_Object $row
+     * @return
+     */
     public function render(Varien_Object $row)
     {
         $urlModel = Mage::getModel('core/url')->setStore($row->getData('_first_store_id'));

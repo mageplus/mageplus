@@ -82,4 +82,11 @@
             </updates>
         </layout>
     </adminhtml>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Dataflow/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

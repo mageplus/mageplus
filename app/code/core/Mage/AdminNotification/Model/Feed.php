@@ -179,6 +179,11 @@ class Mage_AdminNotification_Model_Feed extends Mage_Core_Model_Abstract
         return $xml;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFeedXml()
     {
         try {

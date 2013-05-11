@@ -48,6 +48,11 @@ class Mage_Catalog_Helper_Output extends Mage_Core_Helper_Abstract
         Mage::dispatchEvent('catalog_helper_output_construct', array('helper'=>$this));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getTemplateProcessor()
     {
         if (null === $this->_templateProcessor) {

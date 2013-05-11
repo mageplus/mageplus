@@ -64,6 +64,7 @@ class Varien_Date
         'yy'   => '%Y',
         'y'    => '%Y'
     );
+    
     /**
      * Zend Date To local time according Map array
      *
@@ -114,6 +115,7 @@ class Varien_Date
         }
         return $value;
     }
+    
     /**
      * Convert date to UNIX timestamp
      * Returns current UNIX timestamp if date is true

@@ -38,10 +38,13 @@ class Mage_Adminhtml_Block_Dashboard_Sales extends Mage_Adminhtml_Block_Dashboar
     {
         parent::_construct();
         $this->setTemplate('dashboard/salebar.phtml');
-
-
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if (!Mage::helper('core')->isModuleEnabled('Mage_Reports')) {
@@ -66,7 +69,7 @@ class Mage_Adminhtml_Block_Dashboard_Sales extends Mage_Adminhtml_Block_Dashboar
         $sales = $collection->getFirstItem();
 
         $this->addTotal($this->__('Lifetime Sales'), $sales->getLifetime());
-	$this->addTotal($this->__('Profit'), $sales->getLifetimeProfit());
+        $this->addTotal($this->__('Profit'), $sales->getLifetimeProfit());
         $this->addTotal($this->__('Average Orders'), $sales->getAverage());
     }
 }

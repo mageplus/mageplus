@@ -301,11 +301,25 @@ abstract class Mage_ImportExport_Model_Import_Entity_Product_Type_Abstract
                 } elseif (array_key_exists($attrCode, $rowData)) {
                     $resultAttrs[$attrCode] = $rowData[$attrCode];
                 } elseif (null !== $attrParams['default_value']) {
-                    $resultAttrs[$attrCode] = $attrParams['default_value'];
+                    if ($this->_isSkuNew($rowData['sku'])) {
+                        $resultAttrs[$attrCode] = $attrParams['default_value'];
+                    }
                 }
             }
         }
         return $resultAttrs;
+    }
+
+    /**
+     * Check if the given sku belongs to a new product or an existing one
+     *
+     * @param string $sku
+     * @return bool
+     */
+    protected function _isSkuNew($sku)
+    {
+        $oldSkus = $this->_entityModel->getOldSku();
+        return !isset($oldSkus[$sku]);
     }
 
     /**

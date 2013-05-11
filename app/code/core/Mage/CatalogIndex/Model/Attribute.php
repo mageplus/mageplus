@@ -50,21 +50,52 @@ class Mage_CatalogIndex_Model_Attribute extends Mage_Core_Model_Abstract
         $this->_getResource()->setStoreId(Mage::app()->getStore()->getId());
     }
 
+    /**
+     * @todo
+     *
+     * @param $attribute
+     * @param $filter
+     * @param $entityFilter
+     * @return
+     */
     public function getFilteredEntities($attribute, $filter, $entityFilter)
     {
         return $this->_getResource()->getFilteredEntities($attribute, $filter, $entityFilter);
     }
 
+    /**
+     * @todo
+     *
+     * @param $attribute
+     * @param $entityFilter
+     * @return
+     */
     public function getCount($attribute, $entityFilter)
     {
         return $this->_getResource()->getCount($attribute, $entityFilter);
     }
 
+    /**
+     * @todo
+     *
+     * @param $optionIds
+     * @param $attribute
+     * @param $entityFilter
+     * @return
+     */
     public function checkCount($optionIds, $attribute, $entityFilter)
     {
         return $this->_getResource()->checkCount($optionIds, $attribute, $entityFilter);
     }
 
+    /**
+     * @todo
+     *
+     * @param $collection
+     * @param $attribute
+     * @param $value
+     * @return
+     */
     public function applyFilterToCollection($collection, $attribute, $value)
     {
         $this->_getResource()->applyFilterToCollection($collection, $attribute, $value);

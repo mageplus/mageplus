@@ -32,7 +32,6 @@
  */
 class Mage_Core_Block_Text_Tag_Css_Admin extends Mage_Core_Block_Text_Tag_Css
 {
-
     protected function _construct()
     {
         parent::_construct();
@@ -40,6 +39,13 @@ class Mage_Core_Block_Text_Tag_Css_Admin extends Mage_Core_Block_Text_Tag_Css
         $this->setAttribute('theme', $theme);
     }
 
+    /**
+     * @todo
+     *
+     * @param $href
+     * @param $type
+     * @return
+     */
     function setHref($href, $type=null)
     {
         $type = (string)$type;
@@ -49,5 +55,4 @@ class Mage_Core_Block_Text_Tag_Css_Admin extends Mage_Core_Block_Text_Tag_Css
         $url = Mage::getBaseUrl($type).$href.$this->getTheme().'.css';
         return $this->setTagParam('href', $url);
     }
-
 }

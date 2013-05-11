@@ -50,6 +50,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('System'))
@@ -60,18 +65,33 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newWebsiteAction()
     {
         Mage::register('store_type', 'website');
         $this->_forward('newStore');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newGroupAction()
     {
         Mage::register('store_type', 'group');
         $this->_forward('newStore');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newStoreAction()
     {
         if (!Mage::registry('store_type')) {
@@ -81,18 +101,33 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         $this->_forward('editStore');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editWebsiteAction()
     {
         Mage::register('store_type', 'website');
         $this->_forward('editStore');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editGroupAction()
     {
         Mage::register('store_type', 'group');
         $this->_forward('editStore');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editStoreAction()
     {
         $this->_title($this->__('System'))
@@ -160,6 +195,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         if ($this->getRequest()->isPost() && $postData = $this->getRequest()->getPost()) {
@@ -247,6 +287,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteWebsiteAction()
     {
         $this->_title($this->__('System'))
@@ -279,6 +324,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteGroupAction()
     {
         $this->_title($this->__('System'))
@@ -311,6 +361,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteStoreAction()
     {
         $this->_title($this->__('System'))
@@ -343,6 +398,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteWebsitePostAction()
     {
         $itemId = $this->getRequest()->getParam('item_id');
@@ -375,6 +435,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/editWebsite', array('website_id' => $itemId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteGroupPostAction()
     {
         $itemId = $this->getRequest()->getParam('item_id');
@@ -446,6 +511,11 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         $this->_redirect('*/*/editStore', array('store_id' => $itemId));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('system/store');
@@ -499,6 +569,4 @@ class Mage_Adminhtml_System_StoreController extends Mage_Adminhtml_Controller_Ac
         );
         return $this;
     }
-
 }
-

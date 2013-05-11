@@ -35,6 +35,12 @@ class Mage_Api_Model_Wsdl_Config extends Mage_Api_Model_Wsdl_Config_Base
 {
     protected static $_namespacesPrefix = null;
 
+    /**
+     * @todo
+     *
+     * @param $sourceData
+     * @return
+     */
     public function __construct($sourceData=null)
     {
         $this->setCacheId('wsdl_config_global');
@@ -68,26 +74,57 @@ class Mage_Api_Model_Wsdl_Config extends Mage_Api_Model_Wsdl_Config_Base
         return self::$_namespacesPrefix;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCache()
     {
         return Mage::app()->getCache();
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     protected function _loadCache($id)
     {
         return Mage::app()->loadCache($id);
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @param $id
+     * @param array $tags
+     * @param bool $lifetime
+     * @return
+     */
     protected function _saveCache($data, $id, $tags=array(), $lifetime=false)
     {
         return Mage::app()->saveCache($data, $id, $tags, $lifetime);
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     protected function _removeCache($id)
     {
         return Mage::app()->removeCache($id);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function init()
     {
         $this->setCacheChecksum(null);

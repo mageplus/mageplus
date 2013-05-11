@@ -33,7 +33,6 @@
  */
 class Mage_Archive
 {
-
     /**
     * Archiver is used for compress.
     */

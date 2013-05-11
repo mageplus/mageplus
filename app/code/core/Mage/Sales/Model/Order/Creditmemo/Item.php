@@ -229,6 +229,11 @@ class Mage_Sales_Model_Order_Creditmemo_Item extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function cancel()
     {
         $this->getOrderItem()->setQtyRefunded(

@@ -16,30 +16,30 @@
  * @category   Zend
  * @package    Zend_OpenId
  * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Consumer.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Consumer.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_OpenId
  */
-#require_once "Zend/OpenId.php";
+require_once "Zend/OpenId.php";
 
 /**
  * @see Zend_OpenId_Extension
  */
-#require_once "Zend/OpenId/Extension.php";
+require_once "Zend/OpenId/Extension.php";
 
 /**
  * @see Zend_OpenId_Consumer_Storage
  */
-#require_once "Zend/OpenId/Consumer/Storage.php";
+require_once "Zend/OpenId/Consumer/Storage.php";
 
 /**
  * @see Zend_Http_Client
  */
-#require_once 'Zend/Http/Client.php';
+require_once 'Zend/Http/Client.php';
 
 /**
  * OpenID consumer implementation
@@ -47,7 +47,7 @@
  * @category   Zend
  * @package    Zend_OpenId
  * @subpackage Zend_OpenId_Consumer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_OpenId_Consumer
@@ -110,7 +110,7 @@ class Zend_OpenId_Consumer
                                 $dumbMode = false)
     {
         if ($storage === null) {
-            #require_once "Zend/OpenId/Consumer/Storage/File.php";
+            require_once "Zend/OpenId/Consumer/Storage/File.php";
             $this->_storage = new Zend_OpenId_Consumer_Storage_File();
         } else {
             $this->_storage = $storage;
@@ -216,7 +216,7 @@ class Zend_OpenId_Consumer
                     $identity = $_SESSION["zend_openid"]["claimed_id"];
                 }
             } else {
-                #require_once "Zend/Session/Namespace.php";
+                require_once "Zend/Session/Namespace.php";
                 $this->_session = new Zend_Session_Namespace("zend_openid");
                 if ($this->_session->identity === $identity) {
                     $identity = $this->_session->claimed_id;
@@ -865,7 +865,7 @@ class Zend_OpenId_Consumer
                     "identity" => $id,
                     "claimed_id" => $claimedId);
             } else {
-                #require_once "Zend/Session/Namespace.php";
+                require_once "Zend/Session/Namespace.php";
                 $this->_session = new Zend_Session_Namespace("zend_openid");
                 $this->_session->identity = $id;
                 $this->_session->claimed_id = $claimedId;

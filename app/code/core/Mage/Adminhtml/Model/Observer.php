@@ -34,7 +34,11 @@
  */
 class Mage_Adminhtml_Model_Observer
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function bindLocale($observer)
     {
         if ($locale=$observer->getEvent()->getLocale()) {
@@ -45,6 +49,11 @@ class Mage_Adminhtml_Model_Observer
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function bindStore()
     {
         Mage::app()->setCurrentStore('admin');

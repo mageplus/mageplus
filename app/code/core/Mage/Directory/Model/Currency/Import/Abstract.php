@@ -89,6 +89,11 @@ abstract class Mage_Directory_Model_Currency_Import_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function fetchRates()
     {
         $data = array();
@@ -114,11 +119,22 @@ abstract class Mage_Directory_Model_Currency_Import_Abstract
         return $data;
     }
 
+    /**
+     * @todo
+     *
+     * @param $number
+     * @return
+     */
     protected function _numberFormat($number)
     {
         return $number;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMessages()
     {
         return $this->_messages;

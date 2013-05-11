@@ -35,46 +35,93 @@ class Mage_Customer_Block_Account_Dashboard extends Mage_Core_Block_Template
 {
     protected $_subscription = null;
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomer()
     {
         return Mage::getSingleton('customer/session')->getCustomer();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAccountUrl()
     {
         return Mage::getUrl('customer/account/edit', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAddressesUrl()
     {
         return Mage::getUrl('customer/address/index', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getAddressEditUrl($address)
     {
         return Mage::getUrl('customer/address/edit', array('_secure'=>true, 'id'=>$address->getId()));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getOrdersUrl()
     {
         return Mage::getUrl('customer/order/index', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getReviewsUrl()
     {
         return Mage::getUrl('review/customer/index', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getWishlistUrl()
     {
         return Mage::getUrl('customer/wishlist/index', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getTagsUrl()
     {
 
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getSubscriptionObject()
     {
         if(is_null($this->_subscription)) {
@@ -84,11 +131,21 @@ class Mage_Customer_Block_Account_Dashboard extends Mage_Core_Block_Template
         return $this->_subscription;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getManageNewsletterUrl()
     {
         return $this->getUrl('*/newsletter/manage');
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getSubscriptionText()
     {
         if($this->getSubscriptionObject()->isSubscribed()) {
@@ -98,6 +155,11 @@ class Mage_Customer_Block_Account_Dashboard extends Mage_Core_Block_Template
         return Mage::helper('customer')->__('You are currently not subscribed to our newsletter.');
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryAddresses()
     {
         $addresses = $this->getCustomer()->getPrimaryAddresses();

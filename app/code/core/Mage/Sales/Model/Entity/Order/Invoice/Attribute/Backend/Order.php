@@ -28,6 +28,13 @@
 class Mage_Sales_Model_Entity_Order_Invoice_Attribute_Backend_Order
     extends Mage_Eav_Model_Entity_Attribute_Backend_Abstract
 {
+    /**
+     * @todo
+     *
+     * @param $object
+     *
+     * @return
+     */
     public function beforeSave($object)
     {
         if ($object->getOrder()) {

@@ -237,4 +237,11 @@
             </web>
         </admin>
     </websites>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Adminhtml/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

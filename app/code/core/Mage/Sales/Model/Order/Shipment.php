@@ -131,7 +131,6 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this;
     }
 
-
     /**
      * Declare order for shipment
      *
@@ -145,7 +144,6 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
             ->setStoreId($order->getStoreId());
         return $this;
     }
-
 
     /**
      * Retrieve hash code of current order
@@ -222,6 +220,11 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getItemsCollection()
     {
         if (empty($this->_items)) {
@@ -237,6 +240,11 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this->_items;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAllItems()
     {
         $items = array();
@@ -248,6 +256,13 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $items;
     }
 
+    /**
+     * @todo
+     *
+     * @param $itemId
+     * 
+     * @return
+     */
     public function getItemById($itemId)
     {
         foreach ($this->getItemsCollection() as $item) {
@@ -258,6 +273,13 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Shipment_Item $item
+     * 
+     * @return
+     */
     public function addItem(Mage_Sales_Model_Order_Shipment_Item $item)
     {
         $item->setShipment($this)
@@ -269,7 +291,11 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this;
     }
 
-
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getTracksCollection()
     {
         if (empty($this->_tracks)) {
@@ -285,6 +311,11 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this->_tracks;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAllTracks()
     {
         $tracks = array();
@@ -296,6 +327,13 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $tracks;
     }
 
+    /**
+     * @todo
+     *
+     * @param $trackId
+     * 
+     * @return
+     */
     public function getTrackById($trackId)
     {
         foreach ($this->getTracksCollection() as $track) {
@@ -306,6 +344,13 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order_Shipment_Track $track
+     * 
+     * @return
+     */
     public function addTrack(Mage_Sales_Model_Order_Shipment_Track $track)
     {
         $track->setShipment($this)
@@ -352,6 +397,13 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param boolean $reload
+     * 
+     * @return
+     */
     public function getCommentsCollection($reload=false)
     {
         if (is_null($this->_comments) || $reload) {
@@ -534,6 +586,13 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $configPath
+     * 
+     * @return
+     */
     protected function _getEmails($configPath)
     {
         $data = Mage::getStoreConfig($configPath, $this->getStoreId());
@@ -567,6 +626,11 @@ class Mage_Sales_Model_Order_Shipment extends Mage_Sales_Model_Abstract
         return parent::_beforeSave();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     protected function _beforeDelete()
     {
         $this->_protectFromNonAdmin();

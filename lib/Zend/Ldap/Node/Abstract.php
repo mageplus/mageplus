@@ -15,19 +15,19 @@
  * @category   Zend
  * @package    Zend_Ldap
  * @subpackage Node
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Abstract.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Abstract.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Ldap_Attribute
  */
-#require_once 'Zend/Ldap/Attribute.php';
+require_once 'Zend/Ldap/Attribute.php';
 /**
  * @see Zend_Ldap_Dn
  */
-#require_once 'Zend/Ldap/Dn.php';
+require_once 'Zend/Ldap/Dn.php';
 
 /**
  * Zend_Ldap_Node_Abstract provides a bas eimplementation for LDAP nodes
@@ -35,7 +35,7 @@
  * @category   Zend
  * @package    Zend_Ldap
  * @subpackage Node
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Ldap_Node_Abstract implements ArrayAccess, Countable

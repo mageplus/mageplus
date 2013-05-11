@@ -211,6 +211,12 @@ class Mage_Catalog_Model_Product_Indexer_Price extends Mage_Index_Model_Indexer_
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Index_Model_Event $event
+     * @return
+     */
     protected function _registerCatalogProductMassActionEvent(Mage_Index_Model_Event $event)
     {
         /* @var $actionObject Varien_Object */

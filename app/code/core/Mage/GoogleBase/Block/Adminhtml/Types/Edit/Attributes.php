@@ -38,6 +38,11 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Attributes extends Mage_Adminht
         $this->setTemplate('googlebase/types/edit/attributes.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('add_button',
@@ -61,16 +66,31 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Attributes extends Mage_Adminht
         parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldId()
     {
         return 'gbase_attribute';
     }
 
-    public function getFieldName ()
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getFieldName()
     {
         return 'attributes';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getGbaseAttributesSelectHtml()
     {
         $options = array('' => $this->__('Custom attribute, no mapping'));
@@ -103,11 +123,21 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Attributes extends Mage_Adminht
         return $select->getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         return $this->getChildHtml('add_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_button');
@@ -133,6 +163,12 @@ class Mage_GoogleBase_Block_Adminhtml_Types_Edit_Attributes extends Mage_Adminht
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     protected function _toJson($data)
     {
         return Mage::helper('core')->jsonEncode($data);

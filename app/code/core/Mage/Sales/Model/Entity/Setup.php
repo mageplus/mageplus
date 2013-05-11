@@ -27,6 +27,11 @@
 
 class Mage_Sales_Model_Entity_Setup extends Mage_Eav_Model_Entity_Setup
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDefaultEntities()
     {
         return array(

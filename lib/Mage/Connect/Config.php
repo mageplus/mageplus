@@ -10,6 +10,11 @@ implements Iterator
 
     protected $properties = array();
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function initProperties()
     {
         $this->properties = array (
@@ -74,23 +79,44 @@ implements Iterator
 
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDownloaderPath()
     {
         return $this->magento_root . DIRECTORY_SEPARATOR . $this->downloader_path;
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPackagesCacheDir()
     {
         return $this->getDownloaderPath() . DIRECTORY_SEPARATOR . self::DEFAULT_CACHE_PATH;        
     }
     
+    /**
+     * @todo
+     *
+     * @param $channel
+     * @return
+     */
     public function getChannelCacheDir($channel)
     {
         $channel = trim( $channel, "\\/");
         return $this->getPackagesCacheDir(). DIRECTORY_SEPARATOR . $channel; 
     }
     
-    
+    /**
+     * @todo
+     *
+     * @param $configFile
+     * @return
+     */
     public function __construct($configFile = "connect.cfg")
     {
         $this->initProperties();
@@ -98,11 +124,21 @@ implements Iterator
         $this->load();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFilename()
     {
         return $this->_configFile;
     }
     
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function load()
     {
         /**
@@ -140,6 +176,11 @@ implements Iterator
         fclose($f);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function store()
     {
         $data = serialize($this->toArray());
@@ -149,7 +190,13 @@ implements Iterator
         @fclose($f);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $val
+     * @return
+     */
     public function validate($key, $val)
     {
         $rules = $this->extractField($key, 'rules');
@@ -161,6 +208,12 @@ implements Iterator
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function possible($key)
     {
         $data = $this->getKey($key);
@@ -176,17 +229,35 @@ implements Iterator
         return "<".$data['type'].">";
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function type($key)
     {
         return $this->extractField($key, 'type');
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function doc($key)
     {
         return $this->extractField($key, 'doc');
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $field
+     * @return
+     */
     public function extractField($key, $field)
     {
         if(!isset($this->properties[$key][$field])) {
@@ -195,12 +266,23 @@ implements Iterator
         return $this->properties[$key][$field];
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $fld
+     * @return
+     */
     public function hasKey($fld)
     {
         return isset($this->properties[$fld]);
     }
 
+    /**
+     * @todo
+     *
+     * @param $fld
+     * @return
+     */
     public function getKey($fld)
     {
         if($this->hasKey($fld)) {
@@ -209,26 +291,62 @@ implements Iterator
         return null;
     }
 
-    public function rewind() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function rewind()
+    {
         reset($this->properties);
     }
 
-    public function valid() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function valid()
+    {
         return current($this->properties) !== false;
     }
 
-    public function key() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function key()
+    {
         return key($this->properties);
     }
 
-    public function current() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function current()
+    {
         return current($this->properties);
     }
 
-    public function next() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function next()
+    {
         next($this->properties);
     }
 
+    /**
+     * @todo
+     *
+     * @param $var
+     * @return
+     */
     public function __get($var)
     {
         if (isset($this->properties[$var]['value'])) {
@@ -237,6 +355,13 @@ implements Iterator
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $var
+     * @param $value
+     * @return
+     */
     public function __set($var, $value)
     {
         if (is_string($value)) {
@@ -253,6 +378,12 @@ implements Iterator
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $withRules
+     * @return
+     */
     public function toArray($withRules = false)
     {
         $out = array();
@@ -261,5 +392,4 @@ implements Iterator
         }
         return $out;
     }
-
 }

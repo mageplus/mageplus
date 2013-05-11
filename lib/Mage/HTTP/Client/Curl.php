@@ -137,6 +137,7 @@ implements Mage_HTTP_IClient
 
     /**
      * Constructor
+     * is this needed?
      */
     public function __construct()
     {
@@ -248,7 +249,6 @@ implements Mage_HTTP_IClient
         $this->makeRequest("POST", $uri, $params);
     }
 
-
     /**
      * Get response headers
      *
@@ -258,7 +258,6 @@ implements Mage_HTTP_IClient
     {
         return $this->_responseHeaders;
     }
-
 
     /**
      * Get response body
@@ -295,7 +294,6 @@ implements Mage_HTTP_IClient
         }
         return $out;
     }
-
 
     /**
      * Get cookies array with details

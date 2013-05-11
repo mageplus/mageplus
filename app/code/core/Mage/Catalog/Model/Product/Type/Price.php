@@ -90,6 +90,15 @@ class Mage_Catalog_Model_Product_Type_Price
         return $finalPrice;
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @param $productQty
+     * @param $childProduct
+     * @param $childProductQty
+     * @return
+     */
     public function getChildFinalPrice($product, $productQty, $childProduct, $childProductQty)
     {
         return $this->getFinalPrice($childProductQty, $childProduct);
@@ -119,7 +128,6 @@ class Mage_Catalog_Model_Product_Type_Price
      */
     public function getGroupPrice($product)
     {
-
         $groupPrices = $product->getData('group_price');
 
         if (is_null($groupPrices)) {
@@ -252,6 +260,12 @@ class Mage_Catalog_Model_Product_Type_Price
         return ($prices) ? $prices : array();
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @return
+     */
     protected function _getCustomerGroupId($product)
     {
         if ($product->getCustomerGroupId()) {

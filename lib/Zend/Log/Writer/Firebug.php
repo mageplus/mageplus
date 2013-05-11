@@ -15,22 +15,22 @@
  * @category   Zend
  * @package    Zend_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Firebug.php 23066 2010-10-09 23:29:20Z cadorn $
+ * @version    $Id: Firebug.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /** Zend_Log */
-#require_once 'Zend/Log.php';
+require_once 'Zend/Log.php';
 
 /** Zend_Log_Writer_Abstract */
-#require_once 'Zend/Log/Writer/Abstract.php';
+require_once 'Zend/Log/Writer/Abstract.php';
 
 /** Zend_Log_Formatter_Firebug */
-#require_once 'Zend/Log/Formatter/Firebug.php';
+require_once 'Zend/Log/Formatter/Firebug.php';
 
 /** Zend_Wildfire_Plugin_FirePhp */
-#require_once 'Zend/Wildfire/Plugin/FirePhp.php';
+require_once 'Zend/Wildfire/Plugin/FirePhp.php';
 
 /**
  * Writes log messages to the Firebug Console via FirePHP.
@@ -38,14 +38,14 @@
  * @category   Zend
  * @package    Zend_Log
  * @subpackage Writer
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
 {
-
     /**
      * Maps logging priorities to logging display styles
+     *
      * @var array
      */
     protected $_priorityStyles = array(Zend_Log::EMERG  => Zend_Wildfire_Plugin_FirePhp::ERROR,
@@ -59,18 +59,22 @@ class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
 
     /**
      * The default logging style for un-mapped priorities
+     *
      * @var string
      */
     protected $_defaultPriorityStyle = Zend_Wildfire_Plugin_FirePhp::LOG;
 
     /**
      * Flag indicating whether the log writer is enabled
+     *
      * @var boolean
      */
     protected $_enabled = true;
 
     /**
      * Class constructor
+     *
+     * @return void
      */
     public function __construct()
     {
@@ -80,13 +84,12 @@ class Zend_Log_Writer_Firebug extends Zend_Log_Writer_Abstract
 
         $this->_formatter = new Zend_Log_Formatter_Firebug();
     }
-   
+
     /**
      * Create a new instance of Zend_Log_Writer_Firebug
-     * 
+     *
      * @param  array|Zend_Config $config
      * @return Zend_Log_Writer_Firebug
-     * @throws Zend_Log_Exception
      */
     static public function factory($config)
     {

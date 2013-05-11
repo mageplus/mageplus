@@ -268,6 +268,11 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/importExport');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _importRates()
     {
         $fileName   = $_FILES['import_rates_file']['tmp_name'];
@@ -285,7 +290,6 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
             6   => Mage::helper('tax')->__('Range From'),
             7   => Mage::helper('tax')->__('Range To')
         );
-
 
         $stores = array();
         $unset = array();
@@ -452,6 +456,11 @@ class Mage_Adminhtml_Tax_RateController extends Mage_Adminhtml_Controller_Action
         $this->_prepareDownloadResponse('tax_rates.csv', $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
 

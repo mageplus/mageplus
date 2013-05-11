@@ -56,16 +56,36 @@ class Mage_Checkout_Helper_Data extends Mage_Core_Helper_Abstract
         return $this->getCheckout()->getQuote();
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * 
+     * @return
+     */
     public function formatPrice($price)
     {
         return $this->getQuote()->getStore()->formatPrice($price);
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * @param $format
+     * 
+     * @return
+     */
     public function convertPrice($price, $format=true)
     {
         return $this->getQuote()->getStore()->convertPrice($price, $format);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRequiredAgreementIds()
     {
         if (is_null($this->_agreements)) {
@@ -123,6 +143,13 @@ class Mage_Checkout_Helper_Data extends Mage_Core_Helper_Abstract
         return $item->getRowTotal() + $tax;
     }
 
+    /**
+     * @todo
+     *
+     * @pram $item
+     * 
+     * @return
+     */
     public function getBasePriceInclTax($item)
     {
         $qty = ($item->getQty() ? $item->getQty() : ($item->getQtyOrdered() ? $item->getQtyOrdered() : 1));
@@ -131,6 +158,13 @@ class Mage_Checkout_Helper_Data extends Mage_Core_Helper_Abstract
         return Mage::app()->getStore()->roundPrice($price);
     }
 
+    /**
+     * @todo
+     *
+     * @param $item
+     * 
+     * @return
+     */
     public function getBaseSubtotalInclTax($item)
     {
         $tax = $item->getBaseTaxAmount() + $item->getBaseDiscountTaxCompensation();
@@ -226,6 +260,14 @@ class Mage_Checkout_Helper_Data extends Mage_Core_Helper_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $configPath
+     * @param $storeId
+     * 
+     * @return
+     */
     protected function _getEmails($configPath, $storeId)
     {
         $data = Mage::getStoreConfig($configPath, $storeId);

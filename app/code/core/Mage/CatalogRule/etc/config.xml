@@ -215,4 +215,11 @@
             </catalog_product_get_final_price>
         </events>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_CatalogRule/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

@@ -37,6 +37,11 @@ class Mage_ProductAlert_Block_Stock extends Mage_Core_Block_Template
         $this->setTemplate('productalert/stock.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isShow()
     {
         if (!Mage::getStoreConfig('catalog/productalert/allow_stock')) {
@@ -51,6 +56,13 @@ class Mage_ProductAlert_Block_Stock extends Mage_Core_Block_Template
         return !$product->isSaleable();
     }
 
+    /**
+     * @todo
+     *
+     * @param $route
+     * @param array $params
+     * @return
+     */
     public function getUrl($route = '', $params = array())
     {
         return Mage::helper('productalert')->getSaveUrl('stock');

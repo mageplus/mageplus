@@ -121,7 +121,6 @@ class Mage_Shipping_Block_Tracking_Popup extends Mage_Core_Block_Template
         return $ship;
     }
 
-
     /**
      * Retrieve array of tracking info
      *
@@ -237,10 +236,10 @@ class Mage_Shipping_Block_Tracking_Popup extends Mage_Core_Block_Template
         if (!empty($date)) {
             $time = $date . ' ' . $time;
         }
-        
+
         /* @var $locale Mage_Core_Model_Locale */
         $locale = Mage::app()->getLocale();
-        
+
         $format = $locale->getTimeFormat(Mage_Core_Model_Locale::FORMAT_TYPE_SHORT);
         return $locale->date(strtotime($time), Zend_Date::TIMESTAMP, null, false)
             ->toString($format);
@@ -256,11 +255,21 @@ class Mage_Shipping_Block_Tracking_Popup extends Mage_Core_Block_Template
         return (bool) Mage::getStoreConfig('contacts/contacts/enabled');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreSupportEmail()
     {
         return Mage::getStoreConfig('trans_email/ident_support/email');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getContactUs()
     {
         return $this->getUrl('contacts');

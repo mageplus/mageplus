@@ -47,6 +47,11 @@ class Mage_Install_Block_Download extends Mage_Install_Block_Abstract
         return $this->getUrl('*/*/downloadPost');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNextUrl()
     {
         return Mage::getModel('install/wizard')
@@ -54,6 +59,11 @@ class Mage_Install_Block_Download extends Mage_Install_Block_Abstract
                 ->getNextUrl();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasLocalCopy()
     {
         $dir = Mage::getConfig()->getModuleDir('etc', 'Mage_Adminhtml');
@@ -63,4 +73,3 @@ class Mage_Install_Block_Download extends Mage_Install_Block_Abstract
         return false;
     }
 }
-

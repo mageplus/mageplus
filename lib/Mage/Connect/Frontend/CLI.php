@@ -35,7 +35,6 @@
 class Mage_Connect_Frontend_CLI
 extends Mage_Connect_Frontend
 {
-
     /**
      * Collected output
      * @var array
@@ -55,7 +54,6 @@ extends Mage_Connect_Frontend
         $this->writeln("$command: $message");
     }
 
-
     /**
      * Output config help
      * @param array $data
@@ -72,7 +70,6 @@ extends Mage_Connect_Frontend
         }
     }
 
-
     /**
      * Output info
      * @param array $data
@@ -88,7 +85,12 @@ extends Mage_Connect_Frontend
         }
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function detectMethodByType($type)
     {
         $defaultMethod = "output";
@@ -114,7 +116,12 @@ extends Mage_Connect_Frontend
         return $defaultMethod;
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function outputDeleted($data)
     {
         if(!count($data['data'])) {
@@ -126,6 +133,12 @@ extends Mage_Connect_Frontend
         }
     }
     
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function outputListChannels($data)
     {
         $this->writeln($data['title']);
@@ -212,14 +225,12 @@ extends Mage_Connect_Frontend
         }
     }
 
-
     /**
      * Make output
      *
      * @param array $data
      * @return void
      */
-
     public function output($data)
     {
         $capture = $this->isCapture();
@@ -241,7 +252,6 @@ extends Mage_Connect_Frontend
             $this->writeln($data);
         }
     }
-
 
     /**
      * Detailed package info
@@ -274,7 +284,6 @@ extends Mage_Connect_Frontend
             $this->writeln('');
         }
     }
-
 
     /**
      * Write channels list
@@ -368,7 +377,6 @@ extends Mage_Connect_Frontend
         $this->write($data."\n");
     }
 
-
     /**
      * get output, clear if needed
      *
@@ -436,6 +444,4 @@ extends Mage_Connect_Frontend
             }
         }
     }
-
 }
-

@@ -27,10 +27,13 @@
 
 class Mage_Checkout_Block_Cart_Coupon extends Mage_Checkout_Block_Cart_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCouponCode()
     {
         return $this->getQuote()->getCouponCode();
     }
-
-
 }

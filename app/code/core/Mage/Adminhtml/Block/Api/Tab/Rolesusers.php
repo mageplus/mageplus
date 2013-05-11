@@ -38,17 +38,32 @@ class Mage_Adminhtml_Block_Api_Tab_Rolesusers extends Mage_Adminhtml_Block_Widge
             ->assign('roleId', $roleId);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('userGrid', $this->getLayout()->createBlock('adminhtml/api_role_grid_user', 'roleUsersGrid'));
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getGridHtml()
     {
         return $this->getChildHtml('userGrid');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getJsObjectName()
     {
         return $this->getChild('userGrid')->getJsObjectName();

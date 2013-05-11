@@ -318,6 +318,12 @@ class Varien_Object_Cache
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $ids
+     * @return
+     */
     public function findByIds($ids)
     {
         $objects = array();
@@ -329,6 +335,12 @@ class Varien_Object_Cache
         return $objects;
     }
 
+    /**
+     * @todo
+     *
+     * @param $hash
+     * @return
+     */
     public function findByHash($hash)
     {
         return isset($this->_hashes[$hash]) ? $this->_objects[$this->_hashes[$hash]] : null;
@@ -373,6 +385,13 @@ class Varien_Object_Cache
         return $objects;
     }
 
+    /**
+     * @todo
+     *
+     * @param $idx
+     * @param $object
+     * @return
+     */
     public function debug($idx, $object=null)
     {
         $bt = debug_backtrace();

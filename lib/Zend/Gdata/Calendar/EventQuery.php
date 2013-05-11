@@ -16,20 +16,20 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: EventQuery.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: EventQuery.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * Zend_Gdata_App_util
  */
-#require_once('Zend/Gdata/App/Util.php');
+require_once('Zend/Gdata/App/Util.php');
 
 /**
  * Zend_Gdata_Query
  */
-#require_once('Zend/Gdata/Query.php');
+require_once('Zend/Gdata/Query.php');
 
 /**
  * Assists in constructing queries for Google Calendar events
@@ -39,13 +39,13 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Calendar
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
 {
 
-    const CALENDAR_FEED_URI = 'http://www.google.com/calendar/feeds';
+    const CALENDAR_FEED_URI = 'https://www.google.com/calendar/feeds';
 
     /**
      * The default URI used for feeds.
@@ -91,9 +91,9 @@ class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
     /**
      * Create Gdata_Calendar_EventQuery object.  If a URL is provided,
      * it becomes the base URL, and additional URL components may be
-     * appended.  For instance, if $url is 'http://www.google.com/calendar',
+     * appended.  For instance, if $url is 'https://www.google.com/calendar',
      * the default URL constructed will be
-     * 'http://www.google.com/calendar/default/public/full'.
+     * 'https://www.google.com/calendar/default/public/full'.
      *
      * If the URL already contains a calendar ID, projection, visibility,
      * event ID, or comment ID, you will need to set these fields to null
@@ -377,7 +377,7 @@ class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
                     return false;
                     break;
                 default:
-                    #require_once 'Zend/Gdata/App/Exception.php';
+                    require_once 'Zend/Gdata/App/Exception.php';
                     throw new Zend_Gdata_App_Exception(
                             'Invalid query param value for futureevents: ' .
                             $value . ' It must be a boolean.');
@@ -399,7 +399,7 @@ class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
             } elseif ($value == 'true' | $value == 'false') {
                 $this->_params['singleevents'] = $value;
             } else {
-                #require_once 'Zend/Gdata/App/Exception.php';
+                require_once 'Zend/Gdata/App/Exception.php';
                 throw new Zend_Gdata_App_Exception(
                         'Invalid query param value for futureevents: ' .
                         $value . ' It must be a boolean.');
@@ -425,7 +425,7 @@ class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
                     return false;
                     break;
                 default:
-                    #require_once 'Zend/Gdata/App/Exception.php';
+                    require_once 'Zend/Gdata/App/Exception.php';
                     throw new Zend_Gdata_App_Exception(
                             'Invalid query param value for futureevents: ' .
                             $value . ' It must be a boolean.');
@@ -448,7 +448,7 @@ class Zend_Gdata_Calendar_EventQuery extends Zend_Gdata_Query
             } elseif ($value == 'true' | $value == 'false') {
                 $this->_params['futureevents'] = $value;
             } else {
-                #require_once 'Zend/Gdata/App/Exception.php';
+                require_once 'Zend/Gdata/App/Exception.php';
                 throw new Zend_Gdata_App_Exception(
                         'Invalid query param value for futureevents: ' .
                         $value . ' It must be a boolean.');

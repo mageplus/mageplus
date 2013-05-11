@@ -114,11 +114,22 @@ class Varien_Data_Tree_Db extends Varien_Data_Tree
         $this->_select->from($this->_table, array_values($fields));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDbSelect()
     {
         return $this->_select;
     }
 
+    /**
+     * @todo
+     *
+     * @param $select
+     * @return
+     */
     public function setDbSelect($select)
     {
         $this->_select = $select;
@@ -164,6 +175,12 @@ class Varien_Data_Tree_Db extends Varien_Data_Tree
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $nodeId
+     * @return
+     */
     public function loadNode($nodeId)
     {
         $select = clone $this->_select;
@@ -174,6 +191,14 @@ class Varien_Data_Tree_Db extends Varien_Data_Tree
         return $node;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $data
+     * @param $parentNode
+     * @param $prevNode
+     * @return
+     */
     public function appendChild($data=array(), $parentNode, $prevNode=null)
     {
         $orderSelect = $this->_conn->select();
@@ -243,6 +268,13 @@ class Varien_Data_Tree_Db extends Varien_Data_Tree
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $parentId
+     * @param $parentLevel
+     * @return
+     */
     protected function _updateChildLevels($parentId, $parentLevel)
     {
         $select = $this->_conn->select()
@@ -261,6 +293,11 @@ class Varien_Data_Tree_Db extends Varien_Data_Tree
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _loadFullTree()
     {
         $select = clone $this->_select;
@@ -278,6 +315,12 @@ class Varien_Data_Tree_Db extends Varien_Data_Tree
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $node
+     * @return
+     */
     public function removeNode($node)
     {
         // For reorder old node branch

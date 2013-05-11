@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Newsletter_Problem extends Mage_Adminhtml_Block_Template
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -44,6 +43,11 @@ class Mage_Adminhtml_Block_Newsletter_Problem extends Mage_Adminhtml_Block_Templ
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('grid',
@@ -72,16 +76,31 @@ class Mage_Adminhtml_Block_Newsletter_Problem extends Mage_Adminhtml_Block_Templ
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUnsubscribeButtonHtml()
     {
         return $this->getChildHtml('unsubscribeButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('deleteButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShowButtons()
     {
         return  Mage::getResourceSingleton('newsletter/problem_collection')->getSize() > 0;

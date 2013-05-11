@@ -33,6 +33,11 @@
  */
 class Mage_CatalogSearch_AjaxController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function suggestAction()
     {
         if (!$this->getRequest()->getParam('q', false)) {

@@ -247,8 +247,6 @@ class Mage_Catalog_Model_Resource_Product_Link_Product_Collection extends Mage_C
         return $this;
     }
 
-
-
     /**
      * Enable sorting products by its position
      *

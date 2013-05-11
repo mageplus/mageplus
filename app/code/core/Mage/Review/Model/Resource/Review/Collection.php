@@ -106,7 +106,7 @@ class Mage_Review_Model_Resource_Review_Collection extends Mage_Core_Model_Resou
     }
 
     /**
-     * Enter description here ...
+     * @todo
      *
      * @param unknown_type $customerId
      * @return Mage_Review_Model_Resource_Review_Collection

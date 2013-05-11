@@ -34,6 +34,11 @@
 
 class Mage_Adminhtml_Rss_OrderController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function preDispatch()
     {
         Mage::helper('adminhtml/rss')->authAdmin('catalog/reviews_ratings');
@@ -41,6 +46,11 @@ class Mage_Adminhtml_Rss_OrderController extends Mage_Adminhtml_Controller_Actio
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         Mage::helper('rss')->authAdmin('sales/order');

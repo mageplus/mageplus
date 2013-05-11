@@ -144,6 +144,12 @@ class Varien_File_Uploader
      */
     protected $_result;
 
+    /**
+     * @todo
+     *
+     * @param $field
+     * @return
+     */
     function __construct($fileId)
     {
         $this->_setUploadFileId($fileId);
@@ -335,6 +341,12 @@ class Varien_File_Uploader
         return $fileName;
     }
 
+    /**
+     * @todo
+     *
+     * @param $dir
+     * @return
+     */
     static protected function _addDirSeparator($dir)
     {
         if (substr($dir,-1) != DIRECTORY_SEPARATOR) {
@@ -422,6 +434,12 @@ class Varien_File_Uploader
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param array $extensions
+     * @return
+     */
     public function setAllowedExtensions($extensions = array())
     {
         foreach ((array)$extensions as $extension) {
@@ -456,11 +474,22 @@ class Varien_File_Uploader
         return $this->checkAllowedExtension($extension);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     private function _getMimeType()
     {
         return $this->_file['type'];
     }
 
+    /**
+     * @todo
+     *
+     * @param $fileId
+     * @return
+     */
     private function _setUploadFileId($fileId)
     {
         if (empty($_FILES)) {
@@ -495,6 +524,12 @@ class Varien_File_Uploader
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $destinationFolder
+     * @return
+     */
     private function _createDestinationFolder($destinationFolder)
     {
         if (!$destinationFolder) {
@@ -511,6 +546,12 @@ class Varien_File_Uploader
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $destFile
+     * @return
+     */
     static public function getNewFileName($destFile)
     {
         $fileInfo = pathinfo($destFile);
@@ -529,6 +570,12 @@ class Varien_File_Uploader
         return $destFileName;
     }
 
+    /**
+     * @todo
+     *
+     * @param $fileName
+     * @return
+     */
     static public function getDispretionPath($fileName)
     {
         $char = 0;

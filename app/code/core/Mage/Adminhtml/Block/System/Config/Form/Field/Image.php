@@ -34,7 +34,6 @@
  */
 class Mage_Adminhtml_Block_System_Config_Form_Field_Image extends Varien_Data_Form_Element_Image
 {
-
     /**
      * Get image preview url
      *
@@ -54,5 +53,4 @@ class Mage_Adminhtml_Block_System_Config_Form_Field_Image extends Varien_Data_Fo
 
         return $url;
     }
-
 }

@@ -15,33 +15,33 @@
  * @category   Zend
  * @package    Zend_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Pop3.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Pop3.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 
 /**
  * @see Zend_Mail_Storage_Abstract
  */
-#require_once 'Zend/Mail/Storage/Abstract.php';
+require_once 'Zend/Mail/Storage/Abstract.php';
 
 /**
  * @see Zend_Mail_Protocol_Pop3
  */
-#require_once 'Zend/Mail/Protocol/Pop3.php';
+require_once 'Zend/Mail/Protocol/Pop3.php';
 
 /**
  * @see Zend_Mail_Message
  */
-#require_once 'Zend/Mail/Message.php';
+require_once 'Zend/Mail/Message.php';
 
 
 /**
  * @category   Zend
  * @package    Zend_Mail
  * @subpackage Storage
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Mail_Storage_Pop3 extends Zend_Mail_Storage_Abstract
@@ -112,7 +112,7 @@ class Zend_Mail_Storage_Pop3 extends Zend_Mail_Storage_Abstract
             /**
              * @see Zend_Mail_Storage_Exception
              */
-            #require_once 'Zend/Mail/Storage/Exception.php';
+            require_once 'Zend/Mail/Storage/Exception.php';
             throw new Zend_Mail_Storage_Exception('not implemented');
         }
 
@@ -135,7 +135,7 @@ class Zend_Mail_Storage_Pop3 extends Zend_Mail_Storage_Abstract
             /**
              * @see Zend_Mail_Storage_Exception
              */
-            #require_once 'Zend/Mail/Storage/Exception.php';
+            require_once 'Zend/Mail/Storage/Exception.php';
             throw new Zend_Mail_Storage_Exception('not implemented');
         }
 
@@ -154,7 +154,7 @@ class Zend_Mail_Storage_Pop3 extends Zend_Mail_Storage_Abstract
      *   - port port for POP3 server [optional, default = 110]
      *   - ssl 'SSL' or 'TLS' for secure sockets
      *
-     * @param  $params array  mail reader specific parameters
+     * @param array $params mail reader specific parameters
      * @throws Zend_Mail_Storage_Exception
      * @throws Zend_Mail_Protocol_Exception
      */
@@ -177,7 +177,7 @@ class Zend_Mail_Storage_Pop3 extends Zend_Mail_Storage_Abstract
             /**
              * @see Zend_Mail_Storage_Exception
              */
-            #require_once 'Zend/Mail/Storage/Exception.php';
+            require_once 'Zend/Mail/Storage/Exception.php';
             throw new Zend_Mail_Storage_Exception('need at least user in params');
         }
 
@@ -279,7 +279,7 @@ class Zend_Mail_Storage_Pop3 extends Zend_Mail_Storage_Abstract
         /**
          * @see Zend_Mail_Storage_Exception
          */
-        #require_once 'Zend/Mail/Storage/Exception.php';
+        require_once 'Zend/Mail/Storage/Exception.php';
         throw new Zend_Mail_Storage_Exception('unique id not found');
     }
 

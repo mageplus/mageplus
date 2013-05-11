@@ -95,6 +95,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $this->getResponse()->setBody($this->getLayout()->createBlock('adminhtml/newsletter_queue_grid')->toHtml());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function startAction()
     {
         $queue = Mage::getModel('newsletter/queue')
@@ -115,6 +120,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function pauseAction()
     {
         $queue = Mage::getSingleton('newsletter/queue')
@@ -132,6 +142,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function resumeAction()
     {
         $queue = Mage::getSingleton('newsletter/queue')
@@ -149,6 +164,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function cancelAction()
     {
         $queue = Mage::getSingleton('newsletter/queue')
@@ -166,6 +186,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $this->_redirect('*/*');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function sendingAction()
     {
         // Todo: put it somewhere in config!
@@ -181,6 +206,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $collection->walk('sendPerSubscriber', array($countOfSubscritions));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('Newsletter'))->_title($this->__('Newsletter Queue'));
@@ -213,6 +243,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         try {
@@ -272,6 +307,11 @@ class Mage_Adminhtml_Newsletter_QueueController extends Mage_Adminhtml_Controlle
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('newsletter/queue');

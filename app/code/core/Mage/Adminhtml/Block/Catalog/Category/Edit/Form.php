@@ -46,6 +46,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         $this->setTemplate('catalog/category/edit/form.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $category = $this->getCategory();
@@ -94,6 +99,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStoreConfigurationUrl()
     {
         $storeId = (int) $this->getRequest()->getParam('store');
@@ -107,11 +117,21 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return $this->getUrl('*/system_store', $params);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveButtonHtml()
     {
         if ($this->hasStoreRootCategory()) {
@@ -120,6 +140,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResetButtonHtml()
     {
         if ($this->hasStoreRootCategory()) {
@@ -176,11 +201,21 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTabsHtml()
     {
         return $this->getChildHtml('tabs');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeader()
     {
         if ($this->hasStoreRootCategory()) {
@@ -198,6 +233,12 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return Mage::helper('catalog')->__('Set Root Category for Store');
     }
 
+    /**
+     * @todo
+     *
+     * @param array $args
+     * @return
+     */
     public function getDeleteUrl(array $args = array())
     {
         $params = array('_current'=>true);
@@ -218,6 +259,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return $this->getUrl('*/*/refreshPath', $params);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductsJson()
     {
         $products = $this->getCategory()->getProductsPosition();
@@ -227,6 +273,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Edit_Form extends Mage_Adminhtml_Blo
         return '{}';
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isAjax()
     {
         return Mage::app()->getRequest()->isXmlHttpRequest() || Mage::app()->getRequest()->getParam('isAjax');

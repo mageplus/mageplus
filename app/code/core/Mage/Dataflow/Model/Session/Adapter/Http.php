@@ -34,6 +34,11 @@
  */
  class Mage_Dataflow_Model_Session_Adapter_Http extends Mage_Dataflow_Model_Convert_Adapter_Abstract
  {
+    /**
+     * @todo
+     * // this is horrible
+     * @return
+     */
      public function load()
      {
          if (!$_FILES) {
@@ -83,5 +88,4 @@ File to upload: <input type="file" name="io_file"/> <input type="submit" value="
          }
          return $this;
      }
-
  }

@@ -49,6 +49,10 @@ class Mage_Dataflow_Model_Profile_History extends Mage_Core_Model_Abstract
         $this->_init('dataflow/profile_history');
     }
 
+    /**
+     * @todo
+     * @return
+     */
     protected function _beforeSave()
     {
         if (!$this->getProfileId()) {

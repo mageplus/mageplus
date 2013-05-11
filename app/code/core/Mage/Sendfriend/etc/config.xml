@@ -131,4 +131,11 @@
             </email>
         </sendfriend>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Sendfriend/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

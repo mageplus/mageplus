@@ -88,6 +88,11 @@ class Mage_Core_Model_Layout_Update
         }
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getElementClass()
     {
         if (!$this->_elementClass) {
@@ -96,34 +101,68 @@ class Mage_Core_Model_Layout_Update
         return $this->_elementClass;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function resetUpdates()
     {
         $this->_updates = array();
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $update
+     *
+     * @return 
+     */
     public function addUpdate($update)
     {
         $this->_updates[] = $update;
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function asArray()
     {
         return $this->_updates;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function asString()
     {
         return implode('', $this->_updates);
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function resetHandles()
     {
         $this->_handles = array();
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $handle
+     *
+     * @return 
+     */
     public function addHandle($handle)
     {
         if (is_array($handle)) {
@@ -136,12 +175,24 @@ class Mage_Core_Model_Layout_Update
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $handle
+     *
+     * @return 
+     */
     public function removeHandle($handle)
     {
         unset($this->_handles[$handle]);
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getHandles()
     {
         return array_keys($this->_handles);
@@ -172,6 +223,11 @@ class Mage_Core_Model_Layout_Update
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function loadCache()
     {
         if (!Mage::app()->useCache('layout')) {
@@ -187,6 +243,11 @@ class Mage_Core_Model_Layout_Update
         return true;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function saveCache()
     {
         if (!Mage::app()->useCache('layout')) {
@@ -228,6 +289,11 @@ class Mage_Core_Model_Layout_Update
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function asSimplexml()
     {
         $updates = trim($this->asString());
@@ -254,6 +320,11 @@ class Mage_Core_Model_Layout_Update
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function fetchFileLayoutUpdates()
     {
         $storeId = Mage::app()->getStore()->getId();
@@ -339,6 +410,13 @@ class Mage_Core_Model_Layout_Update
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $handle
+     *
+     * @return 
+     */
     public function fetchPackageLayoutUpdates($handle)
     {
         $_profilerKey = 'layout/package_update: '.$handle;
@@ -356,6 +434,13 @@ class Mage_Core_Model_Layout_Update
         return true;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $handle
+     *
+     * @return 
+     */
     public function fetchDbLayoutUpdates($handle)
     {
         $_profilerKey = 'layout/db_update: '.$handle;
@@ -385,6 +470,13 @@ class Mage_Core_Model_Layout_Update
         return Mage::getResourceModel('core/layout')->fetchUpdatesByHandle($handle);
     }
 
+    /**
+     * @TODO
+     *
+     * @param $updateXml
+     *
+     * @return 
+     */
     public function fetchRecursiveUpdates($updateXml)
     {
         foreach ($updateXml->children() as $child) {

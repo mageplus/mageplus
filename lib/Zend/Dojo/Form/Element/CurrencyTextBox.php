@@ -15,12 +15,12 @@
  * @category   Zend
  * @package    Zend_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /** Zend_Dojo_Form_Element_NumberTextBox */
-#require_once 'Zend/Dojo/Form/Element/NumberTextBox.php';
+require_once 'Zend/Dojo/Form/Element/NumberTextBox.php';
 
 /**
  * CurrencyTextBox dijit
@@ -28,9 +28,9 @@
  * @uses       Zend_Dojo_Form_Element_NumberTextBox
  * @package    Zend_Dojo
  * @subpackage Form_Element
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: CurrencyTextBox.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: CurrencyTextBox.php 24593 2012-01-05 20:35:02Z matthew $
  */
 class Zend_Dojo_Form_Element_CurrencyTextBox extends Zend_Dojo_Form_Element_NumberTextBox
 {
@@ -75,7 +75,7 @@ class Zend_Dojo_Form_Element_CurrencyTextBox extends Zend_Dojo_Form_Element_Numb
         $symbol = strtoupper((string) $symbol);
         $length = strlen($symbol);
         if (3 > $length) {
-            #require_once 'Zend/Form/Element/Exception.php';
+            require_once 'Zend/Form/Element/Exception.php';
             throw new Zend_Form_Element_Exception('Invalid symbol provided; please provide ISO 4217 alphabetic currency code');
         }
         if (3 < $length) {

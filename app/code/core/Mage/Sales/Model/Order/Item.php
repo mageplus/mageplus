@@ -654,6 +654,7 @@ class Mage_Sales_Model_Order_Item extends Mage_Core_Model_Abstract
         }
         return false;
     }
+    
     /**
      * Check if discount has to be applied to parent item
      *

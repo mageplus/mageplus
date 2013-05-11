@@ -16,70 +16,70 @@
  * @category     Zend
  * @package      Zend_Gdata
  * @subpackage   Spreadsheets
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Spreadsheets.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Spreadsheets.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * Zend_Gdata
  */
-#require_once('Zend/Gdata.php');
+require_once('Zend/Gdata.php');
 
 /**
  * Zend_Gdata_Spreadsheets_SpreadsheetFeed
  */
-#require_once('Zend/Gdata/Spreadsheets/SpreadsheetFeed.php');
+require_once('Zend/Gdata/Spreadsheets/SpreadsheetFeed.php');
 
 /**
  * Zend_Gdata_Spreadsheets_WorksheetFeed
  */
-#require_once('Zend/Gdata/Spreadsheets/WorksheetFeed.php');
+require_once('Zend/Gdata/Spreadsheets/WorksheetFeed.php');
 
 /**
  * Zend_Gdata_Spreadsheets_CellFeed
  */
-#require_once('Zend/Gdata/Spreadsheets/CellFeed.php');
+require_once('Zend/Gdata/Spreadsheets/CellFeed.php');
 
 /**
  * Zend_Gdata_Spreadsheets_ListFeed
  */
-#require_once('Zend/Gdata/Spreadsheets/ListFeed.php');
+require_once('Zend/Gdata/Spreadsheets/ListFeed.php');
 
 /**
  * Zend_Gdata_Spreadsheets_SpreadsheetEntry
  */
-#require_once('Zend/Gdata/Spreadsheets/SpreadsheetEntry.php');
+require_once('Zend/Gdata/Spreadsheets/SpreadsheetEntry.php');
 
 /**
  * Zend_Gdata_Spreadsheets_WorksheetEntry
  */
-#require_once('Zend/Gdata/Spreadsheets/WorksheetEntry.php');
+require_once('Zend/Gdata/Spreadsheets/WorksheetEntry.php');
 
 /**
  * Zend_Gdata_Spreadsheets_CellEntry
  */
-#require_once('Zend/Gdata/Spreadsheets/CellEntry.php');
+require_once('Zend/Gdata/Spreadsheets/CellEntry.php');
 
 /**
  * Zend_Gdata_Spreadsheets_ListEntry
  */
-#require_once('Zend/Gdata/Spreadsheets/ListEntry.php');
+require_once('Zend/Gdata/Spreadsheets/ListEntry.php');
 
 /**
  * Zend_Gdata_Spreadsheets_DocumentQuery
  */
-#require_once('Zend/Gdata/Spreadsheets/DocumentQuery.php');
+require_once('Zend/Gdata/Spreadsheets/DocumentQuery.php');
 
 /**
  * Zend_Gdata_Spreadsheets_ListQuery
  */
-#require_once('Zend/Gdata/Spreadsheets/ListQuery.php');
+require_once('Zend/Gdata/Spreadsheets/ListQuery.php');
 
 /**
  * Zend_Gdata_Spreadsheets_CellQuery
  */
-#require_once('Zend/Gdata/Spreadsheets/CellQuery.php');
+require_once('Zend/Gdata/Spreadsheets/CellQuery.php');
 
 /**
  * Gdata Spreadsheets
@@ -89,13 +89,13 @@
  * @category     Zend
  * @package      Zend_Gdata
  * @subpackage   Spreadsheets
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_Spreadsheets extends Zend_Gdata
 {
-    const SPREADSHEETS_FEED_URI = 'http://spreadsheets.google.com/feeds/spreadsheets';
-    const SPREADSHEETS_POST_URI = 'http://spreadsheets.google.com/feeds/spreadsheets/private/full';
+    const SPREADSHEETS_FEED_URI = 'https://spreadsheets.google.com/feeds/spreadsheets';
+    const SPREADSHEETS_POST_URI = 'https://spreadsheets.google.com/feeds/spreadsheets/private/full';
     const WORKSHEETS_FEED_LINK_URI = 'http://schemas.google.com/spreadsheets/2006#worksheetsfeed';
     const LIST_FEED_LINK_URI = 'http://schemas.google.com/spreadsheets/2006#listfeed';
     const CELL_FEED_LINK_URI = 'http://schemas.google.com/spreadsheets/2006#cellsfeed';

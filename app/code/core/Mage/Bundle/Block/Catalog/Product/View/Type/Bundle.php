@@ -44,6 +44,11 @@ class Mage_Bundle_Block_Catalog_Product_View_Type_Bundle extends Mage_Catalog_Bl
      */
     protected $_mapRenderer = 'msrp_item';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOptions()
     {
         if (!$this->_options) {
@@ -66,6 +71,11 @@ class Mage_Bundle_Block_Catalog_Product_View_Type_Bundle extends Mage_Catalog_Bl
         return $this->_options;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasOptions()
     {
         $this->getOptions();
@@ -202,11 +212,24 @@ class Mage_Bundle_Block_Catalog_Product_View_Type_Bundle extends Mage_Catalog_Bl
         return $coreHelper->jsonEncode($config);
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @param $block
+     * @return
+     */
     public function addRenderer($type, $block)
     {
         $this->_optionRenderers[$type] = $block;
     }
 
+    /**
+     * @todo
+     *
+     * @param $option
+     * @return
+     */
     public function getOptionHtml($option)
     {
         if (!isset($this->_optionRenderers[$option->getType()])) {

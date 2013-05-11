@@ -14,21 +14,21 @@
  *
  * @category   Zend
  * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
- * @version    $Id: Gettext.php 22653 2010-07-22 18:41:39Z mabe $
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @version    $Id: Gettext.php 24593 2012-01-05 20:35:02Z matthew $
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 
 /** Zend_Locale */
-#require_once 'Zend/Locale.php';
+require_once 'Zend/Locale.php';
 
 /** Zend_Translate_Adapter */
-#require_once 'Zend/Translate/Adapter.php';
+require_once 'Zend/Translate/Adapter.php';
 
 /**
  * @category   Zend
  * @package    Zend_Translate
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
@@ -68,11 +68,12 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
         $this->_bigEndian = false;
         $this->_file      = @fopen($filename, 'rb');
         if (!$this->_file) {
-            #require_once 'Zend/Translate/Exception.php';
+            require_once 'Zend/Translate/Exception.php';
             throw new Zend_Translate_Exception('Error opening translation file \'' . $filename . '\'.');
         }
         if (@filesize($filename) < 10) {
-            #require_once 'Zend/Translate/Exception.php';
+            @fclose($this->_file);
+            require_once 'Zend/Translate/Exception.php';
             throw new Zend_Translate_Exception('\'' . $filename . '\' is not a gettext file');
         }
 
@@ -83,7 +84,8 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
         } else if (strtolower(substr(dechex($input[1]), -8)) == "de120495") {
             $this->_bigEndian = true;
         } else {
-            #require_once 'Zend/Translate/Exception.php';
+            @fclose($this->_file);
+            require_once 'Zend/Translate/Exception.php';
             throw new Zend_Translate_Exception('\'' . $filename . '\' is not a gettext file');
         }
         // read revision - not supported for now
@@ -131,6 +133,8 @@ class Zend_Translate_Adapter_Gettext extends Zend_Translate_Adapter {
                 }
             }
         }
+        
+        @fclose($this->_file);
 
         $this->_data[$locale][''] = trim($this->_data[$locale]['']);
         if (empty($this->_data[$locale][''])) {

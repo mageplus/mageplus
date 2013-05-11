@@ -69,6 +69,11 @@ class Mage_Review_Block_Product_View extends Mage_Catalog_Block_Product_View
             ;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewsCollection()
     {
         if (null === $this->_reviewsCollection) {

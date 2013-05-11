@@ -32,13 +32,64 @@
  * @author      Magento Core Team <core@magentocommerce.com>
  */
 
-interface IFactory{
-
+interface IFactory
+{
+    /**
+     * @todo
+     *
+     * @param $files
+     * @return
+     */
     public function getFilesName(&$files);
+    
+    /**
+     * @todo
+     *
+     * @param $paths
+     * @return
+     */
     public function getFilesPaths(&$paths);
+    
+    /**
+     * @todo
+     *
+     * @param $objs
+     * @return
+     */
     public function getFilesObj(&$objs);
+    
+    /**
+     * @todo
+     *
+     * @param $useFilter
+     * @return
+     */
     public function useFilter($useFilter);
+    
+    /**
+     * @todo
+     *
+     * @param $dirs
+     * @return
+     */
     public function getDirsName(&$dirs);
+    
+    /**
+     * @todo
+     *
+     * @param $arr
+     * @return
+     */
     public function toArray(&$arr);
+    
+    /**
+     * @todo
+     *
+     * @param $xml
+     * @param $recursionLevel
+     * @param boolean $addOpenTag
+     * @param string $rootName
+     * @return
+     */
     public function toXml(&$xml,$recursionLevel=0,$addOpenTag=true,$rootName='Struct');
 }

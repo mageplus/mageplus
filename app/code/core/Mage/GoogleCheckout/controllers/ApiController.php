@@ -26,6 +26,11 @@
 
 class Mage_GoogleCheckout_ApiController extends Mage_Core_Controller_Front_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $res = Mage::getModel('googlecheckout/api')->processCallback();
@@ -37,6 +42,11 @@ class Mage_GoogleCheckout_ApiController extends Mage_Core_Controller_Front_Actio
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function beaconAction()
     {
         Mage::getModel('googlecheckout/api')->debugData(array('request' => $_SERVER['QUERY_STRING'], 'dir' => 'in'));

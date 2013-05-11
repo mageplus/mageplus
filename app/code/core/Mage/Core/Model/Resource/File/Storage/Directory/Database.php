@@ -124,7 +124,7 @@ class Mage_Core_Model_Resource_File_Storage_Directory_Database extends Mage_Core
      * Return parent id
      *
      * @param string $path
-     * @return int
+     * @return integer
      */
     public function getParentId($path)
     {
@@ -163,8 +163,8 @@ class Mage_Core_Model_Resource_File_Storage_Directory_Database extends Mage_Core
     /**
      * Export directories from database
      *
-     * @param int $offset
-     * @param int $count
+     * @param integer $offset
+     * @param integer $count
      * @return mixed
      */
     public function exportDirectories($offset, $count = 100)

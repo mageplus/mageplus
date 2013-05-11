@@ -31,6 +31,12 @@
  */
 class Mage_Newsletter_Model_Observer
 {
+    /**
+     * @todo
+     *
+     * @param $observer
+     * @return
+     */
     public function subscribeCustomer($observer)
     {
         $customer = $observer->getEvent()->getCustomer();
@@ -56,6 +62,12 @@ class Mage_Newsletter_Model_Observer
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $schedule
+     * @return
+     */
     public function scheduledSend($schedule)
     {
         $countOfQueue  = 3;

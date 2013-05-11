@@ -34,7 +34,6 @@
  */
 class Mage_Dataflow_Model_Convert_Profile_Collection
 {
-
     protected $_xml;
 
     protected $_containers;
@@ -51,6 +50,10 @@ class Mage_Dataflow_Model_Convert_Profile_Collection
 
     protected $_containerCollectionDefaultClass = 'Mage_Dataflow_Model_Convert_Container_Collection';
 
+    /**
+     * @todo
+     * @return
+     */
     public function getContainers()
     {
         if (!$this->_containers) {
@@ -60,23 +63,45 @@ class Mage_Dataflow_Model_Convert_Profile_Collection
         return $this->_containers;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function getContainer($name)
     {
         return $this->getContainers()->getItem($name);
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param Mage_Dataflow_Model_Convert_Container_Interface $container
+     * @return
+     */
     public function addContainer($name, Mage_Dataflow_Model_Convert_Container_Interface $container)
     {
         $container = $this->getContainers()->addItem($name, $container);
         return $container;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function getProfiles()
     {
         return $this->_profiles;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function getProfile($name)
     {
         if (!isset($this->_profiles[$name])) {
@@ -85,6 +110,13 @@ class Mage_Dataflow_Model_Convert_Profile_Collection
         return $this->_profiles[$name];
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param Mage_Dataflow_Model_Convert_Profile_Interface $profile
+     * @return
+     */
     public function addProfile($name, Mage_Dataflow_Model_Convert_Profile_Interface $profile=null)
     {
         if (is_null($profile)) {
@@ -94,17 +126,35 @@ class Mage_Dataflow_Model_Convert_Profile_Collection
         return $profile;
     }
 
+    /**
+     * @todo
+     *
+     * @param $profile
+     * @return
+     */
     public function run($profile)
     {
         $this->getProfile($profile)->run();
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function getClassNameByType($type)
     {
         return $type;
     }
 
+    /**
+     * @todo
+     *
+     * @param $xml
+     * @return
+     */
     public function importXml($xml)
     {
         if (is_string($xml)) {
@@ -128,6 +178,12 @@ class Mage_Dataflow_Model_Convert_Profile_Collection
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @return
+     */
     public function importProfileXml($name)
     {
         if (!$this->_xml) {
@@ -200,5 +256,4 @@ class Mage_Dataflow_Model_Convert_Profile_Collection
 
         return $this;
     }
-
 }

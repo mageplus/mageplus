@@ -27,6 +27,11 @@
 class Mage_Adminhtml_Model_System_Config_Source_Payment_Allowedmethods
     extends Mage_Adminhtml_Model_System_Config_Source_Payment_Allmethods
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getPaymentMethods()
     {
         return Mage::getSingleton('payment/config')->getActiveMethods();

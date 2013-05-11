@@ -32,6 +32,13 @@ abstract class Mage_Eav_Model_Convert_Parser_Abstract
     protected $_attributeSetsById;
     protected $_attributeSetsByName;
 
+    /**
+     * @todo
+     *
+     * @param $stores
+     *
+     * @return
+     */
     public function getStoreIds($stores)
     {
        if (empty($stores)) {
@@ -53,11 +60,25 @@ abstract class Mage_Eav_Model_Convert_Parser_Abstract
         return $storeIds;
     }
 
+    /**
+     * @todo
+     *
+     * @param $storeId
+     *
+     * @return
+     */
     public function getStoreCode($storeId)
     {
         return Mage::app()->getStore($storeId?$storeId:0)->getCode();
     }
 
+    /**
+     * @todo
+     *
+     * @param $entityTypeId
+     *
+     * @return
+     */
     public function loadAttributeSets($entityTypeId)
     {
         $attributeSetCollection = Mage::getResourceModel('eav/entity_attribute_set_collection')
@@ -73,6 +94,14 @@ abstract class Mage_Eav_Model_Convert_Parser_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $entityTypeId
+     * @param $id
+     *
+     * @return
+     */
     public function getAttributeSetName($entityTypeId, $id)
     {
         if (!$this->_attributeSetsById) {
@@ -81,6 +110,14 @@ abstract class Mage_Eav_Model_Convert_Parser_Abstract
         return isset($this->_attributeSetsById[$id]) ? $this->_attributeSetsById[$id] : false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $entityTypeId
+     * @param $name
+     *
+     * @return
+     */
     public function getAttributeSetId($entityTypeId, $name)
     {
         if (!$this->_attributeSetsByName) {
@@ -89,6 +126,14 @@ abstract class Mage_Eav_Model_Convert_Parser_Abstract
         return isset($this->_attributeSetsByName[$name]) ? $this->_attributeSetsByName[$name] : false;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Eav_Model_Entity_Attribute_Source_Interface $source
+     * @param $value
+     *
+     * @return
+     */
     public function getSourceOptionId(Mage_Eav_Model_Entity_Attribute_Source_Interface $source, $value)
     {
         foreach ($source->getAllOptions() as $option) {

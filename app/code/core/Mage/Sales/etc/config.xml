@@ -1781,4 +1781,11 @@
             </aggregate_sales_report_bestsellers_data>
         </jobs>
     </crontab>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Sales/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

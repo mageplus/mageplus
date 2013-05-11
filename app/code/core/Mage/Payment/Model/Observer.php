@@ -39,7 +39,7 @@ class Mage_Payment_Model_Observer
      * @param Varien_Event_Observer $observer
      * @return Mage_Payment_Model_Observer
      */
-    public function salesOrderBeforeSave($observer)
+    public function salesOrderBeforeSave(Varien_Event_Observer $observer)
     {
         $order = $observer->getEvent()->getOrder();
 
@@ -70,7 +70,7 @@ class Mage_Payment_Model_Observer
      *
      * @param Varien_Event_Observer $observer
      */
-    public function prepareProductRecurringProfileOptions($observer)
+    public function prepareProductRecurringProfileOptions(Varien_Event_Observer $observer)
     {
         $product = $observer->getEvent()->getProduct();
         $buyRequest = $observer->getEvent()->getBuyRequest();

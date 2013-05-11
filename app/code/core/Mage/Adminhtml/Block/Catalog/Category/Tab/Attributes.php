@@ -48,7 +48,8 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Attributes extends Mage_Adminhtm
      * Initialize tab
      *
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->setShowGlobalIcon(true);
     }
@@ -69,7 +70,8 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Attributes extends Mage_Adminhtm
      *
      * @return Mage_Adminhtml_Block_Catalog_Category_Tab_Attributes
      */
-    protected function _prepareForm() {
+    protected function _prepareForm()
+    {
         $group      = $this->getGroup();
         $attributes = $this->getAttributes();
 

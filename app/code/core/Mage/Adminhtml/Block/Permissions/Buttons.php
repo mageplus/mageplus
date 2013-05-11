@@ -26,13 +26,17 @@
 
 class Mage_Adminhtml_Block_Permissions_Buttons extends Mage_Adminhtml_Block_Template
 {
-
     public function __construct()
     {
         parent::__construct();
         $this->setTemplate('permissions/userinfo.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('backButton',
@@ -72,21 +76,41 @@ class Mage_Adminhtml_Block_Permissions_Buttons extends Mage_Adminhtml_Block_Temp
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackButtonHtml()
     {
         return $this->getChildHtml('backButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResetButtonHtml()
     {
         return $this->getChildHtml('resetButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getSaveButtonHtml()
     {
         return $this->getChildHtml('saveButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         if( intval($this->getRequest()->getParam('rid')) == 0 ) {
@@ -95,6 +119,11 @@ class Mage_Adminhtml_Block_Permissions_Buttons extends Mage_Adminhtml_Block_Temp
         return $this->getChildHtml('deleteButton');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getUser()
     {
         return Mage::registry('user_data');

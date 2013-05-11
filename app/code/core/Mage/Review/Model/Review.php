@@ -74,27 +74,57 @@ class Mage_Review_Model_Review extends Mage_Core_Model_Abstract
         $this->_init('review/review');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductCollection()
     {
         return Mage::getResourceModel('review/review_product_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStatusCollection()
     {
         return Mage::getResourceModel('review/review_status_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @param $entityPkValue
+     * @param bool $approvedOnly
+     * @param $storeId
+     * @return
+     */
     public function getTotalReviews($entityPkValue, $approvedOnly=false, $storeId=0)
     {
         return $this->getResource()->getTotalReviews($entityPkValue, $approvedOnly, $storeId);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function aggregate()
     {
         $this->getResource()->aggregate($this);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @param $storeId
+     * @return
+     */
     public function getEntitySummary($product, $storeId=0)
     {
         $summaryData = Mage::getModel('review/review_summary')
@@ -105,16 +135,31 @@ class Mage_Review_Model_Review extends Mage_Core_Model_Abstract
         $product->setRatingSummary($summary);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPendingStatus()
     {
         return self::STATUS_PENDING;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewUrl()
     {
         return Mage::getUrl('review/product/view', array('id' => $this->getReviewId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function validate()
     {
         $errors = array();
@@ -181,6 +226,11 @@ class Mage_Review_Model_Review extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeDelete()
     {
         $this->_protectFromNonAdmin();

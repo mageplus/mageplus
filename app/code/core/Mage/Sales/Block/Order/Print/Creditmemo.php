@@ -34,6 +34,11 @@
 
 class Mage_Sales_Block_Order_Print_Creditmemo extends Mage_Sales_Block_Items_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         if ($headBlock = $this->getLayout()->getBlock('head')) {
@@ -45,31 +50,63 @@ class Mage_Sales_Block_Order_Print_Creditmemo extends Mage_Sales_Block_Items_Abs
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return Mage::getUrl('*/*/history');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPrintUrl()
     {
         return Mage::getUrl('*/*/print');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentInfoHtml()
     {
         return $this->getChildHtml('payment_info');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOrder()
     {
         return Mage::registry('current_order');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCreditmemo()
     {
         return Mage::registry('current_creditmemo');
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Core_Block_Abstract $renderer
+     * 
+     * @return
+     */
     protected function _prepareItem(Mage_Core_Block_Abstract $renderer)
     {
         $renderer->setPrintStatus(true);

@@ -149,6 +149,13 @@ abstract class Mage_Core_Controller_Varien_Action
     {
     }
 
+    /**
+     * @todo
+     *
+     * @param $action
+     *
+     * @return
+     */
     public function hasAction($action)
     {
         return is_callable(array($this, $this->getActionMethodName($action)));
@@ -272,6 +279,11 @@ abstract class Mage_Core_Controller_Varien_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function addActionLayoutHandles()
     {
         $update = $this->getLayout()->getUpdate();
@@ -291,6 +303,11 @@ abstract class Mage_Core_Controller_Varien_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function loadLayoutUpdates()
     {
         $_profilerKey = self::PROFILER_KEY . '::' .$this->getFullActionName();
@@ -309,6 +326,11 @@ abstract class Mage_Core_Controller_Varien_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function generateLayoutXml()
     {
         $_profilerKey = self::PROFILER_KEY . '::' . $this->getFullActionName();
@@ -328,6 +350,11 @@ abstract class Mage_Core_Controller_Varien_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function generateLayoutBlocks()
     {
         $_profilerKey = self::PROFILER_KEY . '::' . $this->getFullActionName();
@@ -376,8 +403,8 @@ abstract class Mage_Core_Controller_Varien_Action
 
         Varien_Profiler::start("$_profilerKey::layout_render");
 
-
-        if (''!==$output) {
+        // @todo - this is bananas
+        if (''!==$output) { 
             $this->getLayout()->addOutputBlock($output);
         }
 
@@ -395,6 +422,13 @@ abstract class Mage_Core_Controller_Varien_Action
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $action
+     *
+     * @return
+     */   
     public function dispatch($action)
     {
         try {
@@ -552,6 +586,13 @@ abstract class Mage_Core_Controller_Varien_Action
         Mage::dispatchEvent('controller_action_postdispatch', array('controller_action'=>$this));
     }
 
+    /**
+     * @todo
+     *
+     * @param $coreRoute
+     *
+     * @return
+     */
     public function norouteAction($coreRoute = null)
     {
         $status = ( $this->getRequest()->getParam('__status__') )
@@ -574,6 +615,11 @@ abstract class Mage_Core_Controller_Varien_Action
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function noCookiesAction()
     {
         $redirect = new Varien_Object();
@@ -760,7 +806,6 @@ abstract class Mage_Core_Controller_Varien_Action
      */
     protected function _redirectReferer($defaultUrl=null)
     {
-
         $refererUrl = $this->_getRefererUrl();
         if (empty($refererUrl)) {
             $refererUrl = empty($defaultUrl) ? Mage::getBaseUrl() : $defaultUrl;

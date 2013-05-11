@@ -38,6 +38,11 @@ class Mage_Tag_Block_Customer_Tags extends Mage_Customer_Block_Account_Dashboard
     protected $_minPopularity;
     protected $_maxPopularity;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _loadTags()
     {
         if (empty($this->_tags)) {
@@ -70,17 +75,32 @@ class Mage_Tag_Block_Customer_Tags extends Mage_Customer_Block_Account_Dashboard
         ksort($this->_tags);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTags()
     {
         $this->_loadTags();
         return $this->_tags;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMaxPopularity()
     {
         return $this->_maxPopularity;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMinPopularity()
     {
         return $this->_minPopularity;

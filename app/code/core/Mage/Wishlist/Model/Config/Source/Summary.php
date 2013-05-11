@@ -25,6 +25,11 @@
  */
 class Mage_Wishlist_Model_Config_Source_Summary
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

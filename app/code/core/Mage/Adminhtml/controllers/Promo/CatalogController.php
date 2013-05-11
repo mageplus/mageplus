@@ -40,6 +40,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
      */
     protected $_dirtyRulesNoticeMessage;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initAction()
     {
         $this->loadLayout()
@@ -51,6 +56,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Promotions'))->_title($this->__('Catalog Price Rules'));
@@ -68,11 +78,21 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
             ->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         $this->_forward('edit');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('Promotions'))->_title($this->__('Catalog Price Rules'));
@@ -112,6 +132,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
 
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         if ($this->getRequest()->getPost()) {
@@ -188,6 +213,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAction()
     {
         if ($id = $this->getRequest()->getParam('id')) {
@@ -220,6 +250,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
         $this->_redirect('*/*/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newConditionHtmlAction()
     {
         $id = $this->getRequest()->getParam('id');
@@ -244,6 +279,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
         $this->getResponse()->setBody($html);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function chooserAction()
     {
         switch ($this->getRequest()->getParam('attribute')) {
@@ -263,6 +303,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newActionHtmlAction()
     {
         $id = $this->getRequest()->getParam('id');
@@ -314,6 +359,11 @@ class Mage_Adminhtml_Promo_CatalogController extends Mage_Adminhtml_Controller_A
     {
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('promo/catalog');

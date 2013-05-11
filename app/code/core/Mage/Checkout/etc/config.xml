@@ -262,4 +262,11 @@
             </payment_failed>
         </checkout>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Checkout/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

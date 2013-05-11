@@ -62,6 +62,11 @@ class Mage_Payment_Model_Source_Cctype
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         /**

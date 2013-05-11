@@ -14,25 +14,25 @@
  *
  * @category   Zend
  * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: FeedSet.php 22662 2010-07-24 17:37:36Z mabe $
+ * @version    $Id: FeedSet.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Feed_Reader
  */
-#require_once 'Zend/Feed/Reader.php';
+require_once 'Zend/Feed/Reader.php';
 
 /**
  * @see Zend_Uri
  */
-#require_once 'Zend/Uri.php';
+require_once 'Zend/Uri.php';
 
 /**
  * @category   Zend
  * @package    Zend_Feed_Reader
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Feed_Reader_FeedSet extends ArrayObject
@@ -81,7 +81,7 @@ class Zend_Feed_Reader_FeedSet extends ArrayObject
             ));
         }
     }
-    
+
     /**
      *  Attempt to turn a relative URI into an absolute URI
      */
@@ -103,7 +103,7 @@ class Zend_Feed_Reader_FeedSet extends ArrayObject
         }
         return $link;
     }
-    
+
     /**
      *  Canonicalize relative path
      */

@@ -118,6 +118,11 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
         return $this->_order->getStore();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initSubtotal()
     {
         $store  = $this->getStore();
@@ -181,6 +186,11 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initShipping()
     {
         $store  = $this->getStore();
@@ -236,6 +246,11 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initDiscount()
     {
 //        $store  = $this->getStore();
@@ -247,6 +262,11 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
 //        }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initGrandTotal()
     {
         $store  = $this->getStore();
@@ -284,16 +304,31 @@ class Mage_Tax_Block_Sales_Order_Tax extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOrder()
     {
         return $this->_order;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLabelProperties()
     {
         return $this->getParentBlock()->getLabelProperties();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getValueProperties()
     {
         return $this->getParentBlock()->getValueProperties();

@@ -42,6 +42,11 @@ class Mage_Adminhtml_Block_Cms_Page_Grid extends Mage_Adminhtml_Block_Widget_Gri
         $this->setDefaultDir('ASC');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('cms/page')->getCollection();
@@ -52,6 +57,11 @@ class Mage_Adminhtml_Block_Cms_Page_Grid extends Mage_Adminhtml_Block_Widget_Gri
         return parent::_prepareCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareColumns()
     {
         $baseUrl = $this->getUrl();
@@ -67,8 +77,6 @@ class Mage_Adminhtml_Block_Cms_Page_Grid extends Mage_Adminhtml_Block_Widget_Gri
             'align'     => 'left',
             'index'     => 'identifier'
         ));
-
-
 
         $this->addColumn('root_template', array(
             'header'    => Mage::helper('cms')->__('Layout'),
@@ -123,12 +131,24 @@ class Mage_Adminhtml_Block_Cms_Page_Grid extends Mage_Adminhtml_Block_Widget_Gri
         return parent::_prepareColumns();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _afterLoadCollection()
     {
         $this->getCollection()->walk('afterLoad');
         parent::_afterLoadCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @param $collection
+     * @param $column
+     * @return
+     */
     protected function _filterStoreCondition($collection, $column)
     {
         if (!$value = $column->getFilter()->getValue()) {

@@ -102,7 +102,7 @@ class Mage_Log_Model_Aggregation extends Mage_Core_Model_Abstract
             }
 
             $lastDateRecord = $date;
-            $date = $to; 
+            $date = $to;
         }
         return $lastDateRecord;
     }
@@ -123,21 +123,47 @@ class Mage_Log_Model_Aggregation extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @param $data
+     * @return
+     */
     private function _update($id, $data)
     {
         return $this->_getResource()->saveLog($data, $id);
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     private function _insert($data)
     {
         return $this->_getResource()->saveLog($data);
     }
 
+    /**
+     * @todo
+     *
+     * @param $from
+     * @param $to
+     * @param $store
+     * @return
+     */
     private function _getCounts($from, $to, $store)
     {
         return $this->_getResource()->getCounts($from, $to, $store);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLastRecordDate()
     {
         $result = $this->_getResource()->getLastRecordDate();
@@ -147,6 +173,13 @@ class Mage_Log_Model_Aggregation extends Mage_Core_Model_Abstract
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @param $in
+     * @param $offset
+     * @return
+     */
     private function _date($in, $offset = null)
     {
         $out = $in;
@@ -155,6 +188,13 @@ class Mage_Log_Model_Aggregation extends Mage_Core_Model_Abstract
         return $out;
     }
 
+    /**
+     * @todo
+     *
+     * @param $in
+     * @param $offset
+     * @return
+     */
     private function _timestamp($in, $offset = null)
     {
         $out = $in;

@@ -27,5 +27,10 @@
 
 interface Mage_Eav_Model_Entity_Increment_Interface
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getNextId();
 }

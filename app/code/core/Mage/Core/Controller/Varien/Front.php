@@ -40,6 +40,14 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
 
     const XML_STORE_ROUTERS_PATH = 'web/routers';
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $value
+     *
+     * @return
+     */
     public function setDefault($key, $value=null)
     {
         if (is_array($key)) {
@@ -50,6 +58,13 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     *
+     * @return
+     */
     public function getDefault($key=null)
     {
         if (is_null($key)) {
@@ -153,6 +168,11 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function dispatch()
     {
         $request = $this->getRequest();
@@ -191,6 +211,13 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $routeName
+     *
+     * @return
+     */
     public function getRouterByRoute($routeName)
     {
         // empty route supplied - return base url
@@ -212,6 +239,13 @@ class Mage_Core_Controller_Varien_Front extends Varien_Object
         return $router;
     }
 
+    /**
+     * @todo
+     *
+     * @param $frontName
+     *
+     * @return
+     */
     public function getRouterByFrontName($frontName)
     {
         // empty route supplied - return base url

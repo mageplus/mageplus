@@ -70,4 +70,11 @@
             </modules>
         </translate>
     </frontend>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Rule/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

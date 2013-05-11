@@ -27,6 +27,11 @@ class Mage_Sales_Block_Order_Invoice_Totals extends Mage_Sales_Block_Order_Total
 {
     protected $_invoice = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getInvoice()
     {
         if ($this->_invoice === null) {
@@ -41,6 +46,13 @@ class Mage_Sales_Block_Order_Invoice_Totals extends Mage_Sales_Block_Order_Total
         return $this->_invoice;
     }
 
+    /**
+     * @todo
+     *
+     * @param $invoice
+     *
+     * @return
+     */
     public function setInvoice($invoice)
     {
         $this->_invoice = $invoice;

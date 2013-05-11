@@ -32,7 +32,6 @@
  */
 class Mage_Core_Block_Text_Tag_Js extends Mage_Core_Block_Text_Tag
 {
-
     protected function _construct()
     {
         parent::_construct();
@@ -40,6 +39,13 @@ class Mage_Core_Block_Text_Tag_Js extends Mage_Core_Block_Text_Tag
         $this->setTagParams(array('language'=>'javascript', 'type'=>'text/javascript'));
     }
 
+    /**
+     * @todo
+     *
+     * @param $src
+     * @param $type
+     * @return
+     */
     function setSrc($src, $type=null)
     {
         $type = (string)$type;
@@ -50,5 +56,4 @@ class Mage_Core_Block_Text_Tag_Js extends Mage_Core_Block_Text_Tag
 
         return $this->setTagParam('src', $url);
     }
-
 }

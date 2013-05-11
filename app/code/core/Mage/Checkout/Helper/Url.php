@@ -65,21 +65,41 @@ class Mage_Checkout_Helper_Url extends Mage_Core_Helper_Url
         return $this->_getUrl('checkout/multishipping');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMSLoginUrl()
     {
         return $this->_getUrl('checkout/multishipping/login', array('_secure'=>true, '_current'=>true));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMSAddressesUrl()
     {
         return $this->_getUrl('checkout/multishipping/addresses');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMSShippingAddressSavedUrl()
     {
         return $this->_getUrl('checkout/multishipping_address/shippingSaved');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMSRegisterUrl()
     {
         return $this->_getUrl('checkout/multishipping/register');

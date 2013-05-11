@@ -48,6 +48,10 @@ class Mage_Dataflow_Model_Convert_Parser_Xml_Excel extends Mage_Dataflow_Model_C
      */
     protected $_parseFieldNames;
 
+    /**
+     * @todo
+     * @return
+     */
     public function parse()
     {
         $adapterName   = $this->getVar('adapter', null);
@@ -273,6 +277,12 @@ class Mage_Dataflow_Model_Convert_Parser_Xml_Excel extends Mage_Dataflow_Model_C
         return $xmlString;
     }
 
+    /**
+     * @todo
+     *
+     * @param $xmlString
+     * @return
+     */
     protected function _saveParsedRow($xmlString)
     {
         $xml = '<'.'?xml version="1.0"?'.'><'.'?mso-application progid="Excel.Sheet"?'
@@ -336,6 +346,10 @@ class Mage_Dataflow_Model_Convert_Parser_Xml_Excel extends Mage_Dataflow_Model_C
         return $this;
     }
 
+    /**
+     * @todo
+     * @return
+     */
     public function unparse()
     {
         $batchExport = $this->getBatchExportModel()

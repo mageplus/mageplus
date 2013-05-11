@@ -35,6 +35,11 @@ require_once "Varien/Pear/Package.php";
  */
 class Mage_Install_Model_Installer_Pear extends Mage_Install_Model_Installer_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPackages()
     {
         $packages = array(
@@ -50,6 +55,11 @@ class Mage_Install_Model_Installer_Pear extends Mage_Install_Model_Installer_Abs
         return $packages;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function checkDownloads()
     {
         $pear = new Varien_Pear;

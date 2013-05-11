@@ -28,26 +28,59 @@ abstract class Mage_Core_Controller_Varien_Router_Abstract
 {
     protected $_front;
 
+    /**
+     * @todo
+     *
+     * @param $front
+     * 
+     * @return
+     */
     public function setFront($front)
     {
         $this->_front = $front;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFront()
     {
         return $this->_front;
     }
 
+    /**
+     * @todo
+     *
+     * @param $routeName
+     * 
+     * @return
+     */
     public function getFrontNameByRoute($routeName)
     {
         return $routeName;
     }
 
+    /**
+     * @todo
+     *
+     * @param $frontName
+     *
+     * @return
+     */
     public function getRouteByFrontName($frontName)
     {
         return $frontName;
     }
 
+    /**
+     * @todo
+     * 
+     * @param Zend_Controller_Request_Http $request
+     *
+     * @return
+     */
     abstract public function match(Zend_Controller_Request_Http $request);
 }

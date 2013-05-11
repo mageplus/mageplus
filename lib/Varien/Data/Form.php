@@ -51,37 +51,76 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
     static protected $_defaultFieldsetRenderer;
     static protected $_defaultFieldsetElementRenderer;
 
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes = array())
     {
         parent::__construct($attributes);
         $this->_allElements = new Varien_Data_Form_Element_Collection($this);
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Renderer_Interface $renderer
+     * @return
+     */
     public static function setElementRenderer(Varien_Data_Form_Element_Renderer_Interface $renderer)
     {
         self::$_defaultElementRenderer = $renderer;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Renderer_Interface $renderer
+     * @return
+     */
     public static function setFieldsetRenderer(Varien_Data_Form_Element_Renderer_Interface $renderer)
     {
         self::$_defaultFieldsetRenderer = $renderer;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Renderer_Interface $renderer
+     * @return
+     */
     public static function setFieldsetElementRenderer(Varien_Data_Form_Element_Renderer_Interface $renderer)
     {
         self::$_defaultFieldsetElementRenderer = $renderer;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function getElementRenderer()
     {
         return self::$_defaultElementRenderer;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function getFieldsetRenderer()
     {
         return self::$_defaultFieldsetRenderer;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function getFieldsetElementRenderer()
     {
         return self::$_defaultFieldsetElementRenderer;
@@ -114,13 +153,19 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
      * Check existing element
      *
      * @param   string $elementId
-     * @return  bool
+     * @return  boolean
      */
     protected function _elementIdExists($elementId)
     {
         return isset($this->_elementsIndex[$elementId]);
     }
 
+    /**
+     * @todo
+     *
+     * @param $element
+     * @return
+     */
     public function addElementToCollection($element)
     {
         $this->_elementsIndex[$element->getId()] = $element;
@@ -128,6 +173,12 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $elementId
+     * @return
+     */
     public function checkElementId($elementId)
     {
         if ($this->_elementIdExists($elementId)) {
@@ -136,11 +187,22 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getForm()
     {
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $elementId
+     * @return
+     */
     public function getElement($elementId)
     {
         if ($this->_elementIdExists($elementId)) {
@@ -149,6 +211,12 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $values
+     * @return
+     */
     public function setValues($values)
     {
         foreach ($this->_allElements as $element) {
@@ -162,6 +230,12 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $values
+     * @return
+     */
     public function addValues($values)
     {
         if (!is_array($values)) {
@@ -192,6 +266,13 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $name
+     * @param $suffix
+     * @return
+     */
     public function addSuffixToName($name, $suffix)
     {
         if (!$name) {
@@ -208,6 +289,12 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return $newName;
     }
 
+    /**
+     * @todo
+     *
+     * @param $elementId
+     * @return
+     */
     public function removeField($elementId)
     {
         if ($this->_elementIdExists($elementId)) {
@@ -216,17 +303,33 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $prefix
+     * @return
+     */
     public function setFieldContainerIdPrefix($prefix)
     {
         $this->setData('field_container_id_prefix', $prefix);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldContainerIdPrefix()
     {
         return $this->getData('field_container_id_prefix');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toHtml()
     {
         Varien_Profiler::start('form/toHtml');
@@ -251,6 +354,11 @@ class Varien_Data_Form extends Varien_Data_Form_Abstract
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHtml()
     {
         return $this->toHtml();

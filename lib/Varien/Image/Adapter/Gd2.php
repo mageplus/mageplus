@@ -43,6 +43,12 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
      */
     protected $_resized = false;
 
+    /**
+     * @todo
+     *
+     * @param $filename
+     * @return
+     */
     public function open($filename)
     {
         $this->_fileName = $filename;
@@ -51,6 +57,13 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         $this->_imageHandler = call_user_func($this->_getCallback('create'), $this->_fileName);
     }
 
+    /**
+     * @todo
+     *
+     * @param $destination
+     * @param $newName
+     * @return
+     */
     public function save($destination=null, $newName=null)
     {
         $fileName = ( !isset($destination) ) ? $this->_fileName : $destination;
@@ -127,6 +140,11 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         call_user_func_array($this->_getCallback('output'), $functionParameters);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function display()
     {
         header("Content-type: ".$this->getMimeType());
@@ -155,6 +173,12 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         return self::$_callbacks[$fileType][$callbackType];
     }
 
+    /**
+     * @todo
+     *
+     * @param $imageResourceTo
+     * @return
+     */
     private function _fillBackgroundColor(&$imageResourceTo)
     {
         // try to keep transparency, if any
@@ -217,12 +241,20 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
      * @param string $fileName
      * @return boolean
      */
-
     public function checkAlpha($fileName)
     {
         return ((ord(file_get_contents($fileName, false, null, 25, 1)) & 6) & 4) == 4;
     }
 
+    /**
+     * @todo
+     *
+     * @param $imageResource
+     * @param $fileType
+     * @param boolean $isAlpha
+     * @param boolean $isTrueColor
+     * @return
+     */
     private function _getTransparency($imageResource, $fileType, &$isAlpha = false, &$isTrueColor = false)
     {
         $isAlpha     = false;
@@ -339,6 +371,12 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         $this->_resized = true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $angle
+     * @return
+     */
     public function rotate($angle)
     {
 /*
@@ -357,6 +395,16 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         $this->refreshImageDimensions();
     }
 
+    /**
+     * @todo
+     *
+     * @param $watermarkImage
+     * @param $positionX
+     * @param $positionY
+     * @param $watermarkImageOpacity
+     * @param boolean $repeat
+     * @return
+     */
     public function watermark($watermarkImage, $positionX=0, $positionY=0, $watermarkImageOpacity=30, $repeat=false)
     {
         list($watermarkSrcWidth, $watermarkSrcHeight, $watermarkFileType, ) = getimagesize($watermarkImage);
@@ -496,6 +544,15 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         $this->refreshImageDimensions();
     }
 
+    /**
+     * @todo
+     *
+     * @param $top
+     * @param $left
+     * @param $right
+     * @param $bottom
+     * @return
+     */
     public function crop($top=0, $left=0, $right=0, $bottom=0)
     {
         if( $left == 0 && $top == 0 && $right == 0 && $bottom == 0 ) {
@@ -523,6 +580,11 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         $this->refreshImageDimensions();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function checkDependencies()
     {
         foreach( $this->_requiredExtensions as $value ) {
@@ -532,12 +594,22 @@ class Varien_Image_Adapter_Gd2 extends Varien_Image_Adapter_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     private function refreshImageDimensions()
     {
         $this->_imageSrcWidth = imagesx($this->_imageHandler);
         $this->_imageSrcHeight = imagesy($this->_imageHandler);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     function __destruct()
     {
         @imagedestroy($this->_imageHandler);

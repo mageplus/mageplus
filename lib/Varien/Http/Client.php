@@ -40,6 +40,13 @@ class Varien_Http_Client extends Zend_Http_Client
      */
     protected $_urlEncodeBody = true;
 
+    /**
+     * @todo
+     *
+     * @param $uri
+     * @param $config
+     * @return
+     */
     public function __construct($uri = null, $config = null)
     {
         $this->config['useragent'] = 'Varien_Http_Client';
@@ -47,6 +54,11 @@ class Varien_Http_Client extends Zend_Http_Client
         parent::__construct($uri, $config);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _trySetCurlAdapter()
     {
         if (extension_loaded('curl')) {
@@ -55,6 +67,12 @@ class Varien_Http_Client extends Zend_Http_Client
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $method
+     * @return
+     */
     public function request($method = null)
     {
         $this->_trySetCurlAdapter();

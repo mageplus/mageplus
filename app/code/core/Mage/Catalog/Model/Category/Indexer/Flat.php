@@ -213,7 +213,7 @@ class Mage_Catalog_Model_Category_Indexer_Flat extends Mage_Index_Model_Indexer_
         return $this;
     }
 
-/**
+    /**
      * Process event
      *
      * @param Mage_Index_Model_Event $event

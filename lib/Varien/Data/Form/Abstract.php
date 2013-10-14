@@ -34,7 +34,6 @@
  */
 class Varien_Data_Form_Abstract extends Varien_Object
 {
-
     /**
      * Form level elements collection
      *
@@ -50,7 +49,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     protected $_types = array();
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param array $attributes
      */
@@ -60,7 +59,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $type
      * @param string $className
@@ -73,7 +72,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @return Varien_Data_Form_Element_Collection
      */
@@ -150,7 +149,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $elementId
      * @return Varien_Data_Form_Abstract
@@ -162,7 +161,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $elementId
      * @param array $config
@@ -179,7 +178,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param string $elementId
      * @param array $config
@@ -195,7 +194,7 @@ class Varien_Data_Form_Abstract extends Varien_Object
     }
 
     /**
-     * Enter description here...
+     * @todo
      *
      * @param array $arrAttributes
      * @return array
@@ -210,5 +209,4 @@ class Varien_Data_Form_Abstract extends Varien_Object
         }
         return $res;
     }
-
 }

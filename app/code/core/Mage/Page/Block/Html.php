@@ -53,16 +53,31 @@ class Mage_Page_Block_Html extends Mage_Core_Block_Template
         $this->_beforeCacheUrl();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseUrl()
     {
         return $this->_urls['base'];
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBaseSecureUrl()
     {
         return $this->_urls['baseSecure'];
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrentUrl()
     {
         return $this->_urls['current'];
@@ -106,17 +121,33 @@ class Mage_Page_Block_Html extends Mage_Core_Block_Template
         return $logo;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPrintLogoText()
     {
         return Mage::getStoreConfig('sales/identity/address');
     }
 
+    /**
+     * @todo
+     *
+     * @param $title
+     * @return
+     */
     public function setHeaderTitle($title)
     {
         $this->_title = $title;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderTitle()
     {
         return $this->_title;
@@ -135,6 +166,11 @@ class Mage_Page_Block_Html extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLang()
     {
         if (!$this->hasData('lang')) {
@@ -143,6 +179,12 @@ class Mage_Page_Block_Html extends Mage_Core_Block_Template
         return $this->getData('lang');
     }
 
+    /**
+     * @todo
+     *
+     * @param $theme
+     * @return
+     */
     public function setTheme($theme)
     {
         $arr = explode('/', $theme);
@@ -154,11 +196,21 @@ class Mage_Page_Block_Html extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBodyClass()
     {
         return $this->_getData('body_class');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAbsoluteFooter()
     {
         return Mage::getStoreConfig('design/footer/absolute_footer');

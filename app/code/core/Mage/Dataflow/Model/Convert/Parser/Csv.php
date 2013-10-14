@@ -38,6 +38,10 @@ class Mage_Dataflow_Model_Convert_Parser_Csv extends Mage_Dataflow_Model_Convert
 
     protected $_mapfields = array();
 
+    /**
+     * @todo
+     * @return
+     */
     public function parse()
     {
         // fixed for multibyte characters
@@ -159,6 +163,13 @@ class Mage_Dataflow_Model_Convert_Parser_Csv extends Mage_Dataflow_Model_Convert
 //        return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $i
+     * @param $line
+     * @return
+     */
     public function parseRow($i, $line)
     {
         if (sizeof($line) == 1) return false;
@@ -225,6 +236,12 @@ class Mage_Dataflow_Model_Convert_Parser_Csv extends Mage_Dataflow_Model_Convert
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $args
+     * @return
+     */
     public function unparseRow($args)
     {
         $i = $args['i'];

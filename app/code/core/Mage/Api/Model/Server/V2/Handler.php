@@ -41,8 +41,7 @@ class Mage_Api_Model_Server_V2_Handler extends Mage_Api_Model_Server_Handler_Abs
      * @param sttring $function
      * @param array $args
      */
-
-    public function __call( $function, $args )
+    public function __call($function, $args)
     {
         $sessionId = array_shift( $args );
         $apiKey = '';

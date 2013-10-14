@@ -177,6 +177,11 @@ class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function hasVerification()
     {
         $configData = $this->getConfigData('useccv');
@@ -186,6 +191,11 @@ class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
         return (bool) $configData;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getVerificationRegEx()
     {
         $verificationExpList = array(
@@ -202,6 +212,13 @@ class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
         return $verificationExpList;
     }
 
+    /**
+     * @todo
+     *
+     * @param $expYear
+     * @param $expMonth
+     * @return
+     */
     protected function _validateExpDate($expYear, $expMonth)
     {
         $date = Mage::app()->getLocale()->date();
@@ -213,6 +230,12 @@ class Mage_Payment_Model_Method_Cc extends Mage_Payment_Model_Method_Abstract
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * @return
+     */
     public function OtherCcType($type)
     {
         return $type=='OT';

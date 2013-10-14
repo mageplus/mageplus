@@ -36,6 +36,11 @@ class Mage_Catalog_Block_Product_View_Description extends Mage_Core_Block_Templa
 {
     protected $_product = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     function getProduct()
     {
         if (!$this->_product) {

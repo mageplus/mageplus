@@ -105,6 +105,12 @@ abstract class Mage_Dataflow_Model_Convert_Parser_Abstract
         return Varien_Object_Cache::singleton()->load($this->_batchImport);
     }
 
+    /**
+     * @todo
+     *
+     * @param $file
+     * @return
+     */
     protected function _copy($file)
     {
         $ioAdapter = new Varien_Io_File();

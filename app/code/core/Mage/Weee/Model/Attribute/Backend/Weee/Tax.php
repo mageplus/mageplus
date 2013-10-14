@@ -26,10 +26,16 @@
 
 class Mage_Weee_Model_Attribute_Backend_Weee_Tax extends Mage_Catalog_Model_Product_Attribute_Backend_Price
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public static function getBackendModelName()
     {
         return 'weee/attribute_backend_weee_tax';
     }
+    
     /**
      * Retrieve resource model
      *
@@ -99,6 +105,12 @@ class Mage_Weee_Model_Attribute_Backend_Weee_Tax extends Mage_Catalog_Model_Prod
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function afterSave($object)
     {
         $orig = $object->getOrigData($this->getAttribute()->getName());
@@ -138,12 +150,23 @@ class Mage_Weee_Model_Attribute_Backend_Weee_Tax extends Mage_Catalog_Model_Prod
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * @return
+     */
     public function afterDelete($object)
     {
         $this->_getResource()->deleteProductData($object, $this->getAttribute());
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTable()
     {
         return $this->_getResource()->getTable('weee/tax');

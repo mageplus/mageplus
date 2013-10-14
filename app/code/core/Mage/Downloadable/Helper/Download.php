@@ -198,6 +198,11 @@ class Mage_Downloadable_Helper_Download extends Mage_Core_Helper_Abstract
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getContentType()
     {
         $handle = $this->_getHandle();
@@ -217,6 +222,11 @@ class Mage_Downloadable_Helper_Download extends Mage_Core_Helper_Abstract
         return $this->_contentType;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFilename()
     {
         $handle = $this->_getHandle();
@@ -279,6 +289,11 @@ class Mage_Downloadable_Helper_Download extends Mage_Core_Helper_Abstract
         return Mage::app()->getFrontController()->getResponse();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function output()
     {
         $handle = $this->_getHandle();

@@ -26,7 +26,6 @@
 
 class Mage_Connect_Structures_Node
 {
-    
     protected $_data = null;    
     protected $_metadata = array();    
     protected $_arcs = array();    
@@ -43,7 +42,6 @@ class Mage_Connect_Structures_Node
     }
 
     /**
-     *
      * Node graph setter. 
      * This method should not be called directly. 
      * Use Graph::addNode instead.
@@ -56,7 +54,6 @@ class Mage_Connect_Structures_Node
     }
 
     /**
-     *
      * Node data getter.
      *
      * Each graph node can contain a reference to one variable. This is the getter for that reference.
@@ -82,7 +79,6 @@ class Mage_Connect_Structures_Node
     }
 
     /**
-     *
      * Test for existence of metadata under a given key.
      *
      * @param    string    Key to test
@@ -95,7 +91,6 @@ class Mage_Connect_Structures_Node
     }
 
     /**
-     *
      * Get node metadata
      *
      * @param    string  $key 
@@ -115,7 +110,6 @@ class Mage_Connect_Structures_Node
     }
 
     /**
-     *
      * Delete metadata by key
      *
      * @param    string  Key
@@ -129,7 +123,6 @@ class Mage_Connect_Structures_Node
     }
         
     /**
-     *
      * Node metadata setter
      *
      * Each graph node can contain multiple 'metadata' entries, each stored under a different key, as in an
@@ -144,6 +137,11 @@ class Mage_Connect_Structures_Node
         $this->_metadata[$key] =& $data;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _connectTo(&$destinationNode) 
     {
         $this->_arcs[] =& $destinationNode;
@@ -177,7 +175,6 @@ class Mage_Connect_Structures_Node
             $destinationNode->_connectTo($this);
         }
     }
-
 
     /**
      * Return nodes connected to this one.
@@ -253,5 +250,4 @@ class Mage_Connect_Structures_Node
         }
         return count($this->_arcs);
     }
-
 }

@@ -334,7 +334,6 @@ class Mage_HTTP_Client_Socket
 		return $out;
 	}
 
-
 	/**
 	 * Get cookies array with details
 	 * (domain, expire time etc)
@@ -433,7 +432,6 @@ class Mage_HTTP_Client_Socket
 		$this->processResponseBody();
 	}
 
-
 	/**
 	 * Process redirect
 	 */
@@ -441,7 +439,6 @@ class Mage_HTTP_Client_Socket
 	{
 		// TODO: implement redircets support
 	}
-
 	
 	/**
 	 * Get response status code

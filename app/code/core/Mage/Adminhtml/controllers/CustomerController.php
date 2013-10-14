@@ -33,7 +33,12 @@
  */
 class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
 {
-
+    /**
+     * @todo
+     *
+     * @param $idFieldName
+     * @return
+     */
     protected function _initCustomer($idFieldName = 'id')
     {
         $this->_title($this->__('Customers'))->_title($this->__('Manage Customers'));
@@ -83,6 +88,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->loadLayout();
@@ -442,6 +452,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function wishlistAction()
     {
         $this->_initCustomer();
@@ -559,6 +574,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function tagGridAction()
     {
         $this->_initCustomer();
@@ -569,6 +589,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function validateAction()
     {
         $response       = new Varien_Object();
@@ -653,6 +678,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->getResponse()->setBody($response->toJson());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massSubscribeAction()
     {
         $customersIds = $this->getRequest()->getParam('customer');
@@ -676,6 +706,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/index');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massUnsubscribeAction()
     {
         $customersIds = $this->getRequest()->getParam('customer');
@@ -699,6 +734,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/index');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massDeleteAction()
     {
         $customersIds = $this->getRequest()->getParam('customer');
@@ -723,6 +763,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/index');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massAssignGroupAction()
     {
         $customersIds = $this->getRequest()->getParam('customer');
@@ -746,6 +791,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         $this->_redirect('*/*/index');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function viewfileAction()
     {
         $file   = null;
@@ -818,6 +868,11 @@ class Mage_Adminhtml_CustomerController extends Mage_Adminhtml_Controller_Action
         exit();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('customer/manage');

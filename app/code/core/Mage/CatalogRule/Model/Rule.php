@@ -383,9 +383,6 @@ class Mage_CatalogRule_Model_Rule extends Mage_Rule_Model_Abstract
         return $this;
     }
 
-
-
-
     /**
      * @deprecated after 1.11.2.0
      *

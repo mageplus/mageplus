@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Cms_Wysiwyg_Images_Tree extends Mage_Adminhtml_Block_Template
 {
-
     /**
      * Json tree builder
      *

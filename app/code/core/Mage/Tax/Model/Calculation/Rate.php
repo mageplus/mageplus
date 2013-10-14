@@ -137,6 +137,12 @@ class Mage_Tax_Model_Calculation_Rate extends Mage_Core_Model_Abstract
         return parent::_afterDelete();
     }
 
+    /**
+     * @todo
+     *
+     * @param $titles
+     * @return
+     */
     public function saveTitles($titles = null)
     {
         if (is_null($titles)) {
@@ -158,6 +164,11 @@ class Mage_Tax_Model_Calculation_Rate extends Mage_Core_Model_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTitleModel()
     {
         if (is_null($this->_titleModel)) {
@@ -166,6 +177,11 @@ class Mage_Tax_Model_Calculation_Rate extends Mage_Core_Model_Abstract
         return $this->_titleModel;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTitles()
     {
         if (is_null($this->_titles)) {
@@ -174,6 +190,11 @@ class Mage_Tax_Model_Calculation_Rate extends Mage_Core_Model_Abstract
         return $this->_titles;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteAllRates()
     {
         $this->_getResource()->deleteAllRates();
@@ -192,7 +213,6 @@ class Mage_Tax_Model_Calculation_Rate extends Mage_Core_Model_Abstract
         $this->load($code, 'code');
         return $this;
     }
-
 
     /**
      * Check if rate exists in tax rule

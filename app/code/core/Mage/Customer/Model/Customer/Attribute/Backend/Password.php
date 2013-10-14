@@ -50,6 +50,13 @@ class Mage_Customer_Model_Customer_Attribute_Backend_Password extends Mage_Eav_M
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $object
+     * 
+     * @return
+     */
     public function validate($object)
     {
         if ($password = $object->getPassword()) {

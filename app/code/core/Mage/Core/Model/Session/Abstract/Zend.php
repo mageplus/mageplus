@@ -40,11 +40,21 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
      */
     protected $_namespace;
 
+    /**
+     * Gets the session namespace
+     *
+     * @return Zend_Session_Namespace
+     */
     public function getNamespace()
     {
         return $this->_namespace;
     }
 
+    /**
+     * Starts the session
+     *
+     * @return Mage_Core_Model_Session_Abstract_Zend
+     */
     public function start()
     {
         Varien_Profiler::start(__METHOD__.'/setOptions');
@@ -116,7 +126,7 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
      * Redeclaration object getter
      *
      * @param   string $var
-     * @param   bool $clear
+     * @param   boolean $clear
      * @return  mixed
      */
     public function getData($var=null, $clear=false)
@@ -155,6 +165,12 @@ abstract class Mage_Core_Model_Session_Abstract_Zend extends Varien_Object
         return Zend_Session::getId();
     }
 
+    /**
+     * Sets the session ID
+     *
+     * @param string $id The ID to set for the session
+     * @return Mage_Core_Model_Session_Abstract_Zend 
+     */
     public function setSessionId($id=null)
     {
         if (!is_null($id)) {

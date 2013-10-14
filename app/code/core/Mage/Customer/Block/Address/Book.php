@@ -33,6 +33,11 @@
  */
 class Mage_Customer_Block_Address_Book extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     * 
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->getLayout()->getBlock('head')
@@ -41,11 +46,21 @@ class Mage_Customer_Block_Address_Book extends Mage_Core_Block_Template
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAddAddressUrl()
     {
         return $this->getUrl('customer/address/new', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getBackUrl()
     {
         if ($this->getRefererUrl()) {
@@ -54,43 +69,87 @@ class Mage_Customer_Block_Address_Book extends Mage_Core_Block_Template
         return $this->getUrl('customer/account/', array('_secure'=>true));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getDeleteUrl()
     {
         return $this->getUrl('customer/address/delete');
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getAddressEditUrl($address)
     {
         return $this->getUrl('customer/address/edit', array('_secure'=>true, 'id'=>$address->getId()));
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryBillingAddress()
     {
         return $this->getCustomer()->getPrimaryBillingAddress();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getPrimaryShippingAddress()
     {
         return $this->getCustomer()->getPrimaryShippingAddress();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function hasPrimaryAddress()
     {
         return $this->getPrimaryBillingAddress() || $this->getPrimaryShippingAddress();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getAdditionalAddresses()
     {
         $addresses = $this->getCustomer()->getAdditionalAddresses();
         return empty($addresses) ? false : $addresses;
     }
 
+    /**
+     * @todo
+     *
+     * @param $address
+     * 
+     * @return
+     */
     public function getAddressHtml($address)
     {
         return $address->format('html');
         //return $address->toString($address->getHtmlFormat());
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomer()
     {
         $customer = $this->getData('customer');

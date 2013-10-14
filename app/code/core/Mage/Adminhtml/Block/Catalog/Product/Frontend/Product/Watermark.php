@@ -35,6 +35,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Frontend_Product_Watermark extends Ma
 {
     const XML_PATH_IMAGE_TYPES = 'global/catalog/product/media/image_types';
 
+    /**
+     * @todo
+     *
+     * @param Varien_Data_Form_Element_Abstract $element
+     * @return
+     */
     public function render(Varien_Data_Form_Element_Abstract $element)
     {
         $html = $this->_getHeaderHtml($element);
@@ -80,6 +86,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Frontend_Product_Watermark extends Ma
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $element
+     * @return
+     */
     protected function _getHeaderHtml($element)
     {
         $id = $element->getHtmlId();
@@ -99,6 +111,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Frontend_Product_Watermark extends Ma
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @param $element
+     * @return
+     */
     protected function _getFooterHtml($element)
     {
         $html = '</tbody></table></fieldset>';

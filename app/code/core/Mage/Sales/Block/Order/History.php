@@ -52,6 +52,11 @@ class Mage_Sales_Block_Order_History extends Mage_Core_Block_Template
         Mage::app()->getFrontController()->getAction()->getLayout()->getBlock('root')->setHeaderTitle(Mage::helper('sales')->__('My Orders'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
@@ -63,26 +68,57 @@ class Mage_Sales_Block_Order_History extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPagerHtml()
     {
         return $this->getChildHtml('pager');
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
     public function getViewUrl($order)
     {
         return $this->getUrl('*/*/view', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     * 
+     * @return
+     */
     public function getTrackUrl($order)
     {
         return $this->getUrl('*/*/track', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getReorderUrl($order)
     {
         return $this->getUrl('*/*/reorder', array('order_id' => $order->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return $this->getUrl('customer/account/');

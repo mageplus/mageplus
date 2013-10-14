@@ -35,7 +35,7 @@
 class Mage_Adminhtml_Block_Catalog_Category_Helper_Sortby_Available
     extends Varien_Data_Form_Element_Multiselect
 {
-/**
+    /**
      * Retrieve Element HTML fragment
      *
      * @return string

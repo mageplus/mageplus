@@ -63,22 +63,82 @@ abstract class Varien_Image_Adapter_Abstract
     protected $_backgroundColor;
     protected $_constrainOnly;
 
+    /**
+     * @todo
+     *
+     * @param $fileName
+     * @return
+     */
     abstract public function open($fileName);
 
+    /**
+     * @todo
+     *
+     * @param $destination
+     * @param $newName
+     * @return
+     */
     abstract public function save($destination=null, $newName=null);
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     abstract public function display();
 
+    /**
+     * @todo
+     *
+     * @param $width
+     * @param $height
+     * @return
+     */
     abstract public function resize($width=null, $height=null);
 
+    /**
+     * @todo
+     *
+     * @param $angle
+     * @return
+     */
     abstract public function rotate($angle);
 
+    /**
+     * @todo
+     *
+     * @param $top
+     * @param $left
+     * @param $right
+     * @param $bottom
+     * @return
+     */
     abstract public function crop($top=0, $left=0, $right=0, $bottom=0);
 
+    /**
+     * @todo
+     *
+     * @param $watermarkImage
+     * @param $positionX
+     * @param $positionY
+     * @param $watermarkImageOpacity
+     * @param boolean $repeat
+     * @return
+     */
     abstract public function watermark($watermarkImage, $positionX=0, $positionY=0, $watermarkImageOpacity=30, $repeat=false);
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     abstract public function checkDependencies();
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMimeType()
     {
         if( $this->_fileType ) {
@@ -112,50 +172,93 @@ abstract class Varien_Image_Adapter_Abstract
         return $this->_imageSrcHeight;
     }
 
+    /**
+     * @todo
+     *
+     * @param $position
+     * @return
+     */
     public function setWatermarkPosition($position)
     {
         $this->_watermarkPosition = $position;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWatermarkPosition()
     {
         return $this->_watermarkPosition;
     }
 
+    /**
+     * @todo
+     *
+     * @param $imageOpacity
+     * @return
+     */
     public function setWatermarkImageOpacity($imageOpacity)
     {
         $this->_watermarkImageOpacity = $imageOpacity;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWatermarkImageOpacity()
     {
         return $this->_watermarkImageOpacity;
     }
 
+    /**
+     * @todo
+     *
+     * @param $width
+     * @return
+     */
     public function setWatermarkWidth($width)
     {
         $this->_watermarkWidth = $width;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWatermarkWidth()
     {
         return $this->_watermarkWidth;
     }
 
+    /**
+     * @todo
+     *
+     * @param $height
+     * @return
+     */
     public function setWatermarkHeigth($heigth)
     {
         $this->_watermarkHeigth = $heigth;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getWatermarkHeigth()
     {
         return $this->_watermarkHeigth;
     }
-
 
     /**
      * Get/set keepAspectRatio
@@ -249,6 +352,11 @@ abstract class Varien_Image_Adapter_Abstract
         return $this->_backgroundColor;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getFileAttributes()
     {
         $pathinfo = pathinfo($this->_fileName);

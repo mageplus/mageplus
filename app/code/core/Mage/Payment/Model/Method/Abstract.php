@@ -66,6 +66,7 @@ abstract class Mage_Payment_Model_Method_Abstract extends Varien_Object
     protected $_canReviewPayment            = false;
     protected $_canCreateBillingAgreement   = false;
     protected $_canManageRecurringProfiles  = true;
+
     /**
      * TODO: whether a captured transaction may be voided by this gateway
      * This may happen when amount is captured, but not settled
@@ -466,11 +467,9 @@ abstract class Mage_Payment_Model_Method_Abstract extends Varien_Object
      */
     public function refund(Varien_Object $payment, $amount)
     {
-
         if (!$this->canRefund()) {
             Mage::throwException(Mage::helper('payment')->__('Refund action is not available.'));
         }
-
 
         return $this;
     }

@@ -36,42 +36,84 @@ abstract class Mage_Adminhtml_Block_Dashboard_Abstract extends Mage_Adminhtml_Bl
 {
     protected $_dataHelperName = null;
 
+    /**
+     * @todo
+     *
+     * @param $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollection()
     {
            return $this->getDataHelper()->getCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCount()
     {
            return $this->getDataHelper()->getCount();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDataHelper()
     {
            return $this->helper($this->getDataHelperName());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public  function getDataHelperName()
     {
            return $this->_dataHelperName;
     }
 
+    /**
+     * @todo
+     *
+     * @param $dataHelperName
+     * @return
+     */
     public  function setDataHelperName($dataHelperName)
     {
            $this->_dataHelperName = $dataHelperName;
            return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareData()
     {
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->_prepareData();

@@ -147,6 +147,12 @@ abstract class Mage_Catalog_Block_Product_Abstract extends Mage_Core_Block_Templ
         return $this->helper('catalog/product_compare')->getAddUrl($product);
     }
 
+    /**
+     * @todo
+     *
+     * @param $product
+     * @return
+     */
     public function getMinimalQty($product)
     {
         if ($stockItem = $product->getStockItem()) {
@@ -155,6 +161,12 @@ abstract class Mage_Catalog_Block_Product_Abstract extends Mage_Core_Block_Templ
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $productTypeId
+     * @return
+     */
     protected function _getPriceBlock($productTypeId)
     {
         if (!isset($this->_priceBlock[$productTypeId])) {
@@ -169,6 +181,12 @@ abstract class Mage_Catalog_Block_Product_Abstract extends Mage_Core_Block_Templ
         return $this->_priceBlock[$productTypeId];
     }
 
+    /**
+     * @todo
+     *
+     * @param $productTypeId
+     * @return
+     */
     protected function _getPriceBlockTemplate($productTypeId)
     {
         if (isset($this->_priceBlockTypes[$productTypeId])) {
@@ -304,6 +322,11 @@ abstract class Mage_Catalog_Block_Product_Abstract extends Mage_Core_Block_Templ
         return $this->getData('product');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTierPriceTemplate()
     {
         if (!$this->hasData('tier_price_template')) {
@@ -312,6 +335,7 @@ abstract class Mage_Catalog_Block_Product_Abstract extends Mage_Core_Block_Templ
 
         return $this->getData('tier_price_template');
     }
+    
     /**
      * Returns product tier price block html
      *

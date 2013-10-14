@@ -69,7 +69,6 @@ class Mage_Connect_Command
         $this->commandsInfo = self::$_commandsByClass[$class];
     }
 
-
     /**
      * Get command info (static)
      * @param string $name command name
@@ -89,7 +88,6 @@ class Mage_Connect_Command
      * @param string $name
      * @return array/bool
      */
-
     public function getCommandInfo($name)
     {
         if(!isset(self::$_commandsByClass[$this->_class][$name])) {
@@ -134,13 +132,19 @@ class Mage_Connect_Command
         return new $currentCommand['class']();
     }
 
-    
+    /**
+     * @todo
+     *
+     * @param $obj
+     * @return
+     */
     public static function setSconfig($obj)
     {
         self::$_sconfig = $obj;
     }
     
     /**
+     * @todo
      * 
      * @return Mage_Connect_Singleconfig
      */
@@ -148,7 +152,6 @@ class Mage_Connect_Command
     {
         return self::$_sconfig;
     }
-    
     
     /**
      * Sets frontend object for all commands
@@ -161,7 +164,6 @@ class Mage_Connect_Command
         self::$_frontend = $obj;
     }
 
-
     /**
      * Set config object for all commands
      * @param Mage_Connect_Config $obj
@@ -172,7 +174,6 @@ class Mage_Connect_Command
         self::$_config = $obj;
     }
 
-  
     /**
      * Non-static getter for config
      * @return Mage_Connect_Config
@@ -190,7 +191,6 @@ class Mage_Connect_Command
     {
         return self::$_frontend;
     }
-
 
     /**
      * Get validator object
@@ -216,7 +216,6 @@ class Mage_Connect_Command
         return self::$_rest;
     }
 
-
     /**
      * Get commands list sorted
      * @return array
@@ -229,7 +228,6 @@ class Mage_Connect_Command
         ksort(self::$_commandsAll);
         return self::$_commandsAll;
     }
-
 
     /**
      * Get Getopt args from command definitions
@@ -296,11 +294,17 @@ class Mage_Connect_Command
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $command
+     * @param $message
+     * @return
+     */
     public function doError($command, $message)
     {
         return $this->ui()->doError($command, $message);
     }
-
 
     /**
      * Set command return
@@ -374,7 +378,6 @@ class Mage_Connect_Command
         }
     }
 
-    
     /**
      * Get packager instance
      * @return Mage_Connect_Pacakger
@@ -386,5 +389,4 @@ class Mage_Connect_Command
         }
         return self::$_packager;    
     }
-    
 }

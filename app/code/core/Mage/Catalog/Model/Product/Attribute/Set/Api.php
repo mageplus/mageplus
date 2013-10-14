@@ -257,7 +257,7 @@ class Mage_Catalog_Model_Product_Attribute_Set_Api extends Mage_Api_Model_Resour
         return true;
     }
 
-    /**
+       /**
         * Remove group from existing attribute set
         *
         * @param  string|int $attributeGroupId

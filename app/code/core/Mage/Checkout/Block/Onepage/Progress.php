@@ -33,26 +33,51 @@
  */
 class Mage_Checkout_Block_Onepage_Progress extends Mage_Checkout_Block_Onepage_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBilling()
     {
         return $this->getQuote()->getBillingAddress();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShipping()
     {
         return $this->getQuote()->getShippingAddress();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingMethod()
     {
         return $this->getQuote()->getShippingAddress()->getShippingMethod();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingDescription()
     {
         return $this->getQuote()->getShippingAddress()->getShippingDescription();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingAmount()
     {
         /*$amount = $this->getQuote()->getShippingAddress()->getShippingAmount();
@@ -64,6 +89,11 @@ class Mage_Checkout_Block_Onepage_Progress extends Mage_Checkout_Block_Onepage_A
         return $this->getQuote()->getShippingAddress()->getShippingAmount();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPaymentHtml()
     {
         return $this->getChildHtml('payment_info');
@@ -103,11 +133,23 @@ class Mage_Checkout_Block_Onepage_Progress extends Mage_Checkout_Block_Onepage_A
         return $this->formatPrice($inclTax);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getShippingPriceExclTax()
     {
         return $this->formatPrice($this->getQuote()->getShippingAddress()->getShippingAmount());
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * 
+     * @return
+     */
     public function formatPrice($price)
     {
         return $this->getQuote()->getStore()->formatPrice($price);

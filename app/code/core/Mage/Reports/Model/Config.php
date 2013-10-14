@@ -35,27 +35,41 @@
 
  class Mage_Reports_Model_Config extends Varien_Object
  {
-    public function getGlobalConfig( )
-    {
-        $dom = new DOMDocument();
-        $dom -> load( Mage::getModuleDir('etc','Mage_Reports').DS.'flexConfig.xml' );
+   /**
+    * @todo
+    *
+    * @return
+    */
+   public function getGlobalConfig()
+   {
+      $dom = new DOMDocument();
+      $dom->load(Mage::getModuleDir('etc', 'Mage_Reports') . DS . 'flexConfig.xml');
 
-        $baseUrl = $dom -> createElement('baseUrl');
-        $baseUrl -> nodeValue = Mage::getBaseUrl();
+      $baseUrl = $dom->createElement('baseUrl');
+      $baseUrl->nodeValue = Mage::getBaseUrl();
 
-        $dom -> documentElement -> appendChild( $baseUrl );
+      $dom->documentElement->appendChild($baseUrl);
 
-        return $dom -> saveXML();
-    }
+      return $dom->saveXML();
+   }
 
-    public function getLanguage( )
-    {
-        return file_get_contents( Mage::getModuleDir('etc','Mage_Reports').DS.'flexLanguage.xml' );
-    }
+   /**
+    * @todo
+    *
+    * @return
+    */
+   public function getLanguage()
+   {
+      return file_get_contents(Mage::getModuleDir('etc', 'Mage_Reports') . DS . 'flexLanguage.xml');
+   }
 
-    public function getDashboard( )
-    {
-        return file_get_contents( Mage::getModuleDir('etc','Mage_Reports').DS.'flexDashboard.xml' );
-    }
+   /**
+    * @todo
+    *
+    * @return
+    */
+   public function getDashboard()
+   {
+      return file_get_contents(Mage::getModuleDir('etc', 'Mage_Reports') . DS . 'flexDashboard.xml');
+   }
  }
-

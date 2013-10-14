@@ -34,7 +34,6 @@
  */
 class Varien_Object implements ArrayAccess
 {
-
     /**
      * Object attributes
      *
@@ -112,6 +111,11 @@ class Varien_Object implements ArrayAccess
         $this->_construct();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _addFullNames()
     {
         $existedShortKeys = array_intersect($this->_syncFieldsMap, array_keys($this->_data));
@@ -711,6 +715,11 @@ class Varien_Object implements ArrayAccess
         return $result;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _camelize($name)
     {
         return uc_words($name, '');
@@ -874,7 +883,6 @@ class Varien_Object implements ArrayAccess
     {
         return isset($this->_data[$offset]) ? $this->_data[$offset] : null;
     }
-
 
     /**
      * Enter description here...

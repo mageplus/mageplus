@@ -40,11 +40,21 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search 
         $this->setTemplate('bundle/product/edit/bundle/option/search.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         return Mage::helper('bundle')->__('Please Select Products to Add');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild(
@@ -55,6 +65,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search 
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
         $this->getChild('grid')->setIndex($this->getIndex())
@@ -63,6 +78,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search 
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getButtonsHtml()
     {
         $addButtonData = array(
@@ -74,6 +94,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option_Search 
         return $this->getLayout()->createBlock('adminhtml/widget_button')->setData($addButtonData)->toHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderCssClass()
     {
         return 'head-catalog-product';

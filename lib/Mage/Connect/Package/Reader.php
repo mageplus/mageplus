@@ -33,7 +33,6 @@
  */
 class Mage_Connect_Package_Reader
 {
-
     /**
     * Name of package file
     */

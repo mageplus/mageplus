@@ -33,7 +33,11 @@
  */
 class Mage_Adminhtml_Block_Newsletter_Template_Preview extends Mage_Adminhtml_Block_Widget
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         /* @var $template Mage_Newsletter_Model_Template */

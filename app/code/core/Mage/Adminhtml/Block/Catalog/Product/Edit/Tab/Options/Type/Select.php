@@ -46,6 +46,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Type_Select extends
         $this->setCanReadPrice(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('add_select_row_button',
@@ -69,16 +74,31 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tab_Options_Type_Select extends
         return parent::_prepareLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddButtonHtml()
     {
         return $this->getChildHtml('add_select_row_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_select_row_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPriceTypeSelectHtml()
     {
         $this->getChild('option_price_type')

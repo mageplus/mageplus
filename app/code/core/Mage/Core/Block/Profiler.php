@@ -27,6 +27,11 @@
 
 class Mage_Core_Block_Profiler extends Mage_Core_Block_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return string
+     */
     protected function _toHtml()
     {
         if (!$this->_beforeToHtml()

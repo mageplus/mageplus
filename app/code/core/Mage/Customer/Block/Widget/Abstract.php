@@ -26,11 +26,23 @@
 
 class Mage_Customer_Block_Widget_Abstract extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @param $key
+     * 
+     * @return
+     */
     public function getConfig($key)
     {
         return $this->helper('customer/address')->getConfig($key);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldIdFormat()
     {
         if (!$this->hasData('field_id_format')) {
@@ -39,6 +51,11 @@ class Mage_Customer_Block_Widget_Abstract extends Mage_Core_Block_Template
         return $this->getData('field_id_format');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFieldNameFormat()
     {
         if (!$this->hasData('field_name_format')) {
@@ -47,11 +64,25 @@ class Mage_Customer_Block_Widget_Abstract extends Mage_Core_Block_Template
         return $this->getData('field_name_format');
     }
 
+    /**
+     * @todo
+     *
+     * @param $field
+     * 
+     * @return
+     */
     public function getFieldId($field)
     {
         return sprintf($this->getFieldIdFormat(), $field);
     }
 
+    /**
+     * @todo
+     *
+     * @param $field
+     * 
+     * @return
+     */
     public function getFieldName($field)
     {
         return sprintf($this->getFieldNameFormat(), $field);

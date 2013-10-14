@@ -34,6 +34,11 @@ class Mage_Tax_Block_Checkout_Subtotal extends Mage_Checkout_Block_Total_Default
 {
     protected $_template = 'tax/checkout/subtotal.phtml';
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function displayBoth()
     {
         return Mage::getSingleton('tax/config')->displayCartSubtotalBoth($this->getStore());

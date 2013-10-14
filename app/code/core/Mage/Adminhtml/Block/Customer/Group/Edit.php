@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Customer_Group_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -49,6 +48,11 @@ class Mage_Adminhtml_Block_Customer_Group_Edit extends Mage_Adminhtml_Block_Widg
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         if(!is_null(Mage::registry('current_group')->getId())) {
@@ -58,7 +62,13 @@ class Mage_Adminhtml_Block_Customer_Group_Edit extends Mage_Adminhtml_Block_Widg
         }
     }
 
-    public function getHeaderCssClass() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getHeaderCssClass()
+    {
         return 'icon-head head-customer-groups';
     }
 }

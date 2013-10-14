@@ -119,6 +119,11 @@ class Mage_Sales_Model_Order_Shipment_Track extends Mage_Sales_Model_Abstract
         return $this->_shipment;
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function isCustom()
     {
         return $this->getCarrierCode() == self::CUSTOM_CARRIER_CODE;

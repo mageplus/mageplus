@@ -38,7 +38,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Select extends Enterprise_Cus
      *
      * @var string
      */
-    protected $_filedType = 'select';
+    protected $_fieldType = 'select';
 
     /**
      * Add select field to fieldset xml object
@@ -58,7 +58,7 @@ class Mage_XmlConnect_Block_Customer_Form_Renderer_Select extends Enterprise_Cus
         $attributes += Mage::helper('xmlconnect/customer_form_renderer')
             ->addTitleAndRequiredAttr($fieldsetXmlObj, $this);
 
-        $fieldsetXmlObj->addField($this->getHtmlId(), $this->_filedType, $attributes);
+        $fieldsetXmlObj->addField($this->getHtmlId(), $this->_fieldType, $attributes);
 
         return $this;
     }

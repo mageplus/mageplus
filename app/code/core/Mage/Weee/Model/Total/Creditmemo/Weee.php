@@ -27,6 +27,11 @@
 
 class Mage_Weee_Model_Total_Creditmemo_Weee extends Mage_Sales_Model_Order_Creditmemo_Total_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function collect(Mage_Sales_Model_Order_Creditmemo $creditmemo)
     {
         $store = $creditmemo->getStore();

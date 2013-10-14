@@ -43,11 +43,25 @@ class Mage_Sales_Block_Order_Invoice_Items extends Mage_Sales_Block_Items_Abstra
         return Mage::registry('current_order');
     }
 
+    /**
+     * @todo
+     *
+     * @param $invoice
+     * 
+     * @return
+     */
     public function getPrintInvoiceUrl($invoice)
     {
         return Mage::getUrl('*/*/printInvoice', array('invoice_id' => $invoice->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function getPrintAllInvoicesUrl($order)
     {
         return Mage::getUrl('*/*/printInvoice', array('order_id' => $order->getId()));

@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_DashboardController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Dashboard'));
@@ -73,6 +78,11 @@ class Mage_Adminhtml_DashboardController extends Mage_Adminhtml_Controller_Actio
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function ajaxBlockAction()
     {
         $output   = '';
@@ -84,6 +94,11 @@ class Mage_Adminhtml_DashboardController extends Mage_Adminhtml_Controller_Actio
         return;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function tunnelAction()
     {
         $httpClient = new Varien_Http_Client();
@@ -108,6 +123,11 @@ class Mage_Adminhtml_DashboardController extends Mage_Adminhtml_Controller_Actio
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('dashboard');

@@ -68,6 +68,11 @@ class Mage_Api_Model_User extends Mage_Core_Model_Abstract
         $this->_init('api/user');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function save()
     {
         $this->_beforeSave();
@@ -104,6 +109,11 @@ class Mage_Api_Model_User extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function delete()
     {
         $this->_beforeDelete();
@@ -112,50 +122,97 @@ class Mage_Api_Model_User extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveRelations()
     {
         $this->_getResource()->_saveRelations($this);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRoles()
     {
         return $this->_getResource()->_getRoles($this);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function deleteFromRole()
     {
         $this->_getResource()->deleteFromRole($this);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function roleUserExists()
     {
         $result = $this->_getResource()->roleUserExists($this);
         return ( is_array($result) && count($result) > 0 ) ? true : false;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function add()
     {
         $this->_getResource()->add($this);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function userExists()
     {
         $result = $this->_getResource()->userExists($this);
         return ( is_array($result) && count($result) > 0 ) ? true : false;
     }
 
-    public function getCollection() {
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function getCollection()
+    {
         return Mage::getResourceModel('api/user_collection');
     }
 
+    /**
+     * @todo
+     *
+     * @param $separator
+     * @return
+     */
     public function getName($separator=' ')
     {
         return $this->getFirstname().$separator.$this->getLastname();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getId()
     {
         return $this->getUserId();
@@ -217,35 +274,70 @@ class Mage_Api_Model_User extends Mage_Core_Model_Abstract
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function reload()
     {
         $this->load($this->getId());
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $username
+     * @return
+     */
     public function loadByUsername($username)
     {
         $this->setData($this->getResource()->loadByUsername($username));
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $sessId
+     * @return
+     */
     public function loadBySessId ($sessId)
     {
         $this->setData($this->getResource()->loadBySessId($sessId));
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $sessid
+     * @return
+     */
     public function logoutBySessId($sessid)
     {
         $this->getResource()->clearBySessId($sessid);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $user
+     * @return
+     */
     public function hasAssigned2Role($user)
     {
         return $this->getResource()->hasAssigned2Role($user);
     }
 
+    /**
+     * @todo
+     *
+     * @param $apiKey
+     * @return
+     */
     protected function _getEncodedApiKey($apiKey)
     {
         return Mage::helper('core')->getHash($apiKey, 2);

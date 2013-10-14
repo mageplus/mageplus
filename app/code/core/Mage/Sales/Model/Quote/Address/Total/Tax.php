@@ -29,10 +29,18 @@ class Mage_Sales_Model_Quote_Address_Total_Tax extends Mage_Sales_Model_Quote_Ad
 {
     protected $_appliedTaxes = array();
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->setCode('tax');
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * 
+     * @return
+     */
     public function collect(Mage_Sales_Model_Quote_Address $address)
     {
         $store = $address->getQuote()->getStore();
@@ -195,6 +203,17 @@ class Mage_Sales_Model_Quote_Address_Total_Tax extends Mage_Sales_Model_Quote_Ad
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * @param $applied
+     * @param $amount
+     * @param $baseAmount
+     * @param $rate
+     * 
+     * @return
+     */
     protected function _saveAppliedTaxes(Mage_Sales_Model_Quote_Address $address, $applied, $amount, $baseAmount, $rate)
     {
         $previouslyAppliedTaxes = $address->getAppliedTaxes();
@@ -234,6 +253,13 @@ class Mage_Sales_Model_Quote_Address_Total_Tax extends Mage_Sales_Model_Quote_Ad
         $address->setAppliedTaxes($previouslyAppliedTaxes);
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Quote_Address $address
+     * 
+     * @return
+     */
     public function fetch(Mage_Sales_Model_Quote_Address $address)
     {
         $applied = $address->getAppliedTaxes();

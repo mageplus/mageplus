@@ -45,6 +45,11 @@ class Mage_Adminhtml_Block_Permissions_User_Edit extends Mage_Adminhtml_Block_Wi
         $this->_updateButton('delete', 'label', Mage::helper('adminhtml')->__('Delete User'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getHeaderText()
     {
         if (Mage::registry('permissions_user')->getId()) {

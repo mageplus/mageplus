@@ -33,6 +33,11 @@
  */
 class Mage_Catalog_Block_Category_View extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
@@ -65,21 +70,41 @@ class Mage_Catalog_Block_Category_View extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function IsRssCatalogEnable()
     {
         return Mage::getStoreConfig('rss/catalog/category');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function IsTopCategory()
     {
         return $this->getCurrentCategory()->getLevel()==2;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRssLink()
     {
         return Mage::getUrl('rss/catalog/category',array('cid' => $this->getCurrentCategory()->getId(), 'store_id' => Mage::app()->getStore()->getId()));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductListHtml()
     {
         return $this->getChildHtml('product_list');
@@ -98,6 +123,11 @@ class Mage_Catalog_Block_Category_View extends Mage_Core_Block_Template
         return $this->getData('current_category');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCmsBlockHtml()
     {
         if (!$this->getData('cms_block_html')) {

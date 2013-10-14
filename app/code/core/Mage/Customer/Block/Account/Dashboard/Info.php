@@ -34,11 +34,21 @@
 
 class Mage_Customer_Block_Account_Dashboard_Info extends Mage_Core_Block_Template
 {
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getCustomer()
     {
         return Mage::getSingleton('customer/session')->getCustomer();
     }
 
+    /**
+     * @todo
+     * 
+     * @return
+     */
     public function getChangePasswordUrl()
     {
         return Mage::getUrl('*/account/edit/changepass/1');

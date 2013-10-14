@@ -14,7 +14,7 @@
  *
  * @category   Zend
  * @package    Zend_Service_ShortUrl
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id: $
  */
@@ -22,21 +22,21 @@
 /**
  * @see Zend_Service_Abstract
  */
-#require_once 'Zend/Service/Abstract.php';
+require_once 'Zend/Service/Abstract.php';
 
 /**
  * @see Zend_Service_ShortUrl_Shortener
  */
-#require_once 'Zend/Service/ShortUrl/Shortener.php';
+require_once 'Zend/Service/ShortUrl/Shortener.php';
 
 /**
  * @category   Zend
  * @package    Zend_Service_ShortUrl
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 abstract class Zend_Service_ShortUrl_AbstractShortener
-    extends Zend_Service_Abstract 
+    extends Zend_Service_Abstract
     implements Zend_Service_ShortUrl_Shortener
 {
     /**
@@ -46,7 +46,7 @@ abstract class Zend_Service_ShortUrl_AbstractShortener
      */
     protected $_baseUri = null;
 
-    
+
     /**
      * Checks whether URL to be shortened is valid
      *
@@ -55,15 +55,15 @@ abstract class Zend_Service_ShortUrl_AbstractShortener
      */
     protected function _validateUri($url)
     {
-        #require_once 'Zend/Uri.php';
+        require_once 'Zend/Uri.php';
         if (!Zend_Uri::check($url)) {
-            #require_once 'Zend/Service/ShortUrl/Exception.php';
+            require_once 'Zend/Service/ShortUrl/Exception.php';
             throw new Zend_Service_ShortUrl_Exception(sprintf(
                 'The url "%s" is not valid and cannot be shortened', $url
             ));
         }
     }
-    
+
     /**
      * Verifies that the URL has been shortened by this service
      *
@@ -73,7 +73,7 @@ abstract class Zend_Service_ShortUrl_AbstractShortener
     protected function _verifyBaseUri($shortenedUrl)
     {
         if (strpos($shortenedUrl, $this->_baseUri) !== 0) {
-            #require_once 'Zend/Service/ShortUrl/Exception.php';
+            require_once 'Zend/Service/ShortUrl/Exception.php';
             throw new Zend_Service_ShortUrl_Exception(sprintf(
                 'The url "%s" is not valid for this service and the target cannot be resolved',
                 $shortenedUrl

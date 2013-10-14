@@ -49,6 +49,14 @@ class Mage_Core_Model_Email extends Varien_Object
         $this->setType('text');
     }
 
+    /**
+     * @TODO
+     *
+     * @param $var
+     * @param $value
+     *
+     * @return 
+     */
     public function setTemplateVar($var, $value = null)
     {
         if (is_array($var)) {
@@ -62,11 +70,21 @@ class Mage_Core_Model_Email extends Varien_Object
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getTemplateVars()
     {
         return $this->_tplVars;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getBody()
     {
         $body = $this->getData('body');
@@ -84,6 +102,11 @@ class Mage_Core_Model_Email extends Varien_Object
         return $body;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getSubject()
     {
         $subject = $this->getData('subject');
@@ -94,6 +117,11 @@ class Mage_Core_Model_Email extends Varien_Object
         return $subject;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function send()
     {
         if (Mage::getStoreConfigFlag('system/smtp/disable')) {

@@ -34,7 +34,11 @@
  */
 class Mage_Adminhtml_Block_Sales_Items_Renderer_Configurable extends  Mage_Adminhtml_Block_Sales_Items_Abstract
 {
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getItem()
     {
         return $this->_getData('item');//->getOrderItem();

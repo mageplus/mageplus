@@ -33,7 +33,6 @@
  */
 class Mage_System_Ftp
 {
-
     /**
      * Connection object
      *

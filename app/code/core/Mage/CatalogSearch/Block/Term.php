@@ -83,12 +83,23 @@ class Mage_CatalogSearch_Block_Term extends Mage_Core_Block_Template
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTerms()
     {
         $this->_loadTerms();
         return $this->_terms;
     }
 
+    /**
+     * @todo
+     *
+     * @param $obj
+     * @return
+     */
     public function getSearchUrl($obj)
     {
         $url = Mage::getModel('core/url');
@@ -100,11 +111,21 @@ class Mage_CatalogSearch_Block_Term extends Mage_Core_Block_Template
         return $url->getUrl('catalogsearch/result');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMaxPopularity()
     {
         return $this->_maxPopularity;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMinPopularity()
     {
         return $this->_minPopularity;

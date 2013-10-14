@@ -70,16 +70,34 @@ class Varien_Pear_Package
         $this->_pear = Varien_Pear::getInstance();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPear()
     {
         return $this->_pear;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function getPearConfig($key)
     {
         return $this->getPear()->getConfig()->get($key);
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @param $data
+     * @return
+     */
     public function set($key, $data)
     {
         if (''===$key) {
@@ -103,6 +121,12 @@ class Varien_Pear_Package
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $key
+     * @return
+     */
     public function get($key)
     {
         if (''===$key) {
@@ -128,6 +152,12 @@ class Varien_Pear_Package
         return $data;
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @return
+     */
     public function setPfm($pfm)
     {
         $this->_pfm = $pfm;
@@ -160,6 +190,11 @@ class Varien_Pear_Package
         return $this->_pfm;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clearPackage()
     {
         $pfm = $this->getPfm();
@@ -170,6 +205,12 @@ class Varien_Pear_Package
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param boolean $make
+     * @return
+     */
     public function generatePackage($make=false)
     {
         PEAR::setErrorHandling(PEAR_ERROR_DIE);
@@ -200,6 +241,11 @@ class Varien_Pear_Package
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function defineData()
     {
         $this->set('options/outputdirectory', $this->getPear()->getPearDir().DS.'output');
@@ -209,11 +255,21 @@ class Varien_Pear_Package
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function definePackage()
     {
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function defineRelease()
     {
         return $this;

@@ -27,6 +27,11 @@
 
 class Mage_Tax_Model_Class_Source_Customer extends Mage_Eav_Model_Entity_Attribute_Source_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllOptions()
     {
         if (!$this->_options) {
@@ -37,6 +42,11 @@ class Mage_Tax_Model_Class_Source_Customer extends Mage_Eav_Model_Entity_Attribu
         return $this->_options;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return $this->getAllOptions();

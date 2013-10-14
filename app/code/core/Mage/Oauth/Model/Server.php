@@ -33,7 +33,7 @@
  */
 class Mage_Oauth_Model_Server
 {
-    /**#@+
+    /**
      * OAuth result statuses
      */
     const ERR_OK                        = 0;
@@ -52,33 +52,29 @@ class Mage_Oauth_Model_Server
     const ERR_VERIFIER_INVALID          = 13;
     const ERR_PERMISSION_UNKNOWN        = 14;
     const ERR_PERMISSION_DENIED         = 15;
-    /**#@-*/
 
-    /**#@+
+    /**
      * Signature Methods
      */
     const SIGNATURE_HMAC  = 'HMAC-SHA1';
     const SIGNATURE_RSA   = 'RSA-SHA1';
     const SIGNATURE_PLAIN = 'PLAINTEXT';
-    /**#@-*/
 
-    /**#@+
+    /**
      * Request Types
      */
     const REQUEST_INITIATE  = 'initiate';  // ask for temporary credentials
     const REQUEST_AUTHORIZE = 'authorize'; // display authorize form
     const REQUEST_TOKEN     = 'token';     // ask for permanent credentials
     const REQUEST_RESOURCE  = 'resource';  // ask for protected resource using permanent credentials
-    /**#@-*/
 
-    /**#@+
+    /**
      * HTTP Response Codes
      */
     const HTTP_OK             = 200;
     const HTTP_BAD_REQUEST    = 400;
     const HTTP_UNAUTHORIZED   = 401;
     const HTTP_INTERNAL_ERROR = 500;
-    /**#@-*/
 
     /**
      * Possible time deviation for timestamp validation in sec.

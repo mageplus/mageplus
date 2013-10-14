@@ -54,31 +54,62 @@ class Mage_Tag_Block_Customer_Recent extends Mage_Core_Block_Template
             ->addVisibleInSiteFilterToCollection($this->_collection);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function count()
     {
         return $this->_collection->getSize();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCollection()
     {
         return $this->_collection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollection()
     {
         return $this->_getCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @param $date
+     * @return
+     */
     public function dateFormat($date)
     {
         return $this->formatDate($date, Mage_Core_Model_Locale::FORMAT_TYPE_SHORT);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllTagsUrl()
     {
         return Mage::getUrl('tag/customer');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _toHtml()
     {
         if ($this->_collection->getSize() > 0) {

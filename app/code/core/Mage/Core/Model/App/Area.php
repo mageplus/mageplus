@@ -129,11 +129,21 @@ class Mage_Core_Model_App_Area
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _initConfig()
     {
 
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _initEvents()
     {
         Mage::app()->addEventArea($this->_code);
@@ -141,12 +151,22 @@ class Mage_Core_Model_App_Area
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _initTranslate()
     {
         Mage::app()->getTranslator()->init($this->_code);
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     protected function _initDesign()
     {
         if (Mage::app()->getRequest()->isStraight()) {

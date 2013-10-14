@@ -25,9 +25,15 @@
  */
 
 
-class Mage_CatalogSearch_TermController extends Mage_Core_Controller_Front_Action {
-
-    public function preDispatch(){
+class Mage_CatalogSearch_TermController extends Mage_Core_Controller_Front_Action
+{
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function preDispatch()
+    {
         parent::preDispatch();
         if(!Mage::getStoreConfig('catalog/seo/search_terms')){
               $this->_redirect('noroute');
@@ -36,6 +42,12 @@ class Mage_CatalogSearch_TermController extends Mage_Core_Controller_Front_Actio
         return $this;
 
     }
+
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function popularAction()
     {
         $this->loadLayout();

@@ -29,6 +29,11 @@
  */
 class Mage_Adminhtml_Catalog_Product_GroupController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         $model = Mage::getModel('eav/entity_attribute_group');
@@ -47,6 +52,11 @@ class Mage_Adminhtml_Catalog_Product_GroupController extends Mage_Adminhtml_Cont
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('catalog/products');

@@ -33,6 +33,11 @@
  */
 class Mage_GoogleBase_Adminhtml_Googlebase_SelectionController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function searchAction()
     {
         return $this->getResponse()->setBody(
@@ -44,6 +49,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_SelectionController extends Mage_Admi
            );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->loadLayout();

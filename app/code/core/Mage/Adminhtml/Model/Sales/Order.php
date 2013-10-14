@@ -43,6 +43,12 @@ class Mage_Adminhtml_Model_Sales_Order
         return Mage::getSingleton('adminhtml/session');
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Sales_Model_Order $order
+     * @return
+     */
     public function checkRelation(Mage_Sales_Model_Order $order)
     {
         /**

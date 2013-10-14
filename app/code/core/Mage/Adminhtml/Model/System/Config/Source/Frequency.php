@@ -27,6 +27,11 @@
 
 class Mage_Adminhtml_Model_System_Config_Source_Frequency
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function toOptionArray()
     {
         return array(

@@ -34,6 +34,11 @@
 class Mage_Adminhtml_TagController extends Mage_Adminhtml_Controller_Action
 {
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initAction()
     {
         $this->loadLayout()

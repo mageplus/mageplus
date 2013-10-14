@@ -123,6 +123,11 @@ class Mage_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Attributes_Extend
         return $html;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProduct()
     {
         if (!$this->getData('product')){

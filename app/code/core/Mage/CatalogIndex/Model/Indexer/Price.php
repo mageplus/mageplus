@@ -63,6 +63,13 @@ class Mage_CatalogIndex_Model_Indexer_Price extends Mage_CatalogIndex_Model_Inde
         $this->_customerGroups = Mage::getModel('customer/group')->getCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Catalog_Model_Product $object
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     public function createIndexData(Mage_Catalog_Model_Product $object, Mage_Eav_Model_Entity_Attribute_Abstract $attribute = null)
     {
         $data = array();
@@ -88,6 +95,12 @@ class Mage_CatalogIndex_Model_Indexer_Price extends Mage_CatalogIndex_Model_Inde
         return $data;
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Eav_Model_Entity_Attribute_Abstract $attribute
+     * @return
+     */
     protected function _isAttributeIndexable(Mage_Eav_Model_Entity_Attribute_Abstract $attribute)
     {
         if ($attribute->getFrontendInput() != 'price') {
@@ -103,6 +116,11 @@ class Mage_CatalogIndex_Model_Indexer_Price extends Mage_CatalogIndex_Model_Inde
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getIndexableAttributeConditions()
     {
         $conditions = "frontend_input = 'price' AND attribute_code <> 'price'";

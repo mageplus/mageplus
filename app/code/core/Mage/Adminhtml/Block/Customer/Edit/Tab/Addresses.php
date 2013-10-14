@@ -39,11 +39,21 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Addresses extends Mage_Adminhtml_Bl
         $this->setTemplate('customer/tab/addresses.phtml');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionsUrl()
     {
         return $this->getUrl('*/json/countryRegion');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild('delete_button',
@@ -94,6 +104,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Addresses extends Mage_Adminhtml_Bl
         return $customer->isReadonly();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getDeleteButtonHtml()
     {
         return $this->getChildHtml('delete_button');
@@ -201,16 +216,31 @@ class Mage_Adminhtml_Block_Customer_Edit_Tab_Addresses extends Mage_Adminhtml_Bl
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCancelButtonHtml()
     {
         return $this->getChildHtml('cancel_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAddNewButtonHtml()
     {
         return $this->getChildHtml('add_address_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTemplatePrefix()
     {
         return '_template_';

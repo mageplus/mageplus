@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Block_Newsletter_Template_Preview_Form extends Mage_Adminhtml_Block_Widget_Form
 {
-
     /**
      * Preparing from for revision page
      *

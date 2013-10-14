@@ -33,7 +33,6 @@
  */
 class Mage_Rss_Block_Order_New extends Mage_Core_Block_Template
 {
-
     /**
      * Cache tag constant for feed new orders
      *
@@ -51,6 +50,11 @@ class Mage_Rss_Block_Order_New extends Mage_Core_Block_Template
         $this->setCacheLifetime(600);
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     protected function _toHtml()
     {
         $order = Mage::getModel('sales/order');
@@ -82,6 +86,12 @@ class Mage_Rss_Block_Order_New extends Mage_Core_Block_Template
         return $rssObj->createRssXml();
     }
 
+   /**
+    * @todo
+    *
+    * @param $args
+    * @return
+    */
     public function addNewOrderXmlCallback($args)
     {
         $rssObj = $args['rssObj'];

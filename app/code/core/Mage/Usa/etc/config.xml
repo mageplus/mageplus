@@ -228,4 +228,11 @@
             </dhlint>
         </carriers>
     </default>
+		<phpunit>
+			<suite>
+				<modules>
+					<Mage_Usa/>
+				</modules>
+			</suite>
+		</phpunit>
 </config>

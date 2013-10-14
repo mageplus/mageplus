@@ -203,7 +203,6 @@ class Mage_Core_Model_File_Validator_AvailablePath extends Zend_Validate_Abstrac
         return $this->_availablePaths;
     }
 
-
     /**
      * Returns true if and only if $value meets the validation requirements
      *

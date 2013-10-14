@@ -50,12 +50,25 @@ class Mage_Core_Model_Design extends Mage_Core_Model_Abstract
         $this->_init('core/design');
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function validate()
     {
         $this->getResource()->validate($this);
         return $this;
     }
 
+    /**
+     * @TODO
+     *
+     * @param $storeId
+     * @param $date
+     * 
+     * @return 
+     */
     public function loadChange($storeId, $date = null)
     {
         $result = $this->getResource()

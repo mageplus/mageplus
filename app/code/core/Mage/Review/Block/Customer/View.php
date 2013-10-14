@@ -42,6 +42,11 @@ class Mage_Review_Block_Customer_View extends Mage_Catalog_Block_Product_Abstrac
         $this->setReviewId($this->getRequest()->getParam('id', false));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductData()
     {
         if( $this->getReviewId() && !$this->getProductCacheData() ) {
@@ -53,6 +58,11 @@ class Mage_Review_Block_Customer_View extends Mage_Catalog_Block_Product_Abstrac
         return $this->getProductCacheData();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewData()
     {
         if( $this->getReviewId() && !$this->getReviewCachedData() ) {
@@ -61,11 +71,21 @@ class Mage_Review_Block_Customer_View extends Mage_Catalog_Block_Product_Abstrac
         return $this->getReviewCachedData();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBackUrl()
     {
         return Mage::getUrl('review/customer');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRating()
     {
         if( !$this->getRatingCollection() ) {
@@ -82,6 +102,11 @@ class Mage_Review_Block_Customer_View extends Mage_Catalog_Block_Product_Abstrac
         return $this->getRatingCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRatingSummary()
     {
         if( !$this->getRatingSummaryCache() ) {
@@ -90,6 +115,11 @@ class Mage_Review_Block_Customer_View extends Mage_Catalog_Block_Product_Abstrac
         return $this->getRatingSummaryCache();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getTotalReviews()
     {
         if( !$this->getTotalReviewsCache() ) {
@@ -98,6 +128,12 @@ class Mage_Review_Block_Customer_View extends Mage_Catalog_Block_Product_Abstrac
         return $this->getTotalReviewsCache();
     }
 
+    /**
+     * @todo
+     *
+     * @param $date
+     * @return
+     */
     public function dateFormat($date)
     {
         return $this->formatDate($date, Mage_Core_Model_Locale::FORMAT_TYPE_LONG);

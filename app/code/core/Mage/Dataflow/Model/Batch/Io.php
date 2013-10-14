@@ -189,6 +189,11 @@ class Mage_Dataflow_Model_Batch_Io
         return $this->getIoAdapter()->streamClose();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function clear()
     {
         return $this->getIoAdapter()->rm($this->getFile(true));

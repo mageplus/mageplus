@@ -34,7 +34,6 @@
 
 class Mage_Connect_Package_Target
 {
-
     /**
     * Object contains all contents from target.xml.
     *
@@ -121,6 +120,4 @@ class Mage_Connect_Package_Target
         }
         return '';
     }
-
-
 }

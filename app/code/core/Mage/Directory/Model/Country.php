@@ -49,17 +49,33 @@ class Mage_Directory_Model_Country extends Mage_Core_Model_Abstract
         $this->_init('directory/country');
     }
 
+    /**
+     * @todo
+     *
+     * @param $code
+     * @return
+     */
     public function loadByCode($code)
     {
         $this->_getResource()->loadByCode($this, $code);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegions()
     {
         return $this->getLoadedRegionCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getLoadedRegionCollection()
     {
         $collection = $this->getRegionCollection();
@@ -67,6 +83,11 @@ class Mage_Directory_Model_Country extends Mage_Core_Model_Abstract
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionCollection()
     {
         $collection = Mage::getResourceModel('directory/region_collection');
@@ -74,13 +95,18 @@ class Mage_Directory_Model_Country extends Mage_Core_Model_Abstract
         return $collection;
     }
 
+    /**
+     * @todo
+     *
+     * @param Varien_Object $address
+     * @param bool $html
+     * @return
+     */
     public function formatAddress(Varien_Object $address, $html=false)
     {
         //TODO: is it still used?
         $address->getRegion();
         $address->getCountry();
-
-
 
         $template = $this->getData('address_template_'.($html ? 'html' : 'plain'));
         if (empty($template)) {
@@ -151,6 +177,11 @@ T: {{telephone}}";
         return null;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getName()
     {
         if(!$this->getData('name')) {

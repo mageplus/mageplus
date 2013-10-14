@@ -43,6 +43,11 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tabs extends Mage_Adminhtml_Bloc
         $this->setTitle(Mage::helper('catalog')->__('Product Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $product = $this->getProduct();
@@ -218,6 +223,12 @@ class Mage_Adminhtml_Block_Catalog_Product_Edit_Tabs extends Mage_Adminhtml_Bloc
         return Mage::helper('adminhtml/catalog')->getAttributeTabBlock();
     }
 
+    /**
+     * @todo
+     *
+     * @param $attributeTabBlock
+     * @return
+     */
     public function setAttributeTabBlock($attributeTabBlock)
     {
         $this->_attributeTabBlock = $attributeTabBlock;

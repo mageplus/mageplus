@@ -34,7 +34,10 @@
  */
 class Mage_Dataflow_Model_Session_Parser_Csv extends Mage_Dataflow_Model_Convert_Parser_Abstract
 {
-
+    /**
+     * @todo
+     * @return Mage_Dataflow_Model_Session_Parser_Csv
+     */
     public function parse()
     {
         $fDel = $this->getVar('delimiter', ',');
@@ -94,6 +97,10 @@ class Mage_Dataflow_Model_Session_Parser_Csv extends Mage_Dataflow_Model_Convert
         return $this;
     } // end
 
+    /**
+     * @todo
+     * @return Mage_Dataflow_Model_Session_Parser_Csv
+     */
     public function unparse()
     {
         $csv = '';
@@ -138,5 +145,4 @@ class Mage_Dataflow_Model_Session_Parser_Csv extends Mage_Dataflow_Model_Convert
 
         return $this;
     }
-
 }

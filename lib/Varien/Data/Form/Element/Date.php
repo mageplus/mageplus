@@ -38,6 +38,12 @@ class Varien_Data_Form_Element_Date extends Varien_Data_Form_Element_Abstract
      */
     protected $_value;
 
+    /**
+     * @todo
+     *
+     * @param array $attributes
+     * @return
+     */
     public function __construct($attributes=array())
     {
         parent::__construct($attributes);
@@ -54,7 +60,6 @@ class Varien_Data_Form_Element_Date extends Varien_Data_Form_Element_Abstract
      */
     protected function _toTimestamp($value)
     {
-
         $value = (int)$value;
         if ($value > 3155760000) {
             $value = 0;

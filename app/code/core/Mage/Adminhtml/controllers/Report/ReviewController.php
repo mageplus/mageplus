@@ -33,6 +33,11 @@
  */
 class Mage_Adminhtml_Report_ReviewController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _initAction()
     {
         $act = $this->getRequest()->getActionName();
@@ -45,6 +50,11 @@ class Mage_Adminhtml_Report_ReviewController extends Mage_Adminhtml_Controller_A
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function customerAction()
     {
         $this->_title($this->__('Reports'))
@@ -82,6 +92,11 @@ class Mage_Adminhtml_Report_ReviewController extends Mage_Adminhtml_Controller_A
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function productAction()
     {
         $this->_title($this->__('Reports'))
@@ -119,6 +134,11 @@ class Mage_Adminhtml_Report_ReviewController extends Mage_Adminhtml_Controller_A
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function productDetailAction()
     {
         $this->_title($this->__('Reports'))
@@ -158,6 +178,11 @@ class Mage_Adminhtml_Report_ReviewController extends Mage_Adminhtml_Controller_A
         $this->_prepareDownloadResponse($fileName, $content);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         switch ($this->getRequest()->getActionName()) {

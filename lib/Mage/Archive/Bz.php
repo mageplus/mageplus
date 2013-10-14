@@ -33,7 +33,6 @@
  */
 class Mage_Archive_Bz extends Mage_Archive_Abstract implements Mage_Archive_Interface
 {
-
     /**
     * Pack file by BZIP2 compressor.
     *

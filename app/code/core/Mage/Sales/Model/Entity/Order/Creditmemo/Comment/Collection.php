@@ -39,12 +39,26 @@ class Mage_Sales_Model_Entity_Order_Creditmemo_Comment_Collection extends Mage_E
         $this->_init('sales/order_creditmemo_comment');
     }
 
+    /**
+     * @todo
+     *
+     * @param $creditmemoId
+     *
+     * @return
+     */
     public function setCreditmemoFilter($creditmemoId)
     {
         $this->addAttributeToFilter('parent_id', $creditmemoId);
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $order
+     *
+     * @return
+     */
     public function setCreatedAtOrder($order='desc')
     {
         $this->setOrder('created_at', $order);

@@ -33,6 +33,12 @@
  */
 class Mage_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Controller_Action
 {
+    /**
+     * @todo
+     *
+     * @param $idFieldName
+     * @return
+     */
     protected function _initProfile($idFieldName = 'id')
     {
         $this->_title($this->__('System'))
@@ -97,6 +103,11 @@ class Mage_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Con
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function gridAction()
     {
         $this->getResponse()->setBody(
@@ -204,6 +215,11 @@ class Mage_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Con
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function runAction()
     {
         $this->_initProfile();
@@ -211,6 +227,11 @@ class Mage_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Con
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function batchRunAction()
     {
         if ($this->getRequest()->isPost()) {
@@ -277,6 +298,11 @@ class Mage_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Con
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function batchFinishAction()
     {
         $batchId = $this->getRequest()->getParam('id');
@@ -303,13 +329,19 @@ class Mage_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Con
      * Customer orders grid
      *
      */
-    public function historyAction() {
+    public function historyAction()
+    {
         $this->_initProfile();
         $this->getResponse()->setBody(
             $this->getLayout()->createBlock('adminhtml/system_convert_profile_edit_tab_history')->toHtml()
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('admin/system/convert/profiles');

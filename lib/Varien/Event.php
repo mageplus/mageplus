@@ -109,12 +109,23 @@ class Varien_Event extends Varien_Object
         return isset($this->_data['name']) ? $this->_data['name'] : null;
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @return
+     */
     public function setName($data)
     {
         $this->_data['name'] = $data;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getBlock()
     {
         return $this->_getData('block');

@@ -208,6 +208,11 @@ abstract class Mage_Core_Model_Abstract extends Varien_Object
         return Mage::getResourceModel($this->_resourceCollectionName, $this->_getResource());
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollection()
     {
         return $this->getResourceCollection();
@@ -267,8 +272,6 @@ abstract class Mage_Core_Model_Abstract extends Varien_Object
         Mage::dispatchEvent($this->_eventPrefix.'_load_after', $this->_getEventData());
         return $this;
     }
-
-
 
     /**
      * Object after load processing. Implemented as public interface for supporting objects after load in collections
@@ -552,6 +555,11 @@ abstract class Mage_Core_Model_Abstract extends Varien_Object
         return $this->_getResource();
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getEntityId()
     {
         return $this->_getData('entity_id');

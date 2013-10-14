@@ -15,25 +15,25 @@
  * @category   Zend
  * @package    Zend_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Windows.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: Windows.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Service_Amazon_Ec2_Abstract
  */
-#require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
+require_once 'Zend/Service/Amazon/Ec2/Abstract.php';
 
 /**
  * @see Zend_Crypt_Hmac
  */
-#require_once 'Zend/Crypt/Hmac.php';
+require_once 'Zend/Crypt/Hmac.php';
 
 /**
  * @see Zend_Json
  */
-#require_once 'Zend/Json.php';
+require_once 'Zend/Json.php';
 
 /**
  * An Amazon EC2 interface that allows yout to run, terminate, reboot and describe Amazon
@@ -42,7 +42,7 @@
  * @category   Zend
  * @package    Zend_Service_Amazon
  * @subpackage Ec2
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Service_Amazon_Ec2_Instance_Windows extends Zend_Service_Amazon_Ec2_Abstract

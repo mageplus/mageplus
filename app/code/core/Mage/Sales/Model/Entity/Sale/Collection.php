@@ -66,12 +66,27 @@ class Mage_Sales_Model_Entity_Sale_Collection extends Varien_Object implements I
         $this->_read = $this->_entity->getReadConnection();
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Customer_Model_Customer $customer
+     *
+     * @return
+     */
     public function setCustomerFilter(Mage_Customer_Model_Customer $customer)
     {
         $this->_customer = $customer;
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $printQuery
+     * @param $logQuery
+     *
+     * @return
+     */
     public function load($printQuery = false, $logQuery = false)
     {
         $this->_select = $this->_read->select();

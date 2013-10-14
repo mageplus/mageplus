@@ -14,17 +14,17 @@
  *
  * @category   Zend
  * @package    Zend_Log
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Log.php 22976 2010-09-19 11:57:26Z intiilapa $
+ * @version    $Id: Log.php 24703 2012-03-29 09:52:39Z andries $
  */
 
 /**
  * @category   Zend
  * @package    Zend_Log
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Log.php 22976 2010-09-19 11:57:26Z intiilapa $
+ * @version    $Id: Log.php 24703 2012-03-29 09:52:39Z andries $
  */
 class Zend_Log
 {
@@ -72,6 +72,12 @@ class Zend_Log
 
     /**
      *
+     * @var string
+     */
+    protected $_defaultFormatterNamespace = 'Zend_Log_Formatter';
+
+    /**
+     *
      * @var callback
      */
     protected $_origErrorHandler       = null;
@@ -84,7 +90,7 @@ class Zend_Log
 
     /**
      *
-     * @var array
+     * @var array|boolean
      */
     protected $_errorHandlerMap        = false;
 
@@ -98,6 +104,7 @@ class Zend_Log
      * Class constructor.  Create a new logger
      *
      * @param Zend_Log_Writer_Abstract|null  $writer  default writer
+     * @return void
      */
     public function __construct(Zend_Log_Writer_Abstract $writer = null)
     {
@@ -115,6 +122,7 @@ class Zend_Log
      *
      * @param  array|Zend_Config Array or instance of Zend_Config
      * @return Zend_Log
+     * @throws Zend_Log_Exception
      */
     static public function factory($config = array())
     {
@@ -124,11 +132,18 @@ class Zend_Log
 
         if (!is_array($config) || empty($config)) {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('Configuration must be an array or instance of Zend_Config');
         }
 
         $log = new self;
+
+        if (array_key_exists('timestampFormat', $config)) {
+            if (null != $config['timestampFormat'] && '' != $config['timestampFormat']) {
+                $log->setTimestampFormat($config['timestampFormat']);
+            }
+            unset($config['timestampFormat']);
+        }
 
         if (!is_array(current($config))) {
             $log->addWriter(current($config));
@@ -147,6 +162,7 @@ class Zend_Log
      *
      * @param  array $spec config array with writer spec
      * @return Zend_Log_Writer_Abstract
+     * @throws Zend_Log_Exception
      */
     protected function _constructWriterFromConfig($config)
     {
@@ -157,13 +173,18 @@ class Zend_Log
                         ? get_class($writer)
                         : 'The specified writer';
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception("{$writerName} does not extend Zend_Log_Writer_Abstract!");
         }
 
         if (isset($config['filterName'])) {
             $filter = $this->_constructFilterFromConfig($config);
             $writer->addFilter($filter);
+        }
+
+        if (isset($config['formatterName'])) {
+            $formatter = $this->_constructFormatterFromConfig($config);
+            $writer->setFormatter($formatter);
         }
 
         return $writer;
@@ -174,6 +195,7 @@ class Zend_Log
      *
      * @param  array|Zend_Config $config Zend_Config or Array
      * @return Zend_Log_Filter_Interface
+     * @throws Zend_Log_Exception
      */
     protected function _constructFilterFromConfig($config)
     {
@@ -184,11 +206,34 @@ class Zend_Log
                          ? get_class($filter)
                          : 'The specified filter';
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception("{$filterName} does not implement Zend_Log_Filter_Interface");
         }
 
         return $filter;
+    }
+
+   /**
+    * Construct formatter object from configuration array or Zend_Config object
+    *
+    * @param  array|Zend_Config $config Zend_Config or Array
+    * @return Zend_Log_Formatter_Interface
+    * @throws Zend_Log_Exception
+    */
+    protected function _constructFormatterFromConfig($config)
+    {
+        $formatter = $this->_constructFromConfig('formatter', $config, $this->_defaultFormatterNamespace);
+
+        if (!$formatter instanceof Zend_Log_Formatter_Interface) {
+             $formatterName = is_object($formatter)
+                         ? get_class($formatter)
+                         : 'The specified formatter';
+            /** @see Zend_Log_Exception */
+            require_once 'Zend/Log/Exception.php';
+            throw new Zend_Log_Exception($formatterName . ' does not implement Zend_Log_Formatter_Interface');
+        }
+
+        return $formatter;
     }
 
     /**
@@ -198,6 +243,7 @@ class Zend_Log
      * @param mixed $config Zend_Config or Array
      * @param string $namespace
      * @return object
+     * @throws Zend_Log_Exception
      */
     protected function _constructFromConfig($type, $config, $namespace)
     {
@@ -206,7 +252,7 @@ class Zend_Log
         }
 
         if (!is_array($config) || empty($config)) {
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception(
                 'Configuration must be an array or instance of Zend_Config'
             );
@@ -215,15 +261,15 @@ class Zend_Log
         $params    = isset($config[ $type .'Params' ]) ? $config[ $type .'Params' ] : array();
         $className = $this->getClassName($config, $type, $namespace);
         if (!class_exists($className)) {
-            #require_once 'Zend/Loader.php';
+            require_once 'Zend/Loader.php';
             Zend_Loader::loadClass($className);
         }
 
         $reflection = new ReflectionClass($className);
         if (!$reflection->implementsInterface('Zend_Log_FactoryInterface')) {
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception(
-                'Driver does not implement Zend_Log_FactoryInterface and can not be constructed from config.'
+                $className . ' does not implement Zend_Log_FactoryInterface and can not be constructed from config.'
             );
         }
 
@@ -237,22 +283,33 @@ class Zend_Log
      * @param string $type filter|writer
      * @param string $defaultNamespace
      * @return string full classname
+     * @throws Zend_Log_Exception
      */
     protected function getClassName($config, $type, $defaultNamespace)
     {
-        if (!isset($config[ $type . 'Name' ])) {
-            #require_once 'Zend/Log/Exception.php';
+        if (!isset($config[$type . 'Name'])) {
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception("Specify {$type}Name in the configuration array");
         }
-        $className = $config[ $type . 'Name' ];
 
+        $className = $config[$type . 'Name'];
         $namespace = $defaultNamespace;
-        if (isset($config[ $type . 'Namespace' ])) {
-            $namespace = $config[ $type . 'Namespace' ];
+
+        if (isset($config[$type . 'Namespace'])) {
+            $namespace = $config[$type . 'Namespace'];
         }
 
-        $fullClassName = $namespace . '_' . $className;
-        return $fullClassName;
+        // PHP >= 5.3.0 namespace given?
+        if (substr($namespace, -1) == '\\') {
+            return $namespace . $className;
+        }
+
+        // emtpy namespace given?
+        if (strlen($namespace) === 0) {
+            return $className;
+        }
+
+        return $namespace . '_' . $className;
     }
 
     /**
@@ -261,7 +318,7 @@ class Zend_Log
      * @param  string   $message   Message to log
      * @param  integer  $priority  Priority of message
      * @return array Event array
-     **/
+     */
     protected function _packEvent($message, $priority)
     {
         return array_merge(array(
@@ -304,7 +361,7 @@ class Zend_Log
             switch (count($params)) {
                 case 0:
                     /** @see Zend_Log_Exception */
-                    #require_once 'Zend/Log/Exception.php';
+                    require_once 'Zend/Log/Exception.php';
                     throw new Zend_Log_Exception('Missing log message');
                 case 1:
                     $message = array_shift($params);
@@ -318,7 +375,7 @@ class Zend_Log
             $this->log($message, $priority, $extras);
         } else {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('Bad log priority');
         }
     }
@@ -337,13 +394,13 @@ class Zend_Log
         // sanity checks
         if (empty($this->_writers)) {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('No writers were added');
         }
 
         if (! isset($this->_priorities[$priority])) {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('Bad log priority');
         }
 
@@ -387,7 +444,7 @@ class Zend_Log
      *
      * @param  string   $name      Name of priority
      * @param  integer  $priority  Numeric priority
-     * @throws Zend_Log_InvalidArgumentException
+     * @throws Zend_Log_Exception
      */
     public function addPriority($name, $priority)
     {
@@ -397,7 +454,7 @@ class Zend_Log
         if (isset($this->_priorities[$priority])
             || false !== array_search($name, $this->_priorities)) {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('Existing priorities cannot be overwritten');
         }
 
@@ -410,14 +467,15 @@ class Zend_Log
      * Before a message will be received by any of the writers, it
      * must be accepted by all filters added with this method.
      *
-     * @param  int|Zend_Log_Filter_Interface $filter
-     * @return void
+     * @param  int|Zend_Config|array|Zend_Log_Filter_Interface $filter
+     * @return Zend_Log
+     * @throws Zend_Log_Exception
      */
     public function addFilter($filter)
     {
-        if (is_integer($filter)) {
+        if (is_int($filter)) {
             /** @see Zend_Log_Filter_Priority */
-            #require_once 'Zend/Log/Filter/Priority.php';
+            require_once 'Zend/Log/Filter/Priority.php';
             $filter = new Zend_Log_Filter_Priority($filter);
 
         } elseif ($filter instanceof Zend_Config || is_array($filter)) {
@@ -425,7 +483,7 @@ class Zend_Log
 
         } elseif(! $filter instanceof Zend_Log_Filter_Interface) {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception('Invalid filter provided');
         }
 
@@ -438,7 +496,7 @@ class Zend_Log
      * message and writing it out to storage.
      *
      * @param  mixed $writer Zend_Log_Writer_Abstract or Config array
-     * @return void
+     * @return Zend_Log
      */
     public function addWriter($writer)
     {
@@ -448,7 +506,7 @@ class Zend_Log
 
         if (!$writer instanceof Zend_Log_Writer_Abstract) {
             /** @see Zend_Log_Exception */
-            #require_once 'Zend/Log/Exception.php';
+            require_once 'Zend/Log/Exception.php';
             throw new Zend_Log_Exception(
                 'Writer must be an instance of Zend_Log_Writer_Abstract'
                 . ' or you should pass a configuration array'
@@ -462,9 +520,9 @@ class Zend_Log
     /**
      * Set an extra item to pass to the log writers.
      *
-     * @param  $name    Name of the field
-     * @param  $value   Value of the field
-     * @return void
+     * @param  string $name    Name of the field
+     * @param  string $value   Value of the field
+     * @return Zend_Log
      */
     public function setEventItem($name, $value)
     {
@@ -491,7 +549,7 @@ class Zend_Log
     {
         // Only register once.  Avoids loop issues if it gets registered twice.
         if ($this->_registeredErrorHandler) {
-        	return $this;
+            return $this;
         }
 
         $this->_origErrorHandler = set_error_handler(array($this, 'errorHandler'));

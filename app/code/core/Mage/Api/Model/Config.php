@@ -164,7 +164,6 @@ class Mage_Api_Model_Config extends Varien_Simplexml_Config
         return $this->getNode('resources_alias')->children();
     }
 
-
     /**
      * Load Acl resources from config
      *
@@ -237,6 +236,12 @@ class Mage_Api_Model_Config extends Varien_Simplexml_Config
         return false;
     }
 
+    /**
+     * @todo
+     *
+     * @param $resourceName
+     * @return
+     */
     public function getFaults($resourceName=null)
     {
         if (is_null($resourceName)
@@ -274,16 +279,37 @@ class Mage_Api_Model_Config extends Varien_Simplexml_Config
         return Mage::app()->getCache();
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     protected function _loadCache($id)
     {
         return Mage::app()->loadCache($id);
     }
 
+    /**
+     * @todo
+     *
+     * @param $data
+     * @param $id
+     * @param array $tags
+     * @param bool $lifetime
+     * @return
+     */
     protected function _saveCache($data, $id, $tags=array(), $lifetime=false)
     {
         return Mage::app()->saveCache($data, $id, $tags, $lifetime);
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     protected function _removeCache($id)
     {
         return Mage::app()->removeCache($id);

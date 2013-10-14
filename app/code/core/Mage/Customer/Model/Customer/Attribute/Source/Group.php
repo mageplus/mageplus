@@ -33,6 +33,11 @@
  */
 class Mage_Customer_Model_Customer_Attribute_Source_Group extends Mage_Eav_Model_Entity_Attribute_Source_Table
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllOptions()
     {
         if (!$this->_options) {

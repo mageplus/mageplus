@@ -46,6 +46,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         Mage::dispatchEvent('controller_action_postdispatch_adminhtml', array('controller_action' => $this));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initItemType()
     {
         $this->_title($this->__('Catalog'))
@@ -59,6 +64,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _initAction()
     {
         $this->loadLayout()
@@ -68,6 +78,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function indexAction()
     {
         $this->_title($this->__('Catalog'))
@@ -90,6 +105,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function newAction()
     {
         try {
@@ -107,6 +127,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function editAction()
     {
         $this->_title($this->__('Catalog'))
@@ -143,6 +168,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function saveAction()
     {
         $typeModel = Mage::getModel('googlebase/type');
@@ -188,7 +218,12 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         $this->_redirect('*/*/index', array('store' => $this->_getStore()->getId()));
     }
 
-    public function deleteAction ()
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function deleteAction()
     {
         try {
             $id = $this->getRequest()->getParam('id');
@@ -204,7 +239,12 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         $this->_redirect('*/*/index', array('store' => $this->_getStore()->getId()));
     }
 
-    public function loadAttributesAction ()
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function loadAttributesAction()
     {
         try {
             $this->getResponse()->setBody(
@@ -221,6 +261,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function loadItemTypesAction()
     {
         try {
@@ -235,6 +280,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function loadAttributeSetsAction()
     {
         try {
@@ -249,6 +299,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _getStore()
     {
         $storeId = (int) $this->getRequest()->getParam('store', 0);
@@ -258,6 +313,11 @@ class Mage_GoogleBase_Adminhtml_Googlebase_TypesController extends Mage_Adminhtm
         return Mage::app()->getStore($storeId);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('catalog/googlebase/types');

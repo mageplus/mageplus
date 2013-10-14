@@ -31,6 +31,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Design extends Mage_Adminhtml_Bl
         $this->setShowGlobalIcon(true);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCategory()
     {
         if (!$this->_category) {
@@ -39,6 +44,11 @@ class Mage_Adminhtml_Block_Catalog_Category_Tab_Design extends Mage_Adminhtml_Bl
         return $this->_category;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function _prepareLayout()
     {
         parent::_prepareLayout();

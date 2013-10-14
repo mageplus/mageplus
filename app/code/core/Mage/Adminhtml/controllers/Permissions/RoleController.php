@@ -33,7 +33,6 @@
  */
 class Mage_Adminhtml_Permissions_RoleController extends Mage_Adminhtml_Controller_Action
 {
-
     /**
      * Preparing layout for output
      *

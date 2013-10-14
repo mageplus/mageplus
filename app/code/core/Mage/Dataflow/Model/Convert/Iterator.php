@@ -25,6 +25,10 @@
  */
 class Mage_Dataflow_Model_Session_Adapter_Iterator extends Mage_Dataflow_Model_Convert_Adapter_Abstract
 {
+    /**
+     * @todo
+     * @return
+     */
     public function walk()
     {
         $sessionId = Mage::registry('current_dataflow_session_id');
@@ -46,6 +50,13 @@ class Mage_Dataflow_Model_Session_Adapter_Iterator extends Mage_Dataflow_Model_C
             ->walk($import->select($sessionId), $callbacks);
     }
 
+    /**
+     * @todo
+     *
+     * @param $sessionId
+     * @param $totalRows
+     * @return
+     */
     protected function _getProgressBarHtml($sessionId, $totalRows)
     {
         return '
@@ -91,6 +102,12 @@ function updateProgress(sessionId, idx, time, memory) {
 </script>';
     }
 
+    /**
+     * @todo
+     *
+     * @param $args
+     * @return
+     */
     public function updateProgress($args)
     {
         $memory = !empty($args['memory']) ? $args['memory'] : '';
@@ -100,6 +117,13 @@ function updateProgress(sessionId, idx, time, memory) {
         return array();
     }
 
+    /**
+     * @todo
+     *
+     * @param $callback
+     * @param $defaultMethod
+     * @return
+     */
     protected function _parseCallback($callback, $defaultMethod=null)
     {
         if (!preg_match('#^([a-z0-9_/]+)(::([a-z0-9_]+))?$#i', $callback, $match)) {

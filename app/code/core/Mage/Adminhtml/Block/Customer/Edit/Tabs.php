@@ -42,6 +42,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tabs extends Mage_Adminhtml_Block_Widge
         $this->setTitle(Mage::helper('customer')->__('Customer Information'));
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _beforeToHtml()
     {
 /*
@@ -118,6 +123,11 @@ class Mage_Adminhtml_Block_Customer_Edit_Tabs extends Mage_Adminhtml_Block_Widge
         return parent::_beforeToHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _updateActiveTab()
     {
         $tabId = $this->getRequest()->getParam('tab');

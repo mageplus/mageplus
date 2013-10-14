@@ -3706,10 +3706,6 @@ class Varien_Db_Adapter_Pdo_Mysql extends Zend_Db_Adapter_Pdo_Mysql implements V
         return $value;
     }
 
-
-
-
-
     /**
      * Returns date that fits into TYPE_DATETIME range and is suggested to act as default 'zero' value
      * for a column for current RDBMS. Deprecated and left for compatibility only.

@@ -29,6 +29,11 @@
  */
 class Mage_Tag_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStatusesArray()
     {
         return array(
@@ -38,6 +43,11 @@ class Mage_Tag_Helper_Data extends Mage_Core_Helper_Abstract
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStatusesOptionsArray()
     {
         return array(

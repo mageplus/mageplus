@@ -83,6 +83,13 @@ class Mage_Payment_Helper_Data extends Mage_Core_Helper_Abstract
         return $res;
     }
 
+    /**
+     * @todo
+     *
+     * @param $a
+     * @param $b
+     * @return
+     */
     protected function _sortMethods($a, $b)
     {
         if (is_object($a)) {

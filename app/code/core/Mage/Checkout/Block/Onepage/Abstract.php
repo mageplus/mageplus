@@ -77,11 +77,21 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return $this->_quote;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function isCustomerLoggedIn()
     {
         return Mage::getSingleton('customer/session')->isLoggedIn();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCountryCollection()
     {
         if (!$this->_countryCollection) {
@@ -91,6 +101,11 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return $this->_countryCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRegionCollection()
     {
         if (!$this->_regionCollection) {
@@ -101,12 +116,23 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return $this->_regionCollection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function customerHasAddresses()
     {
         return count($this->getCustomer()->getAddresses());
     }
 
-/* */
+    /**
+     * @todo
+     *
+     * @param $type
+     * 
+     * @return
+     */
     public function getAddressesHtmlSelect($type)
     {
         if ($this->isCustomerLoggedIn()) {
@@ -145,6 +171,13 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return '';
     }
 
+    /**
+     * @todo
+     *
+     * @param $type
+     * 
+     * @return
+     */
     public function getCountryHtmlSelect($type)
     {
         $countryId = $this->getAddress()->getCountryId();
@@ -165,7 +198,13 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return $select->getHtml();
     }
 
-
+    /**
+     * @todo
+     *
+     * @param $type
+     * 
+     * @return
+     */
     public function getRegionHtmlSelect($type)
     {
         $select = $this->getLayout()->createBlock('core/html_select')
@@ -179,6 +218,11 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return $select->getHtml();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCountryOptions()
     {
         $options    = false;
@@ -210,7 +254,6 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
         return array('login', 'billing', 'shipping', 'shipping_method', 'payment', 'review');
     }
 
-
     /**
      * Retrieve is allow and show block
      *
@@ -220,5 +263,4 @@ abstract class Mage_Checkout_Block_Onepage_Abstract extends Mage_Core_Block_Temp
     {
         return true;
     }
-/* */
 }

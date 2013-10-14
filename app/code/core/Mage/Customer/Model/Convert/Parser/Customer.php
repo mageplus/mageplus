@@ -63,6 +63,11 @@ class Mage_Customer_Model_Convert_Parser_Customer
      */
     protected $_customerGroups = null;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getFields()
     {
         if (!$this->_fields) {
@@ -146,6 +151,13 @@ class Mage_Customer_Model_Convert_Parser_Customer
         return $this->_storeId;
     }
 
+    /**
+     * @todo
+     *
+     * @param $storeId
+     * 
+     * @return
+     */
     public function getStoreById($storeId)
     {
         if (is_null($this->_stores)) {
@@ -203,6 +215,13 @@ class Mage_Customer_Model_Convert_Parser_Customer
         return $this->_resource;
     }
 
+    /**
+     * @todo
+     *
+     * @param $storeId
+     * 
+     * @return
+     */
     public function getCollection($storeId)
     {
         if (!isset($this->_collections[$storeId])) {
@@ -212,6 +231,11 @@ class Mage_Customer_Model_Convert_Parser_Customer
         return $this->_collections[$storeId];
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unparse()
     {
         $systemFields = array();
@@ -351,6 +375,11 @@ class Mage_Customer_Model_Convert_Parser_Customer
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getExternalAttributes()
     {
         $internal = array(
@@ -444,6 +473,11 @@ class Mage_Customer_Model_Convert_Parser_Customer
 
    /* ########### THE CODE BELOW IS NOT USED ############# */
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function unparse__OLD()
     {
         $collections = $this->getData();

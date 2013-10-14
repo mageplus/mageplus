@@ -16,50 +16,50 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: Gapps.php 22511 2010-07-01 01:41:46Z tjohns $
+ * @version    $Id: Gapps.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Gdata
  */
-#require_once 'Zend/Gdata.php';
+require_once 'Zend/Gdata.php';
 
 /**
  * @see Zend_Gdata_Gapps_UserFeed
  */
-#require_once 'Zend/Gdata/Gapps/UserFeed.php';
+require_once 'Zend/Gdata/Gapps/UserFeed.php';
 
 /**
  * @see Zend_Gdata_Gapps_NicknameFeed
  */
-#require_once 'Zend/Gdata/Gapps/NicknameFeed.php';
+require_once 'Zend/Gdata/Gapps/NicknameFeed.php';
 
 /**
  * @see Zend_Gdata_Gapps_GroupFeed
  */
-#require_once 'Zend/Gdata/Gapps/GroupFeed.php';
+require_once 'Zend/Gdata/Gapps/GroupFeed.php';
 
 /**
  * @see Zend_Gdata_Gapps_MemberFeed
  */
-#require_once 'Zend/Gdata/Gapps/MemberFeed.php';
+require_once 'Zend/Gdata/Gapps/MemberFeed.php';
 
 /**
  * @see Zend_Gdata_Gapps_OwnerFeed
  */
-#require_once 'Zend/Gdata/Gapps/OwnerFeed.php';
+require_once 'Zend/Gdata/Gapps/OwnerFeed.php';
 
 /**
  * @see Zend_Gdata_Gapps_EmailListFeed
  */
-#require_once 'Zend/Gdata/Gapps/EmailListFeed.php';
+require_once 'Zend/Gdata/Gapps/EmailListFeed.php';
 
 /**
  * @see Zend_Gdata_Gapps_EmailListRecipientFeed
  */
-#require_once 'Zend/Gdata/Gapps/EmailListRecipientFeed.php';
+require_once 'Zend/Gdata/Gapps/EmailListRecipientFeed.php';
 
 
 /**
@@ -76,7 +76,7 @@
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Gdata_Gapps extends Zend_Gdata
@@ -159,7 +159,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
         // completes. (See ZF-5949)
         $response = $e->getResponse();
         if (!$response) {
-          #require_once('Zend/Gdata/App/IOException.php');
+          require_once('Zend/Gdata/App/IOException.php');
           throw new Zend_Gdata_App_IOException('No HTTP response received (possible connection failure)');
         }
 
@@ -167,7 +167,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
             // Check to see if there is an AppsForYourDomainErrors
             // datastructure in the response. If so, convert it to
             // an exception and throw it.
-            #require_once 'Zend/Gdata/Gapps/ServiceException.php';
+            require_once 'Zend/Gdata/Gapps/ServiceException.php';
             $error = new Zend_Gdata_Gapps_ServiceException();
             $error->importFromString($response->getBody());
             throw $error;
@@ -341,7 +341,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
          } else if ($this->_domain !== null) {
              return self::APPS_BASE_FEED_URI . '/' . $this->_domain;
          } else {
-             #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+             require_once 'Zend/Gdata/App/InvalidArgumentException.php';
              throw new Zend_Gdata_App_InvalidArgumentException(
                      'Domain must be specified.');
          }
@@ -429,7 +429,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getMemberFeed($location = null)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -454,7 +454,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getOwnerFeed($location = null)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -501,7 +501,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getEmailListRecipientFeed($location)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -524,7 +524,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getUserEntry($location)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -547,7 +547,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getNicknameEntry($location)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -570,7 +570,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getGroupEntry($location = null)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -593,7 +593,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getMemberEntry($location = null)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -616,7 +616,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getOwnerEntry($location = null)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -639,7 +639,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getEmailListEntry($location)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -662,7 +662,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function getEmailListRecipientEntry($location)
     {
         if ($location === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'Location must not be null');
         } else if ($location instanceof Zend_Gdata_Query) {
@@ -757,7 +757,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function insertMember($member, $uri = null)
     {
         if ($uri === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'URI must not be null');
         }
@@ -781,7 +781,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function insertOwner($owner, $uri = null)
     {
         if ($uri === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'URI must not be null');
         }
@@ -829,7 +829,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     public function insertEmailListRecipient($recipient, $uri = null)
     {
         if ($uri === null) {
-            #require_once 'Zend/Gdata/App/InvalidArgumentException.php';
+            require_once 'Zend/Gdata/App/InvalidArgumentException.php';
             throw new Zend_Gdata_App_InvalidArgumentException(
                     'URI must not be null');
         } elseif ($uri instanceof Zend_Gdata_Gapps_EmailListEntry) {
@@ -862,7 +862,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
                      // Autoloading disabled on next line for compatibility
                      // with magic factories. See ZF-6660.
                      if (!class_exists($name . '_' . $class, false)) {
-                        #require_once 'Zend/Loader.php';
+                        require_once 'Zend/Loader.php';
                         @Zend_Loader::loadClass($name . '_' . $class);
                      }
                      $foundClassName = $name . '_' . $class;
@@ -877,7 +877,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
                 $args = array_merge(array($this->getDomain()), $args);
                 return $reflectionObj->newInstanceArgs($args);
             } else {
-                #require_once 'Zend/Gdata/App/Exception.php';
+                require_once 'Zend/Gdata/App/Exception.php';
                 throw new Zend_Gdata_App_Exception(
                         "Unable to find '${class}' in registered packages");
             }
@@ -1178,7 +1178,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     {
         $i = 0;
         $group = $this->newGroupEntry();
-        
+
         $properties[$i] = $this->newProperty();
         $properties[$i]->name = 'groupId';
         $properties[$i]->value = $groupId;
@@ -1200,8 +1200,8 @@ class Zend_Gdata_Gapps extends Zend_Gdata
             $properties[$i]->name = 'emailPermission';
             $properties[$i]->value = $emailPermission;
             $i++;
-        }        
-        
+        }
+
         $group->property = $properties;
 
         return $this->insertGroup($group);
@@ -1240,7 +1240,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
      * @return Zend_Gdata_Gapps_GroupFeed Collection of Zend_Gdata_GroupEntry objects
      *              representing all groups apart of the domain.
      */
-    public function retrieveAllGroups() 
+    public function retrieveAllGroups()
     {
         return $this->retrieveAllEntriesForFeed($this->retrievePageOfGroups());
     }
@@ -1257,7 +1257,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
 
         $this->delete($uri);
     }
-    
+
     /**
      * Check to see if a member id or group id is a member of group
      *
@@ -1269,7 +1269,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     {
         $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
         $uri .= $this->getDomain() . '/' . $groupId . '/member/' . $memberId;
-        
+
         //if the enitiy is not a member, an exception is thrown
         try {
             $results = $this->get($uri);
@@ -1353,7 +1353,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
 
         $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
         $uri .= $this->getDomain() . '/' . $groupId . '/owner';
-        
+
         return $this->insertOwner($owner, $uri);
     }
 
@@ -1383,9 +1383,9 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     {
         $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
         $uri .= $this->getDomain() . '/' . $groupId . '/owner/' . $email;
-        
+
         //if the enitiy is not an owner of the group, an exception is thrown
-        try {            
+        try {
             $results = $this->get($uri);
         } catch (Exception $e) {
             $results = false;
@@ -1427,7 +1427,7 @@ class Zend_Gdata_Gapps extends Zend_Gdata
     {
         $i = 0;
         $group = $this->newGroupEntry();
-        
+
         $properties[$i] = $this->newProperty();
         $properties[$i]->name = 'groupId';
         $properties[$i]->value = $groupId;
@@ -1453,20 +1453,20 @@ class Zend_Gdata_Gapps extends Zend_Gdata
             $properties[$i]->value = $emailPermission;
             $i++;
         }
-        
+
         $group->property = $properties;
 
         $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
         $uri .= $this->getDomain() . '/' . $groupId;
 
-        return $this->updateEntry($group, $uri, 'Zend_Gdata_Gapps_GroupEntry');        
+        return $this->updateEntry($group, $uri, 'Zend_Gdata_Gapps_GroupEntry');
     }
 
     /**
      * Retrieve all of the groups that a user is a member of
      *
      * @param string $memberId Member username
-     * @param bool $directOnly (Optional) If true, members with direct association 
+     * @param bool $directOnly (Optional) If true, members with direct association
      *             only will be considered
      * @return Zend_Gdata_Gapps_GroupFeed Collection of Zend_Gdata_GroupEntry
      *              objects representing all groups member is apart of in the domain.

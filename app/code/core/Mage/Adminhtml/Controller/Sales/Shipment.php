@@ -78,7 +78,13 @@ class Mage_Adminhtml_Controller_Sales_Shipment extends Mage_Adminhtml_Controller
         }
     }
 
-    public function pdfshipmentsAction(){
+    /**
+     * @todo
+     *
+     * @return
+     */
+    public function pdfshipmentsAction()
+    {
         $shipmentIds = $this->getRequest()->getPost('shipment_ids');
         if (!empty($shipmentIds)) {
             $shipments = Mage::getResourceModel('sales/order_shipment_collection')
@@ -97,7 +103,11 @@ class Mage_Adminhtml_Controller_Sales_Shipment extends Mage_Adminhtml_Controller
         $this->_redirect('*/*/');
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function printAction()
     {
         /** @see Mage_Adminhtml_Sales_Order_InvoiceController */
@@ -112,6 +122,11 @@ class Mage_Adminhtml_Controller_Sales_Shipment extends Mage_Adminhtml_Controller
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _isAllowed()
     {
         return Mage::getSingleton('admin/session')->isAllowed('sales/shipment');

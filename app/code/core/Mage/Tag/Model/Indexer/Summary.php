@@ -203,6 +203,12 @@ class Mage_Tag_Model_Indexer_Summary extends Mage_Index_Model_Indexer_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Index_Model_Event $event
+     * @return
+     */
     protected function _registerCatalogProduct(Mage_Index_Model_Event $event)
     {
         switch ($event->getType()) {
@@ -220,6 +226,12 @@ class Mage_Tag_Model_Indexer_Summary extends Mage_Index_Model_Indexer_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Index_Model_Event $event
+     * @return
+     */
     protected function _registerTag(Mage_Index_Model_Event $event)
     {
         if ($event->getType() == Mage_Index_Model_Event::TYPE_SAVE) {
@@ -227,6 +239,12 @@ class Mage_Tag_Model_Indexer_Summary extends Mage_Index_Model_Indexer_Abstract
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param Mage_Index_Model_Event $event
+     * @return
+     */
     protected function _registerTagRelation(Mage_Index_Model_Event $event)
     {
         if ($event->getType() == Mage_Index_Model_Event::TYPE_SAVE) {

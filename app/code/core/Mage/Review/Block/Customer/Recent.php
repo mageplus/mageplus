@@ -50,41 +50,83 @@ class Mage_Review_Block_Customer_Recent extends Mage_Core_Block_Template
             ->addReviewSummary();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function count()
     {
         return $this->_collection->getSize();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _getCollection()
     {
         return $this->_collection;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCollection()
     {
         return $this->_getCollection();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getReviewLink()
     {
         return Mage::getUrl('review/customer/view/');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getProductLink()
     {
         return Mage::getUrl('catalog/product/view/');
     }
 
+    /**
+     * @todo
+     *
+     * @param $date
+     * @return
+     */
     public function dateFormat($date)
     {
         return $this->formatDate($date, Mage_Core_Model_Locale::FORMAT_TYPE_SHORT);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getAllReviewsUrl()
     {
         return Mage::getUrl('review/customer');
     }
 
+    /**
+     * @todo
+     *
+     * @param $id
+     * @return
+     */
     public function getReviewUrl($id)
     {
         return Mage::getUrl('review/customer/view', array('id' => $id));

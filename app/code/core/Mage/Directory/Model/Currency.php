@@ -65,6 +65,11 @@ class Mage_Directory_Model_Currency extends Mage_Core_Model_Abstract
         return $this->_getData('currency_code');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getCurrencyCode()
     {
         return $this->_getData('currency_code');
@@ -218,6 +223,13 @@ class Mage_Directory_Model_Currency extends Mage_Core_Model_Abstract
         return $this->formatTxt($price, $options);
     }
 
+    /**
+     * @todo
+     *
+     * @param $price
+     * @param array $options
+     * @return
+     */
     public function formatTxt($price, $options=array())
     {
         if (!is_numeric($price)) {
@@ -233,6 +245,11 @@ class Mage_Directory_Model_Currency extends Mage_Core_Model_Abstract
         return Mage::app()->getLocale()->currency($this->getCode())->toCurrency($price, $options);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getOutputFormat()
     {
         $formated = $this->formatTxt(0);
@@ -271,7 +288,11 @@ class Mage_Directory_Model_Currency extends Mage_Core_Model_Abstract
         return $defaultCurrencies;
     }
 
-
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getConfigBaseCurrencies()
     {
         $defaultCurrencies = $this->_getResource()->getConfigCurrencies($this, self::XML_PATH_CURRENCY_BASE);

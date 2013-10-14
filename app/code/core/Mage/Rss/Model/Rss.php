@@ -36,29 +36,57 @@ class Mage_Rss_Model_Rss
 {
     protected $_feedArray = array();
 
+   /**
+    * @todo
+    *
+    * @param array $data
+    * @return
+    */
     public function _addHeader($data = array())
     {
         $this->_feedArray = $data;
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @param $entries
+    * @return
+    */
     public function _addEntries($entries)
     {
         $this->_feedArray['entries'] = $entries;
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @param $entry
+    * @return
+    */
     public function _addEntry($entry)
     {
         $this->_feedArray['entries'][] = $entry;
         return $this;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function getFeedArray()
     {
         return $this->_feedArray;
     }
 
+   /**
+    * @todo
+    *
+    * @return
+    */
     public function createRssXml()
     {
         try {

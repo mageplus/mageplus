@@ -684,6 +684,11 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function categoriesJsonAction()
     {
         $product = $this->_initProduct();
@@ -844,6 +849,11 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function addAttributeAction()
     {
         $this->_getSession()->addNotice(
@@ -857,6 +867,11 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function createdAction()
     {
         $this->_getSession()->addNotice(
@@ -869,6 +884,11 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function massDeleteAction()
     {
         $productIds = $this->getRequest()->getParam('product');
@@ -955,6 +975,11 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
         $this->renderLayout();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function quickCreateAction()
     {
         $result = array();
@@ -976,7 +1001,6 @@ class Mage_Adminhtml_Catalog_ProductController extends Mage_Adminhtml_Controller
             ->setStoreId(0)
             ->setTypeId(Mage_Catalog_Model_Product_Type::TYPE_SIMPLE)
             ->setAttributeSetId($configurableProduct->getAttributeSetId());
-
 
         foreach ($product->getTypeInstance()->getEditableAttributes() as $attribute) {
             if ($attribute->getIsUnique()

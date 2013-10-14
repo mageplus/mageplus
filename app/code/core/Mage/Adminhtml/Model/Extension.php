@@ -30,11 +30,21 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
 {
     protected $_roles;
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getPear()
     {
         return Varien_Pear::getInstance();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function generatePackageXml()
     {
         Mage::getSingleton('adminhtml/session')
@@ -71,18 +81,30 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         return $this;
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @return
+     */
     protected function _setPackage($pfm)
     {
         $pfm->setPackageType('php');
         $pfm->setChannel($this->getData('channel'));
 
-    $pfm->setLicense($this->getData('license'), $this->getData('license_uri'));
+        $pfm->setLicense($this->getData('license'), $this->getData('license_uri'));
 
         $pfm->setPackage($this->getData('name'));
         $pfm->setSummary($this->getData('summary'));
         $pfm->setDescription($this->getData('description'));
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @return
+     */
     protected function _setRelease($pfm)
     {
         $pfm->addRelease();
@@ -95,6 +117,12 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         $pfm->setNotes($this->getData('notes'));
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @return
+     */
     protected function _setMaintainers($pfm)
     {
         $maintainers = $this->getData('maintainers');
@@ -110,6 +138,12 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @return
+     */
     protected function _setDependencies($pfm)
     {
         $pfm->clearDeps();
@@ -158,6 +192,12 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @return
+     */
     protected function _setContents($pfm)
     {
         $baseDir = $this->getRoleDir('mage').DS;
@@ -205,6 +245,17 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         }
     }
 
+    /**
+     * @todo
+     *
+     * @param $pfm
+     * @param $role
+     * @param $roleDir
+     * @param $path
+     * @param $include
+     * @param $ignore
+     * @return
+     */
     protected function _addDir($pfm, $role, $roleDir, $path, $include, $ignore)
     {
         $roleDirLen = strlen($roleDir);
@@ -231,6 +282,11 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         }
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRoles()
     {
         if (!$this->_roles) {
@@ -242,12 +298,23 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         return $this->_roles;
     }
 
+    /**
+     * @todo
+     *
+     * @param $role
+     * @return
+     */
     public function getRoleDir($role)
     {
         $roles = $this->getRoles();
         return Varien_Pear::getInstance()->getConfig()->get($roles[$role]['dir_config']);
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getMaintainerRoles()
     {
         return array(
@@ -258,6 +325,11 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function savePackage()
     {
         if ($this->getData('file_name') != '') {
@@ -307,6 +379,11 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         return true;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function createPackage()
     {
         $pear = Varien_Pear::getInstance();
@@ -323,8 +400,12 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         }
         return true;
     }
-
-
+    
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getStabilityOptions()
     {
         return array(
@@ -335,6 +416,11 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         );
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getKnownChannels()
     {
         /*
@@ -358,6 +444,13 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         return $arr;
     }
 
+    /**
+     * @todo
+     *
+     * @param $package
+     * @param array $options
+     * @return
+     */
     public function loadLocal($package, $options=array())
     {
         $pear = $this->getPear();
@@ -377,6 +470,13 @@ class Mage_Adminhtml_Model_Extension extends Varien_Object
         return $pkg;
     }
 
+    /**
+     * @todo
+     *
+     * @param $package
+     * @param array $options
+     * @return
+     */
     public function loadRemote($package, $options=array())
     {
         $pear = $this->getPear();

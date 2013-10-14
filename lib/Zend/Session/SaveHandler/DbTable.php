@@ -15,30 +15,30 @@
  *
  * @category   Zend
  * @package    Zend_Session
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: DbTable.php 20096 2010-01-06 02:05:09Z bkarwin $
+ * @version    $Id: DbTable.php 24593 2012-01-05 20:35:02Z matthew $
  */
 
 /**
  * @see Zend_Session
  */
-#require_once 'Zend/Session.php';
+require_once 'Zend/Session.php';
 
 /**
  * @see Zend_Db_Table_Abstract
  */
-#require_once 'Zend/Db/Table/Abstract.php';
+require_once 'Zend/Db/Table/Abstract.php';
 
 /**
  * @see Zend_Db_Table_Row_Abstract
  */
-#require_once 'Zend/Db/Table/Row/Abstract.php';
+require_once 'Zend/Db/Table/Row/Abstract.php';
 
 /**
  * @see Zend_Config
  */
-#require_once 'Zend/Config.php';
+require_once 'Zend/Config.php';
 
 /**
  * Zend_Session_SaveHandler_DbTable
@@ -46,7 +46,7 @@
  * @category   Zend
  * @package    Zend_Session
  * @subpackage SaveHandler
- * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
 class Zend_Session_SaveHandler_DbTable
@@ -168,7 +168,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception(
                 '$config must be an instance of Zend_Config or array of key/value pairs containing '
@@ -232,7 +232,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
             throw new Zend_Session_SaveHandler_Exception();
         } else if (empty($lifetime)) {
             $this->_lifetime = (int) ini_get('session.gc_maxlifetime');
@@ -386,8 +386,8 @@ class Zend_Session_SaveHandler_DbTable
      */
     public function gc($maxlifetime)
     {
-        $this->delete($this->getAdapter()->quoteIdentifier($this->_modifiedColumn) . ' + '
-                    . $this->getAdapter()->quoteIdentifier($this->_lifetimeColumn) . ' < '
+        $this->delete($this->getAdapter()->quoteIdentifier($this->_modifiedColumn, true) . ' + '
+                    . $this->getAdapter()->quoteIdentifier($this->_lifetimeColumn, true) . ' < '
                     . $this->getAdapter()->quote(time()));
 
         return true;
@@ -420,7 +420,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception('session.save_path is a path and not a table name.');
         }
@@ -452,7 +452,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception(
                 "Value for configuration option '" . self::PRIMARY_ASSIGNMENT . "' must have an assignment "
@@ -461,7 +461,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception(
                 "Value for configuration option '" . self::PRIMARY_ASSIGNMENT . "' must have an assignment "
@@ -481,7 +481,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception(
                 "Configuration must define '" . self::MODIFIED_COLUMN . "' which names the "
@@ -490,7 +490,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception(
                 "Configuration must define '" . self::LIFETIME_COLUMN . "' which names the "
@@ -499,7 +499,7 @@ class Zend_Session_SaveHandler_DbTable
             /**
              * @see Zend_Session_SaveHandler_Exception
              */
-            #require_once 'Zend/Session/SaveHandler/Exception.php';
+            require_once 'Zend/Session/SaveHandler/Exception.php';
 
             throw new Zend_Session_SaveHandler_Exception(
                 "Configuration must define '" . self::DATA_COLUMN . "' which names the "
@@ -548,7 +548,7 @@ class Zend_Session_SaveHandler_DbTable
                     $primaryArray[$primary] = $value;
                     break;
                 case self::PRIMARY_TYPE_WHERECLAUSE:
-                    $primaryArray[] = $this->getAdapter()->quoteIdentifier($primary) . ' = '
+                    $primaryArray[] = $this->getAdapter()->quoteIdentifier($primary, true) . ' = '
                                     . $this->getAdapter()->quote($value);
                     break;
                 case self::PRIMARY_TYPE_NUM:

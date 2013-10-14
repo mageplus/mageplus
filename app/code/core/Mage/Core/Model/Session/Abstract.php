@@ -68,7 +68,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Skip session id flag
      *
-     * @var bool
+     * @var boolean
      */
     protected $_skipSessionIdFlag   = false;
 
@@ -109,7 +109,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Retrieve cookie lifetime
      *
-     * @return int
+     * @return integer
      */
     public function getCookieLifetime()
     {
@@ -119,7 +119,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Use REMOTE_ADDR in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateRemoteAddr()
     {
@@ -133,7 +133,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Use HTTP_VIA in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateHttpVia()
     {
@@ -147,7 +147,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Use HTTP_X_FORWARDED_FOR in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateHttpXForwardedFor()
     {
@@ -161,7 +161,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Use HTTP_USER_AGENT in validator key
      *
-     * @return bool
+     * @return boolean
      */
     public function useValidateHttpUserAgent()
     {
@@ -176,7 +176,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
      * Check whether SID can be used for session initialization
      * Admin area will always have this feature enabled
      *
-     * @return bool
+     * @return boolean
      */
     public function useSid()
     {
@@ -201,7 +201,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Retrieve messages from session
      *
-     * @param   bool $clear
+     * @param   boolean $clear
      * @return  Mage_Core_Model_Message_Collection
      */
     public function getMessages($clear=false)
@@ -400,6 +400,11 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
         return self::$_encryptedSessionId;
     }
 
+    /**
+     * @TODO
+     *
+     * @return 
+     */
     public function getSessionIdQueryParam()
     {
         $_sessionName = $this->getSessionName();
@@ -412,7 +417,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Set skip flag if need skip generating of _GET session_id_key param
      *
-     * @param bool $flag
+     * @param boolean $flag
      * @return Mage_Core_Model_Session_Abstract
      */
     public function setSkipSessionIdFlag($flag)
@@ -424,7 +429,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
     /**
      * Retrieve session id skip flag
      *
-     * @return bool
+     * @return boolean
      */
     public function getSkipSessionIdFlag()
     {
@@ -470,7 +475,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
      * Check if session is valid for given hostname
      *
      * @param string $host
-     * @return bool
+     * @return boolean
      */
     public function isValidForHost($host)
     {
@@ -483,7 +488,7 @@ class Mage_Core_Model_Session_Abstract extends Mage_Core_Model_Session_Abstract_
      * Check if session is valid for given path
      *
      * @param string $path
-     * @return bool
+     * @return boolean
      */
     public function isValidForPath($path)
     {

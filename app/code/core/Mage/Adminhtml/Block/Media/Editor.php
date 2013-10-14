@@ -34,7 +34,6 @@
  */
 class Mage_Adminhtml_Block_Media_Editor extends Mage_Adminhtml_Block_Widget
 {
-
     protected $_config;
 
     public function __construct()
@@ -45,6 +44,11 @@ class Mage_Adminhtml_Block_Media_Editor extends Mage_Adminhtml_Block_Widget
         $this->getConfig()->setParams();
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     protected function _prepareLayout()
     {
         $this->setChild(
@@ -89,27 +93,53 @@ class Mage_Adminhtml_Block_Media_Editor extends Mage_Adminhtml_Block_Widget
 
         return parent::_prepareLayout();
     }
-
+    
+    /**
+     * @todo
+     *
+     * @param $buttonName
+     * @return
+     */
     protected function _getButtonId($buttonName)
     {
         return $this->getHtmlId() . '-' . $buttonName;
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRotatecwButtonHtml()
     {
         return $this->getChildHtml('rotatecw_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getImageButtonHtml()
     {
         return $this->getChildHtml('image_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getRotateccwButtonHtml()
     {
         return $this->getChildHtml('rotateccw_button');
     }
 
+    /**
+     * @todo
+     *
+     * @return
+     */
     public function getResizeButtonHtml()
     {
         return $this->getChildHtml('resize_button');

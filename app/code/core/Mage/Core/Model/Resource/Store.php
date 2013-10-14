@@ -111,8 +111,8 @@ class Mage_Core_Model_Resource_Store extends Mage_Core_Model_Resource_Db_Abstrac
     /**
      * Update Default store for Store Group
      *
-     * @param int $groupId
-     * @param int $storeId
+     * @param integer $groupId
+     * @param integer $storeId
      * @return Mage_Core_Model_Resource_Store
      */
     protected function _updateGroupDefaultStore($groupId, $storeId)

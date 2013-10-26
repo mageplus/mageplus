@@ -1,3 +1,4 @@
 .DS_Store
 app/etc/local.xml
 var/
+.idea

@@ -35,6 +35,31 @@ class Mage_Page_Block_Switch extends Mage_Core_Block_Template
 {
     protected $_storeInUrl;
 
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'STORE_SWITCH',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+        );
+    }
+
+
     public function getCurrentWebsiteId()
     {
         return Mage::app()->getStore()->getWebsiteId();

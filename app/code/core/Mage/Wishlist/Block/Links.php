@@ -40,6 +40,31 @@ class Mage_Wishlist_Block_Links extends Mage_Page_Block_Template_Links_Block
      */
     protected $_position = 30;
 
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'WISHLIST_LINKS',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->_getItemCount()
+        );
+    }
+
     /**
      * @return string
      */

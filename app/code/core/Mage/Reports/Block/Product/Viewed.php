@@ -44,7 +44,6 @@ class Mage_Reports_Block_Product_Viewed extends Mage_Reports_Block_Product_Abstr
 
     protected function _construct()
     {
-        $this->setId('compare');
         $this->addData(array(
             'cache_lifetime'=> false,
             'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
@@ -59,7 +58,7 @@ class Mage_Reports_Block_Product_Viewed extends Mage_Reports_Block_Product_Abstr
     public function getCacheKeyInfo()
     {
 
-        // Get list of compared product id
+        // Get list of viewed product id
         $items = array();
         foreach ($this->getItemsCollection() as $item) {
             $items[] = $item->getId();

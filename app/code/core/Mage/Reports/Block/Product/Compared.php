@@ -60,7 +60,7 @@ class Mage_Reports_Block_Product_Compared extends Mage_Reports_Block_Product_Abs
 
         // Get list of compared product id
         $items = array();
-        foreach ($this->getItems() as $item) {
+        foreach ($this->getItemsCollection() as $item) {
             $items[] = $item->getId();
         }
 

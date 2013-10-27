@@ -48,6 +48,34 @@ class Mage_Catalog_Block_Product_Compare_Sidebar extends Mage_Catalog_Block_Prod
     protected function _construct()
     {
         $this->setId('compare');
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+
+        // Get list of compared product id
+        $items = array();
+        foreach ($this->getItems() as $item) {
+            $items[] = $item->getId();
+        }
+
+        return array(
+            'COMPARE_SIDEBAR',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            implode("_", $items)
+        );
     }
 
     /**

@@ -45,6 +45,16 @@ class Mage_Checkout_Block_Cart_Sidebar extends Mage_Checkout_Block_Cart_Abstract
         $this->addItemRender('default', 'checkout/cart_item_renderer', 'checkout/cart/sidebar/default.phtml');
     }
 
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                                     Mage_Sales_Model_Quote::CACHE_TAG,
+                                     Mage_Sales_Model_Quote::CACHE_TAG . "_" . $this->getQuote()->getId())
+        ));
+    }
+
     /**
      * Retrieve count of display recently added items
      *

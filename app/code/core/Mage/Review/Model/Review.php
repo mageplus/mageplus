@@ -69,6 +69,8 @@ class Mage_Review_Model_Review extends Mage_Core_Model_Abstract
     const STATUS_PENDING        = 2;
     const STATUS_NOT_APPROVED   = 3;
 
+    const CACHE_TAG = 'review';
+
     protected function _construct()
     {
         $this->_init('review/review');

@@ -49,6 +49,37 @@ class Mage_Catalog_Block_Product_List_Upsell extends Mage_Catalog_Block_Product_
 
     protected $_itemLimits = array();
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                                     Mage_Sales_Model_Quote::CACHE_TAG,
+                                     Mage_Sales_Model_Quote::CACHE_TAG . "_" . Mage::getSingleton('checkout/session')->getQuoteId())
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        $product = Mage::registry('product');
+
+        return array(
+            'PRODUCT_UPSELL',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $product->getId(),
+            Mage::getSingleton('checkout/session')->getQuoteId(),
+            $this->getItemLimit('upsell')
+        );
+    }
+
     protected function _prepareData()
     {
         $product = Mage::registry('product');

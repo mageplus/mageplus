@@ -56,6 +56,31 @@ class Mage_Page_Block_Html_Breadcrumbs extends Mage_Core_Block_Template
         $this->setTemplate('page/html/breadcrumbs.phtml');
     }
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG, Mage_Catalog_Model_Category::CACHE_TAG, Mage_Catalog_Model_Product::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'BREADCRUMBS',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            Mage::app()->getRequest()->getPathInfo()
+        );
+    }
+
     function addCrumb($crumbName, $crumbInfo, $after = false)
     {
         $this->_prepareArray($crumbInfo, array('label', 'title', 'link', 'first', 'last', 'readonly'));

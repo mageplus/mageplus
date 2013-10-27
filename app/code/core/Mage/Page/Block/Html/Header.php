@@ -36,6 +36,27 @@ class Mage_Page_Block_Html_Header extends Mage_Core_Block_Template
     public function _construct()
     {
         $this->setTemplate('page/html/header.phtml');
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'PAGE_HEADER',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            Mage::helper('checkout/cart')->getSummaryCount()
+        );
     }
 
     /**

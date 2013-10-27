@@ -29,6 +29,32 @@
  */
 class Mage_Paypal_Block_Logo extends Mage_Core_Block_Template
 {
+
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'PAYPAL_LOGO',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->getLogoType()
+        );
+    }
+
     /**
      * Return URL for Paypal Landing page
      *

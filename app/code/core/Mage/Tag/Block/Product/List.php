@@ -35,6 +35,39 @@ class Mage_Tag_Block_Product_List extends Mage_Core_Block_Template
      */
     protected $_uniqueHtmlId = null;
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                Mage_Catalog_Model_Product::CACHE_TAG,
+                Mage_Catalog_Model_Product::CACHE_TAG . '_' . $this->getProductId())
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        $items = array();
+        foreach($this->getTags() as $item) {
+            $items[] = $item->getId();
+        }
+
+        return array(
+            'TAG_PRODUCT_LIST',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->getProductId(),
+            implode('_', $items)
+        );
+    }
+
     public function getCount()
     {
         return count($this->getTags());

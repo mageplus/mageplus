@@ -40,6 +40,33 @@ class Mage_Catalog_Block_Product_View_Media extends Mage_Catalog_Block_Product_V
      */
     protected $_isGalleryDisabled;
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                Mage_Catalog_Model_Product::CACHE_TAG,
+                Mage_Catalog_Model_Product::CACHE_TAG . '_' . $this->getProduct()->getId())
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'PRODUCT_VIEW_MEDIA',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->getProduct()->getId()
+        );
+    }
+
     /**
      * Retrieve list of gallery images
      *

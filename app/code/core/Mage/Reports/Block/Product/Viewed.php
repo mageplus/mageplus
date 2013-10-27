@@ -42,6 +42,37 @@ class Mage_Reports_Block_Product_Viewed extends Mage_Reports_Block_Product_Abstr
      */
     protected $_indexName       = 'reports/product_index_viewed';
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+
+        // Get list of viewed product id
+        $items = array();
+        foreach ($this->getItemsCollection() as $item) {
+            $items[] = $item->getId();
+        }
+
+        return array(
+            'PRODUCT_VIEWED',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            implode("_", $items)
+        );
+    }
     /**
      * Retrieve page size (count)
      *

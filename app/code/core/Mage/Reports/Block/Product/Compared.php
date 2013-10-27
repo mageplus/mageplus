@@ -42,6 +42,38 @@ class Mage_Reports_Block_Product_Compared extends Mage_Reports_Block_Product_Abs
      */
     protected $_indexName       = 'reports/product_index_compared';
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+
+        // Get list of compared product id
+        $items = array();
+        foreach ($this->getItemsCollection() as $item) {
+            $items[] = $item->getId();
+        }
+
+        return array(
+            'RECENTLY_COMPARED',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            implode("_", $items)
+        );
+    }
+
     /**
      * Retrieve page size (count)
      *

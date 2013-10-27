@@ -138,6 +138,8 @@
  */
 class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
 {
+    const CACHE_TAG = 'sales_quote';
+
     protected $_eventPrefix = 'sales_quote';
     protected $_eventObject = 'quote';
 
@@ -280,6 +282,8 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
          *      base_to_global & base_to_quote/base_to_order - must be used instead
          */
 
+        $this->cleanCache();
+
         $globalCurrencyCode  = Mage::app()->getBaseCurrencyCode();
         $baseCurrency = $this->getStore()->getBaseCurrency();
 
@@ -334,6 +338,17 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
         if (null !== $this->_payments) {
             $this->getPaymentsCollection()->save();
         }
+        return $this;
+    }
+
+    /**
+     * Clear sales quote cache for this quote id
+     *
+     * @return Mage_Catalog_Model_Product
+     */
+    public function cleanCache()
+    {
+        Mage::app()->cleanCache(self::CACHE_TAG . '_' .$this->getId());
         return $this;
     }
 

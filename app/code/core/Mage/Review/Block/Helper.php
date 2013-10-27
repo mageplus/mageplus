@@ -38,6 +38,35 @@ class Mage_Review_Block_Helper extends Mage_Core_Block_Template
         'short'   => 'review/helper/summary_short.phtml'
     );
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                                     Mage_Review_Model_Review::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        $product = $this->getProduct();
+
+        return array(
+            'REVIEW_HELPER',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $product->getId(),
+            $product->getCategoryId()
+        );
+    }
+
     public function getSummaryHtml($product, $templateType, $displayIfNoReviews)
     {
         // pick template among available

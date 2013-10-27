@@ -33,6 +33,16 @@
 
 class Mage_Poll_Block_ActivePoll extends Mage_Core_Block_Template
 {
+
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+
     /**
      * Poll templates
      *

@@ -70,7 +70,8 @@ class Mage_Catalog_Block_Product_Price extends Mage_Core_Block_Template
             Mage::getDesign()->getTheme('template'),
             $this->getProduct()->getId(),
             $this->getProduct()->getCategoryId(),
-            Mage::getSingleton('customer/session')->getCustomerGroupId()
+            Mage::getSingleton('customer/session')->getCustomerGroupId(),
+            $this->getTemplate()
         );
     }
 

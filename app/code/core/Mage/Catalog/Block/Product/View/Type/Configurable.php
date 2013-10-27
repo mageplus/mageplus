@@ -73,7 +73,8 @@ class Mage_Catalog_Block_Product_View_Type_Configurable extends Mage_Catalog_Blo
             Mage::getDesign()->getTheme('template'),
             $this->getProduct()->getId(),
             $this->getProduct()->getCategoryId(),
-            Mage::getSingleton('customer/session')->getCustomerGroupId()
+            Mage::getSingleton('customer/session')->getCustomerGroupId(),
+            $this->getTemplate()
         );
     }
 

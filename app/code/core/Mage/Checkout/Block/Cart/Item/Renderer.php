@@ -56,6 +56,34 @@ class Mage_Checkout_Block_Cart_Item_Renderer extends Mage_Core_Block_Template
      */
     protected $_ignoreProductUrl = false;
 
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                Mage_Sales_Model_Quote::CACHE_TAG,
+                Mage_Sales_Model_Quote::CACHE_TAG . "_" . Mage::getSingleton('checkout/session')->getQuoteId())
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'CART_ITEM_RENDERER',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->getTemplate(),
+            Mage::getSingleton('checkout/session')->getQuoteId()
+        );
+    }
+
     /**
      * Set item for render
      *

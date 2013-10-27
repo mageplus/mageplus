@@ -36,6 +36,35 @@ class Mage_Catalog_Block_Product_Price extends Mage_Core_Block_Template
     protected $_priceDisplayType = null;
     protected $_idSuffix = '';
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                                     Mage_Catalog_Model_Product::CACHE_TAG,
+                                     Mage_Catalog_Model_Product::CACHE_TAG . "_" . $this->getProduct()->getId())
+            ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'PRODUCT_PRICE',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->getProduct()->getId(),
+            $this->getProduct()->getCategoryId(),
+            Mage::getSingleton('customer/session')->getCustomerGroupId()
+        );
+    }
+
     /**
      * Retrieve product
      *

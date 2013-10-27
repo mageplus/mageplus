@@ -48,6 +48,35 @@ class Mage_Catalog_Block_Product_View_Type_Configurable extends Mage_Catalog_Blo
      */
     protected $_resPrices   = array();
 
+    protected function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG,
+                Mage_Catalog_Model_Product::CACHE_TAG,
+                Mage_Catalog_Model_Product::CACHE_TAG . "_" . $this->getProduct()->getId())
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'PRODUCT_VIEW_TYPE_CONFIGURABLE',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+            $this->getProduct()->getId(),
+            $this->getProduct()->getCategoryId(),
+            Mage::getSingleton('customer/session')->getCustomerGroupId()
+        );
+    }
+
     /**
      * Get allowed attributes
      *

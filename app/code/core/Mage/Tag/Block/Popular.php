@@ -39,6 +39,31 @@ class Mage_Tag_Block_Popular extends Mage_Core_Block_Template
     protected $_minPopularity;
     protected $_maxPopularity;
 
+    public function _construct()
+    {
+        $this->addData(array(
+            'cache_lifetime'=> false,
+            'cache_tags'    => array(Mage_Core_Model_Store::CACHE_TAG)
+        ));
+    }
+
+    /**
+     * Get cache key informative items
+     *
+     * @return array
+     */
+    public function getCacheKeyInfo()
+    {
+        return array(
+            'TAG_POPULAR',
+            Mage::app()->getStore()->getId(),
+            (int)Mage::app()->getStore()->isCurrentlySecure(),
+            Mage::getDesign()->getPackageName(),
+            Mage::getDesign()->getTheme('template'),
+        );
+    }
+
+
     protected function _loadTags()
     {
         if (empty($this->_tags)) {

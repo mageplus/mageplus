@@ -283,7 +283,11 @@ $data = array(
     array('LT', 'LT-MR', 'Marijampolės Apskritis'), array('LT', 'LT-PN', 'Panevėžio Apskritis'),
     array('LT', 'LT-SA', 'Šiaulių Apskritis'), array('LT', 'LT-TA', 'Tauragės Apskritis'),
     array('LT', 'LT-TE', 'Telšių Apskritis'), array('LT', 'LT-UT', 'Utenos Apskritis'),
-    array('LT', 'LT-VL', 'Vilniaus Apskritis')
+    array('LT', 'LT-VL', 'Vilniaus Apskritis'),
+    array('AU', 'ACT', 'Australian Capital Territory'), array('AU', 'NSW', 'New South Wales'),
+    array('AU', 'NT', 'Northern Territory'), array('AU', 'QLD', 'Queensland'),
+    array('AU', 'SA', 'South Australia'), array('AU', 'TAS', 'Tasmania'),
+    array('AU', 'VIC', 'Victoria'), array('AU', 'WA', 'Western Australia'),
 );
 
 foreach ($data as $row) {

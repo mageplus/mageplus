@@ -115,6 +115,22 @@ class Mage_CatalogInventory_Model_Stock_Item_Api extends Mage_Catalog_Model_Api_
         if (isset($data['backorders'])) {
             $stockData['backorders'] = $data['backorders'];
         }
+        
+        if (isset($data['qty_increments'])) {
+            $stockData['qty_increments'] = $data['qty_increments'];
+        }
+
+        if (isset($data['use_config_qty_increments'])) {
+            $stockData['use_config_qty_increments'] = $data['use_config_qty_increments'];
+        }
+
+        if (isset($data['use_config_enable_qty_inc'])) {
+            $stockData['use_config_enable_qty_inc'] = $data['use_config_enable_qty_inc'];
+        }
+
+        if (isset($data['enable_qty_increments'])) {
+            $stockData['enable_qty_increments'] = $data['enable_qty_increments'];
+        }
 
         $product->setStockData($stockData);
 

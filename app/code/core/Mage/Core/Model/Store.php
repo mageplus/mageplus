@@ -65,6 +65,13 @@ class Mage_Core_Model_Store extends Mage_Core_Model_Abstract
     const XML_PATH_PRICE_SCOPE            = 'catalog/price/scope';
 
     /**
+     * Secure frontend url option constants
+     */
+    const WEB_FRONTEND_INSECURE = 0;
+    const WEB_FRONTEND_SECURE_PARTIALLY = 1;
+    const WEB_FRONTEND_SECURE_ALL = 2;
+
+    /**
      * Price scope constants
      */
     const PRICE_SCOPE_GLOBAL              = 0;

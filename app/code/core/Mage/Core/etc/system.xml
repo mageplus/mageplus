@@ -1303,16 +1303,19 @@
                             <show_in_store>1</show_in_store>
                             <comment>&lt;strong style="color:red"&gt;Warning!&lt;/strong&gt; When using CDN, in some cases JavaScript may not run properly if CDN is not in your subdomain</comment>
                         </base_js_url>
-                        <use_in_frontend translate="label">
+                        
+                        <use_in_frontend translate="label comment">
                             <label>Use Secure URLs in Frontend</label>
+                            <comment>Please make sure you've set an https:// address in secure url settings or this will cause a redirect loop on secure pages.</comment>
                             <frontend_type>select</frontend_type>
-                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <source_model>adminhtml/system_config_source_web_usesecure</source_model>
                             <backend_model>adminhtml/system_config_backend_secure</backend_model>
                             <sort_order>60</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </use_in_frontend>
+                     
                         <use_in_adminhtml translate="label">
                             <label>Use Secure URLs in Admin</label>
                             <frontend_type>select</frontend_type>

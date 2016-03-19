@@ -18,7 +18,7 @@ Mage+ was created for several reasons :
 6. to provide a viable LTS (Long Term Support) option to current Magento 1.x users who cannot or do not want to upgrade to Magento2
 
 Mage+ has been created in order to help the Magento Open Source project to reach it's full potential by harnessing the input of anybody wishing to contribute.
-With this increased project velocity, Magento CE will become a more stable product, whilst at the same time creating a much greater engagment with the Magento community
+With this increased project velocity, Magento CE will become a more stable product, whilst at the same time creating a much greater engagement with the Magento community
 
 **Put simply, Mage+ aims to always be the most stable, secure and up to date version of Magento available.**
 
@@ -32,7 +32,7 @@ For those wishing to contribute, what we ask of you, is that you concentrate you
 
  1.  bug fixes
  2.  correcting inconsistencies / incorrect behaviours
-		eg. filtering methods aren't currently available in all collections, correcting (deprecating and replacing) function names, constants etc containing spelling errors
+		eg. filtering methods aren't currently available in all collections, correcting (deprecating and replacing) function names, constants etc. containing spelling errors
  3. adding unit tests 
  4. improving documentation
  5. improving admin UI efficiency
@@ -43,12 +43,12 @@ For those wishing to contribute, what we ask of you, is that you concentrate you
 
 You can view the project roadmap here : https://github.com/mageplus/mageplus/wiki/roadmap
 
-If you're eager to show current or future employers or clients your Magento skillz, there's no better way than by solving real problems that are currently affecting tens of thousands of users. **ALL** changes/fixes/modifications made will be detailed in the project's RELEASE_NOTES.txt, along with credit to the contributor - so, roll up your sleeves and get stuck in!
+If you're eager to show current or future employers or clients your Magento skills, there's no better way than by solving real problems that are currently affecting tens of thousands of users. **ALL** changes/fixes/modifications made will be detailed in the project's RELEASE_NOTES.txt, along with credit to the contributor - so, roll up your sleeves and get stuck in!
 
 **PLEASE NOTE :** all contributions made will be subject to the same OSL v3 license which Magento is licensed under
 
 Hosting this project at Github (and more importantly, using git as a VCS), provides us with the ability to make use of the git forking and upstreaming functionality. What this means is that for your own Magento projects you can fork this repository, and by using the upstream update service, you can receive all of it's updates whenever you like (into your own repository) - ensuring that your Magento installation is always up to date, and as bug-free and stable as possible. No more upgrade hassles, no more risk associated with failed upgrades.
 
-You can follow the tutorial here : http://help.github.com/fork-a-repo/ to learn about how to properly fork this repository. Remember, you can still use this repository as a "base" for private/commerical projects, simply make your forked repository private after forking. You'll still be able to receive upstream updates and contribute patches by sending pull requests, but your project won't be visible to the public
+You can follow the tutorial here : http://help.github.com/fork-a-repo/ to learn about how to properly fork this repository. Remember, you can still use this repository as a "base" for private/commercial projects, simply make your forked repository private after forking. You'll still be able to receive upstream updates and contribute patches by sending pull requests, but your project won't be visible to the public
 
 **PLEASE NOTE :** the upstream URL will always be *git://github.com/mageplus/mageplus.git*

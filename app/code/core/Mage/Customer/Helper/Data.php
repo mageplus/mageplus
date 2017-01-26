@@ -211,7 +211,8 @@ class Mage_Customer_Helper_Data extends Mage_Core_Helper_Abstract
         $params = array();
         if ($this->_getRequest()->getParam(self::REFERER_QUERY_PARAM_NAME)) {
             $params = array(
-                self::REFERER_QUERY_PARAM_NAME => $this->_getRequest()->getParam(self::REFERER_QUERY_PARAM_NAME)
+                self::REFERER_QUERY_PARAM_NAME => $this->_getRequest()->getParam(self::REFERER_QUERY_PARAM_NAME),
+                '_secure' => Mage::app()->getFrontController()->getRequest()->isSecure()
             );
         }
         return $this->_getUrl('customer/account/loginPost', $params);

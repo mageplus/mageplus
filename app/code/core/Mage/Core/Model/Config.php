@@ -1473,6 +1473,11 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
      * Check whether given path should be secure according to configuration security requirements for URL
      * "Secure" should not be confused with https protocol, it is about web/secure/*_url settings usage only
      *
+     * TODO: Update doc block - it is indeed https related and will result in a
+     *       Redirect loop when Use Secure in * is enabled and a http address
+     *       instead of an https address is set as secure url
+     *       Updated system.xml by adding a comment related to this issue
+     *
      * @param string $url
      * @return bool
      */
@@ -1480,6 +1485,10 @@ class Mage_Core_Model_Config extends Mage_Core_Model_Config_Base
     {
         if (!Mage::getStoreConfigFlag(Mage_Core_Model_Store::XML_PATH_SECURE_IN_FRONTEND)) {
             return false;
+        }
+
+        if (Mage::getStoreConfigFlag(Mage_Core_Model_Store::XML_PATH_SECURE_ENTIRE_FRONTEND)) {
+            return true;
         }
 
         if (!isset($this->_secureUrlCache[$url])) {
